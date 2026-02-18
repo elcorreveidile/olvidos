@@ -28,11 +28,6 @@ export default async function MemberDashboardPage() {
     redirect("/login");
   }
 
-  // Redirect admins to admin panel
-  if (session.user.role === "ADMIN" || session.user.role === "MEMBER_ADMIN") {
-    redirect("/admin");
-  }
-
   // Get member data
   const member = await db.member.findUnique({
     where: { userId: session.user.id },
