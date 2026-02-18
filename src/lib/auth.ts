@@ -73,14 +73,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       }
       return true;
     },
-    async redirect({ url, baseUrl }) {
-      // Si la URL viene desde el servidor, úsala
-      if (url.startsWith("/")) return `${baseUrl}${url}`;
-      // Si es una URL completa, úsala
-      else if (new URL(url).origin === baseUrl) return url;
-      // Por defecto, ir a mi-cuenta después del login
-      return `${baseUrl}/mi-cuenta`;
-    },
     async jwt({ token, user }) {
       if (user) {
         token.role = user.role;
