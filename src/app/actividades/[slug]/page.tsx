@@ -90,7 +90,7 @@ export default async function EventPage({ params }: PageProps) {
     limit: 3,
   });
 
-  const relatedEvents = relatedResult.success
+  const relatedEvents = relatedResult.success && relatedResult.events
     ? relatedResult.events.filter((e) => e.id !== event.id).slice(0, 3)
     : [];
 
