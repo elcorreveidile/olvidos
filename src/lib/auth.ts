@@ -1,5 +1,4 @@
 import NextAuth from "next-auth";
-import { PrismaAdapter } from "@auth/prisma-adapter";
 import Credentials from "next-auth/providers/credentials";
 import GitHub from "next-auth/providers/github";
 import bcrypt from "bcryptjs";
@@ -12,11 +11,24 @@ const loginSchema = z.object({
 });
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
-  adapter: PrismaAdapter(db),
-  session: { strategy: "jwt" },
+  session: {
+    strategy: "jwt",
+    maxAge: 30 * 24 * 60 * 60, // 30 days
+  },
   pages: {
     signIn: "/login",
     error: "/login",
+  },
+  cookies: {
+    sessionToken: {
+      name: `next-auth.session-token`,
+      options: {
+        httpOnly: true,
+        sameSite: "lax",
+        path: "/",
+        secure: process.env.NODE_ENV === "production",
+      },
+    },
   },
   providers: [
     GitHub({
@@ -58,25 +70,53 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   ],
   callbacks: {
     async signIn({ user, account }) {
-      if (account?.provider === "github") {
-        // Verificar si el usuario tiene un miembro activo
-        const member = await db.member.findFirst({
-          where: {
-            userId: user.id,
-            status: "ACTIVE",
-          },
+      if (account?.provider === "github" && user.email) {
+        // Check if user exists in database
+        const existingUser = await db.user.findUnique({
+          where: { email: user.email },
         });
 
-        // Si tiene miembro activo, puede continuar
-        // Si no, también puede continuar (pero luego lo redirigiremos)
+        if (!existingUser) {
+          // Create user in database
+          await db.user.create({
+            data: {
+              email: user.email,
+              name: user.name,
+              image: user.image,
+              role: "USER",
+            },
+          });
+        }
         return true;
       }
       return true;
     },
-    async jwt({ token, user }) {
+    async jwt({ token, user, trigger, session, account }) {
+      // Initial sign in
       if (user) {
-        token.role = user.role;
-        token.id = user.id;
+        // If user logged in with GitHub, fetch role from database
+        if (account?.provider === "github" && user.email) {
+          const dbUser = await db.user.findUnique({
+            where: { email: user.email },
+          });
+          if (dbUser) {
+            token.role = dbUser.role;
+            token.id = dbUser.id;
+          } else {
+            token.role = user.role || "USER";
+            token.id = user.id;
+          }
+        } else {
+          token.role = user.role;
+          token.id = user.id;
+        }
+        token.email = user.email;
+        token.name = user.name;
+        token.picture = user.image;
+      }
+      // Handle session updates
+      if (trigger === "update" && session) {
+        token = { ...token, ...session };
       }
       return token;
     },

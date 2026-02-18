@@ -7,6 +7,7 @@ import {
   Settings,
   LogOut,
   Menu,
+  Shield,
 } from "lucide-react";
 
 export default async function MemberLayout({
@@ -72,6 +73,9 @@ export default async function MemberLayout({
     { name: "Carnet Digital", href: "/mi-cuenta/carnet", icon: CreditCard },
   ];
 
+  // Add admin link for admin users
+  const isAdmin = session.user.role === "ADMIN" || session.user.role === "MEMBER_ADMIN";
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Sidebar */}
@@ -102,6 +106,17 @@ export default async function MemberLayout({
                 </Link>
               );
             })}
+
+            {/* Admin link for admin users */}
+            {isAdmin && (
+              <Link
+                href="/admin"
+                className="flex items-center gap-3 px-3 py-2 text-coral rounded-lg hover:bg-coral/10 transition-colors font-medium border border-coral/20"
+              >
+                <Shield className="w-5 h-5" />
+                Panel de Administración
+              </Link>
+            )}
           </nav>
 
           {/* User info */}
