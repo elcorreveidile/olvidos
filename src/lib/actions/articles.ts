@@ -382,6 +382,119 @@ export async function getArticles(filters?: {
   }
 }
 
+// Get published articles for public pages
+export async function getPublishedArticles(filters?: {
+  category?: string;
+  tag?: string;
+  search?: string;
+  limit?: number;
+}) {
+  try {
+    const where: any = {
+      status: "PUBLISHED",
+    };
+
+    if (filters?.category) {
+      where.categories = {
+        some: {
+          category: {
+            slug: filters.category,
+          },
+        },
+      };
+    }
+
+    if (filters?.tag) {
+      where.tags = {
+        some: {
+          tag: {
+            slug: filters.tag,
+          },
+        },
+      };
+    }
+
+    if (filters?.search) {
+      where.OR = [
+        { title: { contains: filters.search, mode: "insensitive" } },
+        { excerpt: { contains: filters.search, mode: "insensitive" } },
+        { content: { contains: filters.search, mode: "insensitive" } },
+      ];
+    }
+
+    const articles = await db.article.findMany({
+      where,
+      include: {
+        author: true,
+        categories: {
+          include: {
+            category: true,
+          },
+        },
+        tags: {
+          include: {
+            tag: true,
+          },
+        },
+      },
+      orderBy: {
+        publishedAt: "desc",
+      },
+      take: filters?.limit || undefined,
+    });
+
+    return { success: true, articles };
+  } catch (error) {
+    console.error("Error fetching published articles:", error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : "Error al obtener los artículos publicados",
+      articles: [],
+    };
+  }
+}
+
+// Get article by slug for public pages
+export async function getArticleBySlug(slug: string, publishedOnly = false) {
+  try {
+    const where: any = { slug };
+
+    if (publishedOnly) {
+      where.status = "PUBLISHED";
+    }
+
+    const article = await db.article.findFirst({
+      where,
+      include: {
+        author: true,
+        categories: {
+          include: {
+            category: true,
+          },
+        },
+        tags: {
+          include: {
+            tag: true,
+          },
+        },
+        issue: true,
+      },
+    });
+
+    if (!article) {
+      throw new Error("Artículo no encontrado");
+    }
+
+    return { success: true, article };
+  } catch (error) {
+    console.error("Error fetching article by slug:", error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : "Error al obtener el artículo",
+    };
+  }
+}
+
 // Get all categories
 export async function getCategories() {
   try {
