@@ -17,7 +17,7 @@ interface CalendarProps {
   events: CalendarEvent[];
   year: number;
   month: number;
-  onMonthChange: (year: number, month: number) => void;
+  onMonthChange?: (year: number, month: number) => void;
 }
 
 const EVENT_TYPE_COLORS: Record<string, string> = {
@@ -63,27 +63,6 @@ export function Calendar({ events, year, month, onMonthChange }: CalendarProps) 
       eventsByDay[day].push(event);
     }
   });
-
-  const handlePreviousMonth = () => {
-    if (month === 1) {
-      onMonthChange(year - 1, 12);
-    } else {
-      onMonthChange(year, month - 1);
-    }
-  };
-
-  const handleNextMonth = () => {
-    if (month === 12) {
-      onMonthChange(year + 1, 1);
-    } else {
-      onMonthChange(year, month + 1);
-    }
-  };
-
-  const goToToday = () => {
-    const today = new Date();
-    onMonthChange(today.getFullYear(), today.getMonth() + 1);
-  };
 
   // Generate calendar days
   const calendarDays: Array<{
@@ -136,15 +115,15 @@ export function Calendar({ events, year, month, onMonthChange }: CalendarProps) 
     <div className="bg-white rounded-sm shadow-card">
       {/* Calendar Header */}
       <div className="flex items-center justify-between p-4 border-b border-acero-light">
-        <button
-          onClick={handlePreviousMonth}
+        <a
+          href={`/actividades?view=calendar&year=${month === 1 ? year - 1 : year}&month=${month === 1 ? 12 : month - 1}`}
           className="p-2 hover:bg-acero-light rounded-sm transition-colors"
           aria-label="Mes anterior"
         >
           <svg className="w-5 h-5 text-azul" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-        </button>
+        </a>
 
         <div className="text-center">
           <h2 className="text-xl font-bold text-azul">
@@ -152,24 +131,24 @@ export function Calendar({ events, year, month, onMonthChange }: CalendarProps) 
           </h2>
         </div>
 
-        <button
-          onClick={handleNextMonth}
+        <a
+          href={`/actividades?view=calendar&year=${month === 12 ? year + 1 : year}&month=${month === 12 ? 1 : month + 1}`}
           className="p-2 hover:bg-acero-light rounded-sm transition-colors"
           aria-label="Mes siguiente"
         >
           <svg className="w-5 h-5 text-azul" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
-        </button>
+        </a>
       </div>
 
       <div className="flex justify-center pb-2">
-        <button
-          onClick={goToToday}
+        <a
+          href={`/actividades?view=calendar`}
           className="text-sm font-semibold text-coral hover:underline"
         >
           Ir a hoy
-        </button>
+        </a>
       </div>
 
       {/* Weekday headers */}

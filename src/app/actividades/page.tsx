@@ -246,10 +246,8 @@ async function CalendarView({ year, month }: { year: number; month: number }) {
         events={events}
         year={year}
         month={month}
-        onMonthChange={(newYear, newMonth) => {
-          // This will be handled by client-side navigation
-          const url = `/actividades?view=calendar`;
-          window.location.href = url;
+        onMonthChange={() => {
+          // Navigation is handled by href links in the Calendar component
         }}
       />
     </div>

@@ -1,16 +1,9 @@
-import { redirect } from "next/navigation";
+"use client";
+
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { getAllRegistrations, getEvents } from "@/lib/actions/events";
-import { auth } from "@/lib/auth";
-
-interface PageProps {
-  searchParams: {
-    eventId?: string;
-    status?: string;
-    search?: string;
-    page?: string;
-  };
-}
 
 const STATUS_LABELS: Record<string, string> = {
   REGISTERED: "Inscrito",
@@ -26,37 +19,85 @@ const STATUS_COLORS: Record<string, string> = {
   ATTENDED: "bg-blue-100 text-blue-800",
 };
 
-export default async function AdminRegistrationsPage({ searchParams }: PageProps) {
-  const session = await auth();
+export default function AdminRegistrationsPage() {
+  const searchParams = useSearchParams();
+  const eventId = searchParams.get("eventId") || "all";
+  const status = searchParams.get("status") || "all";
+  const searchQuery = searchParams.get("search") || "";
+  const page = parseInt(searchParams.get("page") || "1");
 
-  if (!session?.user || (session.user.role !== "EDITOR" && session.user.role !== "ADMIN")) {
-    redirect("/login");
+  const [registrations, setRegistrations] = useState<any[]>([]);
+  const [events, setEvents] = useState<any[]>([]);
+  const [pagination, setPagination] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadData() {
+      setLoading(true);
+
+      // Get registrations
+      const result = await getAllRegistrations({
+        eventId: eventId !== "all" ? eventId : undefined,
+        status: status !== "all" ? status : undefined,
+        search: searchQuery || undefined,
+        page,
+        limit: 25,
+      });
+
+      // Get all events for filter
+      const eventsResult = await getEvents({
+        status: "PUBLISHED",
+        limit: 100,
+        includeDraft: true,
+      });
+
+      if (result.success) {
+        setRegistrations(result.registrations);
+        setPagination(result.pagination);
+      }
+
+      if (eventsResult.success) {
+        setEvents(eventsResult.events);
+      }
+
+      setLoading(false);
+    }
+
+    loadData();
+  }, [eventId, status, searchQuery, page]);
+
+  const handleExport = () => {
+    const headers = ["Nombre", "Email", "Evento", "Fecha Inscripción", "Estado"];
+    const rows = registrations.map((r: any) => [
+      r.member?.user?.name || r.name || "",
+      r.member?.user?.email || r.email || "",
+      r.event.title,
+      new Date(r.createdAt).toLocaleDateString("es-ES"),
+      STATUS_LABELS[r.status] || r.status,
+    ]);
+
+    const csv = [
+      headers.join(","),
+      ...rows.map((row) => row.map((cell) => `"${cell}"`).join(",")),
+    ].join("\n");
+
+    const blob = new Blob([csv], { type: "text/csv" });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `inscripciones-${new Date().toISOString().split("T")[0]}.csv`;
+    a.click();
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-acero/10">
+        <div className="container mx-auto px-4 py-8">
+          <p className="text-acero">Cargando...</p>
+        </div>
+      </div>
+    );
   }
-
-  const eventId = searchParams.eventId || "all";
-  const status = searchParams.status || "all";
-  const searchQuery = searchParams.search || "";
-  const page = parseInt(searchParams.page || "1");
-
-  // Get registrations
-  const result = await getAllRegistrations({
-    eventId: eventId !== "all" ? eventId : undefined,
-    status: status !== "all" ? status : undefined,
-    search: searchQuery || undefined,
-    page,
-    limit: 25,
-  });
-
-  // Get all events for filter
-  const eventsResult = await getEvents({
-    status: "PUBLISHED",
-    limit: 100,
-    includeDraft: true,
-  });
-
-  const registrations = result.success ? result.registrations : [];
-  const pagination = result.success ? result.pagination : null;
-  const events = eventsResult.success ? eventsResult.events : [];
 
   return (
     <div className="min-h-screen bg-acero/10">
@@ -263,29 +304,7 @@ export default async function AdminRegistrationsPage({ searchParams }: PageProps
           {registrations.length > 0 && (
             <div className="px-6 py-4 border-t border-acero-light">
               <button
-                onClick={() => {
-                  // Export to CSV
-                  const headers = ["Nombre", "Email", "Evento", "Fecha Inscripción", "Estado"];
-                  const rows = registrations.map((r: any) => [
-                    r.member?.user?.name || r.name || "",
-                    r.member?.user?.email || r.email || "",
-                    r.event.title,
-                    new Date(r.createdAt).toLocaleDateString("es-ES"),
-                    STATUS_LABELS[r.status] || r.status,
-                  ]);
-
-                  const csv = [
-                    headers.join(","),
-                    ...rows.map((row) => row.map((cell) => `"${cell}"`).join(",")),
-                  ].join("\n");
-
-                  const blob = new Blob([csv], { type: "text/csv" });
-                  const url = window.URL.createObjectURL(blob);
-                  const a = document.createElement("a");
-                  a.href = url;
-                  a.download = `inscripciones-${new Date().toISOString().split("T")[0]}.csv`;
-                  a.click();
-                }}
+                onClick={handleExport}
                 className="px-4 py-2 bg-green-600 text-white font-bold rounded-sm hover:bg-green-700 transition-colors text-sm"
               >
                 Exportar a CSV
