@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { Check, Heart, Users, BookOpen, Calendar } from "lucide-react";
+import { getPublicSiteFlags } from "@/lib/actions/site-config";
 
-export default function HazteSocioPage() {
+export default async function HazteSocioPage() {
+  const { allowRegistrations } = await getPublicSiteFlags();
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -99,6 +102,14 @@ export default function HazteSocioPage() {
             Elige tu plan de membresía
           </h2>
 
+          {!allowRegistrations && (
+            <div className="mb-6 rounded-sm border border-amber-200 bg-amber-50 p-4 text-center text-sm text-amber-800">
+              Las nuevas inscripciones están temporalmente desactivadas.
+              Escríbenos a <strong>info@olvidosdegranada.es</strong> para más
+              información.
+            </div>
+          )}
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Plan Estándar */}
             <div className="bg-white rounded-sm shadow-card overflow-hidden">
@@ -126,12 +137,18 @@ export default function HazteSocioPage() {
                     <span className="text-acero">Descuentos colaboradores</span>
                   </li>
                 </ul>
-                <Link
-                  href="/registro-socio"
-                  className="block w-full px-6 py-3 bg-coral text-white text-center font-bold rounded-sm hover:bg-coral-dark transition-colors"
-                >
-                  Hacerme Socio
-                </Link>
+                {allowRegistrations ? (
+                  <Link
+                    href="/registro-socio"
+                    className="block w-full px-6 py-3 bg-coral text-white text-center font-bold rounded-sm hover:bg-coral-dark transition-colors"
+                  >
+                    Hacerme Socio
+                  </Link>
+                ) : (
+                  <span className="block w-full px-6 py-3 bg-gray-300 text-gray-700 text-center font-bold rounded-sm cursor-not-allowed">
+                    Inscripciones cerradas
+                  </span>
+                )}
               </div>
             </div>
 
@@ -168,12 +185,18 @@ export default function HazteSocioPage() {
                     <span className="text-acero">Descuento del 20% en libros</span>
                   </li>
                 </ul>
-                <Link
-                  href="/registro-socio"
-                  className="block w-full px-6 py-3 bg-coral text-white text-center font-bold rounded-sm hover:bg-coral-dark transition-colors"
-                >
-                  Hacerme Colaborador
-                </Link>
+                {allowRegistrations ? (
+                  <Link
+                    href="/registro-socio"
+                    className="block w-full px-6 py-3 bg-coral text-white text-center font-bold rounded-sm hover:bg-coral-dark transition-colors"
+                  >
+                    Hacerme Colaborador
+                  </Link>
+                ) : (
+                  <span className="block w-full px-6 py-3 bg-gray-300 text-gray-700 text-center font-bold rounded-sm cursor-not-allowed">
+                    Inscripciones cerradas
+                  </span>
+                )}
               </div>
             </div>
 
@@ -203,12 +226,18 @@ export default function HazteSocioPage() {
                     <span className="text-acero">Dedicada en la revista</span>
                   </li>
                 </ul>
-                <Link
-                  href="/registro-socio"
-                  className="block w-full px-6 py-3 bg-azul text-white text-center font-bold rounded-sm hover:bg-azul-dark transition-colors"
-                >
-                  Hacerme Socio Honorífico
-                </Link>
+                {allowRegistrations ? (
+                  <Link
+                    href="/registro-socio"
+                    className="block w-full px-6 py-3 bg-azul text-white text-center font-bold rounded-sm hover:bg-azul-dark transition-colors"
+                  >
+                    Hacerme Socio Honorífico
+                  </Link>
+                ) : (
+                  <span className="block w-full px-6 py-3 bg-gray-300 text-gray-700 text-center font-bold rounded-sm cursor-not-allowed">
+                    Inscripciones cerradas
+                  </span>
+                )}
               </div>
             </div>
           </div>
