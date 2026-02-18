@@ -342,11 +342,11 @@ export default function RegistroSocioPage() {
           <div className="mt-8 text-center text-sm text-acero-light">
             <p>
               Al registrarte, aceptas nuestros{" "}
-              <a href="#" className="text-coral hover:text-coral/80">
+              <a href="/terminos-y-condiciones" className="text-coral hover:text-coral/80">
                 Términos y Condiciones
               </a>{" "}
               y{" "}
-              <a href="#" className="text-coral hover:text-coral/80">
+              <a href="/politica-privacidad" className="text-coral hover:text-coral/80">
                 Política de Privacidad
               </a>
             </p>
