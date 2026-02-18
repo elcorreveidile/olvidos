@@ -21,11 +21,48 @@ export default async function MemberLayout({
   }
 
   // Check if user is a member
-  if (session.user.role !== "MEMBER" &&
-      session.user.role !== "ADMIN" &&
-      session.user.role !== "MEMBER_ADMIN" &&
-      session.user.role !== "EDITOR") {
-    redirect("/hazte-socio");
+  const isMember = session.user.role === "MEMBER" ||
+                   session.user.role === "ADMIN" ||
+                   session.user.role === "MEMBER_ADMIN" ||
+                   session.user.role === "EDITOR";
+
+  if (!isMember) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="max-w-md w-full px-4">
+          <div className="bg-white rounded-sm shadow-card p-8 text-center">
+            <h1 className="text-2xl font-bold text-azul mb-4">
+              Área de Socios
+            </h1>
+            <p className="text-acero mb-6">
+              Esta área es exclusiva para socios de Olvidos de Granada.
+              Si ya eres socio, contacta con la administración. Si aún no lo eres,
+              puedes hacerte socio ahora.
+            </p>
+            <div className="space-y-3">
+              <a
+                href="/hazte-socio"
+                className="block w-full px-6 py-3 bg-coral text-white font-bold rounded-sm hover:bg-coral-dark transition-colors"
+              >
+                Hazte Socio
+              </a>
+              <a
+                href="/"
+                className="block w-full px-6 py-3 border border-azul text-azul font-bold rounded-sm hover:bg-azul hover:text-white transition-colors"
+              >
+                Volver al Inicio
+              </a>
+            </div>
+            <p className="text-sm text-acero-light mt-6">
+              ¿Ya eres socio? Envía un email a{" "}
+              <a href="mailto:info@olvidosdegranada.es" className="text-coral hover:text-coral/80">
+                info@olvidosdegranada.es
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   const navigation = [
