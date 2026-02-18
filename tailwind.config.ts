@@ -10,7 +10,16 @@ const config: Config = {
     extend: {
       colors: {
         coral: {
+          50: "#fff1f1",
+          100: "#ffe3e3",
+          200: "#ffc7c7",
+          300: "#ff9b9b",
+          400: "#ff6f6f",
           DEFAULT: "#ff6261",
+          600: "#ff4f4e",
+          700: "#e85555",
+          800: "#c94646",
+          900: "#a43c3c",
           light: "#fc9292",
           dark: "#e85555",
         },
