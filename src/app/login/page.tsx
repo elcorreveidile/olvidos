@@ -17,7 +17,7 @@ export default function LoginPage() {
         <div className="bg-white rounded-sm shadow-card p-8">
           {/* GitHub Button */}
           <form
-            action={async () => {
+            action={async (formData: FormData) => {
               "use server";
               await signIn("github", { redirectTo: "/mi-cuenta" });
             }}
@@ -44,7 +44,15 @@ export default function LoginPage() {
           </div>
 
           {/* Credentials Form */}
-          <form className="space-y-4">
+          <form
+            action={async (formData: FormData) => {
+              "use server";
+              const email = formData.get("email") as string;
+              const password = formData.get("password") as string;
+              await signIn("credentials", { email, password, redirectTo: "/mi-cuenta" });
+            }}
+            className="space-y-4"
+          >
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-acero mb-2">
                 Email
