@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800;900&family=Crimson+Text:ital,wght@0,400;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Colores corporativos */
+  --color-coral: #ff6261;
+  --color-coral-light: #fc9292;
+  --color-azul: #013559;
+  --color-azul-light: #1a4d6e;
+  --color-acero: #617685;
+  --color-acero-light: #a1b6c4;
+  --color-background: #ffffff;
+  --color-surface: #f8f9fa;
+  --color-text: #1a1a1a;
+  --color-text-muted: #617685;
+
+  /* Fuentes */
+  --font-libre-franklin: "Libre Franklin", system-ui, -apple-system, sans-serif;
+  --font-crimson-text: "Crimson Text", Georgia, "Times New Roman", serif;
+
+  /* Layout */
+  --max-width: 1200px;
+  --header-height: 80px;
+}
+
+/* Selección de texto con colores corporativos */
+::selection {
+  background-color: var(--color-coral);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: var(--color-coral);
+  color: #ffffff;
+}
+
+/* Estilos base para contenido editorial */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-white text-gray-900;
+  }
+
+  /* Tipografía editorial para artículos */
+  .prose-editorial {
+    font-family: var(--font-crimson-text), serif;
+    max-width: 695px;
+    margin: 0 auto;
+  }
+
+  .prose-editorial p {
+    text-align: justify;
+    text-indent: 2em;
+    line-height: 1.35em;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    margin-bottom: 1em;
+  }
+
+  .prose-editorial p:first-of-type {
+    text-indent: 0;
+  }
+
+  .prose-editorial h2 {
+    font-family: var(--font-libre-franklin), sans-serif;
+    font-size: 41px;
+    color: var(--color-azul);
+    letter-spacing: -1px;
+    line-height: 1.2;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    text-indent: 0;
+  }
+
+  .prose-editorial blockquote {
+    border-left: 3px solid var(--color-coral);
+    padding-left: 1.5em;
+    margin: 1.5em 0;
+    font-style: italic;
+    color: var(--color-acero);
+  }
+
+  .prose-editorial a {
+    color: var(--color-coral);
+    text-decoration: underline;
+    text-decoration-color: var(--color-coral-light);
+    text-underline-offset: 2px;
+    transition: color 0.2s;
+  }
+
+  .prose-editorial a:hover {
+    color: var(--color-azul);
+  }
+}
+
+@layer components {
+  /* Patrón de categoría: [NombreCategoría */
+  .category-bracket::before {
+    content: "[";
+    color: var(--color-coral);
+    font-weight: 700;
+  }
+
+  /* Patrón de tag: (NombreTag) */
+  .tag-paren::before {
+    content: "(";
+    color: var(--color-coral);
+    font-weight: 600;
+  }
+
+  .tag-paren::after {
+    content: ")";
+    color: var(--color-coral);
+    font-weight: 600;
+  }
+
+  /* Tarjeta de artículo con hover coral */
+  .article-card {
+    @apply bg-white shadow-card transition-all duration-200;
+  }
+
+  .article-card:hover {
+    @apply bg-coral shadow-card-hover;
+    transform: scale(1.01);
+  }
+
+  .article-card:hover .article-card-title {
+    @apply text-white;
+  }
+
+  .article-card:hover .article-card-excerpt {
+    @apply text-white/90;
+  }
+
+  .article-card:hover .article-card-meta {
+    @apply text-white/80;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

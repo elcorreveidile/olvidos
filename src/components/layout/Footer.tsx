@@ -1,0 +1,119 @@
+import Link from "next/link";
+
+export function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="bg-azul text-white">
+      <div className="max-w-content mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Logo y descripción */}
+          <div className="md:col-span-1">
+            <Link href="/" className="inline-flex items-baseline">
+              <span className="text-coral text-2xl font-black">[</span>
+              <span className="text-white text-xl font-bold">olvidos</span>
+            </Link>
+            <p className="mt-2 text-sm text-acero-light leading-relaxed">
+              Revista de acciones culturales
+            </p>
+            <p className="mt-1 text-xs text-acero-light">ISSN 2605-4515</p>
+          </div>
+
+          {/* Secciones */}
+          <div>
+            <h3 className="text-sm font-bold mb-4 text-coral-light">Secciones</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/articulos?categoria=editoriales" className="text-sm text-acero-light hover:text-coral transition-colors">
+                  Editoriales
+                </Link>
+              </li>
+              <li>
+                <Link href="/articulos?categoria=palabras" className="text-sm text-acero-light hover:text-coral transition-colors">
+                  Palabras
+                </Link>
+              </li>
+              <li>
+                <Link href="/articulos?categoria=piezas-y-procesos" className="text-sm text-acero-light hover:text-coral transition-colors">
+                  Piezas y Procesos
+                </Link>
+              </li>
+              <li>
+                <Link href="/articulos?categoria=soneto500" className="text-sm text-acero-light hover:text-coral transition-colors">
+                  Soneto500
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Enlaces */}
+          <div>
+            <h3 className="text-sm font-bold mb-4 text-coral-light">Información</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/sobre-nosotros" className="text-sm text-acero-light hover:text-coral transition-colors">
+                  Sobre Olvidos
+                </Link>
+              </li>
+              <li>
+                <Link href="/memoria" className="text-sm text-acero-light hover:text-coral transition-colors">
+                  Memoria
+                </Link>
+              </li>
+              <li>
+                <Link href="/actividades" className="text-sm text-acero-light hover:text-coral transition-colors">
+                  Actividades
+                </Link>
+              </li>
+              <li>
+                <Link href="/contacto" className="text-sm text-acero-light hover:text-coral transition-colors">
+                  Contacto
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Socios */}
+          <div>
+            <h3 className="text-sm font-bold mb-4 text-coral-light">Socios</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/hazte-socio" className="text-sm text-acero-light hover:text-coral transition-colors">
+                  Hazte socio
+                </Link>
+              </li>
+              <li>
+                <Link href="/login" className="text-sm text-acero-light hover:text-coral transition-colors">
+                  Área de socios
+                </Link>
+              </li>
+            </ul>
+            <div className="mt-6">
+              <Link
+                href="/hazte-socio"
+                className="inline-block px-6 py-2 bg-coral text-white text-sm font-bold rounded-sm hover:bg-coral-dark transition-colors"
+              >
+                Hazte socio
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-acero-light">
+            &copy; {currentYear} Asociación Cultural Olvidos de Granada. Todos los derechos reservados.
+          </p>
+          <div className="flex gap-6">
+            <Link href="/aviso-legal" className="text-xs text-acero-light hover:text-coral transition-colors">
+              Aviso legal
+            </Link>
+            <Link href="/privacidad" className="text-xs text-acero-light hover:text-coral transition-colors">
+              Política de privacidad
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
