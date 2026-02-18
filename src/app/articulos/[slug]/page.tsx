@@ -2,11 +2,8 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { getArticleBySlug, getPublishedArticles, getCategoriesWithCount } from "@/lib/queries";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { Sidebar } from "@/components/layout/Sidebar";
-import { ContentStatus } from "@prisma/client";
+import { getArticleBySlug, getPublishedArticles } from "@/lib/actions/articles";
+import { Calendar, User, FolderOpen } from "lucide-react";
 
 interface ArticlePageProps {
   params: {
@@ -16,13 +13,15 @@ interface ArticlePageProps {
 
 // Generar metadatos dinámicos para SEO
 export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
-  const article = await getArticleBySlug(params.slug);
+  const result = await getArticleBySlug(params.slug, true);
 
-  if (!article) {
+  if (!result.success || !result.article) {
     return {
       title: "Artículo no encontrado",
     };
   }
+
+  const article = result.article;
 
   return {
     title: article.metaTitle || article.title,
@@ -32,7 +31,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       description: article.metaDescription || article.excerpt || undefined,
       type: "article",
       publishedTime: article.publishedAt || undefined,
-      authors: article.author.name ? [article.author.name] : undefined,
+      authors: article.author?.name ? [article.author.name] : undefined,
       images: article.coverImage
         ? [
             {
@@ -47,20 +46,18 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   };
 }
 
-// Server Component para la página de artículo
 export default async function ArticlePage({ params }: ArticlePageProps) {
-  const article = await getArticleBySlug(params.slug);
+  const result = await getArticleBySlug(params.slug, true);
 
-  // 404 si el artículo no existe
-  if (!article) {
+  if (!result.success || !result.article) {
     notFound();
   }
 
-  // Obtener artículos recientes y categorías para el sidebar
-  const [recentArticles, categoriesWithCount] = await Promise.all([
-    getPublishedArticles(1, 5),
-    getCategoriesWithCount(),
-  ]);
+  const article = result.article;
+
+  // Obtener artículos recientes para sidebar
+  const recentResult = await getPublishedArticles({ limit: 5 });
+  const recentArticles = recentResult.success && recentResult.articles ? recentResult.articles : [];
 
   // Formatear fecha en español
   const formattedDate = article.publishedAt
@@ -71,22 +68,72 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       }).format(new Date(article.publishedAt))
     : null;
 
-  // TODO: Implementar lógica de membresía cuando se tenga auth
-  // Por ahora, mostramos el contenido completo si está publicado
-  const showFullContent = article.status === "PUBLISHED";
-
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+    <div className="min-h-screen bg-gray-50">
+      {/* Breadcrumbs */}
+      <div className="bg-white border-b border-gray-200 py-4 mt-16">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center gap-2 text-sm text-acero">
+            <Link href="/" className="hover:text-coral transition-colors">
+              Inicio
+            </Link>
+            <span>/</span>
+            <Link href="/articulos" className="hover:text-coral transition-colors">
+              Artículos
+            </Link>
+            <span>/</span>
+            <span className="text-azul font-medium">{article.title}</span>
+          </div>
+        </div>
+      </div>
 
-      <main className="max-w-content mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12">
+      <main className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-12">
           {/* Contenido principal del artículo */}
-          <article className="max-w-article">
-            {/* Título H1 con estilo editorial */}
-            <h1 className="text-h1-article text-azul font-bold mb-8">
+          <article className="bg-white rounded-sm shadow-card p-8">
+            {/* Título H1 */}
+            <h1 className="text-4xl md:text-5xl font-black text-azul mb-6">
               {article.title}
             </h1>
+
+            {/* Metadatos del artículo */}
+            <div className="flex flex-wrap items-center gap-6 text-sm text-acero mb-8 pb-8 border-b border-gray-200">
+              {/* Autor */}
+              {article.author && (
+                <div className="flex items-center gap-2">
+                  <User className="w-4 h-4" />
+                  <span className="font-medium">{article.author.name}</span>
+                </div>
+              )}
+
+              {/* Fecha de publicación */}
+              {formattedDate && (
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4" />
+                  <span>{formattedDate}</span>
+                </div>
+              )}
+
+              {/* Categorías */}
+              {article.categories && article.categories.length > 0 && (
+                <div className="flex items-center gap-2">
+                  <FolderOpen className="w-4 h-4" />
+                  <span className="flex items-center gap-2">
+                    {article.categories.map((cat: any, index: number) => (
+                      <span key={cat.category?.slug || cat.id}>
+                        <Link
+                          href={`/categoria/${cat.category?.slug}`}
+                          className="text-coral hover:text-coral/80 transition-colors font-medium"
+                        >
+                          {cat.category?.name}
+                        </Link>
+                        {index < (article.categories?.length || 0) - 1 && ", "}
+                      </span>
+                    ))}
+                  </span>
+                </div>
+              )}
+            </div>
 
             {/* Imagen de portada si existe */}
             {article.coverImage && (
@@ -97,83 +144,35 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                   fill
                   className="object-cover"
                   priority
-                  sizes="(max-width: 695px) 100vw, 695px"
+                  sizes="(max-width: 768px) 100vw, 768px"
                 />
               </div>
             )}
 
-            {/* Metadatos del artículo */}
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-acero mb-8 pb-8 border-b border-acero-light/30">
-              {/* Autor */}
-              {article.author.name && (
-                <span className="font-medium">{article.author.name}</span>
-              )}
-
-              {/* Fecha de publicación */}
-              {formattedDate && <span>{formattedDate}</span>}
-
-              {/* Categorías */}
-              {article.categories.length > 0 && (
-                <span className="flex items-center gap-2">
-                  {article.categories.map((cat, index) => (
-                    <span key={cat.category.slug}>
-                      <Link
-                        href={`/articulos?categoria=${cat.category.slug}`}
-                        className="category-bracket hover:text-coral transition-colors"
-                      >
-                        {cat.category.name}
-                      </Link>
-                      {index < article.categories.length - 1 && ", "}
-                    </span>
-                  ))}
-                </span>
-              )}
-
-              {/* Número de revista si existe */}
-              {article.issue && (
-                <span>
-                  <Link
-                    href={`/revista/${article.issue.slug}`}
-                    className="hover:text-coral transition-colors"
-                  >
-                    Nº {article.issue.number}
-                  </Link>
-                </span>
-              )}
-            </div>
-
             {/* Tags */}
-            {article.tags.length > 0 && (
+            {article.tags && article.tags.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-8">
-                {article.tags.map((tag) => (
+                {article.tags.map((tagItem: any) => (
                   <Link
-                    key={tag.tag.slug}
-                    href={`/articulos?tag=${tag.tag.slug}`}
-                    className="tag-paren text-sm text-acero hover:text-coral transition-colors"
+                    key={tagItem.tag?.slug || tagItem.id}
+                    href={`/etiqueta/${tagItem.tag?.slug}`}
+                    className="px-3 py-1 bg-gray-100 text-acero text-sm rounded-full hover:bg-coral hover:text-white transition-colors"
                   >
-                    {tag.tag.name}
+                    #{tagItem.tag?.name}
                   </Link>
                 ))}
               </div>
             )}
 
             {/* Contenido del artículo */}
-            {showFullContent ? (
-              <div
-                className="prose-editorial"
-                dangerouslySetInnerHTML={{ __html: article.content }}
-              />
-            ) : (
-              <div className="prose-editorial">
-                <p className="text-acero-light italic">
-                  Este artículo aún no está disponible.
-                </p>
-              </div>
-            )}
+            <div
+              className="prose prose-lg max-w-none text-acero"
+              dangerouslySetInnerHTML={{ __html: article.content }}
+            />
 
-            {/* Teaser para miembros (cuando se implemente auth) */}
-            {article.membersOnly && !showFullContent && article.excerpt && (
-              <div className="mt-8 p-6 bg-surface rounded-sm border border-acero-light/30">
+            {/* Teaser para miembros */}
+            {article.membersOnly && article.excerpt && (
+              <div className="mt-8 p-6 bg-coral/10 rounded-sm border border-coral/30">
                 <h3 className="text-azul font-bold mb-2">Contenido exclusivo para socios</h3>
                 <p className="text-acero mb-4">{article.excerpt}</p>
                 <Link
@@ -188,32 +187,49 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
           {/* Sidebar lateral (desktop) */}
           <aside className="hidden lg:block">
-            <Sidebar
-              categories={categoriesWithCount.map((cat) => ({
-                name: cat.name,
-                slug: cat.slug,
-                count: cat._count.articles,
-              }))}
-              recentArticles={recentArticles.articles.map((art) => ({
-                title: art.title,
-                slug: art.slug,
-                publishedAt: art.publishedAt!,
-              }))}
-            />
+            {/* Artículos recientes */}
+            {recentArticles.length > 0 && (
+              <div className="bg-white rounded-sm shadow-card p-6 mb-6">
+                <h3 className="text-lg font-bold text-azul mb-4">Artículos recientes</h3>
+                <div className="space-y-4">
+                  {recentArticles.slice(0, 5).map((recentArticle) => (
+                    <Link
+                      key={recentArticle.id}
+                      href={`/articulos/${recentArticle.slug}`}
+                      className="block group"
+                    >
+                      <h4 className="text-sm font-medium text-azul group-hover:text-coral transition-colors line-clamp-2">
+                        {recentArticle.title}
+                      </h4>
+                      {recentArticle.publishedAt && (
+                        <p className="text-xs text-acero-light mt-1">
+                          {new Date(recentArticle.publishedAt).toLocaleDateString("es-ES", {
+                            day: "numeric",
+                            month: "short",
+                          })}
+                        </p>
+                      )}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </aside>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }
 
 // Generar rutas estáticas para todos los artículos publicados
 export async function generateStaticParams() {
-  const articles = await getPublishedArticles(1, 1000);
+  const result = await getPublishedArticles({ limit: 1000 });
 
-  return articles.articles.map((article) => ({
+  if (!result.success || !result.articles) {
+    return [];
+  }
+
+  return result.articles.map((article) => ({
     slug: article.slug,
   }));
 }

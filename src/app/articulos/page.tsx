@@ -54,13 +54,13 @@ export default async function ArticulosPage() {
                   {/* Categories */}
                   {article.categories && article.categories.length > 0 && (
                     <div className="flex flex-wrap gap-2 mb-3">
-                      {article.categories.map((category: any) => (
+                      {article.categories.map((catItem: any) => (
                         <Link
-                          key={category.id}
-                          href={`/categoria/${category.slug}`}
+                          key={catItem.id}
+                          href={`/categoria/${catItem.category.slug}`}
                           className="text-xs font-bold text-coral hover:text-coral/80"
                         >
-                          {category.name}
+                          {catItem.category.name}
                         </Link>
                       ))}
                     </div>
@@ -106,14 +106,14 @@ export default async function ArticulosPage() {
                   {/* Tags */}
                   {article.tags && article.tags.length > 0 && (
                     <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-acero/10">
-                      {article.tags.slice(0, 3).map((tag: any) => (
+                      {article.tags.slice(0, 3).map((tagItem: any) => (
                         <Link
-                          key={tag.id}
-                          href={`/etiqueta/${tag.slug}`}
+                          key={tagItem.id}
+                          href={`/etiqueta/${tagItem.tag.slug}`}
                           className="flex items-center gap-1 text-xs text-acero hover:text-coral transition-colors"
                         >
                           <Tag className="w-3 h-3" />
-                          {tag.name}
+                          {tagItem.tag.name}
                         </Link>
                       ))}
                     </div>

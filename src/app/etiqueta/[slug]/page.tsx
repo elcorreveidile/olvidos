@@ -1,146 +1,154 @@
-import { notFound, redirect } from "next/navigation";
-import { getArticlesByTag, getCategoriesWithCount } from "@/lib/queries";
-import { ArticleCard } from "@/components/content/ArticleCard";
-import { Pagination } from "@/components/shared/Pagination";
-import { Sidebar } from "@/components/layout/Sidebar";
-import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { getPublishedArticles } from "@/lib/actions/articles";
+import Link from "next/link";
+import { Calendar, User, Hash } from "lucide-react";
 
 interface TagPageProps {
-  params: Promise<{ slug: string }>;
-  searchParams: Promise<{ page?: string }>;
-}
-
-/**
- * Genera metadata dinámica para la etiqueta
- */
-export async function generateMetadata({
-  params,
-}: TagPageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const result = await getArticlesByTag(slug, 1, 1);
-
-  if (!result.tag) {
-    return {
-      title: "Etiqueta no encontrada",
-    };
-  }
-
-  return {
-    title: `#${result.tag.name} — Olvidos de Granada`,
-    description: `Artículos etiquetados con "${result.tag.name}" en Olvidos de Granada.`,
+  params: {
+    slug: string;
   };
 }
 
-/**
- * Server Component para listar artículos por etiqueta
- */
-export default async function TagPage({
-  params,
-  searchParams,
-}: TagPageProps) {
-  const { slug } = await params;
-  const { page = "1" } = await searchParams;
+export default async function TagPage({ params }: TagPageProps) {
+  const { slug } = params;
 
-  // Validar página
-  const currentPage = parseInt(page, 10);
-  const itemsPerPage = 12;
+  // Obtener artículos con esta etiqueta
+  const result = await getPublishedArticles({ tag: slug });
 
-  // Obtener datos
-  const result = await getArticlesByTag(slug, currentPage, itemsPerPage);
-
-  // Si la etiqueta no existe, mostrar 404
-  if (!result.tag) {
-    notFound();
+  if (!result.success || !result.articles) {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <div className="container mx-auto px-4 py-12">
+          <p className="text-acero">Cargando...</p>
+        </div>
+      </div>
+    );
   }
 
-  // Si la página está fuera de rango, redirigir a la página 1
-  if (currentPage > result.totalPages && currentPage > 1) {
-    redirect(`/etiqueta/${slug}`);
-  }
+  const articles = result.articles;
 
-  // Obtener categorías y artículos recientes para el sidebar
-  const [categories, recentArticles] = await Promise.all([
-    getCategoriesWithCount(),
-    getArticlesByTag(slug, 1, 5).then((r) =>
-      r.articles.map((a) => ({
-        title: a.title,
-        slug: a.slug,
-        publishedAt: a.publishedAt!,
-      }))
-    ),
-  ]);
-
-  const categoriesWithCount = categories.map((cat) => ({
-    name: cat.name,
-    slug: cat.slug,
-    count: cat._count.articles,
-  }));
+  // Obtener nombre de etiqueta desde el primer artículo
+  const tagName = articles[0]?.tags?.find(
+    (tagItem: any) => tagItem.tag?.slug === slug
+  )?.tag?.name || slug;
 
   return (
-    <div className="max-w-content mx-auto px-4 py-8">
-      <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-12">
-        {/* Contenido principal */}
-        <div className="space-y-8">
-          {/* Header de sección */}
-          <header className="border-b border-acero-light pb-6">
-            <h1 className="text-4xl font-bold text-azul mb-4">
-              <span className="text-coral">#</span>
-              {result.tag.name}
-            </h1>
-            <p className="text-sm text-acero-light">
-              {result.total} artículo{result.total !== 1 ? "s" : ""} con esta
-              etiqueta
-            </p>
-          </header>
-
-          {/* Estado vacío */}
-          {result.articles.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-acero text-lg">
-                No hay artículos publicados con esta etiqueta.
-              </p>
-            </div>
-          )}
-
-          {/* Grid de artículos */}
-          {result.articles.length > 0 && (
-            <>
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                {result.articles.map((article) => (
-                  <ArticleCard
-                    key={article.id}
-                    title={article.title}
-                    slug={article.slug}
-                    excerpt={article.excerpt}
-                    coverImage={article.coverImage}
-                    publishedAt={article.publishedAt}
-                    category={article.categories[0]?.category || null}
-                    author={article.author}
-                  />
-                ))}
-              </div>
-
-              {/* Paginación */}
-              {result.totalPages > 1 && (
-                <div className="pt-8">
-                  <Pagination
-                    currentPage={currentPage}
-                    totalPages={result.totalPages}
-                    basePath={`/etiqueta/${slug}`}
-                  />
-                </div>
-              )}
-            </>
-          )}
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <div className="bg-azul text-white py-16 mt-16">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center gap-3 mb-4">
+            <Hash className="w-8 h-8 text-coral" />
+            <h1 className="text-5xl font-black">{tagName}</h1>
+          </div>
+          <p className="text-xl opacity-90">
+            {articles.length} artículo{articles.length !== 1 ? "s" : ""} con esta etiqueta
+          </p>
         </div>
+      </div>
 
-        {/* Sidebar */}
-        <aside>
-          <Sidebar
-            categories={categoriesWithCount}
-            recentArticles={recentArticles}
-          />
-        </aside>
+      {/* Articles Grid */}
+      <div className="container mx-auto px-4 py-12">
+        {articles.length === 0 ? (
+          <div className="text-center py-12 bg-white rounded-sm shadow-card">
+            <Hash className="w-16 h-16 text-acero-light mx-auto mb-4" />
+            <p className="text-acero text-lg">
+              No hay artículos publicados con esta etiqueta.
+            </p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {articles.map((article) => (
+              <article
+                key={article.id}
+                className="bg-white rounded-sm shadow-card hover:shadow-card-hover transition-all"
+              >
+                {/* Article Image */}
+                {article.coverImage && (
+                  <Link href={`/articulos/${article.slug}`}>
+                    <div className="relative h-48 overflow-hidden rounded-t-sm">
+                      <img
+                        src={article.coverImage}
+                        alt={article.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  </Link>
+                )}
+
+                {/* Article Content */}
+                <div className="p-6">
+                  {/* Categories */}
+                  {article.categories && article.categories.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {article.categories.map((cat: any) => (
+                        <Link
+                          key={cat.id}
+                          href={`/categoria/${cat.category.slug}`}
+                          className="text-xs font-bold text-coral hover:text-coral/80"
+                        >
+                          {cat.category.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Title */}
+                  <Link href={`/articulos/${article.slug}`}>
+                    <h2 className="text-xl font-bold text-azul mb-3 hover:text-coral transition-colors line-clamp-2">
+                      {article.title}
+                    </h2>
+                  </Link>
+
+                  {/* Excerpt */}
+                  <p className="text-acero mb-4 line-clamp-3">
+                    {article.excerpt}
+                  </p>
+
+                  {/* Tags */}
+                  {article.tags && article.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {article.tags.slice(0, 3).map((tagItem: any) => (
+                        <Link
+                          key={tagItem.id}
+                          href={`/etiqueta/${tagItem.tag.slug}`}
+                          className="px-2 py-1 bg-gray-100 text-xs text-acero rounded hover:bg-coral hover:text-white transition-colors"
+                        >
+                          #{tagItem.tag.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Meta */}
+                  <div className="flex items-center gap-4 text-sm text-acero-light">
+                    {article.author && (
+                      <div className="flex items-center gap-1">
+                        <User className="w-4 h-4" />
+                        <span>{article.author.name}</span>
+                      </div>
+                    )}
+                    {article.publishedAt && (
+                      <div className="flex items-center gap-1">
+                        <Calendar className="w-4 h-4" />
+                        <time>
+                          {new Date(article.publishedAt).toLocaleDateString(
+                            "es-ES",
+                            {
+                              day: "numeric",
+                              month: "short",
+                              year: "numeric",
+                            }
+                          )}
+                        </time>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
