@@ -2,16 +2,15 @@ import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import {
-  LayoutDashboard,
-  FileText,
+  User,
+  CreditCard,
+  IdCard,
   Settings,
-  Users,
   LogOut,
   Menu,
-  CreditCard,
 } from "lucide-react";
 
-export default async function AdminLayout({
+export default async function MemberLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -22,18 +21,19 @@ export default async function AdminLayout({
     redirect("/login");
   }
 
-  // Check if user has admin or editor role
-  const userRole = session.user.role;
-  if (userRole !== "ADMIN" && userRole !== "EDITOR") {
-    redirect("/");
+  // Check if user is a member
+  if (session.user.role !== "MEMBER" &&
+      session.user.role !== "ADMIN" &&
+      session.user.role !== "MEMBER_ADMIN" &&
+      session.user.role !== "EDITOR") {
+    redirect("/hazte-socio");
   }
 
   const navigation = [
-    { name: "Dashboard", href: "/admin", icon: LayoutDashboard },
-    { name: "Artículos", href: "/admin/articulos", icon: FileText },
-    { name: "Socios", href: "/admin/socios", icon: Users },
-    { name: "Pagos", href: "/admin/pagos", icon: CreditCard },
-    { name: "Configuración", href: "/admin/configuracion", icon: Settings },
+    { name: "Dashboard", href: "/mi-cuenta", icon: User },
+    { name: "Mi Perfil", href: "/mi-cuenta/perfil", icon: Settings },
+    { name: "Pagos", href: "/mi-cuenta/pagos", icon: CreditCard },
+    { name: "Carnet Digital", href: "/mi-cuenta/carnet", icon: IdCard },
   ];
 
   return (
@@ -43,11 +43,11 @@ export default async function AdminLayout({
         <div className="flex flex-col h-full">
           {/* Logo */}
           <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200">
-            <Link href="/admin" className="text-xl font-bold text-blue-900">
+            <Link href="/mi-cuenta" className="text-xl font-bold text-azul">
               Olvidos de Granada
             </Link>
             <span className="text-xs bg-coral-100 text-coral-700 px-2 py-1 rounded">
-              Admin
+              Socio
             </span>
           </div>
 
@@ -72,7 +72,7 @@ export default async function AdminLayout({
           <div className="p-4 border-t border-gray-200">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-blue-900 text-white rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-azul text-white rounded-full flex items-center justify-center">
                   {session.user.name?.charAt(0) || session.user.email?.charAt(0)}
                 </div>
                 <div>
@@ -96,17 +96,24 @@ export default async function AdminLayout({
               <button className="lg:hidden">
                 <Menu className="w-6 h-6" />
               </button>
+              <h1 className="text-xl font-semibold text-gray-900">
+                Área de Socios
+              </h1>
             </div>
             <div className="flex items-center gap-4">
-              <span className="text-sm text-gray-600">
-                Rol: <span className="font-medium">{userRole}</span>
-              </span>
+              <Link
+                href="/api/auth/signout"
+                className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
+              >
+                <LogOut className="w-4 h-4" />
+                Cerrar sesión
+              </Link>
             </div>
           </div>
         </header>
 
         {/* Page content */}
-        <main>{children}</main>
+        <main className="p-8">{children}</main>
       </div>
     </div>
   );

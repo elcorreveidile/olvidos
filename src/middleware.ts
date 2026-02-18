@@ -16,7 +16,22 @@ export default auth((req) => {
     }
   }
 
-  // Zona de socios: requiere login
+  // Área de miembros (mi-cuenta): requiere MEMBER role o roles superiores
+  if (pathname.startsWith("/mi-cuenta")) {
+    if (!isLoggedIn) {
+      return NextResponse.redirect(new URL("/login", req.url));
+    }
+    if (
+      userRole !== "MEMBER" &&
+      userRole !== "ADMIN" &&
+      userRole !== "MEMBER_ADMIN" &&
+      userRole !== "EDITOR"
+    ) {
+      return NextResponse.redirect(new URL("/hazte-socio", req.url));
+    }
+  }
+
+  // Directorio de socios: requiere login
   if (pathname.startsWith("/socios")) {
     if (!isLoggedIn) {
       return NextResponse.redirect(new URL("/login", req.url));
@@ -27,5 +42,5 @@ export default auth((req) => {
 });
 
 export const config = {
-  matcher: ["/admin/:path*", "/socios/:path*"],
+  matcher: ["/admin/:path*", "/mi-cuenta/:path*", "/socios/:path*"],
 };
