@@ -57,6 +57,30 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     }),
   ],
   callbacks: {
+    async signIn({ user, account }) {
+      if (account?.provider === "github") {
+        // Verificar si el usuario tiene un miembro activo
+        const member = await db.member.findFirst({
+          where: {
+            userId: user.id,
+            status: "ACTIVE",
+          },
+        });
+
+        // Si tiene miembro activo, puede continuar
+        // Si no, también puede continuar (pero luego lo redirigiremos)
+        return true;
+      }
+      return true;
+    },
+    async redirect({ url, baseUrl }) {
+      // Si la URL viene desde el servidor, úsala
+      if (url.startsWith("/")) return `${baseUrl}${url}`;
+      // Si es una URL completa, úsala
+      else if (new URL(url).origin === baseUrl) return url;
+      // Por defecto, ir a mi-cuenta después del login
+      return `${baseUrl}/mi-cuenta`;
+    },
     async jwt({ token, user }) {
       if (user) {
         token.role = user.role;
