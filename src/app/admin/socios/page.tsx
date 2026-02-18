@@ -102,7 +102,7 @@ export default async function AdminMembersPage({ searchParams }: PageProps) {
           </p>
         </div>
         <Button asChild>
-          <Link href="/admin/socios/nuevo">
+          <Link href="/admin/socios/crear">
             <Plus className="mr-2 h-4 w-4" />
             Nuevo Socio
           </Link>
