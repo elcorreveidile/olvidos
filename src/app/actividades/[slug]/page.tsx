@@ -56,7 +56,7 @@ export default async function EventPage({ params }: PageProps) {
       });
 
       isRegistered = !!registration;
-      registrationStatus = registration?.status;
+      registrationStatus = registration?.status ?? null;
     }
   }
 
