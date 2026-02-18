@@ -17,6 +17,8 @@ import {
   User,
   CheckCircle,
   AlertCircle,
+  Settings,
+  Phone,
 } from "lucide-react";
 
 export default async function MemberDashboardPage() {
@@ -169,7 +171,7 @@ export default async function MemberDashboardPage() {
           <CardContent className="space-y-2">
             <Button asChild className="w-full justify-start">
               <Link href="/mi-cuenta/carnet">
-                <IdCard className="mr-2 h-4 w-4" />
+                <CreditCard className="mr-2 h-4 w-4" />
                 Ver Carnet Digital
               </Link>
             </Button>

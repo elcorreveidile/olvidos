@@ -1,6 +1,7 @@
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
-import { getMember, getMemberPayments } from "@/lib/actions/members";
+import { getMember } from "@/lib/actions/members";
+import { getMemberPayments } from "@/lib/actions/payments";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";

@@ -134,7 +134,7 @@ export default async function SearchPage({
             {/* Header de sección */}
             <header className="border-b border-acero-light pb-6">
               <h1 className="text-4xl font-bold text-azul mb-4">
-                Resultados para: <span className="text-coral">"{query}"</span>
+                Resultados para: <span className="text-coral">&quot;{query}&quot;</span>
               </h1>
               <p className="text-sm text-acero-light">
                 {searchResult.total} resultado{searchResult.total !== 1 ? "s" : ""} encontrado{searchResult.total !== 1 ? "s" : ""}
@@ -164,7 +164,7 @@ export default async function SearchPage({
             {searchResult.articles.length === 0 && (
               <div className="text-center py-12">
                 <p className="text-acero text-lg">
-                  No se encontraron resultados para "{query}"
+                  No se encontraron resultados para &quot;{query}&quot;
                 </p>
                 <p className="text-acero-light mt-2">
                   Intenta con otros términos de búsqueda.

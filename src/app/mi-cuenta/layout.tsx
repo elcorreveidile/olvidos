@@ -4,7 +4,6 @@ import Link from "next/link";
 import {
   User,
   CreditCard,
-  IdCard,
   Settings,
   LogOut,
   Menu,
@@ -33,7 +32,7 @@ export default async function MemberLayout({
     { name: "Dashboard", href: "/mi-cuenta", icon: User },
     { name: "Mi Perfil", href: "/mi-cuenta/perfil", icon: Settings },
     { name: "Pagos", href: "/mi-cuenta/pagos", icon: CreditCard },
-    { name: "Carnet Digital", href: "/mi-cuenta/carnet", icon: IdCard },
+    { name: "Carnet Digital", href: "/mi-cuenta/carnet", icon: CreditCard },
   ];
 
   return (
