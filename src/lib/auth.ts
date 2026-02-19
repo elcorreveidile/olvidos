@@ -1,4 +1,5 @@
 import NextAuth from "next-auth";
+import { PrismaAdapter } from "@auth/prisma-adapter";
 import Credentials from "next-auth/providers/credentials";
 import GitHub from "next-auth/providers/github";
 import bcrypt from "bcryptjs";
@@ -11,6 +12,7 @@ const loginSchema = z.object({
 });
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  adapter: PrismaAdapter(db),
   session: {
     strategy: "jwt",
     maxAge: 30 * 24 * 60 * 60, // 30 days
@@ -18,17 +20,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   pages: {
     signIn: "/login",
     error: "/login",
-  },
-  cookies: {
-    sessionToken: {
-      name: `next-auth.session-token`,
-      options: {
-        httpOnly: true,
-        sameSite: "lax",
-        path: "/",
-        secure: process.env.NODE_ENV === "production",
-      },
-    },
   },
   providers: [
     GitHub({
@@ -42,81 +33,61 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         password: { label: "Contraseña", type: "password" },
       },
       async authorize(credentials) {
-        const parsed = loginSchema.safeParse(credentials);
-        if (!parsed.success) return null;
+        try {
+          const parsed = loginSchema.safeParse(credentials);
+          if (!parsed.success) {
+            console.log("Login validation failed:", parsed.error.format());
+            return null;
+          }
 
-        const user = await db.user.findUnique({
-          where: { email: parsed.data.email },
-        });
+          const user = await db.user.findUnique({
+            where: { email: parsed.data.email },
+          });
 
-        if (!user || !user.password) return null;
+          if (!user) {
+            console.log("User not found:", parsed.data.email);
+            return null;
+          }
 
-        const isValid = await bcrypt.compare(
-          parsed.data.password,
-          user.password
-        );
+          if (!user.password) {
+            console.log("User has no password set - likely OAuth user");
+            return null;
+          }
 
-        if (!isValid) return null;
+          const isValid = await bcrypt.compare(
+            parsed.data.password,
+            user.password
+          );
 
-        return {
-          id: user.id,
-          email: user.email,
-          name: user.name,
-          image: user.image,
-          role: user.role,
-        };
+          if (!isValid) {
+            console.log("Invalid password for user:", parsed.data.email);
+            return null;
+          }
+
+          console.log("Login successful for user:", user.email);
+          return {
+            id: user.id,
+            email: user.email,
+            name: user.name,
+            image: user.image,
+            role: user.role,
+          };
+        } catch (error) {
+          console.error("Error during credentials authorization:", error);
+          return null;
+        }
       },
     }),
   ],
   callbacks: {
     async signIn({ user, account }) {
-      if (account?.provider === "github" && user.email) {
-        // Check if user exists in database
-        const existingUser = await db.user.findUnique({
-          where: { email: user.email },
-        });
-
-        if (!existingUser) {
-          // Create user in database
-          await db.user.create({
-            data: {
-              email: user.email,
-              name: user.name,
-              image: user.image,
-              role: "USER",
-            },
-          });
-        }
-        return true;
-      }
+      // Allow sign in
       return true;
     },
-    async jwt({ token, user, trigger, session, account }) {
-      // Initial sign in
+    async jwt({ token, user }) {
       if (user) {
-        // If user logged in with GitHub, fetch role from database
-        if (account?.provider === "github" && user.email) {
-          const dbUser = await db.user.findUnique({
-            where: { email: user.email },
-          });
-          if (dbUser) {
-            token.role = dbUser.role;
-            token.id = dbUser.id;
-          } else {
-            token.role = user.role || "USER";
-            token.id = user.id;
-          }
-        } else {
-          token.role = user.role;
-          token.id = user.id;
-        }
-        token.email = user.email;
-        token.name = user.name;
-        token.picture = user.image;
-      }
-      // Handle session updates
-      if (trigger === "update" && session) {
-        token = { ...token, ...session };
+        token.role = user.role;
+        token.id = user.id;
       }
       return token;
     },

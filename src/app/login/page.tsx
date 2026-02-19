@@ -1,7 +1,13 @@
 import { signIn } from "@/lib/auth";
 import { Github } from "lucide-react";
 
-export default function LoginPage() {
+export default function LoginPage({
+  searchParams,
+}: {
+  searchParams: { error?: string };
+}) {
+  const errorMessage = getErrorMessage(searchParams.error);
+
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4">
       <div className="max-w-md w-full">
@@ -12,6 +18,13 @@ export default function LoginPage() {
             Accede a tu área de socio
           </p>
         </div>
+
+        {/* Error Message */}
+        {errorMessage && (
+          <div className="mb-6 p-4 bg-red-50 border-l-4 border-red-500 rounded-sm">
+            <p className="text-red-700 text-sm">{errorMessage}</p>
+          </div>
+        )}
 
         {/* Login Card */}
         <div className="bg-white rounded-sm shadow-card p-8">
@@ -49,7 +62,14 @@ export default function LoginPage() {
               "use server";
               const email = formData.get("email") as string;
               const password = formData.get("password") as string;
-              await signIn("credentials", { email, password, redirectTo: "/mi-cuenta" });
+              const result = await signIn("credentials", {
+                email,
+                password,
+                redirectTo: "/mi-cuenta",
+              });
+              if (result?.error) {
+                throw new Error(result.error);
+              }
             }}
             className="space-y-4"
           >
@@ -121,4 +141,18 @@ export default function LoginPage() {
       </div>
     </div>
   );
+}
+
+function getErrorMessage(error: string | undefined): string | null {
+  if (!error) return null;
+
+  const errorMessages: Record<string, string> = {
+    CredentialsSignin: "Email o contraseña incorrectos",
+    Configuration: "Error de configuración del servidor. Contacta al administrador.",
+    AccessDenied: "Acceso denegado",
+    Verification: "Error de verificación",
+    Default: "Error al iniciar sesión. Inténtalo de nuevo.",
+  };
+
+  return errorMessages[error] || errorMessages.Default;
 }
