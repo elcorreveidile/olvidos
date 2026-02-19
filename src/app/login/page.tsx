@@ -1,11 +1,11 @@
 import { signIn } from "@/lib/auth";
 import { Github } from "lucide-react";
 
-export default function LoginPage({
-  searchParams,
-}: {
+interface LoginPageProps {
   searchParams: { error?: string };
-}) {
+}
+
+export default function LoginPage({ searchParams }: LoginPageProps) {
   const errorMessage = getErrorMessage(searchParams.error);
 
   return (
@@ -62,14 +62,12 @@ export default function LoginPage({
               "use server";
               const email = formData.get("email") as string;
               const password = formData.get("password") as string;
+
               const result = await signIn("credentials", {
                 email,
                 password,
                 redirectTo: "/mi-cuenta",
               });
-              if (result?.error) {
-                throw new Error(result.error);
-              }
             }}
             className="space-y-4"
           >
@@ -152,6 +150,11 @@ function getErrorMessage(error: string | undefined): string | null {
     AccessDenied: "Acceso denegado",
     Verification: "Error de verificación",
     Default: "Error al iniciar sesión. Inténtalo de nuevo.",
+    OAuthSignin: "Error al iniciar sesión con GitHub",
+    OAuthCallbackError: "Error durante la autenticación con GitHub",
+    OAuthCreateAccountError: "Error al crear la cuenta con GitHub",
+    EmailCreateAccountError: "Error al crear la cuenta",
+    EmailSignin: "Error al iniciar sesión con email",
   };
 
   return errorMessages[error] || errorMessages.Default;
