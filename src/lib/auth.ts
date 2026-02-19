@@ -1,5 +1,4 @@
 import NextAuth from "next-auth";
-import { PrismaAdapter } from "@auth/prisma-adapter";
 import Credentials from "next-auth/providers/credentials";
 import GitHub from "next-auth/providers/github";
 import bcrypt from "bcryptjs";
@@ -12,7 +11,6 @@ const loginSchema = z.object({
 });
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
-  adapter: PrismaAdapter(db),
   session: {
     strategy: "jwt",
     maxAge: 30 * 24 * 60 * 60, // 30 days
@@ -81,13 +79,36 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   ],
   callbacks: {
     async signIn({ user, account }) {
-      // Allow sign in
+      if (account?.provider === "github" && user.email) {
+        // Check if user exists, if not create one
+        const existingUser = await db.user.findUnique({
+          where: { email: user.email },
+        });
+
+        if (!existingUser) {
+          // Create new user with MEMBER role
+          await db.user.create({
+            data: {
+              email: user.email,
+              name: user.name,
+              image: user.image,
+              role: "MEMBER",
+            },
+          });
+        }
+      }
       return true;
     },
     async jwt({ token, user }) {
       if (user) {
-        token.role = user.role;
-        token.id = user.id;
+        // Fetch user from database to get role
+        const dbUser = await db.user.findUnique({
+          where: { email: user.email! },
+          select: { role: true, id: true },
+        });
+
+        token.role = dbUser?.role || "MEMBER";
+        token.id = dbUser?.id || user.id;
       }
       return token;
     },

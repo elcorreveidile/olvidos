@@ -21,6 +21,7 @@ const crimsonText = Crimson_Text({
 });
 
 export const metadata: Metadata = {
+  viewport: "width=device-width, initial-scale=1",
   title: {
     default: "[olvidos — Revista de acciones culturales",
     template: "%s | [olvidos",
