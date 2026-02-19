@@ -1,14 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { Check, CreditCard, User, Mail, Lock, ArrowRight, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 export default function RegistroSocioPage() {
-  const router = useRouter();
+  const searchParams = useSearchParams();
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   // Step 1: Personal Info
   const [name, setName] = useState("");
@@ -67,18 +68,44 @@ export default function RegistroSocioPage() {
   const handleSelectPlan = async (selectedPlan: "STANDARD" | "COLLABORATOR" | "HONORARY") => {
     setPlan(selectedPlan);
     setStep(3);
+    setError(null);
   };
 
   const handleConfirmRegistration = async () => {
     setLoading(true);
+    setError(null);
     try {
-      // TODO: Implement registration logic
-      // For now, redirect to login
-      alert("Funcionalidad de registro en desarrollo. Por favor, contacta a info@olvidosdegranada.es");
-      router.push("/login");
+      const response = await fetch("/api/members/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+          plan,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        setError(result.error || "No se pudo completar el registro.");
+        setLoading(false);
+        return;
+      }
+
+      if (!result.url) {
+        setError("No se pudo iniciar el pago en Stripe.");
+        setLoading(false);
+        return;
+      }
+
+      window.location.href = result.url;
     } catch (error) {
-      console.error("Error:", error);
-      alert("Error al registrar. Por favor, intenta de nuevo.");
+      console.error("Error en registro:", error);
+      setError("Error al registrar. Por favor, intenta de nuevo.");
     } finally {
       setLoading(false);
     }
@@ -122,6 +149,18 @@ export default function RegistroSocioPage() {
 
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-2xl mx-auto">
+          {searchParams.get("cancelado") === "1" && (
+            <div className="mb-6 rounded-sm border border-yellow-200 bg-yellow-50 p-4 text-sm text-yellow-800">
+              Has cancelado el pago. Puedes intentarlo de nuevo cuando quieras.
+            </div>
+          )}
+
+          {error && (
+            <div className="mb-6 rounded-sm border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+              {error}
+            </div>
+          )}
+
           {/* Step 1: Personal Info */}
           {step === 1 && (
             <div className="bg-white rounded-sm shadow-card p-8">

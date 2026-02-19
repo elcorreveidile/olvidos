@@ -21,11 +21,16 @@ export default async function MemberLayout({
     redirect("/login");
   }
 
+  // Extract only the primitive values we need
+  const userName = session.user.name;
+  const userEmail = session.user.email;
+  const userRole = session.user.role;
+
   // Check if user is a member
-  const isMember = session.user.role === "MEMBER" ||
-                   session.user.role === "ADMIN" ||
-                   session.user.role === "MEMBER_ADMIN" ||
-                   session.user.role === "EDITOR";
+  const isMember = userRole === "MEMBER" ||
+                   userRole === "ADMIN" ||
+                   userRole === "MEMBER_ADMIN" ||
+                   userRole === "EDITOR";
 
   if (!isMember) {
     return (
@@ -74,7 +79,7 @@ export default async function MemberLayout({
   ];
 
   // Add admin link for admin users
-  const isAdmin = session.user.role === "ADMIN" || session.user.role === "MEMBER_ADMIN";
+  const isAdmin = userRole === "ADMIN" || userRole === "MEMBER_ADMIN";
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -124,13 +129,13 @@ export default async function MemberLayout({
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-azul text-white rounded-full flex items-center justify-center">
-                  {session.user.name?.charAt(0) || session.user.email?.charAt(0)}
+                  {userName?.charAt(0) || userEmail?.charAt(0)}
                 </div>
                 <div>
                   <p className="text-sm font-medium text-gray-900">
-                    {session.user.name || "Usuario"}
+                    {userName || "Usuario"}
                   </p>
-                  <p className="text-xs text-gray-500">{session.user.email}</p>
+                  <p className="text-xs text-gray-500">{userEmail}</p>
                 </div>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import { stripe } from "@/lib/stripe";
+import { stripe, MEMBERSHIP_PRICES } from "@/lib/stripe";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
@@ -61,9 +61,11 @@ export async function POST(req: Request) {
 
     // Determine membership level from price ID
     const membershipLevel =
-      priceId === process.env.STRIPE_PRICE_COLLABORATOR
+      priceId === MEMBERSHIP_PRICES.COLLABORATOR
         ? "COLLABORATOR"
-        : "STANDARD";
+        : priceId === MEMBERSHIP_PRICES.HONORARY
+          ? "HONORARY"
+          : "STANDARD";
 
     // Create checkout session
     const checkoutSession = await stripe.checkout.sessions.create({

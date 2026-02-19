@@ -1,8 +1,22 @@
 import Link from "next/link";
 import { Check, Heart, Users, BookOpen, Calendar } from "lucide-react";
 import { getPublicSiteFlags } from "@/lib/actions/site-config";
+import { auth } from "@/lib/auth";
+import { redirect } from "next/navigation";
 
 export default async function HazteSocioPage() {
+  // Extract only what we need to avoid serialization issues
+  const role = (await auth())?.user?.role;
+
+  if (
+    role === "ADMIN" ||
+    role === "MEMBER_ADMIN" ||
+    role === "MEMBER" ||
+    role === "EDITOR"
+  ) {
+    redirect("/mi-cuenta");
+  }
+
   const { allowRegistrations } = await getPublicSiteFlags();
 
   return (

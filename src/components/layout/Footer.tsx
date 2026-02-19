@@ -3,8 +3,9 @@ import { auth } from "@/lib/auth";
 
 export async function Footer() {
   const currentYear = new Date().getFullYear();
-  const session = await auth();
-  const memberAreaHref = session?.user ? "/mi-cuenta" : "/login";
+  // Extract only what we need to avoid serialization issues
+  const hasUser = !!(await auth())?.user;
+  const memberAreaHref = hasUser ? "/mi-cuenta" : "/login";
 
   return (
     <footer className="bg-azul text-white">

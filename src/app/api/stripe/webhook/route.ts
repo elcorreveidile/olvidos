@@ -1,4 +1,4 @@
-import { stripe } from "@/lib/stripe";
+import { stripe, MEMBERSHIP_PRICES } from "@/lib/stripe";
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
@@ -197,9 +197,11 @@ async function handleSubscriptionCreated(subscription: any) {
       // Determine membership level from price
       const priceId = subscription.items.data[0].price.id;
       const membershipLevel =
-        priceId === process.env.STRIPE_PRICE_COLLABORATOR
+        priceId === MEMBERSHIP_PRICES.COLLABORATOR
           ? "COLLABORATOR"
-          : "STANDARD";
+          : priceId === MEMBERSHIP_PRICES.HONORARY
+            ? "HONORARY"
+            : "STANDARD";
 
       await db.member.update({
         where: { id: memberId },

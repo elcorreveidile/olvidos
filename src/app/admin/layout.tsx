@@ -22,8 +22,11 @@ export default async function AdminLayout({
     redirect("/login");
   }
 
-  // Check if user has admin or editor role
+  // Extract only the primitive values we need
+  const userName = session.user.name;
+  const userEmail = session.user.email;
   const userRole = session.user.role;
+
   if (userRole !== "ADMIN" && userRole !== "EDITOR") {
     redirect("/");
   }
@@ -78,13 +81,13 @@ export default async function AdminLayout({
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-blue-900 text-white rounded-full flex items-center justify-center">
-                  {session.user.name?.charAt(0) || session.user.email?.charAt(0)}
+                  {userName?.charAt(0) || userEmail?.charAt(0)}
                 </div>
                 <div>
                   <p className="text-sm font-medium text-gray-900">
-                    {session.user.name || "Usuario"}
+                    {userName || "Usuario"}
                   </p>
-                  <p className="text-xs text-gray-500">{session.user.email}</p>
+                  <p className="text-xs text-gray-500">{userEmail}</p>
                 </div>
               </div>
             </div>
