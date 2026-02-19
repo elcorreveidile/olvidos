@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Check, CreditCard, User, Mail, Lock, ArrowRight, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
-export default function RegistroSocioPage() {
+function RegistroSocioContent() {
   const searchParams = useSearchParams();
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -393,5 +393,17 @@ export default function RegistroSocioPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function RegistroSocioPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-acero">Cargando...</div>
+      </div>
+    }>
+      <RegistroSocioContent />
+    </Suspense>
   );
 }
