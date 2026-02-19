@@ -1,5 +1,6 @@
 import { signIn } from "@/lib/auth";
 import { Github } from "lucide-react";
+import { redirect } from "next/navigation";
 
 interface LoginPageProps {
   searchParams: { error?: string };
@@ -63,10 +64,10 @@ export default function LoginPage({ searchParams }: LoginPageProps) {
               const email = formData.get("email") as string;
               const password = formData.get("password") as string;
 
-              const result = await signIn("credentials", {
+              await signIn("credentials", {
                 email,
                 password,
-                redirectTo: "/",
+                redirectTo: "/admin",
               });
             }}
             className="space-y-4"

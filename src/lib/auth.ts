@@ -101,14 +101,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     },
     async jwt({ token, user }) {
       if (user) {
-        // Fetch user from database to get role
-        const dbUser = await db.user.findUnique({
-          where: { email: user.email! },
-          select: { role: true, id: true },
-        });
-
-        token.role = dbUser?.role || "USER";
-        token.id = dbUser?.id || user.id;
+        // User data from authorize callback is already available
+        // No need to query database again
+        token.role = user.role || "USER";
+        token.id = user.id;
       }
       return token;
     },
