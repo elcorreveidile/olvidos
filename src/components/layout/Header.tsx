@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Search, Menu, X } from "lucide-react";
+import { MemberAreaLink } from "./MemberAreaLink";
+import { MobileNavMemberLink } from "./MobileNavMemberLink";
 
 const NAV_MAIN = [
   { label: "SOBRE OLVIDOS", href: "/sobre-nosotros" },
@@ -66,6 +68,7 @@ export function Header() {
                 )}
               </div>
             ))}
+            <MemberAreaLink />
           </nav>
 
           {/* Acciones */}
@@ -165,6 +168,7 @@ export function Header() {
                   {section.label}
                 </Link>
               ))}
+              <MobileNavMemberLink onClose={() => setMobileOpen(false)} />
             </div>
           </nav>
         </div>
