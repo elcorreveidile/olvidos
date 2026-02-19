@@ -1,4 +1,4 @@
-import { auth } from "@/lib/auth";
+import { auth, signOut } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import {
@@ -81,6 +81,11 @@ export default async function MemberLayout({
   // Add admin link for admin users
   const isAdmin = userRole === "ADMIN" || userRole === "MEMBER_ADMIN";
 
+  async function handleSignOut() {
+    "use server";
+    await signOut({ redirectTo: "/" });
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Sidebar */}
@@ -157,13 +162,15 @@ export default async function MemberLayout({
               </h1>
             </div>
             <div className="flex items-center gap-4">
-              <Link
-                href="/api/auth/signout"
-                className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-              >
-                <LogOut className="w-4 h-4" />
-                Cerrar sesión
-              </Link>
+              <form action={handleSignOut}>
+                <button
+                  type="submit"
+                  className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
+                >
+                  <LogOut className="w-4 h-4" />
+                  Cerrar sesión
+                </button>
+              </form>
             </div>
           </div>
         </header>
