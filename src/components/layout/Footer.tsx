@@ -1,7 +1,10 @@
 import Link from "next/link";
+import { auth } from "@/lib/auth";
 
-export function Footer() {
+export async function Footer() {
   const currentYear = new Date().getFullYear();
+  const session = await auth();
+  const memberAreaHref = session?.user ? "/mi-cuenta" : "/login";
 
   return (
     <footer className="bg-azul text-white">
@@ -83,7 +86,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/login" className="text-sm text-acero-light hover:text-coral transition-colors">
+                <Link href={memberAreaHref} className="text-sm text-acero-light hover:text-coral transition-colors">
                   Área de socios
                 </Link>
               </li>
