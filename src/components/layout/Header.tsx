@@ -3,8 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Search, Menu, X } from "lucide-react";
-import { MemberAreaLink } from "./MemberAreaLink";
-import { MobileNavMemberLink } from "./MobileNavMemberLink";
+import { MemberAreaLinks } from "./MemberAreaLinks";
 
 const NAV_MAIN = [
   { label: "SOBRE OLVIDOS", href: "/sobre-nosotros" },
@@ -68,7 +67,7 @@ export function Header() {
                 )}
               </div>
             ))}
-            <MemberAreaLink />
+            <MemberAreaLinks variant="desktop" className="text-sm font-bold tracking-wide text-azul hover:text-coral transition-colors" />
           </nav>
 
           {/* Acciones */}
@@ -168,7 +167,11 @@ export function Header() {
                   {section.label}
                 </Link>
               ))}
-              <MobileNavMemberLink onClose={() => setMobileOpen(false)} />
+              <MemberAreaLinks
+                variant="mobile"
+                className="block py-2 text-sm font-bold text-acero hover:text-coral transition-colors"
+                onClose={() => setMobileOpen(false)}
+              />
             </div>
           </nav>
         </div>
