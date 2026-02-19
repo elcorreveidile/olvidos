@@ -32,7 +32,7 @@ export default function LoginPage({ searchParams }: LoginPageProps) {
           <form
             action={async (formData: FormData) => {
               "use server";
-              await signIn("github", { redirectTo: "/mi-cuenta" });
+              await signIn("github", { redirectTo: "/" });
             }}
             className="mb-6"
           >
@@ -66,7 +66,7 @@ export default function LoginPage({ searchParams }: LoginPageProps) {
               const result = await signIn("credentials", {
                 email,
                 password,
-                redirectTo: "/mi-cuenta",
+                redirectTo: "/",
               });
             }}
             className="space-y-4"

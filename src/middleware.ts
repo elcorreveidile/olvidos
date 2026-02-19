@@ -21,6 +21,10 @@ export default auth((req) => {
     if (!isLoggedIn) {
       return NextResponse.redirect(new URL("/login", req.url));
     }
+    if (userRole === "USER") {
+      // User is logged in but not a member yet
+      return NextResponse.redirect(new URL("/hazte-socio", req.url));
+    }
     if (
       userRole !== "MEMBER" &&
       userRole !== "ADMIN" &&

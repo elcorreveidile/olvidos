@@ -86,13 +86,13 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         });
 
         if (!existingUser) {
-          // Create new user with MEMBER role
+          // Create new user with USER role (not MEMBER - needs to register as member)
           await db.user.create({
             data: {
               email: user.email,
               name: user.name,
               image: user.image,
-              role: "MEMBER",
+              role: "USER",
             },
           });
         }
@@ -107,7 +107,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           select: { role: true, id: true },
         });
 
-        token.role = dbUser?.role || "MEMBER";
+        token.role = dbUser?.role || "USER";
         token.id = dbUser?.id || user.id;
       }
       return token;
