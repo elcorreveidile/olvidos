@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import QRCode from "qrcode";
 import { Member } from "@prisma/client";
 
@@ -98,9 +99,11 @@ export default function DigitalCard({ member }: DigitalCardProps) {
             </div>
             <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center backdrop-blur-sm">
               {member.user.image ? (
-                <img
+                <Image
                   src={member.user.image}
                   alt={member.user.name || "Socio"}
+                  width={48}
+                  height={48}
                   className="w-full h-full rounded-lg object-cover"
                 />
               ) : (

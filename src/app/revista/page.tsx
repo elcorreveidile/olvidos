@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Calendar, BookOpen, Download } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -63,10 +64,12 @@ export default async function RevistaPage() {
                 {/* Cover Image */}
                 {issue.cover ? (
                   <div className="relative h-64 overflow-hidden rounded-t-sm">
-                    <img
+                    <Image
                       src={issue.cover}
                       alt={`Nº ${issue.number}`}
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover"
                     />
                     <div className="absolute top-4 right-4 bg-coral text-white px-3 py-1 text-sm font-bold rounded-sm">
                       Nº {issue.number}

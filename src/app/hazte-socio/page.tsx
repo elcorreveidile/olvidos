@@ -29,6 +29,9 @@ export default async function HazteSocioPage() {
             Únete a la comunidad de Olvidos de Granada y ayuda a preservar nuestra
             cultura y literatura
           </p>
+          <p className="text-sm mt-4 text-acero-light">
+            ¿Primera vez? <Link href="/registro" className="text-coral font-bold hover:text-coral-light">Crea una cuenta gratuita</Link> y cuando quieras vuelve aquí para hacerte socio.
+          </p>
         </div>
       </div>
 

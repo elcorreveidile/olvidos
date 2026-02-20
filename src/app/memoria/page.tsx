@@ -1,5 +1,6 @@
 import { getPublishedArticles } from "@/lib/actions/articles";
 import Link from "next/link";
+import Image from "next/image";
 import { Clock, BookMarked } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -73,10 +74,12 @@ export default async function MemoriaPage() {
                 {article.coverImage && (
                   <Link href={`/articulos/${article.slug}`}>
                     <div className="relative h-48 overflow-hidden rounded-t-sm">
-                      <img
+                      <Image
                         src={article.coverImage}
                         alt={article.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover hover:scale-105 transition-transform duration-300"
                       />
                       <div className="absolute top-4 right-4 bg-coral text-white px-3 py-1 text-xs font-bold rounded-sm">
                         Memoria
@@ -130,8 +133,8 @@ export default async function MemoriaPage() {
         {/* Quote Section */}
         <div className="mt-16 bg-gradient-to-r from-coral to-coral/90 rounded-sm shadow-card p-8 text-white">
           <blockquote className="text-2xl font-bold text-center max-w-4xl mx-auto">
-            "Un pueblo que no conoce su historia está condenado a repetirla.
-            La memoria es nuestra defensa contra el olvido."
+            &ldquo;Un pueblo que no conoce su historia está condenado a repetirla.
+            La memoria es nuestra defensa contra el olvido.&rdquo;
           </blockquote>
         </div>
       </div>

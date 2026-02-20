@@ -34,7 +34,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         try {
           const parsed = loginSchema.safeParse(credentials);
           if (!parsed.success) {
-            console.log("Login validation failed:", parsed.error.format());
             return null;
           }
 
@@ -43,12 +42,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           });
 
           if (!user) {
-            console.log("User not found:", parsed.data.email);
             return null;
           }
 
           if (!user.password) {
-            console.log("User has no password set - likely OAuth user");
             return null;
           }
 
@@ -58,11 +55,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           );
 
           if (!isValid) {
-            console.log("Invalid password for user:", parsed.data.email);
             return null;
           }
 
-          console.log("Login successful for user:", user.email);
           return {
             id: user.id,
             email: user.email,

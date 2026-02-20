@@ -97,11 +97,32 @@ export async function POST(req: Request) {
 }
 
 async function handleCheckoutSessionCompleted(session: any) {
-  const { memberId, userId, membershipLevel } = session.metadata;
+  const { memberId, membershipLevel } = session.metadata;
 
   if (!memberId) {
     console.error("No memberId in session metadata");
     return;
+  }
+
+  // Resolve renewal date safely. In checkout.session.completed, `subscription`
+  // may be an ID string (or absent) depending on event payload expansion.
+  let renewalDate: Date | null = null;
+
+  if (session.subscription) {
+    if (typeof session.subscription === "string") {
+      try {
+        const subscription = await stripe.subscriptions.retrieve(
+          session.subscription
+        );
+        renewalDate = subscription.current_period_end
+          ? new Date(subscription.current_period_end * 1000)
+          : null;
+      } catch (error) {
+        console.error("Failed to retrieve subscription from checkout session:", error);
+      }
+    } else if (session.subscription.current_period_end) {
+      renewalDate = new Date(session.subscription.current_period_end * 1000);
+    }
   }
 
   // Update member status
@@ -110,7 +131,7 @@ async function handleCheckoutSessionCompleted(session: any) {
     data: {
       status: "ACTIVE",
       membershipLevel: membershipLevel || "STANDARD",
-      renewalDate: new Date(session.subscription.current_period_end * 1000),
+      renewalDate,
     },
   });
 

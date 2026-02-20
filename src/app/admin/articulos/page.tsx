@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { getArticles } from "@/lib/actions/articles";
@@ -185,9 +186,11 @@ async function ArticlesList({
                   <td className="px-6 py-4">
                     <div className="flex items-start gap-3">
                       {article.coverImage && (
-                        <img
+                        <Image
                           src={article.coverImage}
                           alt=""
+                          width={48}
+                          height={48}
                           className="w-12 h-12 object-cover rounded"
                         />
                       )}
