@@ -3,6 +3,18 @@ import { NextResponse } from "next/server";
 
 export default auth((req) => {
   const { pathname } = req.nextUrl;
+
+  // Skip middleware for API routes, static files, and specific public routes
+  if (
+    pathname.startsWith("/api") ||
+    pathname.startsWith("/_next") ||
+    pathname.startsWith("/static") ||
+    pathname === "/favicon.ico" ||
+    pathname.includes(".")
+  ) {
+    return NextResponse.next();
+  }
+
   const isLoggedIn = !!req.auth;
   const userRole = req.auth?.user?.role;
 
@@ -27,14 +39,16 @@ export default auth((req) => {
       console.log("[Middleware] → /login (not authenticated)");
       return NextResponse.redirect(new URL("/login", req.url));
     }
+    // Allow access if user has any valid role
     if (
       userRole !== "MEMBER" &&
       userRole !== "ADMIN" &&
       userRole !== "MEMBER_ADMIN" &&
       userRole !== "EDITOR"
     ) {
-      console.log("[Middleware] → /hazte-socio (not a member, role:", userRole, ")");
-      return NextResponse.redirect(new URL("/hazte-socio", req.url));
+      console.log("[Middleware] → / (not a member, role:", userRole, ")");
+      // Redirect to home instead of hazte-socio to avoid loop
+      return NextResponse.redirect(new URL("/", req.url));
     }
     console.log("[Middleware] ✓ Access to /mi-cuenta granted");
   }
