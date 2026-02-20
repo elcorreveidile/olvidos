@@ -142,13 +142,28 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     async jwt({ token, user, account }) {
       if (user) {
         console.log("[Auth] JWT callback - user data:", { id: user.id, email: user.email, role: user.role, provider: account?.provider });
-        // User data from authorize callback is already available
-        // No need to query database again
+        // User data from authorize callback or signIn callback
         token.role = user.role || "USER";
         token.id = user.id;
         console.log("[Auth] JWT token updated with role:", token.role, "id:", token.id);
       } else {
         console.log("[Auth] JWT callback - using existing token, role:", token.role);
+        // If token exists but has no role or role is USER, try to get it from database
+        if (token.id && (!token.role || token.role === "USER")) {
+          console.log("[Auth] Token has no role or USER role, checking database for user:", token.id);
+          try {
+            const dbUser = await db.user.findUnique({
+              where: { id: token.id as string },
+              select: { role: true }
+            });
+            if (dbUser) {
+              console.log("[Auth] Found user in DB with role:", dbUser.role);
+              token.role = dbUser.role;
+            }
+          } catch (error) {
+            console.error("[Auth] Error checking database for user role:", error);
+          }
+        }
       }
       return token;
     },
