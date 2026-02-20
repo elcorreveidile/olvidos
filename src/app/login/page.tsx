@@ -1,6 +1,5 @@
-import { signIn } from "@/lib/auth";
 import { Github } from "lucide-react";
-import { redirect } from "next/navigation";
+import { loginWithGithub, loginWithCredentials } from "./actions";
 
 interface LoginPageProps {
   searchParams: { error?: string };
@@ -30,13 +29,7 @@ export default function LoginPage({ searchParams }: LoginPageProps) {
         {/* Login Card */}
         <div className="bg-white rounded-sm shadow-card p-8">
           {/* GitHub Button */}
-          <form
-            action={async (formData: FormData) => {
-              "use server";
-              await signIn("github", { redirectTo: "/" });
-            }}
-            className="mb-6"
-          >
+          <form action={loginWithGithub} className="mb-6">
             <button
               type="submit"
               className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-gray-300 rounded-sm hover:bg-gray-50 transition-colors"
@@ -58,20 +51,7 @@ export default function LoginPage({ searchParams }: LoginPageProps) {
           </div>
 
           {/* Credentials Form */}
-          <form
-            action={async (formData: FormData) => {
-              "use server";
-              const email = formData.get("email") as string;
-              const password = formData.get("password") as string;
-
-              await signIn("credentials", {
-                email,
-                password,
-                redirectTo: "/admin",
-              });
-            }}
-            className="space-y-4"
-          >
+          <form action={loginWithCredentials} className="space-y-4">
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-acero mb-2">
                 Email
