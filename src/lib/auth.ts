@@ -123,8 +123,14 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
               },
             });
             console.log("[Auth] User created successfully");
+            // Keep the default USER role for new users
+            return true;
           } else {
             console.log("[Auth] Existing user found:", existingUser.email, "role:", existingUser.role);
+            // Update user object with role from database
+            user.role = existingUser.role;
+            user.id = existingUser.id;
+            console.log("[Auth] Updated user object with role from DB:", user.role);
           }
         }
         return true;
