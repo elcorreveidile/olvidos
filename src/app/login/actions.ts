@@ -4,7 +4,12 @@ import { signIn } from "@/lib/auth";
 import { redirect } from "next/navigation";
 
 export async function loginWithGithub() {
-  await signIn("github", { redirectTo: "/" });
+  try {
+    await signIn("github", { redirectTo: "/" });
+  } catch (error) {
+    console.error("GitHub login error:", error);
+    redirect("/login?error=OAuthSignin");
+  }
 }
 
 export async function loginWithCredentials(formData: FormData) {
@@ -22,7 +27,7 @@ export async function loginWithCredentials(formData: FormData) {
       redirectTo: "/admin",
     });
   } catch (error) {
-    console.error("Login error:", error);
+    console.error("Credentials login error:", error);
     redirect("/login?error=CredentialsSignin");
   }
 }

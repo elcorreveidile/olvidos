@@ -10,6 +10,18 @@ const loginSchema = z.object({
   password: z.string().min(6),
 });
 
+// Validate required environment variables
+const authSecret = process.env.AUTH_SECRET;
+if (!authSecret) {
+  console.error("❌ AUTH_SECRET is not defined in environment variables");
+}
+
+const githubId = process.env.AUTH_GITHUB_ID;
+const githubSecret = process.env.AUTH_GITHUB_SECRET;
+if (!githubId || !githubSecret) {
+  console.error("❌ GitHub OAuth credentials are not defined");
+}
+
 export const { handlers, auth, signIn, signOut } = NextAuth({
   session: {
     strategy: "jwt",
@@ -20,10 +32,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     error: "/login?error=true",
   },
   providers: [
-    GitHub({
-      clientId: process.env.AUTH_GITHUB_ID,
-      clientSecret: process.env.AUTH_GITHUB_SECRET,
-    }),
+    ...(githubId && githubSecret ? [GitHub({
+      clientId: githubId,
+      clientSecret: githubSecret,
+    })] : []),
     Credentials({
       name: "credentials",
       credentials: {
