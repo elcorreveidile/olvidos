@@ -25,7 +25,11 @@ const NAV_SECTIONS = [
   { label: "Soneto500", href: "/articulos?categoria=soneto500" },
 ] as const;
 
-export function Header() {
+interface HeaderProps {
+  isAuthenticated: boolean;
+}
+
+export function Header({ isAuthenticated }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
@@ -67,7 +71,7 @@ export function Header() {
                 )}
               </div>
             ))}
-            <MemberAreaLinks variant="desktop" className="text-sm font-bold tracking-wide text-azul hover:text-coral transition-colors" />
+            <MemberAreaLinks variant="desktop" className="text-sm font-bold tracking-wide text-azul hover:text-coral transition-colors" isAuthenticated={isAuthenticated} />
           </nav>
 
           {/* Acciones */}
@@ -171,6 +175,7 @@ export function Header() {
                 variant="mobile"
                 className="block py-2 text-sm font-bold text-acero hover:text-coral transition-colors"
                 onClose={() => setMobileOpen(false)}
+                isAuthenticated={isAuthenticated}
               />
             </div>
           </nav>
