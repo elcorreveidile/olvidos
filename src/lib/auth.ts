@@ -22,6 +22,16 @@ if (!githubId || !githubSecret) {
   console.error("❌ GitHub OAuth credentials are not defined");
 }
 
+// Log environment info for debugging
+console.log("[Auth] Environment check:", {
+  hasSecret: !!authSecret,
+  hasGitHubId: !!githubId,
+  hasGitHubSecret: !!githubSecret,
+  nodeEnv: process.env.NODE_ENV,
+  vercelUrl: process.env.VERCEL_URL,
+  url: process.env.URL,
+});
+
 export const { handlers, auth, signIn, signOut } = NextAuth({
   session: {
     strategy: "jwt",
