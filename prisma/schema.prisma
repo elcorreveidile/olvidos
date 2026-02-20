@@ -7,10 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// ============================================
-// USUARIOS Y AUTENTICACIÓN (NextAuth.js v5)
-// ============================================
-
 model User {
   id            String    @id @default(cuid())
   email         String    @unique
@@ -21,12 +17,11 @@ model User {
   emailVerified DateTime?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
-
-  accounts Account[]
-  sessions Session[]
-  member   Member?
-  articles Article[]  @relation("author")
-  events   Event[]    @relation("organizer")
+  accounts      Account[]
+  articles      Article[] @relation("author")
+  events        Event[]   @relation("organizer")
+  member        Member?
+  sessions      Session[]
 }
 
 model Account {
@@ -35,15 +30,14 @@ model Account {
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String? @db.Text
-  access_token      String? @db.Text
+  refresh_token     String?
+  access_token      String?
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? @db.Text
+  id_token          String?
   session_state     String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
 }
@@ -53,8 +47,7 @@ model Session {
   sessionToken String   @unique
   userId       String
   expires      DateTime
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model VerificationToken {
@@ -65,59 +58,27 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-enum Role {
-  USER
-  MEMBER
-  EDITOR
-  MEMBER_ADMIN
-  ADMIN
-}
-
-// ============================================
-// SOCIOS / MEMBRESÍA
-// ============================================
-
 model Member {
-  id              String          @id @default(cuid())
-  userId          String          @unique
-  memberNumber    Int             @unique @default(autoincrement())
-  membershipLevel MembershipLevel @default(STANDARD)
-  status          MemberStatus    @default(PENDING)
-  joinDate        DateTime        @default(now())
-  renewalDate     DateTime?
-  bio             String?
-  phone           String?
-  address         String?
-  city            String?
-  isPublic        Boolean         @default(false)
-  cardImageUrl    String?
-  stripeCustomerId String?       @unique
-  createdAt       DateTime        @default(now())
-  updatedAt       DateTime        @updatedAt
-
-  user           User             @relation(fields: [userId], references: [id], onDelete: Cascade)
-  payments       Payment[]
-  eventAttendees EventAttendee[]
+  id               String          @id @default(cuid())
+  userId           String          @unique
+  memberNumber     Int             @unique @default(autoincrement())
+  membershipLevel  MembershipLevel @default(STANDARD)
+  status           MemberStatus    @default(PENDING)
+  joinDate         DateTime        @default(now())
+  renewalDate      DateTime?
+  bio              String?
+  phone            String?
+  address          String?
+  city             String?
+  isPublic         Boolean         @default(false)
+  cardImageUrl     String?
+  stripeCustomerId String?         @unique
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  eventAttendees   EventAttendee[]
+  user             User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  payments         Payment[]
 }
-
-enum MembershipLevel {
-  STANDARD
-  COLLABORATOR
-  HONORARY
-  INSTITUTIONAL
-}
-
-enum MemberStatus {
-  PENDING
-  ACTIVE
-  EXPIRED
-  SUSPENDED
-  CANCELLED
-}
-
-// ============================================
-// PAGOS Y SUSCRIPCIONES
-// ============================================
 
 model Payment {
   id              String        @id @default(cuid())
@@ -133,60 +94,32 @@ model Payment {
   periodEnd       DateTime?
   paidAt          DateTime?
   createdAt       DateTime      @default(now())
-
-  member Member @relation(fields: [memberId], references: [id])
+  member          Member        @relation(fields: [memberId], references: [id])
 }
-
-enum PaymentStatus {
-  PENDING
-  COMPLETED
-  FAILED
-  REFUNDED
-  CANCELLED
-}
-
-enum PaymentType {
-  MEMBERSHIP_FEE
-  EVENT_TICKET
-  DONATION
-  OTHER
-}
-
-// ============================================
-// CONTENIDO EDITORIAL
-// ============================================
 
 model Article {
-  id              String        @id @default(cuid())
+  id              String                 @id @default(cuid())
   title           String
-  slug            String        @unique
+  slug            String                 @unique
   excerpt         String?
-  content         String        @db.Text
+  content         String
   coverImage      String?
-  status          ContentStatus @default(DRAFT)
-  featured        Boolean       @default(false)
-  membersOnly     Boolean       @default(false)
+  status          ContentStatus          @default(DRAFT)
+  featured        Boolean                @default(false)
+  membersOnly     Boolean                @default(false)
   authorId        String
   issueId         String?
   publishedAt     DateTime?
-  createdAt       DateTime      @default(now())
-  updatedAt       DateTime      @updatedAt
+  createdAt       DateTime               @default(now())
+  updatedAt       DateTime               @updatedAt
   metaTitle       String?
   metaDescription String?
-  wpId            Int?          @unique
-
-  author     User                   @relation("author", fields: [authorId], references: [id])
-  issue      MagazineIssue?         @relation(fields: [issueId], references: [id])
-  categories CategoriesOnArticles[]
-  tags       TagsOnArticles[]
-  media      Media[]
-}
-
-enum ContentStatus {
-  DRAFT
-  REVIEW
-  PUBLISHED
-  ARCHIVED
+  wpId            Int?                   @unique
+  author          User                   @relation("author", fields: [authorId], references: [id])
+  issue           MagazineIssue?         @relation(fields: [issueId], references: [id])
+  categories      CategoriesOnArticles[]
+  media           Media[]
+  tags            TagsOnArticles[]
 }
 
 model MagazineIssue {
@@ -194,33 +127,30 @@ model MagazineIssue {
   number      Int       @unique
   title       String
   slug        String    @unique
-  description String?   @db.Text
+  description String?
   coverImage  String?
   pdfUrl      String?
   publishedAt DateTime?
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
-
-  articles Article[]
+  articles    Article[]
 }
 
 model Category {
-  id          String  @id @default(cuid())
-  name        String  @unique
-  slug        String  @unique
+  id          String                 @id @default(cuid())
+  name        String                 @unique
+  slug        String                 @unique
   description String?
   parentId    String?
-
-  parent   Category?              @relation("CategoryTree", fields: [parentId], references: [id])
-  children Category[]             @relation("CategoryTree")
-  articles CategoriesOnArticles[]
+  articles    CategoriesOnArticles[]
+  parent      Category?              @relation("CategoryTree", fields: [parentId], references: [id])
+  children    Category[]             @relation("CategoryTree")
 }
 
 model Tag {
-  id   String @id @default(cuid())
-  name String @unique
-  slug String @unique
-
+  id       String           @id @default(cuid())
+  name     String           @unique
+  slug     String           @unique
   articles TagsOnArticles[]
 }
 
@@ -242,15 +172,11 @@ model TagsOnArticles {
   @@id([articleId, tagId])
 }
 
-// ============================================
-// EVENTOS / ACTIVIDADES
-// ============================================
-
 model Event {
-  id          String      @id @default(cuid())
+  id          String          @id @default(cuid())
   title       String
-  slug        String      @unique
-  description String      @db.Text
+  slug        String          @unique
+  description String
   shortDesc   String?
   coverImage  String?
   location    String?
@@ -259,17 +185,96 @@ model Event {
   startDate   DateTime
   endDate     DateTime?
   capacity    Int?
-  membersOnly Boolean     @default(false)
-  price       Decimal?    @db.Decimal(10, 2)
-  status      EventStatus @default(DRAFT)
+  membersOnly Boolean         @default(false)
+  price       Decimal?        @db.Decimal(10, 2)
+  status      EventStatus     @default(DRAFT)
   organizerId String
   publishedAt DateTime?
-  createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+  organizer   User            @relation("organizer", fields: [organizerId], references: [id])
+  attendees   EventAttendee[]
+  media       Media[]
+}
 
-  organizer User            @relation("organizer", fields: [organizerId], references: [id])
-  attendees EventAttendee[]
-  media     Media[]
+model EventAttendee {
+  id        String         @id @default(cuid())
+  eventId   String
+  memberId  String?
+  name      String?
+  email     String?
+  status    AttendeeStatus @default(REGISTERED)
+  createdAt DateTime       @default(now())
+  event     Event          @relation(fields: [eventId], references: [id])
+  member    Member?        @relation(fields: [memberId], references: [id])
+
+  @@unique([eventId, memberId])
+}
+
+model Media {
+  id        String   @id @default(cuid())
+  filename  String
+  url       String
+  mimeType  String
+  size      Int
+  alt       String?
+  caption   String?
+  articleId String?
+  eventId   String?
+  createdAt DateTime @default(now())
+  article   Article? @relation(fields: [articleId], references: [id])
+  event     Event?   @relation(fields: [eventId], references: [id])
+}
+
+model SiteConfig {
+  id    String @id @default(cuid())
+  key   String @unique
+  value String
+}
+
+enum Role {
+  USER
+  MEMBER
+  EDITOR
+  MEMBER_ADMIN
+  ADMIN
+}
+
+enum MembershipLevel {
+  STANDARD
+  COLLABORATOR
+  HONORARY
+  INSTITUTIONAL
+}
+
+enum MemberStatus {
+  PENDING
+  ACTIVE
+  EXPIRED
+  SUSPENDED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REFUNDED
+  CANCELLED
+}
+
+enum PaymentType {
+  MEMBERSHIP_FEE
+  EVENT_TICKET
+  DONATION
+  OTHER
+}
+
+enum ContentStatus {
+  DRAFT
+  REVIEW
+  PUBLISHED
+  ARCHIVED
 }
 
 enum EventType {
@@ -291,54 +296,9 @@ enum EventStatus {
   COMPLETED
 }
 
-model EventAttendee {
-  id        String         @id @default(cuid())
-  eventId   String
-  memberId  String?
-  name      String?
-  email     String?
-  status    AttendeeStatus @default(REGISTERED)
-  createdAt DateTime       @default(now())
-
-  event  Event   @relation(fields: [eventId], references: [id])
-  member Member? @relation(fields: [memberId], references: [id])
-
-  @@unique([eventId, memberId])
-}
-
 enum AttendeeStatus {
   REGISTERED
   CONFIRMED
   CANCELLED
   ATTENDED
-}
-
-// ============================================
-// MEDIA / ARCHIVOS
-// ============================================
-
-model Media {
-  id        String   @id @default(cuid())
-  filename  String
-  url       String
-  mimeType  String
-  size      Int
-  alt       String?
-  caption   String?
-  articleId String?
-  eventId   String?
-  createdAt DateTime @default(now())
-
-  article Article? @relation(fields: [articleId], references: [id])
-  event   Event?   @relation(fields: [eventId], references: [id])
-}
-
-// ============================================
-// CONFIGURACIÓN DEL SITIO
-// ============================================
-
-model SiteConfig {
-  id    String @id @default(cuid())
-  key   String @unique
-  value String @db.Text
 }
