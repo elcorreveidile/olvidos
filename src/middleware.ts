@@ -12,6 +12,7 @@ export default auth((req) => {
       return NextResponse.redirect(new URL("/login", req.url));
     }
     if (userRole !== "ADMIN" && userRole !== "EDITOR" && userRole !== "MEMBER_ADMIN") {
+      console.error("[Middleware] Access denied to /admin for user with role:", userRole);
       return NextResponse.redirect(new URL("/", req.url));
     }
   }

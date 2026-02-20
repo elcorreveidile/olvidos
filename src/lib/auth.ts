@@ -46,6 +46,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         try {
           const parsed = loginSchema.safeParse(credentials);
           if (!parsed.success) {
+            console.error("[Auth] Invalid credentials format:", parsed.error);
             return null;
           }
 
@@ -54,10 +55,12 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           });
 
           if (!user) {
+            console.error("[Auth] User not found:", parsed.data.email);
             return null;
           }
 
           if (!user.password) {
+            console.error("[Auth] User has no password:", user.email);
             return null;
           }
 
@@ -67,17 +70,21 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           );
 
           if (!isValid) {
+            console.error("[Auth] Invalid password for:", user.email);
             return null;
           }
+
+          console.log("[Auth] Successful login for:", user.email, "role:", user.role);
 
           return {
             id: user.id,
             email: user.email,
-            name: user.name,
+            name: user.name || "Usuario",
             image: user.image,
-            role: user.role,
+            role: user.role || "USER",
           };
         } catch (error) {
+          console.error("[Auth] Authorize error:", error);
           return null;
         }
       },
@@ -115,9 +122,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       return token;
     },
     async session({ session, token }) {
+      // Ensure session.user exists and has required fields
       if (session.user) {
-        session.user.role = token.role as string;
-        session.user.id = token.id as string;
+        session.user.role = (token.role as string) || "USER";
+        session.user.id = (token.id as string) || "";
       }
       return session;
     },
