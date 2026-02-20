@@ -1,15 +1,9 @@
 "use server";
 
 import { signIn } from "@/lib/auth";
-import { redirect } from "next/navigation";
 
 export async function loginWithGithub() {
-  try {
-    await signIn("github", { redirectTo: "/" });
-  } catch (error) {
-    console.error("GitHub login error:", error);
-    redirect("/login?error=OAuthSignin");
-  }
+  await signIn("github", { redirectTo: "/" });
 }
 
 export async function loginWithCredentials(formData: FormData) {
@@ -17,7 +11,7 @@ export async function loginWithCredentials(formData: FormData) {
   const password = formData.get("password") as string;
 
   if (!email || !password) {
-    redirect("/login?error=CredentialsSignin");
+    return { error: "CredentialsSignin" };
   }
 
   try {
@@ -27,7 +21,12 @@ export async function loginWithCredentials(formData: FormData) {
       redirectTo: "/admin",
     });
   } catch (error) {
+    // NEXT_REDIRECT is thrown when signIn succeeds - this is normal
+    // Only return error if it's a different error
+    if (error instanceof Error && error.message === "NEXT_REDIRECT") {
+      throw error; // Re-throw to allow redirect
+    }
     console.error("Credentials login error:", error);
-    redirect("/login?error=CredentialsSignin");
+    return { error: "CredentialsSignin" };
   }
 }
