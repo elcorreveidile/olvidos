@@ -3,12 +3,23 @@ import { NextResponse } from "next/server";
 
 export default auth((req) => {
   const { pathname } = req.nextUrl;
+
+  // IMPORTANT: Don't protect API routes or static files
+  if (
+    pathname.startsWith("/api") ||
+    pathname.startsWith("/_next") ||
+    pathname.startsWith("/static") ||
+    pathname.includes(".")
+  ) {
+    return NextResponse.next();
+  }
+
   const isLoggedIn = !!req.auth;
   const userRole = req.auth?.user?.role;
   const userId = req.auth?.user?.id;
   const userEmail = req.auth?.user?.email;
 
-  // Debug logging for /admin and /mi-cuenta routes
+  // Debug logging for protected routes
   if (pathname.startsWith("/admin") || pathname.startsWith("/mi-cuenta")) {
     console.log("[Middleware]", {
       pathname,
@@ -65,5 +76,14 @@ export default auth((req) => {
 });
 
 export const config = {
-  matcher: ["/admin/:path*", "/mi-cuenta/:path*", "/socios/:path*"],
+  matcher: [
+    /*
+     * Match all request paths except:
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     * - public files (images, etc)
+     */
+    "/((?!_next/static|_next/image|favicon.ico|.*\\..*).*)",
+  ],
 };
