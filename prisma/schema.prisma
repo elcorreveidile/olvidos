@@ -109,6 +109,7 @@ model Article {
   membersOnly     Boolean                @default(false)
   authorId        String
   issueId         String?
+  pages           String?
   publishedAt     DateTime?
   createdAt       DateTime               @default(now())
   updatedAt       DateTime               @updatedAt
@@ -117,23 +118,49 @@ model Article {
   wpId            Int?                   @unique
   author          User                   @relation("author", fields: [authorId], references: [id])
   issue           MagazineIssue?         @relation(fields: [issueId], references: [id])
+  authors         AuthorsOnArticles[]
   categories      CategoriesOnArticles[]
   media           Media[]
   tags            TagsOnArticles[]
 }
 
 model MagazineIssue {
-  id          String    @id @default(cuid())
-  number      Int       @unique
+  id          String        @id @default(cuid())
+  number      Int           @unique
   title       String
-  slug        String    @unique
+  slug        String        @unique
   description String?
   coverImage  String?
   pdfUrl      String?
+  year        Int
+  month       Int?
   publishedAt DateTime?
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+  status      ContentStatus @default(DRAFT)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
   articles    Article[]
+
+  @@index([year])
+}
+
+model Author {
+  id        String              @id @default(cuid())
+  name      String
+  slug      String              @unique
+  bio       String?
+  createdAt DateTime            @default(now())
+  updatedAt DateTime            @updatedAt
+  articles  AuthorsOnArticles[]
+}
+
+model AuthorsOnArticles {
+  articleId String
+  authorId  String
+  order     Int?
+  article   Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  author    Author  @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  @@id([articleId, authorId])
 }
 
 model Category {
