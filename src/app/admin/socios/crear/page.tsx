@@ -243,7 +243,7 @@ export default async function CreateMemberPage() {
               <ul className="text-sm text-acero space-y-1">
                 <li>• El usuario debe estar registrado en el sistema primero</li>
                 <li>• Los socios honoríficos tienen acceso prioritario a eventos y menciones especiales</li>
-                <li>• El estado "Pendiente de pago" se usa cuando están esperando confirmación de pago</li>
+                <li>• El estado &ldquo;Pendiente de pago&rdquo; se usa cuando están esperando confirmación de pago</li>
                 <li>• Los socios con perfil público aparecerán en la página /socios</li>
               </ul>
             </div>

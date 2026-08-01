@@ -123,7 +123,7 @@ export default function PoliticaPrivacidadPage() {
                 <ul className="list-disc pl-6 space-y-2 text-acero">
                   <li><strong>Acceso:</strong> Solicitar información sobre tus datos personales</li>
                   <li><strong>Rectificación:</strong> Corregir datos inexactos o incompletos</li>
-                  <li><strong>Supresión:</strong> Solicitar el borrado de tus datos ("derecho al olvido")</li>
+                  <li><strong>Supresión:</strong> Solicitar el borrado de tus datos (&ldquo;derecho al olvido&rdquo;)</li>
                   <li><strong>Oposición:</strong> Oponerte al tratamiento de tus datos</li>
                   <li><strong>Limitación:</strong> Solicitar que limitemos el tratamiento</li>
                   <li><strong>Portabilidad:</strong> Recibir tus datos en un formato estructurado</li>

@@ -5,7 +5,7 @@ import { signIn } from "@/lib/auth";
 export async function loginWithGithub() {
   console.log("[Login Action] GitHub login attempted");
   try {
-    await signIn("github", { redirectTo: "/" });
+    await signIn("github", { redirectTo: "/post-login" });
   } catch (error) {
     console.error("[Login Action] GitHub login error:", error);
     throw error;
@@ -28,7 +28,7 @@ export async function loginWithCredentials(formData: FormData) {
     await signIn("credentials", {
       email,
       password,
-      redirectTo: "/admin",
+      redirectTo: "/post-login",
     });
     console.log("[Login Action] signIn completed (should redirect now)");
   } catch (error) {

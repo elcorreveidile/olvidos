@@ -1,10 +1,16 @@
 import { Resend } from "resend";
 
-export const resend = new Resend(process.env.RESEND_API_KEY);
+const resendApiKey = process.env.RESEND_API_KEY;
+
+export const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
 const EMAIL_FROM = process.env.EMAIL_FROM || "info@olvidosdegranada.es";
 
 export async function sendWelcomeEmail(to: string, name: string) {
+  if (!resend) {
+    return null;
+  }
+
   return resend.emails.send({
     from: EMAIL_FROM,
     to,
@@ -22,6 +28,10 @@ export async function sendPaymentConfirmation(
   name: string,
   amount: string
 ) {
+  if (!resend) {
+    return null;
+  }
+
   return resend.emails.send({
     from: EMAIL_FROM,
     to,

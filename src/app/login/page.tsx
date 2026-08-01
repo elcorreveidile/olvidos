@@ -1,12 +1,14 @@
 import { Github } from "lucide-react";
+import Link from "next/link";
 import { loginWithGithub, loginWithCredentials } from "./actions";
 
 interface LoginPageProps {
-  searchParams: { error?: string };
+  searchParams: { error?: string; registro?: string };
 }
 
 export default function LoginPage({ searchParams }: LoginPageProps) {
   const errorMessage = getErrorMessage(searchParams.error);
+  const registrationMessage = getRegistrationMessage(searchParams.registro);
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4">
@@ -19,6 +21,13 @@ export default function LoginPage({ searchParams }: LoginPageProps) {
           </p>
         </div>
 
+
+        {/* Registration Message */}
+        {registrationMessage && (
+          <div className="mb-6 p-4 bg-green-50 border-l-4 border-green-500 rounded-sm">
+            <p className="text-green-700 text-sm">{registrationMessage}</p>
+          </div>
+        )}
         {/* Error Message */}
         {errorMessage && (
           <div className="mb-6 p-4 bg-red-50 border-l-4 border-red-500 rounded-sm">
@@ -82,7 +91,7 @@ export default function LoginPage({ searchParams }: LoginPageProps) {
 
             <div>
               <a
-                href="#"
+                href="/recuperar-contrasena"
                 className="text-sm text-coral hover:text-coral/80 transition-colors"
               >
                 ¿Olvidaste tu contraseña?
@@ -102,20 +111,29 @@ export default function LoginPage({ searchParams }: LoginPageProps) {
         <div className="text-center mt-6">
           <p className="text-acero">
             ¿No eres socio aún?{" "}
-            <a href="/hazte-socio" className="text-coral hover:text-coral/80 font-medium">
+            <Link href="/hazte-socio" className="text-coral hover:text-coral/80 font-medium">
               Hazte socio
-            </a>
+            </Link>
           </p>
         </div>
 
+
+        <div className="text-center mt-3">
+          <p className="text-sm text-acero-light">
+            ¿Prefieres crear una cuenta gratuita primero?{" "}
+            <Link href="/registro" className="text-coral hover:text-coral/80 font-medium">
+              Regístrate como usuario
+            </Link>
+          </p>
+        </div>
         {/* Back to Home */}
         <div className="text-center mt-4">
-          <a
+          <Link
             href="/"
             className="text-sm text-acero-light hover:text-acero transition-colors"
           >
             ← Volver al inicio
-          </a>
+          </Link>
         </div>
       </div>
     </div>
@@ -139,4 +157,18 @@ function getErrorMessage(error: string | undefined): string | null {
   };
 
   return errorMessages[error] || errorMessages.Default;
+}
+
+function getRegistrationMessage(registro: string | undefined): string | null {
+  if (!registro) return null;
+
+  if (registro === "usuario-ok") {
+    return "Cuenta creada correctamente. Ya puedes iniciar sesión y luego hacerte socio.";
+  }
+
+  if (registro === "ok") {
+    return "Registro de socio completado. Inicia sesión para acceder a tu cuenta.";
+  }
+
+  return null;
 }

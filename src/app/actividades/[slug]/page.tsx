@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getEventBySlug, getEvents } from "@/lib/actions/events";
 import { auth } from "@/lib/auth";
 import { RegisterButton } from "./RegisterButton";
@@ -99,10 +100,12 @@ export default async function EventPage({ params }: PageProps) {
       {/* Cover Image */}
       {event.coverImage && (
         <div className="relative h-[400px] overflow-hidden">
-          <img
+          <Image
             src={event.coverImage}
             alt={event.title}
-            className="w-full h-full object-cover"
+            fill
+            sizes="100vw"
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getPublishedArticles } from "@/lib/actions/articles";
 import Link from "next/link";
+import Image from "next/image";
 import { Calendar, User } from "lucide-react";
 
 interface CategoryPageProps {
@@ -63,10 +64,12 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 {article.coverImage && (
                   <Link href={`/articulos/${article.slug}`}>
                     <div className="relative h-48 overflow-hidden rounded-t-sm">
-                      <img
+                      <Image
                         src={article.coverImage}
                         alt={article.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                   </Link>

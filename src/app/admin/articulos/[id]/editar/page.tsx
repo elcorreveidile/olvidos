@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -266,9 +267,11 @@ export default function EditarArticuloPage() {
               </div>
               {watch("coverImage") && (
                 <div className="mt-2">
-                  <img
+                  <Image
                     src={watch("coverImage")}
                     alt="Vista previa"
+                    width={128}
+                    height={128}
                     className="w-32 h-32 object-cover rounded"
                   />
                 </div>

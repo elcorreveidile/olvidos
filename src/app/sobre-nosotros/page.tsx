@@ -30,7 +30,7 @@ export default function SobreNosotrosPage() {
               y futuras.
             </p>
             <blockquote className="border-l-4 border-coral pl-4 italic">
-              "La cultura es la memoria de un pueblo, y sin ella, los pueblos pierden su identidad."
+              &ldquo;La cultura es la memoria de un pueblo, y sin ella, los pueblos pierden su identidad.&rdquo;
             </blockquote>
           </div>
         </div>
