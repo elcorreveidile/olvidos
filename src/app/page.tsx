@@ -4,6 +4,7 @@ import {
   getUpcomingEvents,
 } from "@/lib/queries";
 import type { ArticleSummary } from "@/types/content";
+import { Hero } from "@/components/home/Hero";
 
 type EventType = {
   id: string;
@@ -59,14 +60,7 @@ export default async function HomePage() {
   return (
     <div className="max-w-content mx-auto px-4 py-12">
       {/* Hero */}
-      <section className="text-center mb-16">
-        <h1 className="text-h1-article font-black text-azul mb-4 text-balance">
-          <span className="text-coral">[</span>olvidos
-        </h1>
-        <p className="text-xl text-acero font-editorial max-w-xl mx-auto">
-          Revista de acciones culturales
-        </p>
-      </section>
+      <Hero />
 
       {/* Artículos destacados */}
       <section className="mb-16">
