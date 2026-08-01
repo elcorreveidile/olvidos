@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   LayoutDashboard,
   FileText,
+  BookOpen,
   Settings,
   Users,
   LogOut,
@@ -34,6 +35,7 @@ export default async function AdminLayout({
   const navigation = [
     { name: "Dashboard", href: "/admin", icon: LayoutDashboard },
     { name: "Artículos", href: "/admin/articulos", icon: FileText },
+    { name: "Revista", href: "/admin/revista", icon: BookOpen },
     { name: "Socios", href: "/admin/socios", icon: Users },
     { name: "Pagos", href: "/admin/pagos", icon: CreditCard },
     { name: "Configuración", href: "/admin/configuracion", icon: Settings },
