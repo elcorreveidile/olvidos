@@ -3,6 +3,34 @@ import Image from "next/image";
 import { formatDate } from "@/lib/utils";
 import { COVER_FIT_CONTAIN } from "@/lib/cover-position";
 
+/** Marcador dedicado para los sonetos de Soneto500 (no llevan foto). */
+function SonetoCover() {
+  return (
+    <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden bg-tinta px-6">
+      <div
+        aria-hidden
+        className="absolute inset-y-6 left-6 right-6 flex flex-col justify-center gap-[6px]"
+      >
+        {[92, 80, 88, 70, 84, 64, 78].map((w, i) => (
+          <span
+            key={i}
+            className="block h-px bg-white/15"
+            style={{ width: `${w}%` }}
+          />
+        ))}
+      </div>
+      <div className="relative text-center">
+        <span className="block text-[11px] font-bold uppercase tracking-[0.35em] text-white/70">
+          <span className="text-coral">[</span>Soneto
+        </span>
+        <span className="block font-editorial text-6xl font-black leading-none text-coral">
+          500
+        </span>
+      </div>
+    </div>
+  );
+}
+
 interface ArticleCardProps {
   title: string;
   slug: string;
@@ -60,6 +88,8 @@ export function ArticleCard({
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
+      ) : categories.some((c) => c.slug === "sonetos") ? (
+        <SonetoCover />
       ) : (
         <div className="flex aspect-[16/10] flex-col items-center justify-center gap-3 bg-gradient-to-br from-coral/[0.10] to-coral/[0.02] px-4 text-center">
           <span className="select-none text-xl font-black leading-none tracking-tight text-coral/30">
