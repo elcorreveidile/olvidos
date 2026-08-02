@@ -4,21 +4,28 @@ import Image from "next/image";
 import Link from "next/link";
 import { getArticleBySlug, getPublishedArticles } from "@/lib/actions/articles";
 import { SITE_URL, SITE_NAME, ORGANIZATION } from "@/lib/site";
+import { splitPasos, hasPasos } from "@/lib/pasos";
+import { PasosNav } from "@/components/content/PasosNav";
+import pasosTitles from "@/data/pasos-titles.json";
 
 interface ArticlePageProps {
   params: { slug: string };
+  searchParams?: { paso?: string };
 }
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: ArticlePageProps): Promise<Metadata> {
   const result = await getArticleBySlug(params.slug, true);
   if (!result.success || !result.article) {
     return { title: "Artículo no encontrado" };
   }
   const article = result.article;
+  const paso = Number(searchParams?.paso);
+  const pasoSuffix = hasPasos(article) && paso > 1 ? ` · Paso ${paso}` : "";
   return {
-    title: article.metaTitle || article.title,
+    title: (article.metaTitle || article.title) + pasoSuffix,
     description: article.metaDescription || article.excerpt || undefined,
     openGraph: {
       title: article.metaTitle || article.title,
@@ -33,11 +40,23 @@ export async function generateMetadata({
   };
 }
 
-export default async function ArticlePage({ params }: ArticlePageProps) {
+export default async function ArticlePage({
+  params,
+  searchParams,
+}: ArticlePageProps) {
   const result = await getArticleBySlug(params.slug, true);
   if (!result.success || !result.article) notFound();
 
   const article = result.article;
+
+  // "Pasos": piezas multi-parte (Piezas y Procesos) paginadas por <!--nextpage-->
+  const pieza = hasPasos(article);
+  const pasoTitulos = (pasosTitles as Record<string, string[]>)[article.slug];
+  const pasos = pieza ? splitPasos(article.content, pasoTitulos) : [];
+  const currentPaso = pieza
+    ? Math.min(Math.max(1, Number(searchParams?.paso) || 1), pasos.length)
+    : 1;
+  const contentHtml = pieza ? pasos[currentPaso - 1].html : article.content;
 
   const recentResult = await getPublishedArticles({ limit: 5 });
   const recentArticles =
@@ -157,11 +176,48 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             </div>
           )}
 
+          {/* Pasos (móvil): la barra lateral se oculta en móvil */}
+          {pieza && (
+            <PasosNav pasos={pasos} slug={article.slug} current={currentPaso} horizontal />
+          )}
+
           {/* Contenido */}
           <div
             className="prose-editorial"
-            dangerouslySetInnerHTML={{ __html: article.content }}
+            dangerouslySetInnerHTML={{ __html: contentHtml }}
           />
+
+          {/* Navegación entre pasos */}
+          {pieza && pasos.length > 1 && (
+            <nav className="mt-10 flex items-center justify-between gap-4 border-t border-acero-light/40 pt-6">
+              {currentPaso > 1 ? (
+                <Link
+                  href={`/articulos/${article.slug}?paso=${currentPaso - 1}`}
+                  className="inline-flex flex-col rounded-sm border border-tinta px-5 py-3 text-tinta transition-colors hover:bg-tinta hover:text-white"
+                >
+                  <span className="text-xs uppercase tracking-wide opacity-70">
+                    ← Paso anterior
+                  </span>
+                  <span className="font-bold">{pasos[currentPaso - 2].title}</span>
+                </Link>
+              ) : (
+                <span />
+              )}
+              {currentPaso < pasos.length ? (
+                <Link
+                  href={`/articulos/${article.slug}?paso=${currentPaso + 1}`}
+                  className="inline-flex flex-col rounded-sm bg-coral px-5 py-3 text-right text-white transition-colors hover:bg-coral-dark"
+                >
+                  <span className="text-xs uppercase tracking-wide opacity-80">
+                    Paso siguiente →
+                  </span>
+                  <span className="font-bold">{pasos[currentPaso].title}</span>
+                </Link>
+              ) : (
+                <span />
+              )}
+            </nav>
+          )}
 
           {/* Tags */}
           {article.tags && article.tags.length > 0 && (
@@ -197,32 +253,43 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
         {/* Sidebar */}
         <aside className="hidden lg:block">
-          {recentArticles.length > 0 && (
+          {(pieza || recentArticles.length > 0) && (
             <div className="sticky top-28">
-              <h3 className="mb-4 text-sm font-black uppercase tracking-wide text-tinta">
-                <span className="text-coral">[</span>Recientes
-              </h3>
-              <div className="space-y-4">
-                {recentArticles
-                  .filter((r) => r.slug !== article.slug)
-                  .slice(0, 5)
-                  .map((r) => (
-                    <Link key={r.id} href={`/articulos/${r.slug}`} className="group block">
-                      <h4 className="text-sm font-bold leading-snug text-tinta transition-colors group-hover:text-coral">
-                        {r.title}
-                      </h4>
-                      {r.publishedAt && (
-                        <p className="mt-1 text-xs text-acero-light">
-                          {new Date(r.publishedAt).toLocaleDateString("es-ES", {
-                            day: "numeric",
-                            month: "short",
-                            year: "numeric",
-                          })}
-                        </p>
-                      )}
-                    </Link>
-                  ))}
-              </div>
+              {pieza && (
+                <PasosNav
+                  pasos={pasos}
+                  slug={article.slug}
+                  current={currentPaso}
+                />
+              )}
+              {recentArticles.length > 0 && (
+                <>
+                  <h3 className="mb-4 text-sm font-black uppercase tracking-wide text-tinta">
+                    <span className="text-coral">[</span>Recientes
+                  </h3>
+                  <div className="space-y-4">
+                    {recentArticles
+                      .filter((r) => r.slug !== article.slug)
+                      .slice(0, 5)
+                      .map((r) => (
+                        <Link key={r.id} href={`/articulos/${r.slug}`} className="group block">
+                          <h4 className="text-sm font-bold leading-snug text-tinta transition-colors group-hover:text-coral">
+                            {r.title}
+                          </h4>
+                          {r.publishedAt && (
+                            <p className="mt-1 text-xs text-acero-light">
+                              {new Date(r.publishedAt).toLocaleDateString("es-ES", {
+                                day: "numeric",
+                                month: "short",
+                                year: "numeric",
+                              })}
+                            </p>
+                          )}
+                        </Link>
+                      ))}
+                  </div>
+                </>
+              )}
             </div>
           )}
         </aside>

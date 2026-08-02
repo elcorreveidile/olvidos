@@ -73,6 +73,9 @@ const nextConfig = {
       { source: "/articulos/5450", destination: "/articulos/ya-no-tengo-un-recuerdo-que-me-acoja", permanent: true },
       { source: "/articulos/5454", destination: "/articulos/no-encuentro-paz", permanent: true },
       { source: "/articulos/5925", destination: "/articulos/de-que-tierra-sera-donde-su-mar", permanent: true },
+      // Slugs de prueba renombrados a descriptivos.
+      { source: "/articulos/prueba-procesos-2", destination: "/articulos/un-camino-mas-para-el-cine", permanent: true },
+      { source: "/articulos/prueba-pdf", destination: "/articulos/olvidos-de-granada-n-1", permanent: true },
     ];
   },
 };
