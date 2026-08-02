@@ -1,139 +1,91 @@
-import { notFound } from "next/navigation";
-import { getPublishedArticles } from "@/lib/actions/articles";
-import Link from "next/link";
-import Image from "next/image";
-import { Calendar, User } from "lucide-react";
+import type { Metadata } from "next";
+import { getArticlesByCategory } from "@/lib/queries";
+import { ArticleCard } from "@/components/content/ArticleCard";
+import { CategoryHeading } from "@/components/content/CategoryHeading";
+import { Pagination } from "@/components/shared/Pagination";
+import { SearchInline } from "@/components/shared/SearchInline";
+
+export const dynamic = "force-dynamic";
+
+const PER_PAGE = 24;
 
 interface CategoryPageProps {
-  params: {
-    slug: string;
-  };
+  params: { slug: string };
+  searchParams: { page?: string };
 }
 
-export default async function CategoryPage({ params }: CategoryPageProps) {
-  const { slug } = params;
+export async function generateMetadata({
+  params,
+}: CategoryPageProps): Promise<Metadata> {
+  const { category } = await getArticlesByCategory(params.slug, 1, 1);
+  return { title: category?.name ?? "Categoría" };
+}
 
-  // Obtener artículos de esta categoría
-  const result = await getPublishedArticles({ category: slug });
-
-  if (!result.success || !result.articles) {
-    return (
-      <div className="min-h-screen bg-gray-50">
-        <div className="container mx-auto px-4 py-12">
-          <p className="text-acero">Cargando...</p>
-        </div>
-      </div>
-    );
-  }
-
-  const articles = result.articles;
-
-  // Obtener nombre de categoría desde el primer artículo
-  const categoryName = articles[0]?.categories?.find(
-    (cat: any) => cat.category?.slug === slug
-  )?.category?.name || slug;
+export default async function CategoryPage({
+  params,
+  searchParams,
+}: CategoryPageProps) {
+  const page = Math.max(1, Number(searchParams.page) || 1);
+  const { articles, totalPages, total, category } = await getArticlesByCategory(
+    params.slug,
+    page,
+    PER_PAGE
+  );
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-azul text-white py-16 mt-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-black mb-4">{categoryName}</h1>
-          <p className="text-xl opacity-90">
-            {articles.length} artículo{articles.length !== 1 ? "s" : ""} en esta categoría
+    <div className="max-w-content mx-auto px-4 py-12">
+      <header className="mb-12 border-b-2 border-tinta pb-8 text-center">
+        <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-coral">
+          Categoría
+        </p>
+        <CategoryHeading>{category?.name ?? params.slug}</CategoryHeading>
+        {category?.description && (
+          <p className="mx-auto mt-6 max-w-2xl font-editorial text-lg leading-snug text-tinta/75">
+            {category.description}
+          </p>
+        )}
+        <p className="mt-6 font-editorial text-lg text-tinta/70">
+          {total} artículo{total !== 1 ? "s" : ""}
+        </p>
+      </header>
+
+      <div className="mb-10">
+        <SearchInline categoria={params.slug} scopeLabel={category?.name} />
+      </div>
+
+      {articles.length === 0 ? (
+        <div className="rounded-sm border border-acero-light/40 bg-gray-50 py-16 text-center">
+          <p className="font-editorial text-acero">
+            No hay artículos publicados en esta categoría.
           </p>
         </div>
-      </div>
-
-      {/* Articles Grid */}
-      <div className="container mx-auto px-4 py-12">
-        {articles.length === 0 ? (
-          <div className="text-center py-12 bg-white rounded-sm shadow-card">
-            <p className="text-acero text-lg">
-              No hay artículos publicados en esta categoría.
-            </p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      ) : (
+        <>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {articles.map((article) => (
-              <article
+              <ArticleCard
                 key={article.id}
-                className="bg-white rounded-sm shadow-card hover:shadow-card-hover transition-all"
-              >
-                {/* Article Image */}
-                {article.coverImage && (
-                  <Link href={`/articulos/${article.slug}`}>
-                    <div className="relative h-48 overflow-hidden rounded-t-sm">
-                      <Image
-                        src={article.coverImage}
-                        alt={article.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  </Link>
-                )}
-
-                {/* Article Content */}
-                <div className="p-6">
-                  {/* Categories */}
-                  {article.categories && article.categories.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {article.categories.map((cat: any) => (
-                        <Link
-                          key={cat.id}
-                          href={`/categoria/${cat.category.slug}`}
-                          className="text-xs font-bold text-coral hover:text-coral/80"
-                        >
-                          {cat.category.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Title */}
-                  <Link href={`/articulos/${article.slug}`}>
-                    <h2 className="text-xl font-bold text-azul mb-3 hover:text-coral transition-colors line-clamp-2">
-                      {article.title}
-                    </h2>
-                  </Link>
-
-                  {/* Excerpt */}
-                  <p className="text-acero mb-4 line-clamp-3">
-                    {article.excerpt}
-                  </p>
-
-                  {/* Meta */}
-                  <div className="flex items-center gap-4 text-sm text-acero-light">
-                    {article.author && (
-                      <div className="flex items-center gap-1">
-                        <User className="w-4 h-4" />
-                        <span>{article.author.name}</span>
-                      </div>
-                    )}
-                    {article.publishedAt && (
-                      <div className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
-                        <time>
-                          {new Date(article.publishedAt).toLocaleDateString(
-                            "es-ES",
-                            {
-                              day: "numeric",
-                              month: "short",
-                              year: "numeric",
-                            }
-                          )}
-                        </time>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </article>
+                title={article.title}
+                slug={article.slug}
+                excerpt={article.excerpt}
+                coverImage={article.coverImage}
+                publishedAt={article.publishedAt}
+                categories={article.categories.map((c) => c.category)}
+                author={article.author}
+                authors={article.authors}
+                highlightCategory={params.slug}
+              />
             ))}
           </div>
-        )}
-      </div>
+          <div className="mt-12">
+            <Pagination
+              currentPage={page}
+              totalPages={totalPages}
+              basePath={`/categoria/${params.slug}`}
+            />
+          </div>
+        </>
+      )}
     </div>
   );
 }

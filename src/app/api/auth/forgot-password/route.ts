@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import crypto from "crypto";
 import { db } from "@/lib/db";
-import { resend } from "@/lib/email";
+import { sendPasswordResetEmail } from "@/lib/email";
 
 const forgotPasswordSchema = z.object({
   email: z.string().email("Email no válido"),
@@ -44,23 +44,7 @@ export async function POST(req: Request) {
     const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
     const resetUrl = `${appUrl}/restablecer-contrasena?token=${rawToken}&email=${encodeURIComponent(email)}`;
 
-    if (resend) {
-      await resend.emails.send({
-        from: process.env.EMAIL_FROM || "info@olvidosdegranada.es",
-        to: email,
-        subject: "Restablece tu contraseña — Olvidos de Granada",
-        html: `
-          <h1>Restablece tu contraseña</h1>
-          <p>Hola ${user.name || ""},</p>
-          <p>Hemos recibido una solicitud para restablecer tu contraseña.</p>
-          <p><a href="${resetUrl}">Haz clic aquí para crear una nueva contraseña</a></p>
-          <p>Este enlace caduca en 1 hora.</p>
-          <p>Si no solicitaste este cambio, puedes ignorar este email.</p>
-        `,
-      });
-    } else {
-      console.info("[forgot-password] Reset URL:", resetUrl);
-    }
+    await sendPasswordResetEmail(email, user.name || "", resetUrl);
 
     return successResponse;
   } catch (error) {

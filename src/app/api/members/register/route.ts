@@ -2,13 +2,13 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import bcrypt from "bcryptjs";
 import { db } from "@/lib/db";
-import { stripe, MEMBERSHIP_PRICES } from "@/lib/stripe";
+import { stripe, membershipLineItem } from "@/lib/stripe";
 
 const registerSchema = z.object({
   name: z.string().min(2, "El nombre es obligatorio"),
   email: z.string().email("Email no valido"),
   password: z.string().min(6, "La contraseña debe tener al menos 6 caracteres"),
-  plan: z.enum(["STANDARD", "COLLABORATOR", "HONORARY"]),
+  plan: z.enum(["STANDARD", "HONORARY", "INSTITUTIONAL"]),
 });
 
 function getAppUrl(req: Request) {
@@ -53,23 +53,6 @@ export async function POST(req: Request) {
             "Ya existe una cuenta con ese email. Inicia sesion para continuar.",
         },
         { status: 409 }
-      );
-    }
-
-    const priceId =
-      data.plan === "COLLABORATOR"
-        ? MEMBERSHIP_PRICES.COLLABORATOR
-        : data.plan === "HONORARY"
-          ? MEMBERSHIP_PRICES.HONORARY
-          : MEMBERSHIP_PRICES.STANDARD;
-
-    if (!priceId) {
-      return NextResponse.json(
-        {
-          error:
-            "El plan seleccionado no esta configurado en Stripe. Contacta con administracion.",
-        },
-        { status: 500 }
       );
     }
 
@@ -118,12 +101,7 @@ export async function POST(req: Request) {
       customer: customer.id,
       mode: "subscription",
       payment_method_types: ["card"],
-      line_items: [
-        {
-          price: priceId,
-          quantity: 1,
-        },
-      ],
+      line_items: [membershipLineItem(data.plan)],
       metadata: {
         memberId: created.member.id,
         userId: created.user.id,

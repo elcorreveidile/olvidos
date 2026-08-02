@@ -1,14 +1,9 @@
 import { auth, signOut } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import {
-  User,
-  CreditCard,
-  Settings,
-  LogOut,
-  Menu,
-  Shield,
-} from "lucide-react";
+import { LogOut } from "lucide-react";
+import { Logo } from "@/components/layout/Logo";
+import { MemberSidebarNav } from "@/components/members/MemberSidebarNav";
 
 export default async function MemberLayout({
   children,
@@ -34,51 +29,46 @@ export default async function MemberLayout({
 
   if (!isMember) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="max-w-md w-full px-4">
-          <div className="bg-white rounded-sm shadow-card p-8 text-center">
-            <h1 className="text-2xl font-bold text-azul mb-4">
-              Área de Socios
-            </h1>
-            <p className="text-acero mb-6">
-              Esta área es exclusiva para socios de Olvidos de Granada.
-              Si ya eres socio, contacta con la administración. Si aún no lo eres,
-              puedes hacerte socio ahora.
-            </p>
-            <div className="space-y-3">
-              <a
-                href="/hazte-socio"
-                className="block w-full px-6 py-3 bg-coral text-white font-bold rounded-sm hover:bg-coral-dark transition-colors"
-              >
-                Hazte Socio
-              </a>
-              <a
-                href="/"
-                className="block w-full px-6 py-3 border border-azul text-azul font-bold rounded-sm hover:bg-azul hover:text-white transition-colors"
-              >
-                Volver al Inicio
-              </a>
-            </div>
-            <p className="text-sm text-acero-light mt-6">
-              ¿Ya eres socio? Envía un email a{" "}
-              <a href="mailto:info@olvidosdegranada.es" className="text-coral hover:text-coral/80">
-                info@olvidosdegranada.es
-              </a>
-            </p>
+      <div className="flex min-h-screen items-center justify-center bg-white px-4">
+        <div className="w-full max-w-md text-center">
+          <div className="mb-6 text-[1.6rem]">
+            <Logo />
           </div>
+          <h1 className="mb-4 text-2xl font-black text-tinta">
+            <span className="text-coral">[</span>Área de socios
+          </h1>
+          <p className="mb-6 font-editorial text-tinta/70">
+            Esta área es exclusiva para socios de Olvidos de Granada. Si aún no lo
+            eres, puedes hacerte socio ahora.
+          </p>
+          <div className="space-y-3">
+            <a
+              href="/hazte-socio"
+              className="block w-full rounded-sm bg-coral px-6 py-3 font-bold text-white transition-colors hover:bg-coral-dark"
+            >
+              Hazte socio
+            </a>
+            <a
+              href="/"
+              className="block w-full rounded-sm border border-tinta px-6 py-3 font-bold text-tinta transition-colors hover:bg-tinta hover:text-white"
+            >
+              Volver al inicio
+            </a>
+          </div>
+          <p className="mt-6 text-sm text-acero">
+            ¿Ya eres socio y no puedes entrar? Escríbenos a{" "}
+            <a
+              href="mailto:olvidosdegranada@gmail.com"
+              className="text-coral hover:text-coral/80"
+            >
+              olvidosdegranada@gmail.com
+            </a>
+          </p>
         </div>
       </div>
     );
   }
 
-  const navigation = [
-    { name: "Dashboard", href: "/mi-cuenta", icon: User },
-    { name: "Mi Perfil", href: "/mi-cuenta/perfil", icon: Settings },
-    { name: "Pagos", href: "/mi-cuenta/pagos", icon: CreditCard },
-    { name: "Carnet Digital", href: "/mi-cuenta/carnet", icon: CreditCard },
-  ];
-
-  // Add admin link for admin users
   const isAdmin = userRole === "ADMIN" || userRole === "MEMBER_ADMIN";
 
   async function handleSignOut() {
@@ -87,61 +77,37 @@ export default async function MemberLayout({
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       {/* Sidebar */}
-      <aside className="fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-200">
-        <div className="flex flex-col h-full">
+      <aside className="fixed inset-y-0 left-0 z-50 hidden w-64 border-r border-acero-light/50 bg-white md:block">
+        <div className="flex h-full flex-col">
           {/* Logo */}
-          <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200">
-            <Link href="/mi-cuenta" className="text-xl font-bold text-azul">
-              Olvidos de Granada
+          <div className="flex h-16 items-center justify-between border-b border-acero-light/50 px-6">
+            <Link
+              href="/mi-cuenta"
+              className="text-[1.4rem]"
+              aria-label="Olvidos — mi cuenta"
+            >
+              <Logo />
             </Link>
-            <span className="text-xs bg-coral-100 text-coral-700 px-2 py-1 rounded">
+            <span className="rounded-sm bg-coral/10 px-2 py-1 text-xs font-bold uppercase tracking-wide text-coral">
               Socio
             </span>
           </div>
 
-          {/* Navigation */}
-          <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
-            {navigation.map((item) => {
-              const Icon = item.icon;
-              return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="flex items-center gap-3 px-3 py-2 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors"
-                >
-                  <Icon className="w-5 h-5" />
-                  {item.name}
-                </Link>
-              );
-            })}
-
-            {/* Admin link for admin users */}
-            {isAdmin && (
-              <Link
-                href="/admin"
-                className="flex items-center gap-3 px-3 py-2 text-coral rounded-lg hover:bg-coral/10 transition-colors font-medium border border-coral/20"
-              >
-                <Shield className="w-5 h-5" />
-                Panel de Administración
-              </Link>
-            )}
-          </nav>
+          <MemberSidebarNav isAdmin={isAdmin} />
 
           {/* User info */}
-          <div className="p-4 border-t border-gray-200">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-azul text-white rounded-full flex items-center justify-center">
-                  {userName?.charAt(0) || userEmail?.charAt(0)}
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-gray-900">
-                    {userName || "Usuario"}
-                  </p>
-                  <p className="text-xs text-gray-500">{userEmail}</p>
-                </div>
+          <div className="border-t border-acero-light/50 p-4">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-coral font-bold text-white">
+                {(userName?.charAt(0) || userEmail?.charAt(0) || "S").toUpperCase()}
+              </div>
+              <div className="min-w-0">
+                <p className="truncate text-sm font-bold text-tinta">
+                  {userName || "Socio"}
+                </p>
+                <p className="truncate text-xs text-acero">{userEmail}</p>
               </div>
             </div>
           </div>
@@ -149,34 +115,31 @@ export default async function MemberLayout({
       </aside>
 
       {/* Main content */}
-      <div className="pl-64">
+      <div className="md:pl-64">
         {/* Top bar */}
-        <header className="sticky top-0 z-40 bg-white border-b border-gray-200">
-          <div className="flex items-center justify-between h-16 px-8">
-            <div className="flex items-center gap-4">
-              <button className="lg:hidden">
-                <Menu className="w-6 h-6" />
+        <header className="sticky top-0 z-40 border-b border-acero-light/50 bg-white">
+          <div className="flex h-16 items-center justify-between px-6 md:px-8">
+            <h1 className="text-lg font-black text-tinta">
+              <span className="text-coral">[</span>Área de socios
+            </h1>
+            <form action={handleSignOut}>
+              <button
+                type="submit"
+                className="flex items-center gap-2 text-sm font-bold text-acero transition-colors hover:text-coral"
+              >
+                <LogOut className="h-4 w-4" />
+                Cerrar sesión
               </button>
-              <h1 className="text-xl font-semibold text-gray-900">
-                Área de Socios
-              </h1>
-            </div>
-            <div className="flex items-center gap-4">
-              <form action={handleSignOut}>
-                <button
-                  type="submit"
-                  className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-                >
-                  <LogOut className="w-4 h-4" />
-                  Cerrar sesión
-                </button>
-              </form>
-            </div>
+            </form>
+          </div>
+          {/* Navegación horizontal en móvil (la sidebar se oculta) */}
+          <div className="border-t border-acero-light/50 md:hidden">
+            <MemberSidebarNav isAdmin={isAdmin} horizontal />
           </div>
         </header>
 
         {/* Page content */}
-        <main className="p-8">{children}</main>
+        <main className="p-6 md:p-8">{children}</main>
       </div>
     </div>
   );

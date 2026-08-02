@@ -4,25 +4,28 @@ import { useState } from "react";
 import Link from "next/link";
 import { Search, Menu, X } from "lucide-react";
 import { MemberAreaLinks } from "./MemberAreaLinks";
+import { Logo } from "./Logo";
 
 const NAV_MAIN = [
   { label: "SOBRE OLVIDOS", href: "/sobre-nosotros" },
   {
     label: "MEMORIA",
-    href: "/memoria",
+    href: "/revista",
     children: [
-      { label: "Archivo histórico", href: "/memoria" },
-      { label: "Números anteriores", href: "/revista" },
+      { label: "Archivo (revista impresa)", href: "/revista" },
+      { label: "Memoria de Olvidos", href: "/articulos?categoria=memoria-de-olvidos" },
+      { label: "Memoria de Granada", href: "/articulos?categoria=memoria-de-granada" },
     ],
   },
   { label: "ENCUENTROS", href: "/actividades" },
 ] as const;
 
 const NAV_SECTIONS = [
-  { label: "Editoriales", href: "/articulos?categoria=editoriales" },
+  { label: "Editoriales", href: "/articulos?categoria=editorial" },
   { label: "Palabras", href: "/articulos?categoria=palabras" },
-  { label: "Piezas y Procesos", href: "/articulos?categoria=piezas-y-procesos" },
-  { label: "Soneto500", href: "/articulos?categoria=soneto500" },
+  { label: "Piezas y Procesos", href: "/articulos?categoria=piezas-procesos" },
+  { label: "Apostillas", href: "/articulos?categoria=apostillas" },
+  { label: "Soneto500", href: "/articulos?categoria=sonetos" },
 ] as const;
 
 interface HeaderProps {
@@ -39,9 +42,8 @@ export function Header({ isAuthenticated }: HeaderProps) {
       <div className="border-b border-acero-light/50">
         <div className="max-w-content mx-auto px-4 h-header flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-baseline gap-0 group">
-            <span className="text-coral text-3xl font-black leading-none">[</span>
-            <span className="text-azul text-2xl font-bold tracking-tight">olvidos</span>
+          <Link href="/" className="group text-[1.7rem]" aria-label="Olvidos — inicio">
+            <Logo />
           </Link>
 
           {/* Navegación principal (desktop) */}
@@ -115,11 +117,11 @@ export function Header({ isAuthenticated }: HeaderProps) {
       {searchOpen && (
         <div className="border-b border-acero-light/30 bg-white">
           <div className="max-w-content mx-auto px-4 py-4">
-            <form action="/buscar" method="get" className="flex gap-2">
+            <form action="/articulos" method="get" className="flex gap-2">
               <input
                 type="search"
                 name="q"
-                placeholder="Buscar artículos, eventos, autores..."
+                placeholder="Buscar artículos, autores, secciones..."
                 className="flex-1 px-4 py-2 border border-acero-light rounded-sm text-sm focus:outline-none focus:border-coral"
                 autoFocus
               />

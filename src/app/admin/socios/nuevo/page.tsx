@@ -114,8 +114,7 @@ export default async function NewMemberPage() {
                 className="w-full h-10 px-3 py-2 border border-gray-300 rounded-md bg-white"
               >
                 <option value="STANDARD">Socio Estándar</option>
-                <option value="COLLABORATOR">Socio Colaborador</option>
-                <option value="HONORARY">Socio de Honor</option>
+                <option value="HONORARY">Socio Mecenas</option>
                 <option value="INSTITUTIONAL">Socio Institucional</option>
               </select>
             </div>

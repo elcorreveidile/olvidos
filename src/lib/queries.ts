@@ -33,8 +33,12 @@ export async function getPublishedArticles(
         author: {
           select: { name: true },
         },
+        byline: true,
+        authors: {
+          orderBy: { order: "asc" },
+          select: { author: { select: { name: true, slug: true } } },
+        },
         categories: {
-          take: 1,
           select: {
             category: {
               select: { name: true, slug: true },
@@ -75,7 +79,6 @@ export async function getFeaturedArticles(): Promise<ArticleSummary[]> {
         select: { name: true },
       },
       categories: {
-        take: 1,
         select: {
           category: {
             select: { name: true, slug: true },
@@ -222,8 +225,12 @@ export async function getArticlesByCategory(
         author: {
           select: { name: true },
         },
+        byline: true,
+        authors: {
+          orderBy: { order: "asc" },
+          select: { author: { select: { name: true, slug: true } } },
+        },
         categories: {
-          take: 1,
           select: {
             category: {
               select: { name: true, slug: true },
@@ -310,8 +317,12 @@ export async function getArticlesByTag(
         author: {
           select: { name: true },
         },
+        byline: true,
+        authors: {
+          orderBy: { order: "asc" },
+          select: { author: { select: { name: true, slug: true } } },
+        },
         categories: {
-          take: 1,
           select: {
             category: {
               select: { name: true, slug: true },
@@ -410,20 +421,29 @@ export async function getAllTags() {
 export async function searchArticles(
   query: string,
   page: number = 1,
-  limit: number = 12
+  limit: number = 12,
+  categorySlug?: string
 ) {
   const skip = (page - 1) * limit;
+  const ci = { contains: query, mode: "insensitive" as const };
 
-  const [articles, total] = await Promise.all([
+  const where = {
+    status: ContentStatus.PUBLISHED,
+    ...(categorySlug
+      ? { categories: { some: { category: { slug: categorySlug } } } }
+      : {}),
+    OR: [
+      { title: ci },
+      { content: ci },
+      { excerpt: ci },
+      { byline: ci },
+      { authors: { some: { author: { name: ci } } } },
+    ],
+  };
+
+  const [articles, total, category] = await Promise.all([
     db.article.findMany({
-      where: {
-        status: ContentStatus.PUBLISHED,
-        OR: [
-          { title: { contains: query, mode: "insensitive" } },
-          { content: { contains: query, mode: "insensitive" } },
-          { excerpt: { contains: query, mode: "insensitive" } },
-        ],
-      },
+      where,
       skip,
       take: limit,
       orderBy: { publishedAt: "desc" },
@@ -434,29 +454,24 @@ export async function searchArticles(
         excerpt: true,
         coverImage: true,
         publishedAt: true,
-        author: {
-          select: { name: true },
+        author: { select: { name: true } },
+        byline: true,
+        authors: {
+          orderBy: { order: "asc" },
+          select: { author: { select: { name: true, slug: true } } },
         },
         categories: {
-          take: 1,
-          select: {
-            category: {
-              select: { name: true, slug: true },
-            },
-          },
+          select: { category: { select: { name: true, slug: true } } },
         },
       },
     }),
-    db.article.count({
-      where: {
-        status: ContentStatus.PUBLISHED,
-        OR: [
-          { title: { contains: query, mode: "insensitive" } },
-          { content: { contains: query, mode: "insensitive" } },
-          { excerpt: { contains: query, mode: "insensitive" } },
-        ],
-      },
-    }),
+    db.article.count({ where }),
+    categorySlug
+      ? db.category.findUnique({
+          where: { slug: categorySlug },
+          select: { name: true, slug: true },
+        })
+      : Promise.resolve(null),
   ]);
 
   return {
@@ -464,6 +479,7 @@ export async function searchArticles(
     total,
     totalPages: Math.ceil(total / limit),
     query,
+    category,
   };
 }
 
@@ -513,4 +529,49 @@ export async function getIssueBySlug(slug: string) {
       },
     },
   });
+}
+
+/**
+ * Obtiene los artículos firmados por un autor (por slug del Author) con paginación.
+ */
+export async function getArticlesByAuthor(
+  authorSlug: string,
+  page: number = 1,
+  limit: number = 24
+) {
+  const skip = (page - 1) * limit;
+  const where = {
+    status: ContentStatus.PUBLISHED,
+    authors: { some: { author: { slug: authorSlug } } },
+  } as const;
+
+  const [articles, total, author] = await Promise.all([
+    db.article.findMany({
+      where,
+      skip,
+      take: limit,
+      orderBy: { publishedAt: "desc" },
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        excerpt: true,
+        coverImage: true,
+        publishedAt: true,
+        author: { select: { name: true } },
+        byline: true,
+        authors: {
+          orderBy: { order: "asc" },
+          select: { author: { select: { name: true, slug: true } } },
+        },
+        categories: {
+          select: { category: { select: { name: true, slug: true } } },
+        },
+      },
+    }),
+    db.article.count({ where }),
+    db.author.findUnique({ where: { slug: authorSlug }, select: { name: true } }),
+  ]);
+
+  return { articles, total, totalPages: Math.ceil(total / limit), author };
 }

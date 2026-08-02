@@ -22,7 +22,7 @@ export default function PoliticaPrivacidadPage() {
                   <strong>Asociación Cultural Olvidos de Granada</strong>
                 </p>
                 <ul className="list-none space-y-2 text-acero">
-                  <li>• Email: info@olvidosdegranada.es</li>
+                  <li>• Email: olvidosdegranada@gmail.com</li>
                   <li>• Sitio Web: olvidosdegranada.es</li>
                   <li>• Sede: Granada, España</li>
                 </ul>
@@ -130,7 +130,7 @@ export default function PoliticaPrivacidadPage() {
                   <li><strong>Revocación:</strong> Retirar tu consentimiento en cualquier momento</li>
                 </ul>
                 <p className="text-acero mt-4">
-                  Para ejercer estos derechos, envía un email a: info@olvidosdegranada.es
+                  Para ejercer estos derechos, envía un email a: olvidosdegranada@gmail.com
                 </p>
               </section>
 

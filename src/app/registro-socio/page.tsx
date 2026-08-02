@@ -17,41 +17,48 @@ function RegistroSocioContent() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  // Step 2: Membership Plan
-  const [plan, setPlan] = useState<"STANDARD" | "COLLABORATOR" | "HONORARY">("STANDARD");
+  // Step 2: Membership Plan (HONORARY = "Mecenas" internamente)
+  const [plan, setPlan] = useState<"STANDARD" | "HONORARY" | "INSTITUTIONAL">("STANDARD");
 
   const plans = [
     {
       id: "STANDARD",
       name: "Estándar",
-      price: "30€",
-      period: "/año",
-      features: ["Revista digital anual", "Acceso a eventos", "Carnet digital", "Descuentos colaboradores"],
-    },
-    {
-      id: "COLLABORATOR",
-      name: "Colaborador",
-      price: "60€",
+      price: "50€",
       period: "/año",
       features: [
-        "Todo lo del plan Estándar",
-        "Revista impresa (2 números)",
-        "Entradas gratuitas a eventos",
-        "Mención en la web",
-        "Descuento del 20% en libros",
+        "Carné digital de socio con QR",
+        "Voz y voto en la Asamblea",
+        "Invitación a los encuentros, con asiento reservado",
+        "La edición del año de la revista, en digital",
+        "El libro y la revista impresa a precio de socio",
       ],
-      popular: true,
     },
     {
       id: "HONORARY",
-      name: "Honorífico",
+      name: "Mecenas",
       price: "120€",
       period: "/año",
+      popular: true,
       features: [
-        "Todo lo del plan Colaborador",
-        "Revista impresa completa",
-        "Invitación a eventos VIP",
-        "Dedicada en la revista",
+        "Todo lo del plan Estándar",
+        "La revista impresa del año, en tu casa",
+        "Ejemplar del libro de las editoriales de Mariano",
+        "Tu nombre en los créditos de la revista impresa",
+        "Mención como Mecenas en la web",
+      ],
+    },
+    {
+      id: "INSTITUTIONAL",
+      name: "Institucional",
+      price: "250€",
+      period: "/año",
+      features: [
+        "Membresía a nombre de la entidad",
+        "5 ejemplares de cada edición impresa (revista y libro)",
+        "Logotipo destacado en la web",
+        "Factura y convenio de colaboración",
+        "Voz y voto en la Asamblea, mediante un representante",
       ],
     },
   ];
@@ -65,7 +72,7 @@ function RegistroSocioContent() {
     setStep(2);
   };
 
-  const handleSelectPlan = async (selectedPlan: "STANDARD" | "COLLABORATOR" | "HONORARY") => {
+  const handleSelectPlan = async (selectedPlan: "STANDARD" | "HONORARY" | "INSTITUTIONAL") => {
     setPlan(selectedPlan);
     setStep(3);
     setError(null);

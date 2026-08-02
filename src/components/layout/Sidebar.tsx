@@ -78,7 +78,7 @@ export function Sidebar({ categories = [], recentArticles = [] }: SidebarProps) 
       <div className="bg-azul rounded-sm p-6 text-center">
         <h3 className="text-white font-bold text-sm mb-2">Hazte socio</h3>
         <p className="text-acero-light text-xs mb-4 leading-relaxed">
-          Apoya la cultura y disfruta de contenido exclusivo, eventos y más.
+          Carné digital, voz y voto, encuentros y la revista del año.
         </p>
         <Link
           href="/hazte-socio"

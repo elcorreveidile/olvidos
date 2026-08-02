@@ -10,6 +10,7 @@ import {
   LogOut,
   Menu,
   CreditCard,
+  Files,
 } from "lucide-react";
 
 export default async function AdminLayout({
@@ -37,6 +38,7 @@ export default async function AdminLayout({
     { name: "Artículos", href: "/admin/articulos", icon: FileText },
     { name: "Revista", href: "/admin/revista", icon: BookOpen },
     { name: "Socios", href: "/admin/socios", icon: Users },
+    { name: "Documentos", href: "/admin/documentos", icon: Files },
     { name: "Pagos", href: "/admin/pagos", icon: CreditCard },
     { name: "Configuración", href: "/admin/configuracion", icon: Settings },
   ];

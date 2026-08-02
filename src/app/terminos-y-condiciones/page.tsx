@@ -48,18 +48,17 @@ export default function TerminosCondicionesPage() {
                   La Asociación ofrece tres categorías de membresía:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 text-acero mb-4">
-                  <li><strong>Estándar:</strong> Cuota anual de 30€</li>
-                  <li><strong>Colaborador:</strong> Cuota anual de 60€</li>
-                  <li><strong>Honorífico:</strong> Cuota anual de 120€</li>
+                  <li><strong>Estándar:</strong> Cuota anual de 50€</li>
+                  <li><strong>Mecenas:</strong> Cuota anual de 120€</li>
+                  <li><strong>Institucional:</strong> Cuota anual de 250€ (entidades)</li>
                 </ul>
 
                 <h3 className="text-xl font-bold text-azul mb-3">3.2. Derechos de los Socios</h3>
                 <ul className="list-disc pl-6 space-y-2 text-acero mb-4">
-                  <li>Recibir la revista de la Asociación en formato digital y/o impreso según la categoría</li>
-                  <li>Participar en todas las actividades organizadas por la Asociación</li>
-                  <li>Acceder a eventos exclusivos para socios</li>
-                  <li>Disfrutar de descuentos en establecimientos colaboradores</li>
-                  <li>Ejercer el derecho de voto en las asambleas generales (socios con más de 6 meses de antigüedad)</li>
+                  <li>Recibir la edición del año de la revista en formato digital y, según la categoría, también impresa</li>
+                  <li>Participar en todas las actividades y encuentros organizados por la Asociación</li>
+                  <li>Adquirir el libro y la revista impresa a precio de socio (categoría Estándar)</li>
+                  <li>Ejercer el derecho de voz y voto en la Asamblea General, estando al corriente de la cuota</li>
                 </ul>
 
                 <h3 className="text-xl font-bold text-azul mb-3">3.3. Obligaciones de los Socios</h3>
@@ -117,7 +116,7 @@ export default function TerminosCondicionesPage() {
                 <h3 className="text-xl font-bold text-azul mb-3">7.1. Baja Voluntaria</h3>
                 <p className="text-acero mb-4">
                   Cualquier socio puede solicitar su baja en la Asociación en cualquier
-                  momento mediante comunicación por email a info@olvidosdegranada.es o
+                  momento mediante comunicación por email a olvidosdegranada@gmail.com o
                   desde su área privada. No se devolverán las cuotas ya pagadas.
                 </p>
 
@@ -167,7 +166,7 @@ export default function TerminosCondicionesPage() {
                   puedes contactarnos en:
                 </p>
                 <ul className="list-none space-y-2 text-acero">
-                  <li>• Email: info@olvidosdegranada.es</li>
+                  <li>• Email: olvidosdegranada@gmail.com</li>
                   <li>• Dirección: Granada, España</li>
                 </ul>
               </section>

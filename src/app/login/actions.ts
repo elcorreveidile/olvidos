@@ -12,6 +12,16 @@ export async function loginWithGithub() {
   }
 }
 
+export async function loginWithGoogle() {
+  console.log("[Login Action] Google login attempted");
+  try {
+    await signIn("google", { redirectTo: "/post-login" });
+  } catch (error) {
+    console.error("[Login Action] Google login error:", error);
+    throw error;
+  }
+}
+
 export async function loginWithCredentials(formData: FormData) {
   const email = formData.get("email") as string;
   const password = formData.get("password") as string;

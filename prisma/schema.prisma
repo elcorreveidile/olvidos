@@ -22,6 +22,7 @@ model User {
   events        Event[]   @relation("organizer")
   member        Member?
   sessions      Session[]
+  documents     Document[] @relation("uploader")
 }
 
 model Account {
@@ -115,6 +116,7 @@ model Article {
   updatedAt       DateTime               @updatedAt
   metaTitle       String?
   metaDescription String?
+  byline          String?
   wpId            Int?                   @unique
   author          User                   @relation("author", fields: [authorId], references: [id])
   issue           MagazineIssue?         @relation(fields: [issueId], references: [id])
@@ -257,6 +259,31 @@ model SiteConfig {
   id    String @id @default(cuid())
   key   String @unique
   value String
+}
+
+// Documentos de la asociación para el área de socios (estatutos, actas, libro
+// de socios…). El archivo vive en Vercel Blob; aquí guardamos los metadatos.
+model Document {
+  id           String           @id @default(cuid())
+  title        String
+  category     DocumentCategory @default(OTRO)
+  fileUrl      String
+  fileName     String
+  size         Int?
+  mimeType     String?
+  uploadedById String?
+  uploadedBy   User?            @relation("uploader", fields: [uploadedById], references: [id], onDelete: SetNull)
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+
+  @@index([category])
+}
+
+enum DocumentCategory {
+  ESTATUTOS
+  ACTA
+  LIBRO_SOCIOS
+  OTRO
 }
 
 enum Role {

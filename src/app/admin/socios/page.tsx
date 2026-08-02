@@ -1,6 +1,7 @@
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { getMembers } from "@/lib/actions/members";
+import { MEMBERSHIP_LABELS } from "@/types/member";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -84,12 +85,7 @@ export default async function AdminMembersPage({ searchParams }: PageProps) {
     CANCELLED: "bg-gray-100 text-gray-700",
   };
 
-  const membershipLevelLabels = {
-    STANDARD: "Estándar",
-    COLLABORATOR: "Colaborador",
-    HONORARY: "Honor",
-    INSTITUTIONAL: "Institucional",
-  };
+  const membershipLevelLabels = MEMBERSHIP_LABELS;
 
   return (
     <div className="space-y-6">
@@ -203,8 +199,7 @@ export default async function AdminMembersPage({ searchParams }: PageProps) {
               >
                 <option value="all">Todos los niveles</option>
                 <option value="STANDARD">Estándar</option>
-                <option value="COLLABORATOR">Colaborador</option>
-                <option value="HONORARY">Honor</option>
+                <option value="HONORARY">Mecenas</option>
                 <option value="INSTITUTIONAL">Institucional</option>
               </select>
             </div>

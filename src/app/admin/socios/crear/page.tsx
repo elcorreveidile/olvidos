@@ -131,12 +131,12 @@ export default async function CreateMemberPage() {
                 className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-coral focus:border-transparent"
               >
                 <option value="">Selecciona el nivel</option>
-                <option value="STANDARD">Estándar (30€/año)</option>
-                <option value="COLLABORATOR">Colaborador (60€/año)</option>
-                <option value="HONORARY">Honorífico (120€/año)</option>
+                <option value="STANDARD">Estándar (50€/año)</option>
+                <option value="HONORARY">Mecenas (120€/año)</option>
+                <option value="INSTITUTIONAL">Institucional (250€/año)</option>
               </select>
               <p className="text-xs text-acero-light mt-1">
-                Los socios honoríficos tienen acceso VIP y mención en la revista
+                Mecenas e Institucional reciben la revista impresa y mención pública en la web.
               </p>
             </div>
 
@@ -242,7 +242,7 @@ export default async function CreateMemberPage() {
               </h3>
               <ul className="text-sm text-acero space-y-1">
                 <li>• El usuario debe estar registrado en el sistema primero</li>
-                <li>• Los socios honoríficos tienen acceso prioritario a eventos y menciones especiales</li>
+                <li>• Los socios Mecenas e Institucionales reciben la revista impresa y mención pública en la web</li>
                 <li>• El estado &ldquo;Pendiente de pago&rdquo; se usa cuando están esperando confirmación de pago</li>
                 <li>• Los socios con perfil público aparecerán en la página /socios</li>
               </ul>

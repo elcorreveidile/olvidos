@@ -1,13 +1,8 @@
-import { stripe, MEMBERSHIP_PRICES } from "@/lib/stripe";
+import { stripe, MEMBERSHIP_PLANS, type MembershipPlan } from "@/lib/stripe";
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
-import { Resend } from "resend";
-
-// Initialize Resend (optional - only if RESEND_API_KEY is configured)
-const resend = process.env.RESEND_API_KEY
-  ? new Resend(process.env.RESEND_API_KEY)
-  : null;
+import { sendWelcomeEmail } from "@/lib/email";
 
 export const dynamic = "force-dynamic";
 
@@ -137,33 +132,21 @@ async function handleCheckoutSessionCompleted(session: any) {
 
   console.log(`Member ${memberId} activated from checkout session`);
 
-  // Send welcome email (if Resend is configured)
-  if (resend) {
-    try {
-      const member = await db.member.findUnique({
-        where: { id: memberId },
-        include: { user: true },
-      });
-
-      if (member) {
-        await resend.emails.send({
-          from: process.env.RESEND_FROM_EMAIL || "noreply@olvidosdegranada.com",
-          to: member.user.email,
-          subject: "Bienvenido a Olvidos de Granada",
-          html: `
-            <h1>¡Bienvenido a Olvidos de Granada!</h1>
-            <p>Hola ${member.user.name || "Socio"},</p>
-            <p>Tu membresía ha sido activada exitosamente. Ya eres parte de la Asociación Cultural Olvidos de Granada.</p>
-            <p>Número de socio: <strong>${member.memberNumber}</strong></p>
-            <p>Puedes acceder a tu área privada en:</p>
-            <p><a href="${process.env.NEXT_PUBLIC_APP_URL}/mi-cuenta">Mi Cuenta</a></p>
-            <p>¡Gracias por tu apoyo!</p>
-          `,
-        });
-      }
-    } catch (emailError) {
-      console.error("Error sending welcome email:", emailError);
+  // Correo de bienvenida (con plantilla de marca; no hace nada si falta Resend).
+  try {
+    const member = await db.member.findUnique({
+      where: { id: memberId },
+      include: { user: true },
+    });
+    if (member) {
+      await sendWelcomeEmail(
+        member.user.email,
+        member.user.name || "Socio",
+        member.memberNumber
+      );
     }
+  } catch (emailError) {
+    console.error("Error sending welcome email:", emailError);
   }
 }
 
@@ -215,14 +198,15 @@ async function handleSubscriptionCreated(subscription: any) {
     });
 
     if (member) {
-      // Determine membership level from price
-      const priceId = subscription.items.data[0].price.id;
-      const membershipLevel =
-        priceId === MEMBERSHIP_PRICES.COLLABORATOR
-          ? "COLLABORATOR"
-          : priceId === MEMBERSHIP_PRICES.HONORARY
-            ? "HONORARY"
-            : "STANDARD";
+      // El precio se crea al vuelo (price_data), así que deducimos el nivel por
+      // el importe, o del metadata de la suscripción si está disponible.
+      const amount = subscription.items.data[0].price.unit_amount as number;
+      const membershipLevel: MembershipPlan =
+        (subscription.metadata?.membershipLevel as MembershipPlan) ||
+        (Object.keys(MEMBERSHIP_PLANS) as MembershipPlan[]).find(
+          (k) => MEMBERSHIP_PLANS[k].amount === amount
+        ) ||
+        "STANDARD";
 
       await db.member.update({
         where: { id: memberId },

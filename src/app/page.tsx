@@ -1,10 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
-  getFeaturedArticles,
+  getPublishedArticles,
   getUpcomingEvents,
+  getAllIssues,
 } from "@/lib/queries";
-import type { ArticleSummary } from "@/types/content";
 import { Hero } from "@/components/home/Hero";
+import { MagazineIssue } from "@/components/content/MagazineIssue";
+import { ArticleCard } from "@/components/content/ArticleCard";
 
 type EventType = {
   id: string;
@@ -42,104 +45,119 @@ function getEventTypeLabel(eventType: string): string {
 }
 
 export default async function HomePage() {
-  // Fetch real data from database
-  const [articlesData, eventsData] = await Promise.all([
-    getFeaturedArticles(),
+  const [articlesData, eventsData, issues] = await Promise.all([
+    getPublishedArticles(1, 3),
     getUpcomingEvents(2),
+    getAllIssues(),
   ]);
 
-  const articles = articlesData;
+  const articles = articlesData.articles;
   const events = eventsData as EventType[];
 
-  // Fallback to latest articles if no featured articles
-  const displayArticles =
-    articles.length > 0
-      ? articles
-      : [];
+  // Destacamos en portada los números de la época en color (9–17), los más vistosos.
+  const destacados = [...issues]
+    .filter((i) => i.number >= 1 && i.number < 100)
+    .sort((a, b) => b.number - a.number)
+    .slice(0, 6);
 
   return (
     <div className="max-w-content mx-auto px-4 py-12">
-      {/* Hero */}
       <Hero />
 
-      {/* Artículos destacados */}
+      {/* Del archivo */}
+      {destacados.length > 0 && (
+        <section className="mb-16">
+          <div className="mb-8 flex items-end justify-between">
+            <div>
+              <p className="mb-2 text-xs font-bold uppercase tracking-[0.25em] text-coral">
+                1981 · La revista impresa
+              </p>
+              <h2 className="text-2xl font-black text-tinta">
+                <span className="text-coral">[</span>Del archivo
+              </h2>
+            </div>
+            <Link
+              href="/revista"
+              className="text-sm font-bold text-coral transition-colors hover:text-tinta"
+            >
+              Ver la hemeroteca →
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
+            {destacados.map((issue) => (
+              <MagazineIssue
+                key={issue.id}
+                number={issue.number}
+                title={issue.title}
+                slug={issue.slug}
+                coverImage={issue.coverImage}
+                articleCount={issue._count?.articles}
+              />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Últimos artículos */}
       <section className="mb-16">
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl font-bold text-azul">
+        <div className="mb-8 flex items-center justify-between">
+          <h2 className="text-2xl font-black text-tinta">
             <span className="text-coral">[</span>Últimos artículos
           </h2>
           <Link
             href="/articulos"
-            className="text-sm font-bold text-coral hover:text-azul transition-colors"
+            className="text-sm font-bold text-coral transition-colors hover:text-tinta"
           >
             Ver todos →
           </Link>
         </div>
 
-        {displayArticles.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {displayArticles.map((article) => (
-              <Link
+        {articles.length > 0 ? (
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {articles.map((article) => (
+              <ArticleCard
                 key={article.id}
-                href={`/articulos/${article.slug}`}
-                className="article-card rounded-sm overflow-hidden block"
-              >
-                {article.coverImage ? (
-                  <div
-                    className="aspect-[16/10] bg-gray-100 bg-cover bg-center"
-                    style={{ backgroundImage: `url(${article.coverImage})` }}
-                  />
-                ) : (
-                  <div className="aspect-[16/10] bg-gray-100" />
-                )}
-                <div className="p-6">
-                  {article.categories.length > 0 && (
-                    <span className="text-xs font-bold text-coral category-bracket">
-                      {article.categories[0].category.name}
-                    </span>
-                  )}
-                  <h3 className="article-card-title mt-2 text-lg font-bold text-azul leading-tight">
-                    {article.title}
-                  </h3>
-                  {article.excerpt && (
-                    <p className="article-card-excerpt mt-2 text-sm text-acero leading-relaxed line-clamp-3">
-                      {article.excerpt}
-                    </p>
-                  )}
-                  {article.publishedAt && (
-                    <p className="article-card-meta mt-4 text-xs text-acero-light">
-                      {formatDate(new Date(article.publishedAt))}
-                    </p>
-                  )}
-                </div>
-              </Link>
+                title={article.title}
+                slug={article.slug}
+                excerpt={article.excerpt}
+                coverImage={article.coverImage}
+                publishedAt={article.publishedAt}
+                categories={article.categories.map((c) => c.category)}
+                author={article.author}
+                authors={article.authors}
+              />
             ))}
           </div>
         ) : (
-          <div className="text-center py-12 bg-gray-50 rounded-sm">
-            <p className="text-acero font-editorial">
-              Aún no hay artículos publicados. ¡Muy pronto habrá contenido nuevo!
+          <div className="rounded-sm border border-acero-light/40 bg-gray-50 py-12 text-center">
+            <p className="font-editorial text-acero">
+              Muy pronto, nuevos artículos de la época digital. Mientras tanto,
+              explora el{" "}
+              <Link href="/revista" className="font-bold text-coral hover:text-tinta">
+                archivo impreso
+              </Link>
+              .
             </p>
           </div>
         )}
       </section>
 
-      {/* Próximos eventos */}
+      {/* Próximos encuentros */}
       <section className="mb-16">
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl font-bold text-azul">
+        <div className="mb-8 flex items-center justify-between">
+          <h2 className="text-2xl font-black text-tinta">
             <span className="text-coral">[</span>Próximos encuentros
           </h2>
           <Link
             href="/actividades"
-            className="text-sm font-bold text-coral hover:text-azul transition-colors"
+            className="text-sm font-bold text-coral transition-colors hover:text-tinta"
           >
             Ver todos →
           </Link>
         </div>
 
         {events.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {events.map((event) => {
               const eventDate = new Date(event.startDate);
               const day = eventDate.getDate();
@@ -151,22 +169,22 @@ export default async function HomePage() {
                 <Link
                   key={event.id}
                   href={`/actividades/${event.slug}`}
-                  className="shadow-card rounded-sm p-6 hover:shadow-card-hover transition-shadow block"
+                  className="block rounded-sm p-6 shadow-card transition-shadow hover:shadow-card-hover"
                 >
                   <div className="flex gap-4">
-                    <div className="text-center min-w-[60px]">
+                    <div className="min-w-[60px] text-center">
                       <span className="block text-2xl font-black text-coral">
                         {day}
                       </span>
-                      <span className="block text-xs font-bold text-acero uppercase">
+                      <span className="block text-xs font-bold uppercase text-acero">
                         {month}
                       </span>
                     </div>
                     <div className="flex-1">
-                      <span className="text-xs font-bold text-coral tag-paren">
+                      <span className="tag-paren text-xs font-bold text-coral">
                         {getEventTypeLabel(event.eventType)}
                       </span>
-                      <h3 className="mt-1 text-lg font-bold text-azul">
+                      <h3 className="mt-1 text-lg font-bold text-tinta">
                         {event.title}
                       </h3>
                       {event.location && (
@@ -182,27 +200,50 @@ export default async function HomePage() {
             })}
           </div>
         ) : (
-          <div className="text-center py-12 bg-gray-50 rounded-sm">
-            <p className="text-acero font-editorial">
-              No hay próximos eventos programados. ¡Estamos organizando nuevas
+          <div className="rounded-sm border border-acero-light/40 bg-gray-50 py-12 text-center">
+            <p className="font-editorial text-acero">
+              No hay próximos encuentros programados. ¡Estamos organizando nuevas
               actividades!
             </p>
           </div>
         )}
       </section>
 
+      {/* Apoyo a Granada 2031 */}
+      <Link
+        href="/granada-2031"
+        className="group mb-16 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-sm border border-acero-light/40 bg-gray-50 px-6 py-4 text-center transition-colors hover:border-coral/50"
+      >
+        <Image
+          src="/granada-2031/simbolo.png"
+          alt=""
+          aria-hidden
+          width={14}
+          height={32}
+          className="h-6 w-auto"
+        />
+        <span className="text-sm text-tinta/70">Apoyamos la candidatura de</span>
+        <strong className="text-sm font-bold text-tinta">
+          Granada, Capital Europea de la Cultura 2031
+        </strong>
+        <span className="text-sm font-semibold text-coral transition-transform group-hover:translate-x-0.5">
+          Por qué nos sumamos →
+        </span>
+      </Link>
+
       {/* CTA Hazte socio */}
-      <section className="bg-azul rounded-sm p-12 text-center">
-        <h2 className="text-3xl font-bold text-white mb-4">
+      <section className="curtain-velvet rounded-sm p-12 text-center">
+        <h2 className="mb-4 text-3xl font-bold text-white">
           <span className="text-coral">[</span>Hazte socio
         </h2>
-        <p className="text-acero-light max-w-lg mx-auto mb-8 font-editorial">
-          Apoya la cultura de Granada. Disfruta de contenido exclusivo,
-          invitaciones a eventos, carnet digital y mucho más.
+        <p className="mx-auto mb-8 max-w-lg font-editorial text-white/80">
+          Carné digital, voz y voto en la asociación, la edición del año e
+          invitación a los encuentros. Y tu apoyo a la vuelta de la revista al
+          papel.
         </p>
         <Link
           href="/hazte-socio"
-          className="inline-block px-8 py-3 bg-coral text-white font-bold rounded-sm hover:bg-coral-dark transition-colors"
+          className="inline-block rounded-sm bg-coral px-8 py-3 font-bold text-white transition-colors hover:bg-coral-dark"
         >
           Únete a Olvidos
         </Link>

@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { auth } from "@/lib/auth";
+import { Logo } from "./Logo";
+import { DesarrolloCredit } from "@/components/shared/DesarrolloCredit";
+import { ReconocimientoFooter } from "./ReconocimientoFooter";
 
 export async function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,9 +16,8 @@ export async function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo y descripción */}
           <div className="md:col-span-1">
-            <Link href="/" className="inline-flex items-baseline">
-              <span className="text-coral text-2xl font-black">[</span>
-              <span className="text-white text-xl font-bold">olvidos</span>
+            <Link href="/" className="inline-block text-[1.5rem]" aria-label="Olvidos — inicio">
+              <Logo />
             </Link>
             <p className="mt-2 text-sm text-acero-light leading-relaxed">
               Revista de acciones culturales
@@ -28,7 +30,7 @@ export async function Footer() {
             <h3 className="text-sm font-bold mb-4 text-coral-light">Secciones</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/articulos?categoria=editoriales" className="text-sm text-acero-light hover:text-coral transition-colors">
+                <Link href="/articulos?categoria=editorial" className="text-sm text-acero-light hover:text-coral transition-colors">
                   Editoriales
                 </Link>
               </li>
@@ -38,12 +40,17 @@ export async function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/articulos?categoria=piezas-y-procesos" className="text-sm text-acero-light hover:text-coral transition-colors">
+                <Link href="/articulos?categoria=piezas-procesos" className="text-sm text-acero-light hover:text-coral transition-colors">
                   Piezas y Procesos
                 </Link>
               </li>
               <li>
-                <Link href="/articulos?categoria=soneto500" className="text-sm text-acero-light hover:text-coral transition-colors">
+                <Link href="/articulos?categoria=apostillas" className="text-sm text-acero-light hover:text-coral transition-colors">
+                  Apostillas
+                </Link>
+              </li>
+              <li>
+                <Link href="/articulos?categoria=sonetos" className="text-sm text-acero-light hover:text-coral transition-colors">
                   Soneto500
                 </Link>
               </li>
@@ -60,8 +67,8 @@ export async function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/memoria" className="text-sm text-acero-light hover:text-coral transition-colors">
-                  Memoria
+                <Link href="/revista" className="text-sm text-acero-light hover:text-coral transition-colors">
+                  Archivo (revista impresa)
                 </Link>
               </li>
               <li>
@@ -103,8 +110,18 @@ export async function Footer() {
           </div>
         </div>
 
+        {/* Reconocimiento: patrocinadores · institucionales · mecenas */}
+        <ReconocimientoFooter />
+
+        {/* Créditos */}
+        <div className="mt-12 border-t border-white/10 pt-6 text-xs text-acero-light">
+          Diseño: <span className="text-white/80">Mesa 1</span>
+          <span className="mx-2">·</span>
+          Desarrollo: <DesarrolloCredit placement="top" />
+        </div>
+
         {/* Copyright */}
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-4 flex flex-col items-center justify-between gap-4 md:flex-row">
           <p className="text-xs text-acero-light">
             &copy; {currentYear} Asociación Cultural Olvidos de Granada. Todos los derechos reservados.
           </p>

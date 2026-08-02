@@ -65,8 +65,8 @@ export default function LoginError({
         <div className="text-center mt-6">
           <p className="text-sm text-gray-600">
             Si el problema persiste, contacta a{" "}
-            <a href="mailto:info@olvidosdegranada.es" className="text-coral hover:underline">
-              info@olvidosdegranada.es
+            <a href="mailto:olvidosdegranada@gmail.com" className="text-coral hover:underline">
+              olvidosdegranada@gmail.com
             </a>
           </p>
         </div>

@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { getEvents, getPastEvents, getEventsForCalendar } from "@/lib/actions/events";
 import { EventCard } from "@/components/content/EventCard";
 import { Calendar } from "@/components/shared/Calendar";
+import { CategoryHeading } from "@/components/content/CategoryHeading";
 
 interface PageProps {
   searchParams: {
@@ -32,20 +33,20 @@ export default async function ActivitiesPage({ searchParams }: PageProps) {
   const currentMonth = now.getMonth() + 1;
 
   return (
-    <div className="min-h-screen">
-      {/* Header */}
-      <section className="bg-azul text-white py-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-black mb-4">Actividades y Eventos</h1>
-          <p className="text-xl max-w-2xl">
-            Descubre todas las actividades culturales que organizamos: presentaciones de libros,
-            recitales, conferencias, talleres y mucho más.
-          </p>
-        </div>
-      </section>
+    <div className="max-w-content mx-auto px-4 py-12">
+      {/* Cabecera editorial */}
+      <header className="mb-12 border-b-2 border-tinta pb-8 text-center">
+        <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-coral">
+          Agenda cultural
+        </p>
+        <CategoryHeading>encuentros</CategoryHeading>
+        <p className="mx-auto mt-6 max-w-2xl font-editorial text-lg leading-snug text-tinta/70">
+          Presentaciones, recitales, conferencias y talleres de Olvidos de Granada.
+        </p>
+      </header>
 
       {/* Content */}
-      <div className="container mx-auto px-4 py-12">
+      <div>
         {/* View Toggle */}
         <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between mb-8">
           {/* Tabs */}
@@ -147,11 +148,16 @@ async function ListView({ eventType, page }: { eventType: string; page: number }
     <div>
       {/* Upcoming Events */}
       <section className="mb-12">
-        <h2 className="text-2xl font-bold text-azul mb-6">Próximos Eventos</h2>
+        <h2 className="mb-6 text-2xl font-black text-tinta">
+          <span className="text-coral">[</span>Próximos encuentros
+        </h2>
 
         {upcomingEvents.length === 0 ? (
-          <div className="text-center py-12 bg-white rounded-sm shadow-card">
-            <p className="text-acero">No hay próximos eventos programados</p>
+          <div className="rounded-sm border border-acero-light/40 bg-gray-50 py-16 text-center">
+            <p className="font-editorial text-lg text-acero">
+              Los próximos encuentros se anunciarán aquí. Estamos preparando
+              nuevas actividades culturales.
+            </p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -174,7 +180,9 @@ async function ListView({ eventType, page }: { eventType: string; page: number }
       {/* Past Events */}
       {pastEvents.length > 0 && (
         <section>
-          <h2 className="text-2xl font-bold text-azul mb-6">Eventos Pasados</h2>
+          <h2 className="mb-6 text-2xl font-black text-tinta">
+            <span className="text-coral">[</span>Encuentros pasados
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {pastEvents.map((event) => (
               <EventCard

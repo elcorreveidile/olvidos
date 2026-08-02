@@ -3,26 +3,20 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getArticleBySlug, getPublishedArticles } from "@/lib/actions/articles";
-import { Calendar, User, FolderOpen } from "lucide-react";
+import { SITE_URL, SITE_NAME, ORGANIZATION } from "@/lib/site";
 
 interface ArticlePageProps {
-  params: {
-    slug: string;
-  };
+  params: { slug: string };
 }
 
-// Generar metadatos dinámicos para SEO
-export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: ArticlePageProps): Promise<Metadata> {
   const result = await getArticleBySlug(params.slug, true);
-
   if (!result.success || !result.article) {
-    return {
-      title: "Artículo no encontrado",
-    };
+    return { title: "Artículo no encontrado" };
   }
-
   const article = result.article;
-
   return {
     title: article.metaTitle || article.title,
     description: article.metaDescription || article.excerpt || undefined,
@@ -33,14 +27,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       publishedTime: article.publishedAt || undefined,
       authors: article.author?.name ? [article.author.name] : undefined,
       images: article.coverImage
-        ? [
-            {
-              url: article.coverImage,
-              width: 1200,
-              height: 630,
-              alt: article.title,
-            },
-          ]
+        ? [{ url: article.coverImage, width: 1200, height: 630, alt: article.title }]
         : undefined,
     },
   };
@@ -48,18 +35,14 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const result = await getArticleBySlug(params.slug, true);
-
-  if (!result.success || !result.article) {
-    notFound();
-  }
+  if (!result.success || !result.article) notFound();
 
   const article = result.article;
 
-  // Obtener artículos recientes para sidebar
   const recentResult = await getPublishedArticles({ limit: 5 });
-  const recentArticles = recentResult.success && recentResult.articles ? recentResult.articles : [];
+  const recentArticles =
+    recentResult.success && recentResult.articles ? recentResult.articles : [];
 
-  // Formatear fecha en español
   const formattedDate = article.publishedAt
     ? new Intl.DateTimeFormat("es-ES", {
         day: "numeric",
@@ -68,168 +51,179 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       }).format(new Date(article.publishedAt))
     : null;
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Breadcrumbs */}
-      <div className="bg-white border-b border-gray-200 py-4 mt-16">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-2 text-sm text-acero">
-            <Link href="/" className="hover:text-coral transition-colors">
-              Inicio
-            </Link>
-            <span>/</span>
-            <Link href="/articulos" className="hover:text-coral transition-colors">
-              Artículos
-            </Link>
-            <span>/</span>
-            <span className="text-azul font-medium">{article.title}</span>
-          </div>
-        </div>
-      </div>
+  const category = article.categories?.[0]?.category;
 
-      <main className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-12">
-          {/* Contenido principal del artículo */}
-          <article className="bg-white rounded-sm shadow-card p-8">
-            {/* Título H1 */}
-            <h1 className="text-4xl md:text-5xl font-black text-azul mb-6">
+  const authorNames =
+    article.authors && article.authors.length > 0
+      ? article.authors.map((a: any) => a.author.name)
+      : article.author?.name
+        ? [article.author.name]
+        : [];
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.metaDescription || article.excerpt || undefined,
+    image: article.coverImage ? [article.coverImage] : undefined,
+    datePublished: article.publishedAt || undefined,
+    dateModified: article.updatedAt || article.publishedAt || undefined,
+    author: authorNames.map((n: string) => ({ "@type": "Person", name: n })),
+    publisher: {
+      "@type": "Organization",
+      name: ORGANIZATION.name,
+      url: SITE_URL,
+    },
+    mainEntityOfPage: `${SITE_URL}/articulos/${article.slug}`,
+    isAccessibleForFree: !article.membersOnly,
+    inLanguage: "es",
+    articleSection: category?.name,
+  };
+
+  return (
+    <div className="max-w-content mx-auto px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Link
+        href="/articulos"
+        className="mb-8 inline-block text-sm font-bold text-coral transition-colors hover:text-tinta"
+      >
+        ← Todos los artículos
+      </Link>
+
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_300px]">
+        <article className="min-w-0">
+          {/* Cabecera del artículo */}
+          <header className="mb-8 border-b-2 border-tinta pb-8">
+            {category && (
+              <Link
+                href={`/categoria/${category.slug}`}
+                className="category-bracket text-xs font-bold uppercase tracking-wide text-coral"
+              >
+                {category.name}
+              </Link>
+            )}
+            <h1 className="mt-3 text-4xl font-black leading-tight tracking-tight text-tinta sm:text-5xl">
               {article.title}
             </h1>
-
-            {/* Metadatos del artículo */}
-            <div className="flex flex-wrap items-center gap-6 text-sm text-acero mb-8 pb-8 border-b border-gray-200">
-              {/* Autor */}
-              {article.author && (
-                <div className="flex items-center gap-2">
-                  <User className="w-4 h-4" />
-                  <span className="font-medium">{article.author.name}</span>
-                </div>
-              )}
-
-              {/* Fecha de publicación */}
-              {formattedDate && (
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4" />
-                  <span>{formattedDate}</span>
-                </div>
-              )}
-
-              {/* Categorías */}
-              {article.categories && article.categories.length > 0 && (
-                <div className="flex items-center gap-2">
-                  <FolderOpen className="w-4 h-4" />
-                  <span className="flex items-center gap-2">
-                    {article.categories.map((cat: any, index: number) => (
-                      <span key={cat.category?.slug || cat.id}>
-                        <Link
-                          href={`/categoria/${cat.category?.slug}`}
-                          className="text-coral hover:text-coral/80 transition-colors font-medium"
-                        >
-                          {cat.category?.name}
-                        </Link>
-                        {index < (article.categories?.length || 0) - 1 && ", "}
-                      </span>
-                    ))}
-                  </span>
-                </div>
-              )}
-            </div>
-
-            {/* Imagen de portada si existe */}
-            {article.coverImage && (
-              <div className="mb-8 aspect-[16/10] relative overflow-hidden rounded-sm">
-                <Image
-                  src={article.coverImage}
-                  alt={article.title}
-                  fill
-                  className="object-cover"
-                  priority
-                  sizes="(max-width: 768px) 100vw, 768px"
-                />
-              </div>
-            )}
-
-            {/* Tags */}
-            {article.tags && article.tags.length > 0 && (
-              <div className="flex flex-wrap gap-2 mb-8">
-                {article.tags.map((tagItem: any) => (
-                  <Link
-                    key={tagItem.tag?.slug || tagItem.id}
-                    href={`/etiqueta/${tagItem.tag?.slug}`}
-                    className="px-3 py-1 bg-gray-100 text-acero text-sm rounded-full hover:bg-coral hover:text-white transition-colors"
-                  >
-                    #{tagItem.tag?.name}
-                  </Link>
-                ))}
-              </div>
-            )}
-
-            {/* Contenido del artículo */}
-            <div
-              className="prose prose-lg max-w-none text-acero"
-              dangerouslySetInnerHTML={{ __html: article.content }}
-            />
-
-            {/* Teaser para miembros */}
-            {article.membersOnly && article.excerpt && (
-              <div className="mt-8 p-6 bg-coral/10 rounded-sm border border-coral/30">
-                <h3 className="text-azul font-bold mb-2">Contenido exclusivo para socios</h3>
-                <p className="text-acero mb-4">{article.excerpt}</p>
-                <Link
-                  href="/hazte-socio"
-                  className="inline-block px-6 py-2 bg-coral text-white text-sm font-bold rounded-sm hover:bg-coral-dark transition-colors"
-                >
-                  Hazte socio para leer más
-                </Link>
-              </div>
-            )}
-          </article>
-
-          {/* Sidebar lateral (desktop) */}
-          <aside className="hidden lg:block">
-            {/* Artículos recientes */}
-            {recentArticles.length > 0 && (
-              <div className="bg-white rounded-sm shadow-card p-6 mb-6">
-                <h3 className="text-lg font-bold text-azul mb-4">Artículos recientes</h3>
-                <div className="space-y-4">
-                  {recentArticles.slice(0, 5).map((recentArticle) => (
+            <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-acero">
+              {article.authors && article.authors.length > 0 ? (
+                article.authors.map((a: any, i: number) => (
+                  <span key={a.author.slug} className="font-bold text-tinta/80">
                     <Link
-                      key={recentArticle.id}
-                      href={`/articulos/${recentArticle.slug}`}
-                      className="block group"
+                      href={`/autor/${a.author.slug}`}
+                      className="transition-colors hover:text-coral"
                     >
-                      <h4 className="text-sm font-medium text-azul group-hover:text-coral transition-colors line-clamp-2">
-                        {recentArticle.title}
+                      {a.author.name}
+                    </Link>
+                    {i < article.authors.length - 1 && (
+                      <span className="ml-2 font-normal text-acero">·</span>
+                    )}
+                  </span>
+                ))
+              ) : article.author?.name ? (
+                <span className="font-bold text-tinta/80">
+                  {article.author.name}
+                </span>
+              ) : null}
+              {(article.authors?.length > 0 || article.author?.name) &&
+                formattedDate && <span>·</span>}
+              {formattedDate && <time>{formattedDate}</time>}
+            </div>
+          </header>
+
+          {/* Imagen de portada */}
+          {article.coverImage && (
+            <div className="relative mb-10 aspect-[16/9] overflow-hidden rounded-sm">
+              <Image
+                src={article.coverImage}
+                alt={article.title}
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 1024px) 100vw, 760px"
+              />
+            </div>
+          )}
+
+          {/* Contenido */}
+          <div
+            className="prose-editorial"
+            dangerouslySetInnerHTML={{ __html: article.content }}
+          />
+
+          {/* Tags */}
+          {article.tags && article.tags.length > 0 && (
+            <div className="mt-10 flex flex-wrap gap-2 border-t border-acero-light/40 pt-6">
+              {article.tags.map((tagItem: any) => (
+                <Link
+                  key={tagItem.tag?.slug || tagItem.id}
+                  href={`/etiqueta/${tagItem.tag?.slug}`}
+                  className="tag-paren text-sm font-bold text-coral transition-colors hover:text-tinta"
+                >
+                  {tagItem.tag?.name}
+                </Link>
+              ))}
+            </div>
+          )}
+
+          {/* Teaser socios */}
+          {article.membersOnly && article.excerpt && (
+            <div className="mt-10 rounded-sm border border-coral/30 bg-coral/5 p-6">
+              <h3 className="mb-2 font-bold text-tinta">
+                Contenido exclusivo para socios
+              </h3>
+              <p className="mb-4 font-editorial text-tinta/70">{article.excerpt}</p>
+              <Link
+                href="/hazte-socio"
+                className="inline-block rounded-sm bg-coral px-6 py-2 text-sm font-bold text-white transition-colors hover:bg-coral-dark"
+              >
+                Hazte socio para leer más
+              </Link>
+            </div>
+          )}
+        </article>
+
+        {/* Sidebar */}
+        <aside className="hidden lg:block">
+          {recentArticles.length > 0 && (
+            <div className="sticky top-28">
+              <h3 className="mb-4 text-sm font-black uppercase tracking-wide text-tinta">
+                <span className="text-coral">[</span>Recientes
+              </h3>
+              <div className="space-y-4">
+                {recentArticles
+                  .filter((r) => r.slug !== article.slug)
+                  .slice(0, 5)
+                  .map((r) => (
+                    <Link key={r.id} href={`/articulos/${r.slug}`} className="group block">
+                      <h4 className="text-sm font-bold leading-snug text-tinta transition-colors group-hover:text-coral">
+                        {r.title}
                       </h4>
-                      {recentArticle.publishedAt && (
-                        <p className="text-xs text-acero-light mt-1">
-                          {new Date(recentArticle.publishedAt).toLocaleDateString("es-ES", {
+                      {r.publishedAt && (
+                        <p className="mt-1 text-xs text-acero-light">
+                          {new Date(r.publishedAt).toLocaleDateString("es-ES", {
                             day: "numeric",
                             month: "short",
+                            year: "numeric",
                           })}
                         </p>
                       )}
                     </Link>
                   ))}
-                </div>
               </div>
-            )}
-          </aside>
-        </div>
-      </main>
+            </div>
+          )}
+        </aside>
+      </div>
     </div>
   );
 }
 
-// Generar rutas estáticas para todos los artículos publicados
 export async function generateStaticParams() {
   const result = await getPublishedArticles({ limit: 1000 });
-
-  if (!result.success || !result.articles) {
-    return [];
-  }
-
-  return result.articles.map((article) => ({
-    slug: article.slug,
-  }));
+  if (!result.success || !result.articles) return [];
+  return result.articles.map((article) => ({ slug: article.slug }));
 }

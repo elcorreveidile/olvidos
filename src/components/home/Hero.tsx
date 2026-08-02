@@ -1,41 +1,31 @@
-"use client";
+import Link from "next/link";
+import { Logo } from "@/components/layout/Logo";
 
-import { useEffect, useState } from "react";
-
+/**
+ * Cabecera editorial de la portada. La entrada dramática la aporta el telón
+ * (CurtainIntro); aquí buscamos un masthead sobrio tipo portada de revista.
+ */
 export function Hero() {
-  const [mounted, setMounted] = useState(false);
-  const [shouldAnimate, setShouldAnimate] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    // Check if user has already seen the animation
-    const hasSeenAnimation = localStorage.getItem("hero-animation-seen");
-    if (!hasSeenAnimation) {
-      setShouldAnimate(true);
-      // Mark as seen after animation completes
-      const timer = setTimeout(() => {
-        localStorage.setItem("hero-animation-seen", "true");
-      }, 2000);
-      return () => clearTimeout(timer);
-    }
-  }, []);
-
   return (
-    <section className="text-center mb-16">
-      <h1
-        className={`text-h1-article font-black text-azul mb-4 text-balance ${
-          mounted && shouldAnimate ? "animate-slide-in" : ""
-        }`}
-      >
-        <span className="text-coral">[</span>olvidos
-      </h1>
-      <p
-        className={`text-xl text-acero font-editorial max-w-xl mx-auto ${
-          mounted && shouldAnimate ? "animate-slide-in-delay" : ""
-        }`}
-      >
-        Revista de acciones culturales
+    <section className="mb-16 border-b-2 border-tinta pb-10">
+      <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-coral">
+        Revista de acciones culturales · Granada
       </p>
+      <h1 className="text-6xl leading-none sm:text-8xl">
+        <Logo />
+      </h1>
+      <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <p className="max-w-xl font-editorial text-lg leading-snug text-tinta/70">
+          Literatura, pensamiento y memoria cultural granadina. Desde 1981,
+          entre la página impresa y el presente digital.
+        </p>
+        <Link
+          href="/memoria"
+          className="shrink-0 self-start text-sm font-bold text-coral transition-colors hover:text-tinta sm:self-auto"
+        >
+          Explorar el archivo →
+        </Link>
+      </div>
     </section>
   );
 }

@@ -34,7 +34,7 @@ export default function DigitalCard({ member }: DigitalCardProps) {
             width: 120,
             margin: 1,
             color: {
-              dark: "#013559",
+              dark: "#141414",
               light: "#ffffff",
             },
           });
@@ -47,10 +47,10 @@ export default function DigitalCard({ member }: DigitalCardProps) {
     generateQR();
   }, [member]);
 
-  const membershipLevelLabels = {
+  const membershipLevelLabels: Record<string, string> = {
     STANDARD: "Socio Estándar",
     COLLABORATOR: "Socio Colaborador",
-    HONORARY: "Socio de Honor",
+    HONORARY: "Socio Mecenas",
     INSTITUTIONAL: "Socio Institucional",
   };
 
@@ -59,7 +59,7 @@ export default function DigitalCard({ member }: DigitalCardProps) {
       {/* Front of Card */}
       <div className="relative w-full aspect-[1.586/1] rounded-xl overflow-hidden shadow-2xl">
         {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-azul via-azul-dark to-azul" />
+        <div className="absolute inset-0 bg-gradient-to-br from-tinta via-tinta to-[#3a1417]" />
 
         {/* Pattern overlay */}
         <div className="absolute inset-0 opacity-10">
@@ -163,15 +163,13 @@ export default function DigitalCard({ member }: DigitalCardProps) {
       {/* Back of Card with QR */}
       <div className="mt-6 p-6 bg-white rounded-xl shadow-lg border border-gray-200">
         <div className="text-center">
-          <h4 className="text-lg font-semibold text-gray-900 mb-2">
-            Carnet Digital
-          </h4>
-          <p className="text-sm text-gray-600 mb-4">
+          <h4 className="text-lg font-black text-tinta mb-2">Carné digital</h4>
+          <p className="text-sm text-tinta/60 mb-4">
             Escanea este código para verificar tu membresía
           </p>
 
           <div className="flex justify-center mb-4">
-            <div className="p-4 bg-white rounded-lg border-2 border-azul">
+            <div className="p-4 bg-white rounded-lg border-2 border-tinta/15">
               <canvas ref={qrRef} />
             </div>
           </div>
@@ -201,8 +199,8 @@ export default function DigitalCard({ member }: DigitalCardProps) {
             <div className="mt-4 pt-4 border-t border-gray-200">
               <p className="text-xs text-gray-500">
                 Válido hasta:{" "}
-                <strong className="text-gray-900">
-                  {new Date(member.renewalDate).toLocaleDateString()}
+                <strong className="text-tinta">
+                  {new Date(member.renewalDate).toLocaleDateString("es-ES")}
                 </strong>
               </p>
             </div>
@@ -214,20 +212,20 @@ export default function DigitalCard({ member }: DigitalCardProps) {
       <div className="mt-6 flex gap-3">
         <button
           onClick={() => window.print()}
-          className="flex-1 px-4 py-2 bg-azul text-white rounded-lg hover:bg-azul-dark transition-colors font-medium"
+          className="flex-1 px-4 py-2 bg-coral text-white rounded-lg hover:bg-coral-dark transition-colors font-bold"
         >
-          Imprimir Carnet
+          Imprimir carné
         </button>
         <button
           onClick={() => {
             if (qrRef.current) {
               const link = document.createElement("a");
-              link.download = `carnet-${member.memberNumber}.png`;
+              link.download = `carne-${member.memberNumber}.png`;
               link.href = qrRef.current.toDataURL();
               link.click();
             }
           }}
-          className="flex-1 px-4 py-2 border border-azul text-azul rounded-lg hover:bg-azual hover:bg-azul/5 transition-colors font-medium"
+          className="flex-1 px-4 py-2 border border-tinta text-tinta rounded-lg hover:bg-tinta hover:text-white transition-colors font-bold"
         >
           Descargar QR
         </button>

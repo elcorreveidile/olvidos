@@ -23,10 +23,25 @@ const config: Config = {
           light: "#fc9292",
           dark: "#e85555",
         },
+        // Tinta: color de texto/superficies oscuras. Antes era azul #013559;
+        // el rediseño deja el rojo Olvidos como protagonista y el texto en negro/tinta.
+        // El token "azul" se conserva como alias (repunta a tinta) para no romper
+        // las decenas de usos existentes; migrar a "tinta" de forma progresiva.
+        tinta: {
+          DEFAULT: "#141414",
+          light: "#2b2b2b",
+          dark: "#000000",
+        },
         azul: {
-          DEFAULT: "#013559",
-          light: "#1a4d6e",
-          dark: "#012844",
+          DEFAULT: "#141414",
+          light: "#2b2b2b",
+          dark: "#000000",
+        },
+        // Rojo de telón de teatro para la intro y acentos escénicos.
+        teatro: {
+          DEFAULT: "#7a1420",
+          light: "#9b1c2c",
+          dark: "#560d16",
         },
         acero: {
           DEFAULT: "#617685",

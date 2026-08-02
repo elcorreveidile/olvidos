@@ -2,6 +2,7 @@ import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
 import Link from "next/link";
+import { MEMBERSHIP_LABELS, MEMBER_STATUS_LABELS } from "@/types/member";
 import {
   Card,
   CardContent,
@@ -19,6 +20,7 @@ import {
   AlertCircle,
   Settings,
   Phone,
+  Target,
 } from "lucide-react";
 
 export default async function MemberDashboardPage() {
@@ -48,38 +50,15 @@ export default async function MemberDashboardPage() {
   // Get latest payment
   const latestPayment = member.payments[0];
 
-  const membershipLevelLabels = {
-    STANDARD: "Socio Estándar",
-    COLLABORATOR: "Socio Colaborador",
-    HONORARY: "Socio de Honor",
-    INSTITUTIONAL: "Socio Institucional",
-  };
-
-  const statusLabels = {
-    PENDING: "Pendiente",
-    ACTIVE: "Activo",
-    EXPIRED: "Caducado",
-    SUSPENDED: "Suspendido",
-    CANCELLED: "Cancelado",
-  };
-
-  const statusColors = {
-    PENDING: "text-yellow-600 bg-yellow-100",
-    ACTIVE: "text-green-600 bg-green-100",
-    EXPIRED: "text-red-600 bg-red-100",
-    SUSPENDED: "text-orange-600 bg-orange-100",
-    CANCELLED: "text-gray-600 bg-gray-100",
-  };
-
   return (
     <div className="space-y-6">
       {/* Welcome */}
       <div>
-        <h2 className="text-3xl font-bold text-gray-900">
-          Bienvenido, {session.user.name || "Socio"}
+        <h2 className="text-3xl font-black text-tinta">
+          Hola, {session.user.name || "Socio"}
         </h2>
-        <p className="text-gray-600 mt-1">
-          Gestiona tu membresía y accede a todos los beneficios
+        <p className="mt-1 font-editorial text-tinta/70">
+          Gestiona tu membresía y accede a todo lo de socio.
         </p>
       </div>
 
@@ -98,11 +77,11 @@ export default async function MemberDashboardPage() {
             )}
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
-              {statusLabels[member.status]}
+            <div className="text-2xl font-black text-tinta">
+              {MEMBER_STATUS_LABELS[member.status]}
             </div>
-            <p className="text-xs text-gray-600 mt-1">
-              {membershipLevelLabels[member.membershipLevel]}
+            <p className="text-xs text-tinta/60 mt-1">
+              Socio {MEMBERSHIP_LABELS[member.membershipLevel]}
             </p>
             {member.renewalDate && (
               <p className="text-xs text-gray-500 mt-2">
@@ -176,6 +155,12 @@ export default async function MemberDashboardPage() {
               </Link>
             </Button>
             <Button asChild variant="outline" className="w-full justify-start">
+              <Link href="/mi-cuenta/objetivos">
+                <Target className="mr-2 h-4 w-4" />
+                Ver Objetivos
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="w-full justify-start">
               <Link href="/mi-cuenta/perfil">
                 <Settings className="mr-2 h-4 w-4" />
                 Actualizar Perfil
@@ -229,19 +214,19 @@ export default async function MemberDashboardPage() {
 
       {/* Pending Actions */}
       {member.status === "PENDING" && (
-        <Card className="border-yellow-200 bg-yellow-50">
+        <Card className="border-coral/30 bg-coral/5">
           <CardHeader>
-            <CardTitle className="text-yellow-900">
-              Membresía Pendiente de Activación
+            <CardTitle className="text-tinta">
+              Membresía pendiente de activación
             </CardTitle>
-            <CardDescription className="text-yellow-700">
-              Completa el pago para activar tu membresía y disfrutar de todos
-              los beneficios
+            <CardDescription className="text-tinta/70">
+              Completa el pago para activar tu membresía y disfrutar de todo lo
+              de socio.
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Button asChild className="bg-yellow-600 hover:bg-yellow-700">
-              <Link href="/hazte-socio">Completar Pago</Link>
+            <Button asChild className="bg-coral hover:bg-coral-dark">
+              <Link href="/hazte-socio">Completar pago</Link>
             </Button>
           </CardContent>
         </Card>

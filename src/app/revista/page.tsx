@@ -1,158 +1,109 @@
 import Link from "next/link";
-import Image from "next/image";
-import { Calendar, BookOpen, Download } from "lucide-react";
+import type { Metadata } from "next";
+import { getAllIssues } from "@/lib/queries";
+import { MagazineIssue } from "@/components/content/MagazineIssue";
+import { CategoryHeading } from "@/components/content/CategoryHeading";
 
 export const dynamic = "force-dynamic";
 
-export default async function RevistaPage() {
-  // Por ahora, mostramos números de ejemplo
-  // En el futuro, esto vendrá de la base de datos con MagazineIssue
+export const metadata: Metadata = {
+  title: "Archivo — la revista impresa",
+  description:
+    "Hemeroteca de Olvidos de Granada: la revista impresa desde su primera época. Cada número en PDF y, progresivamente, en formato web.",
+};
 
-  const issues = [
-    {
-      number: 1,
-      title: "Número Inaugural",
-      date: "2024-01-01",
-      description: "Primer número de la revista Olvidos de Granada",
-      cover: null,
-      pdf: null,
-    },
-  ];
+/** Separatas y monográficos se numeran a partir de 100 al sembrar. */
+const SEPARATA_FROM = 100;
+
+export default async function RevistaPage() {
+  const all = await getAllIssues();
+
+  // Orden ascendente para leer el archivo cronológicamente (1 → 17 → separatas).
+  const sorted = [...all].sort((a, b) => a.number - b.number);
+  const numeros = sorted.filter((i) => i.number < SEPARATA_FROM);
+  const separatas = sorted.filter((i) => i.number >= SEPARATA_FROM);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-azul text-white py-16 mt-16">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-4 mb-4">
-            <BookOpen className="w-12 h-12" />
-            <h1 className="text-5xl font-black">Números Anteriores</h1>
-          </div>
-          <p className="text-xl opacity-90 max-w-3xl">
-            Explora nuestra colección de revistas digitales. Cada número es un viaje
-            a través de la cultura y literatura de Granada.
+    <div className="max-w-content mx-auto px-4 py-12">
+      {/* Cabecera editorial */}
+      <header className="mb-12 border-b-2 border-tinta pb-8 text-center">
+        <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-coral">
+          Archivo · La revista impresa
+        </p>
+        <CategoryHeading>hemeroteca</CategoryHeading>
+        <p className="mx-auto mt-6 max-w-2xl font-editorial text-lg leading-snug text-tinta/70">
+          La colección completa de <em>Olvidos de Granada</em> desde su primera
+          época. Cada número puede leerse en PDF y, poco a poco, artículo por
+          artículo en formato web.
+        </p>
+      </header>
+
+      {all.length === 0 ? (
+        <div className="rounded-sm border border-acero-light/50 bg-gray-50 py-16 text-center">
+          <p className="font-editorial text-lg text-acero">
+            Estamos digitalizando el archivo. Muy pronto podrás consultar aquí
+            todos los números.
           </p>
         </div>
-      </div>
+      ) : (
+        <>
+          <section className="mb-16">
+            <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
+              {numeros.map((issue) => (
+                <MagazineIssue
+                  key={issue.id}
+                  number={issue.number}
+                  title={issue.title}
+                  slug={issue.slug}
+                  description={issue.description}
+                  coverImage={issue.coverImage}
+                  publishedAt={issue.publishedAt}
+                  articleCount={issue._count?.articles}
+                />
+              ))}
+            </div>
+          </section>
 
-      {/* Issues Grid */}
-      <div className="container mx-auto px-4 py-12">
-        {issues.length === 0 ? (
-          <div className="text-center py-12 bg-white rounded-sm shadow-card">
-            <BookOpen className="w-16 h-16 text-acero-light mx-auto mb-4" />
-            <h2 className="text-2xl font-bold text-azul mb-2">
-              Próximamente
-            </h2>
-            <p className="text-acero text-lg mb-6">
-              Estamos preparando los primeros números de nuestra revista.
-            </p>
-            <p className="text-acero-light">
-              Mientras tanto, puedes explorar nuestros artículos en la sección de
-              {" "}
-              <Link href="/articulos" className="text-coral hover:text-coral/80 font-medium">
-                Artículos
-              </Link>
-            </p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {issues.map((issue) => (
-              <div
-                key={issue.number}
-                className="bg-white rounded-sm shadow-card hover:shadow-card-hover transition-all"
-              >
-                {/* Cover Image */}
-                {issue.cover ? (
-                  <div className="relative h-64 overflow-hidden rounded-t-sm">
-                    <Image
-                      src={issue.cover}
-                      alt={`Nº ${issue.number}`}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover"
-                    />
-                    <div className="absolute top-4 right-4 bg-coral text-white px-3 py-1 text-sm font-bold rounded-sm">
-                      Nº {issue.number}
-                    </div>
-                  </div>
-                ) : (
-                  <div className="relative h-64 overflow-hidden rounded-t-sm bg-gradient-to-br from-azul to-azul/80 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <BookOpen className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                      <p className="text-6xl font-black opacity-30">
-                        {issue.number}
-                      </p>
-                    </div>
-                    <div className="absolute top-4 right-4 bg-coral text-white px-3 py-1 text-sm font-bold rounded-sm">
-                      Nº {issue.number}
-                    </div>
-                  </div>
-                )}
-
-                {/* Issue Info */}
-                <div className="p-6">
-                  <h2 className="text-xl font-bold text-azul mb-2">
-                    {issue.title}
-                  </h2>
-
-                  <div className="flex items-center gap-2 text-sm text-acero-light mb-4">
-                    <Calendar className="w-4 h-4" />
-                    <time>
-                      {new Date(issue.date).toLocaleDateString("es-ES", {
-                        month: "long",
-                        year: "numeric",
-                      })}
-                    </time>
-                  </div>
-
-                  <p className="text-acero mb-6">{issue.description}</p>
-
-                  {/* Actions */}
-                  <div className="flex gap-3">
-                    {issue.pdf ? (
-                      <a
-                        href={issue.pdf}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 bg-coral text-white text-sm font-bold rounded-sm hover:bg-coral-dark transition-colors"
-                      >
-                        <Download className="w-4 h-4" />
-                        Descargar PDF
-                      </a>
-                    ) : (
-                      <span className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 bg-acero-light text-acero text-sm font-bold rounded-sm">
-                        Próximamente
-                      </span>
-                    )}
-                    <Link
-                      href={`/articulos?issue=${issue.number}`}
-                      className="inline-flex items-center justify-center px-4 py-2 border border-azul text-azul text-sm font-bold rounded-sm hover:bg-azul hover:text-white transition-colors"
-                    >
-                      Ver Contenido
-                    </Link>
-                  </div>
-                </div>
+          {separatas.length > 0 && (
+            <section className="mb-16">
+              <h2 className="mb-6 text-2xl font-black text-tinta">
+                <span className="text-coral">[</span>Separatas y monográficos
+              </h2>
+              <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
+                {separatas.map((issue) => (
+                  <MagazineIssue
+                    key={issue.id}
+                    number={issue.number}
+                    title={issue.title}
+                    slug={issue.slug}
+                    description={issue.description}
+                    coverImage={issue.coverImage}
+                    publishedAt={issue.publishedAt}
+                    articleCount={issue._count?.articles}
+                  />
+                ))}
               </div>
-            ))}
-          </div>
-        )}
+            </section>
+          )}
+        </>
+      )}
 
-        {/* CTA Section */}
-        <div className="mt-16 bg-gradient-to-r from-azul to-azul/90 rounded-sm shadow-card p-8 text-white text-center">
-          <BookOpen className="w-12 h-12 mx-auto mb-4" />
-          <h2 className="text-3xl font-bold mb-4">¿Quieres recibir la revista?</h2>
-          <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">
-            Hazte socio de Olvidos de Granada y recibirás cada nuevo número de la
-            revista directamente en tu email.
-          </p>
-          <Link
-            href="/hazte-socio"
-            className="inline-flex items-center px-8 py-3 bg-coral text-white font-bold rounded-sm hover:bg-coral/90 transition-colors"
-          >
-            Hazte Socio
-          </Link>
-        </div>
-      </div>
+      {/* CTA socio */}
+      <section className="curtain-velvet rounded-sm p-10 text-center">
+        <h2 className="mb-3 text-2xl font-bold text-white">
+          <span className="text-coral">[</span>Sostén la memoria de Olvidos
+        </h2>
+        <p className="mx-auto mb-6 max-w-xl font-editorial text-white/80">
+          Hazte socio de la Asociación Cultural Olvidos de Granada y ayúdanos a
+          preservar y digitalizar el archivo.
+        </p>
+        <Link
+          href="/hazte-socio"
+          className="inline-block rounded-sm bg-coral px-8 py-3 font-bold text-white transition-colors hover:bg-coral-dark"
+        >
+          Hazte socio
+        </Link>
+      </section>
     </div>
   );
 }

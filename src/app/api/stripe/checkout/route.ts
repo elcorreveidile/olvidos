@@ -1,4 +1,4 @@
-import { stripe, MEMBERSHIP_PRICES } from "@/lib/stripe";
+import { stripe, membershipLineItem, isMembershipPlan } from "@/lib/stripe";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
@@ -13,11 +13,11 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const { priceId } = await req.json();
+    const { plan } = await req.json();
 
-    if (!priceId) {
+    if (!isMembershipPlan(plan)) {
       return NextResponse.json(
-        { error: "Price ID is required" },
+        { error: "Plan de socio no válido" },
         { status: 400 }
       );
     }
@@ -42,7 +42,7 @@ export async function POST(req: Request) {
 
     if (!customerId) {
       const customer = await stripe.customers.create({
-        email: session.user.email,
+        email: session.user.email ?? undefined,
         name: session.user.name || undefined,
         metadata: {
           memberId: member.id,
@@ -59,25 +59,14 @@ export async function POST(req: Request) {
       });
     }
 
-    // Determine membership level from price ID
-    const membershipLevel =
-      priceId === MEMBERSHIP_PRICES.COLLABORATOR
-        ? "COLLABORATOR"
-        : priceId === MEMBERSHIP_PRICES.HONORARY
-          ? "HONORARY"
-          : "STANDARD";
+    const membershipLevel = plan;
 
-    // Create checkout session
+    // Create checkout session (precio creado al vuelo con price_data)
     const checkoutSession = await stripe.checkout.sessions.create({
       customer: customerId,
       mode: "subscription",
       payment_method_types: ["card"],
-      line_items: [
-        {
-          price: priceId,
-          quantity: 1,
-        },
-      ],
+      line_items: [membershipLineItem(plan)],
       metadata: {
         memberId: member.id,
         userId: session.user.id,

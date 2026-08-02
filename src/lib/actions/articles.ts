@@ -467,6 +467,10 @@ export async function getArticleBySlug(slug: string, publishedOnly = false) {
       where,
       include: {
         author: true,
+        authors: {
+          orderBy: { order: "asc" },
+          include: { author: true },
+        },
         categories: {
           include: {
             category: true,

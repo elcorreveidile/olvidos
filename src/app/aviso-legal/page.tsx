@@ -26,7 +26,7 @@ export default function AvisoLegalPage() {
                 <ul className="list-none space-y-2 text-acero">
                   <li><strong>Denominación social:</strong> Asociación Cultural Olvidos de Granada</li>
                   <li><strong>Domicilio:</strong> Granada, España</li>
-                  <li><strong>Email:</strong> info@olvidosdegranada.es</li>
+                  <li><strong>Email:</strong> olvidosdegranada@gmail.com</li>
                   <li><strong>Sitio Web:</strong> https://olvidosdegranada.es</li>
                 </ul>
               </section>
@@ -124,7 +124,7 @@ export default function AvisoLegalPage() {
                   contactarnos a través de:
                 </p>
                 <ul className="list-none space-y-2 text-acero">
-                  <li>• Email: info@olvidosdegranada.es</li>
+                  <li>• Email: olvidosdegranada@gmail.com</li>
                   <li>• Formulario de contacto:{" "}
                     <a href="/contacto" className="text-coral hover:text-coral/80">
                       /contacto

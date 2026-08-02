@@ -5,11 +5,18 @@
 @tailwind utilities;
 
 :root {
-  /* Colores corporativos */
+  /* Colores corporativos — rediseño: rojo Olvidos protagonista, texto en tinta */
   --color-coral: #ff6261;
   --color-coral-light: #fc9292;
-  --color-azul: #013559;
-  --color-azul-light: #1a4d6e;
+  /* "azul" repunta a tinta negra (el azul ya no es protagonista) */
+  --color-azul: #141414;
+  --color-azul-light: #2b2b2b;
+  --color-tinta: #141414;
+  --color-tinta-light: #2b2b2b;
+  /* Rojo de telón de teatro (intro + acentos escénicos) */
+  --color-teatro: #7a1420;
+  --color-teatro-light: #9b1c2c;
+  --color-teatro-dark: #560d16;
   --color-acero: #617685;
   --color-acero-light: #a1b6c4;
   --color-background: #ffffff;
@@ -253,4 +260,224 @@
 .animate-slide-in-delay {
   animation: slideInFromLeft 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s forwards;
   opacity: 0;
+}
+
+/* ===========================================================
+   Telón de teatro (intro de primera visita)
+   El logo aparece sobre el telón cerrado; luego los dos paños
+   se separan revelando la web y el overlay se retira.
+   =========================================================== */
+
+/* Paño izquierdo: se mantiene cerrado y luego se desliza a la izquierda */
+@keyframes curtainOpenLeft {
+  0%,
+  60% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Paño derecho: se mantiene cerrado y luego se desliza a la derecha */
+@keyframes curtainOpenRight {
+  0%,
+  60% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Logo: entra con un leve zoom, se SOSTIENE legible y se desvanece al abrir */
+@keyframes curtainLogoIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+    letter-spacing: 0.05em;
+  }
+  12% {
+    opacity: 1;
+    transform: scale(1);
+    letter-spacing: 0;
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  68% {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Retirada del overlay tras abrirse el telón */
+@keyframes curtainFadeOut {
+  0%,
+  95% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.curtain-panel-left {
+  animation: curtainOpenLeft 5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.curtain-panel-right {
+  animation: curtainOpenRight 5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.curtain-logo {
+  animation: curtainLogoIn 5s ease-in-out forwards;
+}
+
+.curtain-overlay-anim {
+  animation: curtainFadeOut 5.2s ease forwards;
+}
+
+/* Textura de terciopelo del telón mediante degradados verticales */
+.curtain-velvet {
+  background-color: var(--color-teatro);
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0) 8%,
+      rgba(255, 255, 255, 0.06) 15%,
+      rgba(0, 0, 0, 0.28) 24%,
+      rgba(0, 0, 0, 0) 33%,
+      rgba(255, 255, 255, 0.05) 44%,
+      rgba(0, 0, 0, 0.3) 56%,
+      rgba(0, 0, 0, 0) 66%,
+      rgba(255, 255, 255, 0.06) 78%,
+      rgba(0, 0, 0, 0.32) 88%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  background-size: 90px 100%;
+}
+
+/* Telón ABIERTO con foco: la cuota "en escena" (Mecenas). Las cortinas de
+   terciopelo quedan recogidas a los lados y un foco cálido ilumina el centro
+   del escenario, donde se lee el nivel y el precio. Todas las capas van como
+   background-image del propio elemento (mismo patrón que .curtain-velvet). */
+.curtain-stage {
+  position: relative;
+  overflow: hidden;
+  background-color: #4a0b13;
+  background-repeat: no-repeat;
+  background-position:
+    center,
+    center,
+    center,
+    left center,
+    right center;
+  background-size:
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    34% 100%,
+    34% 100%;
+  background-image:
+    /* Haz de luz estrecho descendiendo desde el foco superior */
+    radial-gradient(
+      42% 118% at 50% -6%,
+      rgba(255, 241, 202, 0.78) 0%,
+      rgba(255, 205, 120, 0.36) 30%,
+      rgba(74, 11, 19, 0) 66%
+    ),
+    /* Halo ambiental cálido en la parte alta del escenario */
+    radial-gradient(
+      120% 78% at 50% 0%,
+      rgba(255, 210, 140, 0.3) 0%,
+      rgba(74, 11, 19, 0) 60%
+    ),
+    /* Charco de luz sobre las tablas, bajo el precio */
+    radial-gradient(
+      55% 40% at 50% 94%,
+      rgba(255, 220, 150, 0.4) 0%,
+      rgba(74, 11, 19, 0) 72%
+    ),
+    /* Cortina de terciopelo recogida a la izquierda (borde oscuro + sheen) */
+    linear-gradient(
+      90deg,
+      #34080e 0%,
+      var(--color-teatro-light) 34%,
+      var(--color-teatro-dark) 60%,
+      rgba(52, 8, 14, 0) 100%
+    ),
+    /* Cortina de terciopelo recogida a la derecha */
+    linear-gradient(
+      270deg,
+      #34080e 0%,
+      var(--color-teatro-light) 34%,
+      var(--color-teatro-dark) 60%,
+      rgba(52, 8, 14, 0) 100%
+    );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .curtain-panel-left,
+  .curtain-panel-right,
+  .curtain-logo,
+  .curtain-overlay-anim {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* ===========================================================
+   Titular de categoría: el corchete entra desde la izquierda y
+   la palabra desde la derecha, convergiendo hacia el centro.
+   (El corchete conserva su desplazamiento vertical de centrado.)
+   =========================================================== */
+@keyframes catBracketIn {
+  0% {
+    opacity: 0;
+    transform: translate(-60vw, 0.31em);
+  }
+  12% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0.31em);
+  }
+}
+
+@keyframes catWordIn {
+  0% {
+    opacity: 0;
+    transform: translateX(60vw);
+  }
+  12% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.cat-heading-bracket {
+  animation: catBracketIn 1.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.cat-heading-word {
+  animation: catWordIn 1.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cat-heading-bracket,
+  .cat-heading-word {
+    animation-duration: 0.01ms !important;
+  }
 }

@@ -2,6 +2,7 @@ import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { getMember } from "@/lib/actions/members";
 import { getMemberPayments } from "@/lib/actions/payments";
+import { MEMBERSHIP_LABELS } from "@/types/member";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -86,12 +87,7 @@ export default async function AdminMemberDetailPage({ params }: PageProps) {
     CANCELLED: "bg-gray-100 text-gray-700",
   };
 
-  const membershipLevelLabels = {
-    STANDARD: "Socio Estándar",
-    COLLABORATOR: "Socio Colaborador",
-    HONORARY: "Socio de Honor",
-    INSTITUTIONAL: "Socio Institucional",
-  };
+  const membershipLevelLabels = MEMBERSHIP_LABELS;
 
   return (
     <div className="space-y-6">

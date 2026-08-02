@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { getMemberPayments } from "@/lib/actions/payments";
+import { MEMBER_STATUS_LABELS } from "@/types/member";
 import {
   Table,
   TableBody,
@@ -12,13 +13,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { MoreVertical, Download, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 export default async function MemberPaymentsPage() {
   const session = await auth();
@@ -41,7 +36,7 @@ export default async function MemberPaymentsPage() {
     return (
       <div className="space-y-6">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900">Historial de Pagos</h2>
+          <h2 className="text-3xl font-black text-tinta">Historial de pagos</h2>
           <p className="text-gray-600 mt-1">
             Consulta y gestiona tus pagos
           </p>
@@ -84,7 +79,7 @@ export default async function MemberPaymentsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900">Historial de Pagos</h2>
+          <h2 className="text-3xl font-black text-tinta">Historial de pagos</h2>
           <p className="text-gray-600 mt-1">
             Consulta todos tus pagos y suscripciones
           </p>
@@ -151,7 +146,9 @@ export default async function MemberPaymentsPage() {
             <CardTitle className="text-sm font-medium">Estado</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{member.status}</div>
+            <div className="text-2xl font-bold">
+              {MEMBER_STATUS_LABELS[member.status]}
+            </div>
             <p className="text-xs text-gray-600 mt-1">
               {member.renewalDate
                 ? `Renueva: ${new Date(member.renewalDate).toLocaleDateString()}`
@@ -184,7 +181,6 @@ export default async function MemberPaymentsPage() {
                     <TableHead>Tipo</TableHead>
                     <TableHead>Importe</TableHead>
                     <TableHead>Estado</TableHead>
-                    <TableHead className="text-right">Acciones</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -214,29 +210,6 @@ export default async function MemberPaymentsPage() {
                           {statusLabels[payment.status]}
                         </span>
                       </TableCell>
-                      <TableCell className="text-right">
-                        <DropdownMenu>
-                          <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" size="sm">
-                              <MoreVertical className="h-4 w-4" />
-                            </Button>
-                          </DropdownMenuTrigger>
-                          <DropdownMenuContent align="end">
-                            {payment.stripeInvoiceId && (
-                              <DropdownMenuItem asChild>
-                                <a
-                                  href={`https://dashboard.stripe.com/invoices/${payment.stripeInvoiceId}`}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  <Download className="mr-2 h-4 w-4" />
-                                  Descargar Factura
-                                </a>
-                              </DropdownMenuItem>
-                            )}
-                          </DropdownMenuContent>
-                        </DropdownMenu>
-                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -256,13 +229,11 @@ export default async function MemberPaymentsPage() {
         </CardHeader>
         <CardContent>
           <p className="text-sm text-gray-600 mb-4">
-            Si detectas algún error en tus pagos o necesitas una factura,
-            contacta con nosotros.
+            Puedes descargar tus facturas y gestionar la suscripción desde
+            «Gestionar suscripción» (arriba). Si detectas algún error, escríbenos.
           </p>
           <Button variant="outline" asChild>
-            <a href="mailto:info@olvidosdegranada.com">
-              Contactar Soporte
-            </a>
+            <a href="mailto:olvidosdegranada@gmail.com">Contactar con la asociación</a>
           </Button>
         </CardContent>
       </Card>

@@ -1,4 +1,5 @@
 import { getPublicMembers } from "@/lib/actions/members";
+import { MEMBERSHIP_LABELS } from "@/types/member";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -39,17 +40,10 @@ export default async function MembersDirectoryPage({ searchParams }: PageProps) 
   const members = result.success ? result.members : [];
   const pagination = result.success ? result.pagination : null;
 
-  const membershipLevelLabels = {
-    STANDARD: "Socio Estándar",
-    COLLABORATOR: "Socio Colaborador",
-    HONORARY: "Socio de Honor",
-    INSTITUTIONAL: "Socio Institucional",
-  };
-
   const membershipLevelColors = {
     STANDARD: "bg-blue-100 text-blue-700",
     COLLABORATOR: "bg-coral-100 text-coral-700",
-    HONORARY: "bg-yellow-100 text-yellow-700",
+    HONORARY: "bg-coral-100 text-coral-700",
     INSTITUTIONAL: "bg-purple-100 text-purple-700",
   };
 
@@ -104,8 +98,7 @@ export default async function MembersDirectoryPage({ searchParams }: PageProps) 
                 >
                   <option value="all">Todos los niveles</option>
                   <option value="STANDARD">Socio Estándar</option>
-                  <option value="COLLABORATOR">Socio Colaborador</option>
-                  <option value="HONORARY">Socio de Honor</option>
+                  <option value="HONORARY">Socio Mecenas</option>
                   <option value="INSTITUTIONAL">Socio Institucional</option>
                 </select>
               </div>
@@ -187,7 +180,7 @@ export default async function MembersDirectoryPage({ searchParams }: PageProps) 
                             membershipLevelColors[member.membershipLevel]
                           }`}
                         >
-                          {membershipLevelLabels[member.membershipLevel]}
+                          Socio {MEMBERSHIP_LABELS[member.membershipLevel]}
                         </span>
 
                         {/* City */}

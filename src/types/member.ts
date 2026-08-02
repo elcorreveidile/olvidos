@@ -34,10 +34,13 @@ export interface PaymentRecord {
   createdAt: string;
 }
 
+// Etiquetas visibles de cada nivel (fuente única). HONORARY se muestra como
+// "Mecenas". COLLABORATOR se conserva solo para socios antiguos (legacy): ya no
+// se ofrece en los formularios de alta.
 export const MEMBERSHIP_LABELS: Record<MembershipLevel, string> = {
-  STANDARD: "Socio estándar",
-  COLLABORATOR: "Socio colaborador",
-  HONORARY: "Socio honorario",
+  STANDARD: "Estándar",
+  COLLABORATOR: "Colaborador",
+  HONORARY: "Mecenas",
   INSTITUTIONAL: "Institucional",
 };
 

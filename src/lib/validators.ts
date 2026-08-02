@@ -49,7 +49,9 @@ export const memberRegistrationSchema = z.object({
   phone: z.string().optional(),
   address: z.string().optional(),
   city: z.string().optional(),
-  membershipLevel: z.enum(["STANDARD", "COLLABORATOR"]).default("STANDARD"),
+  membershipLevel: z
+    .enum(["STANDARD", "HONORARY", "INSTITUTIONAL"])
+    .default("STANDARD"),
 });
 
 export const contactSchema = z.object({

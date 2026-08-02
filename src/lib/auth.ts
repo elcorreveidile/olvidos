@@ -1,7 +1,9 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import GitHub from "next-auth/providers/github";
+import Google from "next-auth/providers/google";
 import bcrypt from "bcryptjs";
+import crypto from "crypto";
 import { z } from "zod";
 import { db } from "@/lib/db";
 
@@ -21,6 +23,9 @@ const githubSecret = process.env.AUTH_GITHUB_SECRET;
 if (!githubId || !githubSecret) {
   console.error("❌ GitHub OAuth credentials are not defined");
 }
+
+const googleId = process.env.AUTH_GOOGLE_ID;
+const googleSecret = process.env.AUTH_GOOGLE_SECRET;
 
 // Log environment info for debugging
 console.log("[Auth] Environment check:", {
@@ -46,6 +51,69 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       clientId: githubId,
       clientSecret: githubSecret,
     })] : []),
+    ...(googleId && googleSecret ? [Google({
+      clientId: googleId,
+      clientSecret: googleSecret,
+    })] : []),
+    // Enlace mágico: valida el token de un solo uso guardado (hasheado) en
+    // VerificationToken y emite la sesión JWT. El token se genera y envía por
+    // correo desde /api/auth/magic-link (con verificación humana previa).
+    Credentials({
+      id: "magic-link",
+      name: "magic-link",
+      credentials: {
+        token: { label: "Token", type: "text" },
+        email: { label: "Email", type: "email" },
+      },
+      async authorize(credentials) {
+        try {
+          const rawToken =
+            typeof credentials?.token === "string" ? credentials.token : "";
+          const email =
+            typeof credentials?.email === "string"
+              ? credentials.email.toLowerCase().trim()
+              : "";
+          if (!rawToken || !email) return null;
+
+          const hashed = crypto
+            .createHash("sha256")
+            .update(rawToken)
+            .digest("hex");
+
+          const vt = await db.verificationToken.findUnique({
+            where: { token: hashed },
+          });
+          if (!vt || vt.identifier !== email || vt.expires < new Date()) {
+            return null;
+          }
+
+          // Un solo uso: invalida cualquier token pendiente de ese email.
+          await db.verificationToken.deleteMany({
+            where: { identifier: email },
+          });
+
+          const user = await db.user.findUnique({ where: { email } });
+          if (!user) return null;
+          if (!user.emailVerified) {
+            await db.user.update({
+              where: { id: user.id },
+              data: { emailVerified: new Date() },
+            });
+          }
+
+          return {
+            id: user.id,
+            email: user.email,
+            name: user.name || "Usuario",
+            image: user.image,
+            role: user.role || "USER",
+          };
+        } catch (error) {
+          console.error("[Auth] magic-link authorize error:", error);
+          return null;
+        }
+      },
+    }),
     Credentials({
       name: "credentials",
       credentials: {
@@ -103,39 +171,37 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   callbacks: {
     async signIn({ user, account }) {
       try {
-        if (account?.provider === "github" && user.email) {
-          console.log("[Auth] GitHub sign in for:", user.email);
+        // Providers OAuth (GitHub, Google): el usuario se enlaza/crea por email.
+        // Mutamos `user.id`/`user.role` con los valores reales de la BD para que
+        // el callback jwt propague el id (cuid) y el rol correctos.
+        const isOAuth =
+          account?.provider === "github" || account?.provider === "google";
 
-          // Check if user exists, if not create one
+        if (isOAuth && user.email) {
           const existingUser = await db.user.findUnique({
             where: { email: user.email },
           });
 
           if (!existingUser) {
-            console.log("[Auth] Creating new user from GitHub:", user.email);
-            // Create new user with USER role (not MEMBER - needs to register as member)
-            await db.user.create({
+            const created = await db.user.create({
               data: {
                 email: user.email,
                 name: user.name,
                 image: user.image,
-                role: "USER",
+                role: "USER", // OAuth crea usuario, no socio: irá a /hazte-socio
               },
             });
-            console.log("[Auth] User created successfully with role USER");
-            // Return the user object with USER role
-            return { ...user, role: "USER" };
+            user.id = created.id;
+            user.role = "USER";
           } else {
-            console.log("[Auth] Existing user found:", existingUser.email, "role:", existingUser.role);
-            // Return the user object with role from database
-            console.log("[Auth] Returning user with role from DB:", existingUser.role);
-            return { ...user, role: existingUser.role, id: existingUser.id };
+            user.id = existingUser.id;
+            user.role = existingUser.role;
           }
         }
         return true;
       } catch (error) {
         console.error("[Auth] Error in signIn callback:", error);
-        // Still allow sign in even if DB operations fail
+        // Permitir el inicio de sesión aunque falle la operación en BD.
         return true;
       }
     },

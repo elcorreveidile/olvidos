@@ -38,6 +38,18 @@ const nextConfig = {
         destination: "/sobre-nosotros",
         permanent: true,
       },
+      // --- Web histórica olvidos.es (2010, CakePHP): URLs por sección + ID
+      // numérico. Los IDs antiguos no mapean a los slugs actuales, así que
+      // redirigimos a nivel de sección para conservar la autoridad SEO del
+      // dominio histórico y evitar 404 en enlaces indexados. ---
+      { source: "/editoriales/:id*", destination: "/articulos?categoria=editorial", permanent: true },
+      { source: "/palabras/:id*", destination: "/articulos?categoria=palabras", permanent: true },
+      { source: "/piezas/:id*", destination: "/articulos?categoria=piezas-procesos", permanent: true },
+      { source: "/procesos/:id*", destination: "/articulos?categoria=piezas-procesos", permanent: true },
+      { source: "/soneto500/:id*", destination: "/articulos?categoria=sonetos", permanent: true },
+      { source: "/opiniones/:id*", destination: "/articulos?categoria=apostillas", permanent: true },
+      { source: "/eventos/:id*", destination: "/actividades", permanent: true },
+      { source: "/videos/:id*", destination: "/actividades", permanent: true },
     ];
   },
 };

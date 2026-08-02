@@ -1,316 +1,366 @@
 import Link from "next/link";
-import { Check, Heart, Users, BookOpen, Calendar } from "lucide-react";
+import type { Metadata } from "next";
 import { getPublicSiteFlags } from "@/lib/actions/site-config";
 import { auth } from "@/lib/auth";
+import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
+import { CategoryHeading } from "@/components/content/CategoryHeading";
+
+export const metadata: Metadata = {
+  title: "Hazte socio",
+  description:
+    "Hazte socio de la Asociación Cultural Olvidos de Granada: apoya la memoria cultural granadina, recibe la revista y accede a los encuentros.",
+};
+
+const BENEFICIOS = [
+  {
+    t: "La revista",
+    d: "La edición del curso en digital para todos; en papel para socios Mecenas e Institucionales cuando salga el número impreso.",
+  },
+  {
+    t: "Encuentros",
+    d: "Te invitamos a las presentaciones, recitales y encuentros, con asiento reservado para socios.",
+  },
+  {
+    t: "Voz y voto",
+    d: "Participa en la Asamblea General con voz y voto, y en la vida de la asociación.",
+  },
+  {
+    t: "Comunidad",
+    d: "Forma parte de una comunidad viva de amantes de la cultura granadina.",
+  },
+  {
+    t: "Carné digital",
+    d: "Tu carné de socio con QR, siempre en el móvil.",
+  },
+  {
+    t: "Apoya la memoria",
+    d: "Tu cuota hace posible el libro de Mariano, la vuelta de la revista al papel y el mantenimiento de esta web.",
+  },
+];
+
+const PLANES = [
+  {
+    nombre: "Estándar",
+    precio: "50€",
+    destacado: false,
+    nota: "Socio individual",
+    beneficios: [
+      "Carné digital de socio con QR",
+      "Voz y voto en la Asamblea",
+      "Invitación a los encuentros, con asiento reservado",
+      "La edición del año de la revista, en digital",
+      "El libro y la revista impresa a precio de socio",
+    ],
+  },
+  {
+    nombre: "Mecenas",
+    precio: "120€",
+    destacado: true,
+    nota: "Individual · mayor apoyo",
+    beneficios: [
+      "Todo lo del plan Estándar",
+      "La revista impresa del año, en tu casa",
+      "Ejemplar del libro de las editoriales de Mariano",
+      "Tu nombre en los créditos de la revista impresa",
+      "Mención como Mecenas en la web",
+    ],
+  },
+  {
+    nombre: "Institucional",
+    precio: "250€",
+    destacado: false,
+    nota: "Entidades, bibliotecas y empresas",
+    beneficios: [
+      "Membresía a nombre de la entidad",
+      "5 ejemplares de cada edición impresa (revista y libro)",
+      "Logotipo destacado en la web",
+      "Factura y convenio de colaboración",
+      "Voz y voto en la Asamblea, mediante un representante",
+    ],
+  },
+];
+
+const FAQ = [
+  {
+    q: "¿Qué es la Asociación Cultural Olvidos de Granada?",
+    a: "Una entidad sin ánimo de lucro que edita la revista Olvidos de Granada (ISSN 2605-4515) y mantiene vivo el legado de Mariano Maresca: conserva el archivo impreso, publica nuevos textos, organiza encuentros y trabaja para devolver la revista al papel.",
+  },
+  {
+    q: "¿Qué hace la asociación con mi cuota?",
+    a: "Hace posibles los proyectos de esta etapa: el libro con las editoriales que Mariano Maresca escribió para Imaginarias, la vuelta de la revista al papel (una edición impresa por curso) y la organización de encuentros. También cubre el mantenimiento de esta web, donde viven el archivo y los nuevos textos. Cada cuota es un apoyo directo a la memoria cultural granadina.",
+  },
+  {
+    q: "¿Los socios participan en la Asamblea?",
+    a: "Sí. Como socio de número tienes voz y voto en la Asamblea General y puedes ser elector y elegible para la Junta Directiva (Estatutos, art. 34). Las entidades socias participan a través de un representante. El derecho de voto requiere estar al corriente de la cuota.",
+  },
+  {
+    q: "¿Cómo puedo hacerme socio?",
+    a: "Desde esta página, eligiendo un plan. El proceso es rápido y seguro, y tendrás tu carné digital en tu área de socio en cuanto se confirme el pago.",
+  },
+  {
+    q: "¿La cuota es anual?",
+    a: "Sí, la cuota es anual. Te avisaremos antes de cada renovación y podrás cambiar de plan o darte de baja cuando quieras.",
+  },
+  {
+    q: "¿Voy a recibir una revista impresa?",
+    a: "Estamos preparando la etapa impresa. Cada curso editaremos una revista en papel que recopila todo lo publicado en la web —la primera, con el curso 2026-2027, prevista para diciembre de 2027— y un libro con las editoriales que Mariano Maresca escribió para el programa Imaginarias de Canal Sur. Todos los socios reciben la edición digital; los socios Mecenas e Institucionales la reciben también impresa en casa.",
+  },
+  {
+    q: "¿Hace falta vivir en Granada?",
+    a: "No. Puedes hacerte socio desde cualquier lugar: la edición digital de la revista te llega estés donde estés, y la impresa (Mecenas e Institucional) va por correo. Los encuentros se celebran sobre todo en Granada.",
+  },
+  {
+    q: "¿Qué métodos de pago aceptáis?",
+    a: "Tarjetas de crédito y débito (Visa, Mastercard, American Express) a través de la plataforma segura Stripe.",
+  },
+  {
+    q: "¿Puedo colaborar de otra forma?",
+    a: "Sí. Además de las cuotas, aceptamos donaciones y colaboraciones. Escríbenos a olvidosdegranada@gmail.com y lo vemos.",
+  },
+  {
+    q: "¿Puedo darme de baja cuando quiera?",
+    a: "Sí, cuando quieras, sin permanencia ni penalizaciones. Escríbenos a olvidosdegranada@gmail.com y lo tramitamos. Tus datos están protegidos según el RGPD.",
+  },
+];
 
 export default async function HazteSocioPage() {
-  // Extract only what we need to avoid serialization issues
-  const role = (await auth())?.user?.role;
+  // Solo redirigimos al área de socios a quien REALMENTE tiene ficha de socio
+  // (no por rol): así evitamos un bucle /hazte-socio ↔ /mi-cuenta para admins o
+  // sesiones sin Member (que /mi-cuenta reenvía aquí al no encontrar socio).
+  const userId = (await auth())?.user?.id;
 
-  if (
-    role === "ADMIN" ||
-    role === "MEMBER_ADMIN" ||
-    role === "MEMBER" ||
-    role === "EDITOR"
-  ) {
-    redirect("/mi-cuenta");
+  if (userId) {
+    const member = await db.member.findUnique({
+      where: { userId },
+      select: { id: true },
+    });
+    if (member) {
+      redirect("/mi-cuenta");
+    }
   }
 
   const { allowRegistrations } = await getPublicSiteFlags();
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-gradient-to-br from-azul to-azul/80 text-white py-16 mt-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-black mb-4">Hazte Socio</h1>
-          <p className="text-xl opacity-90 max-w-3xl mx-auto">
-            Únete a la comunidad de Olvidos de Granada y ayuda a preservar nuestra
-            cultura y literatura
+    <div className="max-w-content mx-auto px-4 py-12">
+      {/* Cabecera editorial */}
+      <header className="mb-12 border-b-2 border-tinta pb-8 text-center">
+        <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-coral">
+          La asociación
+        </p>
+        <CategoryHeading>hazte socio</CategoryHeading>
+        <p className="mx-auto mt-6 max-w-2xl font-editorial text-lg leading-snug text-tinta/70">
+          Únete a la Asociación Cultural Olvidos de Granada y ayuda a preservar y
+          difundir la memoria cultural de la ciudad.
+        </p>
+      </header>
+
+      {/* Qué es Olvidos */}
+      <section className="mb-16 max-w-article">
+        <h2 className="mb-4 text-2xl font-black text-tinta">
+          <span className="text-coral">[</span>Qué es Olvidos
+        </h2>
+        <div className="prose-editorial">
+          <p>
+            <em>Olvidos de Granada</em> nació en 1982 de la mano de Mariano
+            Maresca (1945–2023) —profesor de Filosofía del Derecho, agitador
+            cultural y maestro de varias generaciones de escritores— con la
+            vocación de ser «el archivo vivo de la creación artística y cultural
+            granadina». Entre 1984 y 1987, a través de entrevistas, ensayos,
+            crónicas y fotografías, documentó a los escritores, artistas,
+            músicos y pensadores que de otro modo habrían quedado en el olvido.
           </p>
-          <p className="text-sm mt-4 text-acero-light">
-            ¿Primera vez? <Link href="/registro" className="text-coral font-bold hover:text-coral-light">Crea una cuenta gratuita</Link> y cuando quieras vuelve aquí para hacerte socio.
+          <p>
+            Por sus páginas y sus encuentros pasaron nombres como Antonio Muñoz
+            Molina, Luis García Montero o Javier Egea. En 2011 la revista revivió
+            en formato digital como repositorio de aquellos números, y hoy la{" "}
+            <strong>Asociación Cultural Olvidos de Granada</strong> mantiene vivo
+            ese legado: recupera el archivo impreso, publica nuevos textos y
+            organiza encuentros culturales.
+          </p>
+          <p>
+            Como decía Mariano, «el trabajo de la memoria es esencial, casi
+            nuestra única arma». Hacerte socio es sumarte a esa tarea. Puedes
+            leer más sobre él en{" "}
+            <a
+              href="https://www.marianomaresca.com/biografia"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              marianomaresca.com
+            </a>
+            .
           </p>
         </div>
-      </div>
+      </section>
 
       {/* Beneficios */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-azul mb-4">¿Por qué hacerte socio?</h2>
-          <p className="text-acero max-w-2xl mx-auto">
-            Tu apoyo nos permite continuar con nuestra misión de recuperar y
-            difundir el patrimonio cultural de Granada
+      <section className="mb-16">
+        <h2 className="mb-8 text-2xl font-black text-tinta">
+          <span className="text-coral">[</span>Qué te llevas como socio
+        </h2>
+        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-sm bg-acero-light/40 sm:grid-cols-2 lg:grid-cols-3">
+          {BENEFICIOS.map(({ t, d }) => (
+            <div key={t} className="bg-white p-6">
+              <h3 className="mb-1 text-lg font-bold text-tinta">
+                <span className="text-coral">[</span>
+                {t}
+              </h3>
+              <p className="font-editorial text-tinta/70">{d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Objetivos / hoja de ruta (teaser público) */}
+      <section className="mb-16">
+        <div className="rounded-sm bg-tinta p-8 text-white md:p-10">
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.25em] text-coral-light">
+            Hoja de ruta
+          </p>
+          <h2 className="mb-6 text-2xl font-black md:text-3xl">
+            Lo que estamos construyendo con tu cuota
+          </h2>
+          <div className="grid gap-8 md:grid-cols-3">
+            <div>
+              <h3 className="mb-1 font-bold text-coral-light">
+                El libro de Mariano
+              </h3>
+              <p className="font-editorial leading-snug text-white/80">
+                Una edición que reúne las editoriales que Mariano Maresca
+                escribió para <em>Imaginarias</em>, el programa cultural de Canal
+                Sur.
+              </p>
+            </div>
+            <div>
+              <h3 className="mb-1 font-bold text-coral-light">
+                La revista impresa, cada curso
+              </h3>
+              <p className="font-editorial leading-snug text-white/80">
+                Recuperamos el papel: cada curso, un número impreso que recopila
+                todo lo publicado en la web. El primero, con el curso 2026-2027,
+                previsto para diciembre de 2027.
+              </p>
+            </div>
+            <div>
+              <h3 className="mb-1 font-bold text-coral-light">
+                El archivo, en la web
+              </h3>
+              <p className="font-editorial leading-snug text-white/80">
+                Pasamos cada número del archivo, hoy en PDF, a formato web para
+                que se lea mejor, se pueda buscar y quede bien indexado.
+              </p>
+            </div>
+          </div>
+          <p className="mt-6 text-sm font-editorial text-white/70">
+            Hacerte socio es sumarte a esta etapa desde el principio.
           </p>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          <div className="bg-white rounded-sm shadow-card p-6">
-            <div className="w-12 h-12 bg-coral/10 rounded-sm flex items-center justify-center mb-4">
-              <BookOpen className="w-6 h-6 text-coral" />
-            </div>
-            <h3 className="text-xl font-bold text-azul mb-2">Revista Digital</h3>
-            <p className="text-acero">
-              Recibe nuestra revista en formato digital con artículos, ensayos y
-              creaciones literarias exclusivas
-            </p>
+      {/* Planes */}
+      <section className="mb-16">
+        <h2 className="mb-8 text-2xl font-black text-tinta">
+          <span className="text-coral">[</span>Elige tu cuota
+        </h2>
+
+        {!allowRegistrations && (
+          <div className="mb-6 rounded-sm border border-amber-200 bg-amber-50 p-4 text-center text-sm text-amber-800">
+            Las nuevas inscripciones están temporalmente desactivadas. Escríbenos a{" "}
+            <strong>olvidosdegranada@gmail.com</strong> para más información.
           </div>
+        )}
 
-          <div className="bg-white rounded-sm shadow-card p-6">
-            <div className="w-12 h-12 bg-coral/10 rounded-sm flex items-center justify-center mb-4">
-              <Calendar className="w-6 h-6 text-coral" />
-            </div>
-            <h3 className="text-xl font-bold text-azul mb-2">Eventos Exclusivos</h3>
-            <p className="text-acero">
-              Acceso prioritario y descuentos en presentaciones, recitales,
-              conferencias y todas nuestras actividades
-            </p>
-          </div>
-
-          <div className="bg-white rounded-sm shadow-card p-6">
-            <div className="w-12 h-12 bg-coral/10 rounded-sm flex items-center justify-center mb-4">
-              <Users className="w-6 h-6 text-coral" />
-            </div>
-            <h3 className="text-xl font-bold text-azul mb-2">Comunidad</h3>
-            <p className="text-acero">
-              Forma parte de una comunidad de amantes de la cultura y la literatura
-              de Granada
-            </p>
-          </div>
-
-          <div className="bg-white rounded-sm shadow-card p-6">
-            <div className="w-12 h-12 bg-coral/10 rounded-sm flex items-center justify-center mb-4">
-              <Heart className="w-6 h-6 text-coral" />
-            </div>
-            <h3 className="text-xl font-bold text-azul mb-2">Apoya la Cultura</h3>
-            <p className="text-acero">
-              Tu cuota directamente apoya nuestras actividades culturales y la
-              preservación del patrimonio granadino
-            </p>
-          </div>
-
-          <div className="bg-white rounded-sm shadow-card p-6">
-            <div className="w-12 h-12 bg-coral/10 rounded-sm flex items-center justify-center mb-4">
-              <Check className="w-6 h-6 text-coral" />
-            </div>
-            <h3 className="text-xl font-bold text-azul mb-2">Carnet Digital</h3>
-            <p className="text-acero">
-              Carnet de socio digital que demuestras tu pertenencia a la
-              Asociación Cultural Olvidos de Granada
-            </p>
-          </div>
-
-          <div className="bg-white rounded-sm shadow-card p-6">
-            <div className="w-12 h-12 bg-coral/10 rounded-sm flex items-center justify-center mb-4">
-              <BookOpen className="w-6 h-6 text-coral" />
-            </div>
-            <h3 className="text-xl font-bold text-azul mb-2">Descuentos</h3>
-            <p className="text-acero">
-              Descuentos en libros, actividades culturales y establecimientos
-              colaboradores
-            </p>
-          </div>
-        </div>
-
-        {/* Planes de membresía */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-azul mb-8 text-center">
-            Elige tu plan de membresía
-          </h2>
-
-          {!allowRegistrations && (
-            <div className="mb-6 rounded-sm border border-amber-200 bg-amber-50 p-4 text-center text-sm text-amber-800">
-              Las nuevas inscripciones están temporalmente desactivadas.
-              Escríbenos a <strong>info@olvidosdegranada.es</strong> para más
-              información.
-            </div>
-          )}
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Plan Estándar */}
-            <div className="bg-white rounded-sm shadow-card overflow-hidden">
-              <div className="bg-azul text-white p-6 text-center">
-                <h3 className="text-2xl font-bold mb-2">Estándar</h3>
-                <div className="text-4xl font-black">30€</div>
-                <p className="text-sm opacity-90">/año</p>
-              </div>
-              <div className="p-6">
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
-                    <span className="text-acero">Revista digital anual</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
-                    <span className="text-acero">Acceso a eventos</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
-                    <span className="text-acero">Carnet digital</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
-                    <span className="text-acero">Descuentos colaboradores</span>
-                  </li>
-                </ul>
-                {allowRegistrations ? (
-                  <Link
-                    href="/registro-socio"
-                    className="block w-full px-6 py-3 bg-coral text-white text-center font-bold rounded-sm hover:bg-coral-dark transition-colors"
-                  >
-                    Hacerme Socio
-                  </Link>
-                ) : (
-                  <span className="block w-full px-6 py-3 bg-gray-300 text-gray-700 text-center font-bold rounded-sm cursor-not-allowed">
-                    Inscripciones cerradas
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-3">
+          {PLANES.map((plan) => (
+            <div
+              key={plan.nombre}
+              className={`flex flex-col overflow-hidden rounded-sm shadow-card ${
+                plan.destacado ? "ring-2 ring-coral" : ""
+              }`}
+            >
+              <div
+                className={`relative p-6 text-center text-white ${
+                  plan.destacado ? "curtain-stage" : "curtain-velvet"
+                }`}
+              >
+                {plan.destacado && (
+                  <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-sm bg-white/95 px-2 py-1 text-[0.65rem] font-bold uppercase tracking-wide text-teatro shadow-sm">
+                    ★ En escena
                   </span>
                 )}
-              </div>
-            </div>
-
-            {/* Plan Colaborador */}
-            <div className="bg-white rounded-sm shadow-card overflow-hidden ring-2 ring-coral">
-              <div className="bg-coral text-white p-6 text-center relative">
-                <div className="absolute top-2 right-2 bg-white text-coral text-xs font-bold px-2 py-1 rounded-sm">
-                  Popular
+                <h3
+                  className={`mb-2 text-2xl font-bold ${
+                    plan.destacado
+                      ? "[text-shadow:0_2px_12px_rgba(0,0,0,0.45)]"
+                      : ""
+                  }`}
+                >
+                  {plan.nombre}
+                </h3>
+                <div
+                  className={`text-4xl font-black ${
+                    plan.destacado
+                      ? "[text-shadow:0_2px_18px_rgba(255,205,130,0.55)]"
+                      : ""
+                  }`}
+                >
+                  {plan.precio}
                 </div>
-                <h3 className="text-2xl font-bold mb-2">Colaborador</h3>
-                <div className="text-4xl font-black">60€</div>
                 <p className="text-sm opacity-90">/año</p>
+                {plan.nota && (
+                  <p className="mt-2 text-xs leading-snug opacity-90">
+                    {plan.nota}
+                  </p>
+                )}
               </div>
-              <div className="p-6">
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
-                    <span className="text-acero">Todo lo del plan Estándar</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
-                    <span className="text-acero">Revista impresa (2 números)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
-                    <span className="text-acero">Entradas gratuitas a eventos</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
-                    <span className="text-acero">Mención en la web</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
-                    <span className="text-acero">Descuento del 20% en libros</span>
-                  </li>
+              <div className="flex flex-1 flex-col p-6">
+                <ul className="mb-6 flex-1 space-y-3">
+                  {plan.beneficios.map((b) => (
+                    <li key={b} className="flex items-start gap-2">
+                      <span className="mt-0.5 font-bold text-coral">·</span>
+                      <span className="text-tinta/80">{b}</span>
+                    </li>
+                  ))}
                 </ul>
                 {allowRegistrations ? (
                   <Link
                     href="/registro-socio"
-                    className="block w-full px-6 py-3 bg-coral text-white text-center font-bold rounded-sm hover:bg-coral-dark transition-colors"
+                    className="block w-full rounded-sm bg-coral px-6 py-3 text-center font-bold text-white transition-colors hover:bg-coral-dark"
                   >
-                    Hacerme Colaborador
+                    Hacerme socio
                   </Link>
                 ) : (
-                  <span className="block w-full px-6 py-3 bg-gray-300 text-gray-700 text-center font-bold rounded-sm cursor-not-allowed">
+                  <span className="block w-full cursor-not-allowed rounded-sm bg-gray-200 px-6 py-3 text-center font-bold text-gray-500">
                     Inscripciones cerradas
                   </span>
                 )}
               </div>
             </div>
-
-            {/* Plan Honorífico */}
-            <div className="bg-white rounded-sm shadow-card overflow-hidden">
-              <div className="bg-azul text-white p-6 text-center">
-                <h3 className="text-2xl font-bold mb-2">Honorífico</h3>
-                <div className="text-4xl font-black">120€</div>
-                <p className="text-sm opacity-90">/año</p>
-              </div>
-              <div className="p-6">
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
-                    <span className="text-acero">Todo lo del plan Colaborador</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
-                    <span className="text-acero">Revista impresa completa</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
-                    <span className="text-acero">Invitación a eventos VIP</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
-                    <span className="text-acero">Dedicada en la revista</span>
-                  </li>
-                </ul>
-                {allowRegistrations ? (
-                  <Link
-                    href="/registro-socio"
-                    className="block w-full px-6 py-3 bg-azul text-white text-center font-bold rounded-sm hover:bg-azul-dark transition-colors"
-                  >
-                    Hacerme Socio Honorífico
-                  </Link>
-                ) : (
-                  <span className="block w-full px-6 py-3 bg-gray-300 text-gray-700 text-center font-bold rounded-sm cursor-not-allowed">
-                    Inscripciones cerradas
-                  </span>
-                )}
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
+      </section>
 
-        {/* FAQ */}
-        <div>
-          <h2 className="text-3xl font-bold text-azul mb-8 text-center">
-            Preguntas Frecuentes
-          </h2>
-
-          <div className="max-w-3xl mx-auto space-y-4">
-            <details className="bg-white rounded-sm shadow-card p-6">
-              <summary className="font-bold text-azul cursor-pointer">
-                ¿Cómo puedo hacerme socio?
+      {/* FAQ */}
+      <section>
+        <h2 className="mb-6 text-2xl font-black text-tinta">
+          <span className="text-coral">[</span>Preguntas frecuentes
+        </h2>
+        <div className="max-w-3xl space-y-3">
+          {FAQ.map((item) => (
+            <details
+              key={item.q}
+              className="rounded-sm border border-acero-light/50 p-6"
+            >
+              <summary className="cursor-pointer font-bold text-tinta">
+                {item.q}
               </summary>
-              <p className="mt-4 text-acero">
-                Puedes hacerte socio a través de nuestra página de registro. El
-                proceso es rápido y seguro. Una vez completado, recibirás tu carnet
-                digital inmediatamente.
-              </p>
+              <p className="mt-4 font-editorial text-tinta/70">{item.a}</p>
             </details>
-
-            <details className="bg-white rounded-sm shadow-card p-6">
-              <summary className="font-bold text-azul cursor-pointer">
-                ¿Qué métodos de pago aceptáis?
-              </summary>
-              <p className="mt-4 text-acero">
-                Aceptamos tarjetas de crédito y débito (Visa, Mastercard, American
-                Express) a través de nuestra plataforma de pago segura Stripe.
-              </p>
-            </details>
-
-            <details className="bg-white rounded-sm shadow-card p-6">
-              <summary className="font-bold text-azul cursor-pointer">
-                ¿Puedo darme de baja cuando quiera?
-              </summary>
-              <p className="mt-4 text-acero">
-                Sí, puedes darte de baja en cualquier momento desde tu área de socio.
-                No hay penalizaciones ni compromisos de permanencia.
-              </p>
-            </details>
-
-            <details className="bg-white rounded-sm shadow-card p-6">
-              <summary className="font-bold text-azul cursor-pointer">
-                ¿Mis datos están seguros?
-              </summary>
-              <p className="mt-4 text-acero">
-                Absolutamente. Cumplimos con todas las normativas de protección de
-                datos (GDPR) y nunca compartimos tu información con terceros sin tu
-                consentimiento.
-              </p>
-            </details>
-          </div>
+          ))}
         </div>
-      </div>
+      </section>
     </div>
   );
 }

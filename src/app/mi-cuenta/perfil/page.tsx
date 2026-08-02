@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { updateMember } from "@/lib/actions/members";
+import { MEMBERSHIP_LABELS, MEMBER_STATUS_LABELS } from "@/types/member";
 
 export default async function MemberProfilePage() {
   const session = await auth();
@@ -29,9 +30,9 @@ export default async function MemberProfilePage() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-3xl font-bold text-gray-900">Mi Perfil</h2>
-        <p className="text-gray-600 mt-1">
-          Actualiza tu información personal y preferencias
+        <h2 className="text-3xl font-black text-tinta">Mi perfil</h2>
+        <p className="mt-1 font-editorial text-tinta/70">
+          Actualiza tus datos y tu visibilidad en el directorio.
         </p>
       </div>
 
@@ -182,8 +183,8 @@ export default async function MemberProfilePage() {
                   <p className="font-medium">{session.user.name || "Tu nombre"}</p>
                   {member.city && <p className="text-gray-600">{member.city}</p>}
                   {member.membershipLevel && (
-                    <span className="inline-block px-2 py-1 bg-coral-100 text-coral-700 rounded text-xs">
-                      {member.membershipLevel}
+                    <span className="inline-block px-2 py-1 bg-coral/10 text-coral rounded text-xs font-bold">
+                      Socio {MEMBERSHIP_LABELS[member.membershipLevel]}
                     </span>
                   )}
                   {member.bio && (
@@ -217,12 +218,16 @@ export default async function MemberProfilePage() {
               <dd className="text-lg font-semibold">#{member.memberNumber}</dd>
             </div>
             <div>
-              <dt className="text-sm font-medium text-gray-600">Nivel de Membresía</dt>
-              <dd className="text-lg font-semibold">{member.membershipLevel}</dd>
+              <dt className="text-sm font-medium text-gray-600">Nivel de socio</dt>
+              <dd className="text-lg font-semibold">
+                {MEMBERSHIP_LABELS[member.membershipLevel]}
+              </dd>
             </div>
             <div>
               <dt className="text-sm font-medium text-gray-600">Estado</dt>
-              <dd className="text-lg font-semibold">{member.status}</dd>
+              <dd className="text-lg font-semibold">
+                {MEMBER_STATUS_LABELS[member.status]}
+              </dd>
             </div>
             <div>
               <dt className="text-sm font-medium text-gray-600">Fecha de Alta</dt>

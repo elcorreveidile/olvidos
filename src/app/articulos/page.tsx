@@ -1,198 +1,161 @@
-import { getPublishedArticles } from "@/lib/actions/articles";
 import Link from "next/link";
-import Image from "next/image";
-import { Calendar, User, Tag } from "lucide-react";
+import type { Metadata } from "next";
+import {
+  getPublishedArticles,
+  getArticlesByCategory,
+  getArticlesByTag,
+  searchArticles,
+} from "@/lib/queries";
+import { ArticleCard } from "@/components/content/ArticleCard";
+import { CategoryHeading } from "@/components/content/CategoryHeading";
+import { Pagination } from "@/components/shared/Pagination";
+import { SearchInline } from "@/components/shared/SearchInline";
 
 export const dynamic = "force-dynamic";
 
+const PER_PAGE = 24;
+
+export const metadata: Metadata = {
+  title: "Artículos",
+  description:
+    "Artículos, ensayos y creación de Olvidos de Granada: editoriales, palabras, piezas y procesos, Soneto500 y más.",
+};
+
 interface ArticulosPageProps {
-  searchParams: {
-    categoria?: string;
-    tag?: string;
-  };
+  searchParams: { categoria?: string; tag?: string; q?: string; page?: string };
 }
 
 export default async function ArticulosPage({
   searchParams,
 }: ArticulosPageProps) {
   const { categoria, tag } = searchParams;
+  const q = searchParams.q?.trim() || "";
+  const page = Math.max(1, Number(searchParams.page) || 1);
 
-  // Obtener artículos con filtro si existe
-  const result = await getPublishedArticles(
-    categoria ? { category: categoria } : tag ? { tag } : undefined
-  );
+  let articles;
+  let totalPages = 1;
+  let total = 0;
+  let eyebrow = "La época digital";
+  let title = "artículos";
+  let intro: string | null = null;
+  let categoryName: string | null = null;
+  const searching = q.length > 0;
+  const spForPagination: Record<string, string> = {};
 
-  const articles = result.success && result.articles ? result.articles : [];
-
-  // Obtener nombre de la categoría/tag si está filtrando
-  let filterName = "";
-  let filterType = "";
-
-  if (articles.length > 0) {
-    if (categoria) {
-      filterName =
-        articles[0]?.categories?.find(
-          (cat: any) => cat.category?.slug === categoria
-        )?.category?.name || categoria;
-      filterType = "categoría";
-    } else if (tag) {
-      filterName =
-        articles[0]?.tags?.find(
-          (tagItem: any) => tagItem.tag?.slug === tag
-        )?.tag?.name || tag;
-      filterType = "etiqueta";
-    }
+  if (searching) {
+    const r = await searchArticles(q, page, PER_PAGE, categoria);
+    articles = r.articles;
+    totalPages = r.totalPages;
+    total = r.total;
+    categoryName = r.category?.name ?? categoria ?? null;
+    eyebrow = categoryName ? `Búsqueda · ${categoryName}` : "Búsqueda";
+    title = q;
+    spForPagination.q = q;
+    if (categoria) spForPagination.categoria = categoria;
+  } else if (categoria) {
+    const r = await getArticlesByCategory(categoria, page, PER_PAGE);
+    articles = r.articles;
+    totalPages = r.totalPages;
+    total = r.total;
+    eyebrow = "Categoría";
+    title = r.category?.name ?? categoria;
+    categoryName = r.category?.name ?? categoria;
+    intro = r.category?.description ?? null;
+    spForPagination.categoria = categoria;
+  } else if (tag) {
+    const r = await getArticlesByTag(tag, page, PER_PAGE);
+    articles = r.articles;
+    totalPages = r.totalPages;
+    total = r.total;
+    eyebrow = "Etiqueta";
+    title = r.tag?.name ?? tag;
+    spForPagination.tag = tag;
+  } else {
+    const r = await getPublishedArticles(page, PER_PAGE);
+    articles = r.articles;
+    totalPages = r.totalPages;
+    total = r.total;
   }
 
+  const noun = searching ? "resultado" : "artículo";
+  const resetHref = categoria ? `/articulos?categoria=${categoria}` : "/articulos";
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-azul text-white py-16 mt-16">
-        <div className="container mx-auto px-4">
-          {filterName ? (
-            <div>
-              <p className="text-lg opacity-75 mb-2">
-                {filterType === "categoría" ? "Categoría" : "Etiqueta"}:{" "}
-                <span className="font-bold">{filterName}</span>
-              </p>
-              <h1 className="text-5xl font-black mb-4">
-                {articles.length} artículo{articles.length !== 1 ? "s" : ""}
-              </h1>
+    <div className="max-w-content mx-auto px-4 py-12">
+      <header className="mb-10 border-b-2 border-tinta pb-8 text-center">
+        <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-coral">
+          {eyebrow}
+        </p>
+        <CategoryHeading>{title}</CategoryHeading>
+        {intro && (
+          <p className="mx-auto mt-6 max-w-2xl font-editorial text-lg leading-snug text-tinta/75">
+            {intro}
+          </p>
+        )}
+        <p className="mt-6 font-editorial text-lg text-tinta/70">
+          {total} {noun}
+          {total !== 1 ? "s" : ""}
+          {(searching || categoria || tag) && (
+            <>
+              {" · "}
               <Link
-                href="/articulos"
-                className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors"
+                href={searching ? resetHref : "/articulos"}
+                className="font-bold text-coral hover:text-tinta"
               >
-                <Tag className="w-4 h-4" />
-                Ver todos los artículos
+                {searching ? "quitar búsqueda" : "ver todos"}
               </Link>
-            </div>
-          ) : (
-            <div>
-              <h1 className="text-5xl font-black mb-4">Artículos</h1>
-              <p className="text-xl opacity-90">
-                Explora nuestra colección de artículos culturales y literarios
-              </p>
-            </div>
+            </>
           )}
-        </div>
+        </p>
+      </header>
+
+      {/* Buscador (dentro de la categoría si procede) */}
+      <div className="mb-10">
+        <SearchInline
+          categoria={categoria}
+          defaultValue={q}
+          scopeLabel={categoryName ?? undefined}
+        />
       </div>
 
-      {/* Articles Grid */}
-      <div className="container mx-auto px-4 py-12">
-        {articles.length === 0 ? (
-          <div className="text-center py-12 bg-white rounded-sm shadow-card">
-            <Tag className="w-16 h-16 text-acero-light mx-auto mb-4" />
-            <p className="text-acero text-lg mb-4">
-              {filterName
-                ? `No hay artículos en ${filterType} "${filterName}"`
-                : "No hay artículos publicados aún."}
-            </p>
-            {filterName && (
-              <Link
-                href="/articulos"
-                className="inline-block px-6 py-2 bg-coral text-white font-bold rounded-sm hover:bg-coral-dark transition-colors"
-              >
-                Ver todos los artículos
-              </Link>
-            )}
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {articles.length === 0 ? (
+        <div className="rounded-sm border border-acero-light/40 bg-gray-50 py-16 text-center">
+          <p className="font-editorial text-acero">
+            {searching
+              ? `No se han encontrado resultados para «${q}»${
+                  categoryName ? ` en ${categoryName}` : ""
+                }.`
+              : "No hay artículos en esta selección."}
+          </p>
+        </div>
+      ) : (
+        <>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {articles.map((article) => (
-              <article
+              <ArticleCard
                 key={article.id}
-                className="bg-white rounded-sm shadow-card hover:shadow-card-hover transition-all"
-              >
-                {/* Article Image */}
-                {article.coverImage && (
-                  <Link href={`/articulos/${article.slug}`}>
-                    <div className="relative h-48 overflow-hidden rounded-t-sm">
-                      <Image
-                        src={article.coverImage}
-                        alt={article.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  </Link>
-                )}
-
-                {/* Article Content */}
-                <div className="p-6">
-                  {/* Categories */}
-                  {article.categories && article.categories.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {article.categories.map((catItem: any) => (
-                        <Link
-                          key={catItem.id}
-                          href={`/articulos?categoria=${catItem.category.slug}`}
-                          className="text-xs font-bold text-coral hover:text-coral/80"
-                        >
-                          {catItem.category.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Title */}
-                  <Link href={`/articulos/${article.slug}`}>
-                    <h2 className="text-xl font-bold text-azul mb-3 hover:text-coral transition-colors line-clamp-2">
-                      {article.title}
-                    </h2>
-                  </Link>
-
-                  {/* Excerpt */}
-                  <p className="text-acero mb-4 line-clamp-3">
-                    {article.excerpt}
-                  </p>
-
-                  {/* Meta */}
-                  <div className="flex items-center gap-4 text-sm text-acero-light">
-                    {article.author && (
-                      <div className="flex items-center gap-1">
-                        <User className="w-4 h-4" />
-                        <span>{article.author.name}</span>
-                      </div>
-                    )}
-                    {article.publishedAt && (
-                      <div className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
-                        <time>
-                          {new Date(article.publishedAt).toLocaleDateString(
-                            "es-ES",
-                            {
-                              day: "numeric",
-                              month: "short",
-                              year: "numeric",
-                            }
-                          )}
-                        </time>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Tags */}
-                  {article.tags && article.tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-acero/10">
-                      {article.tags.slice(0, 3).map((tagItem: any) => (
-                        <Link
-                          key={tagItem.id}
-                          href={`/articulos?tag=${tagItem.tag.slug}`}
-                          className="flex items-center gap-1 text-xs text-acero hover:text-coral transition-colors"
-                        >
-                          <Tag className="w-3 h-3" />
-                          {tagItem.tag.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </article>
+                title={article.title}
+                slug={article.slug}
+                excerpt={article.excerpt}
+                coverImage={article.coverImage}
+                publishedAt={article.publishedAt}
+                categories={article.categories.map((c) => c.category)}
+                author={article.author}
+                authors={article.authors}
+                highlightCategory={categoria}
+              />
             ))}
           </div>
-        )}
-      </div>
+          <div className="mt-12">
+            <Pagination
+              currentPage={page}
+              totalPages={totalPages}
+              basePath="/articulos"
+              searchParams={spForPagination}
+            />
+          </div>
+        </>
+      )}
     </div>
   );
 }
