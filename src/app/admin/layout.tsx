@@ -1,17 +1,9 @@
 import { auth, signOut } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import {
-  LayoutDashboard,
-  FileText,
-  BookOpen,
-  Settings,
-  Users,
-  LogOut,
-  Menu,
-  CreditCard,
-  Files,
-} from "lucide-react";
+import { LogOut } from "lucide-react";
+import { Logo } from "@/components/layout/Logo";
+import { AdminSidebarNav } from "@/components/admin/AdminSidebarNav";
 
 export default async function AdminLayout({
   children,
@@ -33,66 +25,43 @@ export default async function AdminLayout({
     redirect("/");
   }
 
-  const navigation = [
-    { name: "Dashboard", href: "/admin", icon: LayoutDashboard },
-    { name: "Artículos", href: "/admin/articulos", icon: FileText },
-    { name: "Revista", href: "/admin/revista", icon: BookOpen },
-    { name: "Socios", href: "/admin/socios", icon: Users },
-    { name: "Documentos", href: "/admin/documentos", icon: Files },
-    { name: "Pagos", href: "/admin/pagos", icon: CreditCard },
-    { name: "Configuración", href: "/admin/configuracion", icon: Settings },
-  ];
-
   async function handleSignOut() {
     "use server";
     await signOut({ redirectTo: "/" });
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       {/* Sidebar */}
-      <aside className="fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-200">
-        <div className="flex flex-col h-full">
+      <aside className="fixed inset-y-0 left-0 z-50 hidden w-64 border-r border-acero-light/50 bg-white md:block">
+        <div className="flex h-full flex-col">
           {/* Logo */}
-          <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200">
-            <Link href="/admin" className="text-xl font-bold text-blue-900">
-              Olvidos de Granada
+          <div className="flex h-16 items-center justify-between border-b border-acero-light/50 px-6">
+            <Link
+              href="/admin"
+              className="text-[1.4rem]"
+              aria-label="Olvidos — administración"
+            >
+              <Logo />
             </Link>
-            <span className="text-xs bg-coral-100 text-coral-700 px-2 py-1 rounded">
+            <span className="rounded-sm bg-coral/10 px-2 py-1 text-xs font-bold uppercase tracking-wide text-coral">
               Admin
             </span>
           </div>
 
-          {/* Navigation */}
-          <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
-            {navigation.map((item) => {
-              const Icon = item.icon;
-              return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="flex items-center gap-3 px-3 py-2 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors"
-                >
-                  <Icon className="w-5 h-5" />
-                  {item.name}
-                </Link>
-              );
-            })}
-          </nav>
+          <AdminSidebarNav />
 
           {/* User info */}
-          <div className="p-4 border-t border-gray-200">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-blue-900 text-white rounded-full flex items-center justify-center">
-                  {userName?.charAt(0) || userEmail?.charAt(0)}
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-gray-900">
-                    {userName || "Usuario"}
-                  </p>
-                  <p className="text-xs text-gray-500">{userEmail}</p>
-                </div>
+          <div className="border-t border-acero-light/50 p-4">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-coral font-bold text-white">
+                {(userName?.charAt(0) || userEmail?.charAt(0) || "A").toUpperCase()}
+              </div>
+              <div className="min-w-0">
+                <p className="truncate text-sm font-bold text-tinta">
+                  {userName || "Usuario"}
+                </p>
+                <p className="truncate text-xs text-acero">{userEmail}</p>
               </div>
             </div>
           </div>
@@ -100,29 +69,31 @@ export default async function AdminLayout({
       </aside>
 
       {/* Main content */}
-      <div className="pl-64">
+      <div className="md:pl-64">
         {/* Top bar */}
-        <header className="sticky top-0 z-40 bg-white border-b border-gray-200">
-          <div className="flex items-center justify-between h-16 px-8">
+        <header className="sticky top-0 z-40 border-b border-acero-light/50 bg-white">
+          <div className="flex h-16 items-center justify-between px-6 md:px-8">
+            <h1 className="text-lg font-black text-tinta">
+              <span className="text-coral">[</span>Administración
+            </h1>
             <div className="flex items-center gap-4">
-              <button className="lg:hidden">
-                <Menu className="w-6 h-6" />
-              </button>
-            </div>
-            <div className="flex items-center gap-4">
-              <span className="text-sm text-gray-600">
-                Rol: <span className="font-medium">{userRole}</span>
+              <span className="hidden text-sm text-acero sm:inline">
+                Rol: <span className="font-bold text-tinta">{userRole}</span>
               </span>
               <form action={handleSignOut}>
                 <button
                   type="submit"
-                  className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
+                  className="flex items-center gap-2 text-sm font-bold text-acero transition-colors hover:text-coral"
                 >
-                  <LogOut className="w-4 h-4" />
+                  <LogOut className="h-4 w-4" />
                   Cerrar sesión
                 </button>
               </form>
             </div>
+          </div>
+          {/* Navegación horizontal en móvil (la sidebar se oculta) */}
+          <div className="border-t border-acero-light/50 md:hidden">
+            <AdminSidebarNav horizontal />
           </div>
         </header>
 

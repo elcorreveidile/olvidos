@@ -45,7 +45,7 @@ export default function RichTextEditor({
       Link.configure({
         openOnClick: false,
         HTMLAttributes: {
-          class: "text-blue-600 underline hover:text-blue-800",
+          class: "text-coral underline hover:text-coral-dark",
         },
       }),
       Image.configure({

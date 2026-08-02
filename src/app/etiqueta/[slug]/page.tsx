@@ -56,6 +56,7 @@ export default async function TagPage({ params, searchParams }: TagPageProps) {
                 slug={article.slug}
                 excerpt={article.excerpt}
                 coverImage={article.coverImage}
+                coverPosition={article.coverPosition}
                 publishedAt={article.publishedAt}
                 categories={article.categories.map((c) => c.category)}
                 author={article.author}

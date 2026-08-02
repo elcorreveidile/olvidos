@@ -292,7 +292,7 @@ export default async function AdminMembersPage({ searchParams }: PageProps) {
                         )}
                       </TableCell>
                       <TableCell>
-                        {new Date(member.joinDate).toLocaleDateString()}
+                        {new Date(member.joinDate).toLocaleDateString("es-ES")}
                       </TableCell>
                       <TableCell className="text-right">
                         <div className="flex items-center justify-end gap-2">

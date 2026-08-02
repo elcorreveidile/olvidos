@@ -122,8 +122,9 @@ export default async function AdminRevistaPage() {
                   <code className="text-xs text-gray-500">{issue.slug}</code>
                 </div>
                 <div className="col-span-2 text-sm text-gray-600">
-                  {issue.month ? `${MESES[issue.month]} ` : ""}
-                  {issue.year}
+                  {issue.year
+                    ? `${issue.month ? `${MESES[issue.month]} ` : ""}${issue.year}`
+                    : "—"}
                 </div>
                 <div className="col-span-2">
                   <span
@@ -142,7 +143,7 @@ export default async function AdminRevistaPage() {
                 <div className="col-span-1 flex justify-end gap-2">
                   <Link
                     href={`/admin/revista/${issue.id}/editar`}
-                    className="p-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                    className="p-2 text-gray-600 hover:text-coral hover:bg-coral/10 rounded-lg transition-colors"
                     title="Editar"
                   >
                     <Pencil className="w-4 h-4" />

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
+import { db } from "@/lib/db";
 import {
   FileText,
   Users,
@@ -9,6 +10,15 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
+const STATUS_LABELS: Record<string, string> = {
+  DRAFT: "Borrador",
+  REVIEW: "En revisión",
+  PUBLISHED: "Publicado",
+  ARCHIVED: "Archivado",
+};
+
 export default async function AdminDashboardPage() {
   const session = await auth();
 
@@ -16,52 +26,69 @@ export default async function AdminDashboardPage() {
     redirect("/login");
   }
 
-  // TODO: Fetch actual statistics from the database
+  // Estadísticas reales desde la base de datos.
+  const [totalArticles, published, drafts, users, recentArticles] =
+    await Promise.all([
+      db.article.count(),
+      db.article.count({ where: { status: "PUBLISHED" } }),
+      db.article.count({ where: { status: "DRAFT" } }),
+      db.user.count(),
+      db.article.findMany({
+        orderBy: { createdAt: "desc" },
+        take: 5,
+        select: { id: true, title: true, status: true, createdAt: true },
+      }),
+    ]);
+
   const stats = [
     {
       name: "Total artículos",
-      value: "0",
+      value: totalArticles.toLocaleString("es-ES"),
       icon: FileText,
       href: "/admin/articulos",
       color: "bg-coral-100 text-coral-700",
     },
     {
       name: "Publicados",
-      value: "0",
+      value: published.toLocaleString("es-ES"),
       icon: TrendingUp,
       href: "/admin/articulos?status=PUBLISHED",
       color: "bg-green-100 text-green-700",
     },
     {
       name: "Borradores",
-      value: "0",
+      value: drafts.toLocaleString("es-ES"),
       icon: FileText,
       href: "/admin/articulos?status=DRAFT",
       color: "bg-gray-100 text-gray-700",
     },
     {
       name: "Usuarios",
-      value: "0",
+      value: users.toLocaleString("es-ES"),
       icon: Users,
       href: "/admin/usuarios",
       color: "bg-blue-100 text-blue-700",
     },
   ];
 
-  const recentActivity = [
-    {
-      id: 1,
-      title: "Artículo creado",
-      description: "Nuevo artículo publicado",
-      time: "Hace 2 horas",
-    },
-  ];
+  const dateFmt = new Intl.DateTimeFormat("es-ES", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+
+  const recentActivity = recentArticles.map((article) => ({
+    id: article.id,
+    title: article.title,
+    description: STATUS_LABELS[article.status] ?? article.status,
+    time: dateFmt.format(article.createdAt),
+  }));
 
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-blue-900">
+        <h1 className="text-3xl font-bold text-tinta">
           Panel de Administración
         </h1>
         <p className="text-gray-600 mt-2">
@@ -99,7 +126,7 @@ export default async function AdminDashboardPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Recent activity */}
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-          <h2 className="text-xl font-semibold text-blue-900 mb-4">
+          <h2 className="text-xl font-semibold text-tinta mb-4">
             Actividad reciente
           </h2>
           {recentActivity.length > 0 ? (
@@ -135,7 +162,7 @@ export default async function AdminDashboardPage() {
 
         {/* Quick actions */}
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-          <h2 className="text-xl font-semibold text-blue-900 mb-4">
+          <h2 className="text-xl font-semibold text-tinta mb-4">
             Acciones rápidas
           </h2>
           <div className="space-y-3">

@@ -44,12 +44,12 @@ const SITE_CONFIG_KEYS = {
 
 const DEFAULT_SITE_CONFIG: SiteConfigInput = {
   siteName: "Olvidos de Granada",
-  siteTagline: "Revista cultural y literaria",
+  siteTagline: "Revista de acciones culturales",
   contactEmail: "",
   contactPhone: "",
   contactAddress: "",
   seoDefaultTitle: "Olvidos de Granada",
-  seoDefaultDescription: "Asociacion cultural y revista literaria de Granada.",
+  seoDefaultDescription: "Asociación cultural y revista literaria de Granada.",
   instagramUrl: "",
   facebookUrl: "",
   allowRegistrations: true,

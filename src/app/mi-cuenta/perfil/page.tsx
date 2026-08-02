@@ -232,14 +232,14 @@ export default async function MemberProfilePage() {
             <div>
               <dt className="text-sm font-medium text-gray-600">Fecha de Alta</dt>
               <dd className="text-lg font-semibold">
-                {new Date(member.joinDate).toLocaleDateString()}
+                {new Date(member.joinDate).toLocaleDateString("es-ES")}
               </dd>
             </div>
             {member.renewalDate && (
               <div>
                 <dt className="text-sm font-medium text-gray-600">Próxima Renovación</dt>
                 <dd className="text-lg font-semibold">
-                  {new Date(member.renewalDate).toLocaleDateString()}
+                  {new Date(member.renewalDate).toLocaleDateString("es-ES")}
                 </dd>
               </div>
             )}

@@ -135,7 +135,7 @@ export default async function MemberPaymentsPage() {
             </div>
             <p className="text-xs text-gray-600 mt-1">
               {payments.length > 0 && payments[0].paidAt
-                ? new Date(payments[0].paidAt).toLocaleDateString()
+                ? new Date(payments[0].paidAt).toLocaleDateString("es-ES")
                 : "Sin pagos"}
             </p>
           </CardContent>
@@ -151,7 +151,7 @@ export default async function MemberPaymentsPage() {
             </div>
             <p className="text-xs text-gray-600 mt-1">
               {member.renewalDate
-                ? `Renueva: ${new Date(member.renewalDate).toLocaleDateString()}`
+                ? `Renueva: ${new Date(member.renewalDate).toLocaleDateString("es-ES")}`
                 : "Sin fecha de renovación"}
             </p>
           </CardContent>
@@ -189,7 +189,7 @@ export default async function MemberPaymentsPage() {
                       <TableCell>
                         {new Date(
                           payment.paidAt || payment.createdAt
-                        ).toLocaleDateString()}
+                        ).toLocaleDateString("es-ES")}
                       </TableCell>
                       <TableCell>
                         {payment.description || typeLabels[payment.type]}

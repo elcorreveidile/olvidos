@@ -46,15 +46,15 @@ export default async function AdminConfiguracionPage({ searchParams }: PageProps
   return (
     <div className="space-y-6 px-6 py-8">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">Configuracion</h1>
+        <h1 className="text-3xl font-bold text-tinta">Configuración</h1>
         <p className="mt-1 text-gray-600">
-          Ajustes generales del sitio, contacto, SEO y operacion.
+          Ajustes generales del sitio, contacto, SEO y operación.
         </p>
       </div>
 
       {hasSuccess && (
         <div className="rounded-md border border-green-200 bg-green-50 p-3 text-sm text-green-700">
-          Configuracion guardada correctamente.
+          Configuración guardada correctamente.
         </div>
       )}
 
@@ -107,7 +107,7 @@ export default async function AdminConfiguracionPage({ searchParams }: PageProps
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="contactPhone">Telefono</Label>
+              <Label htmlFor="contactPhone">Teléfono</Label>
               <Input
                 id="contactPhone"
                 name="contactPhone"
@@ -116,7 +116,7 @@ export default async function AdminConfiguracionPage({ searchParams }: PageProps
               />
             </div>
             <div className="space-y-2 md:col-span-2">
-              <Label htmlFor="contactAddress">Direccion</Label>
+              <Label htmlFor="contactAddress">Dirección</Label>
               <Input
                 id="contactAddress"
                 name="contactAddress"
@@ -134,7 +134,7 @@ export default async function AdminConfiguracionPage({ searchParams }: PageProps
           <CardContent className="space-y-4">
             <div className="grid gap-4 md:grid-cols-2">
               <div className="space-y-2">
-                <Label htmlFor="seoDefaultTitle">Titulo SEO por defecto</Label>
+                <Label htmlFor="seoDefaultTitle">Título SEO por defecto</Label>
                 <Input
                   id="seoDefaultTitle"
                   name="seoDefaultTitle"
@@ -154,7 +154,7 @@ export default async function AdminConfiguracionPage({ searchParams }: PageProps
               </div>
               <div className="space-y-2 md:col-span-2">
                 <Label htmlFor="seoDefaultDescription">
-                  Descripcion SEO por defecto
+                  Descripción SEO por defecto
                 </Label>
                 <Textarea
                   id="seoDefaultDescription"
@@ -180,7 +180,7 @@ export default async function AdminConfiguracionPage({ searchParams }: PageProps
 
         <Card>
           <CardHeader>
-            <CardTitle>Operacion del sitio</CardTitle>
+            <CardTitle>Operación del sitio</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <label className="flex items-center gap-3 text-sm text-gray-700">
@@ -207,7 +207,7 @@ export default async function AdminConfiguracionPage({ searchParams }: PageProps
         <div className="flex justify-end">
           <Button type="submit" className="inline-flex items-center gap-2">
             <Save className="h-4 w-4" />
-            Guardar configuracion
+            Guardar configuración
           </Button>
         </div>
       </form>

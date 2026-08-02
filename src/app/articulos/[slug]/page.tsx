@@ -136,12 +136,21 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
           {/* Imagen de portada */}
           {article.coverImage && (
-            <div className="relative mb-10 aspect-[16/9] overflow-hidden rounded-sm">
+            <div className="relative mb-10 aspect-[16/9] overflow-hidden rounded-sm bg-tinta/[0.04]">
               <Image
                 src={article.coverImage}
                 alt={article.title}
                 fill
-                className="object-cover"
+                className={
+                  article.coverPosition === "contain"
+                    ? "object-contain"
+                    : "object-cover"
+                }
+                style={
+                  article.coverPosition === "contain"
+                    ? undefined
+                    : { objectPosition: article.coverPosition || "center" }
+                }
                 priority
                 sizes="(max-width: 1024px) 100vw, 760px"
               />

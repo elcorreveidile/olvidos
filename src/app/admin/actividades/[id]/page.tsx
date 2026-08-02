@@ -305,7 +305,7 @@ export default async function AdminEventDetailPage({ params }: PageProps) {
                                   >
                                     <button
                                       type="submit"
-                                      className="text-blue-600 hover:text-blue-800 text-xs font-bold"
+                                      className="text-coral hover:text-coral-dark text-xs font-bold"
                                       title="Marcar como asistido"
                                     >
                                       Asistió

@@ -1,12 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import { formatDate } from "@/lib/utils";
+import { COVER_FIT_CONTAIN } from "@/lib/cover-position";
 
 interface ArticleCardProps {
   title: string;
   slug: string;
   excerpt?: string | null;
   coverImage?: string | null;
+  /** Valor CSS `object-position` para recortar la portada en la caja. */
+  coverPosition?: string | null;
   publishedAt?: Date | string | null;
   categories?: { name: string; slug: string }[];
   author?: { name: string | null } | null;
@@ -21,6 +24,7 @@ export function ArticleCard({
   slug,
   excerpt,
   coverImage,
+  coverPosition,
   publishedAt,
   categories = [],
   author,
@@ -38,12 +42,21 @@ export function ArticleCard({
   return (
     <Link href={`/articulos/${slug}`} className="block article-card rounded-sm overflow-hidden">
       {coverImage ? (
-        <div className="aspect-[16/10] relative overflow-hidden">
+        <div className="aspect-[16/10] relative overflow-hidden bg-tinta/[0.04]">
           <Image
             src={coverImage}
             alt={title}
             fill
-            className="object-cover"
+            className={
+              coverPosition === COVER_FIT_CONTAIN
+                ? "object-contain"
+                : "object-cover"
+            }
+            style={
+              coverPosition === COVER_FIT_CONTAIN
+                ? undefined
+                : { objectPosition: coverPosition || "center" }
+            }
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>

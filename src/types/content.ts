@@ -6,6 +6,7 @@ export interface ArticleSummary {
   slug: string;
   excerpt: string | null;
   coverImage: string | null;
+  coverPosition: string | null;
   publishedAt: string | null;
   author: {
     name: string | null;

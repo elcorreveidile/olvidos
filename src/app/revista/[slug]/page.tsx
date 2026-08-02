@@ -80,7 +80,7 @@ export default async function IssuePage({ params }: PageProps) {
           {issue.pdfUrl && (
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href={issue.pdfUrl}
+                href={`/api/revista/${params.slug}/pdf`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-sm bg-coral px-6 py-3 font-bold text-white transition-colors hover:bg-coral-dark"
@@ -88,8 +88,7 @@ export default async function IssuePage({ params }: PageProps) {
                 Leer el PDF →
               </a>
               <a
-                href={issue.pdfUrl}
-                download
+                href={`/api/revista/${params.slug}/pdf?download=1`}
                 className="inline-flex items-center gap-2 rounded-sm border border-tinta px-6 py-3 font-bold text-tinta transition-colors hover:bg-tinta hover:text-white"
               >
                 Descargar

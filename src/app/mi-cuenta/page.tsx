@@ -85,7 +85,7 @@ export default async function MemberDashboardPage() {
             </p>
             {member.renewalDate && (
               <p className="text-xs text-gray-500 mt-2">
-                Renovación: {new Date(member.renewalDate).toLocaleDateString()}
+                Renovación: {new Date(member.renewalDate).toLocaleDateString("es-ES")}
               </p>
             )}
           </CardContent>
@@ -102,7 +102,7 @@ export default async function MemberDashboardPage() {
           <CardContent>
             <div className="text-2xl font-bold">#{member.memberNumber}</div>
             <p className="text-xs text-gray-600 mt-1">
-              Desde {new Date(member.joinDate).toLocaleDateString()}
+              Desde {new Date(member.joinDate).toLocaleDateString("es-ES")}
             </p>
           </CardContent>
         </Card>
@@ -125,7 +125,7 @@ export default async function MemberDashboardPage() {
                   }).format(Number(latestPayment.amount))}
                 </div>
                 <p className="text-xs text-gray-600 mt-1">
-                  {new Date(latestPayment.paidAt || latestPayment.createdAt).toLocaleDateString()}
+                  {new Date(latestPayment.paidAt || latestPayment.createdAt).toLocaleDateString("es-ES")}
                 </p>
               </>
             ) : (
@@ -151,7 +151,7 @@ export default async function MemberDashboardPage() {
             <Button asChild className="w-full justify-start">
               <Link href="/mi-cuenta/carnet">
                 <CreditCard className="mr-2 h-4 w-4" />
-                Ver Carnet Digital
+                Ver Carné Digital
               </Link>
             </Button>
             <Button asChild variant="outline" className="w-full justify-start">
@@ -205,7 +205,7 @@ export default async function MemberDashboardPage() {
             <div className="flex items-start gap-3">
               <Calendar className="h-5 w-5 text-gray-400 mt-0.5" />
               <p className="text-sm">
-                Alta: {new Date(member.joinDate).toLocaleDateString()}
+                Alta: {new Date(member.joinDate).toLocaleDateString("es-ES")}
               </p>
             </div>
           </CardContent>

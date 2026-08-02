@@ -241,7 +241,7 @@ export default async function AdminPaymentsPage({ searchParams }: PageProps) {
                       <TableCell>
                         {new Date(
                           payment.paidAt || payment.createdAt
-                        ).toLocaleDateString()}
+                        ).toLocaleDateString("es-ES")}
                       </TableCell>
                       <TableCell>
                         <div>

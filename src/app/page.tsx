@@ -121,6 +121,7 @@ export default async function HomePage() {
                 slug={article.slug}
                 excerpt={article.excerpt}
                 coverImage={article.coverImage}
+                coverPosition={article.coverPosition}
                 publishedAt={article.publishedAt}
                 categories={article.categories.map((c) => c.category)}
                 author={article.author}

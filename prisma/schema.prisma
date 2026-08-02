@@ -105,6 +105,7 @@ model Article {
   excerpt         String?
   content         String
   coverImage      String?
+  coverPosition   String                 @default("center")
   status          ContentStatus          @default(DRAFT)
   featured        Boolean                @default(false)
   membersOnly     Boolean                @default(false)

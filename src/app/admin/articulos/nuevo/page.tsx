@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import RichTextEditor from "@/components/admin/RichTextEditor";
+import { CoverPositionPicker } from "@/components/admin/CoverPositionPicker";
 import { createArticle } from "@/lib/actions/articles";
 import { getCategories, getMagazineIssues } from "@/lib/actions/articles";
 import {
@@ -25,6 +26,7 @@ const articleSchema = z.object({
   excerpt: z.string().optional(),
   content: z.string().min(1, "El contenido es obligatorio"),
   coverImage: z.string().optional(),
+  coverPosition: z.string().optional(),
   metaTitle: z.string().optional(),
   metaDescription: z.string().optional(),
   status: z.enum(["DRAFT", "REVIEW", "PUBLISHED"]),
@@ -59,6 +61,7 @@ export default function NuevoArticuloPage() {
       status: "DRAFT",
       featured: false,
       membersOnly: false,
+      coverPosition: "center",
     },
   });
 
@@ -163,7 +166,7 @@ export default function NuevoArticuloPage() {
           <ArrowLeft className="w-4 h-4" />
           Volver a artículos
         </Link>
-        <h1 className="text-3xl font-bold text-blue-900">Nuevo artículo</h1>
+        <h1 className="text-3xl font-bold text-tinta">Nuevo artículo</h1>
       </div>
 
       {error && (
@@ -175,7 +178,7 @@ export default function NuevoArticuloPage() {
       <form onSubmit={(e) => e.preventDefault()} className="space-y-6">
         {/* Basic info */}
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-          <h2 className="text-xl font-semibold text-blue-900 mb-4">
+          <h2 className="text-xl font-semibold text-tinta mb-4">
             Información básica
           </h2>
 
@@ -188,7 +191,7 @@ export default function NuevoArticuloPage() {
               <input
                 type="text"
                 {...register("title")}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent"
                 placeholder="El título del artículo"
               />
               {errors.title && (
@@ -204,7 +207,7 @@ export default function NuevoArticuloPage() {
               <input
                 type="text"
                 {...register("slug")}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent"
                 placeholder="url-del-articulo"
               />
               {errors.slug && (
@@ -223,7 +226,7 @@ export default function NuevoArticuloPage() {
               <textarea
                 {...register("excerpt")}
                 rows={3}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent"
                 placeholder="Breve descripción del artículo..."
               />
             </div>
@@ -237,17 +240,31 @@ export default function NuevoArticuloPage() {
                 <input
                   type="url"
                   {...register("coverImage")}
-                  className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent"
                   placeholder="https://ejemplo.com/imagen.jpg"
                 />
               </div>
             </div>
+
+            {/* Encaje/posición de la portada */}
+            {watch("coverImage") && (
+              <div className="mt-4">
+                <input type="hidden" {...register("coverPosition")} />
+                <CoverPositionPicker
+                  imageUrl={watch("coverImage")}
+                  value={watch("coverPosition") || "center"}
+                  onChange={(next) =>
+                    setValue("coverPosition", next, { shouldDirty: true })
+                  }
+                />
+              </div>
+            )}
           </div>
         </div>
 
         {/* Content */}
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-          <h2 className="text-xl font-semibold text-blue-900 mb-4">Contenido</h2>
+          <h2 className="text-xl font-semibold text-tinta mb-4">Contenido</h2>
 
           <RichTextEditor
             value={content}
@@ -267,7 +284,7 @@ export default function NuevoArticuloPage() {
 
         {/* Categories and tags */}
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-          <h2 className="text-xl font-semibold text-blue-900 mb-4">
+          <h2 className="text-xl font-semibold text-tinta mb-4">
             Categorías y etiquetas
           </h2>
 
@@ -285,7 +302,7 @@ export default function NuevoArticuloPage() {
                     onClick={() => toggleCategory(category.id)}
                     className={`px-3 py-1.5 rounded-lg border transition-colors ${
                       selectedCategories.includes(category.id)
-                        ? "bg-blue-900 text-white border-blue-900"
+                        ? "bg-coral text-white border-coral"
                         : "bg-white text-gray-700 border-gray-300 hover:border-gray-400"
                     }`}
                   >
@@ -303,7 +320,7 @@ export default function NuevoArticuloPage() {
               <input
                 type="text"
                 {...register("tags")}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent"
                 placeholder="etiqueta1, etiqueta2, etiqueta3"
               />
               <p className="mt-1 text-sm text-gray-500">
@@ -315,7 +332,7 @@ export default function NuevoArticuloPage() {
 
         {/* Publication settings */}
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-          <h2 className="text-xl font-semibold text-blue-900 mb-4">
+          <h2 className="text-xl font-semibold text-tinta mb-4">
             Configuración de publicación
           </h2>
 
@@ -327,7 +344,7 @@ export default function NuevoArticuloPage() {
               </label>
               <select
                 {...register("issueId")}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent"
               >
                 <option value="">Sin número</option>
                 {issues.map((issue) => (
@@ -344,7 +361,7 @@ export default function NuevoArticuloPage() {
                 <input
                   type="checkbox"
                   {...register("featured")}
-                  className="w-4 h-4 text-blue-900 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-tinta rounded focus:ring-coral"
                 />
                 <span className="text-sm text-gray-700">Artículo destacado</span>
               </label>
@@ -353,7 +370,7 @@ export default function NuevoArticuloPage() {
                 <input
                   type="checkbox"
                   {...register("membersOnly")}
-                  className="w-4 h-4 text-blue-900 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-tinta rounded focus:ring-coral"
                 />
                 <span className="text-sm text-gray-700">Solo para socios</span>
               </label>
@@ -371,7 +388,7 @@ export default function NuevoArticuloPage() {
                     type="text"
                     {...register("metaTitle")}
                     maxLength={60}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent"
                     placeholder="Título para motores de búsqueda"
                   />
                 </div>
@@ -383,7 +400,7 @@ export default function NuevoArticuloPage() {
                     {...register("metaDescription")}
                     rows={2}
                     maxLength={160}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent"
                     placeholder="Descripción para motores de búsqueda"
                   />
                 </div>
@@ -403,7 +420,7 @@ export default function NuevoArticuloPage() {
           <button
             onClick={handleSubmit((data) => onSubmit(data, "DRAFT"))}
             disabled={submitting}
-            className="inline-flex items-center gap-2 px-6 py-2 border border-blue-900 text-blue-900 rounded-lg hover:bg-blue-50 transition-colors disabled:opacity-50"
+            className="inline-flex items-center gap-2 px-6 py-2 border border-tinta text-tinta rounded-lg hover:bg-tinta/5 transition-colors disabled:opacity-50"
           >
             {submitting ? (
               <Loader2 className="w-4 h-4 animate-spin" />

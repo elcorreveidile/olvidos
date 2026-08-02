@@ -6,6 +6,20 @@ const nextConfig = {
         protocol: "https",
         hostname: "olvidosdegranada.es",
       },
+      // Avatares de los logins sociales (foto de perfil del usuario).
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
+      // Imágenes alojadas en Vercel Blob (documentos/medios propios).
+      {
+        protocol: "https",
+        hostname: "*.public.blob.vercel-storage.com",
+      },
     ],
   },
   eslint: {

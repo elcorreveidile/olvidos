@@ -80,7 +80,7 @@ async function ArticlesList({
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-blue-900">Artículos</h1>
+          <h1 className="text-3xl font-bold text-tinta">Artículos</h1>
           <p className="text-gray-600 mt-1">
             Gestiona el contenido editorial de la revista
           </p>
@@ -106,7 +106,7 @@ async function ArticlesList({
                 name="search"
                 placeholder="Buscar por título..."
                 defaultValue={searchParams.search}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent"
               />
             </div>
           </div>
@@ -117,7 +117,7 @@ async function ArticlesList({
               href="/admin/articulos"
               className={`px-4 py-2 rounded-lg transition-colors ${
                 !searchParams.status || searchParams.status === "all"
-                  ? "bg-blue-900 text-white"
+                  ? "bg-coral text-white"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
@@ -127,7 +127,7 @@ async function ArticlesList({
               href="?status=PUBLISHED"
               className={`px-4 py-2 rounded-lg transition-colors ${
                 searchParams.status === "PUBLISHED"
-                  ? "bg-blue-900 text-white"
+                  ? "bg-coral text-white"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
@@ -137,7 +137,7 @@ async function ArticlesList({
               href="?status=DRAFT"
               className={`px-4 py-2 rounded-lg transition-colors ${
                 searchParams.status === "DRAFT"
-                  ? "bg-blue-900 text-white"
+                  ? "bg-coral text-white"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
@@ -147,7 +147,7 @@ async function ArticlesList({
               href="?status=REVIEW"
               className={`px-4 py-2 rounded-lg transition-colors ${
                 searchParams.status === "REVIEW"
-                  ? "bg-blue-900 text-white"
+                  ? "bg-coral text-white"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
@@ -249,7 +249,7 @@ async function ArticlesList({
                       )}
                       <Link
                         href={`/admin/articulos/${article.id}/editar`}
-                        className="text-blue-600 hover:text-blue-900 transition-colors"
+                        className="text-coral hover:text-coral-dark transition-colors"
                         title="Editar"
                       >
                         <Edit className="w-4 h-4" />
@@ -293,7 +293,7 @@ async function ArticlesList({
                 Anterior
               </Link>
             )}
-            <span className="px-4 py-2 bg-blue-900 text-white rounded-lg">
+            <span className="px-4 py-2 bg-coral text-white rounded-lg">
               {pagination.page}
             </span>
             {pagination.page < pagination.totalPages && (

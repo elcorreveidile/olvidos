@@ -29,6 +29,7 @@ export async function getPublishedArticles(
         slug: true,
         excerpt: true,
         coverImage: true,
+        coverPosition: true,
         publishedAt: true,
         author: {
           select: { name: true },
@@ -74,6 +75,7 @@ export async function getFeaturedArticles(): Promise<ArticleSummary[]> {
       slug: true,
       excerpt: true,
       coverImage: true,
+      coverPosition: true,
       publishedAt: true,
       author: {
         select: { name: true },
@@ -131,6 +133,7 @@ export async function getArticleBySlug(
       slug: true,
       excerpt: true,
       coverImage: true,
+      coverPosition: true,
       publishedAt: true,
       content: true,
       featured: true,
@@ -221,6 +224,7 @@ export async function getArticlesByCategory(
         slug: true,
         excerpt: true,
         coverImage: true,
+        coverPosition: true,
         publishedAt: true,
         author: {
           select: { name: true },
@@ -313,6 +317,7 @@ export async function getArticlesByTag(
         slug: true,
         excerpt: true,
         coverImage: true,
+        coverPosition: true,
         publishedAt: true,
         author: {
           select: { name: true },
@@ -453,6 +458,7 @@ export async function searchArticles(
         slug: true,
         excerpt: true,
         coverImage: true,
+        coverPosition: true,
         publishedAt: true,
         author: { select: { name: true } },
         byline: true,
@@ -521,6 +527,7 @@ export async function getIssueBySlug(slug: string) {
           slug: true,
           excerpt: true,
           coverImage: true,
+          coverPosition: true,
           publishedAt: true,
           author: {
             select: { name: true },
@@ -557,6 +564,7 @@ export async function getArticlesByAuthor(
         slug: true,
         excerpt: true,
         coverImage: true,
+        coverPosition: true,
         publishedAt: true,
         author: { select: { name: true } },
         byline: true,

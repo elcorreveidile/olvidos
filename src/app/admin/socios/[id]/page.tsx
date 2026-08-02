@@ -168,7 +168,7 @@ export default async function AdminMemberDetailPage({ params }: PageProps) {
           <CardContent>
             <p className="text-lg font-semibold">
               {member.renewalDate
-                ? new Date(member.renewalDate).toLocaleDateString()
+                ? new Date(member.renewalDate).toLocaleDateString("es-ES")
                 : "-"}
             </p>
           </CardContent>
@@ -236,7 +236,7 @@ export default async function AdminMemberDetailPage({ params }: PageProps) {
                 <div>
                   <p className="text-sm text-gray-600">Fecha de alta</p>
                   <p className="font-medium">
-                    {new Date(member.joinDate).toLocaleDateString()}
+                    {new Date(member.joinDate).toLocaleDateString("es-ES")}
                   </p>
                 </div>
               </div>
@@ -247,7 +247,7 @@ export default async function AdminMemberDetailPage({ params }: PageProps) {
                   <div>
                     <p className="text-sm text-gray-600">Próxima renovación</p>
                     <p className="font-medium">
-                      {new Date(member.renewalDate).toLocaleDateString()}
+                      {new Date(member.renewalDate).toLocaleDateString("es-ES")}
                     </p>
                   </div>
                 </div>
@@ -317,7 +317,7 @@ export default async function AdminMemberDetailPage({ params }: PageProps) {
                     <TableCell>
                       {new Date(
                         payment.paidAt || payment.createdAt
-                      ).toLocaleDateString()}
+                      ).toLocaleDateString("es-ES")}
                     </TableCell>
                     <TableCell>{payment.description || payment.type}</TableCell>
                     <TableCell>
