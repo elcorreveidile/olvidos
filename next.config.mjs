@@ -64,6 +64,15 @@ const nextConfig = {
       { source: "/opiniones/:id*", destination: "/articulos?categoria=apostillas", permanent: true },
       { source: "/eventos/:id*", destination: "/actividades", permanent: true },
       { source: "/videos/:id*", destination: "/actividades", permanent: true },
+      // --- Slugs numéricos heredados de WordPress renombrados a descriptivos
+      // (mejor SEO). 301 del número antiguo al slug nuevo. ---
+      { source: "/articulos/768", destination: "/articulos/a-ambos-lados-de-la-barricada", permanent: true },
+      { source: "/articulos/1085", destination: "/articulos/pietro-ingrao", permanent: true },
+      { source: "/articulos/4669", destination: "/articulos/tengo-miedo-a-perder-la-maravilla", permanent: true },
+      { source: "/articulos/5252", destination: "/articulos/venus", permanent: true },
+      { source: "/articulos/5450", destination: "/articulos/ya-no-tengo-un-recuerdo-que-me-acoja", permanent: true },
+      { source: "/articulos/5454", destination: "/articulos/no-encuentro-paz", permanent: true },
+      { source: "/articulos/5925", destination: "/articulos/de-que-tierra-sera-donde-su-mar", permanent: true },
     ];
   },
 };

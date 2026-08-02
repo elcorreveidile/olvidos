@@ -4,6 +4,39 @@ import { revalidatePath } from "next/cache";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { z } from "zod";
+import { slugifyName } from "@/lib/colaboradores";
+
+/** Separa una firma ("A · B", "A y B", "A, B") en nombres de autor. */
+function parseAuthorNames(byline?: string | null): string[] {
+  if (!byline) return [];
+  return byline
+    .split(/·|,| y | & |;/i)
+    .map((s) => s.trim())
+    .filter((s) => s.length > 1);
+}
+
+/**
+ * Sincroniza los autores enlazados (tabla Author) de un artículo a partir de la
+ * firma escrita en el editor. Así el autor real se muestra y enlaza en la web
+ * (que usa `authors`), en vez del usuario de WordPress que publicó.
+ */
+async function syncArticleAuthors(articleId: string, byline?: string | null) {
+  const names = parseAuthorNames(byline);
+  await db.authorsOnArticles.deleteMany({ where: { articleId } });
+  let order = 0;
+  for (const name of names) {
+    const slug = slugifyName(name);
+    if (!slug) continue;
+    const author = await db.author.upsert({
+      where: { slug },
+      create: { name, slug },
+      update: {},
+    });
+    await db.authorsOnArticles.create({
+      data: { articleId, authorId: author.id, order: order++ },
+    });
+  }
+}
 
 const ArticleSchema = z.object({
   title: z.string().min(1, "El título es obligatorio").max(200, "El título no puede exceder 200 caracteres"),
@@ -12,6 +45,7 @@ const ArticleSchema = z.object({
   content: z.string().min(1, "El contenido es obligatorio"),
   coverImage: z.string().url().optional().or(z.literal("")),
   coverPosition: z.string().optional(),
+  byline: z.string().max(200).optional(),
   metaTitle: z.string().max(60, "El título SEO no puede exceder 60 caracteres").optional(),
   metaDescription: z.string().max(160, "La descripción SEO no puede exceder 160 caracteres").optional(),
   status: z.enum(["DRAFT", "REVIEW", "PUBLISHED", "ARCHIVED"]),
@@ -81,6 +115,7 @@ export async function createArticle(data: ArticleInput) {
         content: validatedData.content,
         coverImage: validatedData.coverImage || null,
         coverPosition: validatedData.coverPosition || "center",
+        byline: validatedData.byline?.trim() || null,
         metaTitle: validatedData.metaTitle,
         metaDescription: validatedData.metaDescription,
         status: validatedData.status,
@@ -118,6 +153,8 @@ export async function createArticle(data: ArticleInput) {
         author: true,
       },
     });
+
+    await syncArticleAuthors(article.id, validatedData.byline);
 
     revalidatePath("/admin/articulos");
     revalidatePath("/articulos");
@@ -188,6 +225,7 @@ export async function updateArticle(id: string, data: ArticleInput) {
         content: validatedData.content,
         coverImage: validatedData.coverImage || null,
         coverPosition: validatedData.coverPosition || "center",
+        byline: validatedData.byline?.trim() || null,
         metaTitle: validatedData.metaTitle,
         metaDescription: validatedData.metaDescription,
         status: validatedData.status,
@@ -224,6 +262,8 @@ export async function updateArticle(id: string, data: ArticleInput) {
         author: true,
       },
     });
+
+    await syncArticleAuthors(id, validatedData.byline);
 
     revalidatePath("/admin/articulos");
     revalidatePath("/articulos");
@@ -295,6 +335,7 @@ export async function getArticle(id: string) {
           },
         },
         author: true,
+        authors: { include: { author: true }, orderBy: { order: "asc" } },
         issue: true,
       },
     });
@@ -345,6 +386,7 @@ export async function getArticles(filters?: {
         where,
         include: {
           author: true,
+          authors: { include: { author: true }, orderBy: { order: "asc" } },
           categories: {
             include: {
               category: true,

@@ -232,7 +232,13 @@ async function ArticlesList({
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     <div className="flex items-center gap-1">
                       <User className="w-4 h-4" />
-                      {article.author.name || article.author.email}
+                      {article.authors && article.authors.length > 0
+                        ? article.authors
+                            .map((a: any) => a.author.name)
+                            .join(" · ")
+                        : article.byline ||
+                          article.author?.name ||
+                          article.author?.email}
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">

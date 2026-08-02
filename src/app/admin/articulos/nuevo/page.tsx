@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import RichTextEditor from "@/components/admin/RichTextEditor";
 import { CoverPositionPicker } from "@/components/admin/CoverPositionPicker";
+import { ImageUploadField } from "@/components/admin/ImageUploadField";
 import { createArticle } from "@/lib/actions/articles";
 import { getCategories, getMagazineIssues } from "@/lib/actions/articles";
 import {
@@ -24,6 +25,7 @@ const articleSchema = z.object({
   title: z.string().min(1, "El título es obligatorio"),
   slug: z.string().min(1, "El slug es obligatorio"),
   excerpt: z.string().optional(),
+  byline: z.string().optional(),
   content: z.string().min(1, "El contenido es obligatorio"),
   coverImage: z.string().optional(),
   coverPosition: z.string().optional(),
@@ -231,19 +233,35 @@ export default function NuevoArticuloPage() {
               />
             </div>
 
+            {/* Autor / firma */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Autor (firma)
+              </label>
+              <input
+                type="text"
+                {...register("byline")}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent"
+                placeholder="Ej.: Mariano Maresca  ·  o  Redacción Olvidos"
+              />
+              <p className="mt-1 text-xs text-gray-500">
+                Es la firma que se muestra y enlaza en la web. Varios autores,
+                sepáralos con “·”. Si lo dejas vacío, se usa quien publica.
+              </p>
+            </div>
+
             {/* Cover image */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Imagen de portada
               </label>
-              <div className="flex gap-2">
-                <input
-                  type="url"
-                  {...register("coverImage")}
-                  className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent"
-                  placeholder="https://ejemplo.com/imagen.jpg"
-                />
-              </div>
+              <input type="hidden" {...register("coverImage")} />
+              <ImageUploadField
+                value={watch("coverImage") || ""}
+                onChange={(url) =>
+                  setValue("coverImage", url, { shouldDirty: true })
+                }
+              />
             </div>
 
             {/* Encaje/posición de la portada */}

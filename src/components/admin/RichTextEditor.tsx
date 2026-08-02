@@ -15,11 +15,13 @@ import {
   Heading3,
   Link as LinkIcon,
   Image as ImageIcon,
+  Upload,
+  Loader2,
   AlignLeft,
   AlignCenter,
   AlignRight,
 } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface RichTextEditorProps {
   value?: string;
@@ -75,6 +77,9 @@ export default function RichTextEditor({
     }
   }, [value, editor]);
 
+  const imageFileRef = useRef<HTMLInputElement>(null);
+  const [uploadingImage, setUploadingImage] = useState(false);
+
   if (!editor) {
     return null;
   }
@@ -115,6 +120,30 @@ export default function RichTextEditor({
     const url = window.prompt("Introduce la URL de la imagen:");
     if (url) {
       editor.chain().focus().setImage({ src: url }).run();
+    }
+  };
+
+  const uploadImageFromFile = async (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setUploadingImage(true);
+    try {
+      const fd = new FormData();
+      fd.append("file", file);
+      const res = await fetch("/api/admin/upload-image", {
+        method: "POST",
+        body: fd,
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Error al subir la imagen");
+      editor.chain().focus().setImage({ src: data.url }).run();
+    } catch (err) {
+      alert((err as Error).message);
+    } finally {
+      setUploadingImage(false);
+      if (imageFileRef.current) imageFileRef.current.value = "";
     }
   };
 
@@ -211,9 +240,27 @@ export default function RichTextEditor({
           <LinkIcon className="w-4 h-4" />
         </ToolbarButton>
 
-        <ToolbarButton onClick={addImage} title="Añadir imagen">
+        <ToolbarButton onClick={addImage} title="Añadir imagen por URL">
           <ImageIcon className="w-4 h-4" />
         </ToolbarButton>
+
+        <ToolbarButton
+          onClick={() => imageFileRef.current?.click()}
+          title="Subir imagen desde el ordenador"
+        >
+          {uploadingImage ? (
+            <Loader2 className="w-4 h-4 animate-spin" />
+          ) : (
+            <Upload className="w-4 h-4" />
+          )}
+        </ToolbarButton>
+        <input
+          ref={imageFileRef}
+          type="file"
+          accept="image/*"
+          onChange={uploadImageFromFile}
+          className="hidden"
+        />
       </div>
 
       {/* Editor */}
