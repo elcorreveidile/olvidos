@@ -98,18 +98,27 @@ async function ArticlesList({
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
         <div className="flex flex-col md:flex-row gap-4">
           {/* Search */}
-          <div className="flex-1">
-            <div className="relative">
+          <form method="get" className="flex flex-1 gap-2">
+            {searchParams.status && searchParams.status !== "all" && (
+              <input type="hidden" name="status" value={searchParams.status} />
+            )}
+            <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
               <input
                 type="text"
                 name="search"
-                placeholder="Buscar por título..."
+                placeholder="Buscar en título, texto, firma o autor…"
                 defaultValue={searchParams.search}
                 className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent"
               />
             </div>
-          </div>
+            <button
+              type="submit"
+              className="rounded-lg bg-coral px-5 py-2 font-bold text-white transition-colors hover:bg-coral-dark"
+            >
+              Buscar
+            </button>
+          </form>
 
           {/* Status filter */}
           <div className="flex gap-2">
@@ -293,7 +302,7 @@ async function ArticlesList({
           <div className="flex gap-2">
             {pagination.page > 1 && (
               <Link
-                href={`?page=${pagination.page - 1}&status=${searchParams.status || "all"}`}
+                href={`?page=${pagination.page - 1}&status=${searchParams.status || "all"}${searchParams.search ? `&search=${encodeURIComponent(searchParams.search)}` : ""}`}
                 className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
               >
                 Anterior
@@ -304,7 +313,7 @@ async function ArticlesList({
             </span>
             {pagination.page < pagination.totalPages && (
               <Link
-                href={`?page=${pagination.page + 1}&status=${searchParams.status || "all"}`}
+                href={`?page=${pagination.page + 1}&status=${searchParams.status || "all"}${searchParams.search ? `&search=${encodeURIComponent(searchParams.search)}` : ""}`}
                 className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
               >
                 Siguiente

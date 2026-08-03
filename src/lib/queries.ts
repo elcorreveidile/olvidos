@@ -423,36 +423,24 @@ export async function getAllTags() {
  * @param page - Número de página
  * @param limit - Cantidad de resultados por página
  */
-export async function searchArticles(
+/**
+ * IDs de artículos que casan la búsqueda: por PALABRAS COMPLETAS, sin acentos ni
+ * mayúsculas y sin importar el orden (todas deben aparecer en título, extracto,
+ * firma, contenido o nombre de autor). Ordenados por fecha de publicación.
+ * Requiere la extensión `unaccent`. Lo usan la web pública y el panel admin.
+ * Los límites de palabra (\y) evitan que "di" case dentro de "medio".
+ */
+export async function findMatchingArticleIds(
   query: string,
-  page: number = 1,
-  limit: number = 12,
-  categorySlug?: string
-) {
-  const skip = (page - 1) * limit;
-
-  // Búsqueda por PALABRAS COMPLETAS, sin distinguir acentos ni mayúsculas y sin
-  // importar el orden. Se exige que TODAS las palabras aparezcan (en título,
-  // extracto, firma, contenido o nombre de autor). Usa la extensión `unaccent`
-  // y `~*` con límites de palabra (\y) para que "di" no case dentro de "medio"
-  // ni "tella" dentro de "botella".
+  opts: { publishedOnly?: boolean; categorySlug?: string } = {}
+): Promise<string[]> {
   const words = query
     .trim()
     .split(/\s+/)
     .filter((w) => w.length > 0)
     .slice(0, 10);
+  if (words.length === 0) return [];
 
-  const category = categorySlug
-    ? await db.category.findUnique({
-        where: { slug: categorySlug },
-        select: { name: true, slug: true },
-      })
-    : null;
-
-  const empty = { articles: [], total: 0, totalPages: 0, query, category };
-  if (words.length === 0) return empty;
-
-  // Patrón regex por palabra: \y + palabra (metacaracteres escapados) + \y.
   const wordCond = (w: string) => {
     const esc = w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const pat = `\\y${esc}\\y`;
@@ -469,25 +457,50 @@ export async function searchArticles(
     )`;
   };
 
-  const catCond = categorySlug
+  const statusCond = opts.publishedOnly
+    ? Prisma.sql`AND a."status"::text = 'PUBLISHED'`
+    : Prisma.empty;
+
+  const catCond = opts.categorySlug
     ? Prisma.sql`AND EXISTS (
         SELECT 1 FROM "CategoriesOnArticles" ca
         JOIN "Category" c ON c."id" = ca."categoryId"
-        WHERE ca."articleId" = a."id" AND c."slug" = ${categorySlug}
+        WHERE ca."articleId" = a."id" AND c."slug" = ${opts.categorySlug}
       )`
     : Prisma.empty;
 
   const idRows = await db.$queryRaw<{ id: string }[]>(Prisma.sql`
     SELECT a."id"
     FROM "Article" a
-    WHERE a."status"::text = 'PUBLISHED'
-      AND ${Prisma.join(words.map(wordCond), " AND ")}
+    WHERE ${Prisma.join(words.map(wordCond), " AND ")}
+      ${statusCond}
       ${catCond}
     ORDER BY a."publishedAt" DESC NULLS LAST
   `);
+  return idRows.map((r) => r.id);
+}
 
-  const total = idRows.length;
-  const pageIds = idRows.slice(skip, skip + limit).map((r) => r.id);
+export async function searchArticles(
+  query: string,
+  page: number = 1,
+  limit: number = 12,
+  categorySlug?: string
+) {
+  const skip = (page - 1) * limit;
+
+  const category = categorySlug
+    ? await db.category.findUnique({
+        where: { slug: categorySlug },
+        select: { name: true, slug: true },
+      })
+    : null;
+
+  const ids = await findMatchingArticleIds(query, {
+    publishedOnly: true,
+    categorySlug,
+  });
+  const total = ids.length;
+  const pageIds = ids.slice(skip, skip + limit);
 
   const found = pageIds.length
     ? await db.article.findMany({

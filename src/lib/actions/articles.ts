@@ -5,6 +5,7 @@ import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { z } from "zod";
 import { slugifyName } from "@/lib/colaboradores";
+import { findMatchingArticleIds } from "@/lib/queries";
 
 /** Separa una firma ("A · B", "A y B", "A, B") en nombres de autor. */
 function parseAuthorNames(byline?: string | null): string[] {
@@ -387,11 +388,11 @@ export async function getArticles(filters?: {
       where.status = status;
     }
 
-    if (search) {
-      where.OR = [
-        { title: { contains: search, mode: "insensitive" } },
-        { excerpt: { contains: search, mode: "insensitive" } },
-      ];
+    if (search && search.trim()) {
+      // Misma búsqueda que la web pública (palabras completas, sin acentos, en
+      // título/extracto/firma/contenido/autor), pero sin restringir el estado.
+      const matchedIds = await findMatchingArticleIds(search);
+      where.id = { in: matchedIds };
     }
 
     const [articles, total] = await Promise.all([
