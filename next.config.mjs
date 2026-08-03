@@ -2,13 +2,28 @@ import { execSync } from "node:child_process";
 
 // Versión automática a partir de git (último commit). Funciona en local y en
 // Vercel (que conserva el commit HEAD). No requiere mantenimiento manual.
+// Base MAYOR.MENOR; el PARCHE es el nº de commits (sube solo con cada cambio).
+// Sube esta base solo para versiones mayores (p. ej. "1.1" o "2.0").
+const VERSION_BASE = "1.0";
+
 function gitVersion() {
   const run = (cmd) => execSync(cmd, { stdio: ["ignore", "pipe", "ignore"] }).toString().trim();
   try {
     const sha = (process.env.VERCEL_GIT_COMMIT_SHA || run("git rev-parse HEAD")).slice(0, 7);
     const date = run("git log -1 --format=%cs"); // YYYY-MM-DD del commit
-    const [y, m, d] = date.split("-");
-    return { version: `${y}.${Number(m)}.${Number(d)}`, commit: sha, date };
+    let count = 0;
+    try {
+      // Vercel clona en superficial: recuperamos el historial para contar bien.
+      if (run("git rev-parse --is-shallow-repository") === "true") {
+        try { run("git fetch --unshallow --quiet"); } catch {}
+      }
+      count = parseInt(run("git rev-list --count HEAD"), 10) || 0;
+    } catch {}
+    return {
+      version: count ? `${VERSION_BASE}.${count}` : VERSION_BASE,
+      commit: sha,
+      date,
+    };
   } catch {
     return { version: "dev", commit: "", date: "" };
   }

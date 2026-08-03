@@ -32,20 +32,15 @@ try {
     byDate.get(c.date).push(c);
   }
 
-  const calver = (d) => {
-    const [y, m, day] = d.split("-");
-    return `${y}.${Number(m)}.${Number(day)}`;
-  };
-
   let out =
     "# Changelog — Olvidos de Granada\n\n" +
     "Generado automáticamente desde el historial de git " +
     "(`scripts/gen-changelog.mjs`). No editar a mano.\n\n" +
-    "La versión que se muestra en el footer es la fecha del último commit " +
-    "(`AAAA.M.D`) y la calcula `next.config.mjs`.\n";
+    "La versión del footer es `1.0.<nº de commits>` y la calcula " +
+    "`next.config.mjs`.\n";
 
   for (const [date, list] of byDate) {
-    out += `\n## ${calver(date)} — ${date}\n\n`;
+    out += `\n## ${date}\n\n`;
     for (const c of list) out += `- ${c.subject} (${c.hash})\n`;
   }
 

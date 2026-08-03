@@ -2,10 +2,11 @@
 
 Generado automáticamente desde el historial de git (`scripts/gen-changelog.mjs`). No editar a mano.
 
-La versión que se muestra en el footer es la fecha del último commit (`AAAA.M.D`) y la calcula `next.config.mjs`.
+La versión del footer es `1.0.<nº de commits>` y la calcula `next.config.mjs`.
 
-## 2026.8.3 — 2026-08-03
+## 2026-08-03
 
+- Búsqueda por palabras (sin acentos), fecha de publicación editable, legales y automatización de versión (a14430f)
 - Junta Directiva solo para socios + 'Volver a la revista' en paneles (22ad774)
 - Página de Junta Directiva (presidencia, vicepresidencia, secretaría) (80fc23e)
 - Sobre Olvidos: añadir sección Nuestros fines (art. 6 de los estatutos) (4c4b714)
@@ -14,7 +15,7 @@ La versión que se muestra en el footer es la fecha del último commit (`AAAA.M.
 - Carné: logo de la asociación + foto del socio subida por él (ba0be6f)
 - Pasos de Piezas y Procesos + recuperación de imágenes + sharp (1a81b4d)
 
-## 2026.8.2 — 2026-08-02
+## 2026-08-02
 
 - Subida de imágenes, autor por artículo y slugs descriptivos (f134d56)
 - Portadas automáticas desde el cuerpo + marcador dedicado Soneto500 (ed385b7)
@@ -23,7 +24,7 @@ La versión que se muestra en el footer es la fecha del último commit (`AAAA.M.
 - Favicon: añadir favicon.ico (multi-tamaño) y apple-icon.png (f059c8b)
 - Login social + enlace mágico, rediseño de socios, documentos y correos (3b45271)
 
-## 2026.8.1 — 2026-08-01
+## 2026-08-01
 
 - Añadir CRUD de admin para los números de la revista (afaadbd)
 - Ampliar el esquema para la hemeroteca (03950ad)
@@ -35,7 +36,7 @@ La versión que se muestra en el footer es la fecha del último commit (`AAAA.M.
 - Recuperar animación de entrada del logo en la portada (ae31f52)
 - Unificar recuperación de contraseña y registro sobre los arreglos de auth (e05722a)
 
-## 2026.2.20 — 2026-02-20
+## 2026-02-20
 
 - feat: add API endpoint to clear auth session (9fbf779)
 - fix: make JWT callback fetch role from database when token has no role (47658c3)
@@ -59,7 +60,7 @@ La versión que se muestra en el footer es la fecha del último commit (`AAAA.M.
 - fix: resolve production login issue by extracting server actions (be0b039)
 - feat: add animated logo entrance on homepage (f16264a)
 
-## 2026.2.19 — 2026-02-19
+## 2026-02-19
 
 - fix: repair broken signout link in member area (5d4c510)
 - fix: resolve React hydration errors by simplifying auth components (a180504)
@@ -84,7 +85,7 @@ La versión que se muestra en el footer es la fecha del último commit (`AAAA.M.
 - fix: arreglar botón de GitHub OAuth que no se abría (3ec6c1b)
 - feat: crear aviso legal y arreglar redirect de GitHub OAuth (440bfaf)
 
-## 2026.2.18 — 2026-02-18
+## 2026-02-18
 
 - feat: crear páginas legales (Términos y Política de Privacidad) (091771e)
 - feat: crear página de registro de socio en 3 pasos (9b8bf92)
