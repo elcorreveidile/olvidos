@@ -152,6 +152,11 @@ export default function DigitalCard({ member }: DigitalCardProps) {
                   {new Date(member.joinDate).getFullYear()}
                 </p>
               </div>
+              {member.founder && (
+                <span className="ml-auto self-end rounded-full bg-coral/20 px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-coral">
+                  Fundador
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -176,12 +181,6 @@ export default function DigitalCard({ member }: DigitalCardProps) {
           </div>
 
           <div className="space-y-1 text-xs text-gray-500">
-            <p>
-              <strong>ID:</strong> {member.id}
-            </p>
-            <p>
-              <strong>Email:</strong> {member.user.email}
-            </p>
             <p>
               <strong>Estado:</strong>{" "}
               <span

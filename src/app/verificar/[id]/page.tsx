@@ -29,6 +29,7 @@ export default async function VerificarPage({ params }: { params: { id: string }
       status: true,
       joinDate: true,
       cardImageUrl: true,
+      founder: true,
       user: { select: { name: true } },
     },
   });
@@ -120,6 +121,11 @@ export default async function VerificarPage({ params }: { params: { id: string }
                       {new Date(member.joinDate).getFullYear()}
                     </p>
                   </div>
+                  {member.founder && (
+                    <span className="ml-auto self-end rounded-full bg-coral/20 px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-coral">
+                      Fundador
+                    </span>
+                  )}
                 </div>
               </div>
             </div>

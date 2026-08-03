@@ -72,6 +72,7 @@ model Member {
   address          String?
   city             String?
   dni              String?         // Solo uso interno (envíos, registro legal); nunca público
+  founder          Boolean         @default(false) // Socio fundador de la asociación
   isPublic         Boolean         @default(false)
   cardImageUrl     String?
   stripeCustomerId String?         @unique
