@@ -29,6 +29,81 @@ const MemberUpdateSchema = z.object({
 export type MemberInput = z.infer<typeof MemberSchema>;
 export type MemberUpdateInput = z.infer<typeof MemberUpdateSchema>;
 
+// Edición completa de un socio por el admin: incluye datos de la cuenta (nombre,
+// correo) además de los del socio (nivel, estado, alta, contacto, DNI…).
+const AdminSocioSchema = z.object({
+  name: z.string().trim().min(1, "El nombre es obligatorio").optional(),
+  email: z.string().trim().email("Correo no válido").optional(),
+  membershipLevel: z
+    .enum(["STANDARD", "COLLABORATOR", "HONORARY", "INSTITUTIONAL", "HONOR"])
+    .optional(),
+  status: z.enum(["PENDING", "ACTIVE", "EXPIRED", "SUSPENDED", "CANCELLED"]).optional(),
+  phone: z.string().optional(),
+  address: z.string().optional(),
+  city: z.string().optional(),
+  dni: z.string().optional(),
+  joinDate: z.string().optional(),
+  isPublic: z.boolean().optional(),
+});
+
+export async function adminUpdateSocio(memberId: string, data: unknown) {
+  try {
+    await checkAdminPermission();
+    const d = AdminSocioSchema.parse(data);
+
+    const member = await db.member.findUnique({
+      where: { id: memberId },
+      include: { user: true },
+    });
+    if (!member) return { success: false, error: "El socio no existe" };
+
+    // Correo: normalizar y comprobar que no lo tenga otra cuenta.
+    if (d.email && d.email.toLowerCase() !== member.user.email.toLowerCase()) {
+      const taken = await db.user.findUnique({
+        where: { email: d.email.toLowerCase() },
+      });
+      if (taken && taken.id !== member.userId) {
+        return { success: false, error: "Ya existe una cuenta con ese correo." };
+      }
+    }
+
+    const userData: Record<string, unknown> = {};
+    if (d.name !== undefined) userData.name = d.name;
+    if (d.email !== undefined) userData.email = d.email.toLowerCase();
+    if (Object.keys(userData).length) {
+      await db.user.update({ where: { id: member.userId }, data: userData });
+    }
+
+    const memberData: Record<string, unknown> = {};
+    if (d.membershipLevel) memberData.membershipLevel = d.membershipLevel;
+    if (d.status) memberData.status = d.status;
+    if (d.phone !== undefined) memberData.phone = d.phone || null;
+    if (d.address !== undefined) memberData.address = d.address || null;
+    if (d.city !== undefined) memberData.city = d.city || null;
+    if (d.dni !== undefined) memberData.dni = d.dni || null;
+    if (d.isPublic !== undefined) memberData.isPublic = d.isPublic;
+    if (d.joinDate) {
+      const jd = new Date(d.joinDate);
+      if (!Number.isNaN(jd.getTime())) memberData.joinDate = jd;
+    }
+    if (Object.keys(memberData).length) {
+      await db.member.update({ where: { id: memberId }, data: memberData });
+    }
+
+    revalidatePath("/admin/socios");
+    revalidatePath(`/admin/socios/${memberId}`);
+    return { success: true };
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      return { success: false, error: error.errors[0].message };
+    }
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : "Error al actualizar el socio",
+    };
+  }
+}
+
 // Check if user has admin permission
 async function checkAdminPermission() {
   const session = await auth();

@@ -15,13 +15,47 @@ export const metadata: Metadata = {
 /** Separatas y monográficos se numeran a partir de 100 al sembrar. */
 const SEPARATA_FROM = 100;
 
-export default async function RevistaPage() {
+export default async function RevistaPage({
+  searchParams,
+}: {
+  searchParams?: { year?: string; q?: string };
+}) {
   const all = await getAllIssues();
 
   // Orden ascendente para leer el archivo cronológicamente (1 → 17 → separatas).
   const sorted = [...all].sort((a, b) => a.number - b.number);
-  const numeros = sorted.filter((i) => i.number < SEPARATA_FROM);
-  const separatas = sorted.filter((i) => i.number >= SEPARATA_FROM);
+
+  // Filtros: por año y por número/título.
+  const yearFilter =
+    searchParams?.year && searchParams.year !== "all"
+      ? Number(searchParams.year)
+      : null;
+  const q = (searchParams?.q ?? "").trim();
+  const qLower = q.toLowerCase();
+  const filtering = Boolean(yearFilter || q);
+
+  const matches = (i: (typeof sorted)[number]) => {
+    if (yearFilter && i.year !== yearFilter) return false;
+    if (q) {
+      const byNum = /^\d+$/.test(q) && i.number === Number(q);
+      const byTitle = i.title.toLowerCase().includes(qLower);
+      if (!byNum && !byTitle) return false;
+    }
+    return true;
+  };
+
+  // Años disponibles (excluye el 0 = desconocido).
+  const years = Array.from(new Set(all.map((i) => i.year).filter((y) => y > 0))).sort(
+    (a, b) => a - b
+  );
+
+  const filtered = sorted.filter(matches);
+  const numeros = (filtering ? filtered : sorted).filter(
+    (i) => i.number < SEPARATA_FROM
+  );
+  const separatas = (filtering ? filtered : sorted).filter(
+    (i) => i.number >= SEPARATA_FROM
+  );
 
   return (
     <div className="max-w-content mx-auto px-4 py-12">
@@ -38,11 +72,70 @@ export default async function RevistaPage() {
         </p>
       </header>
 
+      {/* Filtros de la hemeroteca */}
+      {all.length > 0 && (
+        <form method="get" className="mb-10 flex flex-wrap items-end gap-3">
+          <div>
+            <label htmlFor="year" className="mb-1 block text-xs font-bold uppercase tracking-wide text-coral">
+              Año
+            </label>
+            <select
+              id="year"
+              name="year"
+              defaultValue={searchParams?.year ?? "all"}
+              className="h-10 rounded-sm border border-acero-light/60 bg-white px-3"
+            >
+              <option value="all">Todos</option>
+              {years.map((y) => (
+                <option key={y} value={y}>
+                  {y}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="min-w-[180px] flex-1">
+            <label htmlFor="q" className="mb-1 block text-xs font-bold uppercase tracking-wide text-coral">
+              Buscar número o título
+            </label>
+            <input
+              id="q"
+              name="q"
+              defaultValue={q}
+              placeholder="Ej.: 9, música…"
+              className="h-10 w-full rounded-sm border border-acero-light/60 px-3 focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/30"
+            />
+          </div>
+          <button
+            type="submit"
+            className="h-10 rounded-sm bg-coral px-5 font-bold text-white transition-colors hover:bg-coral-dark"
+          >
+            Buscar
+          </button>
+          {filtering && (
+            <Link
+              href="/revista"
+              className="h-10 leading-10 font-bold text-coral transition-colors hover:text-tinta"
+            >
+              Ver todo
+            </Link>
+          )}
+        </form>
+      )}
+
       {all.length === 0 ? (
         <div className="rounded-sm border border-acero-light/50 bg-gray-50 py-16 text-center">
           <p className="font-editorial text-lg text-acero">
             Estamos digitalizando el archivo. Muy pronto podrás consultar aquí
             todos los números.
+          </p>
+        </div>
+      ) : filtering && numeros.length + separatas.length === 0 ? (
+        <div className="rounded-sm border border-acero-light/50 bg-gray-50 py-16 text-center">
+          <p className="font-editorial text-lg text-acero">
+            No hay números que coincidan con la búsqueda.{" "}
+            <Link href="/revista" className="font-bold text-coral hover:text-tinta">
+              Ver todo
+            </Link>
           </p>
         </div>
       ) : (

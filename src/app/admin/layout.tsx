@@ -33,7 +33,7 @@ export default async function AdminLayout({
   return (
     <div className="min-h-screen bg-white">
       {/* Sidebar */}
-      <aside className="fixed inset-y-0 left-0 z-50 hidden w-64 border-r border-acero-light/50 bg-white md:block">
+      <aside className="fixed inset-y-0 left-0 z-50 hidden w-64 border-r border-acero-light/50 bg-white md:block print:hidden">
         <div className="flex h-full flex-col">
           {/* Logo */}
           <div className="flex h-16 items-center justify-between border-b border-acero-light/50 px-6">
@@ -69,9 +69,9 @@ export default async function AdminLayout({
       </aside>
 
       {/* Main content */}
-      <div className="md:pl-64">
+      <div className="md:pl-64 print:pl-0">
         {/* Top bar */}
-        <header className="sticky top-0 z-40 border-b border-acero-light/50 bg-white">
+        <header className="sticky top-0 z-40 border-b border-acero-light/50 bg-white print:hidden">
           <div className="flex h-16 items-center justify-between px-6 md:px-8">
             <h1 className="text-lg font-black text-tinta">
               <span className="text-coral">[</span>Administración

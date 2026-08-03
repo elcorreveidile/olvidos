@@ -6,6 +6,11 @@ La versión del footer es `1.0.<nº de commits>` y la calcula `next.config.mjs`.
 
 ## 2026-08-03
 
+- Socios: botón de pagar/actualizar cuota (Stripe) + volver al área tras pagar; botón 'volver arriba' (ae69122)
+- Portada: encuadre por arrastre libre (object-position en %) en vez de 9 puntos fijos (26aec9f)
+- Admin: búsqueda de artículos robusta (título/texto/firma/autor) + botón Buscar (f43d4e2)
+- Versión: generar 1.0.<commits> en local y versionar el fichero (consistente en Vercel) (1efe134)
+- Versión: SemVer automático 1.0.<commits> en vez de fecha (50b8172)
 - Búsqueda por palabras (sin acentos), fecha de publicación editable, legales y automatización de versión (a14430f)
 - Junta Directiva solo para socios + 'Volver a la revista' en paneles (22ad774)
 - Página de Junta Directiva (presidencia, vicepresidencia, secretaría) (80fc23e)

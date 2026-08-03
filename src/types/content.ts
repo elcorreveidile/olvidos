@@ -41,6 +41,7 @@ export interface ArticleFull extends ArticleSummary {
 export interface MagazineIssueSummary {
   id: string;
   number: number;
+  year: number;
   title: string;
   slug: string;
   description: string | null;

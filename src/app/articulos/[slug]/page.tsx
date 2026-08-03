@@ -105,12 +105,23 @@ export default async function ArticlePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Link
-        href="/articulos"
-        className="mb-8 inline-block text-sm font-bold text-coral transition-colors hover:text-tinta"
-      >
-        ← Todos los artículos
-      </Link>
+      {/* Si el artículo pertenece a un número de la revista impresa, "volver"
+          lleva a ese número; si es un artículo digital, a la lista general. */}
+      {article.issue ? (
+        <Link
+          href={`/revista/${article.issue.slug}`}
+          className="mb-8 inline-block text-sm font-bold text-coral transition-colors hover:text-tinta"
+        >
+          ← {article.issue.title}
+        </Link>
+      ) : (
+        <Link
+          href="/articulos"
+          className="mb-8 inline-block text-sm font-bold text-coral transition-colors hover:text-tinta"
+        >
+          ← Todos los artículos
+        </Link>
+      )}
 
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_300px]">
         <article className="min-w-0">
@@ -155,25 +166,32 @@ export default async function ArticlePage({
 
           {/* Imagen de portada */}
           {article.coverImage && (
-            <div className="relative mb-10 aspect-[16/9] overflow-hidden rounded-sm bg-tinta/[0.04]">
-              <Image
-                src={article.coverImage}
-                alt={article.title}
-                fill
-                className={
-                  article.coverPosition === "contain"
-                    ? "object-contain"
-                    : "object-cover"
-                }
-                style={
-                  article.coverPosition === "contain"
-                    ? undefined
-                    : { objectPosition: article.coverPosition || "center" }
-                }
-                priority
-                sizes="(max-width: 1024px) 100vw, 760px"
-              />
-            </div>
+            <figure className="mb-10">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-sm bg-tinta/[0.04]">
+                <Image
+                  src={article.coverImage}
+                  alt={article.title}
+                  fill
+                  className={
+                    article.coverPosition === "contain"
+                      ? "object-contain"
+                      : "object-cover"
+                  }
+                  style={
+                    article.coverPosition === "contain"
+                      ? undefined
+                      : { objectPosition: article.coverPosition || "center" }
+                  }
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 760px"
+                />
+              </div>
+              {article.coverCredit && (
+                <figcaption className="mt-2 text-right text-xs text-tinta/50">
+                  {article.coverCredit}
+                </figcaption>
+              )}
+            </figure>
           )}
 
           {/* Pasos (móvil): la barra lateral se oculta en móvil */}

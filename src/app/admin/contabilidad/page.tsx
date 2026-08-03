@@ -101,6 +101,24 @@ export default async function ContabilidadPage({
             {y}
           </Link>
         ))}
+
+        {/* Exportar (respeta el año seleccionado) */}
+        <div className="ml-auto flex items-center gap-2">
+          <a
+            href={`/api/admin/contabilidad/export${selectedYear ? `?year=${selectedYear}` : ""}`}
+            className="rounded-sm border border-acero-light/60 px-3 py-1.5 text-sm font-bold text-tinta transition-colors hover:border-coral hover:text-coral"
+          >
+            Exportar CSV
+          </a>
+          <a
+            href={`/admin/contabilidad/imprimir${selectedYear ? `?year=${selectedYear}` : ""}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-sm border border-acero-light/60 px-3 py-1.5 text-sm font-bold text-tinta transition-colors hover:border-coral hover:text-coral"
+          >
+            PDF / imprimir
+          </a>
+        </div>
       </div>
 
       {/* Totales */}

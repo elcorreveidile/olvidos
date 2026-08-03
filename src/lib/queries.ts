@@ -551,6 +551,7 @@ export async function getAllIssues(): Promise<MagazineIssueSummary[]> {
     select: {
       id: true,
       number: true,
+      year: true,
       title: true,
       slug: true,
       description: true,
@@ -581,8 +582,15 @@ export async function getIssueBySlug(slug: string) {
           coverImage: true,
           coverPosition: true,
           publishedAt: true,
+          pages: true,
+          byline: true,
+          section: true,
           author: {
             select: { name: true },
+          },
+          authors: {
+            orderBy: { order: "asc" },
+            select: { author: { select: { name: true, slug: true } } },
           },
         },
       },

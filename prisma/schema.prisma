@@ -142,7 +142,9 @@ model Article {
   excerpt         String?
   content         String
   coverImage      String?
+  coverCredit     String?                // Autor/crédito de la foto de portada (pie de foto)
   coverPosition   String                 @default("center")
+  section         String?                // Sección de la revista impresa (p.ej. «Mitológicas»); agrupa el sumario del número
   status          ContentStatus          @default(DRAFT)
   featured        Boolean                @default(false)
   membersOnly     Boolean                @default(false)
