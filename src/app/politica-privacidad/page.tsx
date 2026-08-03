@@ -1,218 +1,220 @@
+import Link from "next/link";
+import type { Metadata } from "next";
+import { CategoryHeading } from "@/components/content/CategoryHeading";
+
+export const metadata: Metadata = {
+  title: "Política de privacidad",
+  description:
+    "Política de privacidad de la Asociación Cultural Olvidos de Granada: qué datos tratamos, con qué fin, con qué base legal y cómo ejercer tus derechos (RGPD / LOPDGDD).",
+};
+
+const ACTUALIZACION = "Agosto de 2026";
+
+function Apartado({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <section className="mb-10">
+      <h2 className="mb-3 text-xl font-black text-tinta">
+        <span className="text-coral">[</span>
+        {title}
+      </h2>
+      <div className="prose-editorial text-tinta/80">{children}</div>
+    </section>
+  );
+}
+
 export default function PoliticaPrivacidadPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-azul text-white py-16 mt-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-black mb-4">Política de Privacidad</h1>
-          <p className="text-xl opacity-90">
-            Última actualización: Febrero 2026
+    <div className="max-w-content mx-auto px-4 py-12">
+      <header className="mb-12 border-b-2 border-tinta pb-8 text-center">
+        <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-coral">
+          Protección de datos
+        </p>
+        <CategoryHeading>política de privacidad</CategoryHeading>
+        <p className="mx-auto mt-6 max-w-2xl font-editorial text-tinta/60">
+          Última actualización: {ACTUALIZACION}
+        </p>
+      </header>
+
+      <div className="max-w-article">
+        <p className="prose-editorial mb-10 text-tinta/80">
+          En la Asociación Cultural Olvidos de Granada nos tomamos en serio tu
+          privacidad. Esta política explica qué datos personales tratamos, con qué
+          finalidad y bajo qué condiciones, de acuerdo con el Reglamento (UE)
+          2016/679 (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos y
+          garantía de los derechos digitales (LOPDGDD).
+        </p>
+
+        <Apartado title="Responsable del tratamiento">
+          <ul>
+            <li>
+              <strong>Responsable:</strong> Asociación Cultural Olvidos de Granada
+            </li>
+            <li>
+              <strong>CIF:</strong> G-19648625
+            </li>
+            <li>
+              <strong>Domicilio:</strong> C/ Carmen, 51 · 18198 Granada
+            </li>
+            <li>
+              <strong>Correo de contacto:</strong> olvidosdegranada@gmail.com
+            </li>
+          </ul>
+        </Apartado>
+
+        <Apartado title="Qué datos tratamos">
+          <p>Según tu relación con nosotros, podemos tratar:</p>
+          <ul>
+            <li>
+              <strong>Cuenta de usuario:</strong> nombre y correo electrónico. Si
+              accedes con Google o GitHub, recibimos los datos básicos de tu perfil
+              (nombre, correo e imagen) necesarios para identificarte.
+            </li>
+            <li>
+              <strong>Socios:</strong> nombre y apellidos, correo, teléfono, número
+              de socio y datos de la membresía. Para el registro legal de socios y
+              los envíos postales (por ejemplo, la revista impresa) tratamos también{" "}
+              <strong>DNI y domicilio</strong>, que son de uso estrictamente interno
+              y no se muestran en la web ni se ceden a terceros.
+            </li>
+            <li>
+              <strong>Pagos de cuota:</strong> importe, fecha y estado de los pagos.
+              El cobro se realiza a través de <strong>Stripe</strong>; los datos de
+              la tarjeta los tratas directamente con Stripe y{" "}
+              <strong>la Asociación no los almacena</strong>.
+            </li>
+            <li>
+              <strong>Formulario de contacto:</strong> nombre, correo y el mensaje
+              que nos envíes.
+            </li>
+            <li>
+              <strong>Navegación:</strong> datos técnicos y estadísticos (dirección
+              IP, tipo de dispositivo y páginas visitadas) mediante cookies, según
+              se detalla más abajo.
+            </li>
+          </ul>
+        </Apartado>
+
+        <Apartado title="Con qué finalidad y base jurídica">
+          <ul>
+            <li>
+              <strong>Gestionar la asociación y a sus socios</strong> (altas, carné,
+              cuotas, comunicaciones y envío de la revista y publicaciones) — base:
+              ejecución de la relación asociativa y tu consentimiento.
+            </li>
+            <li>
+              <strong>Gestionar el cobro de cuotas y la contabilidad</strong> — base:
+              relación asociativa y cumplimiento de obligaciones legales y contables.
+            </li>
+            <li>
+              <strong>Atender tus consultas</strong> enviadas por el formulario o por
+              correo — base: tu consentimiento e interés legítimo en responderte.
+            </li>
+            <li>
+              <strong>Mantener la seguridad y mejorar la web</strong> mediante
+              estadística agregada — base: interés legítimo.
+            </li>
+          </ul>
+        </Apartado>
+
+        <Apartado title="Destinatarios y encargados del tratamiento">
+          <p>
+            No vendemos ni cedemos tus datos a terceros. Solo se comparten con los
+            proveedores necesarios para prestar el servicio, que actúan como
+            encargados del tratamiento con las debidas garantías:
           </p>
-        </div>
-      </div>
+          <ul>
+            <li>
+              <strong>Vercel</strong> — alojamiento de la web.
+            </li>
+            <li>
+              <strong>Neon</strong> — base de datos.
+            </li>
+            <li>
+              <strong>Stripe</strong> — procesamiento de los pagos.
+            </li>
+            <li>
+              <strong>Resend</strong> — envío de correos (avisos, enlaces de acceso).
+            </li>
+            <li>
+              <strong>Google</strong> y <strong>GitHub</strong> — autenticación, si
+              eliges iniciar sesión con ellos.
+            </li>
+            <li>
+              <strong>Google Analytics</strong> — estadística de uso de la web.
+            </li>
+          </ul>
+          <p>
+            Algunos proveedores pueden tratar datos fuera del Espacio Económico
+            Europeo; en tal caso se aplican las garantías previstas en el RGPD
+            (cláusulas contractuales tipo u otras). También podremos comunicar datos
+            cuando exista una obligación legal.
+          </p>
+        </Apartado>
 
-      {/* Content */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-sm shadow-card p-8 md:p-12">
-            <div className="prose prose-lg max-w-none">
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-azul mb-4">1. Responsable del Tratamiento</h2>
-                <p className="text-acero mb-4">
-                  <strong>Asociación Cultural Olvidos de Granada</strong>
-                </p>
-                <ul className="list-none space-y-2 text-acero">
-                  <li>• Email: olvidosdegranada@gmail.com</li>
-                  <li>• Sitio Web: olvidosdegranada.es</li>
-                  <li>• Sede: Granada, España</li>
-                </ul>
-              </section>
+        <Apartado title="Durante cuánto tiempo">
+          <p>
+            Conservamos tus datos mientras mantengas la relación con la Asociación
+            (cuenta o condición de socio) y, después, durante los plazos legalmente
+            exigibles —en particular los contables y fiscales— para atender posibles
+            responsabilidades. Cuando dejan de ser necesarios, se suprimen o
+            anonimizan.
+          </p>
+        </Apartado>
 
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-azul mb-4">2. Datos que Recopilamos</h2>
+        <Apartado title="Tus derechos">
+          <p>
+            Puedes ejercer en cualquier momento tus derechos de{" "}
+            <strong>
+              acceso, rectificación, supresión, oposición, limitación del
+              tratamiento y portabilidad
+            </strong>
+            , así como retirar el consentimiento prestado, escribiendo a{" "}
+            <a
+              href="mailto:olvidosdegranada@gmail.com"
+              className="font-bold text-coral hover:text-coral-dark"
+            >
+              olvidosdegranada@gmail.com
+            </a>{" "}
+            e indicando el derecho que deseas ejercer. Podemos pedirte que acredites
+            tu identidad.
+          </p>
+          <p>
+            Si consideras que no hemos atendido correctamente tu solicitud, tienes
+            derecho a reclamar ante la Agencia Española de Protección de Datos
+            (www.aepd.es).
+          </p>
+        </Apartado>
 
-                <h3 className="text-xl font-bold text-azul mb-3">2.1. Datos de Identificación</h3>
-                <ul className="list-disc pl-6 space-y-2 text-acero mb-4">
-                  <li>Nombre y apellidos</li>
-                  <li>Dirección de correo electrónico</li>
-                  <li>Contraseña (encriptada)</li>
-                  <li>Dirección postal (opcional)</li>
-                  <li>Teléfono (opcional)</li>
-                </ul>
+        <Apartado title="Cookies">
+          <p>
+            Utilizamos cookies técnicas, necesarias para el funcionamiento del sitio
+            y el inicio de sesión, y cookies de analítica (Google Analytics) para
+            conocer de forma agregada cómo se usa la web. Puedes configurar tu
+            navegador para bloquear o eliminar las cookies, aunque ello puede afectar
+            a algunas funciones.
+          </p>
+        </Apartado>
 
-                <h3 className="text-xl font-bold text-azul mb-3">2.2. Datos de Pago</h3>
-                <p className="text-acero mb-4">
-                  Para el procesamiento de pagos, utilizamos <strong>Stripe</strong>, una
-                  plataforma de pagos segura. La Asociación no almacena ni tiene acceso a
-                  la información completa de tu tarjeta de crédito. Stripe cumple con
-                  el estándar PCI-DSS para la protección de datos de pago.
-                </p>
+        <Apartado title="Menores de edad">
+          <p>
+            Este sitio no está dirigido a menores de 14 años. Si detectamos datos de
+            un menor sin la autorización correspondiente, procederemos a eliminarlos.
+          </p>
+        </Apartado>
 
-                <h3 className="text-xl font-bold text-azul mb-3">2.3. Datos de Navegación</h3>
-                <p className="text-acero mb-4">
-                  Recopilamos información sobre tu navegación para mejorar nuestros servicios:
-                </p>
-                <ul className="list-disc pl-6 space-y-2 text-acero">
-                  <li>Dirección IP</li>
-                  <li>Tipo de navegador y dispositivo</li>
-                  <li>Páginas visitadas</li>
-                  <li>Tiempo de navegación</li>
-                  <li>Referencias (sitio de procedencia)</li>
-                </ul>
-              </section>
+        <Apartado title="Cambios en esta política">
+          <p>
+            Podemos actualizar esta política para adaptarla a cambios legales o del
+            servicio. La versión vigente será siempre la publicada en esta página,
+            con su fecha de última actualización.
+          </p>
+        </Apartado>
 
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-azul mb-4">3. Finalidad del Tratamiento</h2>
-                <p className="text-acero mb-4">
-                  Tus datos serán utilizados para las siguientes finalidades:
-                </p>
-                <ul className="list-disc pl-6 space-y-2 text-acero mb-4">
-                  <li><strong>Gestión de la membresía:</strong> Administrar tu relación como socio de la Asociación</li>
-                  <li><strong>Envío de comunicaciones:</strong> Informarte sobre actividades, publicaciones y noticias</li>
-                  <li><strong>Procesamiento de pagos:</strong> Gestionar las cuotas de membresía y compras</li>
-                  <li><strong>Mejora del servicio:</strong> Analizar el uso del sitio para mejorarlo</li>
-                  <li><strong>Cumplimiento legal:</strong> Cumplir obligaciones fiscales y legales</li>
-                </ul>
-
-                <h3 className="text-xl font-bold text-azul mb-3">Base Legal</h3>
-                <ul className="list-disc pl-6 space-y-2 text-acero">
-                  <li>Consentimiento del interesado</li>
-                  <li>Ejecución de un contrato de asociación</li>
-                  <li>Cumplimiento de obligaciones legales</li>
-                  <li>Interés legítimo para la mejora de servicios</li>
-                </ul>
-              </section>
-
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-azul mb-4">4. Destinatarios de los Datos</h2>
-                <p className="text-acero mb-4">
-                  Tus datos podrán ser comunicados a:
-                </p>
-                <ul className="list-disc pl-6 space-y-2 text-acero mb-4">
-                  <li><strong>Stripe:</strong> Para procesar pagos de forma segura</li>
-                  <li><strong>Vercel:</strong> Para el alojamiento de nuestro sitio web</li>
-                  <li><strong>Proveedores de email:</strong> Para el envío de comunicaciones (Resend)</li>
-                  <li><strong>Administraciones públicas:</strong> Cuando así lo exija la ley (Hacienda, etc.)</li>
-                </ul>
-                <p className="text-acero">
-                  No vendemos ni alquilamos tus datos personales a terceros.
-                </p>
-              </section>
-
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-azul mb-4">5. Medidas de Seguridad</h2>
-                <p className="text-acero mb-4">
-                  Implementamos medidas técnicas y organizativas apropiadas para proteger
-                  tus datos personales contra acceso no autorizado, alteración, divulgación
-                  o destrucción:
-                </p>
-                <ul className="list-disc pl-6 space-y-2 text-acero">
-                  <li>Certificado SSL/TLS para conexiones seguras</li>
-                  <li>Encriptación de contraseñas (bcrypt)</li>
-                  <li>Acceso restringido a datos personales</li>
-                  <li>Actualizaciones regulares de seguridad</li>
-                  <li>Copias de seguridad periódicas</li>
-                </ul>
-              </section>
-
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-azul mb-4">6. Derechos ARCO+</h2>
-                <p className="text-acero mb-4">
-                  Como usuario, tienes los siguientes derechos reconocidos por el RGPD:
-                </p>
-                <ul className="list-disc pl-6 space-y-2 text-acero">
-                  <li><strong>Acceso:</strong> Solicitar información sobre tus datos personales</li>
-                  <li><strong>Rectificación:</strong> Corregir datos inexactos o incompletos</li>
-                  <li><strong>Supresión:</strong> Solicitar el borrado de tus datos (&ldquo;derecho al olvido&rdquo;)</li>
-                  <li><strong>Oposición:</strong> Oponerte al tratamiento de tus datos</li>
-                  <li><strong>Limitación:</strong> Solicitar que limitemos el tratamiento</li>
-                  <li><strong>Portabilidad:</strong> Recibir tus datos en un formato estructurado</li>
-                  <li><strong>Revocación:</strong> Retirar tu consentimiento en cualquier momento</li>
-                </ul>
-                <p className="text-acero mt-4">
-                  Para ejercer estos derechos, envía un email a: olvidosdegranada@gmail.com
-                </p>
-              </section>
-
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-azul mb-4">7. Retención de Datos</h2>
-                <p className="text-acero mb-4">
-                  Los datos personales se conservarán mientras exista una relación con la
-                  Asociación o mientras sea necesario para las finalidades descritas.
-                </p>
-                <p className="text-acero">
-                  Una vez finalizada la relación, los datos serán bloqueados y conservados
-                  únicamente durante los períodos legalmente establecidos para responder a
-                  posibles responsabilidades legales.
-                </p>
-              </section>
-
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-azul mb-4">8. Cookies y Tecnologías Similares</h2>
-
-                <h3 className="text-xl font-bold text-azul mb-3">8.1. ¿Qué son las Cookies?</h3>
-                <p className="text-acero mb-4">
-                  Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo
-                  cuando visitas nuestro sitio web.
-                </p>
-
-                <h3 className="text-xl font-bold text-azul mb-3">8.2. Tipos de Cookies que Utilizamos</h3>
-                <ul className="list-disc pl-6 space-y-2 text-acero mb-4">
-                  <li><strong>Cookies técnicas:</strong> Necesarias para el funcionamiento del sitio</li>
-                  <li><strong>Cookies de autenticación:</strong> Mantienen tu sesión iniciada</li>
-                  <li><strong>Cookies analíticas:</strong> Nos ayudan a mejorar el sitio</li>
-                </ul>
-
-                <h3 className="text-xl font-bold text-azul mb-3">8.3. Gestión de Cookies</h3>
-                <p className="text-acero">
-                  Puedes configurar tu navegador para rechazar cookies. Sin embargo, esto
-                  puede afectar la funcionalidad del sitio.
-                </p>
-              </section>
-
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-azul mb-4">9. Menores de Edad</h2>
-                <p className="text-acero mb-4">
-                  Nuestros servicios no están dirigidos a menores de 14 años. No recopilamos
-                  intencionalmente datos personales de menores. Si detectamos que hemos
-                  recopilado datos de un menor, procederemos a eliminarlos inmediatamente.
-                </p>
-              </section>
-
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-azul mb-4">10. Transferencias Internacionales</h2>
-                <p className="text-acero mb-4">
-                  Algunos de nuestros proveedores de servicios (como Stripe y Vercel) pueden
-                  transferir datos a países fuera del Espacio Económico Europeo. Todos
-                  estos proveedores cumplen con el RGPD y tienen cláusulas contractuales
-                  estándar de la UE aprobadas por la Comisión Europea.
-                </p>
-              </section>
-
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-azul mb-4">11. Cambios en la Política</h2>
-                <p className="text-acero mb-4">
-                  Nos reservamos el derecho de modificar esta Política de Privacidad en
-                  cualquier momento. Los cambios serán publicados en esta página y, cuando
-                  proceda, te notificaremos por email.
-                </p>
-              </section>
-
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-azul mb-4">12. Autoridad de Control</h2>
-                <p className="text-acero mb-4">
-                  Si consideras que el tratamiento de tus datos no se ajusta a la normativa
-                  vigente, tienes derecho a presentar una reclamación ante la Agencia
-                  Española de Protección de Datos (AEPD) en:
-                </p>
-                <ul className="list-none space-y-2 text-acero">
-                  <li>• Web: www.aepd.es</li>
-                  <li>• Email: info@aepd.es</li>
-                </ul>
-              </section>
-            </div>
-          </div>
-        </div>
+        <p className="mt-12">
+          <Link href="/aviso-legal" className="font-bold text-coral hover:text-coral-dark">
+            ← Aviso legal
+          </Link>
+        </p>
       </div>
     </div>
   );

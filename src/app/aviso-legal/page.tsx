@@ -1,147 +1,172 @@
+import Link from "next/link";
+import type { Metadata } from "next";
+import { CategoryHeading } from "@/components/content/CategoryHeading";
+
+export const metadata: Metadata = {
+  title: "Aviso legal",
+  description:
+    "Aviso legal e información identificativa de la Asociación Cultural Olvidos de Granada, editora de la revista Olvidos de Granada (www.olvidos.es).",
+};
+
+const ACTUALIZACION = "Agosto de 2026";
+
+function Apartado({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <section className="mb-10">
+      <h2 className="mb-3 text-xl font-black text-tinta">
+        <span className="text-coral">[</span>
+        {title}
+      </h2>
+      <div className="prose-editorial text-tinta/80">{children}</div>
+    </section>
+  );
+}
+
 export default function AvisoLegalPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-azul text-white py-16 mt-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-black mb-4">Aviso Legal</h1>
-          <p className="text-xl opacity-90">
-            Información legal de Olvidos de Granada
+    <div className="max-w-content mx-auto px-4 py-12">
+      <header className="mb-12 border-b-2 border-tinta pb-8 text-center">
+        <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-coral">
+          Información legal
+        </p>
+        <CategoryHeading>aviso legal</CategoryHeading>
+        <p className="mx-auto mt-6 max-w-2xl font-editorial text-tinta/60">
+          Última actualización: {ACTUALIZACION}
+        </p>
+      </header>
+
+      <div className="max-w-article">
+        <Apartado title="Datos identificativos">
+          <p>
+            En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de
+            Servicios de la Sociedad de la Información y de Comercio Electrónico
+            (LSSI-CE), se informa de que el titular de este sitio web es:
           </p>
-        </div>
-      </div>
+          <ul>
+            <li>
+              <strong>Titular:</strong> Asociación Cultural Olvidos de Granada
+            </li>
+            <li>
+              <strong>CIF:</strong> G-19648625
+            </li>
+            <li>
+              <strong>Domicilio:</strong> C/ Carmen, 51 · 18198 Granada
+            </li>
+            <li>
+              <strong>Inscripción:</strong> Registro de Asociaciones de Andalucía,
+              nº 10241, Sección 1
+            </li>
+            <li>
+              <strong>Publicación:</strong> revista <em>Olvidos de Granada</em>,
+              ISSN 2605-4515
+            </li>
+            <li>
+              <strong>Correo electrónico:</strong> olvidosdegranada@gmail.com
+            </li>
+            <li>
+              <strong>Sitio web:</strong> https://www.olvidos.es
+            </li>
+          </ul>
+        </Apartado>
 
-      {/* Content */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-sm shadow-card p-8 md:p-12">
-            <div className="prose prose-lg max-w-none space-y-6">
-              <section>
-                <h2 className="text-2xl font-bold text-azul mb-4">Datos Identificativos</h2>
-                <p className="text-acero mb-4">
-                  En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio,
-                  de Servicios de la Sociedad de la Información y Comercio Electrónico,
-                  se informa:
-                </p>
-                <ul className="list-none space-y-2 text-acero">
-                  <li><strong>Denominación social:</strong> Asociación Cultural Olvidos de Granada</li>
-                  <li><strong>Domicilio:</strong> Granada, España</li>
-                  <li><strong>Email:</strong> olvidosdegranada@gmail.com</li>
-                  <li><strong>Sitio Web:</strong> https://olvidosdegranada.es</li>
-                </ul>
-              </section>
+        <Apartado title="Objeto y finalidad">
+          <p>
+            Este sitio web tiene por objeto la difusión de las actividades
+            culturales y literarias de la Asociación Cultural Olvidos de Granada,
+            la protección y divulgación del legado de la revista{" "}
+            <em>Olvidos de Granada</em>, la publicación de su edición digital y la
+            gestión de la relación con sus socios.
+          </p>
+        </Apartado>
 
-              <section>
-                <h2 className="text-2xl font-bold text-azul mb-4">Finalidad del Sitio Web</h2>
-                <p className="text-acero">
-                  El sitio web tiene como finalidad la difusión de las actividades
-                  culturales y literarias de la Asociación Cultural Olvidos de Granada,
-                  así como la gestión de las relaciones con sus socios y la publicación
-                  de su revista digital.
-                </p>
-              </section>
+        <Apartado title="Condiciones de uso">
+          <p>
+            El acceso a este sitio web es gratuito, salvo en lo relativo al coste
+            de la conexión. La persona usuaria se compromete a hacer un uso
+            adecuado de los contenidos y servicios, y a no emplearlos para
+            actividades ilícitas o contrarias a la buena fe y al orden público.
+          </p>
+          <p>
+            Algunas secciones (área de socios) requieren registro y son de acceso
+            restringido a las personas asociadas.
+          </p>
+        </Apartado>
 
-              <section>
-                <h2 className="text-2xl font-bold text-azul mb-4">Propiedad Intelectual</h2>
-                <p className="text-acero mb-4">
-                  Todos los derechos de propiedad intelectual sobre el contenido de este
-                  sitio web (textos, imágenes, logos, diseños, vídeos, música, software)
-                  son propiedad exclusiva de la Asociación Cultural Olvidos de Granada o
-                  de terceros que han autorizado su uso.
-                </p>
-                <p className="text-acero">
-                  Queda prohibida la reproducción, distribución, comunicación pública o
-                  transformación de cualquier contenido sin la autorización expresa del
-                  titular de los derechos.
-                </p>
-              </section>
+        <Apartado title="Propiedad intelectual e industrial">
+          <p>
+            Los contenidos de este sitio (textos, imágenes, ilustraciones, logotipos,
+            diseño y software) son titularidad de la Asociación Cultural Olvidos de
+            Granada o de terceros que han autorizado su uso, y están protegidos por
+            la normativa de propiedad intelectual e industrial.
+          </p>
+          <p>
+            Los textos e imágenes procedentes de la revista impresa se reproducen
+            con fines culturales y de archivo, respetando la autoría. Si eres autor
+            o titular de derechos de algún material y deseas su corrección o
+            retirada, escríbenos a olvidosdegranada@gmail.com.
+          </p>
+          <p>
+            Queda prohibida la reproducción, distribución, comunicación pública o
+            transformación de los contenidos sin autorización expresa del titular
+            de los derechos, salvo los usos permitidos por la ley.
+          </p>
+        </Apartado>
 
-              <section>
-                <h2 className="text-2xl font-bold text-azul mb-4">Responsabilidad</h2>
-                <p className="text-acero mb-4">
-                  La Asociación no se hace responsable de los daños que pudieran derivarse
-                  del uso de este sitio web, ni de la información contenida en el mismo.
-                </p>
-                <p className="text-acero">
-                  Tampoco garantiza la ausencia de virus u otros elementos dañinos en el
-                  sitio web o en los servidores que lo alojan.
-                </p>
-              </section>
+        <Apartado title="Responsabilidad">
+          <p>
+            La Asociación procura que la información del sitio sea correcta y esté
+            actualizada, pero no garantiza la inexistencia de errores ni la
+            disponibilidad ininterrumpida del servicio. En la medida permitida por
+            la ley, la Asociación no se responsabiliza de los daños derivados del
+            uso del sitio ni de la presencia de virus u otros elementos dañinos.
+          </p>
+        </Apartado>
 
-              <section>
-                <h2 className="text-2xl font-bold text-azul mb-4">Enlaces a Terceros</h2>
-                <p className="text-acero mb-4">
-                  Este sitio web puede contener enlaces a sitios web de terceros. La
-                  Asociación no tiene control sobre dichos sitios y no se hace
-                  responsable de su contenido o políticas de privacidad.
-                </p>
-                <p className="text-acero">
-                  La inclusión de enlaces no implica recomendación ni endorsement de los
-                  sitios enlazados.
-                </p>
-              </section>
+        <Apartado title="Enlaces a terceros">
+          <p>
+            Este sitio puede contener enlaces a páginas de terceros. La Asociación
+            no controla dichos sitios ni responde de sus contenidos o políticas. La
+            inclusión de un enlace no implica recomendación ni relación con el sitio
+            enlazado.
+          </p>
+        </Apartado>
 
-              <section>
-                <h2 className="text-2xl font-bold text-azul mb-4">Protección de Datos</h2>
-                <p className="text-acero mb-4">
-                  Los datos personales recogidos a través de este sitio web serán
-                  tratados de acuerdo con nuestra Política de Privacidad y con la
-                  normativa vigente en materia de protección de datos (RGPD y LOPD-GDD).
-                </p>
-                <p className="text-acero">
-                  Puedes consultar nuestra Política de Privacidad en{" "}
-                  <a href="/politica-privacidad" className="text-coral hover:text-coral/80">
-                    este enlace
-                  </a>.
-                </p>
-              </section>
+        <Apartado title="Protección de datos">
+          <p>
+            El tratamiento de los datos personales recogidos a través de este sitio
+            se rige por nuestra{" "}
+            <Link href="/privacidad" className="font-bold text-coral hover:text-coral-dark">
+              Política de Privacidad
+            </Link>
+            , conforme al Reglamento (UE) 2016/679 (RGPD) y a la Ley Orgánica
+            3/2018 (LOPDGDD).
+          </p>
+        </Apartado>
 
-              <section>
-                <h2 className="text-2xl font-bold text-azul mb-4">Cookies</h2>
-                <p className="text-acero mb-4">
-                  Este sitio web utiliza cookies con la finalidad de mejorar la experiencia
-                  de usuario y recopilar información estadística anónima.
-                </p>
-                <p className="text-acero">
-                  Puedes configurar tu navegador para rechazar cookies, aunque esto puede
-                  afectar la funcionalidad del sitio.
-                </p>
-              </section>
+        <Apartado title="Legislación aplicable y jurisdicción">
+          <p>
+            Este aviso legal se rige por la legislación española. Para la resolución
+            de cualquier controversia, y salvo que la normativa aplicable disponga
+            otro fuero, las partes se someten a los Juzgados y Tribunales de Granada.
+          </p>
+        </Apartado>
 
-              <section>
-                <h2 className="text-2xl font-bold text-azul mb-4">Legislación Aplicable</h2>
-                <p className="text-acero">
-                  Este sitio web se rige por la legislación española. Para cualquier
-                  controversia, las partes se someten a los Juzgados y Tribunales de
-                  Granada.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-bold text-azul mb-4">Contacto</h2>
-                <p className="text-acero mb-4">
-                  Para cualquier cuestión relacionada con este sitio web, puedes
-                  contactarnos a través de:
-                </p>
-                <ul className="list-none space-y-2 text-acero">
-                  <li>• Email: olvidosdegranada@gmail.com</li>
-                  <li>• Formulario de contacto:{" "}
-                    <a href="/contacto" className="text-coral hover:text-coral/80">
-                      /contacto
-                    </a>
-                  </li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-bold text-azul mb-4">Última Actualización</h2>
-                <p className="text-acero">
-                  Febrero 2026
-                </p>
-              </section>
-            </div>
-          </div>
-        </div>
+        <Apartado title="Contacto">
+          <p>
+            Para cualquier cuestión relacionada con este sitio web puedes escribir a{" "}
+            <a
+              href="mailto:olvidosdegranada@gmail.com"
+              className="font-bold text-coral hover:text-coral-dark"
+            >
+              olvidosdegranada@gmail.com
+            </a>{" "}
+            o usar el{" "}
+            <Link href="/contacto" className="font-bold text-coral hover:text-coral-dark">
+              formulario de contacto
+            </Link>
+            .
+          </p>
+        </Apartado>
       </div>
     </div>
   );

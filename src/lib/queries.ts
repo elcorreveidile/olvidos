@@ -4,7 +4,7 @@ import type {
   ArticleFull,
   MagazineIssueSummary,
 } from "@/types/content";
-import { ContentStatus, EventStatus } from "@prisma/client";
+import { ContentStatus, EventStatus, Prisma } from "@prisma/client";
 
 /**
  * Obtiene artículos publicados con paginación
@@ -430,55 +430,94 @@ export async function searchArticles(
   categorySlug?: string
 ) {
   const skip = (page - 1) * limit;
-  const ci = { contains: query, mode: "insensitive" as const };
 
-  const where = {
-    status: ContentStatus.PUBLISHED,
-    ...(categorySlug
-      ? { categories: { some: { category: { slug: categorySlug } } } }
-      : {}),
-    OR: [
-      { title: ci },
-      { content: ci },
-      { excerpt: ci },
-      { byline: ci },
-      { authors: { some: { author: { name: ci } } } },
-    ],
+  // Búsqueda por PALABRAS COMPLETAS, sin distinguir acentos ni mayúsculas y sin
+  // importar el orden. Se exige que TODAS las palabras aparezcan (en título,
+  // extracto, firma, contenido o nombre de autor). Usa la extensión `unaccent`
+  // y `~*` con límites de palabra (\y) para que "di" no case dentro de "medio"
+  // ni "tella" dentro de "botella".
+  const words = query
+    .trim()
+    .split(/\s+/)
+    .filter((w) => w.length > 0)
+    .slice(0, 10);
+
+  const category = categorySlug
+    ? await db.category.findUnique({
+        where: { slug: categorySlug },
+        select: { name: true, slug: true },
+      })
+    : null;
+
+  const empty = { articles: [], total: 0, totalPages: 0, query, category };
+  if (words.length === 0) return empty;
+
+  // Patrón regex por palabra: \y + palabra (metacaracteres escapados) + \y.
+  const wordCond = (w: string) => {
+    const esc = w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const pat = `\\y${esc}\\y`;
+    return Prisma.sql`(
+      unaccent(a."title") ~* unaccent(${pat})
+      OR unaccent(coalesce(a."excerpt", '')) ~* unaccent(${pat})
+      OR unaccent(coalesce(a."byline", '')) ~* unaccent(${pat})
+      OR unaccent(a."content") ~* unaccent(${pat})
+      OR EXISTS (
+        SELECT 1 FROM "AuthorsOnArticles" aoa
+        JOIN "Author" au ON au."id" = aoa."authorId"
+        WHERE aoa."articleId" = a."id" AND unaccent(au."name") ~* unaccent(${pat})
+      )
+    )`;
   };
 
-  const [articles, total, category] = await Promise.all([
-    db.article.findMany({
-      where,
-      skip,
-      take: limit,
-      orderBy: { publishedAt: "desc" },
-      select: {
-        id: true,
-        title: true,
-        slug: true,
-        excerpt: true,
-        coverImage: true,
-        coverPosition: true,
-        publishedAt: true,
-        author: { select: { name: true } },
-        byline: true,
-        authors: {
-          orderBy: { order: "asc" },
-          select: { author: { select: { name: true, slug: true } } },
+  const catCond = categorySlug
+    ? Prisma.sql`AND EXISTS (
+        SELECT 1 FROM "CategoriesOnArticles" ca
+        JOIN "Category" c ON c."id" = ca."categoryId"
+        WHERE ca."articleId" = a."id" AND c."slug" = ${categorySlug}
+      )`
+    : Prisma.empty;
+
+  const idRows = await db.$queryRaw<{ id: string }[]>(Prisma.sql`
+    SELECT a."id"
+    FROM "Article" a
+    WHERE a."status"::text = 'PUBLISHED'
+      AND ${Prisma.join(words.map(wordCond), " AND ")}
+      ${catCond}
+    ORDER BY a."publishedAt" DESC NULLS LAST
+  `);
+
+  const total = idRows.length;
+  const pageIds = idRows.slice(skip, skip + limit).map((r) => r.id);
+
+  const found = pageIds.length
+    ? await db.article.findMany({
+        where: { id: { in: pageIds } },
+        select: {
+          id: true,
+          title: true,
+          slug: true,
+          excerpt: true,
+          coverImage: true,
+          coverPosition: true,
+          publishedAt: true,
+          author: { select: { name: true } },
+          byline: true,
+          authors: {
+            orderBy: { order: "asc" },
+            select: { author: { select: { name: true, slug: true } } },
+          },
+          categories: {
+            select: { category: { select: { name: true, slug: true } } },
+          },
         },
-        categories: {
-          select: { category: { select: { name: true, slug: true } } },
-        },
-      },
-    }),
-    db.article.count({ where }),
-    categorySlug
-      ? db.category.findUnique({
-          where: { slug: categorySlug },
-          select: { name: true, slug: true },
-        })
-      : Promise.resolve(null),
-  ]);
+      })
+    : [];
+
+  // Mantener el orden de idRows (findMany no lo garantiza).
+  const byId = new Map(found.map((a) => [a.id, a]));
+  const articles = pageIds
+    .map((id) => byId.get(id))
+    .filter((a): a is (typeof found)[number] => Boolean(a));
 
   return {
     articles,

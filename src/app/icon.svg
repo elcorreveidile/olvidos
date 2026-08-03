@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- Corchete izquierdo [ -->
-  <path d="M13 6 H9 V26 H13" fill="none" stroke="#ff6261" stroke-width="3.4"
-        stroke-linecap="square"/>
-  <!-- Corchete derecho ] -->
-  <path d="M19 6 H23 V26 H19" fill="none" stroke="#ff6261" stroke-width="3.4"
-        stroke-linecap="square"/>
-</svg>

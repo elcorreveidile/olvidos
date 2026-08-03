@@ -1,5 +1,28 @@
+import { execSync } from "node:child_process";
+
+// Versión automática a partir de git (último commit). Funciona en local y en
+// Vercel (que conserva el commit HEAD). No requiere mantenimiento manual.
+function gitVersion() {
+  const run = (cmd) => execSync(cmd, { stdio: ["ignore", "pipe", "ignore"] }).toString().trim();
+  try {
+    const sha = (process.env.VERCEL_GIT_COMMIT_SHA || run("git rev-parse HEAD")).slice(0, 7);
+    const date = run("git log -1 --format=%cs"); // YYYY-MM-DD del commit
+    const [y, m, d] = date.split("-");
+    return { version: `${y}.${Number(m)}.${Number(d)}`, commit: sha, date };
+  } catch {
+    return { version: "dev", commit: "", date: "" };
+  }
+}
+
+const V = gitVersion();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  env: {
+    APP_VERSION: V.version,
+    APP_COMMIT: V.commit,
+    APP_DATE: V.date,
+  },
   images: {
     remotePatterns: [
       {

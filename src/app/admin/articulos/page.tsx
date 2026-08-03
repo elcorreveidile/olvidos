@@ -222,7 +222,7 @@ async function ArticlesList({
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     <div className="flex items-center gap-1">
                       <Calendar className="w-4 h-4" />
-                      {new Date(article.createdAt).toLocaleDateString("es-ES", {
+                      {new Date(article.publishedAt ?? article.createdAt).toLocaleDateString("es-ES", {
                         day: "2-digit",
                         month: "short",
                         year: "numeric",

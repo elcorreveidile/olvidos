@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/gen-changelog.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/gen-changelog.mjs",
     "build": "prisma generate && next build",
+    "changelog": "node scripts/gen-changelog.mjs",
     "start": "next start",
     "lint": "next lint",
     "db:push": "prisma db push",

@@ -30,6 +30,7 @@ const articleSchema = z.object({
   metaTitle: z.string().optional(),
   metaDescription: z.string().optional(),
   status: z.enum(["DRAFT", "REVIEW", "PUBLISHED"]),
+  publishedAt: z.string().optional(),
   featured: z.boolean().default(false),
   membersOnly: z.boolean().default(false),
   issueId: z.string().optional(),
@@ -89,6 +90,9 @@ export default function EditarArticuloPage() {
             metaTitle: article.metaTitle || "",
             metaDescription: article.metaDescription || "",
             status: article.status as any,
+            publishedAt: article.publishedAt
+              ? new Date(article.publishedAt).toISOString().slice(0, 10)
+              : "",
             featured: article.featured,
             membersOnly: article.membersOnly,
             issueId: article.issueId || "",
@@ -293,16 +297,28 @@ export default function EditarArticuloPage() {
                 }
               />
               {watch("coverImage") && (
-                <div className="mt-4">
-                  <input type="hidden" {...register("coverPosition")} />
-                  <CoverPositionPicker
-                    imageUrl={watch("coverImage")}
-                    value={watch("coverPosition") || "center"}
-                    onChange={(next) =>
-                      setValue("coverPosition", next, { shouldDirty: true })
-                    }
-                  />
-                </div>
+                <>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setValue("coverImage", "", { shouldDirty: true });
+                      setValue("coverPosition", "center", { shouldDirty: true });
+                    }}
+                    className="mt-2 text-sm font-bold text-red-600 hover:text-red-700"
+                  >
+                    Quitar portada
+                  </button>
+                  <div className="mt-4">
+                    <input type="hidden" {...register("coverPosition")} />
+                    <CoverPositionPicker
+                      imageUrl={watch("coverImage")}
+                      value={watch("coverPosition") || "center"}
+                      onChange={(next) =>
+                        setValue("coverPosition", next, { shouldDirty: true })
+                      }
+                    />
+                  </div>
+                </>
               )}
             </div>
           </div>
@@ -383,6 +399,22 @@ export default function EditarArticuloPage() {
           </h2>
 
           <div className="space-y-4">
+            {/* Fecha de publicación */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Fecha de publicación
+              </label>
+              <input
+                type="date"
+                {...register("publishedAt")}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent"
+              />
+              <p className="text-xs text-gray-500 mt-1">
+                Fecha que se muestra en la web. Úsala para conservar la fecha
+                original del artículo.
+              </p>
+            </div>
+
             {/* Magazine issue */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">

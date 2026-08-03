@@ -49,6 +49,7 @@ const ArticleSchema = z.object({
   metaTitle: z.string().max(60, "El título SEO no puede exceder 60 caracteres").optional(),
   metaDescription: z.string().max(160, "La descripción SEO no puede exceder 160 caracteres").optional(),
   status: z.enum(["DRAFT", "REVIEW", "PUBLISHED", "ARCHIVED"]),
+  publishedAt: z.string().optional(),
   featured: z.boolean().default(false),
   membersOnly: z.boolean().default(false),
   issueId: z.string().optional(),
@@ -123,7 +124,11 @@ export async function createArticle(data: ArticleInput) {
         membersOnly: validatedData.membersOnly,
         authorId: userId,
         issueId: validatedData.issueId || null,
-        publishedAt: validatedData.status === "PUBLISHED" ? new Date() : null,
+        publishedAt: validatedData.publishedAt?.trim()
+          ? new Date(validatedData.publishedAt)
+          : validatedData.status === "PUBLISHED"
+            ? new Date()
+            : null,
         categories: validatedData.categoryIds
           ? {
               create: validatedData.categoryIds.map((categoryId) => ({
@@ -200,11 +205,19 @@ export async function updateArticle(id: string, data: ArticleInput) {
       }
     }
 
-    // Update publishedAt if status changed to PUBLISHED
-    const publishedAt =
-      validatedData.status === "PUBLISHED" && existingArticle.status !== "PUBLISHED"
-        ? new Date()
-        : existingArticle.publishedAt;
+    // Fecha de publicación: si el formulario la indica explícitamente, se usa
+    // esa (permite fijar la fecha original del artículo). Si no, se mantiene la
+    // existente, o se pone "ahora" al pasar por primera vez a PUBLICADO.
+    let publishedAt: Date | null = existingArticle.publishedAt;
+    if (validatedData.publishedAt && validatedData.publishedAt.trim()) {
+      const d = new Date(validatedData.publishedAt);
+      if (!Number.isNaN(d.getTime())) publishedAt = d;
+    } else if (
+      validatedData.status === "PUBLISHED" &&
+      existingArticle.status !== "PUBLISHED"
+    ) {
+      publishedAt = new Date();
+    }
 
     // Delete existing categories and tags
     await db.categoriesOnArticles.deleteMany({

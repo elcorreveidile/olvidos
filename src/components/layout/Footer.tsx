@@ -3,6 +3,7 @@ import { auth } from "@/lib/auth";
 import { Logo } from "./Logo";
 import { DesarrolloCredit } from "@/components/shared/DesarrolloCredit";
 import { ReconocimientoFooter } from "./ReconocimientoFooter";
+import { APP_VERSION, APP_VERSION_DATE, APP_COMMIT } from "@/lib/version";
 
 export async function Footer() {
   const currentYear = new Date().getFullYear();
@@ -125,13 +126,19 @@ export async function Footer() {
           <p className="text-xs text-acero-light">
             &copy; {currentYear} Asociación Cultural Olvidos de Granada. Todos los derechos reservados.
           </p>
-          <div className="flex gap-6">
+          <div className="flex items-center gap-6">
             <Link href="/aviso-legal" className="text-xs text-acero-light hover:text-coral transition-colors">
               Aviso legal
             </Link>
             <Link href="/privacidad" className="text-xs text-acero-light hover:text-coral transition-colors">
               Política de privacidad
             </Link>
+            <span
+              className="text-xs text-acero-light/70"
+              title={`Versión ${APP_VERSION}${APP_COMMIT ? ` · ${APP_COMMIT}` : ""}${APP_VERSION_DATE ? ` · ${APP_VERSION_DATE}` : ""}`}
+            >
+              v{APP_VERSION}
+            </span>
           </div>
         </div>
       </div>
