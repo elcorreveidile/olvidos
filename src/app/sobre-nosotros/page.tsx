@@ -130,6 +130,44 @@ export default function SobreNosotrosPage() {
         </div>
       </section>
 
+      {/* Fines (estatutos) */}
+      <section className="mb-16 max-w-article">
+        <h2 className="mb-4 text-2xl font-black text-tinta">
+          <span className="text-coral">[</span>Nuestros fines
+        </h2>
+        <div className="prose-editorial">
+          <p>
+            Según el artículo 6 de nuestros <strong>estatutos</strong>, la
+            Asociación Cultural Olvidos de Granada, sin ánimo de lucro, persigue
+            estos fines:
+          </p>
+        </div>
+        <ul className="mt-6 space-y-4">
+          {[
+            "Proteger el legado de la revista Olvidos de Granada.",
+            "Gestionar la revista digital www.olvidos.es en una web dispuesta al efecto.",
+            "Divulgar el pensamiento crítico y la cultura en todas sus manifestaciones —literatura, fotografía, pintura, cine, filosofía, cómic, escultura, música, danza y cualquier otra expresión del conocimiento humano— y ponerlas en valor.",
+            "Organizar actividades culturales que contribuyan al enriquecimiento de la ciudadanía que reside en Andalucía.",
+            "Poner en relación ese legado mediante exposiciones, conferencias, jornadas, publicaciones y otras actividades de divulgación.",
+            "Asesorar y apoyar a instituciones y entidades, públicas o privadas, en el ámbito del conocimiento, el pensamiento crítico y la expresividad artística.",
+            "Promover actividades escénicas, conciertos y propuestas participativas en espacios patrimoniales para la divulgación de los valores culturales de la asociación.",
+          ].map((fin, i) => (
+            <li key={i} className="flex gap-3 font-editorial text-tinta/80">
+              <span className="mt-1 shrink-0 font-black text-coral">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span>{fin}</span>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-6 font-editorial text-sm text-tinta/60">
+          Para lograrlos, la asociación publica artículos, celebra jornadas y
+          conferencias, y organiza exposiciones, conciertos y otras actividades
+          artísticas, pudiendo optar a subvenciones públicas para cumplir sus
+          objetivos.
+        </p>
+      </section>
+
       {/* Ficha de la asociación */}
       <section className="mb-16">
         <h2 className="mb-6 text-2xl font-black text-tinta">
