@@ -1,7 +1,7 @@
 import { auth, signOut } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { LogOut } from "lucide-react";
+import { LogOut, Newspaper } from "lucide-react";
 import { Logo } from "@/components/layout/Logo";
 import { AdminSidebarNav } from "@/components/admin/AdminSidebarNav";
 
@@ -80,6 +80,13 @@ export default async function AdminLayout({
               <span className="hidden text-sm text-acero sm:inline">
                 Rol: <span className="font-bold text-tinta">{userRole}</span>
               </span>
+              <Link
+                href="/"
+                className="flex items-center gap-2 text-sm font-bold text-acero transition-colors hover:text-coral"
+              >
+                <Newspaper className="h-4 w-4" />
+                <span className="hidden sm:inline">Volver a la revista</span>
+              </Link>
               <form action={handleSignOut}>
                 <button
                   type="submit"

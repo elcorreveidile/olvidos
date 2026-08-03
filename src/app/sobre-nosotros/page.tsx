@@ -217,17 +217,9 @@ export default function SobreNosotrosPage() {
         <div className="mt-8 grid grid-cols-1 gap-8 font-editorial text-tinta/80 sm:grid-cols-2">
           <div>
             <h3 className="mb-2 font-sans text-sm font-bold uppercase tracking-wide text-acero">
-              Junta Directiva
+              Equipo
             </h3>
             <p>{EQUIPO.join(" · ")}</p>
-            <p className="mt-1">
-              <Link
-                href="/junta-directiva"
-                className="text-sm font-bold text-coral transition-colors hover:text-coral-dark"
-              >
-                Ver la Junta Directiva →
-              </Link>
-            </p>
           </div>
           <div>
             <h3 className="mb-2 font-sans text-sm font-bold uppercase tracking-wide text-acero">

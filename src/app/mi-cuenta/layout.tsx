@@ -1,7 +1,7 @@
 import { auth, signOut } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { LogOut } from "lucide-react";
+import { LogOut, Newspaper } from "lucide-react";
 import { Logo } from "@/components/layout/Logo";
 import { MemberSidebarNav } from "@/components/members/MemberSidebarNav";
 
@@ -122,15 +122,24 @@ export default async function MemberLayout({
             <h1 className="text-lg font-black text-tinta">
               <span className="text-coral">[</span>Área de socios
             </h1>
-            <form action={handleSignOut}>
-              <button
-                type="submit"
+            <div className="flex items-center gap-5">
+              <Link
+                href="/"
                 className="flex items-center gap-2 text-sm font-bold text-acero transition-colors hover:text-coral"
               >
-                <LogOut className="h-4 w-4" />
-                Cerrar sesión
-              </button>
-            </form>
+                <Newspaper className="h-4 w-4" />
+                <span className="hidden sm:inline">Volver a la revista</span>
+              </Link>
+              <form action={handleSignOut}>
+                <button
+                  type="submit"
+                  className="flex items-center gap-2 text-sm font-bold text-acero transition-colors hover:text-coral"
+                >
+                  <LogOut className="h-4 w-4" />
+                  Cerrar sesión
+                </button>
+              </form>
+            </div>
           </div>
           {/* Navegación horizontal en móvil (la sidebar se oculta) */}
           <div className="border-t border-acero-light/50 md:hidden">

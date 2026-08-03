@@ -9,6 +9,7 @@ import {
   UserRound,
   CreditCard,
   QrCode,
+  Users,
   Shield,
 } from "lucide-react";
 
@@ -16,6 +17,7 @@ const NAV = [
   { name: "Resumen", href: "/mi-cuenta", icon: LayoutDashboard },
   { name: "Objetivos", href: "/mi-cuenta/objetivos", icon: Target },
   { name: "Documentos", href: "/mi-cuenta/documentos", icon: FileText },
+  { name: "Junta Directiva", href: "/mi-cuenta/junta-directiva", icon: Users },
   { name: "Mi perfil", href: "/mi-cuenta/perfil", icon: UserRound },
   { name: "Pagos", href: "/mi-cuenta/pagos", icon: CreditCard },
   { name: "Carné digital", href: "/mi-cuenta/carnet", icon: QrCode },

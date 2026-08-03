@@ -10,7 +10,7 @@ export type CargoJunta = {
 
 export const JUNTA_DIRECTIVA: CargoJunta[] = [
   { cargo: "Presidencia", nombre: "Ramón Repiso Ruiz", memberNumber: 2 },
-  { cargo: "Vicepresidencia", nombre: "Francisco Javier Benítez Laínez", memberNumber: 4 },
+  { cargo: "Vicepresidencia", nombre: "Javier Benítez Laínez", memberNumber: 4 },
   { cargo: "Secretaría", nombre: "Alfonso Salazar Mendías", memberNumber: 3 },
 ];
 
