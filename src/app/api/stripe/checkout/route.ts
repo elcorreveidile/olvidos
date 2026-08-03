@@ -72,11 +72,14 @@ export async function POST(req: Request) {
         userId: session.user.id,
         membershipLevel,
       },
-      success_url: `${process.env.NEXT_PUBLIC_APP_URL}/mi-cuenta?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/hazte-socio?canceled=true`,
+      success_url: `${process.env.NEXT_PUBLIC_APP_URL}/mi-cuenta?pago=ok`,
+      cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/mi-cuenta?pago=cancelado`,
     });
 
-    return NextResponse.json({ sessionId: checkoutSession.id });
+    return NextResponse.json({
+      sessionId: checkoutSession.id,
+      url: checkoutSession.url,
+    });
   } catch (error) {
     console.error("Error creating checkout session:", error);
     return NextResponse.json(

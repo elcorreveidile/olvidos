@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { CuotaCard } from "@/components/members/CuotaCard";
 import {
   Calendar,
   MapPin,
@@ -23,7 +24,11 @@ import {
   Target,
 } from "lucide-react";
 
-export default async function MemberDashboardPage() {
+export default async function MemberDashboardPage({
+  searchParams,
+}: {
+  searchParams?: { pago?: string };
+}) {
   const session = await auth();
 
   if (!session?.user) {
@@ -52,6 +57,18 @@ export default async function MemberDashboardPage() {
 
   return (
     <div className="space-y-6">
+      {searchParams?.pago === "ok" && (
+        <div className="rounded-lg border border-green-300 bg-green-50 px-4 py-3 text-sm font-medium text-green-800">
+          ¡Gracias por tu aportación! El pago se ha completado; tu cuota puede
+          tardar unos segundos en reflejarse aquí.
+        </div>
+      )}
+      {searchParams?.pago === "cancelado" && (
+        <div className="rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm font-medium text-amber-800">
+          El pago se canceló. Puedes intentarlo de nuevo cuando quieras.
+        </div>
+      )}
+
       {/* Welcome */}
       <div>
         <h2 className="text-3xl font-black text-tinta">
@@ -61,6 +78,11 @@ export default async function MemberDashboardPage() {
           Gestiona tu membresía y accede a todo lo de socio.
         </p>
       </div>
+
+      {/* Cuota de socio (no aplica al socio de honor) */}
+      {member.membershipLevel !== "HONOR" && (
+        <CuotaCard currentLevel={member.membershipLevel} />
+      )}
 
       {/* Status Cards */}
       <div className="grid gap-6 md:grid-cols-3">

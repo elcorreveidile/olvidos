@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CurtainIntro } from "@/components/home/CurtainIntro";
 import { ChromeGate } from "@/components/layout/ChromeGate";
+import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { auth } from "@/lib/auth";
 import {
   SITE_URL,
@@ -98,6 +99,7 @@ export default async function RootLayout({
         >
           {children}
         </ChromeGate>
+        <ScrollToTop />
       </body>
     </html>
   );
