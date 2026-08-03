@@ -7,7 +7,7 @@ import { z } from "zod";
 
 const MemberSchema = z.object({
   userId: z.string().optional(),
-  membershipLevel: z.enum(["STANDARD", "COLLABORATOR", "HONORARY", "INSTITUTIONAL"]).default("STANDARD"),
+  membershipLevel: z.enum(["STANDARD", "COLLABORATOR", "HONORARY", "INSTITUTIONAL", "HONOR"]).default("STANDARD"),
   status: z.enum(["PENDING", "ACTIVE", "EXPIRED", "SUSPENDED", "CANCELLED"]).default("PENDING"),
   bio: z.string().optional(),
   phone: z.string().optional(),
@@ -17,7 +17,7 @@ const MemberSchema = z.object({
 });
 
 const MemberUpdateSchema = z.object({
-  membershipLevel: z.enum(["STANDARD", "COLLABORATOR", "HONORARY", "INSTITUTIONAL"]).optional(),
+  membershipLevel: z.enum(["STANDARD", "COLLABORATOR", "HONORARY", "INSTITUTIONAL", "HONOR"]).optional(),
   status: z.enum(["PENDING", "ACTIVE", "EXPIRED", "SUSPENDED", "CANCELLED"]).optional(),
   bio: z.string().optional(),
   phone: z.string().optional(),

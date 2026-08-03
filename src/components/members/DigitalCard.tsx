@@ -22,12 +22,12 @@ export default function DigitalCard({ member }: DigitalCardProps) {
   useEffect(() => {
     const generateQR = async () => {
       if (qrRef.current) {
-        // Create verification data
-        const verificationData = JSON.stringify({
-          memberId: member.id,
-          memberNumber: member.memberNumber,
-          email: member.user.email,
-        });
+        // El QR apunta a la página pública de verificación, que consulta la BD
+        // en vivo y muestra nº, nombre, nivel y estado (sin exponer el correo).
+        const base =
+          process.env.NEXT_PUBLIC_APP_URL ||
+          (typeof window !== "undefined" ? window.location.origin : "");
+        const verificationData = `${base}/verificar/${member.id}`;
 
         try {
           const url = await QRCode.toCanvas(qrRef.current, verificationData, {
@@ -52,6 +52,7 @@ export default function DigitalCard({ member }: DigitalCardProps) {
     COLLABORATOR: "Socio Colaborador",
     HONORARY: "Socio Mecenas",
     INSTITUTIONAL: "Socio Institucional",
+    HONOR: "Socio de Honor",
   };
 
   return (

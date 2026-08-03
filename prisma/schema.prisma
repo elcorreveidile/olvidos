@@ -71,6 +71,7 @@ model Member {
   phone            String?
   address          String?
   city             String?
+  dni              String?         // Solo uso interno (envíos, registro legal); nunca público
   isPublic         Boolean         @default(false)
   cardImageUrl     String?
   stripeCustomerId String?         @unique
@@ -96,6 +97,41 @@ model Payment {
   paidAt          DateTime?
   createdAt       DateTime      @default(now())
   member          Member        @relation(fields: [memberId], references: [id])
+  ledgerEntry     LedgerEntry?
+}
+
+// Libro de contabilidad de la asociación. Los ingresos de cuotas por Stripe se
+// anotan automáticamente (source STRIPE, vía el webhook); gastos y otros
+// ingresos se introducen a mano desde el panel admin (source MANUAL).
+model LedgerEntry {
+  id          String       @id @default(cuid())
+  date        DateTime
+  kind        LedgerKind
+  category    String
+  concept     String
+  amount      Decimal      @db.Decimal(10, 2)
+  currency    String       @default("EUR")
+  source      LedgerSource @default(MANUAL)
+  paymentId   String?      @unique
+  payment     Payment?     @relation(fields: [paymentId], references: [id], onDelete: SetNull)
+  memberId    String?
+  createdById String?
+  notes       String?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  @@index([date])
+  @@index([kind])
+}
+
+enum LedgerKind {
+  INGRESO
+  GASTO
+}
+
+enum LedgerSource {
+  STRIPE
+  MANUAL
 }
 
 model Article {
@@ -300,6 +336,7 @@ enum MembershipLevel {
   COLLABORATOR
   HONORARY
   INSTITUTIONAL
+  HONOR
 }
 
 enum MemberStatus {

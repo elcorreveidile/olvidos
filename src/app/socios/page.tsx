@@ -45,6 +45,7 @@ export default async function MembersDirectoryPage({ searchParams }: PageProps) 
     COLLABORATOR: "bg-coral-100 text-coral-700",
     HONORARY: "bg-coral-100 text-coral-700",
     INSTITUTIONAL: "bg-purple-100 text-purple-700",
+    HONOR: "bg-amber-100 text-amber-700",
   };
 
   return (

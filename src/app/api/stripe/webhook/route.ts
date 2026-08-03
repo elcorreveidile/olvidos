@@ -3,6 +3,7 @@ import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { sendWelcomeEmail } from "@/lib/email";
+import { recordPaymentInLedger } from "@/lib/ledger";
 
 export const dynamic = "force-dynamic";
 
@@ -170,7 +171,7 @@ async function handlePaymentIntentSucceeded(paymentIntent: any) {
   const memberId = (customer as any).metadata.memberId;
 
   if (memberId) {
-    await db.payment.create({
+    const payment = await db.payment.create({
       data: {
         memberId,
         amount: paymentIntent.amount / 100,
@@ -181,6 +182,7 @@ async function handlePaymentIntentSucceeded(paymentIntent: any) {
         paidAt: new Date(paymentIntent.created * 1000),
       },
     });
+    await recordPaymentInLedger(payment);
   }
 }
 
@@ -251,7 +253,7 @@ async function handleInvoicePaymentSucceeded(invoice: any) {
     });
 
     if (!existingPayment) {
-      await db.payment.create({
+      const payment = await db.payment.create({
         data: {
           memberId,
           amount: invoice.amount_paid / 100,
@@ -265,6 +267,7 @@ async function handleInvoicePaymentSucceeded(invoice: any) {
           paidAt: new Date(invoice.status_transitions.paid_at * 1000),
         },
       });
+      await recordPaymentInLedger(payment);
     }
 
     // Update renewal date

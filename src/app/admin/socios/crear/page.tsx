@@ -134,6 +134,7 @@ export default async function CreateMemberPage() {
                 <option value="STANDARD">Estándar (50€/año)</option>
                 <option value="HONORARY">Mecenas (120€/año)</option>
                 <option value="INSTITUTIONAL">Institucional (250€/año)</option>
+                <option value="HONOR">Socio de Honor (sin cuota)</option>
               </select>
               <p className="text-xs text-acero-light mt-1">
                 Mecenas e Institucional reciben la revista impresa y mención pública en la web.

@@ -9,6 +9,7 @@ import {
   Users,
   Files,
   CreditCard,
+  BookMarked,
   Settings,
 } from "lucide-react";
 
@@ -19,6 +20,7 @@ const NAV = [
   { name: "Socios", href: "/admin/socios", icon: Users },
   { name: "Documentos", href: "/admin/documentos", icon: Files },
   { name: "Pagos", href: "/admin/pagos", icon: CreditCard },
+  { name: "Contabilidad", href: "/admin/contabilidad", icon: BookMarked },
   { name: "Configuración", href: "/admin/configuracion", icon: Settings },
 ] as const;
 

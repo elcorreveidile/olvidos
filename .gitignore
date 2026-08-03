@@ -40,3 +40,6 @@ prisma/migrations/dev/
 
 # claude code (config personal, no compartida)
 .claude/settings.local.json
+
+# Datos personales de socios (DNIs/domicilios) — no subir a repo público
+scripts/import-socios.ts

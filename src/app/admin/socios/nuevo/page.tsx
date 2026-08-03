@@ -116,6 +116,7 @@ export default async function NewMemberPage() {
                 <option value="STANDARD">Socio Estándar</option>
                 <option value="HONORARY">Socio Mecenas</option>
                 <option value="INSTITUTIONAL">Socio Institucional</option>
+                <option value="HONOR">Socio de Honor</option>
               </select>
             </div>
 

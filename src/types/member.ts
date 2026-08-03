@@ -1,4 +1,4 @@
-export type MembershipLevel = "STANDARD" | "COLLABORATOR" | "HONORARY" | "INSTITUTIONAL";
+export type MembershipLevel = "STANDARD" | "COLLABORATOR" | "HONORARY" | "INSTITUTIONAL" | "HONOR";
 export type MemberStatus = "PENDING" | "ACTIVE" | "EXPIRED" | "SUSPENDED" | "CANCELLED";
 export type PaymentStatus = "PENDING" | "COMPLETED" | "FAILED" | "REFUNDED" | "CANCELLED";
 export type PaymentType = "MEMBERSHIP_FEE" | "EVENT_TICKET" | "DONATION" | "OTHER";
@@ -35,13 +35,15 @@ export interface PaymentRecord {
 }
 
 // Etiquetas visibles de cada nivel (fuente única). HONORARY se muestra como
-// "Mecenas". COLLABORATOR se conserva solo para socios antiguos (legacy): ya no
-// se ofrece en los formularios de alta.
+// "Mecenas". HONOR es el "Socio de Honor" (distinción honorífica, sin cuota).
+// COLLABORATOR se conserva solo para socios antiguos (legacy): ya no se ofrece
+// en los formularios de alta.
 export const MEMBERSHIP_LABELS: Record<MembershipLevel, string> = {
   STANDARD: "Estándar",
   COLLABORATOR: "Colaborador",
   HONORARY: "Mecenas",
   INSTITUTIONAL: "Institucional",
+  HONOR: "Socio de Honor",
 };
 
 export const MEMBER_STATUS_LABELS: Record<MemberStatus, string> = {

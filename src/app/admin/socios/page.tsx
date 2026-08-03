@@ -201,6 +201,7 @@ export default async function AdminMembersPage({ searchParams }: PageProps) {
                 <option value="STANDARD">Estándar</option>
                 <option value="HONORARY">Mecenas</option>
                 <option value="INSTITUTIONAL">Institucional</option>
+                <option value="HONOR">Socio de Honor</option>
               </select>
             </div>
 
