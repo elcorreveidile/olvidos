@@ -93,14 +93,14 @@ export default function DigitalCard({ member }: DigitalCardProps) {
           <div className="flex justify-between items-start">
             <div>
               <h3 className="text-white font-bold text-lg tracking-wide">
-                Olvidos de Granada
+                <span className="text-coral">[</span>Olvidos de Granada
               </h3>
               <p className="text-coral text-xs">Asociación Cultural</p>
             </div>
-            <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center backdrop-blur-sm">
-              {member.user.image ? (
+            <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center backdrop-blur-sm overflow-hidden">
+              {member.cardImageUrl ? (
                 <Image
-                  src={member.user.image}
+                  src={member.cardImageUrl}
                   alt={member.user.name || "Socio"}
                   width={48}
                   height={48}
@@ -108,7 +108,7 @@ export default function DigitalCard({ member }: DigitalCardProps) {
                 />
               ) : (
                 <span className="text-white text-xl font-bold">
-                  {member.user.name?.charAt(0) || "S"}
+                  {(member.user.name?.charAt(0) || "S").toUpperCase()}
                 </span>
               )}
             </div>

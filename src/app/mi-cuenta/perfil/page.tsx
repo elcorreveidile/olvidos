@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { updateMember } from "@/lib/actions/members";
 import { MEMBERSHIP_LABELS, MEMBER_STATUS_LABELS } from "@/types/member";
+import { CardPhotoUpload } from "@/components/members/CardPhotoUpload";
 
 export default async function MemberProfilePage() {
   const session = await auth();
@@ -35,6 +36,20 @@ export default async function MemberProfilePage() {
           Actualiza tus datos y tu visibilidad en el directorio.
         </p>
       </div>
+
+      {/* Foto del carné */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Foto del carné</CardTitle>
+          <CardDescription>
+            Sube tu foto para el carné digital. La eliges tú (no se toma de
+            Google ni de GitHub).
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <CardPhotoUpload current={member.cardImageUrl} />
+        </CardContent>
+      </Card>
 
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Personal Information */}
