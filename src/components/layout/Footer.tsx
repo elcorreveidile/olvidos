@@ -67,6 +67,11 @@ export async function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/junta-directiva" className="text-sm text-acero-light hover:text-coral transition-colors">
+                  Junta Directiva
+                </Link>
+              </li>
+              <li>
                 <Link href="/revista" className="text-sm text-acero-light hover:text-coral transition-colors">
                   Archivo (revista impresa)
                 </Link>
