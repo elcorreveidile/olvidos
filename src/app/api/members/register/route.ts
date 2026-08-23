@@ -128,13 +128,10 @@ export async function POST(req: Request) {
     }
 
     console.error("Error in member registration:", error);
+    // No se devuelve error.message al cliente: puede filtrar detalles internos
+    // (texto de Prisma/Stripe). El detalle queda en el log del servidor.
     return NextResponse.json(
-      {
-        error:
-          error instanceof Error
-            ? error.message
-            : "Error al registrar socio",
-      },
+      { error: "Error al registrar socio" },
       { status: 500 }
     );
   }
