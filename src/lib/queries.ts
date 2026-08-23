@@ -426,7 +426,11 @@ export async function getAllTags() {
 /**
  * IDs de artículos que casan la búsqueda: por PALABRAS COMPLETAS, sin acentos ni
  * mayúsculas y sin importar el orden (todas deben aparecer en título, extracto,
- * firma, contenido o nombre de autor). Ordenados por fecha de publicación.
+ * firma, contenido o nombre de autor). Ordenados por RELEVANCIA: primero la
+ * frase en el título, luego cuántas palabras aparecen en el título, luego la
+ * frase en el extracto y, en empate, por fecha de publicación (así el resultado
+ * esperado —p. ej. el soneto cuyo título es la consulta— aparece arriba, aunque
+ * otros artículos mencionen esas palabras en el cuerpo).
  * Requiere la extensión `unaccent`. Lo usan la web pública y el panel admin.
  * Los límites de palabra (\y) evitan que "di" case dentro de "medio".
  *
@@ -450,17 +454,27 @@ export async function findMatchingArticleIds(
     .split(/\s+/)
     // Quita puntuación al principio/fin de cada palabra (p. ej. «¿De» -> «De»,
     // «será?» -> «será») para que los límites de palabra \y casen y para no
-    // buscar signos sueltos. Se conserva la palabra con acentos: unaccent()
-    // se aplica en SQL.
-    .map((w) => w.replace(/^[^\p{L}\p{N}]+/u, "").replace(/[^\p{L}\p{N}]+$/u, ""))
+    // buscar signos sueltos. Se conservan letras (incluidas acentuadas/latinas,
+    // rango À-ÿ) y dígitos; unaccent() se aplica luego en SQL. Se evitan las
+    // clases \p{…} (flag «u») por compatibilidad con el target de TypeScript.
+    .map((w) =>
+      w.replace(/^[^0-9A-Za-zÀ-ÿ]+/, "").replace(/[^0-9A-Za-zÀ-ÿ]+$/, "")
+    )
     .filter((w) => w.length > 0)
     .slice(0, 10);
   if (words.length === 0) return [];
 
+  // Palabra sin acentos y con los metacaracteres regex escapados (en SQL, tras
+  // unaccent). Base para los patrones de límite de palabra y de frase.
+  const escWord = (w: string) =>
+    Prisma.sql`regexp_replace(unaccent(${w}), ${REGEX_META_CLASS}, ${REGEX_META_REPLACEMENT}, 'g')`;
+  // Patrón \y<palabra>\y (palabra completa). Ojo: dentro de un template literal
+  // hay que escribir «\\y» para que llegue a SQL una barra invertida real.
+  const boundedPat = (w: string) =>
+    Prisma.sql`('\\y' || ${escWord(w)} || '\\y')`;
+
   const wordCond = (w: string) => {
-    // Patrón: \y<palabra-sin-acentos-y-escapada>\y, construido en SQL para que
-    // el escape ocurra DESPUÉS de unaccent() (ver nota de la función).
-    const pat = Prisma.sql`('\y' || regexp_replace(unaccent(${w}), ${REGEX_META_CLASS}, ${REGEX_META_REPLACEMENT}, 'g') || '\y')`;
+    const pat = boundedPat(w);
     return Prisma.sql`(
       unaccent(a."title") ~* ${pat}
       OR unaccent(coalesce(a."excerpt", '')) ~* ${pat}
@@ -473,6 +487,30 @@ export async function findMatchingArticleIds(
       )
     )`;
   };
+
+  // Patrón de FRASE: las palabras en orden separadas por espacios (\y…\y). Sirve
+  // para puntuar más alto las coincidencias donde la consulta aparece contigua
+  // (p. ej. el título «¿De qué tierra será?»), no solo palabras sueltas dispersas.
+  const phrasePat = Prisma.sql`('\\y' || ${Prisma.join(
+    words.map(escWord),
+    " || '[[:space:]]+' || "
+  )} || '\\y')`;
+
+  // Nº de palabras de la consulta presentes en el TÍTULO (0..N).
+  const titleHits = Prisma.join(
+    words.map((w) => Prisma.sql`(unaccent(a."title") ~* ${boundedPat(w)})::int`),
+    " + "
+  );
+
+  // Orden por relevancia: primero la frase en el título, luego cuántas palabras
+  // hay en el título, luego la frase en el extracto y, en empate, por fecha.
+  // Mantiene todos los resultados (no reduce recall), solo mejora el orden.
+  const orderBy = Prisma.sql`
+    (unaccent(a."title") ~* ${phrasePat}) DESC,
+    (${titleHits}) DESC,
+    (unaccent(coalesce(a."excerpt", '')) ~* ${phrasePat}) DESC,
+    a."publishedAt" DESC NULLS LAST
+  `;
 
   const statusCond = opts.publishedOnly
     ? Prisma.sql`AND a."status"::text = 'PUBLISHED'`
@@ -492,7 +530,7 @@ export async function findMatchingArticleIds(
     WHERE ${Prisma.join(words.map(wordCond), " AND ")}
       ${statusCond}
       ${catCond}
-    ORDER BY a."publishedAt" DESC NULLS LAST
+    ORDER BY ${orderBy}
   `);
   return idRows.map((r) => r.id);
 }
