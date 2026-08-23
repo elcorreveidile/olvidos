@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 import { db } from "@/lib/db";
 import { auth } from "@/lib/auth";
 import Link from "next/link";
@@ -40,10 +41,17 @@ export default async function CreateMemberPage() {
     const bio = formData.get("bio") as string;
     const isPublic = formData.get("isPublic") === "true";
 
+    // redirect() lanza internamente, así que se llama SIEMPRE fuera del try
+    // (si no, el catch se tragaría el éxito y acabaría en la página de error).
     if (!userId) {
-      return redirect("/admin/socios?error=Selecciona un usuario");
+      redirect("/admin/socios?error=Selecciona un usuario");
     }
 
+    // Solo se asigna número si se ha introducido uno válido; en blanco se deja
+    // que actúe el autoincremento (memberNumber es Int NOT NULL con default).
+    const parsedNumber = memberNumber ? parseInt(memberNumber, 10) : NaN;
+
+    let outcome: string;
     try {
       // Check if user already has a member record
       const existingMember = await db.member.findFirst({
@@ -51,27 +59,40 @@ export default async function CreateMemberPage() {
       });
 
       if (existingMember) {
-        return redirect("/admin/socios?error=El usuario ya tiene un registro de socio");
+        outcome = "/admin/socios?error=El usuario ya tiene un registro de socio";
+      } else {
+        await db.member.create({
+          data: {
+            userId,
+            membershipLevel,
+            status,
+            city,
+            bio,
+            isPublic,
+            ...(Number.isFinite(parsedNumber)
+              ? { memberNumber: parsedNumber }
+              : {}),
+          },
+        });
+
+        // Al convertir un usuario en socio se le asigna el rol MEMBER
+        // (coherente con lib/actions/members.ts#createMember).
+        await db.user.update({
+          where: { id: userId },
+          data: { role: "MEMBER" },
+        });
+
+        revalidatePath("/admin/socios");
+        revalidatePath("/socios");
+
+        outcome = "/admin/socios?success=Socio creado correctamente";
       }
-
-      // Create member
-      await db.member.create({
-        data: {
-          userId,
-          membershipLevel,
-          status,
-          memberNumber: memberNumber ? parseInt(memberNumber) : null,
-          city,
-          bio,
-          isPublic,
-        },
-      });
-
-      redirect("/admin/socios?success=Socio creado correctamente");
     } catch (error) {
       console.error("Error creating member:", error);
-      redirect("/admin/socios?error=Error al crear socio");
+      outcome = "/admin/socios?error=Error al crear socio";
     }
+
+    redirect(outcome);
   }
 
   return (
