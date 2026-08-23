@@ -11,12 +11,12 @@ import {
   Search,
   Eye,
   Edit,
-  Trash2,
   Calendar,
   User,
   FolderOpen,
   Layers,
 } from "lucide-react";
+import { ArchiveArticleButton } from "@/components/admin/ArchiveArticleButton";
 
 async function ArticlesList({
   searchParams,
@@ -258,6 +258,16 @@ async function ArticlesList({
             >
               Revisión
             </Link>
+            <Link
+              href={buildQuery({ status: "ARCHIVED", page: undefined })}
+              className={`px-4 py-2 rounded-lg transition-colors ${
+                searchParams.status === "ARCHIVED"
+                  ? "bg-coral text-white"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              }`}
+            >
+              Archivados
+            </Link>
           </div>
         </div>
       </div>
@@ -390,12 +400,10 @@ async function ArticlesList({
                       >
                         <Edit className="w-4 h-4" />
                       </Link>
-                      <button
-                        className="text-red-600 hover:text-red-900 transition-colors"
-                        title="Archivar"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </button>
+                      <ArchiveArticleButton
+                        id={article.id}
+                        label={article.title}
+                      />
                     </div>
                   </td>
                 </tr>
