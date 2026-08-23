@@ -83,13 +83,21 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           const vt = await db.verificationToken.findUnique({
             where: { token: hashed },
           });
-          if (!vt || vt.identifier !== email || vt.expires < new Date()) {
+          // Debe ser un token de tipo MAGIC_LINK: un token de reset de
+          // contraseña no puede servir para iniciar sesión.
+          if (
+            !vt ||
+            vt.identifier !== email ||
+            vt.type !== "MAGIC_LINK" ||
+            vt.expires < new Date()
+          ) {
             return null;
           }
 
-          // Un solo uso: invalida cualquier token pendiente de ese email.
+          // Un solo uso: invalida los enlaces mágicos pendientes de ese email
+          // (sin tocar un posible token de reset de contraseña en curso).
           await db.verificationToken.deleteMany({
-            where: { identifier: email },
+            where: { identifier: email, type: "MAGIC_LINK" },
           });
 
           const user = await db.user.findUnique({ where: { email } });
@@ -207,28 +215,46 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     },
     async jwt({ token, user, account }) {
       if (user) {
-        console.log("[Auth] JWT callback - user data:", { id: user.id, email: user.email, role: user.role, provider: account?.provider });
-        // User data from authorize callback or signIn callback
+        // Inicio de sesión: fija id/rol y el tokenVersion actual del usuario.
         token.role = user.role || "USER";
         token.id = user.id;
-        console.log("[Auth] JWT token updated with role:", token.role, "id:", token.id);
-      } else {
-        console.log("[Auth] JWT callback - using existing token, role:", token.role);
-        // If token exists but has no role or role is USER, try to get it from database
-        if (token.id && (!token.role || token.role === "USER")) {
-          console.log("[Auth] Token has no role or USER role, checking database for user:", token.id);
+        const uv = (user as { tokenVersion?: number }).tokenVersion;
+        if (typeof uv === "number") {
+          token.tokenVersion = uv;
+        } else if (user.id) {
           try {
             const dbUser = await db.user.findUnique({
-              where: { id: token.id as string },
-              select: { role: true }
+              where: { id: user.id },
+              select: { tokenVersion: true },
             });
-            if (dbUser) {
-              console.log("[Auth] Found user in DB with role:", dbUser.role);
-              token.role = dbUser.role;
-            }
+            token.tokenVersion = dbUser?.tokenVersion ?? 0;
           } catch (error) {
-            console.error("[Auth] Error checking database for user role:", error);
+            console.error("[Auth] Error reading tokenVersion on sign-in:", error);
+            token.tokenVersion = 0;
           }
+        }
+        console.log("[Auth] JWT set:", { id: token.id, role: token.role, provider: account?.provider });
+        return token;
+      }
+
+      // Llamadas posteriores: se valida contra la BD para poder CERRAR sesiones
+      // tras un cambio de contraseña (la sesión es JWT). Si el tokenVersion del
+      // token no coincide con el de la BD, o el usuario ya no existe, se
+      // devuelve null y next-auth limpia la cookie de sesión (logout).
+      if (token.id) {
+        try {
+          const dbUser = await db.user.findUnique({
+            where: { id: token.id as string },
+            select: { role: true, tokenVersion: true },
+          });
+          if (!dbUser) return null;
+          const current = (token.tokenVersion as number | undefined) ?? 0;
+          if (current !== dbUser.tokenVersion) return null;
+          token.role = dbUser.role;
+        } catch (error) {
+          // Ante un fallo de BD no cerramos la sesión (evita expulsar por un
+          // problema transitorio); se conserva el token tal cual.
+          console.error("[Auth] Error validating token against DB:", error);
         }
       }
       return token;

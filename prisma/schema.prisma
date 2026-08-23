@@ -15,6 +15,10 @@ model User {
   image         String?
   role          Role      @default(USER)
   emailVerified DateTime?
+  // Se incrementa al restablecer la contraseña para invalidar los JWT emitidos
+  // antes (la sesión es JWT, no hay filas Session que borrar). El callback jwt
+  // compara este valor con el del token y cierra la sesión si no coincide.
+  tokenVersion  Int       @default(0)
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
   accounts      Account[]
@@ -55,6 +59,12 @@ model VerificationToken {
   identifier String
   token      String   @unique
   expires    DateTime
+  // Discrimina el propósito del token para que un token de reset de contraseña
+  // no sirva como enlace mágico de login (ni al revés), ya que comparten tabla.
+  // Valores: "PASSWORD_RESET" | "MAGIC_LINK". Por defecto PASSWORD_RESET (falla
+  // en el lado seguro: un magic-link previo a la migración deja de servir para
+  // entrar y solo hay que pedir uno nuevo).
+  type       String   @default("PASSWORD_RESET")
 
   @@unique([identifier, token])
 }
