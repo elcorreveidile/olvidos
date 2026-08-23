@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
+import { stripe } from "@/lib/stripe";
 import { z } from "zod";
 
 const PaymentSchema = z.object({
