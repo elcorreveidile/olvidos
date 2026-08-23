@@ -1,9 +1,9 @@
 import { getAllCategories } from "@/lib/actions/categories";
-import { deleteCategory } from "@/lib/actions/categories";
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { Pencil, Trash2, Plus, FolderTree } from "lucide-react";
+import { Pencil, Plus, FolderTree } from "lucide-react";
+import { DeleteCategoryButton } from "@/components/admin/DeleteCategoryButton";
 
 export default async function AdminCategoriesPage() {
   const session = await auth();
@@ -90,31 +90,7 @@ export default async function AdminCategoriesPage() {
             >
               <Pencil className="w-4 h-4" />
             </Link>
-            <form action={async () => {
-              "use server";
-              const result = await deleteCategory(category.id);
-              if (result.error) {
-                // You might want to handle this error with a toast in the future
-                console.error(result.error);
-              }
-            }}>
-              <button
-                type="submit"
-                className="p-2 text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
-                title="Eliminar"
-                onClick={(e) => {
-                  if (
-                    !confirm(
-                      "¿Estás seguro de que deseas eliminar esta categoría?"
-                    )
-                  ) {
-                    e.preventDefault();
-                  }
-                }}
-              >
-                <Trash2 className="w-4 h-4" />
-              </button>
-            </form>
+            <DeleteCategoryButton id={category.id} label={category.name} />
           </div>
         </div>
         {hasChildren &&

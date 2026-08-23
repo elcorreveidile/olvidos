@@ -372,12 +372,14 @@ export async function getArticle(id: string) {
 export async function getArticles(filters?: {
   status?: string;
   search?: string;
+  category?: string;
   page?: number;
   limit?: number;
 }) {
   try {
     const status = filters?.status;
     const search = filters?.search;
+    const category = filters?.category;
     const page = filters?.page || 1;
     const limit = filters?.limit || 10;
     const skip = (page - 1) * limit;
@@ -386,6 +388,16 @@ export async function getArticles(filters?: {
 
     if (status && status !== "all") {
       where.status = status;
+    }
+
+    if (category && category !== "all") {
+      // Filtra por categoría (slug). Permite clasificar el contenido desde el
+      // panel: las tarjetas de categoría enlazan a ?categoria=<slug>.
+      where.categories = {
+        some: {
+          category: { slug: category },
+        },
+      };
     }
 
     if (search && search.trim()) {

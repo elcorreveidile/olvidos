@@ -4,22 +4,29 @@ import Image from "next/image";
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { getArticles } from "@/lib/actions/articles";
+import { getAllCategories } from "@/lib/actions/categories";
 import {
   FileText,
   Plus,
   Search,
-  Filter,
   Eye,
   Edit,
-  Trash2,
   Calendar,
   User,
+  FolderOpen,
+  Layers,
 } from "lucide-react";
+import { ArchiveArticleButton } from "@/components/admin/ArchiveArticleButton";
 
 async function ArticlesList({
   searchParams,
 }: {
-  searchParams: { status?: string; search?: string; page?: string };
+  searchParams: {
+    status?: string;
+    search?: string;
+    categoria?: string;
+    page?: string;
+  };
 }) {
   const session = await auth();
 
@@ -28,12 +35,39 @@ async function ArticlesList({
   }
 
   // Check permissions
-  const result = await getArticles({
-    status: searchParams.status,
-    search: searchParams.search,
-    page: searchParams.page ? parseInt(searchParams.page) : 1,
-    limit: 10,
-  });
+  const [result, categoriesResult] = await Promise.all([
+    getArticles({
+      status: searchParams.status,
+      search: searchParams.search,
+      category: searchParams.categoria,
+      page: searchParams.page ? parseInt(searchParams.page) : 1,
+      limit: 10,
+    }),
+    getAllCategories(),
+  ]);
+
+  const categories =
+    "categories" in categoriesResult && categoriesResult.categories
+      ? categoriesResult.categories
+      : [];
+  const activeCategory = searchParams.categoria;
+
+  // Construye una query string conservando los filtros activos y cambiando
+  // solo los que se pasen (útil para tarjetas, filtros de estado y paginación).
+  const buildQuery = (overrides: Record<string, string | undefined>) => {
+    const params = new URLSearchParams();
+    const merged: Record<string, string | undefined> = {
+      status: searchParams.status,
+      search: searchParams.search,
+      categoria: searchParams.categoria,
+      ...overrides,
+    };
+    for (const [key, value] of Object.entries(merged)) {
+      if (value && value !== "all") params.set(key, value);
+    }
+    const qs = params.toString();
+    return qs ? `/admin/articulos?${qs}` : "/admin/articulos";
+  };
 
   if (!result.success || !result.articles) {
     return (
@@ -94,6 +128,65 @@ async function ArticlesList({
         </Link>
       </div>
 
+      {/* Category cards: clasificar el contenido por categoría. Al pulsar una
+          tarjeta se listan todos los artículos de esa categoría. */}
+      {categories.length > 0 && (
+        <div>
+          <div className="mb-3 flex items-center gap-2 text-sm font-medium text-gray-500">
+            <Layers className="w-4 h-4" />
+            Clasificar por categoría
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+            {/* Todas */}
+            <Link
+              href={buildQuery({ categoria: undefined, page: undefined })}
+              className={`flex items-center justify-between gap-2 rounded-lg border p-4 transition-colors ${
+                !activeCategory
+                  ? "border-coral bg-coral text-white shadow-sm"
+                  : "border-gray-200 bg-white hover:border-coral hover:bg-coral-50"
+              }`}
+            >
+              <span className="flex items-center gap-2 font-medium">
+                <FolderOpen className="w-4 h-4 shrink-0" />
+                Todas
+              </span>
+            </Link>
+            {categories.map((category: any) => {
+              const isActive = activeCategory === category.slug;
+              return (
+                <Link
+                  key={category.id}
+                  href={buildQuery({
+                    // Volver a pulsar la categoría activa la deselecciona.
+                    categoria: isActive ? undefined : category.slug,
+                    page: undefined,
+                  })}
+                  className={`flex items-center justify-between gap-2 rounded-lg border p-4 transition-colors ${
+                    isActive
+                      ? "border-coral bg-coral text-white shadow-sm"
+                      : "border-gray-200 bg-white hover:border-coral hover:bg-coral-50"
+                  }`}
+                  title={category.description ?? category.name}
+                >
+                  <span className="min-w-0 truncate font-medium">
+                    {category.name}
+                  </span>
+                  <span
+                    className={`shrink-0 rounded-full px-2 py-0.5 text-xs font-semibold ${
+                      isActive
+                        ? "bg-white/20 text-white"
+                        : "bg-gray-100 text-gray-600"
+                    }`}
+                  >
+                    {category._count?.articles ?? 0}
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
       {/* Filters */}
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
         <div className="flex flex-col md:flex-row gap-4">
@@ -101,6 +194,9 @@ async function ArticlesList({
           <form method="get" className="flex flex-1 gap-2">
             {searchParams.status && searchParams.status !== "all" && (
               <input type="hidden" name="status" value={searchParams.status} />
+            )}
+            {activeCategory && (
+              <input type="hidden" name="categoria" value={activeCategory} />
             )}
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
@@ -123,7 +219,7 @@ async function ArticlesList({
           {/* Status filter */}
           <div className="flex gap-2">
             <Link
-              href="/admin/articulos"
+              href={buildQuery({ status: undefined, page: undefined })}
               className={`px-4 py-2 rounded-lg transition-colors ${
                 !searchParams.status || searchParams.status === "all"
                   ? "bg-coral text-white"
@@ -133,7 +229,7 @@ async function ArticlesList({
               Todos
             </Link>
             <Link
-              href="?status=PUBLISHED"
+              href={buildQuery({ status: "PUBLISHED", page: undefined })}
               className={`px-4 py-2 rounded-lg transition-colors ${
                 searchParams.status === "PUBLISHED"
                   ? "bg-coral text-white"
@@ -143,7 +239,7 @@ async function ArticlesList({
               Publicados
             </Link>
             <Link
-              href="?status=DRAFT"
+              href={buildQuery({ status: "DRAFT", page: undefined })}
               className={`px-4 py-2 rounded-lg transition-colors ${
                 searchParams.status === "DRAFT"
                   ? "bg-coral text-white"
@@ -153,7 +249,7 @@ async function ArticlesList({
               Borradores
             </Link>
             <Link
-              href="?status=REVIEW"
+              href={buildQuery({ status: "REVIEW", page: undefined })}
               className={`px-4 py-2 rounded-lg transition-colors ${
                 searchParams.status === "REVIEW"
                   ? "bg-coral text-white"
@@ -161,6 +257,16 @@ async function ArticlesList({
               }`}
             >
               Revisión
+            </Link>
+            <Link
+              href={buildQuery({ status: "ARCHIVED", page: undefined })}
+              className={`px-4 py-2 rounded-lg transition-colors ${
+                searchParams.status === "ARCHIVED"
+                  ? "bg-coral text-white"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              }`}
+            >
+              Archivados
             </Link>
           </div>
         </div>
@@ -216,6 +322,31 @@ async function ArticlesList({
                           {article.excerpt?.substring(0, 80)}
                           {article.excerpt && article.excerpt.length > 80 ? "..." : ""}
                         </div>
+                        {(article as any).categories &&
+                          (article as any).categories.length > 0 && (
+                            <div className="mt-2 flex flex-wrap gap-1">
+                              {(article as any).categories.map((c: any) => {
+                                const cat = c.category;
+                                const isActive = activeCategory === cat.slug;
+                                return (
+                                  <Link
+                                    key={cat.id}
+                                    href={buildQuery({
+                                      categoria: cat.slug,
+                                      page: undefined,
+                                    })}
+                                    className={`inline-flex items-center rounded px-2 py-0.5 text-xs font-medium transition-colors ${
+                                      isActive
+                                        ? "bg-coral text-white"
+                                        : "bg-gray-100 text-gray-600 hover:bg-coral-100 hover:text-coral-700"
+                                    }`}
+                                  >
+                                    {cat.name}
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          )}
                       </div>
                     </div>
                   </td>
@@ -269,12 +400,10 @@ async function ArticlesList({
                       >
                         <Edit className="w-4 h-4" />
                       </Link>
-                      <button
-                        className="text-red-600 hover:text-red-900 transition-colors"
-                        title="Archivar"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </button>
+                      <ArchiveArticleButton
+                        id={article.id}
+                        label={article.title}
+                      />
                     </div>
                   </td>
                 </tr>
@@ -302,7 +431,7 @@ async function ArticlesList({
           <div className="flex gap-2">
             {pagination.page > 1 && (
               <Link
-                href={`?page=${pagination.page - 1}&status=${searchParams.status || "all"}${searchParams.search ? `&search=${encodeURIComponent(searchParams.search)}` : ""}`}
+                href={buildQuery({ page: String(pagination.page - 1) })}
                 className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
               >
                 Anterior
@@ -313,7 +442,7 @@ async function ArticlesList({
             </span>
             {pagination.page < pagination.totalPages && (
               <Link
-                href={`?page=${pagination.page + 1}&status=${searchParams.status || "all"}${searchParams.search ? `&search=${encodeURIComponent(searchParams.search)}` : ""}`}
+                href={buildQuery({ page: String(pagination.page + 1) })}
                 className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
               >
                 Siguiente
@@ -329,7 +458,12 @@ async function ArticlesList({
 export default function AdminArticulosPage({
   searchParams,
 }: {
-  searchParams: { status?: string; search?: string; page?: string };
+  searchParams: {
+    status?: string;
+    search?: string;
+    categoria?: string;
+    page?: string;
+  };
 }) {
   return (
     <div className="container mx-auto px-4 py-8">
