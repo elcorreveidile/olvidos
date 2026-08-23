@@ -21,7 +21,15 @@ export default async function AdminLayout({
   const userEmail = session.user.email;
   const userRole = session.user.role;
 
-  if (userRole !== "ADMIN" && userRole !== "EDITOR") {
+  // MEMBER_ADMIN («Admin de socios») debe poder entrar al panel: las páginas de
+  // socios, pagos y contabilidad (y sus server actions) le conceden acceso
+  // explícitamente. Sin él aquí, quedaba bloqueado en la puerta y el rol era
+  // inservible. Cada página aplica además su propia comprobación de rol.
+  if (
+    userRole !== "ADMIN" &&
+    userRole !== "EDITOR" &&
+    userRole !== "MEMBER_ADMIN"
+  ) {
     redirect("/");
   }
 
