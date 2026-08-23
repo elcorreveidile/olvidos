@@ -429,7 +429,18 @@ export async function getAllTags() {
  * firma, contenido o nombre de autor). Ordenados por fecha de publicación.
  * Requiere la extensión `unaccent`. Lo usan la web pública y el panel admin.
  * Los límites de palabra (\y) evitan que "di" case dentro de "medio".
+ *
+ * El patrón regex se construye en SQL DESPUÉS de aplicar `unaccent()` a la
+ * palabra y escapando allí los metacaracteres. Es imprescindible respetar ese
+ * orden: `unaccent()` transforma signos como «¿» en «?» (un cuantificador
+ * regex), así que escapar en JS antes de `unaccent()` dejaría patrones
+ * inválidos (p. ej. «\y?De\y») que hacían fallar la búsqueda con un 500.
  */
+// Clase de caracteres (POSIX ARE) con los metacaracteres regex a escapar.
+const REGEX_META_CLASS = "[.*+?^${}()|[\\]\\\\]";
+// Reemplazo de regexp_replace: barra invertida literal (\\) + coincidencia (\&).
+const REGEX_META_REPLACEMENT = "\\\\\\&";
+
 export async function findMatchingArticleIds(
   query: string,
   opts: { publishedOnly?: boolean; categorySlug?: string } = {}
@@ -437,22 +448,28 @@ export async function findMatchingArticleIds(
   const words = query
     .trim()
     .split(/\s+/)
+    // Quita puntuación al principio/fin de cada palabra (p. ej. «¿De» -> «De»,
+    // «será?» -> «será») para que los límites de palabra \y casen y para no
+    // buscar signos sueltos. Se conserva la palabra con acentos: unaccent()
+    // se aplica en SQL.
+    .map((w) => w.replace(/^[^\p{L}\p{N}]+/u, "").replace(/[^\p{L}\p{N}]+$/u, ""))
     .filter((w) => w.length > 0)
     .slice(0, 10);
   if (words.length === 0) return [];
 
   const wordCond = (w: string) => {
-    const esc = w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const pat = `\\y${esc}\\y`;
+    // Patrón: \y<palabra-sin-acentos-y-escapada>\y, construido en SQL para que
+    // el escape ocurra DESPUÉS de unaccent() (ver nota de la función).
+    const pat = Prisma.sql`('\y' || regexp_replace(unaccent(${w}), ${REGEX_META_CLASS}, ${REGEX_META_REPLACEMENT}, 'g') || '\y')`;
     return Prisma.sql`(
-      unaccent(a."title") ~* unaccent(${pat})
-      OR unaccent(coalesce(a."excerpt", '')) ~* unaccent(${pat})
-      OR unaccent(coalesce(a."byline", '')) ~* unaccent(${pat})
-      OR unaccent(a."content") ~* unaccent(${pat})
+      unaccent(a."title") ~* ${pat}
+      OR unaccent(coalesce(a."excerpt", '')) ~* ${pat}
+      OR unaccent(coalesce(a."byline", '')) ~* ${pat}
+      OR unaccent(a."content") ~* ${pat}
       OR EXISTS (
         SELECT 1 FROM "AuthorsOnArticles" aoa
         JOIN "Author" au ON au."id" = aoa."authorId"
-        WHERE aoa."articleId" = a."id" AND unaccent(au."name") ~* unaccent(${pat})
+        WHERE aoa."articleId" = a."id" AND unaccent(au."name") ~* ${pat}
       )
     )`;
   };
