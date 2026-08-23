@@ -35,6 +35,16 @@ export default async function AdminUsersPage() {
     redirect("/login");
   }
 
+  // El listado expone nombre, email, rol y estado de socio de TODAS las cuentas:
+  // se restringe a ADMIN/MEMBER_ADMIN, igual que socios/pagos/contabilidad
+  // (antes solo comprobaba la sesión, así que un EDITOR veía todo el directorio).
+  if (
+    session.user.role !== "ADMIN" &&
+    session.user.role !== "MEMBER_ADMIN"
+  ) {
+    redirect("/admin");
+  }
+
   const users = await db.user.findMany({
     include: {
       member: {
