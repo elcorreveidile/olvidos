@@ -50,11 +50,9 @@ export async function POST(req: Request) {
     }
 
     console.error("Error in user registration:", error);
+    // No se devuelve error.message al cliente (evita filtrar detalles internos).
     return NextResponse.json(
-      {
-        error:
-          error instanceof Error ? error.message : "Error al registrar usuario",
-      },
+      { error: "Error al registrar usuario" },
       { status: 500 }
     );
   }

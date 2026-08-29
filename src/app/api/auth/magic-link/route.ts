@@ -55,9 +55,13 @@ export async function POST(req: Request) {
       .digest("hex");
     const expires = new Date(Date.now() + 1000 * 60 * 60); // 1 hora
 
-    await db.verificationToken.deleteMany({ where: { identifier: email } });
+    // Solo se limpian/crean tokens de enlace mágico (no se pisa un token de
+    // reset de contraseña que el usuario pudiera tener en curso).
+    await db.verificationToken.deleteMany({
+      where: { identifier: email, type: "MAGIC_LINK" },
+    });
     await db.verificationToken.create({
-      data: { identifier: email, token: hashedToken, expires },
+      data: { identifier: email, token: hashedToken, expires, type: "MAGIC_LINK" },
     });
 
     // 5) Envío del enlace.

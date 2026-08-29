@@ -250,14 +250,10 @@ async function CalendarView({ year, month }: { year: number; month: number }) {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <Calendar
-        events={events}
-        year={year}
-        month={month}
-        onMonthChange={() => {
-          // Navigation is handled by href links in the Calendar component
-        }}
-      />
+      {/* La navegación entre meses la hacen enlaces <a> dentro de Calendar, así
+          que no se pasa onMonthChange: pasar una función desde un Server
+          Component a un Client Component rompe el render (500). */}
+      <Calendar events={events} year={year} month={month} />
     </div>
   );
 }

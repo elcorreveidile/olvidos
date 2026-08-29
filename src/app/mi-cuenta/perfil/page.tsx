@@ -63,12 +63,14 @@ export default async function MemberProfilePage() {
           <CardContent>
             <form action={async (formData) => {
               "use server";
+              // Este formulario NO gestiona bio ni isPublic (eso está en el
+              // formulario "Perfil Público"). Enviarlos aquí ponía isPublic a
+              // false —porque no hay campo isPublic— y sacaba al socio del
+              // directorio al guardar un simple cambio de teléfono/dirección.
               const result = await updateMember(member.id, {
-                bio: formData.get("bio") as string || undefined,
                 phone: formData.get("phone") as string || undefined,
                 address: formData.get("address") as string || undefined,
                 city: formData.get("city") as string || undefined,
-                isPublic: formData.get("isPublic") === "true",
               });
               if (result.success) {
                 redirect("/mi-cuenta/perfil?success=true");

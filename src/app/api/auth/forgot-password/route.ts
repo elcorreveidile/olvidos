@@ -32,12 +32,16 @@ export async function POST(req: Request) {
     const hashedToken = crypto.createHash("sha256").update(rawToken).digest("hex");
     const expires = new Date(Date.now() + 1000 * 60 * 60); // 1 hour
 
-    await db.verificationToken.deleteMany({ where: { identifier: email } });
+    // Solo se limpian/crean tokens de reset (no se pisa un enlace mágico en curso).
+    await db.verificationToken.deleteMany({
+      where: { identifier: email, type: "PASSWORD_RESET" },
+    });
     await db.verificationToken.create({
       data: {
         identifier: email,
         token: hashedToken,
         expires,
+        type: "PASSWORD_RESET",
       },
     });
 

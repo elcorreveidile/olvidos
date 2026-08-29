@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { auth } from "@/lib/auth";
+import { db } from "@/lib/db";
 import { getArticleBySlug, getPublishedArticles } from "@/lib/actions/articles";
 import { SITE_URL, SITE_NAME, ORGANIZATION } from "@/lib/site";
 import { splitPasos, hasPasos } from "@/lib/pasos";
@@ -57,6 +59,27 @@ export default async function ArticlePage({
     ? Math.min(Math.max(1, Number(searchParams?.paso) || 1), pasos.length)
     : 1;
   const contentHtml = pieza ? pasos[currentPaso - 1].html : article.content;
+
+  // Muro para artículos "solo socios": el cuerpo NUNCA debe llegar al HTML de
+  // quien no tiene acceso. Solo se llama a auth() cuando el artículo es
+  // membersOnly, así los artículos normales siguen siendo estáticos.
+  // Tienen acceso: staff (ADMIN/EDITOR/MEMBER_ADMIN) y socios con estado ACTIVE.
+  let showFullContent = true;
+  if (article.membersOnly) {
+    const session = await auth();
+    const role = session?.user?.role;
+    if (role === "ADMIN" || role === "EDITOR" || role === "MEMBER_ADMIN") {
+      showFullContent = true;
+    } else if (session?.user?.id) {
+      const activeMember = await db.member.findFirst({
+        where: { userId: session.user.id, status: "ACTIVE" },
+        select: { id: true },
+      });
+      showFullContent = Boolean(activeMember);
+    } else {
+      showFullContent = false;
+    }
+  }
 
   const recentResult = await getPublishedArticles({ limit: 5 });
   const recentArticles =
@@ -195,18 +218,20 @@ export default async function ArticlePage({
           )}
 
           {/* Pasos (móvil): la barra lateral se oculta en móvil */}
-          {pieza && (
+          {pieza && showFullContent && (
             <PasosNav pasos={pasos} slug={article.slug} current={currentPaso} horizontal />
           )}
 
-          {/* Contenido */}
-          <div
-            className="prose-editorial"
-            dangerouslySetInnerHTML={{ __html: contentHtml }}
-          />
+          {/* Contenido (oculto si es solo para socios y no hay acceso) */}
+          {showFullContent && (
+            <div
+              className="prose-editorial"
+              dangerouslySetInnerHTML={{ __html: contentHtml }}
+            />
+          )}
 
           {/* Navegación entre pasos */}
-          {pieza && pasos.length > 1 && (
+          {pieza && showFullContent && pasos.length > 1 && (
             <nav className="mt-10 flex items-center justify-between gap-4 border-t border-acero-light/40 pt-6">
               {currentPaso > 1 ? (
                 <Link
@@ -252,13 +277,18 @@ export default async function ArticlePage({
             </div>
           )}
 
-          {/* Teaser socios */}
-          {article.membersOnly && article.excerpt && (
+          {/* Teaser socios: se muestra cuando el artículo es exclusivo y quien
+              lo ve no tiene acceso (en ese caso el cuerpo no se ha renderizado). */}
+          {article.membersOnly && !showFullContent && (
             <div className="mt-10 rounded-sm border border-coral/30 bg-coral/5 p-6">
               <h3 className="mb-2 font-bold text-tinta">
                 Contenido exclusivo para socios
               </h3>
-              <p className="mb-4 font-editorial text-tinta/70">{article.excerpt}</p>
+              {article.excerpt && (
+                <p className="mb-4 font-editorial text-tinta/70">
+                  {article.excerpt}
+                </p>
+              )}
               <Link
                 href="/hazte-socio"
                 className="inline-block rounded-sm bg-coral px-6 py-2 text-sm font-bold text-white transition-colors hover:bg-coral-dark"
@@ -271,9 +301,9 @@ export default async function ArticlePage({
 
         {/* Sidebar */}
         <aside className="hidden lg:block">
-          {(pieza || recentArticles.length > 0) && (
+          {((pieza && showFullContent) || recentArticles.length > 0) && (
             <div className="sticky top-28">
-              {pieza && (
+              {pieza && showFullContent && (
                 <PasosNav
                   pasos={pasos}
                   slug={article.slug}

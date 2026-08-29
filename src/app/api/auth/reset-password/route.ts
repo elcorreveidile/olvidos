@@ -21,6 +21,7 @@ export async function POST(req: Request) {
       where: {
         identifier: email,
         token: hashedToken,
+        type: "PASSWORD_RESET",
         expires: { gt: new Date() },
       },
     });
@@ -40,13 +41,20 @@ export async function POST(req: Request) {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
+    // Cambiar la contraseña e invalidar las sesiones JWT ya emitidas: subir
+    // tokenVersion hace que el callback jwt cierre las sesiones antiguas.
+    // (La sesión es JWT: `session.deleteMany` no borraba nada, era un no-op.)
     await db.user.update({
       where: { id: user.id },
-      data: { password: hashedPassword },
+      data: {
+        password: hashedPassword,
+        tokenVersion: { increment: 1 },
+      },
     });
 
-    await db.session.deleteMany({ where: { userId: user.id } });
-    await db.verificationToken.deleteMany({ where: { identifier: email } });
+    await db.verificationToken.deleteMany({
+      where: { identifier: email, type: "PASSWORD_RESET" },
+    });
 
     return NextResponse.json({ success: true, message: "Contraseña actualizada correctamente" });
   } catch (error) {
