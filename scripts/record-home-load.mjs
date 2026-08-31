@@ -9,7 +9,11 @@ const URL = process.env.TARGET_URL || "http://localhost:3000/";
 const OUT = process.env.OUT_DIR || join(process.cwd(), "footage-olvidos");
 const EXEC = process.env.PW_CHROMIUM || "/opt/pw-browsers/chromium";
 const INTERVAL_MS = 90;
-const DURATION_MS = 5300; // ~5 s (un pelín más para captar el telón ya abierto)
+const DURATION_MS = Number(process.env.DURATION_MS || 5300); // ventana de captura
+// Si SKIP_INTRO=1, se siembra el flag de localStorage que desactiva la intro
+// del telón (mismo key que usa el botón "No mostrar la próxima vez").
+const SKIP_INTRO = process.env.SKIP_INTRO === "1";
+const CURTAIN_SKIP_KEY = "olvidos-curtain-skip";
 
 const pad3 = (n) => String(n).padStart(3, "0");
 const pad5 = (n) => String(n).padStart(5, "0");
@@ -31,6 +35,18 @@ const context = await browser.newContext({
   bypassCSP: true,
   serviceWorkers: "block",
 });
+// Siembra el flag que desactiva la intro del telón ANTES de cargar cualquier
+// documento del origen, para que la home pinte directamente sin telón ni botón.
+if (SKIP_INTRO) {
+  await context.addInitScript((key) => {
+    try {
+      window.localStorage.setItem(key, "1");
+    } catch {
+      /* localStorage no disponible: se ignora */
+    }
+  }, CURTAIN_SKIP_KEY);
+}
+
 // Desactiva la caché HTTP a nivel de red para asegurar "metraje real" desde cero.
 await context.route("**/*", (route) => {
   const h = { ...route.request().headers(), "cache-control": "no-cache", pragma: "no-cache" };
