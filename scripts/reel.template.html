@@ -1,0 +1,283 @@
+<meta charset="utf-8" />
+<title>Reel Olvidos</title>
+<style>
+  /* __FONT_CSS__ */
+  :root {
+    --coral: #ff6261;
+    --coral-dark: #e85555;
+    --tinta: #141414;
+    --teatro: #7a1420;
+    --teatro-light: #9b1c2c;
+    --teatro-dark: #560d16;
+    --acero: #617685;
+    --paper: #ffffff;
+    --paper-warm: #f6f1ea;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+  #stage {
+    position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden;
+    font-family: "LibreFranklin", system-ui, sans-serif;
+  }
+
+  /* Fondos */
+  .bg { position: absolute; inset: 0; }
+  #bgPaper {
+    background:
+      radial-gradient(120% 80% at 50% 0%, #ffffff 0%, var(--paper-warm) 100%);
+  }
+  #bgVelvet {
+    background:
+      radial-gradient(120% 90% at 50% 30%, var(--teatro-light) 0%, var(--teatro) 42%, var(--teatro-dark) 100%);
+    opacity: 0;
+  }
+
+  /* Teléfono */
+  #phone {
+    position: absolute; left: 196px; top: 243px;
+    width: 688px; height: 1433px;
+    border-radius: 62px;
+    background: #0a0a0a;
+    box-shadow: 0 30px 90px rgba(0,0,0,.45), 0 6px 20px rgba(0,0,0,.35);
+    padding: 22px;
+  }
+  #screen {
+    position: absolute; left: 24px; top: 24px;
+    width: 640px; height: 1385px;
+    border-radius: 42px; overflow: hidden; background: #fff;
+  }
+  .shot {
+    position: absolute; top: 0; left: 0; width: 640px; height: auto;
+    will-change: transform; transform: translateY(0);
+  }
+  #imgArticle { opacity: 0; }
+  /* Muesca superior del teléfono */
+  #notch {
+    position: absolute; left: 50%; top: 30px; transform: translateX(-50%);
+    width: 150px; height: 30px; background: #0a0a0a; border-radius: 16px; z-index: 5;
+  }
+  /* Scrim inferior para legibilidad del rótulo */
+  #scrim {
+    position: absolute; left: 24px; right: 24px; bottom: 24px; height: 420px;
+    border-radius: 0 0 42px 42px;
+    background: linear-gradient(to bottom, rgba(20,4,8,0) 0%, rgba(60,10,18,.55) 55%, rgba(40,7,12,.92) 100%);
+    z-index: 4; opacity: 0;
+  }
+
+  /* Telón */
+  .curtain {
+    position: absolute; top: 0; height: 1920px; width: 552px; z-index: 20;
+    background:
+      repeating-linear-gradient(90deg,
+        var(--teatro-dark) 0px, var(--teatro) 26px, var(--teatro-light) 52px, var(--teatro) 78px, var(--teatro-dark) 104px);
+    box-shadow: inset 0 0 120px rgba(0,0,0,.55);
+  }
+  #curtL { left: 0; }
+  #curtR { right: 0; }
+  #curtL::after, #curtR::after {
+    content: ""; position: absolute; top: 0; bottom: 0; width: 40px;
+  }
+  #curtL::after { right: 0; background: linear-gradient(to left, rgba(0,0,0,.6), transparent); }
+  #curtR::after { left: 0; background: linear-gradient(to right, rgba(0,0,0,.6), transparent); }
+
+  #introLogo {
+    position: absolute; inset: 0; z-index: 21; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center; opacity: 0;
+  }
+  #introLogo .word { font-weight: 900; font-size: 148px; color: #fff; letter-spacing: -3px; line-height: 1; }
+  #introLogo .word b { color: var(--coral); font-weight: 900; }
+  #introLogo .sub { margin-top: 26px; font-family: "CrimsonText", Georgia, serif; font-size: 40px; color: rgba(255,255,255,.9); }
+
+  /* Rótulo inferior (dentro de zona segura: 230–1536) */
+  #rotulo {
+    position: absolute; left: 120px; right: 120px; top: 1300px; z-index: 30;
+    text-align: center; opacity: 0;
+  }
+  #rotulo .kick { font-weight: 800; font-size: 26px; letter-spacing: 6px; text-transform: uppercase; color: var(--coral); }
+  #rotulo .line { margin-top: 14px; font-weight: 800; font-size: 52px; line-height: 1.12; color: #fff; text-shadow: 0 2px 18px rgba(0,0,0,.5); }
+  #rotulo.dark .line { color: var(--tinta); text-shadow: none; }
+  #rotulo.dark .kick { color: var(--coral-dark); }
+
+  /* Cierre */
+  #close {
+    position: absolute; inset: 0; z-index: 40; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center; opacity: 0;
+  }
+  #close .mark { font-weight: 900; font-size: 210px; line-height: .8; color: #fff; letter-spacing: -6px; }
+  #close .mark b { color: var(--coral); }
+  #close .dom { margin-top: 20px; font-weight: 900; font-size: 92px; color: #fff; letter-spacing: -1px; }
+  #close .cta {
+    margin-top: 54px; font-weight: 800; font-size: 40px; color: var(--teatro-dark);
+    background: #fff; padding: 22px 52px; border-radius: 8px; letter-spacing: .5px;
+  }
+  #close .sub { margin-top: 40px; font-family: "CrimsonText", Georgia, serif; font-style: italic; font-size: 38px; color: rgba(255,255,255,.85); }
+
+  /* Grano/viñeta sutil */
+  #vignette { position: absolute; inset: 0; z-index: 35; pointer-events: none;
+    box-shadow: inset 0 0 220px rgba(0,0,0,.28); }
+</style>
+
+<div id="stage">
+  <div class="bg" id="bgPaper"></div>
+  <div class="bg" id="bgVelvet"></div>
+
+  <div id="phone">
+    <div id="screen">
+      <img class="shot" id="imgHome" />
+      <img class="shot" id="imgArticle" />
+      <div id="notch"></div>
+      <div id="scrim"></div>
+    </div>
+  </div>
+
+  <div id="rotulo"><div class="kick"></div><div class="line"></div></div>
+
+  <div class="curtain" id="curtL"></div>
+  <div class="curtain" id="curtR"></div>
+  <div id="introLogo">
+    <div class="word">[<b></b>olvidos</div>
+    <div class="sub">Revista de acciones culturales</div>
+  </div>
+
+  <div id="close">
+    <div class="mark">[<b>o</b></div>
+    <div class="dom">olvidos.es</div>
+    <div class="cta">Entra en olvidos.es</div>
+    <div class="sub">Literatura y memoria de Granada, desde 1981</div>
+  </div>
+
+  <div id="vignette"></div>
+</div>
+
+<script>
+// Los assets (imágenes reales en data-URI + dimensiones nativas) los inyecta el build.
+window.__ASSETS__ = window.__ASSETS__ || null; /* __ASSETS_INJECT__ */
+
+(function () {
+  const A = window.__ASSETS__;
+  const el = (id) => document.getElementById(id);
+  const imgHome = el("imgHome"), imgArticle = el("imgArticle");
+  imgHome.src = A.homeFull.src;
+  imgArticle.src = A.articleFull.src;
+
+  const SCREEN_W = 640, SCREEN_H = 1385;
+  const IMG_W = 780; // ancho intrínseco de las capturas (390 css * dSF2)
+  const scale = SCREEN_W / IMG_W;          // px pantalla por px device de la captura
+  const cssToScreen = 2 * scale;           // px pantalla por px CSS del sitio (dSF2)
+
+  // Duración visible (px pantalla) de cada captura, para acotar el paneo.
+  const homeDispH = A.homeFull.h * scale;      // h en device px
+  const artDispH = A.articleFull.h * scale;
+
+  // Easings
+  const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const easeInOutQuart = (t) => t < 0.5 ? 8*t*t*t*t : 1 - Math.pow(-2*t+2,4)/2;
+  const easeInOut = (t) => t<0.5 ? 2*t*t : 1-Math.pow(-2*t+2,2)/2;
+  const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+  // Fade helper: sube en [a,b], baja en [c,d]
+  const win = (t, a, b, c, d) => clamp(t<b ? (t-a)/(b-a) : t<c ? 1 : 1-(t-c)/(d-c), 0, 1);
+
+  // Paneo del sitio: dado un css-y objetivo, devuelve translateY (px pantalla, negativo)
+  const panCss = (cssY) => -(cssY * cssToScreen);
+
+  // Línea de tiempo (ms)
+  const TL = {
+    curtain: [0, 4200],
+    home:    [4000, 9000],
+    archive: [9000, 13600],
+    article: [13600, 18000],
+    close:   [17800, 20400],
+  };
+  window.__DURATION_MS__ = 20400;
+
+  const rot = el("rotulo"), rotK = rot.querySelector(".kick"), rotL = rot.querySelector(".line");
+  function setRot(kick, line, dark, op) {
+    rotK.textContent = kick; rotL.textContent = line;
+    rot.classList.toggle("dark", !!dark);
+    rot.style.opacity = op;
+  }
+
+  window.renderAt = function (t) {
+    // ---- fondos ----
+    // Velvet visible en telón y cierre; papel en el resto.
+    let velvet = 0;
+    if (t <= TL.curtain[1]) velvet = clamp(1 - (t - (TL.curtain[1]-700))/700, 0, 1);
+    if (t >= TL.close[0]) velvet = Math.max(velvet, clamp((t - TL.close[0]) / 600, 0, 1));
+    el("bgVelvet").style.opacity = velvet.toFixed(3);
+
+    // ---- teléfono base ----
+    const phone = el("phone");
+    // Sutil escala de entrada del teléfono al abrirse el telón
+    const introReveal = clamp((t - 1400) / 2600, 0, 1);
+    const phoneScale = lerp(0.96, 1.0, easeOut(clamp((t-2000)/2500,0,1)));
+    // En el cierre, el teléfono se aleja y desvanece
+    const closeP = clamp((t - TL.close[0]) / 700, 0, 1);
+    const phoneOp = 1 - closeP;
+    phone.style.opacity = phoneOp.toFixed(3);
+    phone.style.transform = `scale(${(phoneScale * (1 - 0.06*closeP)).toFixed(4)})`;
+    phone.style.transformOrigin = "50% 46%";
+
+    // ---- qué captura se ve ----
+    const showArticle = t >= (TL.article[0] - 500);
+    const artFade = clamp((t - (TL.article[0]-500)) / 700, 0, 1);
+    imgArticle.style.opacity = showArticle ? artFade.toFixed(3) : "0";
+
+    // ---- paneo ----
+    // Home + archivo: paneo continuo del css-y por tramos
+    let homeCssY = 30;
+    if (t < TL.home[1]) {
+      const p = easeInOut(clamp((t - TL.home[0]) / (TL.home[1]-TL.home[0]), 0, 1));
+      homeCssY = lerp(30, 720, p);
+    } else {
+      const p = easeInOut(clamp((t - TL.archive[0]) / (TL.archive[1]-TL.archive[0]), 0, 1));
+      homeCssY = lerp(720, 1780, p);
+    }
+    // límite para no pasar del final
+    const homeMaxCss = (homeDispH - SCREEN_H) / cssToScreen;
+    homeCssY = clamp(homeCssY, 0, homeMaxCss);
+    imgHome.style.transform = `translateY(${panCss(homeCssY).toFixed(1)}px)`;
+
+    // Artículo: paneo del título al cuerpo
+    const ap = easeInOut(clamp((t - TL.article[0]) / (TL.article[1]-TL.article[0]), 0, 1));
+    let artCssY = lerp(0, 2200, ap);
+    const artMaxCss = (artDispH - SCREEN_H) / cssToScreen;
+    artCssY = clamp(artCssY, 0, artMaxCss);
+    imgArticle.style.transform = `translateY(${panCss(artCssY).toFixed(1)}px)`;
+
+    // ---- telón ----
+    const cp = clamp((t - TL.curtain[0]) / (TL.curtain[1]-TL.curtain[0]), 0, 1);
+    const open = easeInOutQuart(cp);           // 0 cerrado -> 1 abierto
+    const off = open * 560;                    // px de apertura por paño (>552 para salir del todo)
+    el("curtL").style.transform = `translateX(${(-off).toFixed(1)}px)`;
+    el("curtR").style.transform = `translateX(${(off).toFixed(1)}px)`;
+    const curtVis = t < TL.curtain[1] + 60 ? 1 : 0;
+    el("curtL").style.opacity = curtVis; el("curtR").style.opacity = curtVis;
+    // Logo de la intro
+    el("introLogo").style.opacity = win(t, 300, 1200, 2600, 3600).toFixed(3);
+
+    // ---- scrim + rótulo por escena ----
+    let scrimOp = 0, rk = "", rl = "", rdark = false, rop = 0;
+    if (t >= TL.home[0] && t < TL.archive[0]) {
+      rk = "Desde 1981"; rl = "Literatura, pensamiento y memoria de Granada";
+      rop = win(t, TL.home[0]+500, TL.home[0]+1100, TL.archive[0]-700, TL.archive[0]-100);
+      scrimOp = rop; rdark = false;
+    } else if (t >= TL.archive[0] && t < TL.article[0]) {
+      rk = "La hemeroteca"; rl = "El archivo de la revista, en olvidos.es";
+      rop = win(t, TL.archive[0]+400, TL.archive[0]+1000, TL.article[0]-700, TL.article[0]-100);
+      scrimOp = rop; rdark = false;
+    } else if (t >= TL.article[0] && t < TL.close[0]) {
+      rk = "Palabras de hoy"; rl = "Artículos y apostillas para leer";
+      rop = win(t, TL.article[0]+700, TL.article[0]+1300, TL.close[0]-700, TL.close[0]-100);
+      scrimOp = rop; rdark = false;
+    }
+    el("scrim").style.opacity = (scrimOp*0.98).toFixed(3);
+    setRot(rk, rl, rdark, rop.toFixed(3));
+
+    // ---- cierre ----
+    el("close").style.opacity = clamp((t - (TL.close[0]+150)) / 650, 0, 1).toFixed(3);
+  };
+
+  window.__READY__ = true;
+})();
+</script>
