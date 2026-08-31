@@ -41,5 +41,9 @@ prisma/migrations/dev/
 # claude code (config personal, no compartida)
 .claude/settings.local.json
 
+# metraje generado para reels (binarios, no se versionan)
+/footage-olvidos/
+/footage-olvidos.zip
+
 # Datos personales de socios (DNIs/domicilios) — no subir a repo público
 scripts/import-socios.ts
