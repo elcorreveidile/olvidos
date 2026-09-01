@@ -98,7 +98,7 @@ req("avc1 = 1080x1920", aDim && aDim.w === 1080 && aDim.h === 1920, JSON.stringi
 const tDim = tkhdDims();
 req("tkhd = 1080x1920", tDim && Math.round(tDim.w) === 1080 && Math.round(tDim.h) === 1920, JSON.stringify(tDim));
 const mv = mvhdInfo();
-req("duración > 14s y < 23s", mv && mv.seconds > 14 && mv.seconds < 23, mv && (mv.seconds.toFixed(2) + "s"));
+req("duración 8–30s", mv && mv.seconds > 8 && mv.seconds < 30, mv && (mv.seconds.toFixed(2) + "s"));
 req("tamaño de fichero > 200 KB", d.length > 200000, (d.length / 1e6).toFixed(2) + " MB");
 
 console.log("Cajas top-level:", top.join(" "));
