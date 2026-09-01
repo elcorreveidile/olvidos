@@ -31,16 +31,16 @@ const HITOS = [
   {
     icon: Newspaper,
     titulo: "La primera revista impresa",
-    plazo: "Prevista para diciembre de 2027",
+    plazo: "Prevista para finales de 2027",
     texto:
-      "Volvemos al papel. La primera edición impresa recopilará todo lo publicado en la web durante el curso 2026-2027 (de septiembre de 2026 a agosto de 2027): un número que deja constancia en papel del trabajo de todo un año.",
+      "Volvemos al papel. La primera edición impresa reunirá una selección de todo lo publicado en la primera época digital: un número que deja constancia en papel de este trabajo.",
   },
   {
     icon: CalendarClock,
     titulo: "Una revista impresa cada curso",
-    plazo: "Compromiso anual",
+    plazo: "A partir de 2028",
     texto:
-      "A partir de ahí, el objetivo es editar cada curso un nuevo número impreso. La cuota de los socios es lo que hace sostenible este compromiso año tras año.",
+      "A partir de 2028, cada año tendrá su propio número impreso, que recogerá lo publicado en la web durante ese año. La cuota de los socios es lo que hace sostenible este compromiso año tras año.",
   },
   {
     icon: Globe,

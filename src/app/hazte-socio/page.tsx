@@ -104,7 +104,7 @@ const FAQ = [
   },
   {
     q: "¿Voy a recibir una revista impresa?",
-    a: "Estamos preparando la etapa impresa. Cada curso editaremos una revista en papel que recopila todo lo publicado en la web —la primera, con el curso 2026-2027, prevista para diciembre de 2027— y un libro con las editoriales que Mariano Maresca escribió para el programa Imaginarias de Canal Sur. Todos los socios reciben la edición digital; los socios Mecenas e Institucionales la reciben también impresa en casa.",
+    a: "Estamos preparando la etapa impresa. La primera revista en papel —prevista para finales de 2027— reunirá una selección de todo lo publicado en la primera época digital; a partir de 2028, cada año editaremos un número que recoge lo publicado ese año. También preparamos un libro con las editoriales que Mariano Maresca escribió para el programa Imaginarias de Canal Sur. Todos los socios reciben la edición digital; los socios Mecenas e Institucionales la reciben también impresa en casa.",
   },
   {
     q: "¿Hace falta vivir en Granada?",
@@ -238,9 +238,9 @@ export default async function HazteSocioPage() {
                 La revista impresa, cada curso
               </h3>
               <p className="font-editorial leading-snug text-white/80">
-                Recuperamos el papel: cada curso, un número impreso que recopila
-                todo lo publicado en la web. El primero, con el curso 2026-2027,
-                previsto para diciembre de 2027.
+                Recuperamos el papel. El primer número impreso —previsto para
+                finales de 2027— reunirá una selección de la primera época
+                digital; a partir de 2028, uno cada año.
               </p>
             </div>
             <div>
