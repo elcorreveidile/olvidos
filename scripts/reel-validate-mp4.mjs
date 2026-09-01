@@ -28,17 +28,25 @@ walk(0, d.length, 0, boxes);
 
 // stsd y avc1 son cajas "especiales" (sample description / sample entry) que el
 // walker genérico no abre; localizamos sus hijos (avc1, avcC) por su fourCC.
-function findFourCC(cc) {
+function findFourCC(cc, validate) {
   let from = 0, idx;
   const needle = Buffer.from(cc, "latin1");
   while ((idx = d.indexOf(needle, from)) !== -1) {
     // el fourCC de una caja va precedido de su tamaño (4 bytes): offset caja = idx-4
-    if (idx >= 4) return idx - 4;
+    const off = idx - 4;
+    if (off >= 0 && (!validate || validate(off))) return off;
     from = idx + 1;
   }
   return -1;
 }
-const avc1Off = findFourCC("avc1");
+// avc1 aparece también como "brand" en ftyp: aceptamos solo la ocurrencia cuyo
+// sample-entry tiene dimensiones plausibles (16..8192).
+const avc1Off = findFourCC("avc1", (off) => {
+  const wo = off + 8 + 6 + 2 + 16;
+  if (wo + 4 > d.length) return false;
+  const w = d.readUInt16BE(wo), h = d.readUInt16BE(wo + 2);
+  return w >= 16 && w <= 8192 && h >= 16 && h <= 8192;
+});
 const avcCOff = findFourCC("avcC");
 if (avc1Off >= 0) boxes.push({ t: "avc1", size: u32(avc1Off), off: avc1Off, depth: 99 });
 if (avcCOff >= 0) boxes.push({ t: "avcC", size: u32(avcCOff), off: avcCOff, depth: 99 });
