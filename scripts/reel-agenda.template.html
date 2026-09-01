@@ -1,0 +1,89 @@
+<meta charset="utf-8" />
+<title>Clip Agenda Olvidos</title>
+<!--
+  Clip "La agenda" (post 07). La sección /actividades no tiene encuentros
+  programados ahora mismo (estado real: "se anunciarán aquí"), así que el clip
+  presenta la SECCIÓN de forma honesta (header [encuentros, tipos de encuentro,
+  invitación a seguir) sin inventar eventos. Paneo de la captura real.
+    RAW_DIR=footage-reel/raw-agenda TEMPLATE=scripts/reel-agenda.template.html \
+    OUT=footage-reel/clip-agenda.mp4 PORTADA=footage-reel/portada-agenda.png \
+    PORTADA_T=1.6 QP=26 node scripts/reel-clip-build.mjs
+-->
+<style>
+  /* __FONT_CSS__ */
+  :root{--coral:#ff6261;--tinta:#141414;--teatro:#7a1420;--teatro-light:#9b1c2c;--teatro-dark:#560d16;--paper:#fff;--paper-warm:#f6f1ea;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:#000;}
+  #stage{position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden;font-family:"LibreFranklin",system-ui,sans-serif;}
+  .bg{position:absolute;inset:0;}
+  #bgPaper{background:radial-gradient(120% 80% at 50% 0%,#fff 0%,var(--paper-warm) 100%);}
+  #bgVelvet{background:radial-gradient(120% 90% at 50% 30%,var(--teatro-light) 0%,var(--teatro) 42%,var(--teatro-dark) 100%);opacity:0;}
+  #phone{position:absolute;left:196px;top:243px;width:688px;height:1433px;border-radius:62px;background:#0a0a0a;box-shadow:0 30px 90px rgba(0,0,0,.45),0 6px 20px rgba(0,0,0,.35);padding:22px;}
+  #screen{position:absolute;left:24px;top:24px;width:640px;height:1385px;border-radius:42px;overflow:hidden;background:#fff;}
+  #shot{position:absolute;top:0;left:0;width:640px;height:auto;will-change:transform;transform:translateY(0);}
+  #notch{position:absolute;left:50%;top:30px;transform:translateX(-50%);width:150px;height:30px;background:#0a0a0a;border-radius:16px;z-index:5;}
+  #scrim{position:absolute;left:24px;right:24px;bottom:24px;height:430px;border-radius:0 0 42px 42px;background:linear-gradient(to bottom,rgba(20,4,8,0) 0%,rgba(60,10,18,.5) 52%,rgba(40,7,12,.92) 100%);z-index:4;opacity:0;}
+  #rotulo{position:absolute;left:110px;right:110px;top:1290px;z-index:30;text-align:center;opacity:0;}
+  #rotulo .kick{font-weight:800;font-size:26px;letter-spacing:6px;text-transform:uppercase;color:var(--coral);}
+  #rotulo .line{margin-top:12px;font-weight:800;font-size:47px;line-height:1.14;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.5);}
+  #close{position:absolute;inset:0;z-index:40;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:0;}
+  #close .mark{font-weight:900;font-size:190px;line-height:.8;color:#fff;letter-spacing:-6px;}
+  #close .mark b{color:var(--coral);}
+  #close .cta2{margin-top:24px;font-weight:900;font-size:52px;color:#fff;}
+  #close .dom{margin-top:14px;font-weight:700;font-size:38px;color:rgba(255,255,255,.9);}
+  #close .cta{margin-top:42px;font-weight:800;font-size:34px;color:var(--teatro-dark);background:#fff;padding:19px 44px;border-radius:8px;}
+  #close .sub{margin-top:34px;font-family:"CrimsonText",Georgia,serif;font-style:italic;font-size:33px;color:rgba(255,255,255,.85);}
+  #vignette{position:absolute;inset:0;z-index:35;pointer-events:none;box-shadow:inset 0 0 220px rgba(0,0,0,.26);}
+</style>
+
+<div id="stage">
+  <div class="bg" id="bgPaper"></div>
+  <div class="bg" id="bgVelvet"></div>
+  <div id="phone"><div id="screen"><img id="shot" /><div id="notch"></div><div id="scrim"></div></div></div>
+  <div id="rotulo"><div class="kick"></div><div class="line"></div></div>
+  <div id="close">
+    <div class="mark">[<b>o</b></div>
+    <div class="cta2">La agenda</div>
+    <div class="dom">olvidos.es/actividades</div>
+    <div class="cta">Síguenos para no perdértelos</div>
+    <div class="sub">Encuentros de Olvidos, en Granada</div>
+  </div>
+  <div id="vignette"></div>
+</div>
+
+<script>
+window.__ASSETS__ = window.__ASSETS__ || null; /* __ASSETS_INJECT__ */
+(function(){
+  const A=window.__ASSETS__; const el=(id)=>document.getElementById(id);
+  const asset=A["agenda-full.png"]; el("shot").src=asset.src;
+  const SCREEN_W=640,SCREEN_H=1385,IMG_W=780;
+  const scale=SCREEN_W/IMG_W, cssToScreen=2*scale, dispH=asset.h*scale, maxCss=(dispH-SCREEN_H)/cssToScreen;
+  const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)), lerp=(a,b,t)=>a+(b-a)*t;
+  const easeInOut=(t)=>t<0.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+  const win=(t,a,b,c,d)=>clamp(t<b?(t-a)/(b-a):t<c?1:1-(t-c)/(d-c),0,1);
+  const panCss=(y)=>-(y*cssToScreen);
+  const TL={intro:[0,3200],mid:[3200,8000],close:[7800,11500]};
+  window.__DURATION_MS__=11500;
+  const rot=el("rotulo"),rk=rot.querySelector(".kick"),rl=rot.querySelector(".line");
+  window.renderAt=function(t){
+    el("bgVelvet").style.opacity=clamp((t-TL.close[0])/600,0,1).toFixed(3);
+    const phone=el("phone"); const closeP=clamp((t-TL.close[0])/700,0,1);
+    phone.style.opacity=(1-closeP).toFixed(3);
+    phone.style.transform=`scale(${(lerp(0.965,1,1-Math.pow(1-clamp(t/1200,0,1),3))*(1-0.06*closeP)).toFixed(4)})`;
+    phone.style.transformOrigin="50% 46%";
+    let y;
+    if(t<TL.mid[0]){const p=easeInOut(clamp(t/(TL.intro[1]-TL.intro[0]),0,1)); y=lerp(6,54,p);}
+    else {const p=easeInOut(clamp((t-TL.mid[0])/(TL.mid[1]-TL.mid[0]),0,1)); y=lerp(54,118,p);}
+    y=clamp(y,0,maxCss); el("shot").style.transform=`translateY(${panCss(y).toFixed(1)}px)`;
+    let scrimOp=0,kick="",line="",op=0;
+    if(t>=TL.intro[0] && t<TL.mid[0]+400){ kick="La agenda"; line="Presentaciones, recitales, talleres…";
+      op=win(t,500,1150,TL.mid[0]-300,TL.mid[0]+300); scrimOp=op; }
+    else if(t>=TL.mid[0]+400 && t<TL.close[0]){ kick="Próximos encuentros"; line="Síguenos y no te pierdas ninguno";
+      op=win(t,TL.mid[0]+700,TL.mid[0]+1300,TL.close[0]-700,TL.close[0]-100); scrimOp=op; }
+    el("scrim").style.opacity=(scrimOp*0.98).toFixed(3);
+    rk.textContent=kick; rl.textContent=line; rot.style.opacity=op.toFixed(3);
+    el("close").style.opacity=clamp((t-(TL.close[0]+150))/650,0,1).toFixed(3);
+  };
+  window.__READY__=true;
+})();
+</script>
