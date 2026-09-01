@@ -21,6 +21,14 @@
   .slide{position:relative;width:1080px;height:1350px;overflow:hidden;}
   .paper{background:radial-gradient(125% 95% at 50% -12%,#fff 0%,var(--paper) 100%);color:var(--tinta);}
   .velvet{background:radial-gradient(135% 105% at 50% 22%,var(--teatro-light) 0%,var(--teatro) 46%,var(--teatro-dark) 100%);color:var(--cream);}
+  .coral-bg{background:radial-gradient(135% 108% at 50% 18%,#ff8a89 0%,var(--coral) 46%,#e85555 100%);color:var(--tinta);}
+  .coral-bg .vig{position:absolute;inset:0;box-shadow:inset 0 0 260px rgba(120,10,20,.22);pointer-events:none;}
+  .coral-bg .wm{color:var(--tinta);} .coral-bg .wm b{color:#fff;}
+  .coral-bg .kick{color:var(--teatro-dark);}
+  .coral-bg .lede{color:rgba(20,16,14,.84);}
+  .coral-bg .rule{background:var(--tinta);}
+  .coral-bg .foot{color:rgba(20,16,14,.62);} .coral-bg .foot .dom{color:var(--tinta);}
+  .coral-bg .count{color:rgba(20,16,14,.5);}
   .velvet .vig{position:absolute;inset:0;box-shadow:inset 0 0 260px rgba(0,0,0,.34);pointer-events:none;}
   .wm{position:absolute;top:64px;left:84px;font-weight:900;font-size:34px;letter-spacing:-.01em;}
   .wm b{color:var(--coral);}
@@ -80,8 +88,8 @@
 <div class="deck">
 
   <!-- 01 · cover -->
-  <section class="slide velvet cover">
-    <div class="bracket" style="top:-60px;right:-40px;font-size:900px;color:rgba(255,98,97,.09);">[</div>
+  <section class="slide coral-bg cover">
+    <div class="bracket" style="top:-60px;right:-40px;font-size:900px;color:rgba(20,16,14,.07);">[</div>
     <div class="wm">[<b>o</b>lvidos</div>
     <div class="count">01 · 07</div>
     <div class="pad">
