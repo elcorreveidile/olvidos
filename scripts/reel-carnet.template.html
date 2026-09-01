@@ -1,0 +1,202 @@
+<meta charset="utf-8" />
+<title>Clip Carné Olvidos</title>
+<!--
+  Clip del carné digital (post 09 de la campaña). Reproduce FIELMENTE el
+  componente real src/components/members/DigitalCard.tsx (tarjeta oscura +
+  reverso con QR) con datos de EJEMPLO tipo plantilla ("#—", "Tu nombre"),
+  para no mostrar a ningún socio real. El QR es funcional.
+
+  Genera antes el asset del QR (usa la propia librería del proyecto):
+    mkdir -p footage-reel/raw-carnet
+    node -e 'require("qrcode").toFile("footage-reel/raw-carnet/qr.png","https://olvidos.es/hazte-socio",{width:640,margin:1,color:{dark:"#141414",light:"#ffffff"}})'
+  Luego:
+    RAW_DIR=footage-reel/raw-carnet TEMPLATE=scripts/reel-carnet.template.html \
+    OUT=footage-reel/clip-carnet.mp4 PORTADA=footage-reel/portada-carnet.png \
+    PORTADA_T=2.0 QP=26 node scripts/reel-clip-build.mjs
+-->
+
+<style>
+  /* __FONT_CSS__ */
+  :root{
+    --coral:#ff6261; --coral-dark:#e85555; --tinta:#141414; --tinta2:#3a1417;
+    --teatro:#7a1420; --teatro-light:#9b1c2c; --teatro-dark:#560d16;
+    --paper:#ffffff; --paper-warm:#f6f1ea;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:#000;}
+  #stage{position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden;font-family:"LibreFranklin",system-ui,sans-serif;}
+  .bg{position:absolute;inset:0;}
+  #bgPaper{background:radial-gradient(120% 80% at 50% 0%,#fff 0%,var(--paper-warm) 100%);}
+  #bgVelvet{background:radial-gradient(120% 90% at 50% 30%,var(--teatro-light) 0%,var(--teatro) 42%,var(--teatro-dark) 100%);opacity:0;}
+
+  #phone{position:absolute;left:196px;top:243px;width:688px;height:1433px;border-radius:62px;
+    background:#0a0a0a;box-shadow:0 30px 90px rgba(0,0,0,.45),0 6px 20px rgba(0,0,0,.35);padding:22px;}
+  #screen{position:absolute;left:24px;top:24px;width:640px;height:1385px;border-radius:42px;overflow:hidden;
+    background:radial-gradient(120% 60% at 50% 0%,#fff 0%,var(--paper-warm) 100%);}
+  #notch{position:absolute;left:50%;top:30px;transform:translateX(-50%);width:150px;height:30px;background:#0a0a0a;border-radius:16px;z-index:8;}
+
+  /* Cabecera de la "app" */
+  #apphead{position:absolute;left:0;right:0;top:96px;text-align:center;z-index:2;}
+  #apphead .h{font-weight:900;font-size:38px;color:var(--tinta);}
+  #apphead .h b{color:var(--coral);}
+  #apphead .s{margin-top:6px;font-family:"CrimsonText",Georgia,serif;font-size:22px;color:rgba(20,20,20,.55);}
+
+  /* Escena del carné con giro 3D */
+  #cardScene{position:absolute;left:40px;right:40px;top:300px;height:352px;perspective:1600px;z-index:3;}
+  #card{position:relative;width:100%;height:100%;transform-style:preserve-3d;
+    transform:rotateY(0deg);box-shadow:0 26px 60px rgba(20,4,8,.28);border-radius:22px;}
+  .face{position:absolute;inset:0;border-radius:22px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;}
+
+  /* Frente */
+  #front{background:linear-gradient(135deg,var(--tinta) 0%,var(--tinta) 45%,var(--tinta2) 100%);}
+  #front .grid{position:absolute;inset:0;opacity:.10;
+    background-image:linear-gradient(#fff 0.5px,transparent 0.5px),linear-gradient(90deg,#fff 0.5px,transparent 0.5px);
+    background-size:26px 26px;}
+  #front .glowA{position:absolute;top:-40px;right:-30px;width:200px;height:200px;background:var(--coral);opacity:.14;border-radius:50%;filter:blur(48px);}
+  #front .glowB{position:absolute;bottom:-40px;left:-30px;width:200px;height:200px;background:var(--coral);opacity:.12;border-radius:50%;filter:blur(48px);}
+  #front .in{position:absolute;inset:0;padding:34px 36px;display:flex;flex-direction:column;justify-content:space-between;}
+  #front .top{display:flex;justify-content:space-between;align-items:flex-start;}
+  #front .brand{font-weight:800;font-size:30px;color:#fff;letter-spacing:.2px;}
+  #front .brand b{color:var(--coral);}
+  #front .assoc{color:var(--coral);font-size:16px;margin-top:2px;font-weight:600;}
+  #front .ava{width:64px;height:64px;background:rgba(255,255,255,.12);border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:30px;}
+  .lab{color:rgba(255,255,255,.6);font-size:15px;letter-spacing:.14em;text-transform:uppercase;}
+  #front .num{color:#fff;font-weight:800;font-size:60px;line-height:1;margin-top:2px;}
+  #front .name{color:#fff;font-weight:600;font-size:30px;margin-top:2px;}
+  #front .row{display:flex;gap:40px;margin-top:12px;}
+  #front .row .v{color:#fff;font-weight:600;font-size:22px;margin-top:2px;}
+
+  /* Reverso con QR */
+  #back{transform:rotateY(180deg);background:#fff;border:1px solid #ece3d8;}
+  #back .in{position:absolute;inset:0;display:flex;align-items:center;gap:26px;padding:30px 34px;}
+  #back .qrwrap{flex:0 0 auto;padding:14px;background:#fff;border:3px solid rgba(20,20,20,.14);border-radius:14px;}
+  #back .qrwrap img{display:block;width:210px;height:210px;image-rendering:pixelated;}
+  #back .txt h4{font-weight:900;font-size:30px;color:var(--tinta);}
+  #back .txt p{font-size:19px;color:rgba(20,20,20,.6);margin-top:8px;line-height:1.35;font-family:"CrimsonText",Georgia,serif;}
+  #back .estado{display:inline-block;margin-top:14px;font-weight:700;font-size:17px;color:#166534;background:#dcfce7;padding:5px 14px;border-radius:999px;}
+
+  /* Rótulo */
+  #rotulo{position:absolute;left:110px;right:110px;top:1300px;z-index:30;text-align:center;opacity:0;}
+  #rotulo .kick{font-weight:800;font-size:26px;letter-spacing:6px;text-transform:uppercase;color:var(--coral);}
+  #rotulo .line{margin-top:12px;font-weight:800;font-size:48px;line-height:1.12;color:var(--tinta);}
+
+  /* Cierre */
+  #close{position:absolute;inset:0;z-index:40;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:0;}
+  #close .mark{font-weight:900;font-size:190px;line-height:.8;color:#fff;letter-spacing:-6px;}
+  #close .mark b{color:var(--coral);}
+  #close .cta2{margin-top:26px;font-weight:900;font-size:56px;color:#fff;}
+  #close .dom{margin-top:16px;font-weight:700;font-size:40px;color:rgba(255,255,255,.9);}
+  #close .cta{margin-top:44px;font-weight:800;font-size:36px;color:var(--teatro-dark);background:#fff;padding:20px 46px;border-radius:8px;}
+  #close .sub{margin-top:34px;font-family:"CrimsonText",Georgia,serif;font-style:italic;font-size:34px;color:rgba(255,255,255,.85);}
+  #vignette{position:absolute;inset:0;z-index:35;pointer-events:none;box-shadow:inset 0 0 220px rgba(0,0,0,.26);}
+</style>
+
+<div id="stage">
+  <div class="bg" id="bgPaper"></div>
+  <div class="bg" id="bgVelvet"></div>
+  <div id="phone">
+    <div id="screen">
+      <div id="notch"></div>
+      <div id="apphead"><div class="h"><b>[</b>Carné digital</div><div class="s">Asociación Cultural Olvidos de Granada</div></div>
+      <div id="cardScene">
+        <div id="card">
+          <div class="face" id="front">
+            <div class="grid"></div><div class="glowA"></div><div class="glowB"></div>
+            <div class="in">
+              <div class="top">
+                <div>
+                  <div class="brand"><b>[</b>Olvidos de Granada</div>
+                  <div class="assoc">Asociación Cultural</div>
+                </div>
+                <div class="ava">O</div>
+              </div>
+              <div>
+                <div class="lab">Número de socio/a</div>
+                <div class="num">#—</div>
+                <div class="lab" style="margin-top:12px">Nombre</div>
+                <div class="name">Tu nombre</div>
+                <div class="row">
+                  <div><div class="lab">Nivel</div><div class="v">Socio Mecenas</div></div>
+                  <div><div class="lab">Desde</div><div class="v">2026</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="face" id="back">
+            <div class="in">
+              <div class="qrwrap"><img id="qr" alt="QR de verificación" /></div>
+              <div class="txt">
+                <h4>Verifícalo</h4>
+                <p>Escanea el código para comprobar la membresía al instante.</p>
+                <span class="estado">● Socio activo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="rotulo"><div class="kick"></div><div class="line"></div></div>
+
+  <div id="close">
+    <div class="mark">[<b>o</b></div>
+    <div class="cta2">Hazte socio</div>
+    <div class="dom">olvidos.es/hazte-socio</div>
+    <div class="cta">Tu carné te espera</div>
+    <div class="sub">Comunidad de Olvidos, desde 1981</div>
+  </div>
+  <div id="vignette"></div>
+</div>
+
+<script>
+window.__ASSETS__ = window.__ASSETS__ || null; /* __ASSETS_INJECT__ */
+(function(){
+  const A = window.__ASSETS__;
+  document.getElementById("qr").src = A["qr.png"].src;
+  const el=(id)=>document.getElementById(id);
+  const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+  const lerp=(a,b,t)=>a+(b-a)*t;
+  const easeInOut=(t)=>t<0.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+  const easeOut=(t)=>1-Math.pow(1-t,3);
+  const win=(t,a,b,c,d)=>clamp(t<b?(t-a)/(b-a):t<c?1:1-(t-c)/(d-c),0,1);
+
+  const TL={ front:[0,3600], flip:[3600,4500], back:[4500,8200], close:[8100,12500] };
+  window.__DURATION_MS__=12500;
+  const rot=el("rotulo"), rk=rot.querySelector(".kick"), rl=rot.querySelector(".line");
+
+  window.renderAt=function(t){
+    // fondos
+    el("bgVelvet").style.opacity=clamp((t-TL.close[0])/600,0,1).toFixed(3);
+
+    // teléfono: entrada + salida en cierre
+    const phone=el("phone");
+    const closeP=clamp((t-TL.close[0])/700,0,1);
+    const introS=easeOut(clamp(t/1200,0,1));
+    phone.style.opacity=(1-closeP).toFixed(3);
+    phone.style.transform=`scale(${(lerp(0.965,1,introS)*(1-0.06*closeP)).toFixed(4)})`;
+    phone.style.transformOrigin="50% 46%";
+
+    // giro del carné (0 -> 180)
+    const fp=easeInOut(clamp((t-TL.flip[0])/(TL.flip[1]-TL.flip[0]),0,1));
+    const entry=lerp(-16,0,easeOut(clamp(t/900,0,1))); // leve entrada
+    el("card").style.transform=`rotateY(${(fp*180).toFixed(1)}deg) translateY(${(0).toFixed(0)}px)`;
+    el("cardScene").style.transform=`translateY(${entry.toFixed(1)}px)`;
+
+    // rótulo por escena
+    let kick="", line="", op=0;
+    if(t<TL.flip[0]+250){
+      kick="Tu carné"; line="Siempre en el móvil";
+      op=win(t,500,1150,TL.flip[0]-300,TL.flip[0]+150);
+    } else if(t>=TL.flip[0]+250 && t<TL.close[0]){
+      kick="Con código QR"; line="Verificable al instante";
+      op=win(t,TL.flip[1]+150,TL.flip[1]+750,TL.close[0]-600,TL.close[0]-100);
+    }
+    rk.textContent=kick; rl.textContent=line; rot.style.opacity=op.toFixed(3);
+
+    // cierre
+    el("close").style.opacity=clamp((t-(TL.close[0]+150))/650,0,1).toFixed(3);
+  };
+  window.__READY__=true;
+})();
+</script>
