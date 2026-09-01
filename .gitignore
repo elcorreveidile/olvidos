@@ -48,6 +48,8 @@ prisma/migrations/dev/
 /footage-olvidos-*.zip
 /footage-reel/
 /footage-reel*.zip
+/footage-carrusel/
+/footage-carrusel*.zip
 # binarios del reel (se entregan aparte; el texto sí se versiona)
 marketing/reel-olvidos/*.mp4
 marketing/reel-olvidos/*.png
