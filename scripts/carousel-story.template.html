@@ -1,0 +1,116 @@
+<meta charset="utf-8" />
+<title>Story 9:16 · Campaña Olvidos</title>
+<!--
+  Story de campaña (Instagram Stories, 1080x1920, 9:16). Cuatro frames a juego
+  con los carruseles, cada uno en su color (rojo/coral/tinta/acero). Copy real
+  del sitio. Zonas seguras de Stories respetadas: contenido entre ~250 y ~1650.
+    TEMPLATE=scripts/carousel-story.template.html SLUG=story VH=1920 \
+    OUTDIR=footage-carrusel node scripts/carousel-capture.mjs
+-->
+<style>
+  /* __FONT_CSS__ */
+  :root{
+    --coral:#ff6261;--coral-soft:#fc9292;--tinta:#141414;--tinta-soft:#3a352f;
+    --teatro:#7a1420;--teatro-light:#9b1c2c;--teatro-dark:#560d16;--acero:#617685;
+    --paper:#f4ece1;--cream:#fdf6f0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:#000;}
+  body{font-family:"LibreFranklin",system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+  .deck{display:flex;flex-direction:column;}
+  .slide{position:relative;width:1080px;height:1920px;overflow:hidden;color:var(--cream);}
+  /* fondos por frame */
+  .bgVelvet{background:radial-gradient(130% 80% at 50% 26%,var(--teatro-light) 0%,var(--teatro) 46%,var(--teatro-dark) 100%);}
+  .bgCoral{background:radial-gradient(130% 80% at 50% 24%,#ff8a89 0%,var(--coral) 46%,#e85555 100%);color:var(--tinta);}
+  .bgTinta{background:radial-gradient(130% 80% at 50% 24%,#2b2b2b 0%,#141414 55%,#000 100%);}
+  .bgAcero{background:radial-gradient(130% 80% at 50% 24%,#7c8fa0 0%,var(--acero) 44%,#42525d 100%);}
+  .vig{position:absolute;inset:0;box-shadow:inset 0 0 300px rgba(0,0,0,.32);pointer-events:none;}
+  .bgCoral .vig{box-shadow:inset 0 0 300px rgba(120,10,20,.2);}
+  .bracket{position:absolute;font-weight:900;line-height:.72;pointer-events:none;font-size:1000px;top:-40px;right:-60px;color:rgba(255,255,255,.06);}
+  .bgCoral .bracket{color:rgba(20,16,14,.06);}
+  /* chrome dentro de zona segura */
+  .wm{position:absolute;top:196px;left:96px;font-weight:900;font-size:40px;letter-spacing:-.01em;}
+  .wm b{color:var(--coral);}
+  .bgCoral .wm b{color:#fff;}
+  .count{position:absolute;top:200px;right:96px;font-weight:800;font-size:30px;letter-spacing:.14em;color:rgba(255,255,255,.6);}
+  .bgCoral .count{color:rgba(20,16,14,.5);}
+  /* contenido centrado */
+  .pad{position:absolute;left:96px;right:96px;top:250px;bottom:280px;display:flex;flex-direction:column;justify-content:center;}
+  .kick{font-weight:800;font-size:30px;letter-spacing:.2em;text-transform:uppercase;color:var(--coral-soft);}
+  .bgCoral .kick{color:var(--teatro-dark);}
+  h1{font-weight:900;letter-spacing:-.025em;line-height:1.02;font-size:104px;margin-top:26px;}
+  .rule{height:5px;width:110px;background:var(--coral);border-radius:3px;margin:40px 0;}
+  .bgCoral .rule{background:var(--tinta);}
+  .lede{font-family:"CrimsonText",Georgia,serif;line-height:1.34;font-size:46px;color:rgba(253,246,240,.92);}
+  .bgCoral .lede{color:rgba(20,16,14,.84);}
+  /* pie / CTA dentro de zona segura */
+  .cta{position:absolute;left:96px;right:96px;bottom:250px;display:flex;align-items:center;justify-content:space-between;}
+  .pill{display:inline-block;font-weight:800;font-size:38px;color:var(--teatro-dark);background:var(--cream);padding:22px 46px;border-radius:12px;}
+  .bgCoral .pill{color:#fff;background:var(--tinta);}
+  .hint{font-weight:700;font-size:30px;color:rgba(253,246,240,.72);}
+  .bgCoral .hint{color:rgba(20,16,14,.6);}
+</style>
+
+<div class="deck">
+
+  <!-- 01 · lanzamiento / nuevo formato -->
+  <section class="slide bgVelvet">
+    <div class="bracket">[</div>
+    <div class="wm">[<b>o</b>lvidos</div>
+    <div class="count">01 · 04</div>
+    <div class="pad">
+      <div class="kick">Nueva web · Granada</div>
+      <h1>Olvidos,<br>ya en línea.</h1>
+      <div class="rule"></div>
+      <p class="lede">Literatura, pensamiento y memoria cultural granadina. Desde 1981, entre la página impresa y el presente digital.</p>
+    </div>
+    <div class="cta"><span class="pill">olvidos.es</span><span class="hint">Nuevo en el feed →</span></div>
+    <div class="vig"></div>
+  </section>
+
+  <!-- 02 · área de socios (coral) -->
+  <section class="slide bgCoral">
+    <div class="bracket">[</div>
+    <div class="wm">[<b>o</b>lvidos</div>
+    <div class="count">02 · 04</div>
+    <div class="pad">
+      <div class="kick">El área de socios</div>
+      <h1>Hazte<br>socio.</h1>
+      <div class="rule"></div>
+      <p class="lede">Carné digital con QR, encuentros con asiento reservado, voz y voto, y la revista del año. Desde 50 € al año, sin permanencia.</p>
+    </div>
+    <div class="cta"><span class="pill">olvidos.es/hazte-socio</span><span class="hint">En el feed →</span></div>
+    <div class="vig"></div>
+  </section>
+
+  <!-- 03 · archivo a la web (tinta) -->
+  <section class="slide bgTinta">
+    <div class="bracket">[</div>
+    <div class="wm">[<b>o</b>lvidos</div>
+    <div class="count">03 · 04</div>
+    <div class="pad">
+      <div class="kick">La hemeroteca</div>
+      <h1>El archivo,<br>a la web.</h1>
+      <div class="rule"></div>
+      <p class="lede">Pasamos cada número del PDF al formato web: se lee mejor, se puede buscar y no se pierde. Empezando por el nº 9 (1986).</p>
+    </div>
+    <div class="cta"><span class="pill">olvidos.es/revista</span><span class="hint">En el feed →</span></div>
+    <div class="vig"></div>
+  </section>
+
+  <!-- 04 · lo que viene (acero) -->
+  <section class="slide bgAcero">
+    <div class="bracket">[</div>
+    <div class="wm">[<b>o</b>lvidos</div>
+    <div class="count">04 · 04</div>
+    <div class="pad">
+      <div class="kick">La hoja de ruta</div>
+      <h1>Lo que<br>viene.</h1>
+      <div class="rule"></div>
+      <p class="lede">La colección completa digitalizada, el primer número impreso de la nueva época y el libro de Mariano. Previsto para finales de 2027.</p>
+    </div>
+    <div class="cta"><span class="pill">olvidos.es</span><span class="hint">En el feed →</span></div>
+    <div class="vig"></div>
+  </section>
+
+</div>

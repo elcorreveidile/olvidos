@@ -16,6 +16,8 @@ const SLUG = process.env.SLUG || basename(TEMPLATE).replace(".template.html", ""
 const OUTDIR = resolve(ROOT, process.env.OUTDIR || join(ROOT, "footage-carrusel"));
 const EXEC = process.env.PW_CHROMIUM || "/opt/pw-browsers/chromium";
 const DSF = Number(process.env.DSF || 2);
+const VW = Number(process.env.VW || 1080);
+const VH = Number(process.env.VH || 1350);
 mkdirSync(OUTDIR, { recursive: true });
 
 const b64 = (p, mime) => `data:${mime};base64,` + readFileSync(p).toString("base64");
@@ -43,7 +45,7 @@ const browser = await chromium.launch({
   executablePath: EXEC,
   args: ["--no-sandbox", "--disable-dev-shm-usage", "--force-color-profile=srgb", "--hide-scrollbars"],
 });
-const ctx = await browser.newContext({ viewport: { width: 1080, height: 1350 }, deviceScaleFactor: DSF });
+const ctx = await browser.newContext({ viewport: { width: VW, height: VH }, deviceScaleFactor: DSF });
 const page = await ctx.newPage();
 await page.goto("file://" + outHtml, { waitUntil: "load" });
 await page.evaluate(async () => { if (document.fonts?.ready) await document.fonts.ready; });
