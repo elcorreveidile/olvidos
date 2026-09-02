@@ -571,3 +571,14 @@
     animation-duration: 0.01ms !important;
   }
 }
+
+/* Barra de progreso de lectura (modo «leer seguido» de las piezas por pasos) */
+.reading-progress {
+  transition: transform 80ms linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reading-progress {
+    transition: none;
+  }
+}

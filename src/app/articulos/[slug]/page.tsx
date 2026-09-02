@@ -9,7 +9,8 @@ import { SITE_URL, SITE_NAME, ORGANIZATION } from "@/lib/site";
 import { splitPasos, hasPasos } from "@/lib/pasos";
 import { PasosNav } from "@/components/content/PasosNav";
 import pasosTitles from "@/data/pasos-titles.json";
-import { ArticleBody } from "@/components/content/ArticleBody";
+import { ArticleBody, ArticleBodyAll } from "@/components/content/ArticleBody";
+import { ReadingProgress } from "@/components/content/ReadingProgress";
 import { ESPECIALES, getEspecialBySlug } from "@/lib/con-textos/especiales";
 import { buildIslaContext } from "@/lib/con-textos/context";
 
@@ -27,11 +28,21 @@ export async function generateMetadata({
     return { title: "Artículo no encontrado" };
   }
   const article = result.article;
+  const pieza = hasPasos(article);
   const paso = Number(searchParams?.paso);
-  const pasoSuffix = hasPasos(article) && paso > 1 ? ` · Paso ${paso}` : "";
+  const pasoSuffix = !pieza
+    ? ""
+    : searchParams?.paso === "todo"
+      ? " · Lectura completa"
+      : paso > 1
+        ? ` · Paso ${paso}`
+        : "";
   return {
     title: (article.metaTitle || article.title) + pasoSuffix,
     description: article.metaDescription || article.excerpt || undefined,
+    // Las vistas por paso y la lectura seguida son la misma pieza: una sola
+    // URL canónica sin parámetros.
+    alternates: pieza ? { canonical: `${SITE_URL}/articulos/${article.slug}` } : undefined,
     openGraph: {
       title: article.metaTitle || article.title,
       description: article.metaDescription || article.excerpt || undefined,
@@ -58,10 +69,14 @@ export default async function ArticlePage({
   const pieza = hasPasos(article);
   const pasoTitulos = (pasosTitles as Record<string, string[]>)[article.slug];
   const pasos = pieza ? splitPasos(article.content, pasoTitulos) : [];
+  // Modo «leer seguido» (?paso=todo): todos los pasos en una sola página.
+  const modeTodo = pieza && searchParams?.paso === "todo";
+  const readMode: "paso" | "todo" = modeTodo ? "todo" : "paso";
   const currentPaso = pieza
     ? Math.min(Math.max(1, Number(searchParams?.paso) || 1), pasos.length)
     : 1;
   const contentHtml = pieza ? pasos[currentPaso - 1].html : article.content;
+  const basePath = `/articulos/${article.slug}`;
 
   // Especiales «Con-textos»: el cuerpo lleva marcadores de islas interactivas
   // que se resuelven en servidor con los datos tipados del especial.
@@ -71,7 +86,7 @@ export default async function ArticlePage({
     ? buildIslaContext({
         especial: especialId,
         slug: article.slug,
-        basePath: `/articulos/${article.slug}`,
+        basePath,
         mode: "paso",
         pasos,
         pasoN: currentPaso,
@@ -238,16 +253,33 @@ export default async function ArticlePage({
 
           {/* Pasos (móvil): la barra lateral se oculta en móvil */}
           {pieza && showFullContent && (
-            <PasosNav pasos={pasos} slug={article.slug} current={currentPaso} horizontal />
+            <PasosNav
+              pasos={pasos}
+              slug={article.slug}
+              current={currentPaso}
+              basePath={basePath}
+              mode={readMode}
+              horizontal
+            />
           )}
 
           {/* Contenido (oculto si es solo para socios y no hay acceso) */}
-          {showFullContent && (
+          {showFullContent && modeTodo && (
+            <>
+              <ReadingProgress />
+              <ArticleBodyAll
+                pasos={pasos}
+                especial={especialId ? { id: especialId, slug: article.slug, basePath } : undefined}
+                especialData={especialData}
+              />
+            </>
+          )}
+          {showFullContent && !modeTodo && (
             <ArticleBody html={contentHtml} ctx={islaCtx} especialData={especialData} />
           )}
 
           {/* Navegación entre pasos */}
-          {pieza && showFullContent && pasos.length > 1 && (
+          {pieza && showFullContent && !modeTodo && pasos.length > 1 && (
             <nav className="mt-10 flex items-center justify-between gap-4 border-t border-acero-light/40 pt-6">
               {currentPaso > 1 ? (
                 <Link
@@ -324,6 +356,8 @@ export default async function ArticlePage({
                   pasos={pasos}
                   slug={article.slug}
                   current={currentPaso}
+                  basePath={basePath}
+                  mode={readMode}
                 />
               )}
               {recentArticles.length > 0 && (
