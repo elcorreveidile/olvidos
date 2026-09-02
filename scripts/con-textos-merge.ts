@@ -201,7 +201,7 @@ if (merged.geo.size) {
   writeFileSync(
     join(outDir, "geo.ts"),
     `// Generado por scripts/con-textos-merge.ts. No editar a mano.\n` +
-      `export interface GeoPoint { id: string; label: string; lat: number; lon: number; era?: string; note?: string; bbox?: [number, number, number, number]; kind?: string; sourceIds?: string[] }\n\n` +
+      `export interface GeoPoint { id: string; label: string; lat?: number; lon?: number; era?: string; note?: string; bbox?: [[number, number], [number, number]]; kind?: string; sourceIds?: string[] }\n\n` +
       `export const GEO = ${JSON.stringify(rows, null, 2)} satisfies GeoPoint[];\n`
   );
   console.log(`→ geo.ts: ${rows.length}`);

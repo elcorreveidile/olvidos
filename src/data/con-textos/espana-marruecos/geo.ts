@@ -1,5 +1,5 @@
 // Generado por scripts/con-textos-merge.ts. No editar a mano.
-export interface GeoPoint { id: string; label: string; lat: number; lon: number; era?: string; note?: string; bbox?: [number, number, number, number]; kind?: string; sourceIds?: string[] }
+export interface GeoPoint { id: string; label: string; lat?: number; lon?: number; era?: string; note?: string; bbox?: [[number, number], [number, number]]; kind?: string; sourceIds?: string[] }
 
 export const GEO = [
   {
