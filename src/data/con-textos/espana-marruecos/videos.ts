@@ -479,5 +479,490 @@ export const VIDEOS = [
     "sourceIds": [
       "src-yt-fg-1976"
     ]
+  },
+  {
+    "id": "vid-nodo-782b",
+    "provider": "rtve",
+    "embedUrl": "https://www.rtve.es/drmn/embed/video/1486245/",
+    "pageUrl": "https://www.rtve.es/play/videos/no-do/not-782/1486245/",
+    "title": "NO-DO NOT N 782 B: 'África Occidental Española. Volando sobre el territorio de Ifni. El capitán general de Canarias llega a Sidi [Ifni]. Corresponsales extranjeros en las posiciones militares'",
+    "date": "1957-12-30",
+    "sourceIds": [
+      "src-rtve-api"
+    ]
+  },
+  {
+    "id": "vid-is-hassan",
+    "provider": "rtve",
+    "embedUrl": "https://www.rtve.es/drmn/embed/video/601716/",
+    "pageUrl": "https://www.rtve.es/play/videos/informe-semanal/informe-semanal-entrevista-hassan-ii/601716/",
+    "title": "Informe Semanal: Entrevista a Hassan II (primera entrevista del rey a TVE)",
+    "date": "1985-02-09",
+    "sourceIds": [
+      "src-rtve-api"
+    ]
+  },
+  {
+    "id": "vid-is-perejil",
+    "provider": "rtve",
+    "embedUrl": "https://www.rtve.es/drmn/embed/video/1486633/",
+    "pageUrl": "https://www.rtve.es/play/videos/informe-semanal/fue-informe-2002-perejil-penon-discordia/1486633/",
+    "title": "Informe Semanal: Perejil, el peñón de la discordia",
+    "date": "2002-07-20",
+    "sourceIds": [
+      "src-rtve-api"
+    ]
+  },
+  {
+    "id": "vid-is-ifni",
+    "provider": "rtve",
+    "embedUrl": "https://www.rtve.es/drmn/embed/video/5360634/",
+    "pageUrl": "https://www.rtve.es/play/videos/informe-semanal/informe-semanal-cuando-sidi-ifni-era-espana/5360634/",
+    "title": "Informe Semanal: De cuando Sidi Ifni era España",
+    "date": "2019-08-03",
+    "sourceIds": [
+      "src-rtve-api"
+    ]
+  },
+  {
+    "id": "vid-is-annual",
+    "provider": "rtve",
+    "embedUrl": "https://www.rtve.es/drmn/embed/video/6046999/",
+    "pageUrl": "https://www.rtve.es/play/videos/informe-semanal/100-anos-annual-donde-espana-retorcio-su-historia/6046999/",
+    "title": "Informe Semanal: 100 años de Annual, donde España retorció su historia",
+    "date": "2021-08-07",
+    "sourceIds": [
+      "src-rtve-api"
+    ]
+  },
+  {
+    "id": "vid-is-frontera-2021",
+    "provider": "rtve",
+    "embedUrl": "https://www.rtve.es/drmn/embed/video/5922004/",
+    "pageUrl": "https://www.rtve.es/play/videos/informe-semanal/frontera-dos-mundos/5922004/",
+    "title": "Informe Semanal: Una frontera, dos mundos (crisis de Ceuta 2021)",
+    "date": "2021-05-29",
+    "sourceIds": [
+      "src-rtve-api"
+    ]
+  },
+  {
+    "id": "vid-is-sahara-2025",
+    "provider": "rtve",
+    "embedUrl": "https://www.rtve.es/drmn/embed/video/16807578/",
+    "pageUrl": "https://www.rtve.es/play/videos/informe-semanal/memorias-del-sahara/16807578/",
+    "title": "Informe Semanal: Memorias del Sáhara (50 años de la Marcha Verde)",
+    "date": "2025-11-08",
+    "sourceIds": [
+      "src-rtve-api"
+    ]
+  },
+  {
+    "id": "vid-is-colonia-2025",
+    "provider": "rtve",
+    "embedUrl": "https://www.rtve.es/drmn/embed/video/16807574/",
+    "pageUrl": "https://www.rtve.es/play/videos/informe-semanal/regreso-ultima-colonia/16807574/",
+    "title": "Informe Semanal: Regreso a la última colonia",
+    "date": "2025-11-08",
+    "sourceIds": [
+      "src-rtve-api"
+    ]
+  },
+  {
+    "id": "vid-is-ceuta-2026",
+    "provider": "rtve",
+    "embedUrl": "https://www.rtve.es/drmn/embed/video/17206011/",
+    "pageUrl": "https://www.rtve.es/play/videos/informe-semanal/ceuta-mes-limite/17206011/",
+    "title": "Informe Semanal: Ceuta, un mes al límite",
+    "date": "2026-08-29",
+    "sourceIds": [
+      "src-rtve-api"
+    ]
+  },
+  {
+    "id": "vid-td-2021-05-17",
+    "provider": "rtve",
+    "embedUrl": "https://www.rtve.es/drmn/embed/video/5906622/",
+    "pageUrl": "https://www.rtve.es/play/videos/telediario-1/cerca-2700-migrantes-entran-nado-ceuta/5906622/",
+    "title": "Telediario 1: Cerca de 2.700 migrantes entran a nado en Ceuta",
+    "date": "2021-05-17",
+    "sourceIds": [
+      "src-rtve-api"
+    ]
+  },
+  {
+    "id": "vid-td-tarajal-2020",
+    "provider": "rtve",
+    "embedUrl": "https://www.rtve.es/drmn/embed/video/5633899/",
+    "pageUrl": "https://www.rtve.es/play/videos/telediario-1/audiencia-cadiz-absuelve-guardias-civiles-acusados-muerte-15-inmigrantes-tarajal-actuaron-proporcionalidad/5633899/",
+    "title": "Telediario 1: La Audiencia de Cádiz absuelve a los guardias civiles acusados por la muerte de 15 inmigrantes en el Tarajal",
+    "date": "2020-07-28",
+    "sourceIds": [
+      "src-rtve-api"
+    ]
+  },
+  {
+    "id": "vid-td-2026-07-31",
+    "provider": "rtve",
+    "embedUrl": "https://www.rtve.es/drmn/embed/video/17176392/",
+    "pageUrl": "https://www.rtve.es/play/videos/telediario-2/regresan-marruecos-gran-mayoria-inmigrantes-llegados-avalancha-ceuta/17176392/",
+    "title": "Telediario 2: Regresan a Marruecos la gran mayoría de los inmigrantes llegados masivamente a Ceuta",
+    "date": "2026-07-31",
+    "sourceIds": [
+      "src-rtve-api"
+    ]
+  },
+  {
+    "id": "vid-td-2026-08-09",
+    "provider": "rtve",
+    "embedUrl": "https://www.rtve.es/drmn/embed/video/17185147/",
+    "pageUrl": "https://www.rtve.es/play/videos/telediario-fin-de-semana/investigacion-reconstruye-red-detras-crisis-ceuta-operacion-organizada-deliberada/17185147/",
+    "title": "Telediario Fin de Semana: Una investigación reconstruye la red detrás de la crisis en Ceuta",
+    "date": "2026-08-09",
+    "sourceIds": [
+      "src-rtve-api"
+    ]
+  },
+  {
+    "id": "vid-td-2026-08-25",
+    "provider": "rtve",
+    "embedUrl": "https://www.rtve.es/drmn/embed/video/17201783/",
+    "pageUrl": "https://www.rtve.es/play/videos/telediario-1/angel-victor-torres-mando-unico-crisis-ceuta/17201783/",
+    "title": "Telediario 1: Ángel Víctor Torres, mando único de la crisis de Ceuta",
+    "date": "2026-08-25",
+    "sourceIds": [
+      "src-rtve-api"
+    ]
+  },
+  {
+    "id": "vid-rtve-yt-2021-05-18",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/D5oCZEF1U20",
+    "pageUrl": "https://www.youtube.com/watch?v=D5oCZEF1U20",
+    "title": "RTVE Noticias (directo): Crisis Ceuta, continúan llegando migrantes a la playa del Tarajal (I)",
+    "date": "2021-05-18",
+    "sourceIds": [
+      "src-yt-rtve"
+    ]
+  },
+  {
+    "id": "vid-rtve-yt-sanchez-2021",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/RXRRo57jnXU",
+    "pageUrl": "https://www.youtube.com/watch?v=RXRRo57jnXU",
+    "title": "RTVE Noticias: Pedro Sánchez sobre Ceuta: 'Vamos a restablecer el orden con la máxima celeridad'",
+    "date": "2021-05-18",
+    "sourceIds": [
+      "src-yt-rtve"
+    ]
+  },
+  {
+    "id": "vid-rtve-yt-congreso-2021",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/BFsUhkBACMA",
+    "pageUrl": "https://www.youtube.com/watch?v=BFsUhkBACMA",
+    "title": "RTVE Noticias: la crisis de Ceuta centra el control al Gobierno (19/05/2021)",
+    "date": "2021-05-19",
+    "sourceIds": [
+      "src-yt-rtve"
+    ]
+  },
+  {
+    "id": "vid-congreso-2021-05-19",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/A7AobWuq9OE",
+    "pageUrl": "https://www.youtube.com/watch?v=A7AobWuq9OE",
+    "title": "Congreso - Canal Parlamento: Sesión Plenaria (19/05/2021)",
+    "date": "2021-05-19",
+    "sourceIds": [
+      "src-yt-congreso"
+    ]
+  },
+  {
+    "id": "vid-congreso-2022-03-22",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/bWhTS8GhP4E",
+    "pageUrl": "https://www.youtube.com/watch?v=bWhTS8GhP4E",
+    "title": "Congreso - Canal Parlamento: Sesión Plenaria (22/03/2022) (comparecencia de Albares sobre el Sáhara)",
+    "date": "2022-03-22",
+    "sourceIds": [
+      "src-yt-congreso"
+    ]
+  },
+  {
+    "id": "vid-rtve-yt-albares-2022",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/dNsMydr64Rc",
+    "pageUrl": "https://www.youtube.com/watch?v=dNsMydr64Rc",
+    "title": "RTVE Noticias: Congreso-Sáhara, críticas unánimes a Albares por el viraje del Gobierno",
+    "date": "2022-03-23",
+    "sourceIds": [
+      "src-yt-rtve"
+    ]
+  },
+  {
+    "id": "vid-congreso-2022-03-30",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/sgfSfGG2R6c",
+    "pageUrl": "https://www.youtube.com/watch?v=sgfSfGG2R6c",
+    "title": "Congreso - Canal Parlamento: Sesión Plenaria (30/03/2022) (Sánchez comparece sobre el Sáhara Occidental)",
+    "date": "2022-03-30",
+    "sourceIds": [
+      "src-yt-congreso"
+    ]
+  },
+  {
+    "id": "vid-rtve-yt-marcha-verde-50",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/On8OfQ1UAhE",
+    "pageUrl": "https://www.youtube.com/watch?v=On8OfQ1UAhE",
+    "title": "RTVE Noticias: Se cumplen 50 años de la Marcha Verde de Marruecos hacia el Sáhara Occidental",
+    "date": "2025-11-06",
+    "sourceIds": [
+      "src-yt-rtve"
+    ]
+  },
+  {
+    "id": "vid-casareal-2019-llegada",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/LzpJRQeG4JM",
+    "pageUrl": "https://www.youtube.com/watch?v=LzpJRQeG4JM",
+    "title": "casarealtv: Llegada de SS.MM. los Reyes a Rabat (viaje de Estado a Marruecos)",
+    "date": "2019-02-13",
+    "sourceIds": [
+      "src-yt-casareal"
+    ]
+  },
+  {
+    "id": "vid-casareal-2019-cena",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/CeGdQVauY0k",
+    "pageUrl": "https://www.youtube.com/watch?v=CeGdQVauY0k",
+    "title": "casarealtv: SS.MM. los Reyes en la cena de gala ofrecida por el Rey de Marruecos",
+    "date": "2019-02-13",
+    "sourceIds": [
+      "src-yt-casareal"
+    ]
+  },
+  {
+    "id": "vid-casareal-2019-consejo",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/a5kZZKBSMkU",
+    "pageUrl": "https://www.youtube.com/watch?v=a5kZZKBSMkU",
+    "title": "casarealtv: Palabras de S.M. el Rey en el acto de constitución del Consejo Económico Marruecos-España",
+    "date": "2019-02-14",
+    "sourceIds": [
+      "src-yt-casareal"
+    ]
+  },
+  {
+    "id": "vid-casareal-2019-colectividad",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/anBB45GWIOs",
+    "pageUrl": "https://www.youtube.com/watch?v=anBB45GWIOs",
+    "title": "casarealtv: Recepción de SS.MM. los Reyes a la Colectividad Española en Marruecos",
+    "date": "2019-02-14",
+    "sourceIds": [
+      "src-yt-casareal"
+    ]
+  },
+  {
+    "id": "vid-moncloa-2026-07-31",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/JhfFGo0UEgg",
+    "pageUrl": "https://www.youtube.com/watch?v=JhfFGo0UEgg",
+    "title": "La Moncloa: Declaración institucional de Pedro Sánchez en Ceuta",
+    "date": "2026-07-31",
+    "sourceIds": [
+      "src-yt-moncloa",
+      "src-moncloa-2026-07-31-transc"
+    ]
+  },
+  {
+    "id": "vid-rtve-yt-sanchez-2026",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/VHhGqyEIxag",
+    "pageUrl": "https://www.youtube.com/watch?v=VHhGqyEIxag",
+    "title": "RTVE Noticias: Pedro Sánchez en Ceuta: 'Es una violación de la integridad territorial de España'",
+    "date": "2026-07-31",
+    "sourceIds": [
+      "src-yt-rtve"
+    ]
+  },
+  {
+    "id": "vid-rtve-yt-2026-07-31",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/gmZ6uMNVTJw",
+    "pageUrl": "https://www.youtube.com/watch?v=gmZ6uMNVTJw",
+    "title": "RTVE Noticias: Ceuta se enfrenta a una crisis migratoria similar a la que sufrió en 2021",
+    "date": "2026-07-31",
+    "sourceIds": [
+      "src-yt-rtve"
+    ]
+  },
+  {
+    "id": "vid-pp-2026-08-19",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/7tZP7QcrCnQ",
+    "pageUrl": "https://www.youtube.com/watch?v=7tZP7QcrCnQ",
+    "title": "Partido Popular: Feijóo interviene ante los medios en Ceuta",
+    "date": "2026-08-19",
+    "sourceIds": [
+      "src-yt-pp"
+    ]
+  },
+  {
+    "id": "vid-moncloa-2026-08-25",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/NkMavaAi7SM",
+    "pageUrl": "https://www.youtube.com/watch?v=NkMavaAi7SM",
+    "title": "La Moncloa: 'El Gobierno declara la situación de interés para la seguridad nacional en Ceuta'",
+    "date": "2026-08-25",
+    "sourceIds": [
+      "src-yt-moncloa"
+    ]
+  },
+  {
+    "id": "vid-congreso-2026-08-25-defensa",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/hW3KTsyluEc",
+    "pageUrl": "https://www.youtube.com/watch?v=hW3KTsyluEc",
+    "title": "Congreso - Canal Parlamento: Comisión de Defensa, 25/08/2026 (comparecencia de Robles por Ceuta)",
+    "date": "2026-08-25",
+    "sourceIds": [
+      "src-yt-congreso"
+    ]
+  },
+  {
+    "id": "vid-congreso-2026-08-26",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/I1urs2QMCFI",
+    "pageUrl": "https://www.youtube.com/watch?v=I1urs2QMCFI",
+    "title": "Congreso - Canal Parlamento: Diputación Permanente (original), 26/08/2026",
+    "date": "2026-08-26",
+    "sourceIds": [
+      "src-yt-congreso"
+    ]
+  },
+  {
+    "id": "vid-congreso-2026-08-27",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/3ZPSGGkGuso",
+    "pageUrl": "https://www.youtube.com/watch?v=3ZPSGGkGuso",
+    "title": "Congreso - Canal Parlamento: Comisión Mixta de Seguridad Nacional, 27/08/2026",
+    "date": "2026-08-27",
+    "sourceIds": [
+      "src-yt-congreso"
+    ]
+  },
+  {
+    "id": "vid-congreso-2026-08-28-interior",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/OQzufU2MnYA",
+    "pageUrl": "https://www.youtube.com/watch?v=OQzufU2MnYA",
+    "title": "Congreso - Canal Parlamento: Comisión de Interior, 28/08/2026 (comparecencia de Grande-Marlaska)",
+    "date": "2026-08-28",
+    "sourceIds": [
+      "src-yt-congreso"
+    ]
+  },
+  {
+    "id": "vid-congreso-2026-08-28-exteriores",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/1Is_g2KF8LU",
+    "pageUrl": "https://www.youtube.com/watch?v=1Is_g2KF8LU",
+    "title": "Congreso - Canal Parlamento: Comisión de Asuntos Exteriores, 28/08/2026 (Albares)",
+    "date": "2026-08-28",
+    "sourceIds": [
+      "src-yt-congreso"
+    ]
+  },
+  {
+    "id": "vid-rtve-yt-2026-08-30",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/B4eyJe_DITs",
+    "pageUrl": "https://www.youtube.com/watch?v=B4eyJe_DITs",
+    "title": "RTVE Noticias: Ceuta, un mes después de la entrada masiva de inmigrantes",
+    "date": "2026-08-30",
+    "sourceIds": [
+      "src-yt-rtve"
+    ]
+  },
+  {
+    "id": "vid-vox-2026-08-31",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/m_691_l7OTs",
+    "pageUrl": "https://www.youtube.com/watch?v=m_691_l7OTs",
+    "title": "VOX España (directo): Santiago Abascal, declaración a medios desde San Lorenzo de El Escorial",
+    "date": "2026-08-31",
+    "sourceIds": [
+      "src-yt-vox"
+    ]
+  },
+  {
+    "id": "vid-vox-2026-08-31-b",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/ZlSNRWfZFHU",
+    "pageUrl": "https://www.youtube.com/watch?v=ZlSNRWfZFHU",
+    "title": "VOX España: Declaraciones de Santiago Abascal: 'Pedro Sánchez se ha convertido en un lacayo de Marruecos'",
+    "date": "2026-08-31",
+    "sourceIds": [
+      "src-yt-vox"
+    ]
+  },
+  {
+    "id": "vid-moncloa-2026-08-31",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/HpiTKC2o23k",
+    "pageUrl": "https://www.youtube.com/watch?v=HpiTKC2o23k",
+    "title": "La Moncloa: 'Ceuta va a salir reforzada de esta situación', Pedro Sánchez",
+    "date": "2026-08-31",
+    "sourceIds": [
+      "src-yt-moncloa"
+    ]
+  },
+  {
+    "id": "vid-pp-2026-09-02",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/vJcgT2xHyqQ",
+    "pageUrl": "https://www.youtube.com/watch?v=vJcgT2xHyqQ",
+    "title": "Partido Popular (directo): Feijóo asiste al acto con motivo del Día de Ceuta",
+    "date": "2026-09-02",
+    "sourceIds": [
+      "src-yt-pp"
+    ]
+  },
+  {
+    "id": "vid-vox-2026-09-02",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/_ppCYr9QEMk",
+    "pageUrl": "https://www.youtube.com/watch?v=_ppCYr9QEMk",
+    "title": "VOX España (directo): Santiago Abascal desde la concentración en defensa de Ceuta",
+    "date": "2026-09-02",
+    "sourceIds": [
+      "src-yt-vox"
+    ]
+  },
+  {
+    "id": "vid-rtve-yt-2026-09-02",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/5f3c3Rq8Il0",
+    "pageUrl": "https://www.youtube.com/watch?v=5f3c3Rq8Il0",
+    "title": "RTVE Noticias: Según el informe policial, gendarmes marroquíes guiaron la entrada masiva",
+    "date": "2026-09-02",
+    "sourceIds": [
+      "src-yt-rtve"
+    ]
+  },
+  {
+    "id": "vid-congreso-2026-09-03",
+    "provider": "youtube",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/5NsYQKqXFoc",
+    "pageUrl": "https://www.youtube.com/watch?v=5NsYQKqXFoc",
+    "title": "Congreso - Canal Parlamento: Sesión Plenaria (con traducción y subtitulado), 03/09/2026 (programada; comparecencia de Sánchez sobre Ceuta anunciada)",
+    "date": "2026-09-03",
+    "sourceIds": [
+      "src-yt-congreso"
+    ]
   }
 ] satisfies VideoEmbed[];

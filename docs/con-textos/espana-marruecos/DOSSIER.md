@@ -1,6 +1,6 @@
 # España y Marruecos, 1859-2026. Dossier de documentación
 
-**Especial «Con-textos» de Olvidos de Granada · material de trabajo · versión 0.1 (2 de septiembre de 2026)**
+**Especial «Con-textos» de Olvidos de Granada · material de trabajo · versión 1.0 (2 de septiembre de 2026, cerrada antes del pleno extraordinario del 3 de septiembre)**
 
 Este dossier reúne, ordena y referencia la documentación sobre la que se construirá el especial interactivo. No es el artículo: es su expediente. Cada dato lleva su fuente; lo que no ha podido cotejarse en fuente primaria se marca **[NO VERIFICADO]** y queda fuera de los datos que alimentan las piezas interactivas hasta que se verifique.
 
@@ -446,7 +446,8 @@ La pregunta: ¿las confrontaciones con Marruecos parten históricamente de la de
 1. **Quién inicia**. En el siglo XIX y hasta 1934, quien inicia las guerras coloniales es España, con gobiernos de los dos partidos del turno: liberales en 1859, 1893 y 1912; conservadores en 1909, 1921 y 1934. Desde 1957, quien inicia las confrontaciones territoriales es casi siempre Marruecos (Ifni 1957, Marcha Verde 1975, embajador 2001, Perejil 2002, aduana 2018, frontera 2021 y 2026). Las crisis migratorias con muertos (2005, 2014, 2022) las «inician» terceros y las convierten en crisis el uso de la fuerza de uno u otro Estado.
 2. **Quién gobierna cuando se usa la fuerza contra Marruecos**. Las tres veces que España ha empleado la fuerza contra el Estado marroquí o sus irregulares en democracia y dictadura reciente son Ifni 1957 (Franco), Perejil 2002 (Aznar) y, contra migrantes, Tarajal 2014 (Rajoy). Las grandes cesiones son también de gobiernos de derecha o de la dictadura (Ifni 1969, Sáhara 1975) o del PSOE (Sáhara 2022). Ningún gobierno de izquierda ha usado la fuerza contra Marruecos; dos gobiernos de izquierda (2005, 2021, 2026) han desplegado el Ejército en Ceuta y Melilla en funciones de apoyo.
 3. **Quién escala el discurso**. Aquí la hipótesis se sostiene mejor: en 1921-23 la derecha protege a la Corona y al Ejército de África frente a la izquierda que pide responsabilidades; en 1934 la derecha aplaude la ocupación de Ifni; en 2021 Vox estrena «invasión»; en 2022 la derecha reprocha la cesión y la izquierda el abandono del Sáhara; en 2026 la derecha pide desde llamar a consultas a los embajadores (PP) hasta juzgar al presidente por traición y romper el Tratado (Vox). El marco de la «guerra híbrida» y la «invasión» es hoy patrimonio de PP y Vox, aunque el propio Sánchez usó «ataque» y «violación de la integridad territorial» el 31 de julio.
-4. **La Corona**. Alfonso XIII es el rey «africanista» cuyo papel en Annual nunca se probó pero que amparó el golpe que enterró las responsabilidades; Juan Carlos coordina con Hassan II en 1975 y mantiene con él un canal paralelo hasta 1999; la visita de 2007 la refrenda un gobierno socialista; Felipe VI ha esperado doce años y en 2026 la visita a Ceuta se convierte en bandera de la derecha («Feijóo acompañaría al Rey»). La monarquía marroquí, en cambio, es el actor que decide: la crisis de 2026 apunta a su aparato de seguridad.
+4. **La opinión pública**. El Barómetro del Real Instituto Elcano de 2025 (BRIE 45) muestra que Marruecos es el país que más españoles perciben como amenaza (55% de quienes ven alguna) y que ese temor es «sobre todo en la derecha»: 27% entre los votantes de izquierda, 56% en el centro y 73% en la derecha. La escalada discursiva de PP y Vox tiene, por tanto, un electorado que la demanda.
+5. **La Corona**. Alfonso XIII es el rey «africanista» cuyo papel en Annual nunca se probó pero que amparó el golpe que enterró las responsabilidades; Juan Carlos coordina con Hassan II en 1975 y mantiene con él un canal paralelo hasta 1999; la visita de 2007 la refrenda un gobierno socialista; Felipe VI ha esperado doce años y en 2026 la visita a Ceuta se convierte en bandera de la derecha («Feijóo acompañaría al Rey»). La monarquía marroquí, en cambio, es el actor que decide: la crisis de 2026 apunta a su aparato de seguridad.
 
 ### 10.3 Conclusión provisional
 
@@ -497,4 +498,50 @@ Con los informes del 29 de julio en la mano, las opciones reales de cualquier go
 
 ## 12. Series estadísticas y multimedia disponibles
 
-*(Pendiente de fusión del bloque 06.)*
+Fuentes, tablas completas y URL en `bloques/06-series-multimedia.md`; datos tipados en `series.ts`, `videos.ts`, `images.ts` y `geo.ts`.
+
+### 12.1 Series completas (listas para los gráficos)
+
+| Serie | Cobertura | Fuente | Estado |
+|---|---|---|---|
+| Entradas irregulares en Ceuta y Melilla, por vía terrestre y marítima | 2018-2026 (a 31 ago) | Balances anuales del Ministerio del Interior (PDF, con las revisiones de un balance al siguiente) | Completa. Nota: Interior **excluye** de la serie las entradas masivas de mayo de 2021 y del 30-31 de julio de 2026; hay que sumarlas aparte |
+| Entradas por vía terrestre en Ceuta y Melilla | 2009-2017 | APDHA a partir de Frontex/Interior (1.639 en 2009 → 11.624 en 2015 → 6.168 en 2017) | Agregada; discrepancias APDHA/Interior en 2018 registradas |
+| Entradas irregulares totales en España y por rutas (Península y Baleares, Canarias, Ceuta y Melilla) | 2018-2026 | Interior (64.298 en 2018, máximo histórico; 63.970/64.019 en 2024; 36.775 en 2025; 20.417 a 31-8-2026) | Completa. «Estrecho» no existe como categoría oficial |
+| Muertos y desaparecidos en la frontera sur | 1988-2023 | APDHA (serie íntegra, 16.898 acumulados; 2.789 en 2023) | Completa; hueco 2024-2025 |
+| Muertos y desaparecidos | 2018-2026 | Caminando Fronteras (843 en 2018; 10.457 en 2024; 3.090 en 2025; 1.317 en enero-mayo de 2026) | Casi completa; hueco 2020 |
+| Comparativa de crisis (2005, Tarajal 2014, Ceuta 2021, Melilla 2022, Ceuta 2026) | — | Entradas, muertos oficiales y según ONG, retornos y menores, con todas las cifras alternativas | Completa |
+| Bajas españolas en las guerras de Marruecos | 1859-1958 | Madariaga (1909: 153 muertos), Picasso/Caballero Poveda/Prieto (Annual: 7.875-13.363), Defensa (Ifni: 198 muertos, 574 heridos, 80 desaparecidos) | Con discrepancias; 1859 y 1893 **[NO VERIFICADO en monografía]** |
+| Población de Ceuta y Melilla | 2018-2025 | INE (API) y BOE | Completa (Ceuta 83.595 y Melilla 86.780 a 1-1-2025) |
+| Comercio España-Marruecos | 2024-2026 | Secretaría de Estado de Comercio y prensa que cita el Informe Mensual (22.500-22.757 millones anuales; exportaciones 2025: 12.330 millones) | Parcial; hueco Datacomex 2015-2023 y remesas |
+| Marruecos como amenaza (Barómetro Elcano) | 2021, 2024, 2025 | BRIE 42, 44 y 45: 35% → 49% → 55% de quienes ven una amenaza | Parcial; hueco anterior a 2021. **Dato clave para el capítulo 10**: en 2025 Marruecos es «temido sobre todo en la derecha»: 27% en la izquierda, 56% en el centro, 73% en la derecha (BRIE 45, p. 35) |
+| Cronologías horarias | 6-11-1975 (cruce a las 10:33) y 30-31-7-2026 (25.000 salidas a las 13:00, 37.500 a las 15:30 «a un ritmo de unas 150 personas por minuto», 43 muertos a las 15:39, 57 a las 17:40) | Wikipedia con resoluciones de la ONU; RTVE y elDiario.es en directo | Sin cronología oficial en ninguno de los dos casos |
+| Votaciones parlamentarias | 1859 (186), 1922 (145-7), 1975 (345-4-4), 2002 (334-0-4), 2021 (153-195-1), 2022 (168-118-61), 2026 (34-35) | Diarios de Sesiones | Completa |
+
+Huecos que el artículo debe declarar: Ceuta y Melilla 2000-2008; totales de España 2000-2017; OIM Missing Migrants por año (web inaccesible); APDHA 2024-2025; comercio anual; Elcano anterior a 2021.
+
+### 12.2 Vídeos (46 registrados)
+
+- **NO-DO** (RTVE Play, incrustable con `https://www.rtve.es/drmn/embed/video/<id>/`): Mohamed V en Madrid (1956), Ifni (30-12-1957 y 13-1-1958), retrocesión de Ifni (1969). **No existe** NO-DO sobre la Marcha Verde: los noticiarios de octubre-diciembre de 1975 no la mencionan.
+- **Informe Semanal**: entrevista a Hassan II (9-2-1985, la primera a TVE), *Perejil, el peñón de la discordia* (20-7-2002), *De cuando Sidi Ifni era España* (2019), *100 años de Annual* (2021), *Memorias del Sáhara* (2025), *Ceuta, un mes al límite* (29-8-2026). Documentos RNE: *Annual, no sólo un desastre militar*; *La sombra de Abdelkrim*.
+- **Telediarios**: Ceuta 17-5-2021; absolución del Tarajal (2020); 31-7, 9-8 y 25-8-2026.
+- **Canal Parlamento** (YouTube): Plenos de 19-5-2021, 22 y 30-3-2022, 6-7-4-2022, 8-6-2022, 29-6-2022; Comisión de Defensa (25-8-2026), Diputación Permanente (26-8-2026), Interior y Exteriores (28-8-2026); Pleno del 3-9-2026.
+- **La Moncloa**: declaración de Sánchez en Ceuta (31-7-2026, embed `youtube-nocookie`), 25-8 y 31-8. **Casa Real**: viaje de Estado a Marruecos (13-14-2-2019). **PP**: Feijóo en Ceuta (19-8 y 2-9-2026). **Vox**: Abascal en El Escorial (31-8-2026), concentración (2-9-2026).
+- Huecos: Telediarios originales de Perejil (2002) y del Tarajal (2014) no localizables por la API de RTVE; se cubren con Informe Semanal y sustitutos no oficiales.
+
+### 12.3 Imágenes (45 verificadas en Wikimedia Commons, con dimensiones, autor y licencia)
+
+Fortuny (*La batalla de Tetuán*, MNAC; *Wad-Ras*, Prado), grabados de 1859-60, Cabrerizas Altas (1893), Campúa (Barranco del Lobo 1909; el Rey en Melilla 1911), Annual (vista aérea, Monte Arruit, Silvestre, Berenguer, Abd el-Krim), Alhucemas (1925), Ejército de África 1936, Ifni (1934, 1957-58), Marcha Verde (Anefo, CC0; juramento de Hassan II), Hassan II (1983), El Aaiún (1972), mapas del Protectorado y del Sáhara, Perejil, vallas de Ceuta y Melilla, Tarajal (2014; Sánchez en el Tarajal 31-7-2026, Pool Moncloa), Melilla 2022 (informe del CNDH marroquí). Excluida *La Paz de Wad-Ras* por restricción de uso en Commons. **No existe** foto libre de Juan Carlos I con Hassan II ni de Felipe VI con Mohamed VI (2019); la única de Felipe y Mohamed VI es de 2001, subida por un particular, a verificar.
+
+### 12.4 Geografía (para el mapa)
+
+25 puntos y 4 recuadros en `geo.ts`: Ceuta, Melilla, Benzú, El Tarajal (aproximado), Perejil, Alhucemas, Annual, Tetuán, Wad-Ras, Castillejos, Gurugú/Barranco del Lobo, Sidi Ifni, El Aaiún, Tah, Tarfaya, Gibraltar, Rota, Morón, Nador, Tánger, Algeciras, Larache, Xauen, Dajla; recuadros del Protectorado norte, Cabo Juby, Sáhara español e Ifni.
+
+---
+
+## 13. Estado del dossier y siguientes pasos
+
+- **Cobertura**: 417 fuentes (se regenera en `FUENTES.md`), 142 episodios, 170 citas parlamentarias (145 leídas en el PDF del Diario de Sesiones correspondiente, con número y página), 167 declaraciones de 2026 por bloque, 30 series numéricas, 46 vídeos, 45 imágenes y 29 referencias geográficas.
+- **Hemeroteca parlamentaria verificada**: 1859, 1894, 1909, 1912, 1921, 1922, 1923, 1927 (serie histórica), 1933, 1934 (Cortes republicanas), 1969 y 1975 (Cortes Españolas), 2002, 2007, 2014, 2021, 2022 (Congreso) y agosto de 2026 (Comisión de Defensa, Diputación Permanente, Comisión de Sanidad). Pendientes de publicación oficial: comisiones de Justicia, Interior, Exteriores, Migraciones y Juventud (27-31 ago 2026) y el Pleno del 3 de septiembre; el Senado histórico y actual no ha podido consultarse (403/500).
+- **Lo que queda marcado [NO VERIFICADO]** y no entra en las islas interactivas hasta comprobarlo: el telegrama «¡Olé los hombres!» (leyenda sin documento), el discurso de Isabel II de 1860, el pacto secreto Juan Carlos-Hassan II (sólo coordinación probada), el comunicado de Felipe VI del 1-8-2026 en casareal.es, la frase de Sánchez «bien resuelto» (2022), las cifras de Wikipedia sin fuente (34/43 muertos, 60.000 entradas), el «grupo 411», la fecha exacta de la sentencia del Supremo (29 jun / 8 jul / 13 jul).
+- **Decisiones editoriales que el artículo debe tomar**: usar 141 muertos (Caminando Fronteras) con la evolución oficial explicada; 72.000 entradas (Interior); 88 diputados para el art. 102; distinguir siempre lo que pide el PP de lo que pide Vox; presentar la tesis de Javier en su versión matizada (capítulo 10.3).
+- **Fase 2**: los ficheros de `src/data/con-textos/espana-marruecos/` alimentan directamente la línea temporal (`timeline.ts` + `gobiernos.ts`), la hemeroteca (`quotes.ts`), el comparador «quién dijo qué» (`statements.ts`), los gráficos (`series.ts`), los vídeos (`videos.ts`), las imágenes (`images.ts`) y el mapa (`geo.ts`).

@@ -801,6 +801,24 @@ export const TIMELINE = [
     ]
   },
   {
+    "id": "ev-mv-1975-10-16",
+    "date": "1975-10-16",
+    "dateLabel": "16 de octubre de 1975",
+    "title": "Dictamen del TIJ y anuncio de la Marcha Verde",
+    "summary": "La Corte Internacional de Justicia rechaza que el Sáhara fuera 'res nullius'; ese mismo día Hassan II anuncia la Marcha Verde.",
+    "government": "dictadura",
+    "governmentLabel": "Gobierno de Arias Navarro",
+    "headOfState": "Francisco Franco (Juan Carlos, jefe de Estado en funciones desde el 30 de octubre)",
+    "initiator": "marruecos",
+    "kinds": [
+      "diplomatica"
+    ],
+    "era": "franquismo",
+    "sourceIds": [
+      "src-wiki-marcha-verde"
+    ]
+  },
+  {
     "id": "ev-1975-solis",
     "date": "1975-10-21",
     "dateLabel": "21 de octubre de 1975",
@@ -819,6 +837,24 @@ export const TIMELINE = [
       "src-eldebate-cartas",
       "src-libertaddigital-2015",
       "src-un-s11853"
+    ]
+  },
+  {
+    "id": "ev-mv-1975-10-22",
+    "date": "1975-10-22",
+    "dateLabel": "22 de octubre de 1975",
+    "title": "Resolución 377 del Consejo de Seguridad",
+    "summary": "El Consejo de Seguridad pide cautela; el 2 de noviembre aprueba la 379 y el 6 de noviembre la 380.",
+    "government": "dictadura",
+    "governmentLabel": "Gobierno de Arias Navarro",
+    "headOfState": "Francisco Franco",
+    "initiator": "otros",
+    "kinds": [
+      "diplomatica"
+    ],
+    "era": "franquismo",
+    "sourceIds": [
+      "src-wiki-marcha-verde"
     ]
   },
   {
@@ -863,6 +899,24 @@ export const TIMELINE = [
     ]
   },
   {
+    "id": "ev-mv-1975-11-04",
+    "date": "1975-11-04",
+    "dateLabel": "4 de noviembre de 1975",
+    "title": "Operación Marabunta",
+    "summary": "El general Gómez de Salazar activa la operación para bloquear la penetración marroquí; el 5 de noviembre Hassan II anuncia que los civiles cruzarán al día siguiente.",
+    "government": "dictadura",
+    "governmentLabel": "Gobierno de Arias Navarro",
+    "headOfState": "Juan Carlos (jefe de Estado en funciones)",
+    "initiator": "espana",
+    "kinds": [
+      "militar"
+    ],
+    "era": "franquismo",
+    "sourceIds": [
+      "src-wiki-marcha-verde"
+    ]
+  },
+  {
     "id": "ev-1975-marcha-verde",
     "date": "1975-11-06",
     "dateLabel": "6-9 de noviembre de 1975",
@@ -881,6 +935,24 @@ export const TIMELINE = [
       "src-elespanol-2017",
       "src-publico-2025",
       "src-libertaddigital-2015"
+    ]
+  },
+  {
+    "id": "ev-mv-1975-11-06",
+    "date": "1975-11-06",
+    "dateLabel": "6 de noviembre de 1975, 10:33",
+    "title": "Cruce de la frontera cerca de Tah",
+    "summary": "A las 10:33 los primeros voluntarios cortan la alambrada fronteriza cerca de Tah; por la tarde unos 50.000 civiles acampan en territorio español. El 9 de noviembre Hassan II ordena el repliegue.",
+    "government": "dictadura",
+    "governmentLabel": "Gobierno de Arias Navarro",
+    "headOfState": "Juan Carlos (jefe de Estado en funciones)",
+    "initiator": "marruecos",
+    "kinds": [
+      "diplomatica"
+    ],
+    "era": "franquismo",
+    "sourceIds": [
+      "src-wiki-marcha-verde"
     ]
   },
   {
@@ -903,6 +975,24 @@ export const TIMELINE = [
       "src-un-corell",
       "src-abogacia",
       "src-oreja-2011"
+    ]
+  },
+  {
+    "id": "ev-mv-1975-11-14",
+    "date": "1975-11-14",
+    "dateLabel": "14 de noviembre de 1975",
+    "title": "Acuerdo Tripartito de Madrid",
+    "summary": "España, Marruecos y Mauritania firman el acuerdo; el 26 de febrero de 1976 España anuncia el fin de su presencia y el 28 de febrero de 1976 vence el plazo de evacuación.",
+    "government": "dictadura",
+    "governmentLabel": "Gobierno de Arias Navarro",
+    "headOfState": "Juan Carlos (jefe de Estado en funciones)",
+    "initiator": "ambos",
+    "kinds": [
+      "diplomatica"
+    ],
+    "era": "franquismo",
+    "sourceIds": [
+      "src-wiki-marcha-verde"
     ]
   },
   {
@@ -1914,6 +2004,25 @@ export const TIMELINE = [
     ]
   },
   {
+    "id": "ev-c26-07-08",
+    "date": "2026-07-08",
+    "dateLabel": "8 de julio de 2026",
+    "title": "Sentencia del Tribunal Supremo sobre rechazos en frontera",
+    "summary": "El Supremo determina que el 'rechazo en frontera' no se aplica a quienes entran a nado; el Gobierno atribuye después la crisis a una 'interpretación interesada' de la sentencia.",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+    "headOfState": "Felipe VI",
+    "initiator": "otros",
+    "kinds": [
+      "judicial"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-wiki-ceuta2026",
+      "src-rtve-2026-08-04"
+    ]
+  },
+  {
     "id": "ev-argel",
     "date": "2026-07-20",
     "dateLabel": "20 de julio de 2026",
@@ -2069,6 +2178,26 @@ export const TIMELINE = [
     ]
   },
   {
+    "id": "ev-c26-07-30",
+    "date": "2026-07-30",
+    "dateLabel": "30 de julio de 2026 (madrugada-noche)",
+    "title": "Entrada masiva por los espigones del Tarajal y Benzú",
+    "summary": "Desde la madrugada del jueves 30 (coincidiendo con el Día del Trono en Marruecos) decenas de miles cruzan a nado o bordeando los espigones; primeras horas: 2.000-3.000 entradas; Vivas pide la declaración de emergencia nacional y el mando único; el Gobierno ordena el despliegue del Ejército.",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez",
+    "headOfState": "Felipe VI",
+    "initiator": "indeterminado",
+    "kinds": [
+      "migratoria"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-wiki-ceuta2026",
+      "src-rtve-2026-07-31",
+      "src-athenalab"
+    ]
+  },
+  {
     "id": "ev-sanchez-ceuta-31jul",
     "date": "2026-07-31",
     "dateLabel": "31 de julio de 2026",
@@ -2117,6 +2246,27 @@ export const TIMELINE = [
     ]
   },
   {
+    "id": "ev-c26-07-31",
+    "date": "2026-07-31",
+    "dateLabel": "31 de julio de 2026",
+    "title": "Balance de 49.000-50.000 entradas; Sánchez en Ceuta; comienzan los retornos",
+    "summary": "01:16 entran en Melilla unos 130 (84 menores). 13:00: Interior contabiliza 25.000 salidas hacia Marruecos ('150 personas por minuto'); 15:30: 37.500; por la noche: más de 48.300. Muertos: 43 (15:39) y 57 (17:40). Sánchez y Grande-Marlaska viajan a Ceuta; comparecencia en el Palacio de la Asamblea: 'una violación de la integridad territorial de España'. Italia impone controles en frontera con España.",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez",
+    "headOfState": "Felipe VI",
+    "initiator": "espana",
+    "kinds": [
+      "migratoria"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-eldiario-live-2026-07-31",
+      "src-rtve-2026-07-31",
+      "src-tirotactico",
+      "src-moncloa-2026-07-31-transc"
+    ]
+  },
+  {
     "id": "ev-barrera-1ago",
     "date": "2026-08-01",
     "dateLabel": "1 de agosto de 2026",
@@ -2157,6 +2307,24 @@ export const TIMELINE = [
     "era": "democracia",
     "sourceIds": [
       "src-infobae-directo-1ago"
+    ]
+  },
+  {
+    "id": "ev-c26-08-01",
+    "date": "2026-08-01",
+    "dateLabel": "1 de agosto de 2026",
+    "title": "Barrera marítima en el Tarajal; 67 muertos",
+    "summary": "Marlaska: 'hemos revertido la situación en 24 horas'; comienza la instalación de boyas/barrera (~500 m) en el espigón del Tarajal; balance de al menos 67 fallecidos; ~48.000 de 50.000 han regresado.",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez",
+    "headOfState": "Felipe VI",
+    "initiator": "espana",
+    "kinds": [
+      "diplomatica"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-rtve-2026-08-01"
     ]
   },
   {
@@ -2215,6 +2383,26 @@ export const TIMELINE = [
     "era": "democracia",
     "sourceIds": [
       "src-ceutatv-72000"
+    ]
+  },
+  {
+    "id": "ev-c26-08-04",
+    "date": "2026-08-04",
+    "dateLabel": "4 de agosto de 2026",
+    "title": "Interior eleva a 72.000 las entradas y a 75 los muertos en Ceuta",
+    "summary": "Interior: 72.000 entradas, ~70.000 ya han abandonado la ciudad, 75 fallecidos en Ceuta más 11 reconocidos por Marruecos; Marlaska niega avisos del CNI ('los días anteriores entraron 1.000 personas en una semana'). El 5 de agosto Caminando Fronteras cifra los muertos en 141 (78+63).",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez",
+    "headOfState": "Felipe VI",
+    "initiator": "espana",
+    "kinds": [
+      "diplomatica"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-ceutaldia-2026-08-04",
+      "src-rtve-2026-08-04",
+      "src-efe-2026-08-05"
     ]
   },
   {
@@ -2470,6 +2658,25 @@ export const TIMELINE = [
     ]
   },
   {
+    "id": "ev-c26-08-25",
+    "date": "2026-08-25",
+    "dateLabel": "25 de agosto de 2026",
+    "title": "Declaración de situación de interés para la seguridad nacional y mando único",
+    "summary": "El Consejo de Ministros y un Consejo de Seguridad Nacional extraordinario declaran la situación de interés para la seguridad nacional en Ceuta; Ángel Víctor Torres asume el mando único; el Gobierno estima ~5.000 personas que permanecen (5-10% de los llegados); ocho ministros comparecen en el Congreso desde ese día; Sánchez anuncia comparecencia en el Pleno.",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez",
+    "headOfState": "Felipe VI",
+    "initiator": "espana",
+    "kinds": [
+      "parlamentaria"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-rtve-2026-08-25",
+      "src-yt-congreso"
+    ]
+  },
+  {
     "id": "ev-dp-26ago",
     "date": "2026-08-26",
     "dateLabel": "26 de agosto de 2026",
@@ -2616,6 +2823,26 @@ export const TIMELINE = [
       "src-elespanol-semper",
       "src-elespanol-prorroga",
       "src-le360-sanchez"
+    ]
+  },
+  {
+    "id": "ev-c26-08-31",
+    "date": "2026-08-31",
+    "dateLabel": "31 de agosto de 2026",
+    "title": "Sánchez anuncia que el Rey visitará Ceuta y defiende a Marruecos",
+    "summary": "En la Cadena SER Sánchez atribuye la crisis a la tergiversación de la sentencia del Supremo y a bulos de redes rusas e israelíes; 'no hay ninguna información... de la participación de las autoridades marroquíes'. Abascal (31-8, San Lorenzo de El Escorial): Sánchez 'lacayo de Marruecos'; pide activar el art. 102 CE. Feijóo asiste el 2-9 al acto del Día de Ceuta.",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez",
+    "headOfState": "Felipe VI",
+    "initiator": "espana",
+    "kinds": [
+      "politica"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-rtve-2026-08-31",
+      "src-yt-vox",
+      "src-yt-pp"
     ]
   },
   {
