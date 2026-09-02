@@ -495,7 +495,10 @@ export const ISLAS = {
       const allGroups = s.groups?.length ? s.groups : Array.from(new Set(s.points.map((pt) => pt.group).filter((g): g is string => Boolean(g))));
       const groups = p.groups.length ? p.groups : allGroups;
       for (const g of p.groups) if (!allGroups.includes(g)) throw new IslaError("grafico", `grupo desconocido «${g}» en ${s.id}`);
-      if (groups.length > 6) throw new IslaError("grafico", `la serie ${s.id} tiene ${groups.length} grupos; elige hasta 6 con grupos="A|B"`);
+      const kind = p.kind ?? s.kind;
+      // En barras simples el «grupo» es la fuente de cada cifra (una barra por
+      // punto); el límite de series solo rige en líneas y barras agrupadas.
+      if (kind !== "bar" && groups.length > 6) throw new IslaError("grafico", `la serie ${s.id} tiene ${groups.length} grupos; elige hasta 6 con grupos="A|B"`);
       const points = s.points
         .filter((pt) => !pt.group || groups.includes(pt.group))
         .filter((pt) => !/no verificad/i.test(pt.note ?? ""))
@@ -509,7 +512,7 @@ export const ISLAS = {
         id: s.id,
         title: p.title || s.title,
         unit: s.unit,
-        kind: p.kind ?? s.kind,
+        kind,
         groups,
         points,
         sources: resolveSources(s.sourceIds, data, 4),

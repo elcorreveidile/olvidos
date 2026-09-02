@@ -7,6 +7,7 @@ import type { IslaName } from "@/lib/con-textos/islas-def";
 import { Figure } from "./Figure";
 import { Sources } from "./Sources";
 import { Pendiente } from "./Pendiente";
+import { Chart } from "./charts/Chart";
 
 type IslaComponent = ComponentType<{ data: any; name: string }>;
 
@@ -14,7 +15,7 @@ export const COMPONENTS = {
   "linea-temporal": Pendiente,
   hemeroteca: Pendiente,
   comparador: Pendiente,
-  grafico: Pendiente,
+  grafico: Chart,
   mapa: Pendiente,
   video: Pendiente,
   figura: Figure,
