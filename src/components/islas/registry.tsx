@@ -8,13 +8,16 @@ import { Figure } from "./Figure";
 import { Sources } from "./Sources";
 import { Pendiente } from "./Pendiente";
 import { Chart } from "./charts/Chart";
+import { Timeline } from "./Timeline";
+import { Hemeroteca } from "./Hemeroteca";
+import { StatementComparer } from "./StatementComparer";
 
 type IslaComponent = ComponentType<{ data: any; name: string }>;
 
 export const COMPONENTS = {
-  "linea-temporal": Pendiente,
-  hemeroteca: Pendiente,
-  comparador: Pendiente,
+  "linea-temporal": Timeline,
+  hemeroteca: Hemeroteca,
+  comparador: StatementComparer,
   grafico: Chart,
   mapa: Pendiente,
   video: Pendiente,
