@@ -55,6 +55,11 @@ export async function Footer() {
                   Soneto500
                 </Link>
               </li>
+              <li>
+                <Link href="/articulos?categoria=con-textos" className="text-sm text-acero-light hover:text-coral transition-colors">
+                  Con-textos
+                </Link>
+              </li>
             </ul>
           </div>
 
