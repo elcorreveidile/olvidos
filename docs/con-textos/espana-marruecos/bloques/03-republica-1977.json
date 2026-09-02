@@ -1,0 +1,2498 @@
+{
+  "sources": [
+    {
+      "id": "src-boe-ley40",
+      "title": "Ley 40/1975, de 19 de noviembre, sobre descolonización del Sahara (BOE núm. 278, 20-11-1975, pág. 24234)",
+      "author": "Jefatura del Estado",
+      "publisher": "BOE",
+      "date": "1975-11-20",
+      "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-1975-23743",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": "PDF: https://www.boe.es/boe/dias/1975/11/20/pdfs/A24234-24234.pdf"
+    },
+    {
+      "id": "src-boe-fez1969",
+      "title": "Instrumento de Ratificación del Tratado por el que el Estado Español retrocede al Reino de Marruecos el territorio de Ifni, firmado en Fez el 4 de enero de 1969 (BOE núm. 134, 5-6-1969, págs. 8805-8808)",
+      "author": "Jefatura del Estado",
+      "publisher": "BOE",
+      "date": "1969-06-05",
+      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-1969-694",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": "PDF: https://www.boe.es/boe/dias/1969/06/05/pdfs/A08805-08808.pdf"
+    },
+    {
+      "id": "src-boe-1958",
+      "title": "Decreto de 10 de enero de 1958 por el que se reorganiza el Gobierno General del África Occidental Española (BOE núm. 12, 14-1-1958, pág. 87)",
+      "author": "Presidencia del Gobierno",
+      "publisher": "BOE",
+      "date": "1958-01-14",
+      "url": "https://www.boe.es/datos/pdfs/BOE/1958/012/A00087-00087.pdf",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": "Provincias de Ifni y Sahara Español"
+    },
+    {
+      "id": "src-boe-ley8-1961",
+      "title": "Ley 8/1961, de 19 de abril, sobre organización y régimen jurídico de la Provincia de Sahara (BOE núm. 95, 21-4-1961)",
+      "author": "Jefatura del Estado",
+      "publisher": "BOE",
+      "date": "1961-04-21",
+      "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-1961-7737",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": "PDF: https://www.boe.es/boe/dias/1961/04/21/pdfs/A06062-06062.pdf"
+    },
+    {
+      "id": "src-dsp20-1975",
+      "title": "Diario de Sesiones del Pleno de las Cortes Españolas núm. 20, sesiones de 18 y 19 de noviembre de 1975 (X Legislatura)",
+      "author": "Cortes Españolas",
+      "publisher": "Congreso de los Diputados, serie histórica",
+      "date": "1975-11-18",
+      "url": "https://app.congreso.es/est_sesiones/resource?id=1971-1977/1975/11/DSP_0020.pdf",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": "127 págs. Votación Ley de descolonización del Sahara (pág. 2); discursos de García-Valdecasas (págs. 102-105) y del ministro Carro (págs. 106-109)."
+    },
+    {
+      "id": "src-boce1050-1969",
+      "title": "Boletín Oficial de las Cortes Españolas núm. 1050, Pleno de 22 de abril de 1969 (págs. 25563-25606)",
+      "author": "Cortes Españolas",
+      "publisher": "Congreso de los Diputados, serie histórica",
+      "date": "1969-04-22",
+      "url": "https://app.congreso.es/est_sesiones/resource?id=1967-1971/1969/04/BOCE_1050.pdf",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": "Tratado sobre retrocesión de Ifni: dictamen, discurso de García-Valdecasas (págs. 25580-25584) y votación nominal (págs. 25584-25589)."
+    },
+    {
+      "id": "src-ds71-1934",
+      "title": "Diario de Sesiones de Cortes, Congreso de los Diputados, núm. 71, 19 de abril de 1934 (págs. 2391-2434)",
+      "author": "Cortes de la República",
+      "publisher": "Congreso de los Diputados, serie histórica",
+      "date": "1934-04-19",
+      "url": "https://app.congreso.es/est_sesiones/resource?id=1933-1935/1934/04/C-0071-02391.pdf",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": "Debate sobre la ocupación de Ifni (págs. 2392-2403): Bolívar, Moltó, Goicoechea, Ramos Acosta, Cruz, Lamamié de Clairac, Rodríguez de Viguri, Lerroux."
+    },
+    {
+      "id": "src-ds67-1934",
+      "title": "Diario de Sesiones de Cortes núm. 67, 12 de abril de 1934 (págs. 2219-2260)",
+      "author": "Cortes de la República",
+      "publisher": "Congreso de los Diputados, serie histórica",
+      "date": "1934-04-12",
+      "url": "https://app.congreso.es/est_sesiones/resource?id=1933-1935/1934/04/C-0067-02219.pdf",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": "Pregunta de Bolívar sobre Ifni (pág. 2221); comunicación del decreto de organización provisional de Ifni (pág. 2257)."
+    },
+    {
+      "id": "src-ds395-1933",
+      "title": "Diario de Sesiones de las Cortes Constituyentes núm. 395, 25 de agosto de 1933 (págs. 15071-15095)",
+      "author": "Cortes Constituyentes",
+      "publisher": "Congreso de los Diputados, serie histórica",
+      "date": "1933-08-25",
+      "url": "https://app.congreso.es/est_sesiones/resource?id=1931-1933/1933/08/C-0395-15071.pdf",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": "Ruego de Balbontín sobre Ifni y la independencia de Marruecos (págs. 15080-15082 según índice)."
+    },
+    {
+      "id": "src-ds10-1931",
+      "title": "Diario de Sesiones de las Cortes Constituyentes, sesiones de 23-28 de julio de 1931 (PDF PHist)",
+      "author": "Cortes Constituyentes",
+      "publisher": "Congreso de los Diputados",
+      "date": "1931-07-28",
+      "url": "https://www.congreso.es/docu/PHist/docs/07repu/DS_28-07-1931.pdf",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": "Intervención de Barriobero sobre el presupuesto de enseñanza en Marruecos (núm. 10, págs. 182-184 aprox.)."
+    },
+    {
+      "id": "src-idx-1931-33",
+      "title": "Índice del Diario de Sesiones, Cortes Constituyentes 1931-1933, tomo 17 (voz MARRUECOS)",
+      "author": "Cortes Constituyentes",
+      "publisher": "Congreso de los Diputados, serie histórica",
+      "date": "1933-12-31",
+      "url": "https://app.congreso.es/est_sesiones/resource?id=1931-1933/indice-17.pdf",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": "Ruegos de Balbontín, Acuña, Armasa, Pérez Madrigal, Jaén sobre Marruecos, Ifni y el Alto Comisario."
+    },
+    {
+      "id": "src-idx-1933-35",
+      "title": "Índice del Diario de Sesiones, Legislatura 1933-1935, tomo 8 (voz IFNI)",
+      "author": "Cortes de la República",
+      "publisher": "Congreso de los Diputados, serie histórica",
+      "date": "1935-12-31",
+      "url": "https://app.congreso.es/est_sesiones/resource?id=1933-1935/indice-8.pdf",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": "Localiza el debate de Ifni en DSC núm. 67 (pág. 2221), núm. 69 (pág. 2309) y núm. 71 (págs. 2392-2403)."
+    },
+    {
+      "id": "src-idx-1975",
+      "title": "Índice del Diario de Sesiones de las Cortes Españolas, año 1975, tomo 4 (voz SAHARA)",
+      "author": "Cortes Españolas",
+      "publisher": "Congreso de los Diputados, serie histórica",
+      "date": "1975-12-31",
+      "url": "https://app.congreso.es/est_sesiones/resource?id=1971-1977/indice-1975-4.pdf",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": "Proyecto de ley (BOC núm. 1462, pág. 35517), dictamen (BOC núm. 1469, pág. 35650), créditos de descolonización (BOC núm. 1474)."
+    },
+    {
+      "id": "src-congreso-serie",
+      "title": "Diario de Sesiones: Serie histórica (1808-1977)",
+      "author": "Congreso de los Diputados",
+      "publisher": "Congreso de los Diputados",
+      "date": "",
+      "url": "https://app.congreso.es/est_sesiones/",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": "Legislaturas 099 (1931-33), 100 (1933-35), 101 (1936), 102-111 (Cortes Españolas 1943-1977). Los PDF se sirven en resource?id=<ruta>."
+    },
+    {
+      "id": "src-congreso-iirep",
+      "title": "II República Española 1931-1939 (Historia del Congreso)",
+      "author": "Congreso de los Diputados",
+      "publisher": "Congreso de los Diputados",
+      "date": "",
+      "url": "https://www.congreso.es/es/cem/iirepesp",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-congreso-cortesp",
+      "title": "Dictadura del General Franco. Las Cortes Españolas (1943-1977)",
+      "author": "Congreso de los Diputados",
+      "publisher": "Congreso de los Diputados",
+      "date": "",
+      "url": "https://www.congreso.es/es/cem/cortesp",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": "X Legislatura: https://www.congreso.es/es/cem/1971-1977 (11-11-1971 a 30-6-1977; presidentes Rodríguez de Valcárcel y Fernández-Miranda)."
+    },
+    {
+      "id": "src-unts-madrid",
+      "title": "Declaración de Principios entre España, Marruecos y Mauritania sobre el Sahara Occidental, Madrid, 14 de noviembre de 1975 (UNTS vol. 988, I-14450, pág. 258, texto español)",
+      "author": "España, Marruecos, Mauritania",
+      "publisher": "Naciones Unidas, Treaty Series / UN Peacemaker",
+      "date": "1975-11-14",
+      "url": "https://peacemaker.un.org/sites/default/files/document/files/2024/05/ma-mr-es751114declarationprinciplesonwesternsahara28esp29.pdf",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": "Versión trilingüe: https://treaties.un.org/doc/publication/unts/volume%20988/volume-988-i-14450-other.pdf"
+    },
+    {
+      "id": "src-icj-1975",
+      "title": "Western Sahara, Advisory Opinion of 16 October 1975 (I.C.J. Reports 1975, p. 12) y resumen oficial",
+      "author": "Corte Internacional de Justicia",
+      "publisher": "CIJ",
+      "date": "1975-10-16",
+      "url": "https://www.icj-cij.org/node/103799",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": "Expediente: https://www.icj-cij.org/case/61 ; PDF EN: https://www.icj-cij.org/sites/default/files/case-related/61/061-19751016-ADV-01-00-EN.pdf"
+    },
+    {
+      "id": "src-un-s11853",
+      "title": "S/11853/Rev.1, Costa Rica: proyecto de resolución revisado (22 de octubre de 1975)",
+      "author": "Consejo de Seguridad de la ONU",
+      "publisher": "Naciones Unidas",
+      "date": "1975-10-22",
+      "url": "https://digitallibrary.un.org/record/440329/files/S_11853_Rev.1-ES.pdf",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": "Pide a Marruecos que desista de la marcha anunciada."
+    },
+    {
+      "id": "src-un-corell",
+      "title": "Carta de 29 de enero de 2002 del Secretario General Adjunto de Asuntos Jurídicos, Hans Corell, al Presidente del Consejo de Seguridad (S/2002/161)",
+      "author": "Hans Corell",
+      "publisher": "Naciones Unidas (copia en ARSO)",
+      "date": "2002-01-29",
+      "url": "https://www.arso.org/Olasp.pdf",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": "Párr. 6: el Acuerdo de Madrid no transfirió la soberanía ni la condición de Potencia administradora."
+    },
+    {
+      "id": "src-elespanol-2017",
+      "title": "Juan Carlos pactó en secreto los términos de la Marcha Verde con Hassan II",
+      "author": "Gonzalo Araluce y Jorge Sáinz",
+      "publisher": "El Español",
+      "date": "2017-01-21",
+      "url": "https://www.elespanol.com/espana/20170120/187482258_0.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Informe del National Intelligence Bulletin de la CIA de 6-11-1975 basado en el embajador Wells Stabler."
+    },
+    {
+      "id": "src-publico-2025",
+      "title": "Cuando Juan Carlos I entregó el Sáhara a Marruecos para afianzar su llegada al trono",
+      "author": "Juan Oliver",
+      "publisher": "Público",
+      "date": "2025-11-05",
+      "url": "https://www.publico.es/politica/juan-carlos-i-entrego-sahara-marruecos-afianzar-llegada-trono.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Cita memorando de Colby (3-10-1975) y cable de la embajada en Rabat (23-10-1975)."
+    },
+    {
+      "id": "src-catalunyapress-munoz",
+      "title": "Kissinger no organizó, ni conoció la 'marcha verde' ('Historia del Sáhara español')",
+      "author": "Catalunya Press (sobre Gerardo Muñoz Lorente, Almuzara)",
+      "publisher": "Catalunya Press",
+      "date": "",
+      "url": "https://www.catalunyapress.es/texto-diario/mostrar/4915516/kissinger-no-organizo-ni-conocio-marcha-verde-historia-sahara-espanol",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Tesis contraria a la implicación previa de Kissinger."
+    },
+    {
+      "id": "src-mundiario-2017",
+      "title": "Juan Carlos pudo haber pactado en secreto los términos de la Marcha Verde con Hassan II",
+      "author": "Mundiario",
+      "publisher": "Mundiario",
+      "date": "2017-01-26",
+      "url": "https://www.mundiario.com/articulo/politica/documentos-cia-sahara-juan-carlos-i-podria-haber-cometido-alta-traicion/20170126025130077218.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Versión maximalista (Walters); no consultable (403) el 2-9-2026."
+    },
+    {
+      "id": "src-libertaddigital-2015",
+      "title": "El Sáhara: \"¿Qué más les da a ustedes?\"",
+      "author": "Pedro Fernández Barbadillo",
+      "publisher": "Libertad Digital",
+      "date": "2015-11-06",
+      "url": "https://www.libertaddigital.com/cultura/historia/2015-11-06/pedro-fernandez-barbadillo-el-sahara-que-mas-les-da-a-ustedes-77170/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Cronología octubre-noviembre 1975; da 354 votos a favor (discrepa del Diario: 345)."
+    },
+    {
+      "id": "src-libertaddigital-2024",
+      "title": "La España africana: Ifni",
+      "author": "Pedro Fernández Barbadillo",
+      "publisher": "Libertad Digital",
+      "date": "2024-04-26",
+      "url": "https://www.libertaddigital.com/cultura/historia/2024-04-26/pedro-fernandez-barbadillo-la-espana-africana-ifni-7119258/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Ocupación de 1934 y debate de 19 de abril."
+    },
+    {
+      "id": "src-eldebate-capaz",
+      "title": "El general Capaz o la gesta del último conquistador español",
+      "author": "El Debate",
+      "publisher": "El Debate",
+      "date": "2024-09-07",
+      "url": "https://www.eldebate.com/historia/20240907/general-capaz-gesta-ultimo-conquistador-espanol_224663.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-theobjective-capaz",
+      "title": "Oswaldo Capaz, el militar que tomó Ifni o el último conquistador español",
+      "author": "Jaime Cervera",
+      "publisher": "The Objective",
+      "date": "2025-01-25",
+      "url": "https://theobjective.com/cultura/2025-01-25/oswaldo-capaz-ifni/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-eldebate-cartas",
+      "title": "Las tres cartas que evitaron una guerra de España con Marruecos en 1975",
+      "author": "Álvaro de Diego",
+      "publisher": "El Debate",
+      "date": "2022-03-24",
+      "url": "https://www.eldebate.com/historia/20220324/tres-cartas-evitaron-guerra-espana-marruecos-1975.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Cartas de Martín-Gamero a Arias; Solís en Marrakech 21-10-1975."
+    },
+    {
+      "id": "src-eldebate-nodo",
+      "title": "La guerra que Franco nunca silenció: Ifni-Sáhara 1957-1958",
+      "author": "Gemma Esteban Dorronzoro",
+      "publisher": "El Debate",
+      "date": "2026-06-23",
+      "url": "https://www.eldebate.com/opinion/tribuna/20260623/guerra-franco-nunca-silencio-ifnisahara-19571958_431466.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Bajas 198/574/80; NO-DO >15 % del tiempo."
+    },
+    {
+      "id": "src-dialnet-nodo-ifni",
+      "title": "Ifni en el NO-DO (1943-1969)",
+      "author": "Juan Manuel González Sáez",
+      "publisher": "Revista internacional de Historia de la Comunicación, n.º 2, vol. 1, pp. 62-85",
+      "date": "2014-01-01",
+      "url": "https://dialnet.unirioja.es/descarga/articulo/4783267.pdf",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Tabla 1: 26 noticiarios con referencias a Ifni."
+    },
+    {
+      "id": "src-uned-montoro",
+      "title": "La retrocesión de Tarfaya e Ifni",
+      "author": "Guadalupe Montoro",
+      "publisher": "Espacio, Tiempo y Forma, Serie V, t. IV, pp. 181-190",
+      "date": "1991-01-01",
+      "url": "https://revistas.uned.es/index.php/ETFV/article/download/2733/2593/6021",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Cortes 22-4-1969: 295 sí, 66 no, 25 abstenciones, 150 ausencias (según resumen; PDF sin OCR)."
+    },
+    {
+      "id": "src-uned-pimentel",
+      "title": "Ifni, una nueva «provincia»: la representación de la población Baamrani en el especial del semanario A.O.E.",
+      "author": "José Miguel García Pimentel",
+      "publisher": "Espacio, Tiempo y Forma, Serie V, n.º 36",
+      "date": "2024-01-01",
+      "url": "https://revistas.uned.es/index.php/ETFV/article/view/38251",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "DOI 10.5944/etfv.36.2024.38251"
+    },
+    {
+      "id": "src-scielo-sanidad-ifni",
+      "title": "La sanidad del Ejército de Tierra español durante la guerra de Ifni-Sáhara (1957/1958)",
+      "author": "R. Navarro-Suay et al.",
+      "publisher": "Sanidad Militar, vol. 79, n.º 4",
+      "date": "2023-01-01",
+      "url": "https://scielo.isciii.es/scielo.php?script=sci_arttext&pid=S1887-85712023000400007",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Bajas (Pastrana): 205 muertos, 573 heridos, 166 desaparecidos."
+    },
+    {
+      "id": "src-scielo-azana",
+      "title": "La provisión de los destinos militares del Cuerpo de Sanidad Militar en Marruecos durante el bienio Azaña (1931-1933)",
+      "author": "M.ª Isabel Albaladejo Asensio",
+      "publisher": "Sanidad Militar, vol. 72, n.º 1",
+      "date": "2016-01-01",
+      "url": "https://scielo.isciii.es/scielo.php?pid=S1887-85712016000100010&script=sci_arttext",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Ejército de África ~50.000 hombres."
+    },
+    {
+      "id": "src-oreja-2011",
+      "title": "Valores universales y descolonización: el Sahara Occidental (Anales de la Real Academia de Ciencias Morales y Políticas, sesión de 15-2-2011)",
+      "author": "Marcelino Oreja Aguirre",
+      "publisher": "BOE, Biblioteca Jurídica Digital",
+      "date": "2011-02-15",
+      "url": "https://www.boe.es/biblioteca_juridica/anuarios_derecho/abrir_pdf.php?id=ANU-M-2011-10019100208",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Consejo de Estado: provincialización funcional; comunicación a la ONU el 18-11-1975."
+    },
+    {
+      "id": "src-cepc-cordero",
+      "title": "La independencia de Marruecos",
+      "author": "José M.ª Cordero Torres",
+      "publisher": "Revista de Política Internacional, n.º 25 (CEPC)",
+      "date": "1956-03-01",
+      "url": "https://www.cepc.gob.es/sites/default/files/2021-12/32744rpi025007.pdf",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Resumen de época de la Declaración de 7-4-1956."
+    },
+    {
+      "id": "src-dialnet-torrejon",
+      "title": "Las relaciones entre España y Marruecos según sus tratados internacionales",
+      "author": "Juan Domingo Torrejón Rodríguez",
+      "publisher": "Dialnet",
+      "date": "",
+      "url": "https://dialnet.unirioja.es/descarga/articulo/1446356.pdf",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Declaración conjunta 7-4-1956 publicada en BOE de 4-3-1957; Tratado de Fez en BOE 5-6-1969."
+    },
+    {
+      "id": "src-guerracolonial-marcha",
+      "title": "La Marcha Verde y el final de la presencia española en el Sahara: una visión desde la prensa semanal española",
+      "author": "Guerra Colonial (URJC)",
+      "publisher": "Guerra Colonial. Colonialismo, procesos postcoloniales y relaciones internacionales",
+      "date": "",
+      "url": "https://guerracolonial.oa.urjc.es/index.php/gc/article/view/34/88",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Cambio16, Posible, Doblón, Blanco y Negro."
+    },
+    {
+      "id": "src-dialnet-alfonso-2022",
+      "title": "La participación de Estados Unidos en la crisis del Sáhara español: la Marcha Verde",
+      "author": "Álvaro Alfonso Hernández",
+      "publisher": "Historia Digital, vol. 22, n.º 40, pp. 111-148",
+      "date": "2022-01-01",
+      "url": "https://dialnet.unirioja.es/servlet/articulo?codigo=8528630",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-elcano-2025",
+      "title": "Entre los principios y el interés nacional: medio siglo desde la retirada española del Sáhara Occidental",
+      "author": "Real Instituto Elcano",
+      "publisher": "Real Instituto Elcano",
+      "date": "2025-01-01",
+      "url": "https://www.realinstitutoelcano.org/analisis/entre-los-principios-y-el-interes-nacional-medio-siglo-desde-la-retirada-espanola-del-sahara-occidental/",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Localizado en búsqueda; acceso bloqueado (403) el 2-9-2026."
+    },
+    {
+      "id": "src-wiki-marcha",
+      "title": "Marcha verde",
+      "author": "Wikipedia (es)",
+      "publisher": "Wikipedia",
+      "date": "",
+      "url": "https://es.wikipedia.org/wiki/Marcha_verde",
+      "kind": "dato",
+      "accessed": "2026-09-02",
+      "note": "Mapa; citas de Hassan II del 16-10-1975; resoluciones 377, 379, 380."
+    },
+    {
+      "id": "src-wiki-tripartito",
+      "title": "Acuerdo Tripartito de Madrid",
+      "author": "Wikipedia (es)",
+      "publisher": "Wikipedia",
+      "date": "",
+      "url": "https://es.wikipedia.org/wiki/Acuerdo_Tripartito_de_Madrid",
+      "kind": "dato",
+      "accessed": "2026-09-02",
+      "note": "Da 15 de noviembre para la votación y 4 en contra / 4 abstenciones; cita a Powell 2011 sobre Kissinger."
+    },
+    {
+      "id": "src-wiki-ifniwar",
+      "title": "Guerra de Ifni",
+      "author": "Wikipedia (es)",
+      "publisher": "Wikipedia",
+      "date": "",
+      "url": "https://es.wikipedia.org/wiki/Guerra_de_Ifni",
+      "kind": "dato",
+      "accessed": "2026-09-02",
+      "note": "Infobox: 198 muertos, 574 heridos, 80 desaparecidos."
+    },
+    {
+      "id": "src-wiki-azana",
+      "title": "Reforma militar de Manuel Azaña",
+      "author": "Wikipedia (es)",
+      "publisher": "Wikipedia",
+      "date": "",
+      "url": "https://es.wikipedia.org/wiki/Reforma_militar_de_Manuel_Aza%C3%B1a",
+      "kind": "dato",
+      "accessed": "2026-09-02",
+      "note": "Decreto de 4-7-1931 (Gil Pecharromán 1997, p. 45)."
+    },
+    {
+      "id": "src-wiki-melilla",
+      "title": "Sublevación militar del 17 de julio de 1936 en Melilla",
+      "author": "Wikipedia (es)",
+      "publisher": "Wikipedia",
+      "date": "",
+      "url": "https://es.wikipedia.org/wiki/Sublevaci%C3%B3n_militar_del_17_de_julio_de_1936_en_Melilla",
+      "kind": "dato",
+      "accessed": "2026-09-02",
+      "note": "189 ejecutados (Beevor 2006); texto del bando."
+    },
+    {
+      "id": "src-wiki-protectorado",
+      "title": "Protectorado español de Marruecos",
+      "author": "Wikipedia (es)",
+      "publisher": "Wikipedia",
+      "date": "",
+      "url": "https://es.wikipedia.org/wiki/Protectorado_espa%C3%B1ol_de_Marruecos",
+      "kind": "dato",
+      "accessed": "2026-09-02",
+      "note": "Carta de 800 notables (1931); 34.000 hombres en 1936; Franco en Tetuán el 19-7-1936."
+    },
+    {
+      "id": "src-wiki-sahara",
+      "title": "Sahara español",
+      "author": "Wikipedia (es)",
+      "publisher": "Wikipedia",
+      "date": "",
+      "url": "https://es.wikipedia.org/wiki/Sahara_espa%C3%B1ol",
+      "kind": "dato",
+      "accessed": "2026-09-02",
+      "note": "Provincia 1958; Bu Craa; PUNS; gobernadores con BOE."
+    },
+    {
+      "id": "src-wiki-polisario",
+      "title": "Frente Polisario",
+      "author": "Wikipedia (es)",
+      "publisher": "Wikipedia",
+      "date": "",
+      "url": "https://es.wikipedia.org/wiki/Frente_Polisario",
+      "kind": "dato",
+      "accessed": "2026-09-02",
+      "note": "Fundación 10-5-1973 en Zuérat; El Janga 20-5-1973; RASD 27-2-1976."
+    },
+    {
+      "id": "src-wiki-cintra",
+      "title": "Acuerdo de Cintra",
+      "author": "Wikipedia (es)",
+      "publisher": "Wikipedia",
+      "date": "",
+      "url": "https://es.wikipedia.org/wiki/Acuerdo_de_Cintra",
+      "kind": "dato",
+      "accessed": "2026-09-02",
+      "note": "1-4-1958; entrega de Villa Bens 10-4-1958."
+    },
+    {
+      "id": "src-wiki-juancarlos",
+      "title": "Juan Carlos I de España",
+      "author": "Wikipedia (es)",
+      "publisher": "Wikipedia",
+      "date": "",
+      "url": "https://es.wikipedia.org/wiki/Juan_Carlos_I_de_Espa%C3%B1a",
+      "kind": "dato",
+      "accessed": "2026-09-02",
+      "note": "Jefatura interina 30-10-1975; El Aaiún 2-11-1975 (cita a Bárbulo, El País 27-10-2002)."
+    },
+    {
+      "id": "src-wiki-capaz",
+      "title": "Fernando Capaz Montes",
+      "author": "Wikipedia (es)",
+      "publisher": "Wikipedia",
+      "date": "",
+      "url": "https://es.wikipedia.org/wiki/Osvaldo_Capaz_Montes",
+      "kind": "dato",
+      "accessed": "2026-09-02",
+      "note": "Desembarco 6-4-1934 (Madariaga 2002, p. 156)."
+    },
+    {
+      "id": "src-wiki-ejercito-africa",
+      "title": "Ejército de África (España)",
+      "author": "Wikipedia (es)",
+      "publisher": "Wikipedia",
+      "date": "",
+      "url": "https://es.wikipedia.org/wiki/Ej%C3%A9rcito_de_%C3%81frica_(Espa%C3%B1a)",
+      "kind": "dato",
+      "accessed": "2026-09-02",
+      "note": "32.000 hombres en 1936; 98.000 en julio de 1938 (Hugh Thomas)."
+    },
+    {
+      "id": "src-serhistorico",
+      "title": "Los moros de Franco",
+      "author": "Francesc Tur",
+      "publisher": "Ser Histórico",
+      "date": "2018-09-15",
+      "url": "https://serhistorico.net/2018/09/15/los-moros-de-franco/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Cifras de reclutamiento y bajas (El Attar, Lamraoui, Bárbulo)."
+    },
+    {
+      "id": "src-yabiladi",
+      "title": "Guerra Civil Española: Los soldados marroquíes del General Franco",
+      "author": "Yassine Benargane",
+      "publisher": "Yabiladi",
+      "date": "2017-07-24",
+      "url": "https://es.yabiladi.com/articles/details/172161/guerra-civil-espanola-soldados-marroquies.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "62.000-80.000; 15.000 en octubre de 1936 y 35.000 desde marzo de 1937; cita a Madariaga."
+    },
+    {
+      "id": "src-madariaga",
+      "title": "Los moros que trajo Franco",
+      "author": "María Rosa de Madariaga",
+      "publisher": "Alianza Editorial (Google Books)",
+      "date": "2015-01-01",
+      "url": "https://books.google.com/books/about/Los_moros_que_trajo_Franco.html?id=bk8FDAAAQBAJ",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Obra de referencia; no consultada directamente."
+    },
+    {
+      "id": "src-engels",
+      "title": "Lecciones para hoy. La izquierda y la cuestión colonial marroquí en la Segunda República",
+      "author": "Fundación Federico Engels",
+      "publisher": "fundacionfedericoengels.net",
+      "date": "",
+      "url": "https://fundacionfedericoengels.net/index.php/2-uncategorised/634-lecciones-para-hoy-la-izquierda-y-la-cuestion-colonial-marroqui-en-la-segunda-republica",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Fuente militante; manifestación de Tetuán 5-5-1931."
+    },
+    {
+      "id": "src-infobae-2026",
+      "title": "La independencia de Marruecos 70 años después: la tensión con España por la 'unidad territorial' y los acuerdos incumplidos",
+      "author": "Infobae",
+      "publisher": "Infobae",
+      "date": "2026-04-07",
+      "url": "https://www.infobae.com/espana/2026/04/07/la-independencia-de-marruecos-70-anos-despues-la-tension-con-espana-por-la-unidad-territorial-y-los-acuerdos-incumplidos/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-infobae-efe-2025",
+      "title": "El Acuerdo Tripartito de Madrid, por el que España cedió el Sáhara hace ahora medio siglo",
+      "author": "EFE / Infobae",
+      "publisher": "Infobae",
+      "date": "2025-11-13",
+      "url": "https://www.infobae.com/espana/agencias/2025/11/13/el-acuerdo-tripartito-de-madrid-por-el-que-espana-cedio-el-sahara-hace-ahora-medio-siglo/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "345/4/4."
+    },
+    {
+      "id": "src-infobae-efe-marcha",
+      "title": "La Marcha Verde, la iniciativa de Hassán II que marcó el futuro del Sáhara Occidental hace 50 años",
+      "author": "EFE / Infobae",
+      "publisher": "Infobae",
+      "date": "2025-11-03",
+      "url": "https://www.infobae.com/espana/agencias/2025/11/03/la-marcha-verde-la-iniciativa-de-hassan-ii-que-marco-el-futuro-del-sahara-occidental-hace-50-anos/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Operación Golondrina ordenada a mediados de octubre; Hassan II 5-11-1975."
+    },
+    {
+      "id": "src-democrata-2025",
+      "title": "50 años de la Marcha Verde: el movimiento estratégico de Hassán II que definió el destino del Sáhara Occidental",
+      "author": "Demócrata",
+      "publisher": "democrata.es",
+      "date": "2025-11-04",
+      "url": "https://www.democrata.es/politica/50-anos-marcha-verde-movimiento-estrategico-hassan-ii-definio-destino-sahara-occidental/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Citas de Hassan II, Juan Carlos y Piniés."
+    },
+    {
+      "id": "src-archivotransicion",
+      "title": "Traición y abandono a la población del Sahara",
+      "author": "Archivo de la Transición",
+      "publisher": "archivodelatransicion.es",
+      "date": "",
+      "url": "https://archivodelatransicion.es/archivo-organizaciones/el-sahara",
+      "kind": "archivo",
+      "accessed": "2026-09-02",
+      "note": "Discurso de Juan Carlos en El Aaiún según Informaciones (3-11-1975)."
+    },
+    {
+      "id": "src-lahaine-arrogante",
+      "title": "Cuando España traicionó al pueblo del Sáhara",
+      "author": "Víctor Arrogante",
+      "publisher": "La Haine",
+      "date": "2018-11-14",
+      "url": "https://www.lahaine.org/mm_ss_est_esp.php/cuando-espana-traiciono-al-pueblo",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-ecd-golondrina",
+      "title": "Operación Golondrina: 50 años de la retirada que marcó al Sahara Español",
+      "author": "Javier Tubío Barreto",
+      "publisher": "El Confidencial Digital",
+      "date": "2026-02-25",
+      "url": "https://www.elconfidencialdigital.com/articulo/defensa/operacion-golondrina-50-anos-retirada-que-marco-sahara-espanol/202602251251541005894.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "12.000 militares, 25.000 civiles, 40.000 t, 3.500 vehículos; arriado 28-2-1976."
+    },
+    {
+      "id": "src-alertadigital-ifni",
+      "title": "Escrito para la Historia: La retrocesión de Ifni (capítulo 13)",
+      "author": "Alerta Digital",
+      "publisher": "alertadigital.com",
+      "date": "2012-04-30",
+      "url": "https://www.alertadigital.com/2012/04/30/escrito-para-la-historia-la-retrocesion-de-ifni-capitulo-13/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Cortes 22-4-1969: 295/66/5; enmienda de Piñar."
+    },
+    {
+      "id": "src-apdha",
+      "title": "Sobre el Sáhara Occidental",
+      "author": "APDHA",
+      "publisher": "apdha.org",
+      "date": "",
+      "url": "https://www.apdha.org/sobre-el-sahara-occidental/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Cita de Carro; cronología."
+    },
+    {
+      "id": "src-abogacia",
+      "title": "La no descolonización del Sáhara",
+      "author": "Abogacía Española",
+      "publisher": "abogacia.es",
+      "date": "",
+      "url": "https://www.abogacia.es/actualidad/opinion-y-analisis/la-no-descolonizacion-del-sahara/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "La Declaración de Madrid nunca se publicó en el BOE."
+    },
+    {
+      "id": "src-almendron-franco-sahara",
+      "title": "Franco y el Sahara (ABC, 26-12-2018)",
+      "author": "Gemma Esteban Dorronzoro",
+      "publisher": "Almendron / ABC",
+      "date": "2018-12-26",
+      "url": "https://www.almendron.com/tribuna/franco-y-el-sahara/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Petición de la Yemaa 20-2-1973; respuesta de Franco 6-3-1973."
+    },
+    {
+      "id": "src-theobjective-granmarruecos",
+      "title": "El gran Marruecos (1)",
+      "author": "Luis Reyes",
+      "publisher": "The Objective",
+      "date": "2026-08-30",
+      "url": "https://theobjective.com/cultura/2026-08-30/el-gran-marruecos-1-historias-de-la-historia/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Franco, 30-12-1957, exculpa a Mohamed V del ataque a Ifni."
+    },
+    {
+      "id": "src-infodefensa-cintra",
+      "title": "1 de abril: tal día como hoy en 1958 España y Marruecos firman el acuerdo de Cintra",
+      "author": "Infodefensa",
+      "publisher": "Infodefensa",
+      "date": "",
+      "url": "https://www.infodefensa.com/texto-diario/mostrar/3516835/1-abril-dia-como-hoy-1958-espana-marruecos-firman-acuerdo-cintra",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-archivoshistoria-ifni",
+      "title": "La Guerra de Ifni-Sáhara 1957-1958 (II): El desarrollo del conflicto",
+      "author": "Archivos de la Historia",
+      "publisher": "archivoshistoria.com",
+      "date": "",
+      "url": "https://archivoshistoria.com/la-guerra-de-ifni-sahara-1957-1958-ii/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-saharaocc-cij",
+      "title": "Dictamen Tribunal Internacional de Justicia de La Haya (traducción no oficial)",
+      "author": "saharaoccidental.es",
+      "publisher": "saharaoccidental.es",
+      "date": "",
+      "url": "https://saharaoccidental.es/announcement/dictamen-tribunal-internacional-justicia-la-haya/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Traducción al español de las conclusiones."
+    },
+    {
+      "id": "src-rtve-nodo",
+      "title": "NO-DO (catálogo completo en RTVE Play, 4.064 noticiarios; API api.rtve.es programa 50991)",
+      "author": "RTVE / Filmoteca Española",
+      "publisher": "RTVE Play",
+      "date": "",
+      "url": "https://www.rtve.es/play/videos/no-do/",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": "Fichas consultadas por API el 2-9-2026; rtve.es bloquea el rastreo web ordinario."
+    },
+    {
+      "id": "src-rtve-youtube",
+      "title": "El SÁHARA OCCIDENTAL: 50 años después de la MARCHA VERDE | RTVE",
+      "author": "RTVE Noticias",
+      "publisher": "YouTube",
+      "date": "2025-11-01",
+      "url": "https://www.youtube.com/watch?v=9qP0qpuns7I",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": "Título y canal verificados por oEmbed; fecha aproximada (aniversario)."
+    },
+    {
+      "id": "src-commons",
+      "title": "Wikimedia Commons: categorías Ifni War, Green March, Spanish Sahara",
+      "author": "Wikimedia Commons",
+      "publisher": "Wikimedia",
+      "date": "",
+      "url": "https://commons.wikimedia.org/wiki/Category:Green_March",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": "Véase también https://commons.wikimedia.org/wiki/Category:Ifni_War"
+    }
+  ],
+  "events": [
+    {
+      "id": "ev-1931-notables",
+      "date": "1931-05-01",
+      "dateLabel": "1 de mayo de 1931",
+      "title": "Obreros y notables marroquíes piden igualdad a la República",
+      "summary": "Manifestación obrera en Tetuán pidiendo igualdad con los españoles y carta de 800 notables marroquíes a Alcalá-Zamora. La República no abrió vía alguna de autonomía; sólo concedió la nacionalidad a los judíos y ocupó Ifni en 1934 (Wikipedia). La Fundación Engels fecha la manifestación el 5 de mayo y afirma que fue disuelta con muertos [NO VERIFICADO].",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno provisional de la República (Alcalá-Zamora; coalición republicano-socialista)",
+      "headOfState": "Niceto Alcalá-Zamora (presidente del Gobierno provisional)",
+      "initiator": "marruecos",
+      "kinds": [
+        "politica",
+        "nacionalismo"
+      ],
+      "era": "republica",
+      "sourceIds": [
+        "src-wiki-protectorado",
+        "src-engels"
+      ]
+    },
+    {
+      "id": "ev-1931-azana",
+      "date": "1931-07-04",
+      "dateLabel": "4 de julio de 1931",
+      "title": "Azaña reorganiza el Ejército de África",
+      "summary": "Decreto que separa el cargo civil de Alto Comisario del de Jefe Superior de las Fuerzas Militares de Marruecos, subordinado al primero; el Ejército de África pasa a ser voluntario y se reducen efectivos (unos 7.000 según Wikipedia). Descontento de los africanistas. Ejército de África de ~50.000 hombres en el bienio (Sanidad Militar 2016).",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno provisional (Azaña, ministro de la Guerra)",
+      "headOfState": "Niceto Alcalá-Zamora (presidente del Gobierno provisional)",
+      "initiator": "espana",
+      "kinds": [
+        "militar",
+        "reforma"
+      ],
+      "era": "republica",
+      "sourceIds": [
+        "src-wiki-azana",
+        "src-scielo-azana"
+      ]
+    },
+    {
+      "id": "ev-1933-balbontin",
+      "date": "1933-08-25",
+      "dateLabel": "25 de agosto de 1933",
+      "title": "Balbontín reclama en las Cortes la independencia de Marruecos",
+      "summary": "Tras el primer intento fallido de ocupar Ifni (agosto de 1933, Gobierno Azaña, ministro de Estado De los Ríos), el diputado comunista Balbontín pregunta si Francia exige colaboración española y proclama «la bandera del abandono de Marruecos o, más claramente, de la independencia de Marruecos» (DSC Constituyentes núm. 395, págs. 15080-15082).",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Azaña (republicano-socialista)",
+      "headOfState": "Niceto Alcalá-Zamora (presidente de la República)",
+      "initiator": "espana",
+      "kinds": [
+        "parlamento",
+        "colonial"
+      ],
+      "era": "republica",
+      "sourceIds": [
+        "src-ds395-1933",
+        "src-idx-1931-33"
+      ]
+    },
+    {
+      "id": "ev-1934-ifni",
+      "date": "1934-04-06",
+      "dateLabel": "6 de abril de 1934",
+      "title": "Ocupación de Ifni por el coronel Capaz",
+      "summary": "Capaz vuela de Larache a Cabo Juby (27-3), embarca en el cañonero Canalejas (4-4) y desembarca en Sidi Ifni sin resistencia (6-4); el 7 se iza la bandera. Decreto de organización en la Gaceta de 10 de abril; Capaz, gobernador. Siete militares muertos en la operación (accidente aéreo y bajas indígenas, según Ramos Acosta en las Cortes).",
+      "government": "derecha",
+      "governmentLabel": "Gobierno de Lerroux (Partido Republicano Radical, con apoyo de la CEDA)",
+      "headOfState": "Niceto Alcalá-Zamora",
+      "initiator": "espana",
+      "kinds": [
+        "colonial",
+        "militar"
+      ],
+      "era": "republica",
+      "sourceIds": [
+        "src-libertaddigital-2024",
+        "src-eldebate-capaz",
+        "src-theobjective-capaz",
+        "src-wiki-capaz"
+      ]
+    },
+    {
+      "id": "ev-1934-cortes",
+      "date": "1934-04-19",
+      "dateLabel": "19 de abril de 1934",
+      "title": "Debate en las Cortes sobre la ocupación de Ifni",
+      "summary": "Proposición incidental del comunista Bolívar (registrada el 10-4 con firmas socialistas) «sobre la ocupación de Ifni y sobre la política imperialista del Estado español». Intervienen Bolívar, Moltó, Goicoechea, Ramos Acosta, Cruz, Lamamié de Clairac, Rodríguez de Viguri y Lerroux. Derecha, agrarios y canarios felicitan al Gobierno; Bolívar habla de «atraco a mano armada» (DSC núm. 71, págs. 2392-2403).",
+      "government": "derecha",
+      "governmentLabel": "Gobierno de Lerroux (Partido Republicano Radical)",
+      "headOfState": "Niceto Alcalá-Zamora",
+      "initiator": "espana",
+      "kinds": [
+        "parlamento",
+        "colonial"
+      ],
+      "era": "republica",
+      "sourceIds": [
+        "src-ds71-1934",
+        "src-ds67-1934",
+        "src-idx-1933-35"
+      ]
+    },
+    {
+      "id": "ev-1936-sublevacion",
+      "date": "1936-07-17",
+      "dateLabel": "17-19 de julio de 1936",
+      "title": "Sublevación en Melilla, Tetuán y Ceuta; Franco llega a Tetuán",
+      "summary": "El golpe empieza en la Comisión de Límites de Melilla la tarde del 17 (Seguí, Gazapo); Romerales, detenido y fusilado; 189 ejecutados esa noche (Beevor). Yagüe toma Ceuta y Sáenz de Buruaga Tetuán; Franco llega a Tetuán el 19 y asume el mando del Ejército de África (32.000-34.000 hombres).",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Casares Quiroga (Frente Popular)",
+      "headOfState": "Manuel Azaña (presidente de la República)",
+      "initiator": "espana",
+      "kinds": [
+        "guerra",
+        "militar"
+      ],
+      "era": "republica",
+      "sourceIds": [
+        "src-wiki-melilla",
+        "src-wiki-protectorado",
+        "src-wiki-ejercito-africa",
+        "src-congreso-iirep"
+      ]
+    },
+    {
+      "id": "ev-1936-tropas",
+      "date": "1936-10-01",
+      "dateLabel": "Octubre de 1936 - 1939",
+      "title": "Reclutamiento masivo de tropas marroquíes por Franco",
+      "summary": "15.000 marroquíes reclutados sólo en octubre de 1936 y 35.000 desde marzo de 1937 (France TV Info vía Yabiladi). Total entre 62.000 y 100.000 según autores (Madariaga, Bárbulo, El Attar, Lamraoui). Incentivos: 180 pesetas al mes y raciones; 350 puestos de recluta. Muertos: 11.000 documentados (Lamraoui) o 20.000 (Bárbulo).",
+      "government": "dictadura",
+      "governmentLabel": "Junta de Defensa Nacional / Gobierno de Franco (bando sublevado)",
+      "headOfState": "Francisco Franco (jefe del Estado sublevado desde 1-10-1936)",
+      "initiator": "espana",
+      "kinds": [
+        "guerra",
+        "militar"
+      ],
+      "era": "republica",
+      "sourceIds": [
+        "src-yabiladi",
+        "src-serhistorico",
+        "src-madariaga",
+        "src-wiki-ejercito-africa"
+      ]
+    },
+    {
+      "id": "ev-1956-independencia",
+      "date": "1956-04-07",
+      "dateLabel": "7 de abril de 1956",
+      "title": "Declaración conjunta hispano-marroquí: fin del Protectorado",
+      "summary": "Mohamed V viaja a Madrid (4-7 de abril); España reconoce la independencia y la unidad territorial de Marruecos pese a las reticencias del Ejército (García Valiño). Publicada en el BOE de 4-3-1957 (Torrejón). NO-DO 693 A filma la despedida en Barajas. Cabo Juby no se entrega hasta 1958.",
+      "government": "dictadura",
+      "governmentLabel": "Gobierno de Franco (ministro de Asuntos Exteriores Martín Artajo)",
+      "headOfState": "Francisco Franco",
+      "initiator": "ambos",
+      "kinds": [
+        "diplomacia",
+        "descolonizacion"
+      ],
+      "era": "franquismo",
+      "sourceIds": [
+        "src-infobae-2026",
+        "src-dialnet-torrejon",
+        "src-cepc-cordero",
+        "src-wiki-protectorado",
+        "src-rtve-nodo"
+      ]
+    },
+    {
+      "id": "ev-1957-ifni-guerra",
+      "date": "1957-11-23",
+      "dateLabel": "23 de noviembre de 1957",
+      "title": "Comienza la guerra de Ifni-Sáhara",
+      "summary": "Ataque del Ejército de Liberación marroquí a Sidi Ifni; Edchera (13-1-1958); operación Teide/Écouvillon con Francia (febrero de 1958; ~10.000 españoles y 5.000 franceses); fin oficial el 30-6-1958. Bajas españolas: 198/574/80 (Wikipedia, El Debate), 205/573/166 (Pastrana), 190/500/80 (Wikipedia en).",
+      "government": "dictadura",
+      "governmentLabel": "Gobierno de Franco (Castiella, Exteriores; Barroso, Ejército)",
+      "headOfState": "Francisco Franco",
+      "initiator": "marruecos",
+      "kinds": [
+        "guerra"
+      ],
+      "era": "franquismo",
+      "sourceIds": [
+        "src-wiki-ifniwar",
+        "src-scielo-sanidad-ifni",
+        "src-eldebate-nodo",
+        "src-archivoshistoria-ifni"
+      ]
+    },
+    {
+      "id": "ev-1958-provincias",
+      "date": "1958-01-10",
+      "dateLabel": "10 de enero de 1958",
+      "title": "Ifni y Sáhara, provincias españolas",
+      "summary": "Decreto de la Presidencia del Gobierno (BOE núm. 12, 14-1-1958): «Los Territorios del África Occidental Española se hallan integrados por dos provincias, denominadas Ifni y Sahara Español». Mando militar al capitán general de Canarias. El Consejo de Estado juzgaría después la provincialización como puramente funcional (Oreja).",
+      "government": "dictadura",
+      "governmentLabel": "Gobierno de Franco (Presidencia: Carrero Blanco)",
+      "headOfState": "Francisco Franco",
+      "initiator": "espana",
+      "kinds": [
+        "administracion",
+        "colonial"
+      ],
+      "era": "franquismo",
+      "sourceIds": [
+        "src-boe-1958",
+        "src-oreja-2011",
+        "src-libertaddigital-2015"
+      ]
+    },
+    {
+      "id": "ev-1958-cintra",
+      "date": "1958-04-01",
+      "dateLabel": "1 de abril de 1958",
+      "title": "Acuerdo de Cintra: cesión de Cabo Juby",
+      "summary": "Castiella y Balafrej firman en Angra de Cintra el fin de las hostilidades; España entrega Cabo Juby (zona sur del Protectorado, Villa Bens) el 10 de abril de 1958.",
+      "government": "dictadura",
+      "governmentLabel": "Gobierno de Franco (Castiella)",
+      "headOfState": "Francisco Franco",
+      "initiator": "ambos",
+      "kinds": [
+        "diplomacia",
+        "cesion"
+      ],
+      "era": "franquismo",
+      "sourceIds": [
+        "src-wiki-cintra",
+        "src-infodefensa-cintra",
+        "src-uned-montoro"
+      ]
+    },
+    {
+      "id": "ev-1961-ley-sahara",
+      "date": "1961-04-19",
+      "dateLabel": "19 de abril de 1961",
+      "title": "Ley 8/1961 de la Provincia de Sahara",
+      "summary": "Capital provisional en El Aaiún; la provincia «gozará de los derechos de representación en Cortes». Yemaa creada en 1967; procuradores saharauis en las Cortes.",
+      "government": "dictadura",
+      "governmentLabel": "Gobierno de Franco",
+      "headOfState": "Francisco Franco",
+      "initiator": "espana",
+      "kinds": [
+        "administracion"
+      ],
+      "era": "franquismo",
+      "sourceIds": [
+        "src-boe-ley8-1961",
+        "src-wiki-sahara"
+      ]
+    },
+    {
+      "id": "ev-1969-fez",
+      "date": "1969-01-04",
+      "dateLabel": "4 de enero de 1969",
+      "title": "Tratado de Fez: retrocesión de Ifni",
+      "summary": "«España retrocede a Marruecos en plena soberanía el territorio de Ifni» (art. 1). Pleno de las Cortes de 22-4-1969 con votación nominal (los ministros, Carrero el primero, votan sí; Piñar, no). Ratificado el 30-4-1969; BOE de 5-6-1969; arriado de bandera el 30-6-1969 (NO-DO 1384 B).",
+      "government": "dictadura",
+      "governmentLabel": "Gobierno de Franco (Castiella, Exteriores; Carrero, vicepresidente)",
+      "headOfState": "Francisco Franco",
+      "initiator": "ambos",
+      "kinds": [
+        "diplomacia",
+        "cesion",
+        "parlamento"
+      ],
+      "era": "franquismo",
+      "sourceIds": [
+        "src-boe-fez1969",
+        "src-boce1050-1969",
+        "src-uned-montoro",
+        "src-alertadigital-ifni",
+        "src-rtve-nodo"
+      ]
+    },
+    {
+      "id": "ev-1973-polisario",
+      "date": "1973-05-10",
+      "dateLabel": "10 de mayo de 1973",
+      "title": "Fundación del Frente Polisario; año de Bu Craa",
+      "summary": "Fundado en Zuérat (Mauritania); primera acción en El Janga el 20-5-1973. Ese año arranca la exportación de fosfatos de Bu Craa. La Yemaa había pedido a Franco la autodeterminación el 20-2-1973; Franco escribió a la Yemaa el 21-9-1973 (carta citada por Carro en las Cortes).",
+      "government": "dictadura",
+      "governmentLabel": "Gobierno de Carrero Blanco (desde junio de 1973)",
+      "headOfState": "Francisco Franco",
+      "initiator": "otros",
+      "kinds": [
+        "nacionalismo",
+        "economia"
+      ],
+      "era": "franquismo",
+      "sourceIds": [
+        "src-wiki-polisario",
+        "src-wiki-sahara",
+        "src-almendron-franco-sahara",
+        "src-dsp20-1975"
+      ]
+    },
+    {
+      "id": "ev-1974-referendum",
+      "date": "1974-08-20",
+      "dateLabel": "20 de agosto de 1974",
+      "title": "España anuncia a la ONU un referéndum de autodeterminación",
+      "summary": "Referéndum previsto para el primer semestre de 1975 bajo supervisión de la ONU; censo de casi 75.000 saharauis. Marruecos logra que la Asamblea General pida dictamen a la CIJ (res. 3292, 13-12-1974) y el referéndum se paraliza. Kissinger presiona a Arias y Cortina en Torrejón (9-11-1974) [NO VERIFICADO].",
+      "government": "dictadura",
+      "governmentLabel": "Gobierno de Arias Navarro (Cortina Mauri, Exteriores)",
+      "headOfState": "Francisco Franco",
+      "initiator": "espana",
+      "kinds": [
+        "descolonizacion",
+        "diplomacia"
+      ],
+      "era": "franquismo",
+      "sourceIds": [
+        "src-libertaddigital-2015",
+        "src-dsp20-1975",
+        "src-icj-1975"
+      ]
+    },
+    {
+      "id": "ev-1975-cij",
+      "date": "1975-10-16",
+      "dateLabel": "16 de octubre de 1975",
+      "title": "Dictamen de la CIJ y anuncio de la Marcha Verde",
+      "summary": "La Corte concluye que no había vínculos de soberanía territorial entre el Sáhara y Marruecos o Mauritania (votación 14-2 y 15-1) y que procede la autodeterminación. La misma noche Hassan II anuncia una marcha de 350.000 civiles. Franco preside su último Consejo de Ministros el 17; el 18 se ordena preparar la evacuación.",
+      "government": "dictadura",
+      "governmentLabel": "Gobierno de Arias Navarro",
+      "headOfState": "Francisco Franco",
+      "initiator": "marruecos",
+      "kinds": [
+        "diplomacia",
+        "crisis"
+      ],
+      "era": "franquismo",
+      "sourceIds": [
+        "src-icj-1975",
+        "src-wiki-marcha",
+        "src-democrata-2025",
+        "src-libertaddigital-2015"
+      ]
+    },
+    {
+      "id": "ev-1975-solis",
+      "date": "1975-10-21",
+      "dateLabel": "21 de octubre de 1975",
+      "title": "Solís negocia con Hassan II en Marrakech",
+      "summary": "Arias envía a José Solís (ministro secretario general del Movimiento) en vez de Cortina. Según un cable de la embajada de EE. UU. (23-10) «tres cuartas partes del problema quedaron resueltas tras el acuerdo alcanzado con Solís». El 22 el Consejo de Seguridad aprueba la res. 377; el 25 el BOC publica el proyecto de ley de descolonización.",
+      "government": "dictadura",
+      "governmentLabel": "Gobierno de Arias Navarro",
+      "headOfState": "Francisco Franco (enfermo)",
+      "initiator": "espana",
+      "kinds": [
+        "diplomacia",
+        "crisis"
+      ],
+      "era": "franquismo",
+      "sourceIds": [
+        "src-publico-2025",
+        "src-eldebate-cartas",
+        "src-libertaddigital-2015",
+        "src-un-s11853"
+      ]
+    },
+    {
+      "id": "ev-1975-juancarlos-aaiun",
+      "date": "1975-11-02",
+      "dateLabel": "2 de noviembre de 1975",
+      "title": "Juan Carlos, jefe de Estado interino, visita El Aaiún",
+      "summary": "Interino desde el 30 de octubre, el Príncipe vuela a El Aaiún y promete ante unos 500 oficiales que «se hará cuanto sea necesario para que nuestro Ejército conserve intacto su prestigio y su honor» (Informaciones, 3-11-1975) [NO VERIFICADO en hemeroteca]. El mismo día el Consejo de Seguridad aprueba la res. 379.",
+      "government": "dictadura",
+      "governmentLabel": "Gobierno de Arias Navarro",
+      "headOfState": "Juan Carlos de Borbón (jefe del Estado interino)",
+      "initiator": "espana",
+      "kinds": [
+        "monarquia",
+        "militar"
+      ],
+      "era": "franquismo",
+      "sourceIds": [
+        "src-archivotransicion",
+        "src-democrata-2025",
+        "src-wiki-juancarlos",
+        "src-libertaddigital-2015"
+      ]
+    },
+    {
+      "id": "ev-1975-marcha-verde",
+      "date": "1975-11-06",
+      "dateLabel": "6-9 de noviembre de 1975",
+      "title": "La Marcha Verde entra en el Sáhara",
+      "summary": "Unos 350.000 civiles marroquíes cruzan la frontera a las 10:30 por la zona desminada; 25.000 soldados detrás. El Consejo de Seguridad «deplora» la marcha (res. 380). El 7 Hassan anuncia que seguirá; Carro negocia en Agadir; el 9 Hassan ordena el regreso. Un informe CIA del 6-11 afirma que «Madrid y Rabat han acordado que los manifestantes sólo entrarán unas pocas millas».",
+      "government": "dictadura",
+      "governmentLabel": "Gobierno de Arias Navarro (Carro, Presidencia)",
+      "headOfState": "Juan Carlos de Borbón (interino)",
+      "initiator": "marruecos",
+      "kinds": [
+        "crisis",
+        "invasion"
+      ],
+      "era": "franquismo",
+      "sourceIds": [
+        "src-wiki-marcha",
+        "src-elespanol-2017",
+        "src-publico-2025",
+        "src-libertaddigital-2015"
+      ]
+    },
+    {
+      "id": "ev-1975-madrid",
+      "date": "1975-11-14",
+      "dateLabel": "14 de noviembre de 1975",
+      "title": "Acuerdos de Madrid (Declaración de Principios)",
+      "summary": "Arias Navarro, Ahmed Osman y Hamdi Mouknass firman la Declaración: administración temporal tripartita, presencia española hasta el 28-2-1976, respeto a la opinión saharaui «a través de la Yemaá», entrada en vigor al publicarse la Ley de Descolonización. Nunca publicada en el BOE; registrada en UNTS vol. 988. Para la ONU (Corell, 2002) no transfirió soberanía.",
+      "government": "dictadura",
+      "governmentLabel": "Gobierno de Arias Navarro",
+      "headOfState": "Juan Carlos de Borbón (interino)",
+      "initiator": "ambos",
+      "kinds": [
+        "diplomacia",
+        "cesion"
+      ],
+      "era": "franquismo",
+      "sourceIds": [
+        "src-unts-madrid",
+        "src-un-corell",
+        "src-abogacia",
+        "src-oreja-2011"
+      ]
+    },
+    {
+      "id": "ev-1975-cortes-ley40",
+      "date": "1975-11-18",
+      "dateLabel": "18 de noviembre de 1975",
+      "title": "Las Cortes aprueban la Ley de descolonización del Sahara",
+      "summary": "Pleno de las Cortes Españolas (DSP núm. 20): dictamen defendido por García-Valdecasas; discurso del ministro Carro («el Sahara es de España; pero el Sahara no es España»). Aprobado por 345 votos a favor, 4 en contra y 4 abstenciones. Ley 40/1975 sancionada el 19 por el Príncipe y publicada en el BOE el 20 de noviembre, día de la muerte de Franco.",
+      "government": "dictadura",
+      "governmentLabel": "Gobierno de Arias Navarro",
+      "headOfState": "Juan Carlos de Borbón (interino); Franco muere el 20-11",
+      "initiator": "espana",
+      "kinds": [
+        "parlamento",
+        "descolonizacion"
+      ],
+      "era": "franquismo",
+      "sourceIds": [
+        "src-dsp20-1975",
+        "src-boe-ley40",
+        "src-idx-1975",
+        "src-infobae-efe-2025"
+      ]
+    },
+    {
+      "id": "ev-1976-retirada",
+      "date": "1976-02-26",
+      "dateLabel": "26-28 de febrero de 1976",
+      "title": "Retirada española del Sáhara (Operación Golondrina)",
+      "summary": "Evacuación de unos 12.000 militares, 25.000 civiles, 40.000 t de material y 3.500 vehículos. El 26 de febrero España comunica a la ONU el fin de su presencia; el 27 se proclama la RASD en Bir Lehlu; el 28 se arría la última bandera en El Aaiún (ECD). Gobernador: Gómez de Salazar.",
+      "government": "dictadura",
+      "governmentLabel": "Gobierno de Arias Navarro (primer Gobierno de la Monarquía)",
+      "headOfState": "Juan Carlos I",
+      "initiator": "espana",
+      "kinds": [
+        "descolonizacion",
+        "militar"
+      ],
+      "era": "transicion",
+      "sourceIds": [
+        "src-ecd-golondrina",
+        "src-un-corell",
+        "src-wiki-polisario",
+        "src-wiki-sahara"
+      ]
+    }
+  ],
+  "quotes": [
+    {
+      "id": "q-1931-barriobero",
+      "date": "1931-07-28",
+      "dateLabel": "28 de julio de 1931",
+      "chamber": "congreso",
+      "legislature": "Cortes Constituyentes 1931-1933",
+      "speaker": "Eduardo Barriobero",
+      "party": "Partido Republicano Democrático Federal",
+      "bloc": "izquierda",
+      "role": "diputado por Oviedo",
+      "topics": [
+        "marruecos",
+        "presupuesto",
+        "ensenanza"
+      ],
+      "era": "republica",
+      "text": "en el presupuesto de Marruecos, en el presupuesto de cientos de millones de Marruecos, hay la cantidad de 51.300 pesetas para enseñanza",
+      "context": "Crítica al ministro de Instrucción Pública en el debate de política general.",
+      "sessionRef": "DSC Constituyentes núm. 10, 28 de julio de 1931, págs. 182-184 (aprox.)",
+      "pdfUrl": "https://www.congreso.es/docu/PHist/docs/07repu/DS_28-07-1931.pdf",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds10-1931"
+      ],
+      "unverified": true
+    },
+    {
+      "id": "q-1933-balbontin",
+      "date": "1933-08-25",
+      "dateLabel": "25 de agosto de 1933",
+      "chamber": "congreso",
+      "legislature": "Cortes Constituyentes 1931-1933",
+      "speaker": "José Antonio Balbontín",
+      "party": "Partido Comunista de España",
+      "bloc": "izquierda",
+      "role": "diputado por Sevilla",
+      "topics": [
+        "marruecos",
+        "ifni",
+        "independencia"
+      ],
+      "era": "republica",
+      "text": "nosotros, los comunistas, seguimos manteniendo en pie, en esta cuestión de Marruecos, la bandera que vosotros habéis abandonado: la bandera del abandono de Marruecos o, más claramente, de la independencia de Marruecos, en el sentido de que ni España tiene derecho alguno sobre Marruecos, ni Francia, ni Alemania, ni ningún otro país; que el pueblo marroquí tiene para nosotros el mismo derecho a su libertad que cualquier otro pueblo",
+      "context": "Ruego al ministro de Estado sobre las exigencias francesas respecto a Ifni tras el intento fallido de ocupación de agosto de 1933.",
+      "sessionRef": "DSC Constituyentes núm. 395, 25 de agosto de 1933, págs. 15080-15082",
+      "pdfUrl": "https://app.congreso.es/est_sesiones/resource?id=1931-1933/1933/08/C-0395-15071.pdf",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds395-1933",
+        "src-idx-1931-33"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-1934-bolivar-teatral",
+      "date": "1934-04-19",
+      "dateLabel": "19 de abril de 1934",
+      "chamber": "congreso",
+      "legislature": "Legislatura 1933-1935",
+      "speaker": "Cayetano Bolívar",
+      "party": "Partido Comunista de España",
+      "bloc": "izquierda",
+      "role": "diputado por Málaga",
+      "topics": [
+        "ifni",
+        "imperialismo"
+      ],
+      "era": "republica",
+      "text": "Por el Presidente del Consejo de Ministros, Sr. Lerroux, ha sido anunciada, en una forma algo teatral, la ocupación por el Gobierno imperialista español del territorio de Ifni —ocupación pacífica, según dice—, apoyado el Gobierno español por las fuerzas del Ejército imperialista francés, con el auxilio de la aviación española y en perfecto acuerdo con el imperialismo francés",
+      "context": "Defensa de su proposición incidental sobre la ocupación de Ifni.",
+      "sessionRef": "DSC núm. 71, 19 de abril de 1934, pág. 2392",
+      "pdfUrl": "https://app.congreso.es/est_sesiones/resource?id=1933-1935/1934/04/C-0071-02391.pdf",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds71-1934"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-1934-bolivar-atraco",
+      "date": "1934-04-19",
+      "dateLabel": "19 de abril de 1934",
+      "chamber": "congreso",
+      "legislature": "Legislatura 1933-1935",
+      "speaker": "Cayetano Bolívar",
+      "party": "Partido Comunista de España",
+      "bloc": "izquierda",
+      "role": "diputado por Málaga",
+      "topics": [
+        "ifni",
+        "imperialismo"
+      ],
+      "era": "republica",
+      "text": "En realidad, ha sido un atraco a mano armada. (Risas.) La ocupación de Ifni no se distingue en nada de cuando al atracado se le apunta con la pistola y se le obliga a que entregue pacífica y voluntariamente su cartera",
+      "context": "Añade: «Negaos terminantemente a ir a los territorios de Ifni; no disparéis contra vuestros hermanos» y habla de «una especie de Manchukuo occidental».",
+      "sessionRef": "DSC núm. 71, 19 de abril de 1934, pág. 2393",
+      "pdfUrl": "https://app.congreso.es/est_sesiones/resource?id=1933-1935/1934/04/C-0071-02391.pdf",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds71-1934"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-1934-goicoechea",
+      "date": "1934-04-19",
+      "dateLabel": "19 de abril de 1934",
+      "chamber": "congreso",
+      "legislature": "Legislatura 1933-1935",
+      "speaker": "Antonio Goicoechea",
+      "party": "Renovación Española",
+      "bloc": "derecha",
+      "role": "diputado",
+      "topics": [
+        "ifni",
+        "capaz",
+        "azana"
+      ],
+      "era": "republica",
+      "text": "La ocupación de Ifni, valiéndose, como se ha valido S. S., de un jefe militar inteligente y esforzado, prescindiendo de sus antecedentes políticos para fijarse sólo en su capacidad personal, representa un acto de amnistía que personalmente ha realizado S. S. respecto del coronel Capaz en cuanto a la postergación, injusta, a su confinamiento en las Canarias que le había impuesto el Gobierno del Sr. Azaña",
+      "context": "Felicitación al Gobierno Lerroux; reivindica los derechos históricos sobre Santa Cruz de Mar Pequeña.",
+      "sessionRef": "DSC núm. 71, 19 de abril de 1934, pág. 2394",
+      "pdfUrl": "https://app.congreso.es/est_sesiones/resource?id=1933-1935/1934/04/C-0071-02391.pdf",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds71-1934"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-1934-ramos-acosta",
+      "date": "1934-04-19",
+      "dateLabel": "19 de abril de 1934",
+      "chamber": "congreso",
+      "legislature": "Legislatura 1933-1935",
+      "speaker": "Aurelio Ramos Acosta",
+      "party": "Partido Republicano Radical Socialista (adscripción según prensa)",
+      "bloc": "izquierda",
+      "role": "diputado por Málaga",
+      "topics": [
+        "ifni",
+        "militar",
+        "marruecos"
+      ],
+      "era": "republica",
+      "text": "Aparecía la ocupación de Ifni como un simple desembarco del coronel Capaz con modestos elementos, y al día de la fecha nos encontramos con el anuncio de un empréstito de 4 millones de pesetas, con la pérdida de dos vidas y el avión que ocupaban; de otras cinco vidas de soldados musulmanes y una de un soldado español",
+      "context": "Recuerda «aquellos episodios insignificantes que se iniciaron en Marruecos y que terminaron en epopeyas que todos tristemente recordamos».",
+      "sessionRef": "DSC núm. 71, 19 de abril de 1934, págs. 2394-2395",
+      "pdfUrl": "https://app.congreso.es/est_sesiones/resource?id=1933-1935/1934/04/C-0071-02391.pdf",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds71-1934"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-1934-cruz",
+      "date": "1934-04-19",
+      "dateLabel": "19 de abril de 1934",
+      "chamber": "congreso",
+      "legislature": "Legislatura 1933-1935",
+      "speaker": "Sr. Cruz",
+      "party": "diputado por Canarias (adscripción no verificada)",
+      "bloc": "otro",
+      "role": "diputado por Canarias",
+      "topics": [
+        "ifni",
+        "canarias"
+      ],
+      "era": "republica",
+      "text": "Aquí se ha hablado de planes guerreros, de imperialismos y de otras cosas, cuando lo hecho en Ifni no es nada más que traer al dominio de España lo que fue siempre de España",
+      "context": "Subraya «la importancia que tiene Ifni para Canarias por razones de vecindad».",
+      "sessionRef": "DSC núm. 71, 19 de abril de 1934, pág. 2396",
+      "pdfUrl": "https://app.congreso.es/est_sesiones/resource?id=1933-1935/1934/04/C-0071-02391.pdf",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds71-1934"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-1934-viguri",
+      "date": "1934-04-19",
+      "dateLabel": "19 de abril de 1934",
+      "chamber": "congreso",
+      "legislature": "Legislatura 1933-1935",
+      "speaker": "Luis Rodríguez de Viguri",
+      "party": "Partido Agrario Español",
+      "bloc": "derecha",
+      "role": "diputado (minoría agraria)",
+      "topics": [
+        "ifni",
+        "soberania"
+      ],
+      "era": "republica",
+      "text": "en nombre de la minoría agraria, pocas palabras para felicitar al Gobierno por el éxito afortunado de la ocupación del antiguo territorio de Santa Cruz de Mar Pequeña",
+      "context": "Pide a Lerroux que se conserve el nombre de Santa Cruz de Mar Pequeña.",
+      "sessionRef": "DSC núm. 71, 19 de abril de 1934, pág. 2397",
+      "pdfUrl": "https://app.congreso.es/est_sesiones/resource?id=1933-1935/1934/04/C-0071-02391.pdf",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds71-1934"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-1934-lerroux",
+      "date": "1934-04-19",
+      "dateLabel": "19 de abril de 1934",
+      "chamber": "congreso",
+      "legislature": "Legislatura 1933-1935",
+      "speaker": "Alejandro Lerroux",
+      "party": "Partido Republicano Radical",
+      "bloc": "gobierno",
+      "role": "presidente del Consejo de Ministros",
+      "topics": [
+        "ifni",
+        "imperialismo",
+        "capaz"
+      ],
+      "era": "republica",
+      "text": "nuestro imperialismo ha consistido en coger a un coronel que, acompañado de un oficial y un cabo, han desembarcado en el territorio de Ifni, donde, por lo menos antes, había 4.000 fusiles [...] Y se ha asentado allí ese emperador (Risas.) y le ha bastado su presencia para encontrarse con el asentimiento de la mayoría de la población y con la simpatía de todos aquellos naturales",
+      "context": "Respuesta a Bolívar: «Declaro que S. S. no ha dicho nada, absolutamente nada, no ya que pueda persuadirme, sino ni siquiera que me incline a meditar».",
+      "sessionRef": "DSC núm. 71, 19 de abril de 1934, pág. 2398",
+      "pdfUrl": "https://app.congreso.es/est_sesiones/resource?id=1933-1935/1934/04/C-0071-02391.pdf",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds71-1934"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-1936-bando-melilla",
+      "date": "1936-07-17",
+      "dateLabel": "17 de julio de 1936",
+      "chamber": "otro",
+      "legislature": "",
+      "speaker": "Mando sublevado de Melilla (bando de guerra)",
+      "party": "Ejército de África sublevado",
+      "bloc": "derecha",
+      "role": "bando militar",
+      "topics": [
+        "golpe",
+        "melilla"
+      ],
+      "era": "republica",
+      "text": "Hago saber: Una vez más, el Ejército unido a las demás fuerzas de la nación, se ha visto obligado a recoger el anhelo de la gran mayoría de españoles que veían, con amargura infinita, desaparecer lo que a todos puede unirnos en un ideal común: España. Se trata de restablecer el imperio del orden dentro de la República, no solamente en sus apariencias o signos exteriores, sino también en su misma esencia",
+      "context": "Bando leído en Melilla la tarde del 17 de julio de 1936; texto tomado de Wikipedia.",
+      "sessionRef": "Bando de guerra, Melilla, 17-7-1936",
+      "pdfUrl": "",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-wiki-melilla"
+      ],
+      "unverified": true
+    },
+    {
+      "id": "q-1969-valdecasas",
+      "date": "1969-04-22",
+      "dateLabel": "22 de abril de 1969",
+      "chamber": "cortes-franquistas",
+      "legislature": "IX Legislatura (1967-1971)",
+      "speaker": "Alfonso García-Valdecasas",
+      "party": "procurador en Cortes (Comisión de Asuntos Exteriores)",
+      "bloc": "gobierno",
+      "role": "ponente del dictamen",
+      "topics": [
+        "ifni",
+        "soberania",
+        "tratado"
+      ],
+      "era": "franquismo",
+      "text": "se puede sostener que la cesión de un territorio para una pesquería es una cesión de soberanía encubierta. Confieso que no simpatizo con semejante punto de vista; no me gustan las cesiones encubiertas de soberanía, porque la soberanía debe resplandecer",
+      "context": "Defensa del dictamen favorable al Tratado de Fez; compara el art. 8 del Tratado de 1860 (pesquería) con los arts. 2 y 3 (Ceuta, «pleno dominio y soberanía»).",
+      "sessionRef": "BOCE núm. 1050, Pleno de 22 de abril de 1969, págs. 25580-25581",
+      "pdfUrl": "https://app.congreso.es/est_sesiones/resource?id=1967-1971/1969/04/BOCE_1050.pdf",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-boce1050-1969"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-1969-presidente-nominal",
+      "date": "1969-04-22",
+      "dateLabel": "22 de abril de 1969",
+      "chamber": "cortes-franquistas",
+      "legislature": "IX Legislatura (1967-1971)",
+      "speaker": "Antonio Iturmendi (presidente de las Cortes)",
+      "party": "Cortes Españolas",
+      "bloc": "gobierno",
+      "role": "presidente de las Cortes",
+      "topics": [
+        "ifni",
+        "votacion"
+      ],
+      "era": "franquismo",
+      "text": "Se ha presentado ante esta Presidencia un escrito firmado por más de 20 Procuradores (en número de 51 Procuradores), solicitando votación nominal respecto al dictamen del Tratado que estamos considerando. Se declara pertinente la votación nominal",
+      "context": "Votación nominal iniciada por los ministros («Dijeron SÍ: D. Luis Carrero Blanco...»); Blas Piñar entre los «no». El Diario no imprime totales; fuentes secundarias: 295/66/25 (Montoro) o 295/66/5 (Alerta Digital).",
+      "sessionRef": "BOCE núm. 1050, 22 de abril de 1969, págs. 25584-25589",
+      "pdfUrl": "https://app.congreso.es/est_sesiones/resource?id=1967-1971/1969/04/BOCE_1050.pdf",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-boce1050-1969",
+        "src-uned-montoro",
+        "src-alertadigital-ifni"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-1975-valdecasas",
+      "date": "1975-11-18",
+      "dateLabel": "18 de noviembre de 1975",
+      "chamber": "cortes-franquistas",
+      "legislature": "X Legislatura (1971-1977)",
+      "speaker": "Alfonso García-Valdecasas y García-Valdecasas",
+      "party": "procurador en Cortes (ponente)",
+      "bloc": "gobierno",
+      "role": "ponente del dictamen",
+      "topics": [
+        "sahara",
+        "descolonizacion",
+        "soberania"
+      ],
+      "era": "franquismo",
+      "text": "si se estima que la descolonización del Sahara afecta a la plena soberanía o a la integridad territorial española, entonces hará falta una Ley aprobada por el Pleno de las Cortes [...] Si, por el contrario, la descolonización de un territorio no autónomo no afecta ni a la plena soberanía ni a la integridad territorial española —y en ello coincidía el señor Escobar con el pensamiento de la Ponencia—, entonces el Gobierno tiene competencia suficiente para ello",
+      "context": "Expone el planteamiento del marqués de Valdeiglesias y los precedentes de Guinea (Ley de 27-7-1968) e Ifni; el proyecto se publicó en el BOC el 25-10-1975 «sin antecedentes ninguno».",
+      "sessionRef": "DSP Cortes Españolas núm. 20, 18 de noviembre de 1975, págs. 102-103",
+      "pdfUrl": "https://app.congreso.es/est_sesiones/resource?id=1971-1977/1975/11/DSP_0020.pdf",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-dsp20-1975"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-1975-carro-soberania",
+      "date": "1975-11-18",
+      "dateLabel": "18 de noviembre de 1975",
+      "chamber": "cortes-franquistas",
+      "legislature": "X Legislatura (1971-1977)",
+      "speaker": "Antonio Carro Martínez",
+      "party": "Gobierno (ministro de la Presidencia)",
+      "bloc": "gobierno",
+      "role": "ministro de la Presidencia del Gobierno",
+      "topics": [
+        "sahara",
+        "soberania",
+        "descolonizacion"
+      ],
+      "era": "franquismo",
+      "text": "La soberanía no es negociable. Las esencias de la soberanía son: la unidad, la indivisibilidad y la inalienabilidad. [...] Por eso, si hablamos de negociación, si hablamos de transferencia de competencias, es porque lo que negociamos, lo que eventualmente podamos transferir, no integra el \"corpus\" de la soberanía. Si me permitís resumir la realidad del Sahara en un \"slogan\" de cierta expresividad gráfica diría que el Sahara es de España; pero el Sahara no es España",
+      "context": "Antes se pregunta si el Gobierno pediría autorización «para negociar sobre el destino de Cuenca, de Tenerife, de Lugo o de Ceuta, de Guipúzcoa o de Melilla». El procurador Pedrosa Latas le interrumpe: «Eso no es cierto».",
+      "sessionRef": "DSP Cortes Españolas núm. 20, 18 de noviembre de 1975, págs. 106-107",
+      "pdfUrl": "https://app.congreso.es/est_sesiones/resource?id=1971-1977/1975/11/DSP_0020.pdf",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-dsp20-1975",
+        "src-apdha"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-1975-carro-referendum",
+      "date": "1975-11-18",
+      "dateLabel": "18 de noviembre de 1975",
+      "chamber": "cortes-franquistas",
+      "legislature": "X Legislatura (1971-1977)",
+      "speaker": "Antonio Carro Martínez",
+      "party": "Gobierno (ministro de la Presidencia)",
+      "bloc": "gobierno",
+      "role": "ministro de la Presidencia del Gobierno",
+      "topics": [
+        "sahara",
+        "referendum",
+        "onu"
+      ],
+      "era": "franquismo",
+      "text": "hace aproximadamente un año, este Gobierno (al que me honro en pertenecer) presidido por el Caudillo expresó públicamente ante la ONU que España descolonizaría a través de un referéndum cuya celebración tendría lugar en el territorio antes del 30 de junio de 1975. La propia ONU nos pidió que aplazáramos este proceso de autodeterminación. La conflictividad internacional era enorme",
+      "context": "Añade que las «complacencias» con todas las partes llevaron a «situaciones límite, rayanas en guerra abierta».",
+      "sessionRef": "DSP Cortes Españolas núm. 20, 18 de noviembre de 1975, pág. 108",
+      "pdfUrl": "https://app.congreso.es/est_sesiones/resource?id=1971-1977/1975/11/DSP_0020.pdf",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-dsp20-1975"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-1975-carro-administracion",
+      "date": "1975-11-18",
+      "dateLabel": "18 de noviembre de 1975",
+      "chamber": "cortes-franquistas",
+      "legislature": "X Legislatura (1971-1977)",
+      "speaker": "Antonio Carro Martínez",
+      "party": "Gobierno (ministro de la Presidencia)",
+      "bloc": "gobierno",
+      "role": "ministro de la Presidencia del Gobierno",
+      "topics": [
+        "sahara",
+        "soberania",
+        "yemaa"
+      ],
+      "era": "franquismo",
+      "text": "algún Estado interesado en la zona nos ha pedido en muchas ocasiones que negociásemos sobre la soberanía del Sahara. Y siempre, invariablemente, la respuesta ha sido clara y contundente en el sentido de que no tenemos esa soberanía, lo que tenemos es la administración y sólo esto es lo negociable",
+      "context": "Cita la Yemaa como «órgano supremo de representación del pueblo saharaui» y la carta de Franco a la Yemaa de 21-9-1973.",
+      "sessionRef": "DSP Cortes Españolas núm. 20, 18 de noviembre de 1975, pág. 108",
+      "pdfUrl": "https://app.congreso.es/est_sesiones/resource?id=1971-1977/1975/11/DSP_0020.pdf",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-dsp20-1975"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-1975-votacion",
+      "date": "1975-11-18",
+      "dateLabel": "18 de noviembre de 1975",
+      "chamber": "cortes-franquistas",
+      "legislature": "X Legislatura (1971-1977)",
+      "speaker": "Sumario del Diario de Sesiones",
+      "party": "Cortes Españolas",
+      "bloc": "gobierno",
+      "role": "acta",
+      "topics": [
+        "sahara",
+        "votacion"
+      ],
+      "era": "franquismo",
+      "text": "Descolonización del Sahara.—Lectura del dictamen.—El señor García-Valdecasas expone, en nombre de la Comisión, los fundamentos del mismo.—Seguidamente interviene el señor Ministro de la Presidencia para exponer el criterio del Gobierno con respecto a la política de la descolonización.—Puesto a votación el dictamen es aprobado por 345 votos a favor, 4 en contra y 4 abstenciones",
+      "context": "Cifra oficial; discrepan Libertad Digital (354 a favor) y Wikipedia (fecha 15 de noviembre).",
+      "sessionRef": "DSP Cortes Españolas núm. 20, 18 de noviembre de 1975, pág. 2",
+      "pdfUrl": "https://app.congreso.es/est_sesiones/resource?id=1971-1977/1975/11/DSP_0020.pdf",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-dsp20-1975",
+        "src-libertaddigital-2015",
+        "src-wiki-tripartito"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-1950-franco-via-carro",
+      "date": "1950-01-01",
+      "dateLabel": "1950 (citado el 18-11-1975)",
+      "chamber": "cortes-franquistas",
+      "legislature": "X Legislatura (1971-1977)",
+      "speaker": "Francisco Franco (citado por Antonio Carro)",
+      "party": "Jefe del Estado",
+      "bloc": "gobierno",
+      "role": "jefe del Estado",
+      "topics": [
+        "sahara",
+        "franco"
+      ],
+      "era": "franquismo",
+      "text": "Vuestros hermanos de España no vienen aquí a alterar vuestra paz, vuestra libertad y vuestro señorío; vienen a ayudaros, a traeros el progreso de la civilización, los sanatorios, los médicos, todos los medios de que la ciencia dispone",
+      "context": "Palabras de Franco en su visita al Sáhara de 1950, leídas por Carro en el Pleno de 18-11-1975 (cita de segunda mano).",
+      "sessionRef": "DSP Cortes Españolas núm. 20, 18 de noviembre de 1975, pág. 107",
+      "pdfUrl": "https://app.congreso.es/est_sesiones/resource?id=1971-1977/1975/11/DSP_0020.pdf",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-dsp20-1975"
+      ],
+      "unverified": true
+    },
+    {
+      "id": "q-1975-juancarlos-aaiun",
+      "date": "1975-11-02",
+      "dateLabel": "2 de noviembre de 1975",
+      "chamber": "otro",
+      "legislature": "",
+      "speaker": "Juan Carlos de Borbón",
+      "party": "Jefe del Estado interino",
+      "bloc": "monarquia",
+      "role": "príncipe de España, jefe del Estado en funciones",
+      "topics": [
+        "sahara",
+        "ejercito",
+        "monarquia"
+      ],
+      "era": "franquismo",
+      "text": "Se hará cuanto sea necesario para que nuestro Ejército conserve intacto su prestigio y su honor [...] España cumplirá sus compromisos [...] deseamos proteger también los legítimos derechos de la población civil saharaui",
+      "context": "Discurso ante unos 500 oficiales en El Aaiún, según el diario Informaciones del 3-11-1975 reproducido por fuentes secundarias; Demócrata (2025) añade el inicio «He venido para saludaros y vivir unas horas con vosotros».",
+      "sessionRef": "Discurso en El Aaiún, 2-11-1975 (Informaciones, 3-11-1975)",
+      "pdfUrl": "",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-archivotransicion",
+        "src-democrata-2025",
+        "src-lahaine-arrogante"
+      ],
+      "unverified": true
+    },
+    {
+      "id": "q-1975-hassan-16oct",
+      "date": "1975-10-16",
+      "dateLabel": "16 de octubre de 1975",
+      "chamber": "otro",
+      "legislature": "",
+      "speaker": "Hassan II",
+      "party": "Rey de Marruecos",
+      "bloc": "marruecos",
+      "role": "rey de Marruecos",
+      "topics": [
+        "sahara",
+        "marcha-verde"
+      ],
+      "era": "franquismo",
+      "text": "el derecho ha prevalecido sobre la injusticia [...] la instancia internacional ha reconocido que existían lazos jurídicos y de pleitesía entre Marruecos y el Sahara",
+      "context": "Discurso televisado anunciando la Marcha Verde de 350.000 voluntarios; Demócrata (2025) traduce también: «¡No nos queda más que recuperar nuestro Sáhara, cuyas puertas legalmente se nos han abierto!». Traducciones no oficiales.",
+      "sessionRef": "Discurso radiotelevisado, Rabat, 16-10-1975",
+      "pdfUrl": "",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-wiki-marcha",
+        "src-democrata-2025"
+      ],
+      "unverified": true
+    },
+    {
+      "id": "q-1975-cia-stabler",
+      "date": "1975-11-06",
+      "dateLabel": "6 de noviembre de 1975",
+      "chamber": "otro",
+      "legislature": "",
+      "speaker": "National Intelligence Bulletin (CIA), según el embajador Wells Stabler",
+      "party": "CIA / Departamento de Estado de EE. UU.",
+      "bloc": "otro",
+      "role": "informe de inteligencia",
+      "topics": [
+        "sahara",
+        "marcha-verde",
+        "juan-carlos"
+      ],
+      "era": "franquismo",
+      "text": "Madrid y Rabat han acordado que los manifestantes sólo entrarán unas pocas millas en el Sáhara español",
+      "context": "Traducción periodística de El Español (2017) de un documento desclasificado por la CIA; añade que «una delegación representativa de unos 50 marroquíes tendrán permitido entrar en la capital territorial de El Aaiún». Acredita coordinación sobre el alcance de la marcha, no un pacto por la Corona.",
+      "sessionRef": "CIA, National Intelligence Bulletin, 6-11-1975 (vía El Español)",
+      "pdfUrl": "",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-elespanol-2017",
+        "src-publico-2025"
+      ],
+      "unverified": true
+    },
+    {
+      "id": "q-1974-kissinger-torrejon",
+      "date": "1974-11-09",
+      "dateLabel": "9 de noviembre de 1974",
+      "chamber": "otro",
+      "legislature": "",
+      "speaker": "Henry Kissinger (según memorias de Luis Guillermo Perinat)",
+      "party": "Secretario de Estado de EE. UU.",
+      "bloc": "otro",
+      "role": "secretario de Estado",
+      "topics": [
+        "sahara",
+        "eeuu"
+      ],
+      "era": "franquismo",
+      "text": "Qué más les da a ustedes. Hassán lo desea tanto…",
+      "context": "Reunión en la base de Torrejón con Arias Navarro y Cortina Mauri; Cortina habría respondido: «No podemos tratar a los saharauis como si fueran una piara de camellos» (Perinat, Recuerdos de una vida itinerante, citado por Libertad Digital).",
+      "sessionRef": "Base de Torrejón, 9-11-1974 (memorias de Perinat)",
+      "pdfUrl": "",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-libertaddigital-2015"
+      ],
+      "unverified": true
+    },
+    {
+      "id": "q-2002-corell",
+      "date": "2002-01-29",
+      "dateLabel": "29 de enero de 2002",
+      "chamber": "otro",
+      "legislature": "",
+      "speaker": "Hans Corell (Asesor Jurídico de la ONU)",
+      "party": "Naciones Unidas",
+      "bloc": "otro",
+      "role": "Secretario General Adjunto de Asuntos Jurídicos",
+      "topics": [
+        "sahara",
+        "acuerdos-madrid",
+        "derecho"
+      ],
+      "era": "democracia",
+      "text": "El Acuerdo de Madrid no transfirió la soberanía sobre el Territorio ni confirió a ninguno de los signatarios la condición de Potencia administradora, condición que España, por sí sola, no podía haber transferido unilateralmente",
+      "context": "Carta S/2002/161 al Presidente del Consejo de Seguridad, párr. 6. Valoración jurídica posterior de los Acuerdos de 1975.",
+      "sessionRef": "S/2002/161, párr. 6",
+      "pdfUrl": "https://www.arso.org/Olasp.pdf",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-un-corell"
+      ],
+      "unverified": false
+    }
+  ],
+  "statements": [
+    {
+      "id": "st-1975-hassan-solis",
+      "crisisId": "sahara-1975",
+      "bloc": "marruecos",
+      "speaker": "Hassan II",
+      "role": "rey de Marruecos",
+      "date": "1975-10-21",
+      "dateLabel": "21 de octubre de 1975",
+      "text": "Yo no quiero que se vayan Vds. del Sáhara tan pronto",
+      "sourceIds": [
+        "src-eldebate-cartas"
+      ],
+      "note": "Dicho a José Solís en Marrakech según Álvaro de Diego (El Debate, 2022). [NO VERIFICADO]"
+    },
+    {
+      "id": "st-1975-cia-colby",
+      "crisisId": "sahara-1975",
+      "bloc": "otro",
+      "speaker": "William Colby (director de la CIA)",
+      "role": "memorando a Kissinger",
+      "date": "1975-10-03",
+      "dateLabel": "3 de octubre de 1975",
+      "text": "El rey Hassan ha decidido invadir el Sáhara Español en las próximas tres semanas",
+      "sourceIds": [
+        "src-publico-2025"
+      ],
+      "note": "Traducción de Público (2025) de documentos CIA desclasificados en 2019. [Traducción periodística]"
+    },
+    {
+      "id": "st-1975-embajada-rabat",
+      "crisisId": "sahara-1975",
+      "bloc": "otro",
+      "speaker": "Embajada de EE. UU. en Rabat (cable a Kissinger)",
+      "role": "cable diplomático",
+      "date": "1975-10-23",
+      "dateLabel": "23 de octubre de 1975",
+      "text": "tres cuartas partes del problema quedaron resueltas tras el acuerdo alcanzado con Solís",
+      "sourceIds": [
+        "src-publico-2025"
+      ],
+      "note": "[Traducción periodística]"
+    },
+    {
+      "id": "st-1975-pinies-onu",
+      "crisisId": "sahara-1975",
+      "bloc": "gobierno",
+      "speaker": "Jaime de Piniés",
+      "role": "representante permanente de España ante la ONU",
+      "date": "1975-10-20",
+      "dateLabel": "20 de octubre de 1975",
+      "text": "La marcha sobre el Sáhara constituye un acto de fuerza [...] contrario a los principios y propósitos de la Carta",
+      "sourceIds": [
+        "src-democrata-2025"
+      ],
+      "note": "[NO VERIFICADO en actas de la ONU]"
+    },
+    {
+      "id": "st-1975-onu-costarica",
+      "crisisId": "sahara-1975",
+      "bloc": "otro",
+      "speaker": "Costa Rica (proyecto de resolución revisado S/11853/Rev.1)",
+      "role": "Consejo de Seguridad",
+      "date": "1975-10-22",
+      "dateLabel": "22 de octubre de 1975",
+      "text": "Pide con carácter de urgencia que el Gobierno de Marruecos desista de la marcha anunciada sobre el Sahara Occidental",
+      "sourceIds": [
+        "src-un-s11853"
+      ],
+      "note": "Texto literal del documento en español."
+    },
+    {
+      "id": "st-2017-munoz-kissinger",
+      "crisisId": "sahara-1975",
+      "bloc": "otro",
+      "speaker": "Gerardo Muñoz Lorente (historiador)",
+      "role": "autor de Historia del Sáhara español (Almuzara)",
+      "date": "",
+      "dateLabel": "s. f.",
+      "text": "no parece que, siendo secreta, se vislumbre siquiera la sospecha de que Kissinger conociera de antemano el plan de Hassan II de emprender la marcha verde y mucho menos de que la organizase o autorizase",
+      "sourceIds": [
+        "src-catalunyapress-munoz"
+      ],
+      "note": "Tesis contraria al pacto Juan Carlos-Kissinger-Hassan II."
+    }
+  ],
+  "series": [
+    {
+      "id": "se-votaciones-cortes",
+      "title": "Votaciones en las Cortes Españolas: Tratado de Ifni (1969) y Ley de descolonización del Sahara (1975)",
+      "unit": "votos",
+      "kind": "grouped",
+      "groups": [
+        "A favor",
+        "En contra",
+        "Abstenciones"
+      ],
+      "points": [
+        {
+          "x": "1969 (Ifni, Montoro 1991)",
+          "y": 295,
+          "group": "A favor",
+          "note": "Cifra secundaria; el BOCE no imprime totales"
+        },
+        {
+          "x": "1969 (Ifni, Montoro 1991)",
+          "y": 66,
+          "group": "En contra",
+          "note": ""
+        },
+        {
+          "x": "1969 (Ifni, Montoro 1991)",
+          "y": 25,
+          "group": "Abstenciones",
+          "note": "Alerta Digital da 5"
+        },
+        {
+          "x": "1975 (Sahara, DSP 20)",
+          "y": 345,
+          "group": "A favor",
+          "note": "Cifra oficial del Diario de Sesiones"
+        },
+        {
+          "x": "1975 (Sahara, DSP 20)",
+          "y": 4,
+          "group": "En contra",
+          "note": ""
+        },
+        {
+          "x": "1975 (Sahara, DSP 20)",
+          "y": 4,
+          "group": "Abstenciones",
+          "note": ""
+        }
+      ],
+      "sourceIds": [
+        "src-dsp20-1975",
+        "src-boce1050-1969",
+        "src-uned-montoro",
+        "src-alertadigital-ifni"
+      ],
+      "note": "1969: recuento propio aproximado sobre el OCR del BOCE 1050: ~277 sí / 67 no / 25 abstenidos. 1975: Libertad Digital da 354 a favor."
+    },
+    {
+      "id": "se-ifni-bajas",
+      "title": "Bajas españolas en la guerra de Ifni-Sáhara (1957-1958) según fuente",
+      "unit": "personas",
+      "kind": "grouped",
+      "groups": [
+        "Muertos",
+        "Heridos",
+        "Desaparecidos"
+      ],
+      "points": [
+        {
+          "x": "Wikipedia es / El Debate 2026",
+          "y": 198,
+          "group": "Muertos",
+          "note": ""
+        },
+        {
+          "x": "Wikipedia es / El Debate 2026",
+          "y": 574,
+          "group": "Heridos",
+          "note": ""
+        },
+        {
+          "x": "Wikipedia es / El Debate 2026",
+          "y": 80,
+          "group": "Desaparecidos",
+          "note": ""
+        },
+        {
+          "x": "Pastrana (Sanidad Militar 2023)",
+          "y": 205,
+          "group": "Muertos",
+          "note": ""
+        },
+        {
+          "x": "Pastrana (Sanidad Militar 2023)",
+          "y": 573,
+          "group": "Heridos",
+          "note": ""
+        },
+        {
+          "x": "Pastrana (Sanidad Militar 2023)",
+          "y": 166,
+          "group": "Desaparecidos",
+          "note": ""
+        },
+        {
+          "x": "Wikipedia en",
+          "y": 190,
+          "group": "Muertos",
+          "note": ""
+        },
+        {
+          "x": "Wikipedia en",
+          "y": 500,
+          "group": "Heridos",
+          "note": ""
+        },
+        {
+          "x": "Wikipedia en",
+          "y": 80,
+          "group": "Desaparecidos",
+          "note": ""
+        }
+      ],
+      "sourceIds": [
+        "src-wiki-ifniwar",
+        "src-eldebate-nodo",
+        "src-scielo-sanidad-ifni"
+      ],
+      "note": "Sanidad Militar 2023 añade: Francia 19 muertos; Ejército de Liberación 451 muertos y 261 prisioneros."
+    },
+    {
+      "id": "se-tropas-marroquies",
+      "title": "Estimaciones de marroquíes en el ejército de Franco (1936-1939)",
+      "unit": "personas",
+      "kind": "bar",
+      "groups": [],
+      "points": [
+        {
+          "x": "Yabiladi (mín.)",
+          "y": 62000,
+          "group": "",
+          "note": "62.000-80.000"
+        },
+        {
+          "x": "Madariaga (aprox.)",
+          "y": 80000,
+          "group": "",
+          "note": "«aproximadamente 80.000» según reseñas"
+        },
+        {
+          "x": "Jokin L. B.",
+          "y": 75000,
+          "group": "",
+          "note": "~7 % de las fuerzas de Franco"
+        },
+        {
+          "x": "Bárbulo",
+          "y": 100000,
+          "group": "",
+          "note": "«cerca de cien mil»"
+        },
+        {
+          "x": "El Attar",
+          "y": 100000,
+          "group": "",
+          "note": ""
+        },
+        {
+          "x": "Fundación Engels",
+          "y": 100000,
+          "group": "",
+          "note": "«cifra más realista»"
+        }
+      ],
+      "sourceIds": [
+        "src-yabiladi",
+        "src-serhistorico",
+        "src-madariaga",
+        "src-engels"
+      ],
+      "note": "Reclutamiento: 15.000 en octubre de 1936 y 35.000 desde marzo de 1937 (France TV Info vía Yabiladi)."
+    },
+    {
+      "id": "se-nodo-ifni",
+      "title": "Noticiarios NO-DO con referencias a Ifni, por año (1943-1969)",
+      "unit": "noticiarios",
+      "kind": "bar",
+      "groups": [],
+      "points": [
+        {
+          "x": 1950,
+          "y": 1,
+          "group": "",
+          "note": "408 A"
+        },
+        {
+          "x": 1952,
+          "y": 1,
+          "group": "",
+          "note": "493 B"
+        },
+        {
+          "x": 1957,
+          "y": 5,
+          "group": "",
+          "note": "779 A/B, 781 A, 782 A/B"
+        },
+        {
+          "x": 1958,
+          "y": 11,
+          "group": "",
+          "note": "783 A/B, 784 A/B, 791 B, 792 A, 794 A, 796 A, 801 B, 818 B, 825 A"
+        },
+        {
+          "x": 1959,
+          "y": 1,
+          "group": "",
+          "note": "840 B"
+        },
+        {
+          "x": 1961,
+          "y": 1,
+          "group": "",
+          "note": "953 B"
+        },
+        {
+          "x": 1962,
+          "y": 2,
+          "group": "",
+          "note": "1000 A, 1035 C"
+        },
+        {
+          "x": 1963,
+          "y": 1,
+          "group": "",
+          "note": "1083 B"
+        },
+        {
+          "x": 1966,
+          "y": 2,
+          "group": "",
+          "note": "1211 A, 1215 A"
+        },
+        {
+          "x": 1969,
+          "y": 1,
+          "group": "",
+          "note": "1384 B (retrocesión)"
+        }
+      ],
+      "sourceIds": [
+        "src-dialnet-nodo-ifni"
+      ],
+      "note": "26 noticiarios sobre un total de 3.039 producidos entre 1943 y 1969 (0,86 %), según González Sáez 2014, tabla 1."
+    },
+    {
+      "id": "se-golondrina",
+      "title": "Operación Golondrina: evacuación del Sáhara (nov. 1975 - feb. 1976)",
+      "unit": "unidades",
+      "kind": "bar",
+      "groups": [],
+      "points": [
+        {
+          "x": "Militares evacuados",
+          "y": 12000,
+          "group": "",
+          "note": "7.000 por mar, 5.000 por aire"
+        },
+        {
+          "x": "Civiles evacuados",
+          "y": 25000,
+          "group": "",
+          "note": ""
+        },
+        {
+          "x": "Toneladas de material",
+          "y": 40000,
+          "group": "",
+          "note": ""
+        },
+        {
+          "x": "Vehículos",
+          "y": 3500,
+          "group": "",
+          "note": ""
+        },
+        {
+          "x": "Participantes Marcha Verde",
+          "y": 350000,
+          "group": "",
+          "note": "más 25.000 soldados (Wikipedia, Público)"
+        }
+      ],
+      "sourceIds": [
+        "src-ecd-golondrina",
+        "src-wiki-marcha",
+        "src-publico-2025"
+      ],
+      "note": "Cifras de El Confidencial Digital (2026) y Wikipedia."
+    }
+  ],
+  "videos": [
+    {
+      "id": "vid-nodo-693a",
+      "provider": "rtve",
+      "embedUrl": "",
+      "pageUrl": "https://www.rtve.es/play/videos/no-do/not-693/1486138/",
+      "title": "NOT N 693 A - Mohamed V en España; declaración de la independencia de Marruecos; Franco despide a S.M.I. en Barajas",
+      "date": "1956-04-16",
+      "sourceIds": [
+        "src-rtve-nodo"
+      ]
+    },
+    {
+      "id": "vid-nodo-779a",
+      "provider": "rtve",
+      "embedUrl": "",
+      "pageUrl": "https://www.rtve.es/play/videos/no-do/not-779/1486235/",
+      "title": "NOT N 779 A - África Occidental Española. Ifni y su capital. Reportaje retrospectivo",
+      "date": "1957-12-09",
+      "sourceIds": [
+        "src-rtve-nodo",
+        "src-dialnet-nodo-ifni"
+      ]
+    },
+    {
+      "id": "vid-nodo-779b",
+      "provider": "rtve",
+      "embedUrl": "",
+      "pageUrl": "https://www.rtve.es/play/videos/no-do/not-779/1486240/",
+      "title": "NOT N 779 B - Paisajes de Ifni. Tarea constructiva realizada por nuestra Patria",
+      "date": "1957-12-09",
+      "sourceIds": [
+        "src-rtve-nodo",
+        "src-dialnet-nodo-ifni"
+      ]
+    },
+    {
+      "id": "vid-nodo-784a",
+      "provider": "rtve",
+      "embedUrl": "",
+      "pageUrl": "https://www.rtve.es/play/videos/no-do/not-784/1486249/",
+      "title": "NOT N 784 A - Llegada de tropas a Sidi Ifni. En avión a Villa Bens. Visita a El Aaiún. En los campamentos y puestos avanzados",
+      "date": "1958-01-13",
+      "sourceIds": [
+        "src-rtve-nodo",
+        "src-dialnet-nodo-ifni"
+      ]
+    },
+    {
+      "id": "vid-nodo-784b",
+      "provider": "rtve",
+      "embedUrl": "",
+      "pageUrl": "https://www.rtve.es/play/videos/no-do/not-784/1486248/",
+      "title": "NOT N 784 B - Ifni. Festival de Nochevieja con nuestros heroicos soldados",
+      "date": "1958-01-13",
+      "sourceIds": [
+        "src-rtve-nodo",
+        "src-dialnet-nodo-ifni"
+      ]
+    },
+    {
+      "id": "vid-nodo-1384b",
+      "provider": "rtve",
+      "embedUrl": "",
+      "pageUrl": "https://www.rtve.es/play/videos/no-do/not-1384/1486520/",
+      "title": "NOT N 1384 B - Retrocesión de Ifni a Marruecos. Emocionante ceremonia para españoles y marroquíes",
+      "date": "1969-07-14",
+      "sourceIds": [
+        "src-rtve-nodo",
+        "src-dialnet-nodo-ifni"
+      ]
+    },
+    {
+      "id": "vid-nodo-1713a",
+      "provider": "rtve",
+      "embedUrl": "",
+      "pageUrl": "https://www.rtve.es/play/videos/no-do/not-1713/1466910/",
+      "title": "NOT N 1713 A (10-11-1975): la ficha de RTVE no menciona el Sáhara ni la Marcha Verde (silencio del noticiario)",
+      "date": "1975-11-10",
+      "sourceIds": [
+        "src-rtve-nodo"
+      ]
+    },
+    {
+      "id": "vid-rtve-marcha-50",
+      "provider": "youtube",
+      "embedUrl": "https://www.youtube.com/embed/9qP0qpuns7I",
+      "pageUrl": "https://www.youtube.com/watch?v=9qP0qpuns7I",
+      "title": "El SÁHARA OCCIDENTAL: 50 años después de la MARCHA VERDE | RTVE (RTVE Noticias)",
+      "date": "2025-11-01",
+      "sourceIds": [
+        "src-rtve-youtube"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-ifni-1934",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Ifni_effective_occupation_1934.png",
+      "alt": "Bandera española izada en la sede provisional del gobierno del Territorio de Ifni, 7 de abril de 1934",
+      "width": 1297,
+      "height": 727,
+      "credit": "Autor desconocido, revista África (Ceuta, 1934), Biblioteca Nacional de España",
+      "license": "Dominio público",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Ifni_effective_occupation_1934.png"
+    },
+    {
+      "id": "img-franco-marruecos-1921",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/7/76/Francisco_Franco_en_Marruecos.jpg",
+      "alt": "Francisco Franco, comandante de la Primera Bandera del Tercio, ante su tienda en Uad Lau (Marruecos), agosto de 1921",
+      "width": 1145,
+      "height": 2048,
+      "credit": "Anónimo (vía Getty Images)",
+      "license": "Dominio público",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Francisco_Franco_en_Marruecos.jpg"
+    },
+    {
+      "id": "img-sidi-ifni-1957",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Spanish_soldiers_disembarking_in_Sidi_Ifni_%2834594848635%29.jpg",
+      "alt": "Cabos españoles en la playa de Sidi Ifni tras desembarcar, 31 de diciembre de 1957 (fotografía coloreada)",
+      "width": 2048,
+      "height": 1396,
+      "credit": "Cassowary Colorizations (Flickr)",
+      "license": "CC BY 2.0",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Spanish_soldiers_disembarking_in_Sidi_Ifni_(34594848635).jpg"
+    },
+    {
+      "id": "img-sidi-ifni-1958",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/7/71/Corporals_in_Sidi_Ifni_%2834594850845%29.jpg",
+      "alt": "Cuatro cabos españoles en un monte cerca de Gurram, Sidi Ifni, enero de 1958 (fotografía coloreada)",
+      "width": 2048,
+      "height": 1441,
+      "credit": "Cassowary Colorizations (Flickr)",
+      "license": "CC BY 2.0",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Corporals_in_Sidi_Ifni_(34594850845).jpg"
+    },
+    {
+      "id": "img-mapa-ifni",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/2/26/Mapa-Territorio-Ifni-57-58.svg",
+      "alt": "Mapa de las fronteras de Ifni antes y después de la guerra de 1957-1958",
+      "width": 1086,
+      "height": 1374,
+      "credit": "Pablovazram",
+      "license": "CC BY-SA 4.0",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Mapa-Territorio-Ifni-57-58.svg"
+    },
+    {
+      "id": "img-aaiun-1972",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/1/18/Acuartelamiento_espa%C3%B1ol_en_el_Aai%C3%BAn.jpg",
+      "alt": "Acuartelamiento español en El Aaiún, Sáhara español, 30 de mayo de 1972",
+      "width": 1060,
+      "height": 500,
+      "credit": "José Álvaro",
+      "license": "CC BY-SA 4.0",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Acuartelamiento_espa%C3%B1ol_en_el_Aai%C3%BAn.jpg"
+    },
+    {
+      "id": "img-hassan-massira",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/3/39/HassanMassira1.png",
+      "alt": "Hassan II pronuncia su primer discurso sobre la Marcha Verde (AP Wirephoto, 1975)",
+      "width": 1180,
+      "height": 813,
+      "credit": "Associated Press (Wirephoto)",
+      "license": "Dominio público",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:HassanMassira1.png"
+    },
+    {
+      "id": "img-upi-massira",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/d/db/UPIMassira1.png",
+      "alt": "Fotografía de UPI de la Marcha Verde, noviembre de 1975",
+      "width": 494,
+      "height": 315,
+      "credit": "United Press International (Wirephoto)",
+      "license": "Dominio público en EE. UU. (publicada sin aviso de copyright)",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:UPIMassira1.png"
+    },
+    {
+      "id": "img-hassan-oath",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/2/28/Hassan_II%27s_oath_to_the_Green_March.png",
+      "alt": "Juramento manuscrito de Hassan II a la Marcha Verde, 5 de noviembre de 1975",
+      "width": 2047,
+      "height": 981,
+      "credit": "Hassan II; Ministerio de Cultura y Comunicación de Marruecos (2019)",
+      "license": "Dominio público (Ley marroquí 34-05, documentos oficiales)",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Hassan_II's_oath_to_the_Green_March.png"
+    },
+    {
+      "id": "img-mapa-marcha-es",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/2/25/Gr%C3%BCner_Marsch_Karte-es.png",
+      "alt": "Mapa de la Marcha Verde (noviembre de 1975), versión en español",
+      "width": 1200,
+      "height": 734,
+      "credit": "Lencer; traducción de Ce Ele 415",
+      "license": "CC BY-SA 3.0",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Gr%C3%BCner_Marsch_Karte-es.png"
+    },
+    {
+      "id": "img-mapa-marcha-2024",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/7/73/Green_March_1975.jpg",
+      "alt": "Mapa de la Marcha Verde, invasión marroquí del Sáhara español en 1975",
+      "width": 1200,
+      "height": 734,
+      "credit": "Flaggingwill (a partir de Lencer)",
+      "license": "CC BY-SA 4.0",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Green_March_1975.jpg"
+    }
+  ]
+}

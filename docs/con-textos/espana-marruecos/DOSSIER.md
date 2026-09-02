@@ -136,11 +136,77 @@ La secuencia documentada es: alertas locales y policiales (27-29 jul), informe d
 
 ## 2. Siglo XIX: la Guerra de África, Margallo y Algeciras
 
-*(Pendiente de fusión del bloque 02.)*
+Fuentes, referencias de Diario y URL en `bloques/02-xix-1927.md`. Hallazgo metodológico: cada Diario de la serie histórica se sirve como PDF con OCR en `https://app.congreso.es/est_sesiones/resource?id=<legislatura>/<año>/<mes>/C-<núm>-<pág>.pdf`; todas las citas marcadas como verificadas se han leído en ese PDF.
+
+### 2.1 Guerra de África (1859-1860): un consenso nacionalista
+
+- **Gobierno**: Unión Liberal de O'Donnell (código «liberal»), que acumula Guerra; Isabel II. **Quién inicia**: España declara la guerra tras incidentes de cabilas de Anyera en el campo exterior de Ceuta (agosto de 1859).
+- **Congreso, 22 de octubre de 1859 (DSC núm. 148, pp. 4121-4144)** [verificado]. O'Donnell: «el Gobierno ha creído que era llegado el caso de apelar a las armas […] para recibir la satisfacción del agravio hecho al honor de la Nación española»; «No vamos animados de un espíritu de conquista, no. […] vamos a lavar nuestra honra, a exigir garantías para lo futuro». La proposición de apoyo (López de Ayala) se aprueba en votación nominal por los **186 presentes** (el Diario; la prensa dijo 187). El progresista Calvo Asensio se adhiere «en nombre de la prensa» de todas las ideas «unidas por un lazo común, el amor a la Patria».
+- Historiografía (Serrallonga, *Ayer*): «Progresistas, demócratas y algunos miembros de la Unión Liberal se presentan como los más fervientes defensores de la contienda. El broche lo pone Castelar». Rivero: «sólo para una guerra de África podría yo tolerar la quinta». 445 voluntarios catalanes con Prim.
+- Bajas 4.040-7.020, en un 68-72% por el cólera. Wad-Ras (26-4-1860): indemnización de 400 millones de reales (100 millones de pesetas; 140 millones cobrados según Echenique) y ocupación de Tetuán hasta el pago: «guerra grande y paz chica».
+- **Corona**: Isabel II, al reabrir las Cortes el 25-5-1860, dijo que las ventajas del tratado «compensan, en cuanto cabe, los gastos del Tesoro público» **[NO VERIFICADO en el DSC]**.
+- **Lectura**: no es un caso de «derecha contra Marruecos»; es la guerra más popular del siglo, empujada por progresistas y demócratas tanto como por el Gobierno.
+
+### 2.2 Margallo (1893) y el Tratado de Marrakech (1894): un gobierno liberal
+
+- **Gobierno**: Sagasta (Partido Liberal); regencia de María Cristina. **Quién inicia**: las cabilas de Guelaya atacan las obras del fuerte de Sidi Guariach (2-3 de octubre de 1893); Margallo muere el 28 de octubre; Martínez Campos negocia en Marrakech (5-3-1894, 20 millones de pesetas).
+- **Las Cortes estuvieron cerradas durante la guerra**; el debate fue en abril de 1894 [verificado]: Azcárate recuerda que las minorías republicanas acordaron volver a la Cámara «si el interés de la Patria lo reclamase» (DSC 98, p. 3294); conservadores y republicanos piden expedientes para «discutir la responsabilidad que corresponda al Gobierno», incluida la súplica de los jefes rifeños a la Reina para cambiar el emplazamiento del fuerte (p. 3295). Sagasta (DSC 100, pp. 3353-3354): el tratado deja «muy a salvo la dignidad de la Nación» y «el patriotismo aconseja callar, porque de ciertas cosas cuanto menos se hable, mejor»; López Domínguez, ministro de la Guerra (DSC 101, p. 3375): «Si vergüenza hubo, yo la acepto para mí».
+- Republicanos: Castelar, «Pronto castigo y a casa»; Ruiz Zorrilla, «con vergüenza para nuestro pueblo» **[NO VERIFICADO en original]**.
+
+### 2.3 1904-1906: reparto y Algeciras
+
+Convenio hispano-francés de 3-10-1904 (Gobierno conservador de Maura); Conferencia de Algeciras (enero-abril 1906, Gobierno liberal de Moret): policía bajo el Sultán con instructores españoles en Tetuán y Larache y franceses en el resto. Ratificación en Cortes **[NO VERIFICADO]**.
 
 ## 3. 1909-1927: del Barranco del Lobo a Alhucemas. Annual y las responsabilidades
 
-*(Pendiente de fusión del bloque 02.)*
+Fuentes y URL en `bloques/02-xix-1927.md` (§4-8).
+
+### 3.1 1909: Maura, los reservistas y la «Regia prerrogativa»
+
+- **Gobierno**: Maura, conservador («gobierno largo»); Alfonso XIII. **Quién inicia**: ataque rifeño a los obreros del ferrocarril minero (9-7-1909); movilización de reservistas (10-11 de julio); Barranco del Lobo (27-7: 153 muertos, muere el general Pintos); Semana Trágica (26-7 a 2-8); Ferrer fusilado (13-10). Las Cortes, cerradas hasta el 15 de octubre.
+- **Debate de 18-19 de octubre de 1909 (DSC 3 y 4)** [verificado]. Moret (liberal): «se traía a los reservistas con escenas de dolor por la separación de sus familias […] en el Gobierno habían faltado las dos grandes condiciones del Poder público: la previsión por una parte, y la energía para la represión por la otra» (p. 22); «los Gobiernos los busca el Poder Real» (p. 52). Maura: «se decía al pueblo que todo esto tenía por objeto convertir al ejército español en guardián de minas para que unos cuantos burgueses se enriquecieran» (p. 41); «¡loado sea Dios que estamos en vísperas de comparecer ante el sufragio universal!» (p. 55). El 21-10-1909 Maura comunica su dimisión «ínterin S. M., en uso de su Regia prerrogativa, designa nuevo Ministerio» (DSC 6, p. 85): el Rey retira la confianza a Maura y llama a Moret. El «¡Maura, no!» es consigna de prensa y calle, no frase del Diario.
+- Pablo Iglesias (7-7-1910): «antes que S. S. suba al Poder, debemos llegar hasta el atentado personal» **[NO VERIFICADO]**.
+- **Corona**: Alfonso XIII visita Melilla en enero de 1911 y Montero Ríos lo apoda «el Africano».
+- **Lectura**: aquí sí hay un gobierno conservador que escala (movilización de reservistas, ocupación) y una izquierda que se opone en la calle; pero es la Corona, no las Cortes, quien derriba a Maura.
+
+### 3.2 1912: Canalejas, el Tratado y «para nosotros no hay Tratado»
+
+Gobierno liberal de Canalejas (asesinado el 12-11-1912; DSC 179 recoge la comunicación y a García Prieto: «no quedan en nuestro espíritu fuerzas para discurrir ni para hablar»). Tratado hispano-francés de 27-11-1912 firmado bajo Romanones. Ese mismo día en el Congreso (DSC 188, pp. 5486-5487) [verificado]: Rodríguez Romeo pide retirar la partida «Acción de España en África» («Ahora ya sabemos que el statu quo cuesta 62 millones»); Romanones: «Mientras el Tratado no reciba la sanción del Parlamento no puede causar estado de derecho ninguna de sus consecuencias: para nosotros no hay Tratado». Fecha de la ratificación **[NO VERIFICADO]**. **Lectura**: el Protectorado es obra de gobiernos liberales.
+
+### 3.3 1921: Annual y «fué el Rey»
+
+- **Gobierno**: Allendesalazar (conservador), ministro de la Guerra vizconde de Eza; desde el 14-8-1921, Maura con La Cierva en Guerra. **Quién inicia**: ofensiva de Abd el-Krim sobre un dispositivo español en avance (Abarrán 1-6, Igueriben 21-7, Annual 22-7, Monte Arruit 9-8). Bajas: 13.363 (Picasso), 8.668 españoles (Prieto), 7.875 (Caballero Poveda).
+- **Primer debate (octubre-noviembre de 1921)** [verificado]. La Cierva (20-10, DSC 77, p. 3687): «¿es que hay alguien aquí que diga con carácter general que el Ejército español es un Ejército de bandidos?». **Prieto (27-10, DSC 81, p. 3831)**: «¿Quién, entonces, autorizó la operación sobre Alhucemas, quién la decretó? […] lo dijo el general Silvestre al volver a Melilla desde la borda del barco: fué el Rey. (Rumores y protestas.)»; el presidente Sánchez Guerra le reprocha «hipótesis […] atentatorias a la promesa por V. S. dada»; Prieto (p. 3832): «llevar al Rey a la zona del Protectorado como si fuera una zona de conquista […] ocho mil cadáveres parece que se agrupan en torno de las gradas…». La Cierva (p. 3833): «la responsabilidad que pueda exigirse sólo incumbe y alcanza a los Gobiernos». Maura (10-11, DSC 88, pp. 4076-4077): un debate que «interesa a todos los hogares […] en todos los ámbitos de la Monarquía».
+- **El telegrama «¡Olé los hombres!»**: aparece por primera vez en el folleto de Blasco Ibáñez *Por España y contra el rey* (1924-25). Tusell y García Queipo de Llano no hallaron en el Archivo de Palacio «ningún documento que demuestre que el monarca mantuviera relación escrita o telegráfica con Silvestre»; ni Prieto ni Companys lo mencionaron en sus ataques parlamentarios; el «telegrama personal y reservado» que Prieto cita el 21-11-1922 es de La Cierva (DSC 105, p. 4194). Gajate (2013): «no existen pruebas documentales, sino sólo testimonios indirectos». El artículo debe presentarlo como leyenda política, no como hecho.
+
+### 3.4 1922: el Expediente Picasso y el debate de noviembre
+
+Picasso entrega el expediente el 18-4-1922; el Consejo Supremo procesa a 39 militares y pide suplicatorio contra Berenguer (senador vitalicio; aprobado en el Senado el 28-6-1923). Comisión de Responsabilidades (21-7-1922, a iniciativa del conservador Sánchez Guerra, presidida por Alcalá-Zamora). Tres dictámenes el 14-11-1922: conservador (sólo responsabilidades militares), liberal (censura e inhabilitación de Allendesalazar, Lema y Eza), socialista (acusación de los gobiernos Allendesalazar y Maura ante el Senado). Sesiones [verificadas]:
+
+| Fecha | Orador | Cita | Ref. |
+|---|---|---|---|
+| 14-11 | Villanueva, Romanones, Lerroux, M. Álvarez, Alba, Gasset, Alcalá-Zamora | «es indispensable la plena depuración de las responsabilidades militares y políticas» | DSC 101, p. 4016 |
+| 21-11 | Prieto (PSOE) | «sería una vileza enorme erigir una figura política, clavar el mástil de una bandera sobre un pedestal tan macabro como el que forman las toneladas de huesos humanos recogidos en la zona de Melilla […] un pueblo que no tuviese la gallardía y la valentía de liquidar […] las responsabilidades de esta tragedia, sería un pueblo que no tenía ya derecho a existir como pueblo libre» | DSC 105, p. 4187 |
+| 21-11 | Prieto | «¿Quién lo mandó? ¿Quién lo ordenó? ¿Quién lo dispuso? Eso es lo que, teniendo yo una firmísima convicción, no hay manera de demostrar en las páginas del expediente Picasso» | p. 4193-4194 |
+| 22-11 | Sánchez Guerra (conservador, presidente del Consejo) | «permitidme lo único que me puede ser permitido: la elocuencia del silencio» | DSC 106, p. 4234 |
+| 23-11 | Votación | El dictamen socialista, «no tomado en consideración […] por 145 votos contra 7» | DSC 107, p. 4276 |
+| 24-11 | Alcalá-Zamora (liberal) | «han sido tan claras, tan evidentes, tan abrumadoras las responsabilidades, que con una intensa y sincera amargura […] me he visto en el trance de tener que reconocerlas» | DSC 108, pp. 4313-4314 |
+| 28-11 | Sánchez Guerra | Inhabilitar a ex ministros «constituye […] un agravio a la prerrogativa de la Corona» | DSC 109, p. 4369 |
+| 30-11 | Maura | «condenar sin oír, aun justamente, es una iniquidad […] si […] viene la acusación en debida forma, ya verá S. S. cómo yo voto» | DSC 111, pp. 4464-4465 |
+| 1-12 | Melquíades Álvarez | La doctrina de Maura es «inaceptable y peligrosa […] peligrosísima» | DSC 112, pp. 4494-4495 |
+| 5-12 | Sánchez Guerra | «la sesión no puede continuar, porque no hay Gobierno, pues yo marcho desde aquí a Palacio a presentar la dimisión» (Wikipedia la fecha erróneamente el 22-11) | DSC 113, p. 4529 |
+
+### 3.5 1923: «yo aquí soy la Corona» y el golpe
+
+Gobierno de García Prieto (concentración liberal). Debate de 3-4 de julio de 1923 [verificado]: La Cierva denuncia «este filón […] de las responsabilidades» (DSC 21, p. 671); García Prieto: «yo aquí, Sr. Cierva, soy la Corona; frente a la Corona soy el Parlamento; y como soy la Corona, en nombre de la Corona no puedo acusar a S. S. ni a nadie» (DSC 22, p. 707), aunque «puede haber responsables políticos […] Yo afirmo resueltamente que sí» (p. 708); Prieto: «Conocemos la escasa capacidad revolucionaria de España en estos instantes» (p. 711-712); **Companys** (republicano): «después del desastre de Annual, el país os hubiera debido barrer a todos, y con vosotros al Rey. (Grandes protestas en toda la Cámara.)» (p. 717), y advierte de que si no se exigen responsabilidades a los ministros «el Ejército no lo consentirá» (p. 718). La segunda Comisión (10-7-1923) convoca al pleno para el 1-2 de octubre: «Nunca llegaría a reunirse». **Golpe del 13-9-1923**: el manifiesto promete «al problema de Marruecos solución pronta, digna y sensata» y sanciona «la responsabilidad colectiva de los partidos políticos»; en junio el Rey se había negado a cesar a Primo de Rivera y sólo pidió a Cavalcanti «que le mantuviera informado». Bernardo Mateo Sagasta escondió el Expediente Picasso hasta abril de 1931.
+
+### 3.6 1925-1927: Alhucemas y la Asamblea Nacional
+
+Desembarco de Alhucemas (8-9-1925; Directorio Militar; cooperación francesa; 13.000 hombres, 361 muertos); rendición de Abd el-Krim a Francia (mayo 1926); fin oficial de la guerra (comunicado de Sanjurjo, 8/10-7-1927); bajas totales 53.500 españolas. Asamblea Nacional Consultiva (decreto de 12-9-1927): sesión inaugural presidida por el Rey el 10-10-1927; Yanguas Messía: «El gesto viril del General Primo de Rivera salvó a España de la anarquía […] la pacificación en Marruecos» (DSAN 1, pp. 8-9) [verificado]. Coda: las Cortes republicanas declararon a Alfonso XIII culpable de alta traición (20-11-1931) por dirigir la acción militar en Marruecos «a espaldas del Consejo de Ministros»; Romanones defendió que en el expediente Picasso no hay «pruebas fehacientes, ni siquiera pruebas indiciarias» **[NO VERIFICADO en DSC]**.
+
+### 3.7 Lectura provisional del periodo 1909-1927
+
+Las guerras del Rif las gestionan gobiernos de los dos partidos del turno; la escalada militar decisiva (1921) se produce bajo conservadores, y la exigencia de responsabilidades la encabezan socialistas (Prieto, Besteiro), republicanos (Companys) y liberales (Alcalá-Zamora, Melquíades Álvarez), mientras los conservadores (Sánchez Guerra, Maura, La Cierva) protegen «la prerrogativa de la Corona». El desenlace no lo da el Parlamento sino el Rey, que ampara el golpe que entierra el expediente. Es el episodio que mejor sostiene la hipótesis de Javier en su versión fuerte: derecha, Ejército de África y Corona frente a un Parlamento que pedía cuentas.
 
 ## 4. 1931-1975: República, guerra civil, Ifni y el Sáhara
 

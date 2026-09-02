@@ -1,0 +1,4089 @@
+{
+  "sources": [
+    {
+      "id": "src-formato-boe-1991",
+      "title": "Tratado de amistad, buena vecindad y cooperación entre el Reino de España y el Reino de Marruecos, hecho en Rabat el 4 de julio de 1991 (BOE núm. 49, 26 de febrero de 1993)",
+      "author": "",
+      "publisher": "BOE",
+      "date": "1993-02-26",
+      "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-1993-5422",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": "Firmado por Felipe González y Azeddine Laraki; en vigor el 28 de enero de 1993; art. 1 crea la Reunión anual de Alto Nivel."
+    },
+    {
+      "id": "src-boe-lo7-1985",
+      "title": "Ley Orgánica 7/1985, de 1 de julio, sobre derechos y libertades de los extranjeros en España",
+      "author": "",
+      "publisher": "BOE",
+      "date": "1985-07-03",
+      "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-1985-12767",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-boe-ea-ceuta",
+      "title": "Ley Orgánica 1/1995, de 13 de marzo, de Estatuto de Autonomía de Ceuta",
+      "author": "",
+      "publisher": "BOE",
+      "date": "1995-03-14",
+      "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-1995-6358",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-boe-ea-melilla",
+      "title": "Ley Orgánica 2/1995, de 13 de marzo, de Estatuto de Autonomía de Melilla",
+      "author": "",
+      "publisher": "BOE",
+      "date": "1995-03-14",
+      "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-1995-6359",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-boe-lo4-2015",
+      "title": "Ley Orgánica 4/2015, de 30 de marzo, de protección de la seguridad ciudadana (BOE núm. 77, 31 de marzo de 2015), disposición final primera: régimen especial de Ceuta y Melilla",
+      "author": "",
+      "publisher": "BOE",
+      "date": "2015-03-31",
+      "url": "https://www.boe.es/boe/dias/2015/03/31/pdfs/BOE-A-2015-3442.pdf",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": "Introduce la disposición adicional décima en la LO 4/2000 (rechazo en frontera). Texto consolidado: https://www.boe.es/buscar/act.php?id=BOE-A-2015-3442"
+    },
+    {
+      "id": "src-boe-lo2-2009",
+      "title": "Ley Orgánica 2/2009, de 11 de diciembre, de reforma de la LO 4/2000 de extranjería",
+      "author": "",
+      "publisher": "BOE",
+      "date": "2009-12-12",
+      "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2009-19949",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-ds-pl179",
+      "title": "Diario de Sesiones del Congreso, Pleno, VII Legislatura, núm. 179, 15 de julio de 2002 (debate sobre el estado de la Nación; Aznar sobre Perejil)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2002-07-15",
+      "url": "https://www.congreso.es/public_oficiales/L7/CONG/DS/PL/PL_179.PDF",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": "PDF leído íntegramente; paginación impresa 8963-9042."
+    },
+    {
+      "id": "src-ds-pl180",
+      "title": "Diario de Sesiones del Congreso, Pleno, VII Legislatura, núm. 180, 16 de julio de 2002 (propuestas de resolución; votación de la propuesta núm. 147 sobre Perejil)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2002-07-16",
+      "url": "https://www.congreso.es/public_oficiales/L7/CONG/DS/PL/PL_180.PDF",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-ds-co543",
+      "title": "Diario de Sesiones del Congreso, Comisiones, VII Legislatura, núm. 543, 17 de julio de 2002: sesión conjunta de las Comisiones de Asuntos Exteriores y de Defensa (comparecencia de Ana Palacio y Federico Trillo sobre Perejil)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2002-07-17",
+      "url": "https://www.congreso.es/public_oficiales/L7/CONG/DS/CO/CO_543.PDF",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": "Paginación impresa 17347-17365."
+    },
+    {
+      "id": "src-ds-l8pl301",
+      "title": "Diario de Sesiones del Congreso, Pleno, VIII Legislatura, núm. 301, 21 de noviembre de 2007 (pregunta de De Arístegui a Moratinos sobre Marruecos tras la visita de los Reyes)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2007-11-21",
+      "url": "https://www.congreso.es/public_oficiales/L8/CONG/DS/PL/PL_301.PDF",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-ds-co500",
+      "title": "Diario de Sesiones del Congreso, Comisiones (Interior), X Legislatura, núm. 500, 13 de febrero de 2014: comparecencia de Jorge Fernández Díaz sobre los hechos del Tarajal",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2014-02-13",
+      "url": "https://www.congreso.es/public_oficiales/L10/CONG/DS/CO/DSCD-10-CO-500.PDF",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-ds-x10pl178",
+      "title": "Diario de Sesiones del Congreso, Pleno, X Legislatura, núm. 178, 19 de febrero de 2014 (moción sobre seguridad ciudadana; intervenciones sobre el Tarajal)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2014-02-19",
+      "url": "https://www.congreso.es/public_oficiales/L10/CONG/DS/PL/DSCD-10-PL-178.PDF",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-ds-pl103",
+      "title": "Diario de Sesiones del Congreso, Pleno, XIV Legislatura, núm. 103, 19 de mayo de 2021 (sesión de control: crisis de Ceuta)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2021-05-19",
+      "url": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-103.PDF",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": "Leído íntegramente. No hubo comparecencia monográfica: la crisis se trató en preguntas orales e interpelaciones."
+    },
+    {
+      "id": "src-ds-pl104",
+      "title": "Diario de Sesiones del Congreso, Pleno, XIV Legislatura, núm. 104, 20 de mayo de 2021 (votación de la moción de VOX sobre la credibilidad del Ministerio del Interior)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2021-05-20",
+      "url": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-104.PDF",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-ds-co446",
+      "title": "Diario de Sesiones del Congreso, Comisiones (Interior), XIV Legislatura, núm. 446, 25 de junio de 2021: comparecencia de Fernando Grande-Marlaska (estado de alarma, Canarias y crisis de Ceuta y Melilla)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2021-06-25",
+      "url": "https://www.congreso.es/public_oficiales/L14/CONG/DS/CO/DSCD-14-CO-446.PDF",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-ds-pl174",
+      "title": "Diario de Sesiones del Congreso, Pleno, XIV Legislatura, núm. 174, 30 de marzo de 2022: comparecencia de Pedro Sánchez (Consejo Europeo, OTAN y relaciones con Marruecos / cambio de posición sobre el Sáhara)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2022-03-30",
+      "url": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-174.PDF",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-ds-pl177",
+      "title": "Diario de Sesiones del Congreso, Pleno, XIV Legislatura, núm. 177, 6 de abril de 2022 (debate de la PNL de Unidas Podemos, ERC y EH Bildu sobre el Sáhara Occidental)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2022-04-06",
+      "url": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-177.PDF",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-ds-pl178",
+      "title": "Diario de Sesiones del Congreso, Pleno, XIV Legislatura, núm. 178, 7 de abril de 2022 (votación de la PNL sobre el Sáhara Occidental)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2022-04-07",
+      "url": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-178.PDF",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-ds-pl192",
+      "title": "Diario de Sesiones del Congreso, Pleno, XIV Legislatura, núm. 192, 8 de junio de 2022: comparecencia de Pedro Sánchez (Consejo Europeo, Marruecos, Sáhara y Argelia)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2022-06-08",
+      "url": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-192.PDF",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-ds-pl197",
+      "title": "Diario de Sesiones del Congreso, Pleno, XIV Legislatura, núm. 197, 28 de junio de 2022 (intervenciones sobre la tragedia de Melilla del 24 de junio)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2022-06-28",
+      "url": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-197.PDF",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-ds-pl198",
+      "title": "Diario de Sesiones del Congreso, Pleno, XIV Legislatura, núm. 198, 29 de junio de 2022 (pregunta de Bermúdez de Castro a Grande-Marlaska sobre la valla de Melilla)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2022-06-29",
+      "url": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-198.PDF",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-ds-pl199",
+      "title": "Diario de Sesiones del Congreso, Pleno, XIV Legislatura, núm. 199, 30 de junio de 2022",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2022-06-30",
+      "url": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-199.PDF",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-ds-pl200",
+      "title": "Diario de Sesiones del Congreso, Pleno, XIV Legislatura, núm. 200, 12 de julio de 2022 (debate sobre el estado de la Nación: Abascal y Rufián sobre Marruecos, Sáhara y Melilla)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2022-07-12",
+      "url": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-200.PDF",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-moncloa-30-03-2022",
+      "title": "Comparecencia del presidente del Gobierno para informar del Consejo Europeo del 24 y 25 de marzo, la cumbre de la OTAN y las relaciones con Marruecos",
+      "author": "",
+      "publisher": "La Moncloa",
+      "date": "2022-03-30",
+      "url": "https://www.lamoncloa.gob.es/presidente/intervenciones/paginas/2022/prsp30032022.aspx",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-moncloa-07-04-2022",
+      "title": "Declaración conjunta España-Marruecos (Rabat, 7 de abril de 2022)",
+      "author": "",
+      "publisher": "La Moncloa",
+      "date": "2022-04-07",
+      "url": "https://www.lamoncloa.gob.es/presidente/actividades/Paginas/2022/070422-sanchez-marruecos.aspx",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": "Prevé grupos de trabajo, RAN en 2022, normalización progresiva de la circulación de bienes y mercancías en Ceuta y Melilla con dispositivos de control aduanero, y reanudación de conexiones marítimas."
+    },
+    {
+      "id": "src-moncloa-08-06-2022",
+      "title": "Intervención del presidente del Gobierno en el Congreso (8 de junio de 2022)",
+      "author": "",
+      "publisher": "La Moncloa",
+      "date": "2022-06-08",
+      "url": "https://www.lamoncloa.gob.es/presidente/intervenciones/paginas/2022/prsp08062022.aspx",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-elpais-carta",
+      "title": "La carta de Pedro Sánchez a Mohamed VI: 'Debemos construir una nueva relación que evite futuras crisis'",
+      "author": "",
+      "publisher": "El País",
+      "date": "2022-03-23",
+      "url": "https://elpais.com/espana/2022-03-23/la-carta-de-pedro-sanchez-a-mohamed-vi-debemos-construir-una-nueva-relacion-que-evite-futuras-crisis.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Reproduce el texto de la carta fechada el 14 de marzo de 2022; leído vía curl."
+    },
+    {
+      "id": "src-elindependiente-carta",
+      "title": "Sánchez cede ante Marruecos y defiende la autonomía del Sáhara en una carta a Mohamed VI",
+      "author": "",
+      "publisher": "El Independiente",
+      "date": "2022-03-18",
+      "url": "https://www.elindependiente.com/espana/2022/03/18/sanchez-cede-ante-marruecos-y-defiende-la-autonomia-del-sahara-en-una-carta-a-mohamed-vi/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "La carta se conoció por un comunicado del Gabinete Real marroquí difundido por la agencia MAP."
+    },
+    {
+      "id": "src-eldiario-pnl",
+      "title": "El Congreso rechaza el giro de Sánchez sobre el Sáhara horas antes de su viaje a Marruecos",
+      "author": "",
+      "publisher": "elDiario.es",
+      "date": "2022-04-07",
+      "url": "https://www.eldiario.es/politica/congreso-rechaza-giro-sanchez-sahara-horas-viaje-marruecos_1_8898111.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-elpais-2007-11-06",
+      "title": "Mohamed VI 'condena' y 'denuncia' la visita 'lamentable' de los Reyes de España a Ceuta y Melilla",
+      "author": "",
+      "publisher": "El País",
+      "date": "2007-11-06",
+      "url": "https://elpais.com/elpais/2007/11/06/actualidad/1194340617_850215.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Reproduce el comunicado difundido por la agencia MAP y las palabras de Juan Carlos I en Melilla."
+    },
+    {
+      "id": "src-elpais-2007-11-03",
+      "title": "Marruecos protesta por la visita de los Reyes a Ceuta y Melilla",
+      "author": "",
+      "publisher": "El País",
+      "date": "2007-11-03",
+      "url": "https://elpais.com/elpais/2007/11/03/actualidad/1194081419_740215.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-wiki-2007",
+      "title": "Conflicto diplomático entre España y Marruecos de 2007",
+      "author": "",
+      "publisher": "Wikipedia (es)",
+      "date": "2026-09-02",
+      "url": "https://es.wikipedia.org/wiki/Conflicto_diplom%C3%A1tico_entre_Espa%C3%B1a_y_Marruecos_de_2007",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Secundaria; cronología (2 nov. llamada a consultas de Azziman; 5-6 nov. visita; 3 y 7 ene. 2008 regreso)."
+    },
+    {
+      "id": "src-elpais-2005-09-29a",
+      "title": "Al menos tres de los cinco inmigrantes muertos en Ceuta fueron tiroteados desde Marruecos",
+      "author": "",
+      "publisher": "El País",
+      "date": "2005-09-29",
+      "url": "https://elpais.com/elpais/2005/09/29/actualidad/1127981821_850215.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-elpais-2005-09-29b",
+      "title": "España envía 480 soldados y Marruecos más de 1.600 agentes para controlar la frontera",
+      "author": "",
+      "publisher": "El País",
+      "date": "2005-09-29",
+      "url": "https://elpais.com/elpais/2005/09/29/actualidad/1127981817_850215.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-elpais-2005-10-06",
+      "title": "Seis inmigrantes mueren al repeler Marruecos a tiros otro salto masivo a la valla de Melilla",
+      "author": "",
+      "publisher": "El País",
+      "date": "2005-10-06",
+      "url": "https://elpais.com/elpais/2005/10/06/actualidad/1128586617_850215.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-wiki-valla-melilla",
+      "title": "Valla de Melilla",
+      "author": "",
+      "publisher": "Wikipedia (es)",
+      "date": "2026-09-02",
+      "url": "https://es.wikipedia.org/wiki/Valla_de_Melilla",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Secundaria: valla de 1998, elevación tras 2005, concertinas 2005/2007/2013/2020."
+    },
+    {
+      "id": "src-elpais-2021-04-24",
+      "title": "Marruecos 'deplora' que España acoja al líder del Frente Polisario",
+      "author": "",
+      "publisher": "El País",
+      "date": "2021-04-24",
+      "url": "https://elpais.com/espana/2021-04-24/marruecos-se-queja-a-espana-por-acoger-al-lider-del-frente-polisario.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-wiki-2021",
+      "title": "Incidente fronterizo entre España y Marruecos de 2021",
+      "author": "",
+      "publisher": "Wikipedia (es)",
+      "date": "2026-09-02",
+      "url": "https://es.wikipedia.org/wiki/Incidente_fronterizo_entre_Espa%C3%B1a_y_Marruecos_de_2021",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Secundaria; cifras (Interior 8.000; prensa 6.000-10.000; 1.500 menores) y cita de la embajadora Benyaich."
+    },
+    {
+      "id": "src-publico-laya",
+      "title": "La Fiscalía pide el archivo de la causa contra la exministra González Laya por el 'caso Ghali'",
+      "author": "",
+      "publisher": "Público",
+      "date": "2022-03-30",
+      "url": "https://www.publico.es/politica/fiscalia-pide-archivo-causa-exministra-gonzalez-laya-caso-ghali.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Cronología: Ghali llega el 18-4-2021 y sale el 2-6-2021."
+    },
+    {
+      "id": "src-theobjective-laya",
+      "title": "Sánchez cesó a González Laya como ministra de Exteriores tras exigirlo Marruecos",
+      "author": "",
+      "publisher": "The Objective",
+      "date": "2023-04-19",
+      "url": "https://theobjective.com/espana/politica/2023-04-19/sanchez-gonzalez-laya-exteriores-marruecos/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Fecha del cese: 10 de julio de 2021 (Público, 19-4-2023, da 12 de julio)."
+    },
+    {
+      "id": "src-publico-laya2",
+      "title": "Marruecos pidió al Gobierno la destitución de González Laya y Sánchez la cesó días después",
+      "author": "",
+      "publisher": "Público",
+      "date": "2023-04-19",
+      "url": "https://www.publico.es/politica/marruecos-pidio-gobierno-destitucion-gonzalez-laya-sanchez-ceso-dias-despues.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-elespanol-ghali",
+      "title": "El PP acusa a Sánchez de ser el 'señor X' del 'caso Ghali'",
+      "author": "",
+      "publisher": "El Español",
+      "date": "2021-09-22",
+      "url": "https://www.elespanol.com/espana/politica/20210922/pp-acusa-sanchez-senor-ghali-gonzalez-laya/613689886_0.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-defensor-melilla",
+      "title": "Incidentes del pasado 24 de junio (nota del Defensor del Pueblo)",
+      "author": "",
+      "publisher": "Defensor del Pueblo",
+      "date": "2022-10-14",
+      "url": "https://www.defensordelpueblo.es/noticias/sucesos-melilla/",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-defensor-resol",
+      "title": "Actuaciones y medidas de los Cuerpos y Fuerzas de Seguridad del Estado en Melilla (resolución)",
+      "author": "",
+      "publisher": "Defensor del Pueblo",
+      "date": "2022-10-14",
+      "url": "https://www.defensordelpueblo.es/resoluciones/actuaciones-y-medidas-de-los-cuerpos-y-fuerzas-de-seguridad-del-estado-en-melilla/",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": "470 rechazos en frontera; 134 personas accedieron; recomendaciones a la Secretaría de Estado de Seguridad."
+    },
+    {
+      "id": "src-eldiario-defensor",
+      "title": "El Defensor del Pueblo contradice la versión de Interior de la tragedia de Melilla tras ver las imágenes oficiales",
+      "author": "",
+      "publisher": "elDiario.es",
+      "date": "2022-10-14",
+      "url": "https://www.eldiario.es/desalambre/defensor-pueblo-contradice-version-interior-tragedia-melilla-ver-imagenes-oficiales_1_9708573.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-hrw-melilla",
+      "title": "Marruecos/España: horrorosas muertes de migrantes en la frontera de Melilla",
+      "author": "",
+      "publisher": "Human Rights Watch",
+      "date": "2022-06-30",
+      "url": "https://www.hrw.org/es/news/2022/06/30/marruecos/espana-horrorosas-muertes-de-migrantes-en-la-frontera-de-melilla",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": "Recoge la petición de investigación de la Alta Comisionada de la ONU Michelle Bachelet."
+    },
+    {
+      "id": "src-caminando-melilla",
+      "title": "Informe: víctimas de la frontera Nador-Melilla el 24/6/2022",
+      "author": "",
+      "publisher": "Caminando Fronteras",
+      "date": "2023-01-24",
+      "url": "https://caminandofronteras.org/en/monitoreo/report-victims-of-the-nador-melilla-border-24-6-2022/",
+      "kind": "dato",
+      "accessed": "2026-09-02",
+      "note": "Al menos 40 muertos y hasta 77 desaparecidos; fecha aproximada (siete meses después)."
+    },
+    {
+      "id": "src-amnistia-melilla",
+      "title": "Tragedia en la valla de Melilla: un año de impunidad tras la masacre",
+      "author": "",
+      "publisher": "Amnistía Internacional España",
+      "date": "2023-06-26",
+      "url": "https://www.es.amnesty.org/en-que-estamos/blog/historia/articulo/tragedia-en-la-valla-de-melilla-nunca-mas/",
+      "kind": "dato",
+      "accessed": "2026-09-02",
+      "note": "37 muertos y 76 desaparecidos como cifras oficiales/ONG; estimación propia de más de 100; Fiscalía archivó en diciembre de 2022."
+    },
+    {
+      "id": "src-enwiki-melilla-2022",
+      "title": "2022 Melilla incident",
+      "author": "",
+      "publisher": "Wikipedia (en)",
+      "date": "2026-09-02",
+      "url": "https://en.wikipedia.org/wiki/2022_Melilla_incident",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Secundaria: 23 (Marruecos), 29+70 (AMDH), 37 (Caminando Fronteras); 133 entradas; 470 rechazos; Fiscalía archiva 23-12-2022."
+    },
+    {
+      "id": "src-publico-tarajal",
+      "title": "Así ha sido la historia del drama de El Tarajal que dejó 15 muertos y demasiadas dudas",
+      "author": "",
+      "publisher": "Público",
+      "date": "2019-09-25",
+      "url": "https://www.publico.es/sociedad/asi-historia-drama-tarajal-dejo-15-muertos-demasiadas-dudas.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Cronología judicial: archivo 15-10-2015; reapertura enero 2017; procesamiento de 16 guardias civiles."
+    },
+    {
+      "id": "src-wiki-tarajal",
+      "title": "Tragedia del Tarajal",
+      "author": "",
+      "publisher": "Wikipedia (es)",
+      "date": "2026-09-02",
+      "url": "https://es.wikipedia.org/wiki/Tragedia_del_Tarajal",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Secundaria; archivo definitivo confirmado por el Tribunal Supremo en 2022."
+    },
+    {
+      "id": "src-amnistia-tarajal",
+      "title": "El Tarajal, historia de una tragedia sin nombres",
+      "author": "",
+      "publisher": "Amnistía Internacional España",
+      "date": "2015-02-05",
+      "url": "https://www.es.amnesty.org/en-que-estamos/blog/historia/articulo/el-tarajal-historia-de-una-tragedia-sin-nombres/",
+      "kind": "dato",
+      "accessed": "2026-09-02",
+      "note": "145 pelotas de goma y 5 botes de humo; 23 devueltos."
+    },
+    {
+      "id": "src-cear-tarajal",
+      "title": "Seis incógnitas sobre el caso Tarajal",
+      "author": "",
+      "publisher": "CEAR",
+      "date": "2017-02-05",
+      "url": "https://www.cear.es/destacados/seis-incognitas-sobre-el-caso-tarajal/",
+      "kind": "dato",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-vozpopuli-espigon",
+      "title": "Rajoy abandonó el plan de ampliar el espigón del Tarajal para no enfadar a Marruecos",
+      "author": "",
+      "publisher": "Vozpópuli",
+      "date": "2014-03-10",
+      "url": "https://www.vozpopuli.com/espana/pp-espigon-tarajal-rabat.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Fecha aproximada del artículo (no consta con precisión en la página)."
+    },
+    {
+      "id": "src-abogacia-tedh",
+      "title": "España no ha violado el CEDH devolviendo a Marruecos a inmigrantes que intentaban saltar la valla de Melilla (STEDH Gran Sala 13-2-2020, N.D. y N.T. c. España)",
+      "author": "",
+      "publisher": "Abogacía Española",
+      "date": "2020-02-13",
+      "url": "https://www.abogacia.es/conocenos/bruselas/sentencias/tedh/espana-no-ha-violado-el-cedh-devolviendo-a-marruecos-a-inmigrantes-que-intentaban-saltar-la-valla-de-melilla/",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": "Demandas 8675/15 y 8697/15; hechos del 13-8-2014; HUDOC: https://hudoc.echr.coe.int/eng#{%22itemid%22:[%22001-201353%22]}"
+    },
+    {
+      "id": "src-uniovi-tedh",
+      "title": "¿Un difícil equilibrio?: la sentencia TEDH (Gran Sala) de 13 de febrero de 2020, N.D. y N.T. c. España",
+      "author": "",
+      "publisher": "Universidad de Oviedo / Dialnet",
+      "date": "2020-01-01",
+      "url": "https://dialnet.unirioja.es/servlet/articulo?codigo=7624979",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Confirma que la Sala había condenado a España por unanimidad el 3 de octubre de 2017."
+    },
+    {
+      "id": "src-enwiki-perejil",
+      "title": "Perejil Island crisis",
+      "author": "",
+      "publisher": "Wikipedia (en)",
+      "date": "2026-09-02",
+      "url": "https://en.wikipedia.org/wiki/Perejil_Island_crisis",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Secundaria; 12 gendarmes; 28 miembros del GOE en la operación."
+    },
+    {
+      "id": "src-eswiki-perejil",
+      "title": "Incidente de la isla de Perejil",
+      "author": "",
+      "publisher": "Wikipedia (es)",
+      "date": "2026-09-02",
+      "url": "https://es.wikipedia.org/wiki/Incidente_de_la_isla_de_Perejil",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Secundaria: retirada del embajador marroquí en octubre de 2001 (pesca, Sáhara, reclamaciones territoriales); Romeo-Sierra 17-7 a las 06:17; acuerdo 20-7 con mediación de EE.UU.; Palacio-Benaissa 21-7."
+    },
+    {
+      "id": "src-eswiki-relaciones",
+      "title": "Relaciones España-Marruecos",
+      "author": "",
+      "publisher": "Wikipedia (es)",
+      "date": "2026-09-02",
+      "url": "https://es.wikipedia.org/wiki/Relaciones_Espa%C3%B1a-Marruecos",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Secundaria: Tratado 1991 y RAN anual; Othmani dic. 2020; carta 14-3-2022; RAN 2-2-2023; queja 31-5-2023; Mundial 2030 (4-10-2023); espacio aéreo (Europa Press 15-4-2024)."
+    },
+    {
+      "id": "src-enwiki-relaciones",
+      "title": "Morocco–Spain relations",
+      "author": "",
+      "publisher": "Wikipedia (en)",
+      "date": "2026-09-02",
+      "url": "https://en.wikipedia.org/wiki/Morocco%E2%80%93Spain_relations",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Secundaria: cierre de la aduana de Melilla 31-7/1-8-2018; regreso de embajadores en enero de 2003."
+    },
+    {
+      "id": "src-enwiki-argelia",
+      "title": "Algeria–Spain relations",
+      "author": "",
+      "publisher": "Wikipedia (en)",
+      "date": "2026-09-02",
+      "url": "https://en.wikipedia.org/wiki/Algeria%E2%80%93Spain_relations",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Secundaria: 19-3-2022 retirada del embajador argelino; 8-6-2022 suspensión del Tratado de 2002; nov. 2023 nuevo embajador; marzo 2026 reactivación del Tratado."
+    },
+    {
+      "id": "src-enwiki-mundial",
+      "title": "2030 FIFA World Cup",
+      "author": "",
+      "publisher": "Wikipedia (en)",
+      "date": "2026-09-02",
+      "url": "https://en.wikipedia.org/wiki/2030_FIFA_World_Cup",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "14-3-2023 Marruecos se une a la candidatura; 11-12-2024 ratificación por el Congreso de la FIFA."
+    },
+    {
+      "id": "src-eswiki-inmigracion",
+      "title": "Inmigración irregular en España",
+      "author": "",
+      "publisher": "Wikipedia (es)",
+      "date": "2026-09-02",
+      "url": "https://es.wikipedia.org/wiki/Inmigraci%C3%B3n_irregular_en_Espa%C3%B1a",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "'Más de 64.000' llegadas en 2018; 56.852 en 2023."
+    },
+    {
+      "id": "src-eswiki-dudu",
+      "title": "Aomar Mohamedi Dudú",
+      "author": "",
+      "publisher": "Wikipedia (es)",
+      "date": "2026-09-02",
+      "url": "https://es.wikipedia.org/wiki/Aomar_Mohamedi_Dud%C3%BA",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Líder de las movilizaciones de la comunidad musulmana de Melilla contra la LO 7/1985; asesor de Interior en 1986."
+    },
+    {
+      "id": "src-enwiki-fisheries",
+      "title": "EU–Morocco Fisheries Partnership Agreement",
+      "author": "",
+      "publisher": "Wikipedia (en)",
+      "date": "2026-09-02",
+      "url": "https://en.wikipedia.org/wiki/EU%E2%80%93Morocco_Fisheries_Partnership_Agreement",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Acuerdo hispano-marroquí de 1983; acuerdos CE-Marruecos 1988, 1992, 1995 (expira nov. 1999); acuerdo de 2006 en vigor 28-2-2007."
+    },
+    {
+      "id": "src-publico-felipe-ceuta",
+      "title": "Felipe VI se compromete a visitar Ceuta por primera vez durante su reinado",
+      "author": "",
+      "publisher": "Público",
+      "date": "2026-08-06",
+      "url": "https://www.publico.es/politica/felipe-vi-compromete-visitar-ceuta-primera-vez-reinado-hecho.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Contexto posterior al bloque; recuerda el comunicado de Mohamed VI de 2007."
+    },
+    {
+      "id": "src-elespanol-08-06-2022",
+      "title": "Pedro Sánchez informa en el Congreso del último Consejo Europeo y el giro sobre el Sáhara",
+      "author": "",
+      "publisher": "El Español",
+      "date": "2022-06-08",
+      "url": "https://www.elespanol.com/espana/politica/20220608/pedro-sanchez-congreso-diputados-consejo-europeo-sahara/678782117_10.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-gnews-aduanas",
+      "title": "Búsqueda en Google News RSS: 'aduana comercial Melilla Marruecos apertura' (titulares de El País 8-1-2025, RTVE 8-1-2025 y 8-7-2025, El Confidencial 10-10-2025, El Faro de Ceuta 4-12-2025)",
+      "author": "",
+      "publisher": "Google News (RSS)",
+      "date": "2026-09-02",
+      "url": "https://news.google.com/rss/search?q=aduana+comercial+Melilla+Marruecos+apertura&hl=es&gl=ES&ceid=ES:es",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Solo titulares y fechas; no se pudo acceder al texto de los artículos."
+    },
+    {
+      "id": "src-gnews-ran2025",
+      "title": "Búsqueda en Google News RSS: 'Reunión de Alto Nivel España Marruecos' (La Moncloa 2-2-2023; Atalayar y Diari de Tarragona sobre la XIII RAN del 4-12-2025)",
+      "author": "",
+      "publisher": "Google News (RSS)",
+      "date": "2026-09-02",
+      "url": "https://news.google.com/rss/search?q=Reuni%C3%B3n+de+Alto+Nivel+Espa%C3%B1a+Marruecos+2+febrero+2023+Rabat+acuerdos&hl=es&gl=ES&ceid=ES:es",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Solo titulares y fechas."
+    },
+    {
+      "id": "src-yt-pl103",
+      "title": "Sesión Plenaria (19/05/2021) – Congreso, Canal Parlamento (YouTube)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2021-05-19",
+      "url": "https://www.youtube.com/watch?v=A7AobWuq9OE",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-yt-co446",
+      "title": "Comisión de Interior (25/06/2021) – Congreso, Canal Parlamento (YouTube)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2021-06-25",
+      "url": "https://www.youtube.com/watch?v=i5HYwIckpjY",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-yt-pl174",
+      "title": "Sesión Plenaria (30/03/2022) – Congreso, Canal Parlamento (YouTube)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2022-03-30",
+      "url": "https://www.youtube.com/watch?v=sgfSfGG2R6c",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-yt-pl177",
+      "title": "Sesión Plenaria (06/04/2022) – Congreso, Canal Parlamento (YouTube)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2022-04-06",
+      "url": "https://www.youtube.com/watch?v=l0gx0GMDKEw",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-yt-pl178",
+      "title": "Sesión Plenaria (07/04/2022) – Congreso, Canal Parlamento (YouTube)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2022-04-07",
+      "url": "https://www.youtube.com/watch?v=EV9FHzhwnrc",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-yt-pl192",
+      "title": "Sesión Plenaria (08/06/2022) – Congreso, Canal Parlamento (YouTube)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2022-06-08",
+      "url": "https://www.youtube.com/watch?v=7ze6C4eLXqY",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-yt-pl198",
+      "title": "Sesión Plenaria (29/06/2022) – Congreso, Canal Parlamento (YouTube)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2022-06-29",
+      "url": "https://www.youtube.com/watch?v=PSLXF8dm8jw",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-yt-rtve-ceuta2021a",
+      "title": "CEUTA: miles de personas continúan cruzando la frontera desde Marruecos – RTVE Noticias (YouTube)",
+      "author": "",
+      "publisher": "RTVE",
+      "date": "2021-05-18",
+      "url": "https://www.youtube.com/watch?v=zQ6nhB9i8uo",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-yt-rtve-ceuta2021b",
+      "title": "El Gobierno moviliza al Ejército en Ceuta y Sánchez viajará este viernes – RTVE Noticias (YouTube)",
+      "author": "",
+      "publisher": "RTVE",
+      "date": "2021-05-18",
+      "url": "https://www.youtube.com/watch?v=Lzg5wvri0-0",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-yt-rtve-laya",
+      "title": "Marruecos acusa a Laya de hacer declaraciones 'inapropiadas' y avisa que tendrá consecuencias – RTVE Noticias (YouTube)",
+      "author": "",
+      "publisher": "RTVE",
+      "date": "2021-06-01",
+      "url": "https://www.youtube.com/watch?v=mZ8ZvEggXio",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": "Fecha aproximada."
+    },
+    {
+      "id": "src-yt-rtve-sahara",
+      "title": "El Congreso rechaza el viraje de Sánchez sobre el Sáhara Occidental – RTVE Noticias (YouTube)",
+      "author": "",
+      "publisher": "RTVE",
+      "date": "2022-04-07",
+      "url": "https://www.youtube.com/watch?v=Q49SOllBcZ0",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-yt-rtve-melilla23",
+      "title": "Marruecos eleva a 23 los muertos en el salto a la valla de Melilla – RTVE Noticias (YouTube)",
+      "author": "",
+      "publisher": "RTVE",
+      "date": "2022-06-25",
+      "url": "https://www.youtube.com/watch?v=thTa4NrVCzA",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": "Fecha aproximada."
+    },
+    {
+      "id": "src-yt-rtve-melilla-fiscalia",
+      "title": "Valla de Melilla: la Fiscalía archiva la investigación de la tragedia del 24J – RTVE Noticias (YouTube)",
+      "author": "",
+      "publisher": "RTVE",
+      "date": "2022-12-23",
+      "url": "https://www.youtube.com/watch?v=ZAyEUdsYBrY",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": "Fecha aproximada."
+    },
+    {
+      "id": "src-yt-rtve-argelia",
+      "title": "Argelia rompe con España: el Gobierno afirma que el suministro de gas no está en riesgo – RTVE Noticias (YouTube)",
+      "author": "",
+      "publisher": "RTVE",
+      "date": "2022-06-08",
+      "url": "https://www.youtube.com/watch?v=rFuwKbWLdWg",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": "Fecha aproximada."
+    },
+    {
+      "id": "src-yt-armada-perejil",
+      "title": "Historia Contada, cap. 18: 2002, recuperación del islote Perejil. Teniente Almagro – Armada Española (YouTube)",
+      "author": "",
+      "publisher": "Armada Española",
+      "date": "2020-01-01",
+      "url": "https://www.youtube.com/watch?v=e9o279FcifA",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": "Fecha de publicación no verificada."
+    },
+    {
+      "id": "src-yt-tve-perejil",
+      "title": "La tele de tu vida: La reconquista de Perejil (2002) – Canal Nostalgia (YouTube)",
+      "author": "",
+      "publisher": "Canal Nostalgia (programa de TVE)",
+      "date": "2002-07-17",
+      "url": "https://www.youtube.com/watch?v=DJ2VvvqVb-I",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": "Copia de un programa de TVE subida por un canal no oficial; imágenes de archivo de 2002."
+    },
+    {
+      "id": "src-yt-lasexta-tarajal",
+      "title": "Un guardia en la tragedia del Tarajal: 'Retenedlos para que no sigan avanzando' – laSexta Noticias (YouTube)",
+      "author": "",
+      "publisher": "laSexta",
+      "date": "2014-02-01",
+      "url": "https://www.youtube.com/watch?v=6Of02O6s-cU",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": "Fecha no verificada; no se localizó vídeo de RTVE del Tarajal."
+    },
+    {
+      "id": "src-yt-jc-ceuta",
+      "title": "Juan Carlos I visita Ceuta (5 de noviembre de 2007) – vídeo de usuario (YouTube)",
+      "author": "",
+      "publisher": "YouTube (usuario Mariano Ar Fer)",
+      "date": "2007-11-05",
+      "url": "https://www.youtube.com/watch?v=2LCcO66UI9k",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": "No es un canal oficial; no se localizó el vídeo en el archivo de RTVE."
+    },
+    {
+      "id": "src-yt-fg-1976",
+      "title": "Felipe González apoya la independencia del Sahara el 14 de noviembre de 1976 – vídeo de usuario (YouTube)",
+      "author": "",
+      "publisher": "YouTube (Una mirada al Sahara Occidental)",
+      "date": "1976-11-14",
+      "url": "https://www.youtube.com/watch?v=wi9XPmV645A",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": "Discurso en Tinduf; canal no oficial."
+    },
+    {
+      "id": "src-commons-perejil",
+      "title": "File:Vista del islote de Perejil desde la costa africana.jpg",
+      "author": "",
+      "publisher": "Wikimedia Commons",
+      "date": "2006-02-24",
+      "url": "https://commons.wikimedia.org/wiki/File:Vista_del_islote_de_Perejil_desde_la_costa_africana.jpg",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-commons-melilla741",
+      "title": "File:Valla de Melilla 741.jpg",
+      "author": "",
+      "publisher": "Wikimedia Commons",
+      "date": "2008-07-12",
+      "url": "https://commons.wikimedia.org/wiki/File:Valla_de_Melilla_741.jpg",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-commons-melilla0001",
+      "title": "File:Valla melilla 0001.jpg",
+      "author": "",
+      "publisher": "Wikimedia Commons",
+      "date": "2008-10-07",
+      "url": "https://commons.wikimedia.org/wiki/File:Valla_melilla_0001.jpg",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-commons-ceuta",
+      "title": "File:Valla de Ceuta.jpg",
+      "author": "",
+      "publisher": "Wikimedia Commons",
+      "date": "2011-12-05",
+      "url": "https://commons.wikimedia.org/wiki/File:Valla_de_Ceuta.jpg",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": ""
+    }
+  ],
+  "events": [
+    {
+      "id": "ev-1976-tinduf",
+      "date": "1976-11-14",
+      "dateLabel": "14 de noviembre de 1976",
+      "title": "Felipe González en Tinduf: el PSOE se compromete con el Frente Polisario",
+      "summary": "Un año después de los Acuerdos de Madrid (14-11-1975), el secretario general del PSOE visita los campamentos de refugiados saharauis y pronuncia un discurso de apoyo a la independencia del Sáhara. La cita atribuida ('nuestro partido estará con vosotros hasta la victoria final') no se ha podido verificar en fuente primaria escrita [NO VERIFICADO]; existe vídeo del acto.",
+      "government": "liberal",
+      "governmentLabel": "Gobierno de Adolfo Suárez (UCD); PSOE en la oposición",
+      "headOfState": "Juan Carlos I",
+      "initiator": "espana",
+      "kinds": [
+        "sahara",
+        "diplomacia"
+      ],
+      "era": "transicion",
+      "sourceIds": [
+        "src-yt-fg-1976"
+      ]
+    },
+    {
+      "id": "ev-1983-pesca",
+      "date": "1983-08-01",
+      "dateLabel": "1983",
+      "title": "Acuerdo pesquero hispano-marroquí de 1983",
+      "summary": "España firma con Marruecos un acuerdo de pesca que distingue zonas al norte y al sur del cabo Nun para no pronunciarse sobre la soberanía de las aguas saharianas; desde 1986 la pesca pasa a la competencia comunitaria (acuerdos CE-Marruecos de 1988, 1992 y 1995).",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Felipe González (PSOE)",
+      "headOfState": "Juan Carlos I",
+      "initiator": "ambos",
+      "kinds": [
+        "pesca",
+        "diplomacia"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-enwiki-fisheries"
+      ]
+    },
+    {
+      "id": "ev-1985-extranjeria",
+      "date": "1985-07-01",
+      "dateLabel": "1 de julio de 1985",
+      "title": "Ley de Extranjería (LO 7/1985) y movilización de la comunidad musulmana de Ceuta y Melilla",
+      "summary": "La primera Ley de Extranjería de la democracia deja sin documentación a miles de musulmanes nacidos en Melilla y Ceuta; Aomar Mohamedi Dudú lidera manifestaciones y huelgas en Melilla (1985-1986) y en 1986 es nombrado asesor del Ministerio del Interior. Marruecos sigue el conflicto de cerca.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Felipe González (PSOE)",
+      "headOfState": "Juan Carlos I",
+      "initiator": "espana",
+      "kinds": [
+        "extranjeria",
+        "ceuta-melilla"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-boe-lo7-1985",
+        "src-eswiki-dudu"
+      ]
+    },
+    {
+      "id": "ev-1991-tratado",
+      "date": "1991-07-04",
+      "dateLabel": "4 de julio de 1991",
+      "title": "Tratado de Amistad, Buena Vecindad y Cooperación (Rabat)",
+      "summary": "Firmado en Rabat por Felipe González y el primer ministro Azeddine Laraki; publicado en el BOE núm. 49 de 26 de febrero de 1993 y en vigor desde el 28 de enero de 1993. Su artículo 1 instituye la Reunión anual de Alto Nivel (RAN) entre jefes de Gobierno y encuentros semestrales de ministros de Exteriores.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Felipe González (PSOE)",
+      "headOfState": "Juan Carlos I",
+      "initiator": "ambos",
+      "kinds": [
+        "tratado",
+        "diplomacia"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-formato-boe-1991",
+        "src-eswiki-relaciones"
+      ]
+    },
+    {
+      "id": "ev-1995-estatutos",
+      "date": "1995-03-13",
+      "dateLabel": "13 de marzo de 1995",
+      "title": "Estatutos de Autonomía de Ceuta y Melilla",
+      "summary": "Las Leyes Orgánicas 1/1995 y 2/1995 convierten Ceuta y Melilla en ciudades autónomas, cerrando el debate abierto en 1985-1986; Marruecos mantiene su reclamación sobre ambas ciudades.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Felipe González (PSOE)",
+      "headOfState": "Juan Carlos I",
+      "initiator": "espana",
+      "kinds": [
+        "ceuta-melilla",
+        "legislacion"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-boe-ea-ceuta",
+        "src-boe-ea-melilla"
+      ]
+    },
+    {
+      "id": "ev-2001-embajador",
+      "date": "2001-10-27",
+      "dateLabel": "finales de octubre de 2001",
+      "title": "Marruecos llama a consultas a su embajador en Madrid",
+      "summary": "Tras la ruptura en abril de 2001 de la negociación del acuerdo pesquero UE-Marruecos (expirado en noviembre de 1999) y en plena tensión por el Sáhara (Rabat consideró 'la traición de Aznar' el apoyo español al censo de la MINURSO) y por las reclamaciones sobre Ceuta y Melilla, Marruecos retira a su embajador; los embajadores no regresan hasta enero de 2003. El día exacto (27 de octubre según la prensa) no se ha podido verificar en fuente primaria [NO VERIFICADO].",
+      "government": "derecha",
+      "governmentLabel": "Gobierno de José María Aznar (PP)",
+      "headOfState": "Juan Carlos I",
+      "initiator": "marruecos",
+      "kinds": [
+        "diplomacia",
+        "pesca",
+        "sahara"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-eswiki-perejil",
+        "src-enwiki-relaciones",
+        "src-enwiki-fisheries",
+        "src-ds-l8pl301"
+      ]
+    },
+    {
+      "id": "ev-2002-perejil-ocupacion",
+      "date": "2002-07-11",
+      "dateLabel": "11 de julio de 2002",
+      "title": "Ocupación marroquí de la isla de Perejil",
+      "summary": "Doce efectivos marroquíes desembarcan en el islote, instalan dos tiendas e izan banderas; el Gobierno pide explicaciones por vía diplomática sin respuesta satisfactoria. El 15 de julio Aznar abre el debate sobre el estado de la Nación advirtiendo de que 'España no aceptará hechos consumados'.",
+      "government": "derecha",
+      "governmentLabel": "Gobierno de José María Aznar (PP)",
+      "headOfState": "Juan Carlos I",
+      "initiator": "marruecos",
+      "kinds": [
+        "territorio",
+        "crisis"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-ds-pl179",
+        "src-enwiki-perejil",
+        "src-eswiki-perejil"
+      ]
+    },
+    {
+      "id": "ev-2002-perejil-resolucion",
+      "date": "2002-07-16",
+      "dateLabel": "16 de julio de 2002",
+      "title": "El Congreso aprueba casi por unanimidad la resolución sobre Perejil",
+      "summary": "La propuesta de resolución núm. 147, firmada por PP, PSOE, CiU, IU, PNV, CC y varios diputados del Mixto, condena 'la acción inamistosa del Gobierno de Marruecos' y se aprueba por 334 votos a favor y 4 abstenciones (338 emitidos).",
+      "government": "derecha",
+      "governmentLabel": "Gobierno de José María Aznar (PP)",
+      "headOfState": "Juan Carlos I",
+      "initiator": "espana",
+      "kinds": [
+        "parlamento",
+        "crisis"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-ds-pl180"
+      ]
+    },
+    {
+      "id": "ev-2002-romeo-sierra",
+      "date": "2002-07-17",
+      "dateLabel": "17 de julio de 2002",
+      "title": "Operación Romeo-Sierra y comparecencia conjunta de Palacio y Trillo",
+      "summary": "A las 06:17 fuerzas especiales españolas desalojan a los gendarmes marroquíes sin bajas. Ese mismo día la ministra Ana Palacio (nombrada el 9 de julio en sustitución de Piqué) y el ministro Trillo comparecen ante las Comisiones de Exteriores y Defensa. El 20 de julio, con mediación de Colin Powell, se acuerda volver al statu quo y el 21 Palacio y Benaissa firman en Rabat.",
+      "government": "derecha",
+      "governmentLabel": "Gobierno de José María Aznar (PP)",
+      "headOfState": "Juan Carlos I",
+      "initiator": "espana",
+      "kinds": [
+        "militar",
+        "parlamento",
+        "crisis"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-ds-co543",
+        "src-eswiki-perejil",
+        "src-enwiki-perejil"
+      ]
+    },
+    {
+      "id": "ev-2005-vallas",
+      "date": "2005-09-29",
+      "dateLabel": "29 de septiembre - 6 de octubre de 2005",
+      "title": "Asaltos masivos a las vallas de Ceuta y Melilla; muertos por disparos",
+      "summary": "Cinco inmigrantes mueren en el asalto a la valla de Ceuta del 29 de septiembre (tres de ellos tiroteados desde Marruecos, según la autopsia); Zapatero despliega 480 soldados en apoyo de la Guardia Civil y anuncia con el primer ministro Jettu una investigación conjunta; el 6 de octubre otros seis mueren en Melilla al repeler Marruecos a tiros un salto masivo (al menos 14 muertos desde agosto). La valla de Melilla se eleva después a seis metros.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de José Luis Rodríguez Zapatero (PSOE)",
+      "headOfState": "Juan Carlos I",
+      "initiator": "otros",
+      "kinds": [
+        "migracion",
+        "crisis",
+        "vallas"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-elpais-2005-09-29a",
+        "src-elpais-2005-09-29b",
+        "src-elpais-2005-10-06",
+        "src-wiki-valla-melilla"
+      ]
+    },
+    {
+      "id": "ev-2007-autonomia",
+      "date": "2007-04-11",
+      "dateLabel": "abril de 2007",
+      "title": "Marruecos presenta en la ONU su iniciativa de autonomía para el Sáhara",
+      "summary": "La propuesta marroquí de autonomía de 2007, presentada al Consejo de Seguridad, es la que quince años después Sánchez calificará en su carta como 'la base más seria, creíble y realista'; según Sánchez, fue presentada también al presidente Zapatero.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de José Luis Rodríguez Zapatero (PSOE)",
+      "headOfState": "Juan Carlos I",
+      "initiator": "marruecos",
+      "kinds": [
+        "sahara",
+        "diplomacia"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-ds-pl174",
+        "src-elpais-carta"
+      ]
+    },
+    {
+      "id": "ev-2007-reyes",
+      "date": "2007-11-05",
+      "dateLabel": "5 y 6 de noviembre de 2007",
+      "title": "Visita de los Reyes a Ceuta y Melilla; Mohamed VI llama a consultas a su embajador",
+      "summary": "Anunciada el 30 de octubre, la primera visita de un monarca desde Alfonso XIII provoca el 2 de noviembre la llamada a consultas del embajador Omar Azziman 'por un período indeterminado' y, el 6 de noviembre, un comunicado personal de Mohamed VI que 'condena' y 'denuncia' la visita 'lamentable'. El embajador regresa el 7 de enero de 2008 tras el viaje de Moratinos a Rabat (3 de enero) con una carta de Zapatero.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de José Luis Rodríguez Zapatero (PSOE)",
+      "headOfState": "Juan Carlos I",
+      "initiator": "espana",
+      "kinds": [
+        "monarquia",
+        "ceuta-melilla",
+        "crisis"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-elpais-2007-11-06",
+        "src-elpais-2007-11-03",
+        "src-wiki-2007",
+        "src-ds-l8pl301"
+      ]
+    },
+    {
+      "id": "ev-2009-lo2",
+      "date": "2009-12-11",
+      "dateLabel": "11 de diciembre de 2009",
+      "title": "Reforma de la Ley de Extranjería (LO 2/2009)",
+      "summary": "Segunda gran reforma de la LO 4/2000 bajo Zapatero; consolida el marco que en 2015 completará el PP con el 'rechazo en frontera'.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de José Luis Rodríguez Zapatero (PSOE)",
+      "headOfState": "Juan Carlos I",
+      "initiator": "espana",
+      "kinds": [
+        "extranjeria",
+        "legislacion"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-boe-lo2-2009"
+      ]
+    },
+    {
+      "id": "ev-2014-tarajal",
+      "date": "2014-02-06",
+      "dateLabel": "6 de febrero de 2014",
+      "title": "Tragedia del Tarajal (Ceuta)",
+      "summary": "Al menos 14-15 personas mueren ahogadas al intentar entrar a nado por la playa del Tarajal mientras la Guardia Civil lanza material antidisturbios (145 pelotas de goma y 5 botes de humo según la denuncia de las ONG); 23 personas que llegan a la playa son entregadas a Marruecos. El ministro Fernández Díaz comparece el 13 de febrero en la Comisión de Interior y el 19 de febrero el Pleno debate una moción con peticiones de dimisión.",
+      "government": "derecha",
+      "governmentLabel": "Gobierno de Mariano Rajoy (PP)",
+      "headOfState": "Juan Carlos I",
+      "initiator": "espana",
+      "kinds": [
+        "migracion",
+        "crisis",
+        "parlamento"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-ds-co500",
+        "src-ds-x10pl178",
+        "src-amnistia-tarajal",
+        "src-publico-tarajal"
+      ]
+    },
+    {
+      "id": "ev-2015-lo4",
+      "date": "2015-03-30",
+      "dateLabel": "30 de marzo de 2015",
+      "title": "'Rechazo en frontera': disposición adicional décima de la LO 4/2000",
+      "summary": "La LO 4/2015 de seguridad ciudadana (BOE 31-3-2015) añade a la Ley de Extranjería un 'régimen especial de Ceuta y Melilla' que permite rechazar a los extranjeros detectados en la línea fronteriza 'a fin de impedir su entrada ilegal en España', dando cobertura legal a las devoluciones en caliente.",
+      "government": "derecha",
+      "governmentLabel": "Gobierno de Mariano Rajoy (PP)",
+      "headOfState": "Juan Carlos I",
+      "initiator": "espana",
+      "kinds": [
+        "extranjeria",
+        "legislacion",
+        "vallas"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-boe-lo4-2015"
+      ]
+    },
+    {
+      "id": "ev-2017-2020-tedh",
+      "date": "2020-02-13",
+      "dateLabel": "3 de octubre de 2017 / 13 de febrero de 2020",
+      "title": "TEDH, N.D. y N.T. c. España: condena en Sala y absolución en Gran Sala",
+      "summary": "Por las devoluciones sumarias de dos ciudadanos de Malí y Costa de Marfil tras saltar la valla de Melilla el 13 de agosto de 2014, la Sala condenó a España por unanimidad (2017); la Gran Sala (13-2-2020, demandas 8675/15 y 8697/15) concluyó por unanimidad que no hubo violación del art. 4 del Protocolo 4 ni del art. 13, al atribuir la expulsión colectiva a la conducta de los propios demandantes.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE) en 2020; los hechos y la Sala, bajo Rajoy (PP)",
+      "headOfState": "Felipe VI",
+      "initiator": "otros",
+      "kinds": [
+        "justicia",
+        "vallas"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-abogacia-tedh",
+        "src-uniovi-tedh"
+      ]
+    },
+    {
+      "id": "ev-2018-record",
+      "date": "2018-08-01",
+      "dateLabel": "2018",
+      "title": "Año récord de llegadas y cierre unilateral de la aduana de Melilla",
+      "summary": "Con el cambio de Gobierno (junio de 2018) y la acogida del Aquarius, 2018 cierra con 'más de 64.000' llegadas irregulares (la cifra exacta del balance de Interior no se ha podido consultar [NO VERIFICADO]); Marruecos cierra la aduana comercial de Melilla el 31 de julio-1 de agosto de 2018, acción unilateral a la que aludirá la carta de Sánchez de 2022.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE)",
+      "headOfState": "Felipe VI",
+      "initiator": "marruecos",
+      "kinds": [
+        "migracion",
+        "aduanas"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-eswiki-inmigracion",
+        "src-enwiki-relaciones",
+        "src-elpais-carta"
+      ]
+    },
+    {
+      "id": "ev-2021-ghali",
+      "date": "2021-04-18",
+      "dateLabel": "18 de abril de 2021",
+      "title": "Brahim Ghali, hospitalizado en Logroño bajo identidad falsa",
+      "summary": "El líder del Frente Polisario ingresa en un hospital riojano para tratarse de la covid-19; el 24 de abril Exteriores marroquí convoca al embajador español y 'deplora' la decisión 'contraria al espíritu de asociación y buena vecindad'. Ghali abandona España el 2 de junio.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Unidas Podemos)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "sahara",
+        "diplomacia"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-publico-laya",
+        "src-elpais-2021-04-24",
+        "src-elespanol-ghali"
+      ]
+    },
+    {
+      "id": "ev-2021-ceuta",
+      "date": "2021-05-17",
+      "dateLabel": "17-19 de mayo de 2021",
+      "title": "Crisis de Ceuta: Marruecos abre la frontera",
+      "summary": "Entre 6.000 y 10.000 personas (8.000 según Interior; 'más de ocho mil, nueve mil' según Marlaska) entran a nado o por los espigones del Tarajal y Benzú; el Gobierno despliega el Ejército, devuelve a la mayoría en 48 horas y la embajadora Karima Benyaich advierte de que 'hay actos que tienen consecuencias'. Sánchez viaja a Ceuta y Melilla; el 19 de mayo la crisis domina la sesión de control.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Unidas Podemos)",
+      "headOfState": "Felipe VI",
+      "initiator": "marruecos",
+      "kinds": [
+        "migracion",
+        "crisis",
+        "parlamento"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-ds-pl103",
+        "src-ds-co446",
+        "src-wiki-2021",
+        "src-elpais-carta"
+      ]
+    },
+    {
+      "id": "ev-2021-laya",
+      "date": "2021-07-10",
+      "dateLabel": "10-12 de julio de 2021",
+      "title": "Cese de Arancha González Laya",
+      "summary": "En la remodelación del Gobierno, Sánchez sustituye a la ministra de Exteriores por José Manuel Albares (10 de julio según The Objective; 12 de julio según Público); en 2023 se publicó que Marruecos había exigido su destitución el 2 de julio en una reunión secreta.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Unidas Podemos)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "diplomacia"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-theobjective-laya",
+        "src-publico-laya2"
+      ]
+    },
+    {
+      "id": "ev-2022-carta",
+      "date": "2022-03-14",
+      "dateLabel": "14 y 18 de marzo de 2022",
+      "title": "Carta de Sánchez a Mohamed VI: la autonomía como 'base más seria, creíble y realista'",
+      "summary": "La carta, fechada el 14 de marzo y hecha pública parcialmente por el Gabinete Real marroquí el 18, rompe la posición tradicional española sobre el referéndum del Sáhara; Argelia retira a su embajador el 19 de marzo. Sánchez comparece en el Congreso el 30 de marzo y todos los grupos salvo el PSOE la rechazan.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Unidas Podemos)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "sahara",
+        "diplomacia",
+        "parlamento"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-elpais-carta",
+        "src-elindependiente-carta",
+        "src-ds-pl174",
+        "src-moncloa-30-03-2022",
+        "src-enwiki-argelia"
+      ]
+    },
+    {
+      "id": "ev-2022-pnl",
+      "date": "2022-04-07",
+      "dateLabel": "6 y 7 de abril de 2022",
+      "title": "El Congreso desautoriza el giro sobre el Sáhara; Sánchez viaja a Rabat",
+      "summary": "La PNL de Unidas Podemos, ERC y EH Bildu se aprueba el 7 de abril por 168 votos a favor, 118 en contra y 61 abstenciones, con el PSOE en contra y el PP a favor. El mismo día Sánchez se reúne con Mohamed VI en Rabat y ambos firman una declaración conjunta que abre 'una nueva página'.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Unidas Podemos)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "sahara",
+        "parlamento",
+        "diplomacia"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-ds-pl177",
+        "src-ds-pl178",
+        "src-eldiario-pnl",
+        "src-moncloa-07-04-2022"
+      ]
+    },
+    {
+      "id": "ev-2022-argelia",
+      "date": "2022-06-08",
+      "dateLabel": "8 de junio de 2022",
+      "title": "Argelia suspende el Tratado de Amistad de 2002",
+      "summary": "Horas después de que Sánchez reafirmara en el Congreso su posición sobre el Sáhara, la Presidencia argelina suspende 'de inmediato' el Tratado de Amistad, Buena Vecindad y Cooperación firmado con España en 2002 y se congelan las operaciones comerciales. Argelia nombra nuevo embajador en noviembre de 2023 y reactiva el tratado en marzo de 2026.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Unidas Podemos)",
+      "headOfState": "Felipe VI",
+      "initiator": "otros",
+      "kinds": [
+        "diplomacia",
+        "sahara"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-enwiki-argelia",
+        "src-ds-pl192",
+        "src-elespanol-08-06-2022"
+      ]
+    },
+    {
+      "id": "ev-2022-melilla",
+      "date": "2022-06-24",
+      "dateLabel": "24 de junio de 2022",
+      "title": "Tragedia de la valla de Melilla (Barrio Chino)",
+      "summary": "Unas 2.000 personas, en su mayoría sudanesas, intentan saltar la valla; mueren al menos 23 (Marruecos), 27-29 (AMDH), 37-40 (Caminando Fronteras) o más de 100 (estimación de Amnistía); 133 entran y 470 son 'rechazadas en frontera' sin las garantías legales, según el Defensor del Pueblo (14-10-2022). Sánchez habla de un asalto 'bien resuelto'; la Fiscalía archiva el 23 de diciembre de 2022.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Unidas Podemos)",
+      "headOfState": "Felipe VI",
+      "initiator": "otros",
+      "kinds": [
+        "migracion",
+        "crisis",
+        "vallas",
+        "parlamento"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-defensor-resol",
+        "src-defensor-melilla",
+        "src-hrw-melilla",
+        "src-amnistia-melilla",
+        "src-caminando-melilla",
+        "src-enwiki-melilla-2022",
+        "src-ds-pl198"
+      ]
+    },
+    {
+      "id": "ev-2023-ran",
+      "date": "2023-02-02",
+      "dateLabel": "2 de febrero de 2023",
+      "title": "XII Reunión de Alto Nivel en Rabat",
+      "summary": "Primera RAN desde 2015: ambos Gobiernos se comprometen al respeto mutuo de sus 'esferas de soberanía' (el documento menciona la soberanía marroquí sobre el Sáhara y omite la española sobre Ceuta y Melilla); Mohamed VI no recibe a Sánchez. El 31 de mayo de 2023 España protesta por una nota marroquí que llama 'ciudades marroquíes' a Ceuta y Melilla.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Unidas Podemos)",
+      "headOfState": "Felipe VI",
+      "initiator": "ambos",
+      "kinds": [
+        "diplomacia",
+        "ran"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-eswiki-relaciones",
+        "src-gnews-ran2025"
+      ]
+    },
+    {
+      "id": "ev-2023-mundial",
+      "date": "2023-10-04",
+      "dateLabel": "4 de octubre de 2023",
+      "title": "Candidatura conjunta España-Portugal-Marruecos al Mundial 2030",
+      "summary": "La FIFA designa la candidatura tripartita (a la que Marruecos se había sumado el 14 de marzo de 2023); el Congreso de la FIFA la ratifica el 11 de diciembre de 2024.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "ambos",
+      "kinds": [
+        "cooperacion"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-eswiki-relaciones",
+        "src-enwiki-mundial"
+      ]
+    },
+    {
+      "id": "ev-2024-espacio-aereo",
+      "date": "2024-04-15",
+      "dateLabel": "2024",
+      "title": "Negociación sobre el espacio aéreo del Sáhara y visita de Sánchez a Rabat",
+      "summary": "En febrero de 2024 Mohamed VI recibe a Sánchez en Rabat; el Gobierno confirma dos reuniones con Marruecos sobre la gestión del espacio aéreo del Sáhara, controlado desde Canarias, prevista en la declaración de 7 de abril de 2022.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "ambos",
+      "kinds": [
+        "diplomacia",
+        "sahara"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-eswiki-relaciones",
+        "src-moncloa-07-04-2022"
+      ]
+    },
+    {
+      "id": "ev-2025-aduanas",
+      "date": "2025-01-08",
+      "dateLabel": "enero-diciembre de 2025",
+      "title": "Aduanas comerciales de Ceuta y Melilla: apertura limitada, cierre y XIII RAN",
+      "summary": "Según los titulares de prensa localizados (no consultados en su texto [NO VERIFICADO]), las aduanas prometidas en 2022 se inauguran con trabas en enero de 2025, Melilla denuncia su cierre unilateral en julio de 2025 y en octubre están 'en vía muerta'; el 4 de diciembre de 2025 se celebra en Madrid la XIII RAN, que 'da por zanjada' la cuestión y elude aguas territoriales y espacio aéreo. La visita de Estado de Felipe VI a Marruecos y su viaje a Ceuta siguen pendientes.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "ambos",
+      "kinds": [
+        "aduanas",
+        "ran",
+        "monarquia"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-gnews-aduanas",
+        "src-gnews-ran2025",
+        "src-publico-felipe-ceuta"
+      ]
+    }
+  ],
+  "quotes": [
+    {
+      "id": "q-aznar-2002",
+      "date": "2002-07-15",
+      "dateLabel": "15 de julio de 2002",
+      "chamber": "congreso",
+      "legislature": "VII",
+      "speaker": "José María Aznar",
+      "party": "PP",
+      "bloc": "gobierno",
+      "role": "presidente del Gobierno",
+      "topics": [
+        "perejil"
+      ],
+      "era": "democracia",
+      "text": "Es imprescindible volver al statu quo anterior a la ocupación de la isla. Hacemos todos los esfuerzos diplomáticos para restaurar la legalidad internacional. España no aceptará hechos consumados. Estoy convencido de que ante un asunto como este el Gobierno encontrará el respaldo de la inmensa mayoría de la Cámara.",
+      "context": "Apertura del debate sobre el estado de la Nación, cuatro días después de la ocupación.",
+      "sessionRef": "DSCD VII núm. 179, 15-7-2002, p. 8967",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L7/CONG/DS/PL/PL_179.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-pl179"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-zapatero-2002a",
+      "date": "2002-07-15",
+      "dateLabel": "15 de julio de 2002",
+      "chamber": "congreso",
+      "legislature": "VII",
+      "speaker": "José Luis Rodríguez Zapatero",
+      "party": "PSOE",
+      "bloc": "izquierda",
+      "role": "líder de la oposición",
+      "topics": [
+        "perejil"
+      ],
+      "era": "democracia",
+      "text": "Señor Aznar, cuenta con nosotros para defender los intereses de nuestro país ante la crisis en la relación con Marruecos, como ha hecho siempre el Partido Socialista, con plena lealtad a España, a sus intereses y a sus objetivos primordiales.",
+      "context": "Réplica en el debate sobre el estado de la Nación.",
+      "sessionRef": "DSCD VII núm. 179, 15-7-2002, p. 8975",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L7/CONG/DS/PL/PL_179.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-pl179"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-trias-2002",
+      "date": "2002-07-15",
+      "dateLabel": "15 de julio de 2002",
+      "chamber": "congreso",
+      "legislature": "VII",
+      "speaker": "Xavier Trias",
+      "party": "CiU",
+      "bloc": "otro",
+      "role": "portavoz de CiU",
+      "topics": [
+        "perejil"
+      ],
+      "era": "democracia",
+      "text": "La nueva ministra de Exteriores tiene un problema importante sobre la mesa: nuestra relación con Marruecos. Lamentamos la existencia del conflicto. [...] Tiene usted nuestro apoyo, pero creemos que esto no evita el que sea absolutamente necesario el diálogo.",
+      "context": "",
+      "sessionRef": "DSCD VII núm. 179, 15-7-2002, p. 8993",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L7/CONG/DS/PL/PL_179.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-pl179"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-anasagasti-2002",
+      "date": "2002-07-15",
+      "dateLabel": "15 de julio de 2002",
+      "chamber": "congreso",
+      "legislature": "VII",
+      "speaker": "Iñaki Anasagasti",
+      "party": "PNV",
+      "bloc": "otro",
+      "role": "portavoz del PNV",
+      "topics": [
+        "perejil",
+        "sahara"
+      ],
+      "era": "democracia",
+      "text": "También debería pensar en la responsabilidad histórica que tiene España en su antigua colonia del Sahara, en la que usted no está haciendo nada en serio, salvo dejarles abandonados a su suerte, agravando su situación, que se pone todavía más en precario tras la situación de la isla Perejil.",
+      "context": "",
+      "sessionRef": "DSCD VII núm. 179, 15-7-2002, p. 9020",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L7/CONG/DS/PL/PL_179.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-pl179"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-mauricio-2002",
+      "date": "2002-07-15",
+      "dateLabel": "15 de julio de 2002",
+      "chamber": "congreso",
+      "legislature": "VII",
+      "speaker": "José Carlos Mauricio",
+      "party": "Coalición Canaria",
+      "bloc": "otro",
+      "role": "portavoz de CC",
+      "topics": [
+        "perejil"
+      ],
+      "era": "democracia",
+      "text": "Hay quien dice, en la diplomacia española, que esta política de diplomacia sinuosa y tortuosa que está utilizando Marruecos recuerda la danza del vientre. Yo espero que nosotros no hagamos la diplomacia del fandango, es decir, un paso adelante y dos para atrás. Ni danza del vientre ni fandango. Firmeza y construcción de un proyecto de cooperación y fortalecer el Tratado de amistad y cooperación.",
+      "context": "",
+      "sessionRef": "DSCD VII núm. 179, 15-7-2002, p. 9041",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L7/CONG/DS/PL/PL_179.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-pl179"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-degrandes-2002",
+      "date": "2002-07-16",
+      "dateLabel": "16 de julio de 2002",
+      "chamber": "congreso",
+      "legislature": "VII",
+      "speaker": "Luis de Grandes",
+      "party": "PP",
+      "bloc": "derecha",
+      "role": "portavoz del Grupo Popular",
+      "topics": [
+        "perejil"
+      ],
+      "era": "democracia",
+      "text": "En las grandes cuestiones de Estado hemos suscrito con la totalidad de los grupos de la Cámara una moción condenatoria de la acción inamistosa del Gobierno de Marruecos en el islote de Perejil.",
+      "context": "Antes de la votación de la propuesta núm. 147 (334 síes, 4 abstenciones).",
+      "sessionRef": "DSCD VII núm. 180, 16-7-2002, pp. 9080 y 9087-9088",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L7/CONG/DS/PL/PL_180.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-pl180"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-lasagabaster-2002",
+      "date": "2002-07-16",
+      "dateLabel": "16 de julio de 2002",
+      "chamber": "congreso",
+      "legislature": "VII",
+      "speaker": "Begoña Lasagabaster",
+      "party": "Eusko Alkartasuna (Mixto)",
+      "bloc": "otro",
+      "role": "diputada",
+      "topics": [
+        "perejil"
+      ],
+      "era": "democracia",
+      "text": "En la propuesta conjunta que se ha presentado sobre la isla Perejil nuestro apoyo al Gobierno es a una solución por la vía diplomática, no un apoyo a iniciativas militares.",
+      "context": "",
+      "sessionRef": "DSCD VII núm. 180, 16-7-2002, p. 9068",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L7/CONG/DS/PL/PL_180.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-pl180"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-palacio-2002",
+      "date": "2002-07-17",
+      "dateLabel": "17 de julio de 2002",
+      "chamber": "congreso",
+      "legislature": "VII",
+      "speaker": "Ana Palacio",
+      "party": "PP",
+      "bloc": "gobierno",
+      "role": "ministra de Asuntos Exteriores",
+      "topics": [
+        "perejil"
+      ],
+      "era": "democracia",
+      "text": "El objetivo del Gobierno de España, ayer como hoy, es restablecer el imperio de la ley, volver al statu quo anterior al 11 de julio pasado y, sobre esa base, dialogar con Marruecos [...]. España no tiene interés en mantener una presencia militar permanente en la isla Perejil [...] pero pedimos que se respeten nuestros derechos y no estamos dispuestos a ser colocados ante hechos consumados.",
+      "context": "Primera intervención de Palacio ante las Cortes, la mañana de la Operación Romeo-Sierra.",
+      "sessionRef": "DSCD VII Comisiones núm. 543, 17-7-2002, pp. 17347-17348",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L7/CONG/DS/CO/CO_543.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-co543"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-trillo-2002",
+      "date": "2002-07-17",
+      "dateLabel": "17 de julio de 2002",
+      "chamber": "congreso",
+      "legislature": "VII",
+      "speaker": "Federico Trillo",
+      "party": "PP",
+      "bloc": "gobierno",
+      "role": "ministro de Defensa",
+      "topics": [
+        "perejil"
+      ],
+      "era": "democracia",
+      "text": "Militarmente hablando, estábamos, pues, ante un claro supuesto de legítima defensa. [...] la presencia no autorizada por un Estado de tropas extranjeras en la isla Perejil es ilegal y ha implicado el uso de la fuerza.",
+      "context": "",
+      "sessionRef": "DSCD VII Comisiones núm. 543, 17-7-2002, p. 17349",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L7/CONG/DS/CO/CO_543.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-co543"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-zapatero-2002b",
+      "date": "2002-07-17",
+      "dateLabel": "17 de julio de 2002",
+      "chamber": "congreso",
+      "legislature": "VII",
+      "speaker": "José Luis Rodríguez Zapatero",
+      "party": "PSOE",
+      "bloc": "izquierda",
+      "role": "líder de la oposición",
+      "topics": [
+        "perejil"
+      ],
+      "era": "democracia",
+      "text": "Estamos ante un asunto de Estado que exige una política de Estado. Una política de Estado supone, en mi opinión, compartir información. [...] Me alegro de que la acción haya tenido un resultado satisfactorio y, por tanto, desde esa perspectiva también quiero transmitir mi felicitación a las unidades que han actuado.",
+      "context": "",
+      "sessionRef": "DSCD VII Comisiones núm. 543, 17-7-2002, p. 17357",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L7/CONG/DS/CO/CO_543.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-co543"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-azpiazu-2002",
+      "date": "2002-07-17",
+      "dateLabel": "17 de julio de 2002",
+      "chamber": "congreso",
+      "legislature": "VII",
+      "speaker": "Pedro Azpiazu",
+      "party": "PNV",
+      "bloc": "otro",
+      "role": "diputado",
+      "topics": [
+        "perejil"
+      ],
+      "era": "democracia",
+      "text": "Nuestro grupo está en contra de las intervenciones militares en general, y en particular de la llevada a cabo en el islote Perejil. [...] tenemos la sensación de que esta iniciativa militar [...] se había decidido con bastante antelación, por lo cual nos parece que ayer fuimos de alguna manera utilizados para bendecirla.",
+      "context": "",
+      "sessionRef": "DSCD VII Comisiones núm. 543, 17-7-2002, pp. 17354-17355",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L7/CONG/DS/CO/CO_543.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-co543"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-alcaraz-2002",
+      "date": "2002-07-17",
+      "dateLabel": "17 de julio de 2002",
+      "chamber": "congreso",
+      "legislature": "VII",
+      "speaker": "Felipe Alcaraz",
+      "party": "IU",
+      "bloc": "izquierda",
+      "role": "diputado",
+      "topics": [
+        "perejil"
+      ],
+      "era": "democracia",
+      "text": "Para nosotros el Reino de Marruecos es una dictadura que no respeta los derechos humanos. [...] no vamos a sufrir ningún reflejo condicionado de patriotismo histórico por un ataque allende el Estrecho.",
+      "context": "",
+      "sessionRef": "DSCD VII Comisiones núm. 543, 17-7-2002, p. 17355",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L7/CONG/DS/CO/CO_543.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-co543"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-mardones-2002",
+      "date": "2002-07-17",
+      "dateLabel": "17 de julio de 2002",
+      "chamber": "congreso",
+      "legislature": "VII",
+      "speaker": "Luis Mardones",
+      "party": "Coalición Canaria",
+      "bloc": "otro",
+      "role": "diputado",
+      "topics": [
+        "perejil"
+      ],
+      "era": "democracia",
+      "text": "Si la información es ésa, la conocía Marruecos y no estaban dispuestos a abandonar la isla Perejil, la respuesta contundente del Gobierno español merece nuestro elogio y nuestro apoyo.",
+      "context": "",
+      "sessionRef": "DSCD VII Comisiones núm. 543, 17-7-2002, p. 17352",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L7/CONG/DS/CO/CO_543.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-co543"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-aristegui-2007",
+      "date": "2007-11-21",
+      "dateLabel": "21 de noviembre de 2007",
+      "chamber": "congreso",
+      "legislature": "VIII",
+      "speaker": "Gustavo de Arístegui",
+      "party": "PP",
+      "bloc": "derecha",
+      "role": "diputado",
+      "topics": [
+        "ceuta-melilla",
+        "monarquia"
+      ],
+      "era": "democracia",
+      "text": "Su gestión del viaje fue torpe. [...] No se dieron cuenta de que el 6 de noviembre coincidía con el 32º aniversario de la marcha verde. [...] Usted dijo que habían negociado con las autoridades marroquíes y era falso, y eso irritó a las autoridades marroquíes. Ustedes han manejado torpemente esta crisis y la han convertido en una tormenta.",
+      "context": "Pregunta oral a Moratinos tras la llamada a consultas del embajador Azziman.",
+      "sessionRef": "DSCD VIII núm. 301, 21-11-2007, pp. 14974-14975",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L8/CONG/DS/PL/PL_301.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-l8pl301"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-moratinos-2007",
+      "date": "2007-11-21",
+      "dateLabel": "21 de noviembre de 2007",
+      "chamber": "congreso",
+      "legislature": "VIII",
+      "speaker": "Miguel Ángel Moratinos",
+      "party": "PSOE",
+      "bloc": "gobierno",
+      "role": "ministro de Asuntos Exteriores",
+      "topics": [
+        "ceuta-melilla",
+        "monarquia"
+      ],
+      "era": "democracia",
+      "text": "Les recuerdo que hubo quince meses, casi dos años, sin embajadores marroquí y español defendiendo los intereses durante el período del Partido Popular. [...] ¿cuándo Sus Majestades los Reyes han ido a Marruecos, a Ceuta y Melilla? [...] esta crisis es totalmente superficial, que no tiene ni pies ni cabeza. [...] Eso se demostrará con los hechos, cuando regrese el embajador de Marruecos a Madrid.",
+      "context": "",
+      "sessionRef": "DSCD VIII núm. 301, 21-11-2007, p. 14975",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L8/CONG/DS/PL/PL_301.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-l8pl301"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-fdiaz-2014a",
+      "date": "2014-02-13",
+      "dateLabel": "13 de febrero de 2014",
+      "chamber": "congreso",
+      "legislature": "X",
+      "speaker": "Jorge Fernández Díaz",
+      "party": "PP",
+      "bloc": "gobierno",
+      "role": "ministro del Interior",
+      "topics": [
+        "tarajal"
+      ],
+      "era": "democracia",
+      "text": "En ningún momento el objetivo del uso de los medios en la mar fue alcanzar a ninguno de los inmigrantes sino hacer visible una barrera disuasoria. [...] un grupo de 23 inmigrantes [...] llegó a la parte española de la playa, algunos auxiliados por la propia Guardia Civil, momento en el que de forma inmediata fueron rechazados y se hicieron cargo de ellos las fuerzas marroquíes.",
+      "context": "Comparecencia a petición propia en la Comisión de Interior.",
+      "sessionRef": "DSCD X Comisiones núm. 500, 13-2-2014, p. 5",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L10/CONG/DS/CO/DSCD-10-CO-500.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-co500"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-fdiaz-2014b",
+      "date": "2014-02-13",
+      "dateLabel": "13 de febrero de 2014",
+      "chamber": "congreso",
+      "legislature": "X",
+      "speaker": "Jorge Fernández Díaz",
+      "party": "PP",
+      "bloc": "gobierno",
+      "role": "ministro del Interior",
+      "topics": [
+        "tarajal"
+      ],
+      "era": "democracia",
+      "text": "No estamos, por tanto, ante un supuesto de la denominada devolución en caliente, que sería irregular [...]. Todo ello confirma que la causa probable de todos los fallecimientos fuera el ahogamiento derivado de la avalancha humana que llevó a los inmigrantes hacia la mar, sin que haya relación causa-efecto entre el empleo de los medios antidisturbios por parte de los agentes de la Guardia Civil y dichos fallecimientos.",
+      "context": "",
+      "sessionRef": "DSCD X Comisiones núm. 500, 13-2-2014, pp. 7-8",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L10/CONG/DS/CO/DSCD-10-CO-500.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-co500"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-trevin-2014a",
+      "date": "2014-02-13",
+      "dateLabel": "13 de febrero de 2014",
+      "chamber": "congreso",
+      "legislature": "X",
+      "speaker": "Antonio Trevín",
+      "party": "PSOE",
+      "bloc": "izquierda",
+      "role": "portavoz de Interior",
+      "topics": [
+        "tarajal"
+      ],
+      "era": "democracia",
+      "text": "Cuando una persona está en el mar, en un medio precario y peligra su vida en aguas jurisdiccionales españolas, hay que socorrerla, porque para eso se llama a Salvamento Marítimo, pero no se responde con material antidisturbios, señor ministro.",
+      "context": "",
+      "sessionRef": "DSCD X Comisiones núm. 500, 13-2-2014, p. 18",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L10/CONG/DS/CO/DSCD-10-CO-500.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-co500"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-olabarria-2014a",
+      "date": "2014-02-13",
+      "dateLabel": "13 de febrero de 2014",
+      "chamber": "congreso",
+      "legislature": "X",
+      "speaker": "Emilio Olabarría",
+      "party": "PNV",
+      "bloc": "otro",
+      "role": "diputado",
+      "topics": [
+        "tarajal"
+      ],
+      "era": "democracia",
+      "text": "No existe la devolución en caliente. Existe la persecución en caliente, señor ministro, que es otro concepto previsto en el Tratado de Schengen [...], pero la expulsión en caliente usted ha reconocido que es irregular.",
+      "context": "",
+      "sessionRef": "DSCD X Comisiones núm. 500, 13-2-2014, p. 23",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L10/CONG/DS/CO/DSCD-10-CO-500.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-co500"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-inarritu-2014",
+      "date": "2014-02-13",
+      "dateLabel": "13 de febrero de 2014",
+      "chamber": "congreso",
+      "legislature": "X",
+      "speaker": "Jon Iñarritu",
+      "party": "Amaiur",
+      "bloc": "izquierda",
+      "role": "diputado",
+      "topics": [
+        "tarajal"
+      ],
+      "era": "democracia",
+      "text": "Hay que reconocerle al ministro que ha aportado dos datos nuevos [...] el uso de pelotas de caucho por la Guardia Civil dirigidas al mar, eso sí, de forma disuasoria, pero también hay que recordarle que es la cuarta versión oficial sobre estos hechos.",
+      "context": "",
+      "sessionRef": "DSCD X Comisiones núm. 500, 13-2-2014, p. 35",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L10/CONG/DS/CO/DSCD-10-CO-500.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-co500"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-trevin-2014b",
+      "date": "2014-02-19",
+      "dateLabel": "19 de febrero de 2014",
+      "chamber": "congreso",
+      "legislature": "X",
+      "speaker": "Antonio Trevín",
+      "party": "PSOE",
+      "bloc": "izquierda",
+      "role": "portavoz de Interior",
+      "topics": [
+        "tarajal"
+      ],
+      "era": "democracia",
+      "text": "En Ceuta pasó algo muy grave; seamos conscientes. Fallecieron quince seres humanos que merecen respeto, dignidad y memoria, y este Parlamento tiene la obligación de saber qué pasó y por qué pasó. [...] anuncio que apoyaremos el punto de la moción íntegramente y nos abstendremos, por el momento y hasta conocer la verdad, en la petición de la dimisión del ministro.",
+      "context": "Moción sobre seguridad ciudadana en el Pleno.",
+      "sessionRef": "DSCD X núm. 178, 19-2-2014, p. 53",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L10/CONG/DS/PL/DSCD-10-PL-178.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-x10pl178"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-olabarria-2014b",
+      "date": "2014-02-19",
+      "dateLabel": "19 de febrero de 2014",
+      "chamber": "congreso",
+      "legislature": "X",
+      "speaker": "Emilio Olabarría",
+      "party": "PNV",
+      "bloc": "otro",
+      "role": "diputado",
+      "topics": [
+        "tarajal"
+      ],
+      "era": "democracia",
+      "text": "Lo que pasó en Ceuta, de verdad, merece la dimisión del ministro porque no es posible admitir en un Estado democrático ocho versiones diferentes sobre un acontecimiento tan dramático [...]. Porque lo que se acometió en Ceuta fue una expulsión sumaria y colectiva, expresamente prohibida por el artículo 4 de este convenio.",
+      "context": "",
+      "sessionRef": "DSCD X núm. 178, 19-2-2014, p. 51",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L10/CONG/DS/PL/DSCD-10-PL-178.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-x10pl178"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-escobar-2014",
+      "date": "2014-02-19",
+      "dateLabel": "19 de febrero de 2014",
+      "chamber": "congreso",
+      "legislature": "X",
+      "speaker": "Conrado Escobar",
+      "party": "PP",
+      "bloc": "derecha",
+      "role": "diputado",
+      "topics": [
+        "tarajal"
+      ],
+      "era": "democracia",
+      "text": "Voy a acabar con algunas reflexiones que me parecen inevitables sobre el episodio acaecido en aguas marroquíes, en la frontera con nuestra querida Ceuta. El control de la inmigración irregular es y debe ser política de Estado, no es cuestión de partidos. España constituye la frontera sur de Europa.",
+      "context": "",
+      "sessionRef": "DSCD X núm. 178, 19-2-2014, p. 54",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L10/CONG/DS/PL/DSCD-10-PL-178.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-x10pl178"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-casado-2021",
+      "date": "2021-05-19",
+      "dateLabel": "19 de mayo de 2021",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Pablo Casado",
+      "party": "PP",
+      "bloc": "derecha",
+      "role": "líder de la oposición",
+      "topics": [
+        "ceuta-2021"
+      ],
+      "era": "democracia",
+      "text": "La actualidad manda. Señor Sánchez, España atraviesa la peor crisis diplomática con Marruecos de nuestra historia democrática. Ayer le llamé para decirle que tiene nuestro apoyo para garantizar la soberanía nacional en Ceuta y en Melilla [...]. Ceuta lleva seiscientos años siendo española y nuestros compatriotas allí no merecen esto. Es la crónica de una crisis anunciada.",
+      "context": "Sesión de control.",
+      "sessionRef": "DSCD XIV núm. 103, 19-5-2021, p. 5",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-103.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=A7AobWuq9OE",
+      "sourceIds": [
+        "src-ds-pl103",
+        "src-yt-pl103"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-sanchez-2021a",
+      "date": "2021-05-19",
+      "dateLabel": "19 de mayo de 2021",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Pedro Sánchez",
+      "party": "PSOE",
+      "bloc": "gobierno",
+      "role": "presidente del Gobierno",
+      "topics": [
+        "ceuta-2021"
+      ],
+      "era": "democracia",
+      "text": "Este es un momento en el que España está sufriendo un desafío de un tercer país, que es Marruecos, y queremos saber de qué lado está el principal partido de la oposición, ¿del lado del interés general o del lado de sus intereses partidistas, señorías? [...] Ceuta y Melilla deben saber —afirmo contundentemente— que cuentan con el apoyo, la comprensión y la empatía del conjunto de la ciudadanía española.",
+      "context": "Respuesta a Casado.",
+      "sessionRef": "DSCD XIV núm. 103, 19-5-2021, p. 6",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-103.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=A7AobWuq9OE",
+      "sourceIds": [
+        "src-ds-pl103",
+        "src-yt-pl103"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-casado-2021b",
+      "date": "2021-05-19",
+      "dateLabel": "19 de mayo de 2021",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Pablo Casado",
+      "party": "PP",
+      "bloc": "derecha",
+      "role": "líder de la oposición",
+      "topics": [
+        "ceuta-2021"
+      ],
+      "era": "democracia",
+      "text": "La deslealtad en política exterior es usted. Yo no he ido Marruecos con un mapa de las islas Canarias marroquíes durante el Gobierno de un partido distinto al mío.",
+      "context": "",
+      "sessionRef": "DSCD XIV núm. 103, 19-5-2021, p. 6",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-103.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=A7AobWuq9OE",
+      "sourceIds": [
+        "src-ds-pl103"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-sanchez-2021b",
+      "date": "2021-05-19",
+      "dateLabel": "19 de mayo de 2021",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Pedro Sánchez",
+      "party": "PSOE",
+      "bloc": "gobierno",
+      "role": "presidente del Gobierno",
+      "topics": [
+        "ceuta-2021"
+      ],
+      "era": "democracia",
+      "text": "La crisis de Marruecos, que, insisto, no es una crisis migratoria, es una crisis de otro tipo y como tal hay que abordarla. [...] Se ha desplegado al ejército en la frontera, se han reforzado los efectivos de las Fuerzas y Cuerpos de Seguridad del Estado, 400, y se está procediendo a la devolución inmediata de los que han entrado irregularmente. En torno a 4800 personas que entraron irregularmente hace dos días en la Ciudad Autónoma de Ceuta ya se han devuelto a Marruecos.",
+      "context": "Respuesta a Arrimadas.",
+      "sessionRef": "DSCD XIV núm. 103, 19-5-2021, p. 8",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-103.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=A7AobWuq9OE",
+      "sourceIds": [
+        "src-ds-pl103"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-arrimadas-2021",
+      "date": "2021-05-19",
+      "dateLabel": "19 de mayo de 2021",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Inés Arrimadas",
+      "party": "Ciudadanos",
+      "bloc": "derecha",
+      "role": "presidenta de Ciudadanos",
+      "topics": [
+        "ceuta-2021"
+      ],
+      "era": "democracia",
+      "text": "Toda España ha visto cómo Marruecos ha abierto literalmente la frontera y han entrado 8000 personas en situación irregular en un solo día. Quiero dejar claro que hay un responsable de esta afrenta injustificable, que es Marruecos [...] a España no se la chantajea.",
+      "context": "",
+      "sessionRef": "DSCD XIV núm. 103, 19-5-2021, p. 9",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-103.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=A7AobWuq9OE",
+      "sourceIds": [
+        "src-ds-pl103"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-espinosa-2021",
+      "date": "2021-05-19",
+      "dateLabel": "19 de mayo de 2021",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Iván Espinosa de los Monteros",
+      "party": "VOX",
+      "bloc": "derecha",
+      "role": "portavoz de VOX",
+      "topics": [
+        "ceuta-2021"
+      ],
+      "era": "democracia",
+      "text": "Un país como Marruecos lo ha identificado correctamente, ha visto que este es un Gobierno débil [...] y por eso se permite lanzarnos de forma organizada una auténtica invasión para tomar la ciudad de Ceuta. [...] Detengan, identifiquen y expulsen inmediatamente a todos los que han violado nuestra soberanía.",
+      "context": "Pregunta a la vicepresidenta Calvo.",
+      "sessionRef": "DSCD XIV núm. 103, 19-5-2021, p. 11",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-103.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=A7AobWuq9OE",
+      "sourceIds": [
+        "src-ds-pl103"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-calvo-2021",
+      "date": "2021-05-19",
+      "dateLabel": "19 de mayo de 2021",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Carmen Calvo",
+      "party": "PSOE",
+      "bloc": "gobierno",
+      "role": "vicepresidenta primera",
+      "topics": [
+        "ceuta-2021"
+      ],
+      "era": "democracia",
+      "text": "Lo único que tienen que hacer en este asunto que vivimos en estos días es estar con nuestros compatriotas de Ceuta y Melilla, con España y con el Gobierno legítimo y constitucional de España.",
+      "context": "",
+      "sessionRef": "DSCD XIV núm. 103, 19-5-2021, p. 12",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-103.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=A7AobWuq9OE",
+      "sourceIds": [
+        "src-ds-pl103"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-gillazaro-2021",
+      "date": "2021-05-19",
+      "dateLabel": "19 de mayo de 2021",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Ignacio Gil Lázaro",
+      "party": "VOX",
+      "bloc": "derecha",
+      "role": "diputado",
+      "topics": [
+        "ceuta-2021"
+      ],
+      "era": "democracia",
+      "text": "Un Gobierno y un ministro del Interior que hoy, con la ciudad de Ceuta invadida, han acreditado definitivamente su debilidad, su incapacidad, su estupidez y su fracaso.",
+      "context": "Pregunta a Grande-Marlaska.",
+      "sessionRef": "DSCD XIV núm. 103, 19-5-2021, p. 21",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-103.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=A7AobWuq9OE",
+      "sourceIds": [
+        "src-ds-pl103"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-vehi-2021",
+      "date": "2021-05-19",
+      "dateLabel": "19 de mayo de 2021",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Mireia Vehí",
+      "party": "CUP",
+      "bloc": "izquierda",
+      "role": "diputada",
+      "topics": [
+        "ceuta-2021"
+      ],
+      "era": "democracia",
+      "text": "Sobre Ceuta, diez segundos. Salvar niños o reprimir niños. [...] Las devoluciones en caliente, por ejemplo, que ustedes defendieron que eran ilegales, se están dando ahora en Ceuta, y esto tiene que parar.",
+      "context": "",
+      "sessionRef": "DSCD XIV núm. 103, 19-5-2021, p. 30",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-103.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=A7AobWuq9OE",
+      "sourceIds": [
+        "src-ds-pl103"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-iceta-2021",
+      "date": "2021-05-19",
+      "dateLabel": "19 de mayo de 2021",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Miquel Iceta",
+      "party": "PSOE",
+      "bloc": "gobierno",
+      "role": "ministro de Política Territorial",
+      "topics": [
+        "ceuta-2021"
+      ],
+      "era": "democracia",
+      "text": "Usted ha obviado algo que también se produjo en Ceuta, un ataque a nuestras fronteras. Nuestro pueblo, el pueblo español, tiene derecho a defender sus fronteras.",
+      "context": "Respuesta a Vehí.",
+      "sessionRef": "DSCD XIV núm. 103, 19-5-2021, p. 31",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-103.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=A7AobWuq9OE",
+      "sourceIds": [
+        "src-ds-pl103"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-fanjul-2021",
+      "date": "2021-05-19",
+      "dateLabel": "19 de mayo de 2021",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Beatriz Álvarez Fanjul",
+      "party": "PP",
+      "bloc": "derecha",
+      "role": "diputada",
+      "topics": [
+        "ceuta-2021"
+      ],
+      "era": "democracia",
+      "text": "¿Hay motivos para reprobar al señor Marlaska? Claro, demasiados. [...] Por la terrible gestión de la política migratoria —lo que está sucediendo esta semana en Ceuta no tiene precedentes—.",
+      "context": "Moción de VOX sobre la credibilidad de Interior, rechazada el 20-5-2021 por 153 a 195.",
+      "sessionRef": "DSCD XIV núm. 103, 19-5-2021, p. 60",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-103.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=A7AobWuq9OE",
+      "sourceIds": [
+        "src-ds-pl103",
+        "src-ds-pl104"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-marlaska-2021a",
+      "date": "2021-06-25",
+      "dateLabel": "25 de junio de 2021",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Fernando Grande-Marlaska",
+      "party": "PSOE",
+      "bloc": "gobierno",
+      "role": "ministro del Interior",
+      "topics": [
+        "ceuta-2021"
+      ],
+      "era": "democracia",
+      "text": "En el caso de Ceuta estamos hablando de la llegada de más de ocho mil, nueve mil personas, con evidente riesgo para ellos, ya que ha habido dos fallecidos [...]. No es una crisis migratoria, que no fue una crisis migratoria, que fue una crisis fronteriza [...]. Nuestro país acaba donde acaban Ceuta y Melilla y tenemos que entendernos por nuestro país y por Marruecos, porque somos vecinos, pero vamos a defender la integridad territorial de nuestro país.",
+      "context": "Comparecencia en la Comisión de Interior.",
+      "sessionRef": "DSCD XIV Comisiones núm. 446, 25-6-2021, p. 14",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/CO/DSCD-14-CO-446.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=i5HYwIckpjY",
+      "sourceIds": [
+        "src-ds-co446",
+        "src-yt-co446"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-marlaska-2021b",
+      "date": "2021-06-25",
+      "dateLabel": "25 de junio de 2021",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Fernando Grande-Marlaska",
+      "party": "PSOE",
+      "bloc": "gobierno",
+      "role": "ministro del Interior",
+      "topics": [
+        "ceuta-2021"
+      ],
+      "era": "democracia",
+      "text": "En Ceuta por los cauces legalmente establecidos en menos de cuarenta y ocho horas habían sido devueltos más del 80 % de las personas que habían entrado irregularmente. [...] No hubo ninguna devolución ilegal, sino que todas las personas que regresaron lo hicieron conforme a la ley, voluntariamente, y las que no, a través de los oportunos expedientes.",
+      "context": "",
+      "sessionRef": "DSCD XIV Comisiones núm. 446, 25-6-2021, pp. 15 y 39",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/CO/DSCD-14-CO-446.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-co446"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-sanchez-2022a",
+      "date": "2022-03-30",
+      "dateLabel": "30 de marzo de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Pedro Sánchez",
+      "party": "PSOE",
+      "bloc": "gobierno",
+      "role": "presidente del Gobierno",
+      "topics": [
+        "sahara-2022"
+      ],
+      "era": "democracia",
+      "text": "En mi carta dirigida al rey Mohamed VI reconocí —y cito textualmente de nuevo—: «la importancia que tiene la cuestión del Sáhara Occidental para Marruecos y los esfuerzos serios y creíbles que Marruecos, en el marco de Naciones Unidas, está realizando para encontrar una solución mutuamente aceptable». A continuación, añadí: «En este sentido, España considera la propuesta marroquí de autonomía presentada en 2007 como la base más seria, creíble y realista para la resolución de ese diferendo».",
+      "context": "Comparecencia sobre el Consejo Europeo, la OTAN y Marruecos.",
+      "sessionRef": "DSCD XIV núm. 174, 30-3-2022, p. 18",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-174.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=sgfSfGG2R6c",
+      "sourceIds": [
+        "src-ds-pl174",
+        "src-moncloa-30-03-2022"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-sanchez-2022b",
+      "date": "2022-03-30",
+      "dateLabel": "30 de marzo de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Pedro Sánchez",
+      "party": "PSOE",
+      "bloc": "gobierno",
+      "role": "presidente del Gobierno",
+      "topics": [
+        "sahara-2022"
+      ],
+      "era": "democracia",
+      "text": "En las declaraciones conjuntas adoptadas en las reuniones de alto nivel [...] bajo la Presidencia de Mariano Rajoy en el año 2012 y en el año 2015, se reconocían los esfuerzos de Marruecos y desaparecía cualquier referencia al derecho a la autodeterminación. [...] Somos el principal donante de ayuda humanitaria a los campamentos de refugiados saharauis.",
+      "context": "",
+      "sessionRef": "DSCD XIV núm. 174, 30-3-2022, pp. 19-20",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-174.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=sgfSfGG2R6c",
+      "sourceIds": [
+        "src-ds-pl174"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-gamarra-2022",
+      "date": "2022-03-30",
+      "dateLabel": "30 de marzo de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Cuca Gamarra",
+      "party": "PP",
+      "bloc": "derecha",
+      "role": "portavoz del Grupo Popular",
+      "topics": [
+        "sahara-2022"
+      ],
+      "era": "democracia",
+      "text": "¿Por qué cree que no firmaron una carta semejante ninguno de sus seis predecesores? [...] España nunca se había salido del marco de Naciones Unidas hasta ahora. [...] ¿Le ha dado Marruecos alguna garantía sobre Ceuta, Melilla y Canarias? Porque integridad territorial no es lo mismo para España que para Marruecos.",
+      "context": "",
+      "sessionRef": "DSCD XIV núm. 174, 30-3-2022, p. 24",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-174.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=sgfSfGG2R6c",
+      "sourceIds": [
+        "src-ds-pl174"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-abascal-2022a",
+      "date": "2022-03-30",
+      "dateLabel": "30 de marzo de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Santiago Abascal",
+      "party": "VOX",
+      "bloc": "derecha",
+      "role": "presidente de VOX",
+      "topics": [
+        "sahara-2022"
+      ],
+      "era": "democracia",
+      "text": "En su cambio de posición sobre el Sáhara, que ha sido irresponsable, que ha sido arbitrario y que ha sido clandestino, ¿a quién obedece usted? [...] La carta que usted ha enviado es un puñetero insulto a este Parlamento. [...] ¡Claro que hay un problema con Marruecos! Lo han provocado ustedes, entre otras cosas, acogiendo aquí a uno de los jefes del Frente Polisario.",
+      "context": "",
+      "sessionRef": "DSCD XIV núm. 174, 30-3-2022, pp. 25-26",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-174.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=sgfSfGG2R6c",
+      "sourceIds": [
+        "src-ds-pl174"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-echenique-2022",
+      "date": "2022-03-30",
+      "dateLabel": "30 de marzo de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Pablo Echenique",
+      "party": "Unidas Podemos",
+      "bloc": "izquierda",
+      "role": "portavoz de Unidas Podemos",
+      "topics": [
+        "sahara-2022"
+      ],
+      "era": "democracia",
+      "text": "En el caso del Sáhara tenemos también un régimen autocrático, que es Marruecos, que ha invadido un país más pequeño, que es el Sáhara Occidental [...]. Nosotros pensamos que, de la misma manera que hay que defender que se respete el derecho internacional en Ucrania, también hay que defenderlo en el Sáhara Occidental.",
+      "context": "Socio de coalición del PSOE.",
+      "sessionRef": "DSCD XIV núm. 174, 30-3-2022, p. 29",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-174.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=sgfSfGG2R6c",
+      "sourceIds": [
+        "src-ds-pl174"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-rufian-2022a",
+      "date": "2022-03-30",
+      "dateLabel": "30 de marzo de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Gabriel Rufián",
+      "party": "ERC",
+      "bloc": "izquierda",
+      "role": "portavoz de ERC",
+      "topics": [
+        "sahara-2022"
+      ],
+      "era": "democracia",
+      "text": "¿Por qué el Gobierno defiende el derecho del pueblo ucraniano a existir frente a Rusia, pero no el derecho del pueblo saharaui a existir frente a Marruecos? [...] simplemente canjea, canjea principios por más control marroquí en la valla en Ceuta y Melilla.",
+      "context": "",
+      "sessionRef": "DSCD XIV núm. 174, 30-3-2022, p. 32",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-174.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=sgfSfGG2R6c",
+      "sourceIds": [
+        "src-ds-pl174"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-bal-2022",
+      "date": "2022-03-30",
+      "dateLabel": "30 de marzo de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Edmundo Bal",
+      "party": "Ciudadanos",
+      "bloc": "derecha",
+      "role": "portavoz de Ciudadanos",
+      "topics": [
+        "sahara-2022"
+      ],
+      "era": "democracia",
+      "text": "¿Esto lo pensaba usted declarar secreto por el Consejo de Ministros? O sea, si no es por Marruecos, ¿cuándo nos lo iba a contar? [...] Y resulta que Marruecos sigue diciendo hoy que Ceuta y Melilla forman parte del territorio de Marruecos.",
+      "context": "",
+      "sessionRef": "DSCD XIV núm. 174, 30-3-2022, p. 41",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-174.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=sgfSfGG2R6c",
+      "sourceIds": [
+        "src-ds-pl174"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-esteban-2022",
+      "date": "2022-03-30",
+      "dateLabel": "30 de marzo de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Aitor Esteban",
+      "party": "PNV",
+      "bloc": "otro",
+      "role": "portavoz del PNV",
+      "topics": [
+        "sahara-2022"
+      ],
+      "era": "democracia",
+      "text": "Nos hemos enterado por la carta enviada por usted al rey de Marruecos. Por cierto, ¿tiene una carta que el rey de Marruecos le haya enviado a usted con su posición y sus compromisos? [...] Si este conflicto dura cuarenta y seis años es porque Marruecos ha boicoteado las soluciones [...]. Marruecos ha utilizado las crisis migratorias a su antojo, incluso ha presionado y ha conseguido que se cese a una ministra de otro país.",
+      "context": "",
+      "sessionRef": "DSCD XIV núm. 174, 30-3-2022, p. 43",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-174.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=sgfSfGG2R6c",
+      "sourceIds": [
+        "src-ds-pl174"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-aizpurua-2022",
+      "date": "2022-03-30",
+      "dateLabel": "30 de marzo de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Mertxe Aizpurua",
+      "party": "EH Bildu",
+      "bloc": "izquierda",
+      "role": "portavoz de EH Bildu",
+      "topics": [
+        "sahara-2022"
+      ],
+      "era": "democracia",
+      "text": "¿Por qué han cambiado de manera unilateral la posición respecto al Sáhara alineándose con Marruecos? ¿Por qué, señor Sánchez? ¿A cambio de qué? [...] Para, supuestamente, arreglar una crisis con Marruecos, usted ha abierto de golpe una triple crisis: con el Sáhara Occidental, con Argelia y con todos y cada uno de los partidos de este Parlamento.",
+      "context": "",
+      "sessionRef": "DSCD XIV núm. 174, 30-3-2022, p. 46",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-174.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=sgfSfGG2R6c",
+      "sourceIds": [
+        "src-ds-pl174"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-pisarello-2022",
+      "date": "2022-04-06",
+      "dateLabel": "6 de abril de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Gerardo Pisarello",
+      "party": "Unidas Podemos (En Comú Podem)",
+      "bloc": "izquierda",
+      "role": "diputado",
+      "topics": [
+        "sahara-2022"
+      ],
+      "era": "democracia",
+      "text": "Hace falta una rectificación, que solo puede consistir en retomar, como proponemos hoy, un compromiso claro con el mandato de Naciones Unidas sobre el Sáhara Occidental que nunca debió haberse abandonado. [...] ¡Que viva el Sáhara libre!",
+      "context": "Defensa de la PNL de UP, ERC y Bildu.",
+      "sessionRef": "DSCD XIV núm. 177, 6-4-2022, pp. 57-58",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-177.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=l0gx0GMDKEw",
+      "sourceIds": [
+        "src-ds-pl177"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-rosique-2022",
+      "date": "2022-04-06",
+      "dateLabel": "6 de abril de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Marta Rosique",
+      "party": "ERC",
+      "bloc": "izquierda",
+      "role": "diputada",
+      "topics": [
+        "sahara-2022"
+      ],
+      "era": "democracia",
+      "text": "Hace unas semanas, con la famosa carta al Reino de Marruecos, el PSOE rompió con la posición de neutralidad del Gobierno español [...]. Y lo hicieron de la peor manera posible, sin avisar al Congreso de los Diputados y sin avisar siquiera a su otra parte del Gobierno.",
+      "context": "",
+      "sessionRef": "DSCD XIV núm. 177, 6-4-2022, p. 58",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-177.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=l0gx0GMDKEw",
+      "sourceIds": [
+        "src-ds-pl177"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-inarritu-2022",
+      "date": "2022-04-06",
+      "dateLabel": "6 de abril de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Jon Iñarritu",
+      "party": "EH Bildu",
+      "bloc": "izquierda",
+      "role": "diputado",
+      "topics": [
+        "sahara-2022"
+      ],
+      "era": "democracia",
+      "text": "El cambio de postura unilateral que tomó el Gobierno el pasado día 14 de marzo por medio de esa misiva enviada a Mohamed VI fue algo más que un error, fue una injusticia contra el pueblo saharaui, pero, además, fue una chapuza en términos diplomáticos y políticos.",
+      "context": "",
+      "sessionRef": "DSCD XIV núm. 177, 6-4-2022, p. 59",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-177.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=l0gx0GMDKEw",
+      "sourceIds": [
+        "src-ds-pl177"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-martinezferro-2022",
+      "date": "2022-04-06",
+      "dateLabel": "6 de abril de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Valentina Martínez Ferro",
+      "party": "PP",
+      "bloc": "derecha",
+      "role": "diputada",
+      "topics": [
+        "sahara-2022"
+      ],
+      "era": "democracia",
+      "text": "El 18 de marzo conocimos a través de un comunicado de la Casa Real de Marruecos que el Gobierno de España había decidido romper la posición tradicional de España con respecto al Sáhara Occidental, uno de los pocos asuntos en los que todos los grupos de esta Cámara habíamos mantenido una firme unidad.",
+      "context": "El PP votó a favor de la PNL.",
+      "sessionRef": "DSCD XIV núm. 177, 6-4-2022, p. 66",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-177.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=l0gx0GMDKEw",
+      "sourceIds": [
+        "src-ds-pl177"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-gutierrezprieto-2022",
+      "date": "2022-04-06",
+      "dateLabel": "6 de abril de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Sergio Gutiérrez Prieto",
+      "party": "PSOE",
+      "bloc": "izquierda",
+      "role": "diputado",
+      "topics": [
+        "sahara-2022"
+      ],
+      "era": "democracia",
+      "text": "Nadie va a imponer el futuro de los saharauis a los saharauis [...]. La ONU en ningún caso opta por una solución en concreto.",
+      "context": "El PSOE votó en contra de la PNL.",
+      "sessionRef": "DSCD XIV núm. 177, 6-4-2022, p. 68",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-177.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=l0gx0GMDKEw",
+      "sourceIds": [
+        "src-ds-pl177"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-sanchez-2022c",
+      "date": "2022-06-08",
+      "dateLabel": "8 de junio de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Pedro Sánchez",
+      "party": "PSOE",
+      "bloc": "gobierno",
+      "role": "presidente del Gobierno",
+      "topics": [
+        "sahara-2022"
+      ],
+      "era": "democracia",
+      "text": "El señor Aznar no compareció ninguna cuando hubo un conato de conflicto bélico entre Marruecos y España. [...] me gustaría saber exactamente si ustedes están a favor o no de la autodeterminación del pueblo saharaui. [...] en las resoluciones del Consejo de Seguridad de Naciones Unidas también se reconoce como una de las fórmulas para poder salir de este conflicto [...] la propuesta de autonomía por parte del Reino de Marruecos.",
+      "context": "Horas antes de que Argelia suspendiera el Tratado de Amistad.",
+      "sessionRef": "DSCD XIV núm. 192, 8-6-2022, p. 48",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-192.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=7ze6C4eLXqY",
+      "sourceIds": [
+        "src-ds-pl192",
+        "src-yt-pl192"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-inarritu-2022b",
+      "date": "2022-06-28",
+      "dateLabel": "28 de junio de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Jon Iñarritu",
+      "party": "EH Bildu",
+      "bloc": "izquierda",
+      "role": "diputado",
+      "topics": [
+        "melilla-2022"
+      ],
+      "era": "democracia",
+      "text": "Ha sido muy significativo que en el minuto de silencio con el que ha comenzado este Pleno hayamos sido incapaces de mencionar a las al menos 37 víctimas que fallecieron en la valla de Melilla el pasado viernes. [...] Al menos, el señor Fernández Díaz se dignó a comparecer a los pocos días en la Comisión de Interior de esta Cámara. ¿Dónde está el señor Grande-Marlaska?",
+      "context": "",
+      "sessionRef": "DSCD XIV núm. 197, 28-6-2022, p. 54",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-197.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-pl197"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-vehi-2022",
+      "date": "2022-06-28",
+      "dateLabel": "28 de junio de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Mireia Vehí",
+      "party": "CUP",
+      "bloc": "izquierda",
+      "role": "diputada",
+      "topics": [
+        "melilla-2022"
+      ],
+      "era": "democracia",
+      "text": "Las imágenes de las 37 personas asesinadas en Melilla son horrorosas. De hecho, nosotros hoy no hemos querido estar en el minuto de silencio. Nos parecía hipócrita.",
+      "context": "",
+      "sessionRef": "DSCD XIV núm. 197, 28-6-2022, p. 53",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-197.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-pl197"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-legarda-2022",
+      "date": "2022-06-28",
+      "dateLabel": "28 de junio de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Mikel Legarda",
+      "party": "PNV",
+      "bloc": "otro",
+      "role": "diputado",
+      "topics": [
+        "melilla-2022"
+      ],
+      "era": "democracia",
+      "text": "Queremos manifestar nuestro más profundo rechazo a lo sucedido en el lado marroquí de la frontera de Melilla. Creemos que no se hizo un uso legítimo de la fuerza sino un uso desproporcionado de la violencia, y que se conculcaron los derechos humanos más básicos.",
+      "context": "",
+      "sessionRef": "DSCD XIV núm. 197, 28-6-2022, p. 55",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-197.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-pl197"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-bermudez-2022",
+      "date": "2022-06-29",
+      "dateLabel": "29 de junio de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "José Antonio Bermúdez de Castro",
+      "party": "PP",
+      "bloc": "derecha",
+      "role": "diputado",
+      "topics": [
+        "melilla-2022"
+      ],
+      "era": "democracia",
+      "text": "El presidente del Gobierno declaró que dicho asalto estaba bien resuelto, una afirmación tan desafortunada como carente de humanidad. [...] Tenemos que garantizar el control y seguridad de nuestras fronteras, sin duda, pero no podemos permitir ni que se repita ni que se normalice la tragedia.",
+      "context": "Pregunta oral a Grande-Marlaska.",
+      "sessionRef": "DSCD XIV núm. 198, 29-6-2022, pp. 15-16",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-198.PDF",
+      "videoUrl": "https://www.youtube.com/watch?v=PSLXF8dm8jw",
+      "sourceIds": [
+        "src-ds-pl198",
+        "src-yt-pl198"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-marlaska-2022",
+      "date": "2022-06-29",
+      "dateLabel": "29 de junio de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Fernando Grande-Marlaska",
+      "party": "PSOE",
+      "bloc": "gobierno",
+      "role": "ministro del Interior",
+      "topics": [
+        "melilla-2022"
+      ],
+      "era": "democracia",
+      "text": "Quiero que mis primeras palabras sean para los familiares de los migrantes fallecidos el pasado viernes y también [...] para los cincuenta guardias civiles heridos, también los más de ciento cuarenta gendarmes marroquís heridos en los hechos y en el ataque violento a la frontera hispanomarroquí [...]. Un Estado de derecho no puede aceptar en modo alguno ataques violentos a su frontera.",
+      "context": "",
+      "sessionRef": "DSCD XIV núm. 198, 29-6-2022, p. 16",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-198.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-pl198"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-barandiaran-2022",
+      "date": "2022-06-29",
+      "dateLabel": "29 de junio de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Íñigo Barandiaran",
+      "party": "PNV",
+      "bloc": "otro",
+      "role": "diputado",
+      "topics": [
+        "melilla-2022"
+      ],
+      "era": "democracia",
+      "text": "La mayor tragedia ocurrida jamás en una frontera europea externa es la que se ha vivido en Melilla, la intervención de unos u otros es lo que ha causado más muertos, y no se puede negar.",
+      "context": "",
+      "sessionRef": "DSCD XIV núm. 198, 29-6-2022, p. 17",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-198.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-pl198"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-borras-2022",
+      "date": "2022-06-30",
+      "dateLabel": "30 de junio de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Mireia Borrás",
+      "party": "VOX",
+      "bloc": "derecha",
+      "role": "diputada",
+      "topics": [
+        "melilla-2022"
+      ],
+      "era": "democracia",
+      "text": "Tienen un presidente del Gobierno que considera un buen resultado tener treinta y siete cadáveres en la valla de Melilla, que es algo bien resuelto [...]. Si hubieran protegido la frontera sur, como llevamos años advirtiéndoles, ni nuestros guardias civiles serían agredidos a diario ni tendríamos que lamentar flujos masivos de inmigración ilegal que provocan muertos.",
+      "context": "",
+      "sessionRef": "DSCD XIV núm. 199, 30-6-2022, p. 98",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-199.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-pl199"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-abascal-2022b",
+      "date": "2022-07-12",
+      "dateLabel": "12 de julio de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Santiago Abascal",
+      "party": "VOX",
+      "bloc": "derecha",
+      "role": "presidente de VOX",
+      "topics": [
+        "sahara-2022",
+        "melilla-2022"
+      ],
+      "era": "democracia",
+      "text": "Cuando trajo al líder del Frente Polisario consiguió que Marruecos lanzase una avalancha migratoria [...]. Cuando, inesperadamente, dio la voltereta diplomática [...] provocó otra avalancha, esta vez porque Argelia abrió la frontera [...]. ¿Hay que tener una buena relación con Marruecos? Por supuesto. En cuanto Marruecos reconozca, sin matices, la españolidad de Ceuta, de Melilla, de Canarias y de las aguas territoriales.",
+      "context": "Debate sobre el estado de la Nación.",
+      "sessionRef": "DSCD XIV núm. 200, 12-7-2022, p. 40",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-200.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-pl200"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-rufian-2022b",
+      "date": "2022-07-12",
+      "dateLabel": "12 de julio de 2022",
+      "chamber": "congreso",
+      "legislature": "XIV",
+      "speaker": "Gabriel Rufián",
+      "party": "ERC",
+      "bloc": "izquierda",
+      "role": "portavoz de ERC",
+      "topics": [
+        "melilla-2022",
+        "sahara-2022"
+      ],
+      "era": "democracia",
+      "text": "Treinta y siete personas muertas en Melilla, lo siento, pero no es una operación bien resuelta. [...] Ya se lo digo yo: porque necesitaban a Marruecos como vigilante de seguridad de la valla aun a costa del Sáhara. (Coloca tres balas sobre la tribuna de oradores).",
+      "context": "Sánchez replica desde el escaño: 'No voy a dejar que me llames racista'.",
+      "sessionRef": "DSCD XIV núm. 200, 12-7-2022, p. 60",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L14/CONG/DS/PL/DSCD-14-PL-200.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-ds-pl200"
+      ],
+      "unverified": false
+    }
+  ],
+  "statements": [
+    {
+      "id": "st-perejil-gob",
+      "crisisId": "perejil-2002",
+      "bloc": "gobierno",
+      "speaker": "José María Aznar",
+      "role": "presidente del Gobierno",
+      "date": "2002-07-15",
+      "dateLabel": "15 de julio de 2002",
+      "text": "España no aceptará hechos consumados.",
+      "sourceIds": [
+        "src-ds-pl179"
+      ]
+    },
+    {
+      "id": "st-perejil-gob2",
+      "crisisId": "perejil-2002",
+      "bloc": "gobierno",
+      "speaker": "Ana Palacio",
+      "role": "ministra de Asuntos Exteriores",
+      "date": "2002-07-17",
+      "dateLabel": "17 de julio de 2002",
+      "text": "España no tiene interés en mantener una presencia militar permanente en la isla Perejil, sino que su deseo es volver sin dilaciones a la situación previa al 11 de julio.",
+      "sourceIds": [
+        "src-ds-co543"
+      ]
+    },
+    {
+      "id": "st-perejil-izq",
+      "crisisId": "perejil-2002",
+      "bloc": "izquierda",
+      "speaker": "José Luis Rodríguez Zapatero",
+      "role": "secretario general del PSOE",
+      "date": "2002-07-17",
+      "dateLabel": "17 de julio de 2002",
+      "text": "Estamos ante un asunto de Estado que exige una política de Estado. Una política de Estado supone, en mi opinión, compartir información.",
+      "sourceIds": [
+        "src-ds-co543"
+      ]
+    },
+    {
+      "id": "st-perejil-izq2",
+      "crisisId": "perejil-2002",
+      "bloc": "izquierda",
+      "speaker": "Felipe Alcaraz",
+      "role": "IU",
+      "date": "2002-07-17",
+      "dateLabel": "17 de julio de 2002",
+      "text": "Para nosotros el Reino de Marruecos es una dictadura que no respeta los derechos humanos.",
+      "sourceIds": [
+        "src-ds-co543"
+      ]
+    },
+    {
+      "id": "st-perejil-der",
+      "crisisId": "perejil-2002",
+      "bloc": "derecha",
+      "speaker": "Luis de Grandes",
+      "role": "portavoz del Grupo Popular",
+      "date": "2002-07-16",
+      "dateLabel": "16 de julio de 2002",
+      "text": "[...] una moción condenatoria de la acción inamistosa del Gobierno de Marruecos en el islote de Perejil.",
+      "sourceIds": [
+        "src-ds-pl180"
+      ]
+    },
+    {
+      "id": "st-perejil-pnv",
+      "crisisId": "perejil-2002",
+      "bloc": "otro",
+      "speaker": "Pedro Azpiazu",
+      "role": "PNV",
+      "date": "2002-07-17",
+      "dateLabel": "17 de julio de 2002",
+      "text": "Nuestro grupo está en contra de las intervenciones militares en general, y en particular de la llevada a cabo en el islote Perejil.",
+      "sourceIds": [
+        "src-ds-co543"
+      ]
+    },
+    {
+      "id": "st-perejil-mar",
+      "crisisId": "perejil-2002",
+      "bloc": "marruecos",
+      "speaker": "Gendarmes marroquíes en Perejil (según Wikipedia es)",
+      "role": "",
+      "date": "2002-07-11",
+      "dateLabel": "11 de julio de 2002",
+      "text": "Marchaos de aquí, esto no es tierra española. [NO VERIFICADO en fuente primaria]",
+      "sourceIds": [
+        "src-eswiki-perejil"
+      ]
+    },
+    {
+      "id": "st-2007-mar",
+      "crisisId": "ceuta-melilla-2007",
+      "bloc": "marruecos",
+      "speaker": "Mohamed VI",
+      "role": "rey de Marruecos (comunicado difundido por MAP)",
+      "date": "2007-11-06",
+      "dateLabel": "6 de noviembre de 2007",
+      "text": "'Condena' y 'denuncia' la visita 'lamentable' [...] 'paso contraproducente' que 'ataca los sentimientos patrióticos sólidamente arraigados entre todos los componentes y sensibilidades del pueblo marroquí' [...] 'acto nostálgico de una era sombría y decididamente superada' [...] 'flagrante falta de respeto por parte del Gobierno español de la letra y el espíritu del Tratado de Amistad, Buena Vecindad y Cooperación de 1991'.",
+      "sourceIds": [
+        "src-elpais-2007-11-06"
+      ]
+    },
+    {
+      "id": "st-2007-casareal",
+      "crisisId": "ceuta-melilla-2007",
+      "bloc": "monarquia",
+      "speaker": "Juan Carlos I",
+      "role": "rey de España (discurso en Melilla)",
+      "date": "2007-11-06",
+      "dateLabel": "6 de noviembre de 2007",
+      "text": "Como Rey que se debe a todos los españoles, tenía contraído el compromiso de visitar Melilla junto con la Reina. Un compromiso al que se unía un profundo deseo. [...] No podía dejar más tiempo sin venir para expresaros nuestro afecto y apoyo.",
+      "sourceIds": [
+        "src-elpais-2007-11-06"
+      ]
+    },
+    {
+      "id": "st-2007-gob",
+      "crisisId": "ceuta-melilla-2007",
+      "bloc": "gobierno",
+      "speaker": "Miguel Ángel Moratinos",
+      "role": "ministro de Asuntos Exteriores",
+      "date": "2007-11-21",
+      "dateLabel": "21 de noviembre de 2007",
+      "text": "Esta crisis es totalmente superficial, que no tiene ni pies ni cabeza. Tenemos una buena relación con Marruecos, vamos a seguir teniéndola.",
+      "sourceIds": [
+        "src-ds-l8pl301"
+      ]
+    },
+    {
+      "id": "st-2007-gob2",
+      "crisisId": "ceuta-melilla-2007",
+      "bloc": "gobierno",
+      "speaker": "María Teresa Fernández de la Vega",
+      "role": "vicepresidenta primera",
+      "date": "2007-11-02",
+      "dateLabel": "noviembre de 2007",
+      "text": "La visita entra en la 'normalidad institucional' (según Wikipedia es, citando prensa) [NO VERIFICADO en fuente primaria]",
+      "sourceIds": [
+        "src-wiki-2007"
+      ]
+    },
+    {
+      "id": "st-2007-der",
+      "crisisId": "ceuta-melilla-2007",
+      "bloc": "derecha",
+      "speaker": "Gustavo de Arístegui",
+      "role": "PP",
+      "date": "2007-11-21",
+      "dateLabel": "21 de noviembre de 2007",
+      "text": "Ustedes han manejado torpemente esta crisis y la han convertido en una tormenta. Esa es la realidad. Por favor, cambie de política exterior, hacen ustedes el ridículo en el mundo.",
+      "sourceIds": [
+        "src-ds-l8pl301"
+      ]
+    },
+    {
+      "id": "st-tarajal-gob",
+      "crisisId": "tarajal-2014",
+      "bloc": "gobierno",
+      "speaker": "Jorge Fernández Díaz",
+      "role": "ministro del Interior",
+      "date": "2014-02-13",
+      "dateLabel": "13 de febrero de 2014",
+      "text": "No hay relación causa-efecto entre el empleo de los medios antidisturbios por parte de los agentes de la Guardia Civil y dichos fallecimientos.",
+      "sourceIds": [
+        "src-ds-co500"
+      ]
+    },
+    {
+      "id": "st-tarajal-der",
+      "crisisId": "tarajal-2014",
+      "bloc": "derecha",
+      "speaker": "Conrado Escobar",
+      "role": "PP",
+      "date": "2014-02-19",
+      "dateLabel": "19 de febrero de 2014",
+      "text": "El control de la inmigración irregular es y debe ser política de Estado, no es cuestión de partidos. España constituye la frontera sur de Europa.",
+      "sourceIds": [
+        "src-ds-x10pl178"
+      ]
+    },
+    {
+      "id": "st-tarajal-izq",
+      "crisisId": "tarajal-2014",
+      "bloc": "izquierda",
+      "speaker": "Antonio Trevín",
+      "role": "PSOE",
+      "date": "2014-02-19",
+      "dateLabel": "19 de febrero de 2014",
+      "text": "Fallecieron quince seres humanos que merecen respeto, dignidad y memoria, y este Parlamento tiene la obligación de saber qué pasó y por qué pasó.",
+      "sourceIds": [
+        "src-ds-x10pl178"
+      ]
+    },
+    {
+      "id": "st-tarajal-izq2",
+      "crisisId": "tarajal-2014",
+      "bloc": "izquierda",
+      "speaker": "Ricardo Sixto",
+      "role": "IU",
+      "date": "2014-02-13",
+      "dateLabel": "13 de febrero de 2014",
+      "text": "Ha arrojado luces sobre determinadas cuestiones que no tenía claras mucha gente, pero ha arrojado sombras sobre otras muchas cuestiones que nos preocupan mucho más.",
+      "sourceIds": [
+        "src-ds-co500"
+      ]
+    },
+    {
+      "id": "st-tarajal-mar",
+      "crisisId": "tarajal-2014",
+      "bloc": "marruecos",
+      "speaker": "Mohamed Hassad",
+      "role": "ministro del Interior de Marruecos (sobre el plan del espigón)",
+      "date": "2014-02-20",
+      "dateLabel": "febrero de 2014",
+      "text": "'Lo iban a mirar. Pero jamás dijeron nada' (según Vozpópuli); el silencio marroquí llevó a Rajoy a desechar la ampliación del espigón.",
+      "sourceIds": [
+        "src-vozpopuli-espigon"
+      ]
+    },
+    {
+      "id": "st-ceuta21-gob",
+      "crisisId": "ceuta-2021",
+      "bloc": "gobierno",
+      "speaker": "Pedro Sánchez",
+      "role": "presidente del Gobierno",
+      "date": "2021-05-19",
+      "dateLabel": "19 de mayo de 2021",
+      "text": "España está sufriendo un desafío de un tercer país, que es Marruecos [...]. Lo que vamos a hacer es defender nuestra integridad territorial, nuestras fronteras, el sosiego, la tranquilidad y la seguridad de la ciudadanía que vive en Ceuta y en Melilla.",
+      "sourceIds": [
+        "src-ds-pl103"
+      ]
+    },
+    {
+      "id": "st-ceuta21-gob2",
+      "crisisId": "ceuta-2021",
+      "bloc": "gobierno",
+      "speaker": "Fernando Grande-Marlaska",
+      "role": "ministro del Interior",
+      "date": "2021-06-25",
+      "dateLabel": "25 de junio de 2021",
+      "text": "No fue una crisis migratoria, que fue una crisis fronteriza, y una crisis fronteriza a la que hemos dado una respuesta rápida, coordinada y eficaz.",
+      "sourceIds": [
+        "src-ds-co446"
+      ]
+    },
+    {
+      "id": "st-ceuta21-der",
+      "crisisId": "ceuta-2021",
+      "bloc": "derecha",
+      "speaker": "Pablo Casado",
+      "role": "presidente del PP",
+      "date": "2021-05-19",
+      "dateLabel": "19 de mayo de 2021",
+      "text": "España atraviesa la peor crisis diplomática con Marruecos de nuestra historia democrática. [...] Es la crónica de una crisis anunciada.",
+      "sourceIds": [
+        "src-ds-pl103"
+      ]
+    },
+    {
+      "id": "st-ceuta21-der2",
+      "crisisId": "ceuta-2021",
+      "bloc": "derecha",
+      "speaker": "Iván Espinosa de los Monteros",
+      "role": "VOX",
+      "date": "2021-05-19",
+      "dateLabel": "19 de mayo de 2021",
+      "text": "Se permite lanzarnos de forma organizada una auténtica invasión para tomar la ciudad de Ceuta.",
+      "sourceIds": [
+        "src-ds-pl103"
+      ]
+    },
+    {
+      "id": "st-ceuta21-izq",
+      "crisisId": "ceuta-2021",
+      "bloc": "izquierda",
+      "speaker": "Mireia Vehí",
+      "role": "CUP",
+      "date": "2021-05-19",
+      "dateLabel": "19 de mayo de 2021",
+      "text": "Salvar niños o reprimir niños. [...] Las devoluciones en caliente [...] se están dando ahora en Ceuta, y esto tiene que parar.",
+      "sourceIds": [
+        "src-ds-pl103"
+      ]
+    },
+    {
+      "id": "st-ceuta21-mar",
+      "crisisId": "ceuta-2021",
+      "bloc": "marruecos",
+      "speaker": "Karima Benyaich",
+      "role": "embajadora de Marruecos en Madrid",
+      "date": "2021-05-18",
+      "dateLabel": "18 de mayo de 2021",
+      "text": "Hay actos que tienen consecuencias y se tienen que asumir.",
+      "sourceIds": [
+        "src-wiki-2021"
+      ]
+    },
+    {
+      "id": "st-ceuta21-mar2",
+      "crisisId": "ceuta-2021",
+      "bloc": "marruecos",
+      "speaker": "Ministerio de Asuntos Exteriores de Marruecos",
+      "role": "comunicado sobre Ghali",
+      "date": "2021-04-24",
+      "dateLabel": "24-25 de abril de 2021",
+      "text": "'Deplora' la decisión española de acoger a Gali y 'expresa su decepción por este acto contrario al espíritu de asociación y buena vecindad', que afecta a 'una cuestión fundamental para el pueblo marroquí y sus fuerzas vivas'.",
+      "sourceIds": [
+        "src-elpais-2021-04-24"
+      ]
+    },
+    {
+      "id": "st-sahara22-gob",
+      "crisisId": "sahara-2022",
+      "bloc": "gobierno",
+      "speaker": "Pedro Sánchez",
+      "role": "presidente del Gobierno (carta a Mohamed VI)",
+      "date": "2022-03-14",
+      "dateLabel": "14 de marzo de 2022",
+      "text": "España considera que la propuesta marroquí de autonomía presentada en 2007 como la base más seria, creíble y realista para la resolución de este diferendo. [...] Nuestro objetivo debe ser construir una nueva relación, basada en la transparencia y la comunicación permanente, el respeto mutuo y el respeto a los acuerdos firmados por ambas partes y la abstención de toda acción unilateral.",
+      "sourceIds": [
+        "src-elpais-carta"
+      ]
+    },
+    {
+      "id": "st-sahara22-gob2",
+      "crisisId": "sahara-2022",
+      "bloc": "gobierno",
+      "speaker": "Pedro Sánchez",
+      "role": "presidente del Gobierno",
+      "date": "2022-06-08",
+      "dateLabel": "8 de junio de 2022",
+      "text": "La soberanía española sobre Ceuta y Melilla está fuera de toda duda, como en cualquier otra parte del territorio nacional.",
+      "sourceIds": [
+        "src-moncloa-08-06-2022"
+      ]
+    },
+    {
+      "id": "st-sahara22-der",
+      "crisisId": "sahara-2022",
+      "bloc": "derecha",
+      "speaker": "Cuca Gamarra",
+      "role": "PP",
+      "date": "2022-03-30",
+      "dateLabel": "30 de marzo de 2022",
+      "text": "España nunca se había salido del marco de Naciones Unidas hasta ahora. ¡Menuda manera tiene usted de querer pasar a la historia!",
+      "sourceIds": [
+        "src-ds-pl174"
+      ]
+    },
+    {
+      "id": "st-sahara22-der2",
+      "crisisId": "sahara-2022",
+      "bloc": "derecha",
+      "speaker": "Santiago Abascal",
+      "role": "VOX",
+      "date": "2022-03-30",
+      "dateLabel": "30 de marzo de 2022",
+      "text": "La carta que usted ha enviado es un puñetero insulto a este Parlamento.",
+      "sourceIds": [
+        "src-ds-pl174"
+      ]
+    },
+    {
+      "id": "st-sahara22-izq",
+      "crisisId": "sahara-2022",
+      "bloc": "izquierda",
+      "speaker": "Mertxe Aizpurua",
+      "role": "EH Bildu",
+      "date": "2022-03-30",
+      "dateLabel": "30 de marzo de 2022",
+      "text": "Usted ha abierto de golpe una triple crisis: con el Sáhara Occidental, con Argelia y con todos y cada uno de los partidos de este Parlamento.",
+      "sourceIds": [
+        "src-ds-pl174"
+      ]
+    },
+    {
+      "id": "st-sahara22-izq2",
+      "crisisId": "sahara-2022",
+      "bloc": "izquierda",
+      "speaker": "Gabriel Rufián",
+      "role": "ERC",
+      "date": "2022-03-30",
+      "dateLabel": "30 de marzo de 2022",
+      "text": "Canjea principios por más control marroquí en la valla en Ceuta y Melilla.",
+      "sourceIds": [
+        "src-ds-pl174"
+      ]
+    },
+    {
+      "id": "st-sahara22-izq3",
+      "crisisId": "sahara-2022",
+      "bloc": "izquierda",
+      "speaker": "Pablo Echenique",
+      "role": "Unidas Podemos",
+      "date": "2022-03-30",
+      "dateLabel": "30 de marzo de 2022",
+      "text": "De la misma manera que hay que defender que se respete el derecho internacional en Ucrania, también hay que defenderlo en el Sáhara Occidental.",
+      "sourceIds": [
+        "src-ds-pl174"
+      ]
+    },
+    {
+      "id": "st-sahara22-pnv",
+      "crisisId": "sahara-2022",
+      "bloc": "otro",
+      "speaker": "Aitor Esteban",
+      "role": "PNV",
+      "date": "2022-03-30",
+      "dateLabel": "30 de marzo de 2022",
+      "text": "Marruecos ha utilizado las crisis migratorias a su antojo, incluso ha presionado y ha conseguido que se cese a una ministra de otro país.",
+      "sourceIds": [
+        "src-ds-pl174"
+      ]
+    },
+    {
+      "id": "st-sahara22-mar",
+      "crisisId": "sahara-2022",
+      "bloc": "marruecos",
+      "speaker": "Gabinete Real de Marruecos (comunicado difundido por MAP)",
+      "role": "",
+      "date": "2022-03-18",
+      "dateLabel": "18 de marzo de 2022",
+      "text": "Hace pública la carta y su fórmula: la propuesta de autonomía como 'la base más seria, creíble y realista para la resolución de esta disputa' (según El Independiente).",
+      "sourceIds": [
+        "src-elindependiente-carta"
+      ]
+    },
+    {
+      "id": "st-sahara22-argelia",
+      "crisisId": "sahara-2022",
+      "bloc": "otro",
+      "speaker": "Presidencia de Argelia",
+      "role": "comunicado",
+      "date": "2022-06-08",
+      "dateLabel": "8 de junio de 2022",
+      "text": "Suspende el Tratado de Amistad de 2002 porque España se ha desligado de 'las obligaciones y los valores esenciales consagrados en este Tratado' (traducción del inglés de Wikipedia en) [NO VERIFICADO en fuente primaria].",
+      "sourceIds": [
+        "src-enwiki-argelia"
+      ]
+    },
+    {
+      "id": "st-melilla22-gob",
+      "crisisId": "melilla-2022",
+      "bloc": "gobierno",
+      "speaker": "Pedro Sánchez",
+      "role": "presidente del Gobierno",
+      "date": "2022-06-25",
+      "dateLabel": "25 de junio de 2022",
+      "text": "Calificó el salto de asalto 'bien resuelto' (según las citas de Bermúdez de Castro, Borrás y Rufián en el Congreso y Wikipedia en; no se ha localizado la transcripción oficial) [NO VERIFICADO en fuente primaria].",
+      "sourceIds": [
+        "src-ds-pl198",
+        "src-ds-pl200",
+        "src-enwiki-melilla-2022"
+      ]
+    },
+    {
+      "id": "st-melilla22-gob2",
+      "crisisId": "melilla-2022",
+      "bloc": "gobierno",
+      "speaker": "Fernando Grande-Marlaska",
+      "role": "ministro del Interior",
+      "date": "2022-06-29",
+      "dateLabel": "29 de junio de 2022",
+      "text": "Un país democrático, un Estado de derecho no puede aceptar en modo alguno ataques violentos a su frontera ni ataques a las fuerzas y cuerpos de seguridad del Estado.",
+      "sourceIds": [
+        "src-ds-pl198"
+      ]
+    },
+    {
+      "id": "st-melilla22-der",
+      "crisisId": "melilla-2022",
+      "bloc": "derecha",
+      "speaker": "José Antonio Bermúdez de Castro",
+      "role": "PP",
+      "date": "2022-06-29",
+      "dateLabel": "29 de junio de 2022",
+      "text": "Una afirmación tan desafortunada como carente de humanidad. [...] exigimos que se retracte de manera inmediata de sus palabras.",
+      "sourceIds": [
+        "src-ds-pl198"
+      ]
+    },
+    {
+      "id": "st-melilla22-der2",
+      "crisisId": "melilla-2022",
+      "bloc": "derecha",
+      "speaker": "Rocío de Meer",
+      "role": "VOX",
+      "date": "2022-06-28",
+      "dateLabel": "28 de junio de 2022",
+      "text": "Ceuta y Melilla siempre españolas.",
+      "sourceIds": [
+        "src-ds-pl197"
+      ]
+    },
+    {
+      "id": "st-melilla22-izq",
+      "crisisId": "melilla-2022",
+      "bloc": "izquierda",
+      "speaker": "Jon Iñarritu",
+      "role": "EH Bildu",
+      "date": "2022-06-28",
+      "dateLabel": "28 de junio de 2022",
+      "text": "¿Por qué no se puede denunciar la mayor tragedia que ha ocurrido en la frontera española en las últimas décadas?",
+      "sourceIds": [
+        "src-ds-pl197"
+      ]
+    },
+    {
+      "id": "st-melilla22-izq2",
+      "crisisId": "melilla-2022",
+      "bloc": "izquierda",
+      "speaker": "Gabriel Rufián",
+      "role": "ERC",
+      "date": "2022-07-12",
+      "dateLabel": "12 de julio de 2022",
+      "text": "Treinta y siete personas muertas en Melilla, lo siento, pero no es una operación bien resuelta.",
+      "sourceIds": [
+        "src-ds-pl200"
+      ]
+    },
+    {
+      "id": "st-melilla22-defensor",
+      "crisisId": "melilla-2022",
+      "bloc": "otro",
+      "speaker": "Defensor del Pueblo (Ángel Gabilondo)",
+      "role": "resolución",
+      "date": "2022-10-14",
+      "dateLabel": "14 de octubre de 2022",
+      "text": "Se efectuó un rechazo en frontera de 470 personas sin contemplarse las previsiones legales tanto nacionales como internacionales.",
+      "sourceIds": [
+        "src-defensor-melilla",
+        "src-defensor-resol"
+      ]
+    },
+    {
+      "id": "st-melilla22-onu",
+      "crisisId": "melilla-2022",
+      "bloc": "otro",
+      "speaker": "Michelle Bachelet",
+      "role": "Alta Comisionada de la ONU para los Derechos Humanos (según HRW)",
+      "date": "2022-06-28",
+      "dateLabel": "junio de 2022",
+      "text": "Pidió una investigación y recordó la obligación de 'tratar a todos los migrantes con dignidad y priorizar su seguridad y los derechos humanos, así como abstenerse del uso excesivo de la fuerza'.",
+      "sourceIds": [
+        "src-hrw-melilla"
+      ]
+    },
+    {
+      "id": "st-melilla22-mar",
+      "crisisId": "melilla-2022",
+      "bloc": "marruecos",
+      "speaker": "Autoridades marroquíes",
+      "role": "balance oficial",
+      "date": "2022-06-25",
+      "dateLabel": "25 de junio de 2022",
+      "text": "Elevan a 23 el número de muertos (cifra oficial mantenida frente a las 37 o más de las ONG).",
+      "sourceIds": [
+        "src-yt-rtve-melilla23",
+        "src-enwiki-melilla-2022"
+      ]
+    }
+  ],
+  "series": [
+    {
+      "id": "se-perejil-votacion",
+      "title": "Votación de la propuesta de resolución núm. 147 sobre Perejil (Congreso, 16-7-2002)",
+      "unit": "votos",
+      "kind": "bar",
+      "groups": [],
+      "points": [
+        {
+          "x": "a favor",
+          "y": 334,
+          "group": "",
+          "note": ""
+        },
+        {
+          "x": "en contra",
+          "y": 0,
+          "group": "",
+          "note": ""
+        },
+        {
+          "x": "abstenciones",
+          "y": 4,
+          "group": "",
+          "note": "338 votos emitidos"
+        }
+      ],
+      "sourceIds": [
+        "src-ds-pl180"
+      ],
+      "note": "DSCD VII núm. 180, pp. 9087-9088."
+    },
+    {
+      "id": "se-vox-interior-2021",
+      "title": "Moción de VOX para 'restituir la credibilidad del Ministerio del Interior' (Congreso, 20-5-2021)",
+      "unit": "votos",
+      "kind": "bar",
+      "groups": [],
+      "points": [
+        {
+          "x": "a favor",
+          "y": 153,
+          "group": "",
+          "note": ""
+        },
+        {
+          "x": "en contra",
+          "y": 195,
+          "group": "",
+          "note": ""
+        },
+        {
+          "x": "abstenciones",
+          "y": 1,
+          "group": "",
+          "note": "349 emitidos; rechazada"
+        }
+      ],
+      "sourceIds": [
+        "src-ds-pl104"
+      ],
+      "note": "DSCD XIV núm. 104, p. 88. No hubo reprobación formal de Marlaska ni de González Laya por Ceuta en 2021 en el Congreso, según lo consultado."
+    },
+    {
+      "id": "se-sahara-pnl-2022",
+      "title": "PNL de UP, ERC y EH Bildu sobre el Sáhara Occidental (Congreso, 7-4-2022)",
+      "unit": "votos",
+      "kind": "bar",
+      "groups": [],
+      "points": [
+        {
+          "x": "a favor",
+          "y": 168,
+          "group": "",
+          "note": "UP, ERC, Bildu, PP, PNV y otros"
+        },
+        {
+          "x": "en contra",
+          "y": 118,
+          "group": "",
+          "note": "PSOE"
+        },
+        {
+          "x": "abstenciones",
+          "y": 61,
+          "group": "",
+          "note": "VOX y Ciudadanos; 347 emitidos; aprobada"
+        }
+      ],
+      "sourceIds": [
+        "src-ds-pl178",
+        "src-eldiario-pnl"
+      ],
+      "note": "DSCD XIV núm. 178, p. 45."
+    },
+    {
+      "id": "se-melilla-2022-muertos",
+      "title": "Muertos en la valla de Melilla el 24-6-2022 según cada fuente",
+      "unit": "personas",
+      "kind": "bar",
+      "groups": [],
+      "points": [
+        {
+          "x": "Marruecos (oficial)",
+          "y": 23,
+          "group": "",
+          "note": ""
+        },
+        {
+          "x": "AMDH",
+          "y": 27,
+          "group": "",
+          "note": "27 según HRW; 29 más 70 desaparecidos según Wikipedia en"
+        },
+        {
+          "x": "Caminando Fronteras",
+          "y": 37,
+          "group": "",
+          "note": "al menos 37; informe posterior: al menos 40 y hasta 77 desaparecidos"
+        },
+        {
+          "x": "Amnistía (estimación)",
+          "y": 100,
+          "group": "",
+          "note": "'podría superar los 100'"
+        }
+      ],
+      "sourceIds": [
+        "src-hrw-melilla",
+        "src-enwiki-melilla-2022",
+        "src-caminando-melilla",
+        "src-amnistia-melilla"
+      ],
+      "note": ""
+    },
+    {
+      "id": "se-ceuta-2021-entradas",
+      "title": "Entradas en Ceuta el 17-18 de mayo de 2021 según cada fuente",
+      "unit": "personas",
+      "kind": "bar",
+      "groups": [],
+      "points": [
+        {
+          "x": "Wikipedia es (Relaciones)",
+          "y": 5000,
+          "group": "",
+          "note": "'más de cinco mil'"
+        },
+        {
+          "x": "Arrimadas / Interior",
+          "y": 8000,
+          "group": "",
+          "note": "'8000 personas en un solo día'"
+        },
+        {
+          "x": "Marlaska (25-6-2021)",
+          "y": 9000,
+          "group": "",
+          "note": "'más de ocho mil, nueve mil'"
+        },
+        {
+          "x": "El País (23-3-2022)",
+          "y": 10000,
+          "group": "",
+          "note": "'más de 10.000 marroquíes'"
+        }
+      ],
+      "sourceIds": [
+        "src-eswiki-relaciones",
+        "src-ds-pl103",
+        "src-ds-co446",
+        "src-elpais-carta"
+      ],
+      "note": "Devueltos: 4.800 en 48 horas (Sánchez, 19-5-2021); 'más del 80 %' (Marlaska)."
+    },
+    {
+      "id": "se-2005-muertos",
+      "title": "Muertos en los asaltos a las vallas, septiembre-octubre de 2005",
+      "unit": "personas",
+      "kind": "bar",
+      "groups": [],
+      "points": [
+        {
+          "x": "Ceuta, 29-9-2005",
+          "y": 5,
+          "group": "",
+          "note": "tres tiroteados desde Marruecos según autopsias"
+        },
+        {
+          "x": "Melilla, 6-10-2005",
+          "y": 6,
+          "group": "",
+          "note": "disparos y aplastamiento, según Interior marroquí"
+        },
+        {
+          "x": "Total desde agosto de 2005",
+          "y": 14,
+          "group": "",
+          "note": "'al menos 14' (El País, 6-10-2005)"
+        }
+      ],
+      "sourceIds": [
+        "src-elpais-2005-09-29a",
+        "src-elpais-2005-10-06"
+      ],
+      "note": ""
+    }
+  ],
+  "videos": [
+    {
+      "id": "vid-pl103",
+      "provider": "congreso",
+      "embedUrl": "https://www.youtube.com/embed/A7AobWuq9OE",
+      "pageUrl": "https://www.youtube.com/watch?v=A7AobWuq9OE",
+      "title": "Sesión Plenaria (19/05/2021): sesión de control sobre la crisis de Ceuta",
+      "date": "2021-05-19",
+      "sourceIds": [
+        "src-yt-pl103"
+      ]
+    },
+    {
+      "id": "vid-co446",
+      "provider": "congreso",
+      "embedUrl": "https://www.youtube.com/embed/i5HYwIckpjY",
+      "pageUrl": "https://www.youtube.com/watch?v=i5HYwIckpjY",
+      "title": "Comisión de Interior (25/06/2021): comparecencia de Grande-Marlaska",
+      "date": "2021-06-25",
+      "sourceIds": [
+        "src-yt-co446"
+      ]
+    },
+    {
+      "id": "vid-pl174",
+      "provider": "congreso",
+      "embedUrl": "https://www.youtube.com/embed/sgfSfGG2R6c",
+      "pageUrl": "https://www.youtube.com/watch?v=sgfSfGG2R6c",
+      "title": "Sesión Plenaria (30/03/2022): comparecencia de Sánchez sobre Marruecos y el Sáhara",
+      "date": "2022-03-30",
+      "sourceIds": [
+        "src-yt-pl174"
+      ]
+    },
+    {
+      "id": "vid-pl177",
+      "provider": "congreso",
+      "embedUrl": "https://www.youtube.com/embed/l0gx0GMDKEw",
+      "pageUrl": "https://www.youtube.com/watch?v=l0gx0GMDKEw",
+      "title": "Sesión Plenaria (06/04/2022): debate de la PNL sobre el Sáhara",
+      "date": "2022-04-06",
+      "sourceIds": [
+        "src-yt-pl177"
+      ]
+    },
+    {
+      "id": "vid-pl178",
+      "provider": "congreso",
+      "embedUrl": "https://www.youtube.com/embed/EV9FHzhwnrc",
+      "pageUrl": "https://www.youtube.com/watch?v=EV9FHzhwnrc",
+      "title": "Sesión Plenaria (07/04/2022): votación de la PNL sobre el Sáhara",
+      "date": "2022-04-07",
+      "sourceIds": [
+        "src-yt-pl178"
+      ]
+    },
+    {
+      "id": "vid-pl192",
+      "provider": "congreso",
+      "embedUrl": "https://www.youtube.com/embed/7ze6C4eLXqY",
+      "pageUrl": "https://www.youtube.com/watch?v=7ze6C4eLXqY",
+      "title": "Sesión Plenaria (08/06/2022): Sánchez sobre Marruecos, Sáhara y Argelia",
+      "date": "2022-06-08",
+      "sourceIds": [
+        "src-yt-pl192"
+      ]
+    },
+    {
+      "id": "vid-pl198",
+      "provider": "congreso",
+      "embedUrl": "https://www.youtube.com/embed/PSLXF8dm8jw",
+      "pageUrl": "https://www.youtube.com/watch?v=PSLXF8dm8jw",
+      "title": "Sesión Plenaria (29/06/2022): pregunta a Marlaska sobre la valla de Melilla",
+      "date": "2022-06-29",
+      "sourceIds": [
+        "src-yt-pl198"
+      ]
+    },
+    {
+      "id": "vid-rtve-ceuta-a",
+      "provider": "youtube",
+      "embedUrl": "https://www.youtube.com/embed/zQ6nhB9i8uo",
+      "pageUrl": "https://www.youtube.com/watch?v=zQ6nhB9i8uo",
+      "title": "RTVE Noticias: miles de personas continúan cruzando la frontera de Ceuta (mayo 2021)",
+      "date": "2021-05-18",
+      "sourceIds": [
+        "src-yt-rtve-ceuta2021a"
+      ]
+    },
+    {
+      "id": "vid-rtve-ceuta-b",
+      "provider": "youtube",
+      "embedUrl": "https://www.youtube.com/embed/Lzg5wvri0-0",
+      "pageUrl": "https://www.youtube.com/watch?v=Lzg5wvri0-0",
+      "title": "RTVE Noticias: el Gobierno moviliza al Ejército en Ceuta (mayo 2021)",
+      "date": "2021-05-18",
+      "sourceIds": [
+        "src-yt-rtve-ceuta2021b"
+      ]
+    },
+    {
+      "id": "vid-rtve-laya",
+      "provider": "youtube",
+      "embedUrl": "https://www.youtube.com/embed/mZ8ZvEggXio",
+      "pageUrl": "https://www.youtube.com/watch?v=mZ8ZvEggXio",
+      "title": "RTVE Noticias: Marruecos acusa a Laya de declaraciones 'inapropiadas' (2021)",
+      "date": "2021-06-01",
+      "sourceIds": [
+        "src-yt-rtve-laya"
+      ]
+    },
+    {
+      "id": "vid-rtve-sahara",
+      "provider": "youtube",
+      "embedUrl": "https://www.youtube.com/embed/Q49SOllBcZ0",
+      "pageUrl": "https://www.youtube.com/watch?v=Q49SOllBcZ0",
+      "title": "RTVE Noticias: el Congreso rechaza el viraje de Sánchez sobre el Sáhara (7-4-2022)",
+      "date": "2022-04-07",
+      "sourceIds": [
+        "src-yt-rtve-sahara"
+      ]
+    },
+    {
+      "id": "vid-rtve-argelia",
+      "provider": "youtube",
+      "embedUrl": "https://www.youtube.com/embed/rFuwKbWLdWg",
+      "pageUrl": "https://www.youtube.com/watch?v=rFuwKbWLdWg",
+      "title": "RTVE Noticias: Argelia rompe con España (8-6-2022)",
+      "date": "2022-06-08",
+      "sourceIds": [
+        "src-yt-rtve-argelia"
+      ]
+    },
+    {
+      "id": "vid-rtve-melilla23",
+      "provider": "youtube",
+      "embedUrl": "https://www.youtube.com/embed/thTa4NrVCzA",
+      "pageUrl": "https://www.youtube.com/watch?v=thTa4NrVCzA",
+      "title": "RTVE Noticias: Marruecos eleva a 23 los muertos en la valla de Melilla (junio 2022)",
+      "date": "2022-06-25",
+      "sourceIds": [
+        "src-yt-rtve-melilla23"
+      ]
+    },
+    {
+      "id": "vid-rtve-melilla-fiscalia",
+      "provider": "youtube",
+      "embedUrl": "https://www.youtube.com/embed/ZAyEUdsYBrY",
+      "pageUrl": "https://www.youtube.com/watch?v=ZAyEUdsYBrY",
+      "title": "RTVE Noticias: la Fiscalía archiva la investigación del 24J (diciembre 2022)",
+      "date": "2022-12-23",
+      "sourceIds": [
+        "src-yt-rtve-melilla-fiscalia"
+      ]
+    },
+    {
+      "id": "vid-armada-perejil",
+      "provider": "youtube",
+      "embedUrl": "https://www.youtube.com/embed/e9o279FcifA",
+      "pageUrl": "https://www.youtube.com/watch?v=e9o279FcifA",
+      "title": "Armada Española, 'Historia Contada' cap. 18: la recuperación del islote Perejil (2002)",
+      "date": "2020-01-01",
+      "sourceIds": [
+        "src-yt-armada-perejil"
+      ]
+    },
+    {
+      "id": "vid-tve-perejil",
+      "provider": "otro",
+      "embedUrl": "https://www.youtube.com/embed/DJ2VvvqVb-I",
+      "pageUrl": "https://www.youtube.com/watch?v=DJ2VvvqVb-I",
+      "title": "'La tele de tu vida' (TVE): la reconquista de Perejil, 2002 (copia no oficial)",
+      "date": "2002-07-17",
+      "sourceIds": [
+        "src-yt-tve-perejil"
+      ]
+    },
+    {
+      "id": "vid-lasexta-tarajal",
+      "provider": "youtube",
+      "embedUrl": "https://www.youtube.com/embed/6Of02O6s-cU",
+      "pageUrl": "https://www.youtube.com/watch?v=6Of02O6s-cU",
+      "title": "laSexta: un guardia en la tragedia del Tarajal, 'retenedlos para que no sigan avanzando'",
+      "date": "2014-02-01",
+      "sourceIds": [
+        "src-yt-lasexta-tarajal"
+      ]
+    },
+    {
+      "id": "vid-jc-ceuta-2007",
+      "provider": "otro",
+      "embedUrl": "https://www.youtube.com/embed/2LCcO66UI9k",
+      "pageUrl": "https://www.youtube.com/watch?v=2LCcO66UI9k",
+      "title": "Juan Carlos I visita Ceuta, 5 de noviembre de 2007 (vídeo de usuario)",
+      "date": "2007-11-05",
+      "sourceIds": [
+        "src-yt-jc-ceuta"
+      ]
+    },
+    {
+      "id": "vid-fg-1976",
+      "provider": "otro",
+      "embedUrl": "https://www.youtube.com/embed/wi9XPmV645A",
+      "pageUrl": "https://www.youtube.com/watch?v=wi9XPmV645A",
+      "title": "Felipe González en Tinduf, 14 de noviembre de 1976 (vídeo de usuario)",
+      "date": "1976-11-14",
+      "sourceIds": [
+        "src-yt-fg-1976"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-perejil",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Vista_del_islote_de_Perejil_desde_la_costa_africana.jpg",
+      "alt": "Vista del islote de Perejil desde la costa africana",
+      "width": 800,
+      "height": 504,
+      "credit": "Juanlu González",
+      "license": "CC BY-SA 3.0",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Vista_del_islote_de_Perejil_desde_la_costa_africana.jpg"
+    },
+    {
+      "id": "img-valla-melilla-741",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Valla_de_Melilla_741.jpg",
+      "alt": "Valla fronteriza de Melilla (2008)",
+      "width": 2736,
+      "height": 3648,
+      "credit": "Ángel Gutiérrez Rubio",
+      "license": "CC BY 2.0",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Valla_de_Melilla_741.jpg"
+    },
+    {
+      "id": "img-valla-melilla-0001",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/0/05/Valla_melilla_0001.jpg",
+      "alt": "Doble valla de Melilla (2008)",
+      "width": 1920,
+      "height": 1080,
+      "credit": "StephaneMGrueso",
+      "license": "CC BY-SA 2.0",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Valla_melilla_0001.jpg"
+    },
+    {
+      "id": "img-valla-ceuta",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Valla_de_Ceuta.jpg",
+      "alt": "Valla de la frontera entre Ceuta y Marruecos (2011)",
+      "width": 2560,
+      "height": 1920,
+      "credit": "Xemenendura",
+      "license": "CC BY-SA 3.0",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Valla_de_Ceuta.jpg"
+    }
+  ]
+}

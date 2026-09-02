@@ -4,6 +4,653 @@ import type { Statement } from "@/lib/con-textos/types";
 
 export const STATEMENTS = [
   {
+    "id": "st-2017-munoz-kissinger",
+    "crisisId": "sahara-1975",
+    "bloc": "otro",
+    "speaker": "Gerardo Muñoz Lorente (historiador)",
+    "role": "autor de Historia del Sáhara español (Almuzara)",
+    "date": "",
+    "dateLabel": "s. f.",
+    "text": "no parece que, siendo secreta, se vislumbre siquiera la sospecha de que Kissinger conociera de antemano el plan de Hassan II de emprender la marcha verde y mucho menos de que la organizase o autorizase",
+    "sourceIds": [
+      "src-catalunyapress-munoz"
+    ],
+    "note": "Tesis contraria al pacto Juan Carlos-Kissinger-Hassan II."
+  },
+  {
+    "id": "st-1975-cia-colby",
+    "crisisId": "sahara-1975",
+    "bloc": "otro",
+    "speaker": "William Colby (director de la CIA)",
+    "role": "memorando a Kissinger",
+    "date": "1975-10-03",
+    "dateLabel": "3 de octubre de 1975",
+    "text": "El rey Hassan ha decidido invadir el Sáhara Español en las próximas tres semanas",
+    "sourceIds": [
+      "src-publico-2025"
+    ],
+    "note": "Traducción de Público (2025) de documentos CIA desclasificados en 2019. [Traducción periodística]"
+  },
+  {
+    "id": "st-1975-pinies-onu",
+    "crisisId": "sahara-1975",
+    "bloc": "gobierno",
+    "speaker": "Jaime de Piniés",
+    "role": "representante permanente de España ante la ONU",
+    "date": "1975-10-20",
+    "dateLabel": "20 de octubre de 1975",
+    "text": "La marcha sobre el Sáhara constituye un acto de fuerza [...] contrario a los principios y propósitos de la Carta",
+    "sourceIds": [
+      "src-democrata-2025"
+    ],
+    "note": "[NO VERIFICADO en actas de la ONU]"
+  },
+  {
+    "id": "st-1975-hassan-solis",
+    "crisisId": "sahara-1975",
+    "bloc": "marruecos",
+    "speaker": "Hassan II",
+    "role": "rey de Marruecos",
+    "date": "1975-10-21",
+    "dateLabel": "21 de octubre de 1975",
+    "text": "Yo no quiero que se vayan Vds. del Sáhara tan pronto",
+    "sourceIds": [
+      "src-eldebate-cartas"
+    ],
+    "note": "Dicho a José Solís en Marrakech según Álvaro de Diego (El Debate, 2022). [NO VERIFICADO]"
+  },
+  {
+    "id": "st-1975-onu-costarica",
+    "crisisId": "sahara-1975",
+    "bloc": "otro",
+    "speaker": "Costa Rica (proyecto de resolución revisado S/11853/Rev.1)",
+    "role": "Consejo de Seguridad",
+    "date": "1975-10-22",
+    "dateLabel": "22 de octubre de 1975",
+    "text": "Pide con carácter de urgencia que el Gobierno de Marruecos desista de la marcha anunciada sobre el Sahara Occidental",
+    "sourceIds": [
+      "src-un-s11853"
+    ],
+    "note": "Texto literal del documento en español."
+  },
+  {
+    "id": "st-1975-embajada-rabat",
+    "crisisId": "sahara-1975",
+    "bloc": "otro",
+    "speaker": "Embajada de EE. UU. en Rabat (cable a Kissinger)",
+    "role": "cable diplomático",
+    "date": "1975-10-23",
+    "dateLabel": "23 de octubre de 1975",
+    "text": "tres cuartas partes del problema quedaron resueltas tras el acuerdo alcanzado con Solís",
+    "sourceIds": [
+      "src-publico-2025"
+    ],
+    "note": "[Traducción periodística]"
+  },
+  {
+    "id": "st-perejil-mar",
+    "crisisId": "perejil-2002",
+    "bloc": "marruecos",
+    "speaker": "Gendarmes marroquíes en Perejil (según Wikipedia es)",
+    "role": "",
+    "date": "2002-07-11",
+    "dateLabel": "11 de julio de 2002",
+    "text": "Marchaos de aquí, esto no es tierra española. [NO VERIFICADO en fuente primaria]",
+    "sourceIds": [
+      "src-eswiki-perejil"
+    ]
+  },
+  {
+    "id": "st-perejil-gob",
+    "crisisId": "perejil-2002",
+    "bloc": "gobierno",
+    "speaker": "José María Aznar",
+    "role": "presidente del Gobierno",
+    "date": "2002-07-15",
+    "dateLabel": "15 de julio de 2002",
+    "text": "España no aceptará hechos consumados.",
+    "sourceIds": [
+      "src-ds-pl179"
+    ]
+  },
+  {
+    "id": "st-perejil-der",
+    "crisisId": "perejil-2002",
+    "bloc": "derecha",
+    "speaker": "Luis de Grandes",
+    "role": "portavoz del Grupo Popular",
+    "date": "2002-07-16",
+    "dateLabel": "16 de julio de 2002",
+    "text": "[...] una moción condenatoria de la acción inamistosa del Gobierno de Marruecos en el islote de Perejil.",
+    "sourceIds": [
+      "src-ds-pl180"
+    ]
+  },
+  {
+    "id": "st-perejil-gob2",
+    "crisisId": "perejil-2002",
+    "bloc": "gobierno",
+    "speaker": "Ana Palacio",
+    "role": "ministra de Asuntos Exteriores",
+    "date": "2002-07-17",
+    "dateLabel": "17 de julio de 2002",
+    "text": "España no tiene interés en mantener una presencia militar permanente en la isla Perejil, sino que su deseo es volver sin dilaciones a la situación previa al 11 de julio.",
+    "sourceIds": [
+      "src-ds-co543"
+    ]
+  },
+  {
+    "id": "st-perejil-izq",
+    "crisisId": "perejil-2002",
+    "bloc": "izquierda",
+    "speaker": "José Luis Rodríguez Zapatero",
+    "role": "secretario general del PSOE",
+    "date": "2002-07-17",
+    "dateLabel": "17 de julio de 2002",
+    "text": "Estamos ante un asunto de Estado que exige una política de Estado. Una política de Estado supone, en mi opinión, compartir información.",
+    "sourceIds": [
+      "src-ds-co543"
+    ]
+  },
+  {
+    "id": "st-perejil-izq2",
+    "crisisId": "perejil-2002",
+    "bloc": "izquierda",
+    "speaker": "Felipe Alcaraz",
+    "role": "IU",
+    "date": "2002-07-17",
+    "dateLabel": "17 de julio de 2002",
+    "text": "Para nosotros el Reino de Marruecos es una dictadura que no respeta los derechos humanos.",
+    "sourceIds": [
+      "src-ds-co543"
+    ]
+  },
+  {
+    "id": "st-perejil-pnv",
+    "crisisId": "perejil-2002",
+    "bloc": "otro",
+    "speaker": "Pedro Azpiazu",
+    "role": "PNV",
+    "date": "2002-07-17",
+    "dateLabel": "17 de julio de 2002",
+    "text": "Nuestro grupo está en contra de las intervenciones militares en general, y en particular de la llevada a cabo en el islote Perejil.",
+    "sourceIds": [
+      "src-ds-co543"
+    ]
+  },
+  {
+    "id": "st-2007-gob2",
+    "crisisId": "ceuta-melilla-2007",
+    "bloc": "gobierno",
+    "speaker": "María Teresa Fernández de la Vega",
+    "role": "vicepresidenta primera",
+    "date": "2007-11-02",
+    "dateLabel": "noviembre de 2007",
+    "text": "La visita entra en la 'normalidad institucional' (según Wikipedia es, citando prensa) [NO VERIFICADO en fuente primaria]",
+    "sourceIds": [
+      "src-wiki-2007"
+    ]
+  },
+  {
+    "id": "st-2007-mar",
+    "crisisId": "ceuta-melilla-2007",
+    "bloc": "marruecos",
+    "speaker": "Mohamed VI",
+    "role": "rey de Marruecos (comunicado difundido por MAP)",
+    "date": "2007-11-06",
+    "dateLabel": "6 de noviembre de 2007",
+    "text": "'Condena' y 'denuncia' la visita 'lamentable' [...] 'paso contraproducente' que 'ataca los sentimientos patrióticos sólidamente arraigados entre todos los componentes y sensibilidades del pueblo marroquí' [...] 'acto nostálgico de una era sombría y decididamente superada' [...] 'flagrante falta de respeto por parte del Gobierno español de la letra y el espíritu del Tratado de Amistad, Buena Vecindad y Cooperación de 1991'.",
+    "sourceIds": [
+      "src-elpais-2007-11-06"
+    ]
+  },
+  {
+    "id": "st-2007-casareal",
+    "crisisId": "ceuta-melilla-2007",
+    "bloc": "monarquia",
+    "speaker": "Juan Carlos I",
+    "role": "rey de España (discurso en Melilla)",
+    "date": "2007-11-06",
+    "dateLabel": "6 de noviembre de 2007",
+    "text": "Como Rey que se debe a todos los españoles, tenía contraído el compromiso de visitar Melilla junto con la Reina. Un compromiso al que se unía un profundo deseo. [...] No podía dejar más tiempo sin venir para expresaros nuestro afecto y apoyo.",
+    "sourceIds": [
+      "src-elpais-2007-11-06"
+    ]
+  },
+  {
+    "id": "st-2007-gob",
+    "crisisId": "ceuta-melilla-2007",
+    "bloc": "gobierno",
+    "speaker": "Miguel Ángel Moratinos",
+    "role": "ministro de Asuntos Exteriores",
+    "date": "2007-11-21",
+    "dateLabel": "21 de noviembre de 2007",
+    "text": "Esta crisis es totalmente superficial, que no tiene ni pies ni cabeza. Tenemos una buena relación con Marruecos, vamos a seguir teniéndola.",
+    "sourceIds": [
+      "src-ds-l8pl301"
+    ]
+  },
+  {
+    "id": "st-2007-der",
+    "crisisId": "ceuta-melilla-2007",
+    "bloc": "derecha",
+    "speaker": "Gustavo de Arístegui",
+    "role": "PP",
+    "date": "2007-11-21",
+    "dateLabel": "21 de noviembre de 2007",
+    "text": "Ustedes han manejado torpemente esta crisis y la han convertido en una tormenta. Esa es la realidad. Por favor, cambie de política exterior, hacen ustedes el ridículo en el mundo.",
+    "sourceIds": [
+      "src-ds-l8pl301"
+    ]
+  },
+  {
+    "id": "st-tarajal-gob",
+    "crisisId": "tarajal-2014",
+    "bloc": "gobierno",
+    "speaker": "Jorge Fernández Díaz",
+    "role": "ministro del Interior",
+    "date": "2014-02-13",
+    "dateLabel": "13 de febrero de 2014",
+    "text": "No hay relación causa-efecto entre el empleo de los medios antidisturbios por parte de los agentes de la Guardia Civil y dichos fallecimientos.",
+    "sourceIds": [
+      "src-ds-co500"
+    ]
+  },
+  {
+    "id": "st-tarajal-izq2",
+    "crisisId": "tarajal-2014",
+    "bloc": "izquierda",
+    "speaker": "Ricardo Sixto",
+    "role": "IU",
+    "date": "2014-02-13",
+    "dateLabel": "13 de febrero de 2014",
+    "text": "Ha arrojado luces sobre determinadas cuestiones que no tenía claras mucha gente, pero ha arrojado sombras sobre otras muchas cuestiones que nos preocupan mucho más.",
+    "sourceIds": [
+      "src-ds-co500"
+    ]
+  },
+  {
+    "id": "st-tarajal-der",
+    "crisisId": "tarajal-2014",
+    "bloc": "derecha",
+    "speaker": "Conrado Escobar",
+    "role": "PP",
+    "date": "2014-02-19",
+    "dateLabel": "19 de febrero de 2014",
+    "text": "El control de la inmigración irregular es y debe ser política de Estado, no es cuestión de partidos. España constituye la frontera sur de Europa.",
+    "sourceIds": [
+      "src-ds-x10pl178"
+    ]
+  },
+  {
+    "id": "st-tarajal-izq",
+    "crisisId": "tarajal-2014",
+    "bloc": "izquierda",
+    "speaker": "Antonio Trevín",
+    "role": "PSOE",
+    "date": "2014-02-19",
+    "dateLabel": "19 de febrero de 2014",
+    "text": "Fallecieron quince seres humanos que merecen respeto, dignidad y memoria, y este Parlamento tiene la obligación de saber qué pasó y por qué pasó.",
+    "sourceIds": [
+      "src-ds-x10pl178"
+    ]
+  },
+  {
+    "id": "st-tarajal-mar",
+    "crisisId": "tarajal-2014",
+    "bloc": "marruecos",
+    "speaker": "Mohamed Hassad",
+    "role": "ministro del Interior de Marruecos (sobre el plan del espigón)",
+    "date": "2014-02-20",
+    "dateLabel": "febrero de 2014",
+    "text": "'Lo iban a mirar. Pero jamás dijeron nada' (según Vozpópuli); el silencio marroquí llevó a Rajoy a desechar la ampliación del espigón.",
+    "sourceIds": [
+      "src-vozpopuli-espigon"
+    ]
+  },
+  {
+    "id": "st-ceuta21-mar2",
+    "crisisId": "ceuta-2021",
+    "bloc": "marruecos",
+    "speaker": "Ministerio de Asuntos Exteriores de Marruecos",
+    "role": "comunicado sobre Ghali",
+    "date": "2021-04-24",
+    "dateLabel": "24-25 de abril de 2021",
+    "text": "'Deplora' la decisión española de acoger a Gali y 'expresa su decepción por este acto contrario al espíritu de asociación y buena vecindad', que afecta a 'una cuestión fundamental para el pueblo marroquí y sus fuerzas vivas'.",
+    "sourceIds": [
+      "src-elpais-2021-04-24"
+    ]
+  },
+  {
+    "id": "st-ceuta21-mar",
+    "crisisId": "ceuta-2021",
+    "bloc": "marruecos",
+    "speaker": "Karima Benyaich",
+    "role": "embajadora de Marruecos en Madrid",
+    "date": "2021-05-18",
+    "dateLabel": "18 de mayo de 2021",
+    "text": "Hay actos que tienen consecuencias y se tienen que asumir.",
+    "sourceIds": [
+      "src-wiki-2021"
+    ]
+  },
+  {
+    "id": "st-ceuta21-gob",
+    "crisisId": "ceuta-2021",
+    "bloc": "gobierno",
+    "speaker": "Pedro Sánchez",
+    "role": "presidente del Gobierno",
+    "date": "2021-05-19",
+    "dateLabel": "19 de mayo de 2021",
+    "text": "España está sufriendo un desafío de un tercer país, que es Marruecos [...]. Lo que vamos a hacer es defender nuestra integridad territorial, nuestras fronteras, el sosiego, la tranquilidad y la seguridad de la ciudadanía que vive en Ceuta y en Melilla.",
+    "sourceIds": [
+      "src-ds-pl103"
+    ]
+  },
+  {
+    "id": "st-ceuta21-der",
+    "crisisId": "ceuta-2021",
+    "bloc": "derecha",
+    "speaker": "Pablo Casado",
+    "role": "presidente del PP",
+    "date": "2021-05-19",
+    "dateLabel": "19 de mayo de 2021",
+    "text": "España atraviesa la peor crisis diplomática con Marruecos de nuestra historia democrática. [...] Es la crónica de una crisis anunciada.",
+    "sourceIds": [
+      "src-ds-pl103"
+    ]
+  },
+  {
+    "id": "st-ceuta21-der2",
+    "crisisId": "ceuta-2021",
+    "bloc": "derecha",
+    "speaker": "Iván Espinosa de los Monteros",
+    "role": "VOX",
+    "date": "2021-05-19",
+    "dateLabel": "19 de mayo de 2021",
+    "text": "Se permite lanzarnos de forma organizada una auténtica invasión para tomar la ciudad de Ceuta.",
+    "sourceIds": [
+      "src-ds-pl103"
+    ]
+  },
+  {
+    "id": "st-ceuta21-izq",
+    "crisisId": "ceuta-2021",
+    "bloc": "izquierda",
+    "speaker": "Mireia Vehí",
+    "role": "CUP",
+    "date": "2021-05-19",
+    "dateLabel": "19 de mayo de 2021",
+    "text": "Salvar niños o reprimir niños. [...] Las devoluciones en caliente [...] se están dando ahora en Ceuta, y esto tiene que parar.",
+    "sourceIds": [
+      "src-ds-pl103"
+    ]
+  },
+  {
+    "id": "st-ceuta21-gob2",
+    "crisisId": "ceuta-2021",
+    "bloc": "gobierno",
+    "speaker": "Fernando Grande-Marlaska",
+    "role": "ministro del Interior",
+    "date": "2021-06-25",
+    "dateLabel": "25 de junio de 2021",
+    "text": "No fue una crisis migratoria, que fue una crisis fronteriza, y una crisis fronteriza a la que hemos dado una respuesta rápida, coordinada y eficaz.",
+    "sourceIds": [
+      "src-ds-co446"
+    ]
+  },
+  {
+    "id": "st-sahara22-gob",
+    "crisisId": "sahara-2022",
+    "bloc": "gobierno",
+    "speaker": "Pedro Sánchez",
+    "role": "presidente del Gobierno (carta a Mohamed VI)",
+    "date": "2022-03-14",
+    "dateLabel": "14 de marzo de 2022",
+    "text": "España considera que la propuesta marroquí de autonomía presentada en 2007 como la base más seria, creíble y realista para la resolución de este diferendo. [...] Nuestro objetivo debe ser construir una nueva relación, basada en la transparencia y la comunicación permanente, el respeto mutuo y el respeto a los acuerdos firmados por ambas partes y la abstención de toda acción unilateral.",
+    "sourceIds": [
+      "src-elpais-carta"
+    ]
+  },
+  {
+    "id": "st-sahara22-mar",
+    "crisisId": "sahara-2022",
+    "bloc": "marruecos",
+    "speaker": "Gabinete Real de Marruecos (comunicado difundido por MAP)",
+    "role": "",
+    "date": "2022-03-18",
+    "dateLabel": "18 de marzo de 2022",
+    "text": "Hace pública la carta y su fórmula: la propuesta de autonomía como 'la base más seria, creíble y realista para la resolución de esta disputa' (según El Independiente).",
+    "sourceIds": [
+      "src-elindependiente-carta"
+    ]
+  },
+  {
+    "id": "st-sahara22-der",
+    "crisisId": "sahara-2022",
+    "bloc": "derecha",
+    "speaker": "Cuca Gamarra",
+    "role": "PP",
+    "date": "2022-03-30",
+    "dateLabel": "30 de marzo de 2022",
+    "text": "España nunca se había salido del marco de Naciones Unidas hasta ahora. ¡Menuda manera tiene usted de querer pasar a la historia!",
+    "sourceIds": [
+      "src-ds-pl174"
+    ]
+  },
+  {
+    "id": "st-sahara22-der2",
+    "crisisId": "sahara-2022",
+    "bloc": "derecha",
+    "speaker": "Santiago Abascal",
+    "role": "VOX",
+    "date": "2022-03-30",
+    "dateLabel": "30 de marzo de 2022",
+    "text": "La carta que usted ha enviado es un puñetero insulto a este Parlamento.",
+    "sourceIds": [
+      "src-ds-pl174"
+    ]
+  },
+  {
+    "id": "st-sahara22-izq",
+    "crisisId": "sahara-2022",
+    "bloc": "izquierda",
+    "speaker": "Mertxe Aizpurua",
+    "role": "EH Bildu",
+    "date": "2022-03-30",
+    "dateLabel": "30 de marzo de 2022",
+    "text": "Usted ha abierto de golpe una triple crisis: con el Sáhara Occidental, con Argelia y con todos y cada uno de los partidos de este Parlamento.",
+    "sourceIds": [
+      "src-ds-pl174"
+    ]
+  },
+  {
+    "id": "st-sahara22-izq2",
+    "crisisId": "sahara-2022",
+    "bloc": "izquierda",
+    "speaker": "Gabriel Rufián",
+    "role": "ERC",
+    "date": "2022-03-30",
+    "dateLabel": "30 de marzo de 2022",
+    "text": "Canjea principios por más control marroquí en la valla en Ceuta y Melilla.",
+    "sourceIds": [
+      "src-ds-pl174"
+    ]
+  },
+  {
+    "id": "st-sahara22-izq3",
+    "crisisId": "sahara-2022",
+    "bloc": "izquierda",
+    "speaker": "Pablo Echenique",
+    "role": "Unidas Podemos",
+    "date": "2022-03-30",
+    "dateLabel": "30 de marzo de 2022",
+    "text": "De la misma manera que hay que defender que se respete el derecho internacional en Ucrania, también hay que defenderlo en el Sáhara Occidental.",
+    "sourceIds": [
+      "src-ds-pl174"
+    ]
+  },
+  {
+    "id": "st-sahara22-pnv",
+    "crisisId": "sahara-2022",
+    "bloc": "otro",
+    "speaker": "Aitor Esteban",
+    "role": "PNV",
+    "date": "2022-03-30",
+    "dateLabel": "30 de marzo de 2022",
+    "text": "Marruecos ha utilizado las crisis migratorias a su antojo, incluso ha presionado y ha conseguido que se cese a una ministra de otro país.",
+    "sourceIds": [
+      "src-ds-pl174"
+    ]
+  },
+  {
+    "id": "st-sahara22-gob2",
+    "crisisId": "sahara-2022",
+    "bloc": "gobierno",
+    "speaker": "Pedro Sánchez",
+    "role": "presidente del Gobierno",
+    "date": "2022-06-08",
+    "dateLabel": "8 de junio de 2022",
+    "text": "La soberanía española sobre Ceuta y Melilla está fuera de toda duda, como en cualquier otra parte del territorio nacional.",
+    "sourceIds": [
+      "src-moncloa-08-06-2022"
+    ]
+  },
+  {
+    "id": "st-sahara22-argelia",
+    "crisisId": "sahara-2022",
+    "bloc": "otro",
+    "speaker": "Presidencia de Argelia",
+    "role": "comunicado",
+    "date": "2022-06-08",
+    "dateLabel": "8 de junio de 2022",
+    "text": "Suspende el Tratado de Amistad de 2002 porque España se ha desligado de 'las obligaciones y los valores esenciales consagrados en este Tratado' (traducción del inglés de Wikipedia en) [NO VERIFICADO en fuente primaria].",
+    "sourceIds": [
+      "src-enwiki-argelia"
+    ]
+  },
+  {
+    "id": "st-melilla22-gob",
+    "crisisId": "melilla-2022",
+    "bloc": "gobierno",
+    "speaker": "Pedro Sánchez",
+    "role": "presidente del Gobierno",
+    "date": "2022-06-25",
+    "dateLabel": "25 de junio de 2022",
+    "text": "Calificó el salto de asalto 'bien resuelto' (según las citas de Bermúdez de Castro, Borrás y Rufián en el Congreso y Wikipedia en; no se ha localizado la transcripción oficial) [NO VERIFICADO en fuente primaria].",
+    "sourceIds": [
+      "src-ds-pl198",
+      "src-ds-pl200",
+      "src-enwiki-melilla-2022"
+    ]
+  },
+  {
+    "id": "st-melilla22-mar",
+    "crisisId": "melilla-2022",
+    "bloc": "marruecos",
+    "speaker": "Autoridades marroquíes",
+    "role": "balance oficial",
+    "date": "2022-06-25",
+    "dateLabel": "25 de junio de 2022",
+    "text": "Elevan a 23 el número de muertos (cifra oficial mantenida frente a las 37 o más de las ONG).",
+    "sourceIds": [
+      "src-yt-rtve-melilla23",
+      "src-enwiki-melilla-2022"
+    ]
+  },
+  {
+    "id": "st-melilla22-der2",
+    "crisisId": "melilla-2022",
+    "bloc": "derecha",
+    "speaker": "Rocío de Meer",
+    "role": "VOX",
+    "date": "2022-06-28",
+    "dateLabel": "28 de junio de 2022",
+    "text": "Ceuta y Melilla siempre españolas.",
+    "sourceIds": [
+      "src-ds-pl197"
+    ]
+  },
+  {
+    "id": "st-melilla22-izq",
+    "crisisId": "melilla-2022",
+    "bloc": "izquierda",
+    "speaker": "Jon Iñarritu",
+    "role": "EH Bildu",
+    "date": "2022-06-28",
+    "dateLabel": "28 de junio de 2022",
+    "text": "¿Por qué no se puede denunciar la mayor tragedia que ha ocurrido en la frontera española en las últimas décadas?",
+    "sourceIds": [
+      "src-ds-pl197"
+    ]
+  },
+  {
+    "id": "st-melilla22-onu",
+    "crisisId": "melilla-2022",
+    "bloc": "otro",
+    "speaker": "Michelle Bachelet",
+    "role": "Alta Comisionada de la ONU para los Derechos Humanos (según HRW)",
+    "date": "2022-06-28",
+    "dateLabel": "junio de 2022",
+    "text": "Pidió una investigación y recordó la obligación de 'tratar a todos los migrantes con dignidad y priorizar su seguridad y los derechos humanos, así como abstenerse del uso excesivo de la fuerza'.",
+    "sourceIds": [
+      "src-hrw-melilla"
+    ]
+  },
+  {
+    "id": "st-melilla22-gob2",
+    "crisisId": "melilla-2022",
+    "bloc": "gobierno",
+    "speaker": "Fernando Grande-Marlaska",
+    "role": "ministro del Interior",
+    "date": "2022-06-29",
+    "dateLabel": "29 de junio de 2022",
+    "text": "Un país democrático, un Estado de derecho no puede aceptar en modo alguno ataques violentos a su frontera ni ataques a las fuerzas y cuerpos de seguridad del Estado.",
+    "sourceIds": [
+      "src-ds-pl198"
+    ]
+  },
+  {
+    "id": "st-melilla22-der",
+    "crisisId": "melilla-2022",
+    "bloc": "derecha",
+    "speaker": "José Antonio Bermúdez de Castro",
+    "role": "PP",
+    "date": "2022-06-29",
+    "dateLabel": "29 de junio de 2022",
+    "text": "Una afirmación tan desafortunada como carente de humanidad. [...] exigimos que se retracte de manera inmediata de sus palabras.",
+    "sourceIds": [
+      "src-ds-pl198"
+    ]
+  },
+  {
+    "id": "st-melilla22-izq2",
+    "crisisId": "melilla-2022",
+    "bloc": "izquierda",
+    "speaker": "Gabriel Rufián",
+    "role": "ERC",
+    "date": "2022-07-12",
+    "dateLabel": "12 de julio de 2022",
+    "text": "Treinta y siete personas muertas en Melilla, lo siento, pero no es una operación bien resuelta.",
+    "sourceIds": [
+      "src-ds-pl200"
+    ]
+  },
+  {
+    "id": "st-melilla22-defensor",
+    "crisisId": "melilla-2022",
+    "bloc": "otro",
+    "speaker": "Defensor del Pueblo (Ángel Gabilondo)",
+    "role": "resolución",
+    "date": "2022-10-14",
+    "dateLabel": "14 de octubre de 2022",
+    "text": "Se efectuó un rechazo en frontera de 470 personas sin contemplarse las previsiones legales tanto nacionales como internacionales.",
+    "sourceIds": [
+      "src-defensor-melilla",
+      "src-defensor-resol"
+    ]
+  },
+  {
     "id": "st-albares-rota-1mar",
     "crisisId": "ceuta-2026",
     "bloc": "gobierno",
