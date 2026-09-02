@@ -96,6 +96,8 @@ const KIND_MAP: Record<string, string | null> = {
   descolonizacion: "territorial", administracion: "politica", cesion: "territorial", "guerra-civil": "guerra", sublevacion: "militar",
   independencia: "territorial", onu: "diplomatica", ejercito: "militar", represion: "seguridad", pesca: "geopolitica",
   legislacion: "politica", ley: "politica", ddhh: "judicial", "derechos-humanos": "judicial", votacion: "parlamentaria",
+  invasion: "territorial", extranjeria: "politica", "ceuta-melilla": "territorial", territorio: "territorial", vallas: "migratoria",
+  aduanas: "geopolitica", ran: "diplomatica", cooperacion: "diplomatica", comercio: "geopolitica", frontera: "migratoria",
   crisis: null, historico: null,
 };
 const ERA_MAP: Record<string, string> = {

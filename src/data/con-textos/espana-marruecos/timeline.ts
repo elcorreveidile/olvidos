@@ -873,7 +873,7 @@ export const TIMELINE = [
     "headOfState": "Juan Carlos de Borbón (interino)",
     "initiator": "marruecos",
     "kinds": [
-      "diplomatica"
+      "territorial"
     ],
     "era": "franquismo",
     "sourceIds": [
@@ -998,7 +998,8 @@ export const TIMELINE = [
     "headOfState": "Juan Carlos I",
     "initiator": "espana",
     "kinds": [
-      "diplomatica"
+      "politica",
+      "territorial"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -1057,6 +1058,7 @@ export const TIMELINE = [
     "headOfState": "Juan Carlos I",
     "initiator": "espana",
     "kinds": [
+      "territorial",
       "politica"
     ],
     "era": "democracia",
@@ -1094,7 +1096,7 @@ export const TIMELINE = [
     "headOfState": "Juan Carlos I",
     "initiator": "marruecos",
     "kinds": [
-      "diplomatica"
+      "territorial"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -1234,7 +1236,8 @@ export const TIMELINE = [
     "headOfState": "Juan Carlos I",
     "initiator": "espana",
     "kinds": [
-      "monarquia"
+      "monarquia",
+      "territorial"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -1354,7 +1357,8 @@ export const TIMELINE = [
     "headOfState": "Juan Carlos I",
     "initiator": "espana",
     "kinds": [
-      "politica"
+      "politica",
+      "migratoria"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -1372,7 +1376,8 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "marruecos",
     "kinds": [
-      "migratoria"
+      "migratoria",
+      "geopolitica"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -1411,7 +1416,8 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "otros",
     "kinds": [
-      "judicial"
+      "judicial",
+      "migratoria"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -1723,6 +1729,8 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "ambos",
     "kinds": [
+      "geopolitica",
+      "diplomatica",
       "monarquia"
     ],
     "era": "democracia",
