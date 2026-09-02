@@ -807,14 +807,13 @@ export const STATEMENTS = [
     "crisisId": "ceuta-2026",
     "bloc": "gobierno",
     "speaker": "José Manuel Albares",
-    "role": "Ministro de Asuntos Exteriores",
+    "role": "ministro de Asuntos Exteriores",
     "date": "2026-07-31",
     "dateLabel": "31 de julio de 2026",
-    "text": "Este mensaje es impropio del Ministro de Exteriores de un país socio",
+    "text": "excelente relación […] en migración y otros ámbitos sigue siendo muy intensa",
     "sourceIds": [
-      "src-eldiario-italia"
-    ],
-    "note": "Sobre Tajani; «demagogia partidista»."
+      "src-elindependiente-benyaich"
+    ]
   },
   {
     "id": "st-benyaich-31jul",
@@ -1059,7 +1058,7 @@ export const STATEMENTS = [
     "dateLabel": "4 de agosto de 2026",
     "text": "La cooperación en la gestión de las fronteras, y la dependencia, puede incrementar la capacidad de influencia de los países de tránsito sobre los países de destino",
     "sourceIds": [
-      "src-elcano-ceuta"
+      "src-elcano"
     ],
     "note": "También: «Sin duda, la cooperación de Marruecos en esta ocasión ha sido fundamental para que se pueda estar ante una crisis express»."
   },
@@ -1153,7 +1152,7 @@ export const STATEMENTS = [
     "dateLabel": "6 de agosto de 2026",
     "text": "El rey está comprometido con la visita a Ceuta y la hará porque cumple sus compromisos",
     "sourceIds": [
-      "src-publico-compromete",
+      "src-publico-felipe-ceuta",
       "src-moncloacom-7ago",
       "src-newtral-narrativas"
     ],
@@ -1381,15 +1380,13 @@ export const STATEMENTS = [
     "crisisId": "ceuta-2026",
     "bloc": "otro",
     "speaker": "Jabaroot",
-    "role": "Grupo de hackers",
+    "role": "grupo de hackers",
     "date": "2026-08-24",
-    "dateLabel": "24 de agosto de 2026",
-    "text": "la migración de marroquíes hacia Europa, comenzando por España, es un plan oficial marroquí",
+    "dateLabel": "24 de agosto de 2026, Telegram (traducido)",
+    "text": "Jabaroot cumple la promesa de publicación, para confirmar que las operaciones de traslado de marroquíes hacia Europa, empezando por España, son un plan oficial marroquí",
     "sourceIds": [
-      "src-infobae-jabaroot",
-      "src-elind-jabaroot"
-    ],
-    "note": "Traducción; atribuye la operación a Hammouchi y El Himma y afirma que «el rey no tenía conocimiento». También: «El Rey debe actuar y destituir a Hammouchi antes de que ocurra una catástrofe». Autenticidad no verificada."
+      "src-infobae-jabaroot"
+    ]
   },
   {
     "id": "st-saiz-24ago",
@@ -1569,15 +1566,13 @@ export const STATEMENTS = [
     "crisisId": "ceuta-2026",
     "bloc": "gobierno",
     "speaker": "Pedro Sánchez",
-    "role": "Presidente del Gobierno",
+    "role": "presidente del Gobierno",
     "date": "2026-08-31",
-    "dateLabel": "31 de agosto de 2026",
-    "text": "No hay ninguna información procedente de las Fuerzas y Cuerpos de Seguridad del Estado, ni del CNI",
+    "dateLabel": "31 de agosto de 2026, Cadena SER",
+    "text": "No hay ninguna información de participación alguna. […] ¿Qué gana Marruecos con este tipo de tácticas?",
     "sourceIds": [
-      "src-le360-sanchez",
-      "src-hespress-sanchez"
-    ],
-    "note": "Sobre una implicación marroquí. También: «La cooperación con Marruecos es francamente positiva»."
+      "src-theobjective-sanchez-ser"
+    ]
   },
   {
     "id": "st-sanchez-ser-rusia-israel",
@@ -1989,7 +1984,7 @@ export const STATEMENTS = [
     "text": "una mentira descarada",
     "sourceIds": [
       "src-infobae-rusia",
-      "src-wiki-2026"
+      "src-wiki-incidentes"
     ],
     "note": "Intento de desviar la atención del «vergonzoso fracaso de Sánchez en la gestión»."
   },

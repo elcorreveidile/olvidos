@@ -413,11 +413,87 @@ Ceuta 2026 no es sólo una crisis bilateral: es la primera vez que un Estado mie
 
 ## 10. Contraste de la hipótesis
 
-*(Se redacta al final, con la tabla completa.)*
+La pregunta: ¿las confrontaciones con Marruecos parten históricamente de la derecha? Para responderla separamos tres cosas que suelen mezclarse: quién gobierna, quién inicia el episodio y quién escala el discurso. Codificación de gobiernos en el capítulo 0.3; detalle y fuentes en los capítulos 1 a 9.
+
+### 10.1 La tabla
+
+| Episodio | Gobierno (código) | Quién inicia | Respuesta española | Discurso en las Cortes: derecha / izquierda | Corona |
+|---|---|---|---|---|---|
+| 1859-60 Guerra de África | O'Donnell, Unión Liberal (liberal) | España (declaración de guerra) | Guerra; Wad-Ras | Unanimidad de 186; progresistas y demócratas los más fervientes | Isabel II bendice la paz |
+| 1893 Margallo | Sagasta (liberal) | Cabilas de Guelaya | Campaña militar; Tratado de Marrakech | Conservadores y republicanos piden responsabilidades; Sagasta: «el patriotismo aconseja callar» | Regencia; súplica rifeña a la Reina |
+| 1909 Barranco del Lobo | Maura (derecha) | Cabilas (ataque); España (movilización) | Reservistas; ocupación; represión de la Semana Trágica | Liberales (Moret) y republicanos contra Maura; Maura: «guardián de minas» | Alfonso XIII retira la confianza a Maura |
+| 1912 Protectorado | Canalejas / Romanones (liberal) | España y Francia | Tratado | Socialistas en contra; Romanones: «para nosotros no hay Tratado» | — |
+| 1921 Annual | Allendesalazar, luego Maura (derecha) | Abd el-Krim, sobre un avance español | Reconquista; Expediente Picasso | Prieto: «fué el Rey»; conservadores: «prerrogativa de la Corona»; 145-7 contra el dictamen socialista | Sospecha no probada; ampara el golpe de 1923 |
+| 1925 Alhucemas | Primo de Rivera (dictadura) | España y Francia | Desembarco; fin de la guerra en 1927 | Sin Cortes; Asamblea Nacional aplaude | Preside la Asamblea |
+| 1934 Ifni | Lerroux con la CEDA (derecha) | España | Ocupación | Derecha y agrarios aplauden; comunistas: «atraco a mano armada» | Alcalá-Zamora (presidente de la República) |
+| 1936 golpe | Frente Popular (izquierda) | Ejército de África | Guerra civil | — | — |
+| 1957-58 Ifni-Sáhara | Franco (dictadura) | Ejército de Liberación marroquí | Guerra; Cintra entrega Cabo Juby | Sin debate | — |
+| 1969 Ifni | Franco (dictadura) | Negociación | Retrocesión | Cortes orgánicas; sólo Piñar en contra | — |
+| 1975 Marcha Verde | Arias / Franco agonizante (dictadura) | Marruecos (Hassan II) | Acuerdos de Madrid; retirada | 345-4-4 | Juan Carlos, interino, coordina con Rabat el alcance de la marcha |
+| 1991 Tratado de Amistad | González (izquierda) | Ambos | Tratado; RAN anuales | Consenso | Juan Carlos y Hassan II, amigos |
+| 2001 embajador | Aznar (derecha) | Marruecos | Firmeza (pesca, MINURSO) | — | Sin papel |
+| 2002 Perejil | Aznar (derecha) | Marruecos (ocupación) | Operación militar | 334-0-4; PNV, EA e IU matizan | Aznar impide al Rey ir a la boda de Mohamed VI |
+| 2005 vallas | Zapatero (izquierda) | Migrantes; disparos marroquíes | Ejército en apoyo de la Guardia Civil | — | — |
+| 2007 visita real | Zapatero (izquierda) | España (visita) | «Normalidad institucional» | PP: gestión «torpe»; no critica la visita | Los Reyes en Ceuta y Melilla; Mohamed VI: «acto nostálgico» |
+| 2014 Tarajal | Rajoy (derecha) | Migrantes; uso de la fuerza español | Pelotas de goma; devoluciones; LO 4/2015 | PSOE, IU, PNV, Amaiur exigen responsabilidades; PP: «política de Estado» | — |
+| 2021 Ceuta | Sánchez (izquierda) | España (Ghali); Marruecos (frontera) | Ejército; devoluciones; cese de Laya; giro de 2022 | PP: «crisis anunciada»; Vox: «invasión»; Gobierno pide lealtad | — |
+| 2022 Sáhara | Sánchez (izquierda) | España (carta) | Alineamiento con Rabat | Todo el arco contra el Gobierno: 168-118-61 | Felipe VI había pedido «caminar juntos» en enero |
+| 2022 Melilla | Sánchez (izquierda) | Migrantes; fuerza marroquí y española | «Bien resuelto»; 470 rechazos | Izquierda dividida; PP critica la frase | — |
+| 2026 Ceuta | Sánchez (izquierda) | Marruecos (según el CENIF); sentencia del TS como detonante | Ejército; barrera; retornos; cooperación con Rabat; Rey a Ceuta | PP: «lo sabía y lo tapó», elecciones; Vox: «traición», art. 102, romper el Tratado; socios: Marlaska y Marruecos | Felipe VI: «preocupación e indignación»; visita anunciada sin fecha |
+
+### 10.2 Lo que sale de la tabla
+
+1. **Quién inicia**. En el siglo XIX y hasta 1934, quien inicia las guerras coloniales es España, con gobiernos de los dos partidos del turno: liberales en 1859, 1893 y 1912; conservadores en 1909, 1921 y 1934. Desde 1957, quien inicia las confrontaciones territoriales es casi siempre Marruecos (Ifni 1957, Marcha Verde 1975, embajador 2001, Perejil 2002, aduana 2018, frontera 2021 y 2026). Las crisis migratorias con muertos (2005, 2014, 2022) las «inician» terceros y las convierten en crisis el uso de la fuerza de uno u otro Estado.
+2. **Quién gobierna cuando se usa la fuerza contra Marruecos**. Las tres veces que España ha empleado la fuerza contra el Estado marroquí o sus irregulares en democracia y dictadura reciente son Ifni 1957 (Franco), Perejil 2002 (Aznar) y, contra migrantes, Tarajal 2014 (Rajoy). Las grandes cesiones son también de gobiernos de derecha o de la dictadura (Ifni 1969, Sáhara 1975) o del PSOE (Sáhara 2022). Ningún gobierno de izquierda ha usado la fuerza contra Marruecos; dos gobiernos de izquierda (2005, 2021, 2026) han desplegado el Ejército en Ceuta y Melilla en funciones de apoyo.
+3. **Quién escala el discurso**. Aquí la hipótesis se sostiene mejor: en 1921-23 la derecha protege a la Corona y al Ejército de África frente a la izquierda que pide responsabilidades; en 1934 la derecha aplaude la ocupación de Ifni; en 2021 Vox estrena «invasión»; en 2022 la derecha reprocha la cesión y la izquierda el abandono del Sáhara; en 2026 la derecha pide desde llamar a consultas a los embajadores (PP) hasta juzgar al presidente por traición y romper el Tratado (Vox). El marco de la «guerra híbrida» y la «invasión» es hoy patrimonio de PP y Vox, aunque el propio Sánchez usó «ataque» y «violación de la integridad territorial» el 31 de julio.
+4. **La Corona**. Alfonso XIII es el rey «africanista» cuyo papel en Annual nunca se probó pero que amparó el golpe que enterró las responsabilidades; Juan Carlos coordina con Hassan II en 1975 y mantiene con él un canal paralelo hasta 1999; la visita de 2007 la refrenda un gobierno socialista; Felipe VI ha esperado doce años y en 2026 la visita a Ceuta se convierte en bandera de la derecha («Feijóo acompañaría al Rey»). La monarquía marroquí, en cambio, es el actor que decide: la crisis de 2026 apunta a su aparato de seguridad.
+
+### 10.3 Conclusión provisional
+
+La versión fuerte de la hipótesis («las confrontaciones con Marruecos parten de la derecha») no resiste la tabla: las guerras de 1859, 1893 y 1912 son liberales; Marruecos inicia casi todo desde 1957; y las crisis de 2021 y 2026 estallan con gobiernos del PSOE. La versión matizada sí se sostiene y es más interesante: **cuando hay una crisis con Marruecos, la derecha española tiende a escalarla en términos de soberanía, honor y traición (1921-23, 1934, 2002, 2021, 2022, 2026) y la izquierda tiende a desescalarla en términos de cooperación y humanitarismo (1893, 1922, 2007, 2021, 2026)**, con excepciones notables (el PSOE de 1859 y 1912 fue tan africanista como el resto; el PSOE de 2022 fue el más pro-marroquí de la democracia). Y hay una constante que atraviesa las etiquetas: el Ejército de África y su heredero, el mando de Ceuta y Melilla, junto con la Corona, han sido el eje de la política marroquí de España más que los partidos.
 
 ## 11. «¿Qué habrían hecho?»
 
-*(Se redacta al final.)*
+Javier pregunta qué habría hecho la derecha en el Gobierno con los informes del 29 de julio. Este dossier no especula: recoge lo que PP y Vox han pedido (2021, 2022, 2026), lo que hicieron cuando gobernaron y el marco jurídico que limita a cualquier gobierno.
+
+### 11.1 Lo que piden hoy (2026)
+
+| Medida | PP | Vox | Fuente |
+|---|---|---|---|
+| Convocar a la embajadora marroquí | Sí (Feijóo, 2 sept; Muñoz, 25 ago) | Sí | Cap. 1 |
+| Llamar a consultas al embajador en Rabat | Sí (Feijóo, 2 sept) | Sí | Cap. 1 |
+| Dimisión de Marlaska | Sí | Sí | Cap. 1 |
+| Elecciones generales | Sí («la única salida») | — | The Objective, 2 sept |
+| Art. 102 CE (procesar a Sánchez por «traición») | No lo ha pedido | Sí (8 y 31 ago); necesita 88 diputados y 176 votos | Cap. 1 |
+| Suspender el Tratado de Amistad de 1991 | No | Sí (Abascal, 31 ago; Buxadé, 2 sept) | Cap. 1 |
+| Suspender el acuerdo preferencial UE-Marruecos y visados | No | Sí (Buxadé) | Cap. 1 |
+| Condena «formal y solemne» de la UE | No | Sí | Cap. 1 |
+| Declarar «emergencia nacional» / estado de alarma | Sí (Vivas lo pidió el 28 jul) | Sí | Cap. 1 |
+| Aplicar la Ley de Seguridad Nacional y mando único | Sí (reprocha que tardara «veintiséis días») | Sí | DSCD-15-PL-200 |
+| Acompañar al Rey a Ceuta | Sí («Feijóo acompañaría al Rey») | — | Cap. 8 |
+| Respuesta militar contra Marruecos | **No documentada** | **No documentada** | — |
+
+Con las fuentes consultadas, ningún grupo parlamentario ha pedido una acción militar contra territorio marroquí ni contra las personas que cruzaron. La exigencia máxima documentada es diplomática (romper el Tratado, suspender acuerdos) y judicial (art. 102). Las preguntas retóricas de Javier («¿rematar a cañonazos?», «¿bombardear?», «¿disparar?») no tienen correlato en ninguna propuesta registrada; el artículo no debe atribuirlas a nadie.
+
+### 11.2 Lo que hicieron cuando gobernaron
+
+- **Perejil (2002, Aznar)**: ante una ocupación marroquí con una docena de gendarmes, operación militar sin bajas y vuelta al statu quo en diez días, con unanimidad parlamentaria y mediación de EEUU. Es el precedente de «respuesta militar» y muestra sus límites: se hizo contra soldados en un islote deshabitado, no contra civiles ni contra la frontera.
+- **Vallas de 2005**: fue un gobierno del PSOE quien desplegó al Ejército en apoyo de la Guardia Civil; Marruecos disparó contra los migrantes.
+- **Tarajal (2014, Rajoy)**: uso de material antidisturbios contra personas en el agua (15 muertos), devolución inmediata de 23 a Marruecos, negación de la relación causa-efecto y legalización posterior del «rechazo en frontera» (LO 4/2015). El Congreso no reprobó al ministro. Es el precedente de «uso de la fuerza contra quienes cruzan» y su coste: la sentencia de Sala del TEDH de 2017 (revocada en 2020) y la sentencia del Supremo de 2026 que limita ese rechazo, origen de la crisis actual.
+- **Ceuta 2021 (Sánchez)**: Ejército desplegado, devolución de más del 80% en 48 horas, cese de la ministra de Exteriores y, diez meses después, giro sobre el Sáhara. Precedente de «desescalada mediante concesión».
+
+### 11.3 El marco jurídico que limita a cualquier gobierno
+
+- **Constitución**: art. 8 (Fuerzas Armadas: integridad territorial), art. 116 (estados de alarma, excepción y sitio; el estado de sitio lo declara el Congreso por mayoría absoluta a propuesta del Gobierno), art. 102 (responsabilidad penal del presidente y los ministros: cuarta parte del Congreso = 88 diputados y mayoría absoluta = 176; Tribunal Supremo; no cabe indulto). Con 33 diputados, Vox no puede iniciar el 102; PP y Vox suman 170.
+- **Ley de Seguridad Nacional 36/2015**: situación de interés para la seguridad nacional y mando único, activados el 25 de agosto de 2026.
+- **Código de Fronteras Schengen** (Reglamento 2016/399): régimen especial de Ceuta y Melilla desde 1991; controles temporales interiores (arts. 25-28) como los que Italia aplica a España.
+- **LO 4/2000, disposición adicional décima** (rechazo en frontera, 2015) tal como la limita la STS 814/2026: no aplicable a quien llega a nado; procedimiento con abogado y asilo. El propio Supremo señala que «nada impediría aplicar la disposición adicional décima si se establecieran elementos de contención en el mar», fundamento de la barrera flotante y de la Instrucción 9/2026.
+- **CEDH, Protocolo 4, art. 4** (prohibición de expulsiones colectivas), con la doctrina N.D. y N.T. (2020): la conducta de quien fuerza la entrada en masa puede justificar el rechazo, pero no el uso de fuerza letal.
+- **Tratado de Amistad de 1991**: prevé RAN anuales y consultas; no contiene cláusula de suspensión unilateral, pero cualquier tratado puede denunciarse (Convención de Viena, art. 56). Argelia suspendió el suyo con España en 2022 y lo reactivó en 2026: el precedente muestra el coste (comercio, gas) más que la eficacia.
+
+### 11.4 Lectura
+
+Con los informes del 29 de julio en la mano, las opciones reales de cualquier gobierno eran las que se discutieron después: reforzar la frontera antes del 30 (lo que PP y Vox reprochan que no se hiciera), activar la Ley de Seguridad Nacional (se hizo el 25 de agosto), declarar el estado de alarma (Interior lo descartó por falta de «fundamento jurídico»), convocar a la embajadora (no se hizo) y, si se prueba la dirección marroquí, escalar diplomáticamente. Nada en el historial de PP y Vox en el Gobierno (Perejil, Tarajal) ni en sus propuestas de 2026 apunta a una respuesta militar contra Marruecos; sí apunta, en el caso del PP de 2014, a un uso de la fuerza contra las personas en la frontera cuyo coste jurídico es precisamente el que desencadenó la crisis de 2026.
 
 ## 12. Series estadísticas y multimedia disponibles
 

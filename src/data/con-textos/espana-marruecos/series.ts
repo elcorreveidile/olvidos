@@ -997,7 +997,7 @@ export const SERIES = [
     "sourceIds": [
       "src-wiki-crisis-2021",
       "src-elcano-pacto",
-      "src-wiki-2026",
+      "src-wiki-incidentes",
       "src-infobae-cinco-claves"
     ],
     "note": "Se registran todas las cifras; la oficial es 72.000."

@@ -2352,31 +2352,6 @@ export const QUOTES = [
     "unverified": true
   },
   {
-    "id": "q-moratinos-2007",
-    "date": "2007-11-07",
-    "dateLabel": "7 de noviembre de 2007",
-    "chamber": "otro",
-    "legislature": "",
-    "speaker": "Miguel Ángel Moratinos",
-    "party": "PSOE",
-    "bloc": "gobierno",
-    "role": "Ministro de Asuntos Exteriores",
-    "topics": [
-      "ceuta-melilla"
-    ],
-    "era": "democracia",
-    "text": "Los lazos entre Marruecos y España son sólidos. Espero que eso nos permita mantener una relación normal",
-    "context": "Traducción del inglés (Al Jazeera). La vicepresidenta De la Vega habló de «normalidad institucional».",
-    "sessionRef": "",
-    "pdfUrl": "",
-    "videoUrl": "",
-    "sourceIds": [
-      "src-aljazeera-2007",
-      "src-wiki-2007"
-    ],
-    "unverified": true
-  },
-  {
     "id": "q-aristegui-2007",
     "date": "2007-11-21",
     "dateLabel": "21 de noviembre de 2007",
@@ -2394,6 +2369,31 @@ export const QUOTES = [
     "text": "Su gestión del viaje fue torpe. [...] No se dieron cuenta de que el 6 de noviembre coincidía con el 32º aniversario de la marcha verde. [...] Usted dijo que habían negociado con las autoridades marroquíes y era falso, y eso irritó a las autoridades marroquíes. Ustedes han manejado torpemente esta crisis y la han convertido en una tormenta.",
     "context": "Pregunta oral a Moratinos tras la llamada a consultas del embajador Azziman.",
     "sessionRef": "DSCD VIII núm. 301, 21-11-2007, pp. 14974-14975",
+    "pdfUrl": "https://www.congreso.es/public_oficiales/L8/CONG/DS/PL/PL_301.PDF",
+    "videoUrl": "",
+    "sourceIds": [
+      "src-ds-l8pl301"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-moratinos-2007",
+    "date": "2007-11-21",
+    "dateLabel": "21 de noviembre de 2007",
+    "chamber": "congreso",
+    "legislature": "VIII",
+    "speaker": "Miguel Ángel Moratinos",
+    "party": "PSOE",
+    "bloc": "gobierno",
+    "role": "ministro de Asuntos Exteriores",
+    "topics": [
+      "ceuta-melilla",
+      "monarquia"
+    ],
+    "era": "democracia",
+    "text": "Les recuerdo que hubo quince meses, casi dos años, sin embajadores marroquí y español defendiendo los intereses durante el período del Partido Popular. [...] ¿cuándo Sus Majestades los Reyes han ido a Marruecos, a Ceuta y Melilla? [...] esta crisis es totalmente superficial, que no tiene ni pies ni cabeza. [...] Eso se demostrará con los hechos, cuando regrese el embajador de Marruecos a Madrid.",
+    "context": "",
+    "sessionRef": "DSCD VIII núm. 301, 21-11-2007, p. 14975",
     "pdfUrl": "https://www.congreso.es/public_oficiales/L8/CONG/DS/PL/PL_301.PDF",
     "videoUrl": "",
     "sourceIds": [

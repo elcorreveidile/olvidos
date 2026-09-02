@@ -28,7 +28,9 @@ async function main() {
     urls.set(s.url, s.id);
   }
   for (const q of QUOTES) {
-    if (!q.unverified && (!q.pdfUrl || !q.sessionRef)) problems.push(`cita ${q.id} verificada sin pdfUrl/sessionRef`);
+    const parliamentary = q.chamber !== "otro";
+    if (parliamentary && !q.unverified && (!q.pdfUrl || !q.sessionRef)) problems.push(`cita parlamentaria ${q.id} verificada sin pdfUrl/sessionRef`);
+    if (!parliamentary && !q.sourceIds?.length) problems.push(`cita no parlamentaria ${q.id} sin fuentes`);
     if (!q.text?.trim()) problems.push(`cita ${q.id} sin texto`);
   }
   for (const e of TIMELINE) if (!e.sourceIds?.length) problems.push(`evento ${e.id} sin fuentes`);

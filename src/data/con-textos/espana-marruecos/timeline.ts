@@ -1030,21 +1030,20 @@ export const TIMELINE = [
   {
     "id": "ev-1991-tratado",
     "date": "1991-07-04",
-    "dateLabel": "1991",
-    "title": "Tratado de Amistad, Buena Vecindad y Cooperación",
-    "summary": "Firmado por Juan Carlos I y Hassan II; marco de las RAN. Día exacto no verificado en fuente primaria.",
+    "dateLabel": "4 de julio de 1991",
+    "title": "Tratado de Amistad, Buena Vecindad y Cooperación (Rabat)",
+    "summary": "Firmado en Rabat por Felipe González y el primer ministro Azeddine Laraki; publicado en el BOE núm. 49 de 26 de febrero de 1993 y en vigor desde el 28 de enero de 1993. Su artículo 1 instituye la Reunión anual de Alto Nivel (RAN) entre jefes de Gobierno y encuentros semestrales de ministros de Exteriores.",
     "government": "izquierda",
     "governmentLabel": "Gobierno de Felipe González (PSOE)",
     "headOfState": "Juan Carlos I",
     "initiator": "ambos",
     "kinds": [
-      "diplomatica",
-      "monarquia"
+      "diplomatica"
     ],
     "era": "democracia",
     "sourceIds": [
-      "src-publico-asimetrica",
-      "src-wiki-relaciones"
+      "src-formato-boe-1991",
+      "src-eswiki-relaciones"
     ]
   },
   {
@@ -1069,20 +1068,25 @@ export const TIMELINE = [
   },
   {
     "id": "ev-2001-embajador",
-    "date": "2001-10-28",
-    "dateLabel": "Octubre de 2001",
-    "title": "Marruecos retira a su embajador en Madrid",
-    "summary": "Escalada desde la llegada de Mohamed VI (pesca, Sáhara, censo MINURSO). Día 28 según El Español; Wikipedia solo dice octubre.",
+    "date": "2001-10-27",
+    "dateLabel": "finales de octubre de 2001",
+    "title": "Marruecos llama a consultas a su embajador en Madrid",
+    "summary": "Tras la ruptura en abril de 2001 de la negociación del acuerdo pesquero UE-Marruecos (expirado en noviembre de 1999) y en plena tensión por el Sáhara (Rabat consideró 'la traición de Aznar' el apoyo español al censo de la MINURSO) y por las reclamaciones sobre Ceuta y Melilla, Marruecos retira a su embajador; los embajadores no regresan hasta enero de 2003. El día exacto (27 de octubre según la prensa) no se ha podido verificar en fuente primaria [NO VERIFICADO].",
     "government": "derecha",
-    "governmentLabel": "Gobierno de Aznar (PP)",
+    "governmentLabel": "Gobierno de José María Aznar (PP)",
     "headOfState": "Juan Carlos I",
     "initiator": "marruecos",
     "kinds": [
-      "diplomatica"
+      "diplomatica",
+      "geopolitica",
+      "territorial"
     ],
     "era": "democracia",
     "sourceIds": [
-      "src-wiki-perejil"
+      "src-eswiki-perejil",
+      "src-enwiki-relaciones",
+      "src-enwiki-fisheries",
+      "src-ds-l8pl301"
     ]
   },
   {
@@ -1121,7 +1125,7 @@ export const TIMELINE = [
     ],
     "era": "democracia",
     "sourceIds": [
-      "src-wiki-perejil",
+      "src-eswiki-perejil",
       "src-elespanol-perejil",
       "src-gpl-hassan"
     ]
@@ -1469,23 +1473,23 @@ export const TIMELINE = [
   {
     "id": "ev-2021-ceuta",
     "date": "2021-05-17",
-    "dateLabel": "17-18 de mayo de 2021",
-    "title": "Entrada masiva en Ceuta y espionaje Pegasus",
-    "summary": "Unas 8.000-10.000 personas entran a nado tras la hospitalización de Ghali; el 19/05 se extraen ~2,6 GB del móvil de Sánchez con Pegasus. La embajadora marroquí no volverá «mientras el líder del Polisario permanezca en territorio español».",
+    "dateLabel": "17-19 de mayo de 2021",
+    "title": "Crisis de Ceuta: Marruecos abre la frontera",
+    "summary": "Entre 6.000 y 10.000 personas (8.000 según Interior; 'más de ocho mil, nueve mil' según Marlaska) entran a nado o por los espigones del Tarajal y Benzú; el Gobierno despliega el Ejército, devuelve a la mayoría en 48 horas y la embajadora Karima Benyaich advierte de que 'hay actos que tienen consecuencias'. Sánchez viaja a Ceuta y Melilla; el 19 de mayo la crisis domina la sesión de control.",
     "government": "izquierda",
-    "governmentLabel": "Gobierno de Sánchez (PSOE-UP)",
+    "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Unidas Podemos)",
     "headOfState": "Felipe VI",
     "initiator": "marruecos",
     "kinds": [
       "migratoria",
-      "geopolitica"
+      "parlamentaria"
     ],
     "era": "democracia",
     "sourceIds": [
-      "src-wiki-crisis-2021",
-      "src-wiki-pegasus",
-      "src-theobjective-pegasus",
-      "src-elcano-pacto"
+      "src-ds-pl103",
+      "src-ds-co446",
+      "src-wiki-2021",
+      "src-elpais-carta"
     ]
   },
   {
@@ -1547,7 +1551,7 @@ export const TIMELINE = [
     ],
     "era": "democracia",
     "sourceIds": [
-      "src-wiki-relaciones",
+      "src-eswiki-relaciones",
       "src-elespanol-2022-gesto",
       "src-correogallego-argelia"
     ]
@@ -1943,7 +1947,7 @@ export const TIMELINE = [
     ],
     "era": "democracia",
     "sourceIds": [
-      "src-lamoncloa-argelia",
+      "src-moncloa-argel",
       "src-correogallego-argelia"
     ]
   },
@@ -2059,9 +2063,9 @@ export const TIMELINE = [
     ],
     "era": "democracia",
     "sourceIds": [
-      "src-wiki-2026",
+      "src-wiki-incidentes",
       "src-infobae-cinco-claves",
-      "src-elcano-ceuta"
+      "src-elcano"
     ]
   },
   {
@@ -2269,7 +2273,7 @@ export const TIMELINE = [
     "sourceIds": [
       "src-casareal-vivas",
       "src-moncloacom-7ago",
-      "src-publico-compromete"
+      "src-publico-felipe-ceuta"
     ]
   },
   {

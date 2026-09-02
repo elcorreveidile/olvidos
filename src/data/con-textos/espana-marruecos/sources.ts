@@ -115,14 +115,14 @@ export const SOURCES = [
   },
   {
     "id": "src-infobae-directo-1ago",
-    "title": "Última hora de la crisis migratoria de Ceuta (directo)",
+    "title": "Última hora de la crisis migratoria de Ceuta y el cruce masivo de la frontera, en directo",
     "author": "",
     "publisher": "Infobae",
     "date": "2026-08-01",
     "url": "https://www.infobae.com/espana/2026/08/01/ultima-hora-de-la-crisis-migratoria-de-ceuta-y-el-cruce-masivo-de-la-frontera-en-directo-nuevos-intentos-de-entrada-a-melilla-mantienen-en-alerta-a-las-fuerzas-de-seguridad/",
     "kind": "prensa",
     "accessed": "2026-09-02",
-    "note": "Rey 'preocupación e indignación'; Brunner; EEUU nivel 3"
+    "note": "67 fallecidos a las 20:42; Vivas 14:49"
   },
   {
     "id": "src-theobjective-carta-vdl",
@@ -368,7 +368,7 @@ export const SOURCES = [
   },
   {
     "id": "src-infobae-jabaroot",
-    "title": "Los hackers 'Jabaroot' cumplen su amenaza y filtran decenas de miles de nombres de la inteligencia marroquí",
+    "title": "Crisis de Ceuta: los hackers 'Jabaroot' cumplen su amenaza y filtran decenas de miles de nombres de la inteligencia marroquí",
     "author": "",
     "publisher": "Infobae",
     "date": "2026-08-24",
@@ -650,7 +650,7 @@ export const SOURCES = [
     "url": "https://www.elnacional.cat/es/internacional/que-pruebas-hay-campana-desinformacion-sobre-ceuta-sanchez-atribuye-rusia-israel_1688587_102.html",
     "kind": "prensa",
     "accessed": "2026-09-02",
-    "note": "Guillaume Mercier, portavoz UE"
+    "note": ""
   },
   {
     "id": "src-elindependiente-rusia",
@@ -1579,13 +1579,13 @@ export const SOURCES = [
   {
     "id": "src-wiki-protectorado",
     "title": "Protectorado español de Marruecos",
-    "author": "Wikipedia (es)",
-    "publisher": "Wikipedia",
+    "author": "",
+    "publisher": "Wikipedia (es)",
     "date": "",
     "url": "https://es.wikipedia.org/wiki/Protectorado_espa%C3%B1ol_de_Marruecos",
     "kind": "dato",
     "accessed": "2026-09-02",
-    "note": "Carta de 800 notables (1931); 34.000 hombres en 1936; Franco en Tetuán el 19-7-1936."
+    "note": ""
   },
   {
     "id": "src-wiki-wadras",
@@ -1883,17 +1883,6 @@ export const SOURCES = [
     "kind": "parlamentaria",
     "accessed": "2026-09-02",
     "note": "Proyecto de ley (BOC núm. 1462, pág. 35517), dictamen (BOC núm. 1469, pág. 35650), créditos de descolonización (BOC núm. 1474)."
-  },
-  {
-    "id": "src-congreso-serie",
-    "title": "Diario de Sesiones: Serie histórica (1808-1977)",
-    "author": "Congreso de los Diputados",
-    "publisher": "Congreso de los Diputados",
-    "date": "",
-    "url": "https://app.congreso.es/est_sesiones/",
-    "kind": "parlamentaria",
-    "accessed": "2026-09-02",
-    "note": "Legislaturas 099 (1931-33), 100 (1933-35), 101 (1936), 102-111 (Cortes Españolas 1943-1977). Los PDF se sirven en resource?id=<ruta>."
   },
   {
     "id": "src-congreso-iirep",
@@ -2283,13 +2272,13 @@ export const SOURCES = [
   {
     "id": "src-wiki-juancarlos",
     "title": "Juan Carlos I de España",
-    "author": "",
+    "author": "Wikipedia (es)",
     "publisher": "Wikipedia",
     "date": "",
     "url": "https://es.wikipedia.org/wiki/Juan_Carlos_I_de_Espa%C3%B1a",
-    "kind": "archivo",
+    "kind": "dato",
     "accessed": "2026-09-02",
-    "note": "El Aaiún 1975; telegrama 1979"
+    "note": "Jefatura interina 30-10-1975; El Aaiún 2-11-1975 (cita a Bárbulo, El País 27-10-2002)."
   },
   {
     "id": "src-wiki-capaz",
@@ -2900,12 +2889,12 @@ export const SOURCES = [
     "id": "src-wiki-2007",
     "title": "Conflicto diplomático entre España y Marruecos de 2007",
     "author": "",
-    "publisher": "Wikipedia",
-    "date": "",
+    "publisher": "Wikipedia (es)",
+    "date": "2026-09-02",
     "url": "https://es.wikipedia.org/wiki/Conflicto_diplom%C3%A1tico_entre_Espa%C3%B1a_y_Marruecos_de_2007",
-    "kind": "archivo",
+    "kind": "academica",
     "accessed": "2026-09-02",
-    "note": ""
+    "note": "Secundaria; cronología (2 nov. llamada a consultas de Azziman; 5-6 nov. visita; 3 y 7 ene. 2008 regreso)."
   },
   {
     "id": "src-elpais-2005-09-29a",
@@ -3601,17 +3590,6 @@ export const SOURCES = [
     "note": ""
   },
   {
-    "id": "src-wiki-relaciones",
-    "title": "Relaciones España-Marruecos",
-    "author": "",
-    "publisher": "Wikipedia",
-    "date": "",
-    "url": "https://es.wikipedia.org/wiki/Relaciones_Espa%C3%B1a-Marruecos",
-    "kind": "archivo",
-    "accessed": "2026-09-02",
-    "note": "Tratado 1991; carta 14/03/2022"
-  },
-  {
     "id": "src-infobae-donde-rey",
     "title": "Dónde estaba el rey cuando Ceuta le necesitaba: la encrucijada de Felipe, marcado por la furia de Mohamed y el augurio de Hassan",
     "author": "",
@@ -3619,17 +3597,6 @@ export const SOURCES = [
     "date": "2026-08-19",
     "url": "https://www.infobae.com/espana/2026/08/20/donde-estaba-el-rey-cuando-ceuta-le-necesitaba-la-encrucijada-de-felipe-marcado-por-la-furia-de-mohamed-y-el-augurio-de-hassan-pero-tambien-por-el-gobierno/",
     "kind": "prensa",
-    "accessed": "2026-09-02",
-    "note": ""
-  },
-  {
-    "id": "src-wiki-perejil",
-    "title": "Incidente de la isla de Perejil",
-    "author": "",
-    "publisher": "Wikipedia",
-    "date": "",
-    "url": "https://es.wikipedia.org/wiki/Incidente_de_la_isla_de_Perejil",
-    "kind": "archivo",
     "accessed": "2026-09-02",
     "note": ""
   },
@@ -3706,17 +3673,6 @@ export const SOURCES = [
     "publisher": "moncloa.com",
     "date": "2026-08-07",
     "url": "https://www.moncloa.com/2026/08/07/visita-del-rey-a-ceuta-refrendo-3411840/",
-    "kind": "prensa",
-    "accessed": "2026-09-02",
-    "note": ""
-  },
-  {
-    "id": "src-publico-compromete",
-    "title": "Felipe VI se compromete a visitar Ceuta por primera vez durante su reinado: ¿Por qué no lo ha hecho antes?",
-    "author": "",
-    "publisher": "Público",
-    "date": "2026-08-06",
-    "url": "https://www.publico.es/politica/felipe-vi-compromete-visitar-ceuta-primera-vez-reinado-hecho.html",
     "kind": "prensa",
     "accessed": "2026-09-02",
     "note": ""
@@ -4052,17 +4008,6 @@ export const SOURCES = [
     "note": ""
   },
   {
-    "id": "src-elcano-ceuta",
-    "title": "Ceuta, 28-31 de julio de 2026: la crisis migratoria express de la Unión Europea",
-    "author": "Rut Bermejo Casado",
-    "publisher": "Real Instituto Elcano",
-    "date": "2026-08-04",
-    "url": "https://www.realinstitutoelcano.org/comentarios/ceuta-28-31-de-julio-de-2026-la-crisis-migratoria-express-de-la-union-europea/",
-    "kind": "academica",
-    "accessed": "2026-09-02",
-    "note": "Fecha tomada de metadatos de la página"
-  },
-  {
     "id": "src-elcano-pacto",
     "title": "La aplicación del Pacto Europeo de Migración y Asilo: hacia políticas más restrictivas",
     "author": "Carmen González Enríquez",
@@ -4092,17 +4037,6 @@ export const SOURCES = [
     "date": "2026-08-05",
     "url": "https://www.athenalab.org/noticias/2026/08/05/la-crisis-de-ceuta-y-el-retorno-de-la-frontera-como-instrumento-claves-del-episodio-migratorio-en-espana-el-30-y-31-de-julio-de-2026/",
     "kind": "academica",
-    "accessed": "2026-09-02",
-    "note": ""
-  },
-  {
-    "id": "src-wiki-2026",
-    "title": "Incidentes fronterizos entre España y Marruecos de 2026",
-    "author": "",
-    "publisher": "Wikipedia",
-    "date": "",
-    "url": "https://es.wikipedia.org/wiki/Incidentes_fronterizos_entre_Espa%C3%B1a_y_Marruecos_de_2026",
-    "kind": "archivo",
     "accessed": "2026-09-02",
     "note": ""
   },
@@ -4589,17 +4523,6 @@ export const SOURCES = [
     "kind": "prensa",
     "accessed": "2026-09-02",
     "note": "Visita 28-31/10/2024"
-  },
-  {
-    "id": "src-lamoncloa-argelia",
-    "title": "España y Argelia acuerdan impulsar una nueva etapa en su relación bilateral con la celebración de la VIII Reunión de Alto Nivel en octubre",
-    "author": "",
-    "publisher": "La Moncloa",
-    "date": "2026-07-20",
-    "url": "https://www.lamoncloa.gob.es/presidente/actividades/paginas/2026/200726-sanchez-visita-argelia-.aspx",
-    "kind": "oficial",
-    "accessed": "2026-09-02",
-    "note": ""
   },
   {
     "id": "src-correogallego-argelia",

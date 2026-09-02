@@ -58,13 +58,37 @@ for (const f of files) {
         continue;
       }
       if (merged[k].has(row.id)) {
-        console.warn(`! ${f}: ${k} id duplicado "${row.id}" (se conserva el último)`);
+        console.warn(`! ${f}: ${k} id duplicado "${row.id}" (se conserva el primero)`);
         warnings++;
+        continue;
       }
       merged[k].set(row.id, row);
     }
   }
   console.log(`· ${f}: ${keys.map((k) => `${k}=${block[k]?.length ?? 0}`).join(" ")}`);
+}
+
+// Fuentes con la misma URL: se conserva la primera y se redirigen las referencias.
+const urlToId = new Map<string, string>();
+const alias = new Map<string, string>();
+for (const src of Array.from(merged.sources.values())) {
+  const url = String(src.url ?? "").trim().replace(/\/$/, "");
+  const kept = urlToId.get(url);
+  if (kept && kept !== src.id) {
+    alias.set(src.id, kept);
+    merged.sources.delete(src.id);
+    console.log(`= fuente "${src.id}" fusionada con "${kept}" (misma URL)`);
+  } else if (!kept) {
+    urlToId.set(url, src.id);
+  }
+}
+if (alias.size) {
+  for (const k of ["events", "quotes", "statements", "series", "videos"] as const) {
+    for (const row of Array.from(merged[k].values())) {
+      const ids = row.sourceIds as string[] | undefined;
+      if (ids) row.sourceIds = Array.from(new Set(ids.map((id) => alias.get(id) ?? id)));
+    }
+  }
 }
 
 // Referencias cruzadas de fuentes
