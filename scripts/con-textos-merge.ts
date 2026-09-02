@@ -88,7 +88,10 @@ const KIND_MAP: Record<string, string | null> = {
   diplomacia: "diplomatica", migracion: "migratoria", inmigracion: "migratoria", sahara: "territorial",
   gibraltar: "territorial", ceuta: "territorial", melilla: "territorial", ue: "europea", schengen: "europea",
   energia: "geopolitica", espionaje: "geopolitica", desinformacion: "informativa", injerencia: "informativa",
-  crisis: null, politica: null, historico: null,
+  politica: "politica", "politica-interior": "politica", "politica-exterior": "diplomatica", parlamento: "parlamentaria",
+  seguridad: "seguridad", policia: "seguridad", inteligencia: "seguridad", ciber: "seguridad", "crisis-fronteriza": "migratoria",
+  reivindicacion: "territorial", prensa: "informativa", humanitaria: "migratoria", social: "politica", economia: "geopolitica",
+  crisis: null, historico: null,
 };
 const ERA_MAP: Record<string, string> = {
   isabelina: "isabelina", sexenio: "sexenio", restauracion: "restauracion", "dictadura-primo": "dictadura-primo",

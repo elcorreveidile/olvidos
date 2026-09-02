@@ -21,7 +21,9 @@ export type EventKind =
   | "militar"
   | "geopolitica"
   | "europea"
-  | "informativa";
+  | "informativa"
+  | "politica"
+  | "seguridad";
 
 /** Cámara de origen de una cita parlamentaria. */
 export type Chamber = "congreso" | "senado" | "cortes-franquistas" | "otro";

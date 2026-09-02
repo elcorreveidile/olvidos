@@ -537,7 +537,7 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "espana",
     "kinds": [
-      "diplomatica"
+      "politica"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -556,7 +556,7 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "espana",
     "kinds": [
-      "diplomatica"
+      "seguridad"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -575,7 +575,7 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "espana",
     "kinds": [
-      "diplomatica"
+      "seguridad"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -635,6 +635,7 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "espana",
     "kinds": [
+      "politica",
       "diplomatica",
       "judicial"
     ],
@@ -682,6 +683,7 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "espana",
     "kinds": [
+      "seguridad",
       "diplomatica"
     ],
     "era": "democracia",
@@ -841,7 +843,7 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "espana",
     "kinds": [
-      "diplomatica"
+      "politica"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -879,7 +881,8 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "marruecos",
     "kinds": [
-      "diplomatica"
+      "diplomatica",
+      "territorial"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -898,7 +901,7 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "espana",
     "kinds": [
-      "diplomatica"
+      "politica"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -916,6 +919,7 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "espana",
     "kinds": [
+      "seguridad",
       "migratoria"
     ],
     "era": "democracia",
@@ -934,7 +938,7 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "marruecos",
     "kinds": [
-      "diplomatica"
+      "informativa"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -971,7 +975,8 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "marruecos",
     "kinds": [
-      "diplomatica"
+      "territorial",
+      "seguridad"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -1011,7 +1016,8 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "espana",
     "kinds": [
-      "diplomatica"
+      "politica",
+      "parlamentaria"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -1030,7 +1036,7 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "espana",
     "kinds": [
-      "diplomatica"
+      "parlamentaria"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -1051,7 +1057,8 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "indeterminado",
     "kinds": [
-      "diplomatica"
+      "seguridad",
+      "parlamentaria"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -1071,7 +1078,7 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "espana",
     "kinds": [
-      "diplomatica"
+      "parlamentaria"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -1111,7 +1118,7 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "espana",
     "kinds": [
-      "diplomatica"
+      "politica"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -1129,6 +1136,7 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "espana",
     "kinds": [
+      "politica",
       "diplomatica",
       "informativa"
     ],
@@ -1220,6 +1228,7 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "espana",
     "kinds": [
+      "politica",
       "judicial"
     ],
     "era": "democracia",
