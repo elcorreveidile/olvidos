@@ -320,6 +320,29 @@
     padding-left: 1em;
   }
 
+  /* Tablas de datos en la prosa de los especiales */
+  .prose-editorial table.con-textos-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-libre-franklin), sans-serif;
+    font-size: 0.78rem;
+    line-height: 1.3;
+    margin: 1.5em 0;
+  }
+
+  .prose-editorial table.con-textos-tabla th,
+  .prose-editorial table.con-textos-tabla td {
+    border-bottom: 1px solid rgba(161, 182, 196, 0.5);
+    padding: 0.4em 0.5em;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .prose-editorial table.con-textos-tabla th {
+    font-weight: 700;
+    border-bottom: 2px solid var(--color-azul);
+  }
+
   /* Llamadas a fuentes ([[cite:…]] → <a class="cite-ref"><sup>n</sup></a>) */
   .prose-editorial a.cite-ref {
     text-decoration: none;
