@@ -6,11 +6,12 @@ import type { ComponentType } from "react";
 import type { IslaName } from "@/lib/con-textos/islas-def";
 import { Figure } from "./Figure";
 import { Sources } from "./Sources";
-import { Pendiente } from "./Pendiente";
 import { Chart } from "./charts/Chart";
 import { Timeline } from "./Timeline";
 import { Hemeroteca } from "./Hemeroteca";
 import { StatementComparer } from "./StatementComparer";
+import { LiteVideo } from "./LiteVideo";
+import { InteractiveMap } from "./InteractiveMap";
 
 type IslaComponent = ComponentType<{ data: any; name: string }>;
 
@@ -19,8 +20,8 @@ export const COMPONENTS = {
   hemeroteca: Hemeroteca,
   comparador: StatementComparer,
   grafico: Chart,
-  mapa: Pendiente,
-  video: Pendiente,
+  mapa: InteractiveMap,
+  video: LiteVideo,
   figura: Figure,
   fuentes: Sources,
 } satisfies Record<IslaName, IslaComponent>;
