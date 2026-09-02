@@ -36,7 +36,7 @@ function decodeAttr(value: string): string {
 /** Parsea `clave="valor" otra="valor"` a un objeto de props. */
 export function parseIslaAttrs(attrs: string): IslaProps {
   const props: IslaProps = {};
-  for (const m of attrs.matchAll(ATTR_RE)) {
+  for (const m of Array.from(attrs.matchAll(ATTR_RE))) {
     props[m[1].toLowerCase()] = decodeAttr(m[2]).trim();
   }
   return props;
@@ -49,7 +49,7 @@ export function splitIslas(html: string): Block[] {
   let last = 0;
   let index = 0;
   const re = new RegExp(ISLA_RE.source, "gi");
-  for (const m of src.matchAll(re)) {
+  for (const m of Array.from(src.matchAll(re))) {
     const start = m.index ?? 0;
     const before = src.slice(last, start).trim();
     if (before) blocks.push({ type: "html", html: before });
