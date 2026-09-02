@@ -30,6 +30,14 @@ const nextConfig = {
     ],
     minimumCacheTTL: 86400,
   },
+  experimental: {
+    // La vista previa de los especiales «Con-textos» lee los ficheros HTML
+    // del repositorio en tiempo de ejecución: hay que incluirlos en el
+    // despliegue serverless.
+    outputFileTracingIncludes: {
+      "/admin/vista-previa/con-textos/[especial]": ["./src/content/con-textos/**/*"],
+    },
+  },
   eslint: {
     // Ignorar errores de ESLint durante el build
     ignoreDuringBuilds: true,
