@@ -214,15 +214,68 @@ Las guerras del Rif las gestionan gobiernos de los dos partidos del turno; la es
 
 ## 5. 1975-2004: Transición, Tratado de Amistad y Perejil
 
-*(Pendiente de fusión del bloque 04.)*
+Fuentes y URL en `bloques/04-democracia-1977-2025.md` (§1-2). Todas las citas parlamentarias de este capítulo se han leído en el PDF del Diario de Sesiones.
+
+### 5.1 Transición y años de González
+
+- **14-11-1976, Tinduf**: Felipe González, en la oposición, visita los campamentos saharauis y promete apoyo; existe vídeo no oficial; la frase «hasta la victoria final» **[NO VERIFICADO]**. En 1985, tras el ataque del Polisario al patrullero *Tagomago*, Fernández Ordóñez expulsa de España a los miembros del Frente.
+- **LO 7/1985 de Extranjería** (Gobierno González) deja sin documentación a miles de musulmanes de Ceuta y Melilla; Aomar Dudú lidera las protestas de 1985-86.
+- **Tratado de Amistad, Buena Vecindad y Cooperación (Rabat, 4-7-1991; BOE-A-1993-5422)**: firmado por González y Laraki; art. 1: Reunión de Alto Nivel anual. Sólo hubo doce RAN entre 1993 y 2023 y ninguna entre 2015 y 2023. Es el tratado que Mohamed VI invocará contra la visita real de 2007 y que Vox pide suspender en 2026.
+- **Estatutos de Autonomía de Ceuta y Melilla (LO 1/1995 y 2/1995)**, Gobierno González.
+
+### 5.2 Aznar (PP): 2001 y Perejil
+
+- **Octubre de 2001**: Marruecos retira a su embajador (censo de la MINURSO, «la traición de Aznar»; ruptura de la negociación pesquera; Ceuta y Melilla); no regresan hasta enero de 2003. Moratinos, 21-11-2007: «hubo quince meses, casi dos años, sin embajadores marroquí y español […] durante el período del Partido Popular» (DSCD VIII 301, p. 14975). **Quién inicia**: Marruecos.
+- **Perejil (11-21 de julio de 2002)**. Doce gendarmes ocupan el islote el 11-7; Operación Romeo-Sierra a las 06:17 del 17-7; mediación de Powell (20-7); Palacio y Benaissa firman en Rabat (21-7). **Quién inicia**: Marruecos; España responde militarmente. Corrección: compareció **Ana Palacio** (ministra desde el 9-7), no Piqué; Aznar no compareció (habló en el debate del estado de la Nación), como recordará Sánchez el 8-6-2022 (DSCD XIV 192, p. 48).
+  - Aznar (15-7-2002, DSCD VII 179, p. 8967): «Es imprescindible volver al statu quo anterior a la ocupación de la isla. […] España no aceptará hechos consumados.» Zapatero (p. 8975): «cuenta con nosotros para defender los intereses de nuestro país […] con plena lealtad a España». Anasagasti (PNV, p. 9020): «la responsabilidad histórica que tiene España en su antigua colonia del Sahara, en la que usted no está haciendo nada en serio».
+  - Resolución conjunta (16-7-2002, DSCD 180, pp. 9087-9088): **334 a favor, 0 en contra, 4 abstenciones**. Lasagabaster (EA): apoyo «a una solución por la vía diplomática, no un apoyo a iniciativas militares».
+  - Comisiones de Exteriores y Defensa (17-7-2002, DSCD CO 543): Palacio: «no estamos dispuestos a ser colocados ante hechos consumados» (p. 17347-17348); Trillo: «estábamos, pues, ante un claro supuesto de legítima defensa» (p. 17349); Zapatero: «un asunto de Estado que exige una política de Estado» (p. 17357); Azpiazu (PNV): «ayer fuimos de alguna manera utilizados para bendecirla» (pp. 17354-17355); Alcaraz (IU): «el Reino de Marruecos es una dictadura que no respeta los derechos humanos» (p. 17355).
+- **Lectura**: el único uso de la fuerza contra Marruecos en democracia lo ordena un gobierno del PP, en respuesta a una ocupación marroquí, con la unanimidad del Congreso y matices de PNV, EA e IU. La Corona no interviene (capítulo 8).
 
 ## 6. 2004-2018: la visita real de 2007, las vallas, El Tarajal y el rechazo en frontera
 
-*(Pendiente de fusión del bloque 04.)*
+Fuentes y URL en `bloques/04-democracia-1977-2025.md` (§3-4).
+
+### 6.1 Zapatero (PSOE): vallas de 2005 y visita de los Reyes (2007)
+
+- **29-9 a 6-10-2005**: cinco muertos en la valla de Ceuta (al menos tres tiroteados desde Marruecos según las autopsias) y seis en Melilla «al repeler Marruecos a tiros otro salto masivo»; «al menos 14 desde agosto» (El País). Zapatero despliega 480 soldados de Regulares y La Legión bajo mando de la Guardia Civil; Marruecos, 1.600 agentes. **Quién inicia**: terceros (migrantes subsaharianos); respuesta española militar y marroquí armada. Concertinas retiradas en 2007 y reinstaladas por Fernández Díaz en 2013.
+- **Visita de los Reyes a Ceuta y Melilla (5-6-11-2007)**: cronología y comunicado de Mohamed VI en el capítulo 8 (El País, 6-11-2007: «flagrante falta de respeto por parte del Gobierno español de la letra y el espíritu del Tratado de Amistad»). Juan Carlos I en Melilla: «Como Rey que se debe a todos los españoles, tenía contraído el compromiso de visitar Melilla». Congreso, 21-11-2007 (DSCD VIII 301): De Arístegui (PP): «su gestión del viaje fue torpe […] No se dieron cuenta de que el 6 de noviembre coincidía con el 32º aniversario de la marcha verde» (pp. 14974-14975); Moratinos: «esta crisis es totalmente superficial, que no tiene ni pies ni cabeza» (p. 14975). **Quién inicia**: España (visita); Marruecos escala. **Lectura**: el gesto más «territorial» de la democracia lo refrenda un gobierno socialista y el PP lo critica por torpe, no por hacerlo.
+
+### 6.2 Rajoy (PP): El Tarajal (2014) y la LO 4/2015
+
+- **6-2-2014**: 200-300 personas intentan entrar a nado; la Guardia Civil dispara 145 pelotas de goma y 5 botes de humo (denuncia de las ONG); 14-15 muertos; 23 devueltos desde la playa. **Quién inicia**: terceros; España (uso de la fuerza).
+- Comisión de Interior, 13-2-2014 (DSCD X CO 500): Fernández Díaz: «en ningún momento el objetivo del uso de los medios en la mar fue alcanzar a ninguno de los inmigrantes sino hacer visible una barrera disuasoria» (p. 5); «No estamos, por tanto, ante un supuesto de la denominada devolución en caliente, que sería irregular […] sin que haya relación causa-efecto entre el empleo de los medios antidisturbios […] y dichos fallecimientos» (pp. 7-8). Trevín (PSOE): «no se responde con material antidisturbios» (p. 18); Olabarría (PNV): «No existe la devolución en caliente. Existe la persecución en caliente» (p. 23); Iñarritu (Amaiur): «es la cuarta versión oficial» (p. 35). Pleno 19-2-2014 (DSCD 178): Trevín: «Fallecieron quince seres humanos que merecen respeto, dignidad y memoria» (p. 53); Escobar (PP): «El control de la inmigración irregular es y debe ser política de Estado» (p. 54). Judicial: archivo (2015), reapertura y 16 guardias procesados (2017), archivo definitivo confirmado por el Supremo (2022).
+- **LO 4/2015 (BOE 31-3-2015)**, disposición adicional décima de la LO 4/2000: «Los extranjeros que sean detectados en la línea fronteriza […] mientras intentan superar los elementos de contención fronterizos […] podrán ser rechazados a fin de impedir su entrada ilegal en España». Es la norma que el Supremo limita en 2026 a quien supera «elementos de contención físicos», origen inmediato de la crisis de Ceuta (capítulo 1).
+- **TEDH, N.D. y N.T. c. España**: Sala (3-10-2017) condena; Gran Sala (13-2-2020) absuelve por la «conducta» de los demandantes.
+- 2018: Marruecos cierra unilateralmente la aduana comercial de Melilla (agosto). **Quién inicia**: Marruecos.
+- **Lectura**: bajo el PP, la confrontación no es con Marruecos sino con los migrantes: fuerza en la playa y legalización del rechazo en frontera; Rabat, en cambio, es un socio con el que se coordina la devolución.
 
 ## 7. 2018-2025: Ceuta 2021, el giro sobre el Sáhara y Melilla 2022
 
-*(Pendiente de fusión del bloque 04.)*
+Fuentes y URL en `bloques/04-democracia-1977-2025.md` (§5).
+
+### 7.1 Ghali y Ceuta (abril-mayo de 2021)
+
+- 18-4-2021: Brahim Ghali ingresa en Logroño; Rabat convoca al embajador y «deplora» la decisión. 17-19 de mayo: 8.000 entradas según Interior (6.000-10.000 según prensa), unos 1.500 menores, Ejército desplegado; Benyaich: «Hay actos que tienen consecuencias y se tienen que asumir». **Quién inicia**: España (Ghali, sin informar a Rabat); Marruecos (apertura de la frontera).
+- Pleno, 19-5-2021 (DSCD XIV 103; sesión de control, no comparecencia): Casado (PP): «la peor crisis diplomática con Marruecos de nuestra historia democrática […] Es la crónica de una crisis anunciada» (p. 5); Sánchez: «España está sufriendo un desafío de un tercer país, que es Marruecos, y queremos saber de qué lado está el principal partido de la oposición» (p. 6); Espinosa de los Monteros (Vox): «una auténtica invasión para tomar la ciudad de Ceuta» (p. 11); Iceta: «un ataque a nuestras fronteras» (p. 31); Vehí (CUP): «Salvar niños o reprimir niños» (p. 30). Moción de Vox sobre Interior (20-5-2021): 153-195-1, rechazada. Comisión de Interior, 25-6-2021 (DSCD CO 446): Marlaska: «no fue una crisis migratoria, que fue una crisis fronteriza […] nuestro país acaba donde acaban Ceuta y Melilla» (p. 14); «en menos de cuarenta y ocho horas habían sido devueltos más del 80%» (p. 15). Cese de González Laya (10/12-7-2021); Marruecos habría exigido su destitución según un informe del CNI.
+- **Lectura**: Vox estrena aquí el marco de «invasión» que reaparece en 2026; el PP habla de crisis «anunciada»; el Gobierno reclama lealtad a la oposición.
+
+### 7.2 La carta a Mohamed VI (marzo de 2022)
+
+- Texto (El País, 23-3-2022): «España considera que la propuesta marroquí de autonomía presentada en 2007 como la base más seria, creíble y realista para la resolución de este diferendo»; «construir una nueva relación […] y la abstención de toda acción unilateral». La hace pública el Gabinete Real marroquí el 18-3. Argelia retira a su embajador el 19-3 y suspende su Tratado de Amistad el 8-6-2022. **Quién inicia**: España (Gobierno).
+- Pleno, 30-3-2022 (DSCD XIV 174): Sánchez recuerda que en las RAN de 2012 y 2015 «bajo la Presidencia de Mariano Rajoy […] desaparecía cualquier referencia al derecho a la autodeterminación» (p. 19); Gamarra (PP): «¿Le ha dado Marruecos alguna garantía sobre Ceuta, Melilla y Canarias?» (p. 24); Abascal: «La carta que usted ha enviado es un puñetero insulto a este Parlamento […] ¡Claro que hay un problema con Marruecos! Lo han provocado ustedes […] acogiendo aquí a uno de los jefes del Frente Polisario» (pp. 25-26); Echenique (UP): «un régimen autocrático» (p. 29); Rufián: «canjea principios por más control marroquí en la valla» (p. 32); Esteban (PNV): «Marruecos ha utilizado las crisis migratorias a su antojo, incluso ha presionado y ha conseguido que se cese a una ministra» (p. 43); Aizpurua (Bildu): «una triple crisis» (p. 46).
+- PNL sobre el Sáhara, 7-4-2022: **168 a favor, 118 en contra, 61 abstenciones**, aprobada con el PSOE solo (PP a favor; Vox y Cs abstención). Ese día Sánchez y Mohamed VI firman en Rabat la declaración conjunta («una nueva página»; aduanas, conexiones marítimas, espacio aéreo).
+- **Lectura**: es la única vez en democracia en que un gobierno pierde a todo el arco parlamentario, derecha e izquierda, por su política marroquí; la derecha lo reprocha por ceder, la izquierda por abandonar al Sáhara.
+
+### 7.3 Melilla, 24 de junio de 2022
+
+- Muertos: 23 (Marruecos), 27-29 (AMDH), «al menos 37» y hasta 77 desaparecidos (Caminando Fronteras), «podría superar los 100» (Amnistía); 133 entradas, 470 rechazos. Defensor del Pueblo (14-10-2022): «se efectuó un rechazo en frontera de 470 personas sin contemplarse las previsiones legales»; entregas «en dos minutos» hacen «imposible sostener que se han realizado rechazos en frontera conforme a las mínimas exigencias legales». Bachelet pide investigar. Fiscalía: archivo (23-12-2022).
+- Congreso: Iñarritu: «¿Dónde está el señor Grande-Marlaska?» (DSCD 197, p. 54); Bermúdez de Castro (PP): «bien resuelto» es «una afirmación tan desafortunada como carente de humanidad» (DSCD 198, pp. 15-16); Marlaska: «un Estado de derecho no puede aceptar en modo alguno ataques violentos a su frontera» (p. 16); Barandiaran (PNV): «la mayor tragedia ocurrida jamás en una frontera europea externa» (p. 17); Rufián coloca tres balas en la tribuna (DSCD 200, p. 60); Abascal: «Buenas vallas hacen buenos vecinos» (p. 40). La frase de Sánchez «bien resuelto» sólo consta vía citas parlamentarias **[NO VERIFICADO en transcripción oficial]**.
+- **Lectura**: la izquierda se divide (Bildu, ERC, CUP, Podemos hablan de masacre; el Gobierno defiende la actuación) y la derecha critica la frase, no la política.
+
+### 7.4 2023-2025
+
+RAN de febrero de 2023 (Rabat menciona la soberanía marroquí sobre el Sáhara y omite la española sobre Ceuta y Melilla; protesta española de mayo de 2023 por una nota que las llama «ciudades marroquíes»); Mundial 2030; conversaciones sobre el espacio aéreo del Sáhara (2024); aduanas comerciales abiertas en enero de 2025 y cerradas a los seis meses según la prensa **[NO VERIFICADO: sólo titulares]**; XIII RAN en Madrid (4-12-2025). La visita de Estado de Felipe VI a Marruecos y su viaje a Ceuta seguían pendientes al cierre de 2025.
 
 ## 8. La monarquía
 

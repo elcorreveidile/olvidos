@@ -91,6 +91,11 @@ const KIND_MAP: Record<string, string | null> = {
   politica: "politica", "politica-interior": "politica", "politica-exterior": "diplomatica", parlamento: "parlamentaria",
   seguridad: "seguridad", policia: "seguridad", inteligencia: "seguridad", ciber: "seguridad", "crisis-fronteriza": "migratoria",
   reivindicacion: "territorial", prensa: "informativa", humanitaria: "migratoria", social: "politica", economia: "geopolitica",
+  tratado: "diplomatica", acuerdo: "diplomatica", incidente: "territorial", protesta: "politica", justicia: "judicial",
+  golpe: "politica", paz: "diplomatica", nacionalismo: "politica", reforma: "politica", colonial: "territorial",
+  descolonizacion: "territorial", administracion: "politica", cesion: "territorial", "guerra-civil": "guerra", sublevacion: "militar",
+  independencia: "territorial", onu: "diplomatica", ejercito: "militar", represion: "seguridad", pesca: "geopolitica",
+  legislacion: "politica", ley: "politica", ddhh: "judicial", "derechos-humanos": "judicial", votacion: "parlamentaria",
   crisis: null, historico: null,
 };
 const ERA_MAP: Record<string, string> = {

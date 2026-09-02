@@ -14,6 +14,7 @@ export const TIMELINE = [
     "headOfState": "Isabel II",
     "initiator": "marruecos",
     "kinds": [
+      "territorial",
       "diplomatica"
     ],
     "era": "isabelina",
@@ -113,6 +114,7 @@ export const TIMELINE = [
     "headOfState": "Alfonso XIII (regencia de María Cristina)",
     "initiator": "espana",
     "kinds": [
+      "diplomatica",
       "parlamentaria"
     ],
     "era": "restauracion",
@@ -172,7 +174,8 @@ export const TIMELINE = [
     "headOfState": "Alfonso XIII",
     "initiator": "ambos",
     "kinds": [
-      "guerra"
+      "guerra",
+      "politica"
     ],
     "era": "restauracion",
     "sourceIds": [
@@ -253,6 +256,7 @@ export const TIMELINE = [
     "headOfState": "Alfonso XIII",
     "initiator": "ambos",
     "kinds": [
+      "diplomatica",
       "parlamentaria"
     ],
     "era": "restauracion",
@@ -315,7 +319,8 @@ export const TIMELINE = [
     "headOfState": "Alfonso XIII",
     "initiator": "espana",
     "kinds": [
-      "parlamentaria"
+      "parlamentaria",
+      "judicial"
     ],
     "era": "restauracion",
     "sourceIds": [
@@ -388,7 +393,7 @@ export const TIMELINE = [
     "headOfState": "Alfonso XIII",
     "initiator": "espana",
     "kinds": [
-      "diplomatica"
+      "politica"
     ],
     "era": "dictadura-primo",
     "sourceIds": [
@@ -428,7 +433,8 @@ export const TIMELINE = [
     "headOfState": "Alfonso XIII",
     "initiator": "ambos",
     "kinds": [
-      "guerra"
+      "guerra",
+      "diplomatica"
     ],
     "era": "dictadura-primo",
     "sourceIds": [
@@ -485,7 +491,8 @@ export const TIMELINE = [
     "headOfState": "Niceto Alcalá-Zamora (presidente del Gobierno provisional)",
     "initiator": "espana",
     "kinds": [
-      "militar"
+      "militar",
+      "politica"
     ],
     "era": "republica",
     "sourceIds": [
@@ -504,7 +511,8 @@ export const TIMELINE = [
     "headOfState": "Niceto Alcalá-Zamora (presidente de la República)",
     "initiator": "espana",
     "kinds": [
-      "parlamentaria"
+      "parlamentaria",
+      "territorial"
     ],
     "era": "republica",
     "sourceIds": [
@@ -523,6 +531,7 @@ export const TIMELINE = [
     "headOfState": "Niceto Alcalá-Zamora",
     "initiator": "espana",
     "kinds": [
+      "territorial",
       "militar"
     ],
     "era": "republica",
@@ -544,7 +553,8 @@ export const TIMELINE = [
     "headOfState": "Niceto Alcalá-Zamora",
     "initiator": "espana",
     "kinds": [
-      "parlamentaria"
+      "parlamentaria",
+      "territorial"
     ],
     "era": "republica",
     "sourceIds": [
@@ -608,7 +618,8 @@ export const TIMELINE = [
     "headOfState": "Francisco Franco",
     "initiator": "ambos",
     "kinds": [
-      "diplomatica"
+      "diplomatica",
+      "territorial"
     ],
     "era": "franquismo",
     "sourceIds": [
@@ -651,7 +662,8 @@ export const TIMELINE = [
     "headOfState": "Francisco Franco",
     "initiator": "espana",
     "kinds": [
-      "diplomatica"
+      "politica",
+      "territorial"
     ],
     "era": "franquismo",
     "sourceIds": [
@@ -671,7 +683,8 @@ export const TIMELINE = [
     "headOfState": "Francisco Franco",
     "initiator": "ambos",
     "kinds": [
-      "diplomatica"
+      "diplomatica",
+      "territorial"
     ],
     "era": "franquismo",
     "sourceIds": [
@@ -691,7 +704,7 @@ export const TIMELINE = [
     "headOfState": "Francisco Franco",
     "initiator": "espana",
     "kinds": [
-      "diplomatica"
+      "politica"
     ],
     "era": "franquismo",
     "sourceIds": [
@@ -711,6 +724,7 @@ export const TIMELINE = [
     "initiator": "ambos",
     "kinds": [
       "diplomatica",
+      "territorial",
       "parlamentaria"
     ],
     "era": "franquismo",
@@ -733,6 +747,7 @@ export const TIMELINE = [
     "headOfState": "Francisco Franco",
     "initiator": "otros",
     "kinds": [
+      "politica",
       "geopolitica"
     ],
     "era": "franquismo",
@@ -754,6 +769,7 @@ export const TIMELINE = [
     "headOfState": "Francisco Franco",
     "initiator": "espana",
     "kinds": [
+      "territorial",
       "diplomatica"
     ],
     "era": "franquismo",
@@ -768,7 +784,7 @@ export const TIMELINE = [
     "date": "1975-10-16",
     "dateLabel": "16 de octubre de 1975",
     "title": "Dictamen de la CIJ y anuncio de la Marcha Verde",
-    "summary": "La Corte concluye que no había vínculos de soberanía territorial entre el Sáhara y Marruecos o Mauritania (votación 14-2 y 15-1) y que procede la autodeterminación. La misma noche Hassan II anuncia una marcha de 350.000 civiles. Franco preside su último Consejo de Ministros el 17; el 18 se ordena preparar la evacuación.",
+    "summary": "La Corte concluye que no había vínculos de soberanía territorial entre el Sáhara y Marruecos o Mauritania (14-2 respecto a Marruecos; para Mauritania el resumen oficial consultado indica 9-5 y otras fuentes 15-1 [contrastar]) y que procede la autodeterminación. La misma noche Hassan II anuncia una marcha de 350.000 civiles. Franco preside su último Consejo de Ministros el 17; el 18 se ordena preparar la evacuación.",
     "government": "dictadura",
     "governmentLabel": "Gobierno de Arias Navarro",
     "headOfState": "Francisco Franco",
@@ -878,7 +894,8 @@ export const TIMELINE = [
     "headOfState": "Juan Carlos de Borbón (interino)",
     "initiator": "ambos",
     "kinds": [
-      "diplomatica"
+      "diplomatica",
+      "territorial"
     ],
     "era": "franquismo",
     "sourceIds": [
@@ -899,7 +916,8 @@ export const TIMELINE = [
     "headOfState": "Juan Carlos de Borbón (interino); Franco muere el 20-11",
     "initiator": "espana",
     "kinds": [
-      "parlamentaria"
+      "parlamentaria",
+      "territorial"
     ],
     "era": "franquismo",
     "sourceIds": [
@@ -920,6 +938,7 @@ export const TIMELINE = [
     "headOfState": "Juan Carlos I",
     "initiator": "espana",
     "kinds": [
+      "territorial",
       "militar"
     ],
     "era": "transicion",
@@ -960,6 +979,7 @@ export const TIMELINE = [
     "headOfState": "Juan Carlos I",
     "initiator": "ambos",
     "kinds": [
+      "geopolitica",
       "diplomatica"
     ],
     "era": "democracia",
@@ -1037,7 +1057,7 @@ export const TIMELINE = [
     "headOfState": "Juan Carlos I",
     "initiator": "espana",
     "kinds": [
-      "diplomatica"
+      "politica"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -1275,7 +1295,7 @@ export const TIMELINE = [
     "headOfState": "Juan Carlos I",
     "initiator": "espana",
     "kinds": [
-      "diplomatica"
+      "politica"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -1334,7 +1354,7 @@ export const TIMELINE = [
     "headOfState": "Juan Carlos I",
     "initiator": "espana",
     "kinds": [
-      "diplomatica"
+      "politica"
     ],
     "era": "democracia",
     "sourceIds": [
@@ -1391,7 +1411,7 @@ export const TIMELINE = [
     "headOfState": "Felipe VI",
     "initiator": "otros",
     "kinds": [
-      "diplomatica"
+      "judicial"
     ],
     "era": "democracia",
     "sourceIds": [
