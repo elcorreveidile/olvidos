@@ -53,6 +53,9 @@ export default function EditarArticuloPage() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [content, setContent] = useState("");
   const [initialLoading, setInitialLoading] = useState(true);
+  // Artículos generados desde el repositorio (especiales «Con-textos»): llevan
+  // marcadores <!--isla:…--> / <!--paso:…--> que Tiptap descartaría.
+  const isGenerated = /<!--\s*(isla|paso):/i.test(content);
 
   const {
     register,
@@ -328,11 +331,28 @@ export default function EditarArticuloPage() {
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
           <h2 className="text-xl font-semibold text-tinta mb-4">Contenido</h2>
 
-          <RichTextEditor
-            value={content}
-            onChange={setContent}
-            placeholder="Escribe el contenido del artículo..."
-          />
+          {isGenerated ? (
+            <div>
+              <p className="mb-3 rounded-md border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900">
+                Este artículo se genera desde el repositorio (especial «Con-textos»): el
+                editor visual borraría sus marcadores de islas y pasos. Edita los
+                ficheros de <code>src/content/con-textos</code> y vuelve a ejecutar el
+                script de publicación. Aquí puedes cambiar el resto de campos y el estado.
+              </p>
+              <textarea
+                readOnly
+                value={content}
+                rows={18}
+                className="w-full rounded-md border border-gray-200 bg-gray-50 p-3 font-mono text-xs text-gray-700"
+              />
+            </div>
+          ) : (
+            <RichTextEditor
+              value={content}
+              onChange={setContent}
+              placeholder="Escribe el contenido del artículo..."
+            />
+          )}
 
           <input
             type="hidden"
