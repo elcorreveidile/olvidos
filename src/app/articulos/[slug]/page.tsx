@@ -9,6 +9,9 @@ import { SITE_URL, SITE_NAME, ORGANIZATION } from "@/lib/site";
 import { splitPasos, hasPasos } from "@/lib/pasos";
 import { PasosNav } from "@/components/content/PasosNav";
 import pasosTitles from "@/data/pasos-titles.json";
+import { ArticleBody } from "@/components/content/ArticleBody";
+import { ESPECIALES, getEspecialBySlug } from "@/lib/con-textos/especiales";
+import { buildIslaContext } from "@/lib/con-textos/context";
 
 interface ArticlePageProps {
   params: { slug: string };
@@ -59,6 +62,22 @@ export default async function ArticlePage({
     ? Math.min(Math.max(1, Number(searchParams?.paso) || 1), pasos.length)
     : 1;
   const contentHtml = pieza ? pasos[currentPaso - 1].html : article.content;
+
+  // Especiales «Con-textos»: el cuerpo lleva marcadores de islas interactivas
+  // que se resuelven en servidor con los datos tipados del especial.
+  const especialId = getEspecialBySlug(article.slug);
+  const especialData = especialId ? ESPECIALES[especialId].data() : undefined;
+  const islaCtx = especialId
+    ? buildIslaContext({
+        especial: especialId,
+        slug: article.slug,
+        basePath: `/articulos/${article.slug}`,
+        mode: "paso",
+        pasos,
+        pasoN: currentPaso,
+        html: contentHtml,
+      })
+    : undefined;
 
   // Muro para artículos "solo socios": el cuerpo NUNCA debe llegar al HTML de
   // quien no tiene acceso. Solo se llama a auth() cuando el artículo es
@@ -147,7 +166,7 @@ export default async function ArticlePage({
       )}
 
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_300px]">
-        <article className="min-w-0">
+        <article className="article-column min-w-0">
           {/* Cabecera del artículo */}
           <header className="mb-8 border-b-2 border-tinta pb-8">
             {category && (
@@ -224,10 +243,7 @@ export default async function ArticlePage({
 
           {/* Contenido (oculto si es solo para socios y no hay acceso) */}
           {showFullContent && (
-            <div
-              className="prose-editorial"
-              dangerouslySetInnerHTML={{ __html: contentHtml }}
-            />
+            <ArticleBody html={contentHtml} ctx={islaCtx} especialData={especialData} />
           )}
 
           {/* Navegación entre pasos */}

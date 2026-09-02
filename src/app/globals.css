@@ -224,6 +224,61 @@
     background-color: transparent;
     padding: 0;
   }
+
+  /* ---------------------------------------------------------------
+     Especiales «Con-textos»: islas interactivas intercaladas en el
+     texto. La columna del artículo es el contenedor de referencia para
+     que las islas anchas ocupen todo su ancho sin pisar la barra lateral.
+     --------------------------------------------------------------- */
+  .article-column {
+    container-type: inline-size;
+  }
+
+  .isla {
+    font-family: var(--font-libre-franklin), sans-serif;
+    margin: 2.25em 0;
+    text-indent: 0;
+  }
+
+  .isla p,
+  .isla li {
+    text-indent: 0;
+    text-align: left;
+    line-height: 1.4;
+  }
+
+  .isla--ancha {
+    width: 100%;
+  }
+
+  @supports (width: 1cqw) {
+    .isla--ancha {
+      width: 100cqw;
+      margin-left: calc(50% - 50cqw);
+    }
+  }
+
+  .isla--error {
+    border-left: 3px solid var(--color-acero-light);
+    padding-left: 1em;
+  }
+
+  /* Llamadas a fuentes ([[cite:…]] → <a class="cite-ref"><sup>n</sup></a>) */
+  .prose-editorial a.cite-ref {
+    text-decoration: none;
+    color: var(--color-coral);
+    font-family: var(--font-libre-franklin), sans-serif;
+  }
+
+  .prose-editorial a.cite-ref sup {
+    font-size: 0.7em;
+    line-height: 0;
+    padding: 0 0.15em;
+  }
+
+  .prose-editorial a.cite-ref:hover {
+    color: var(--color-azul);
+  }
 }
 
 @layer components {

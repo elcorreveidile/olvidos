@@ -112,3 +112,18 @@ export function extractPasoId(html: string): { id?: string; html: string } {
 export function hasIslas(html: string): boolean {
   return /<!--\s*(isla|paso):/i.test(html || "");
 }
+
+const CITE_REF_RE = /<a\b[^>]*\bclass="cite-ref"[^>]*\bdata-src="([^"]+)"[^>]*>/gi;
+
+/**
+ * Ids de fuentes citadas en el HTML (enlaces `<a class="cite-ref" data-src="…">`
+ * que genera la composición a partir de `[[cite:id]]`), en orden y sin repetir.
+ */
+export function extractCited(html: string): string[] {
+  const out: string[] = [];
+  for (const m of Array.from((html || "").matchAll(CITE_REF_RE))) {
+    const id = m[1].trim();
+    if (id && !out.includes(id)) out.push(id);
+  }
+  return out;
+}

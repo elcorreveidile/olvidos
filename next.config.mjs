@@ -20,7 +20,15 @@ const nextConfig = {
         protocol: "https",
         hostname: "*.public.blob.vercel-storage.com",
       },
+      // Imágenes de dominio público / licencia libre de Wikimedia Commons
+      // (especiales «Con-textos»).
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+        pathname: "/wikipedia/commons/**",
+      },
     ],
+    minimumCacheTTL: 86400,
   },
   eslint: {
     // Ignorar errores de ESLint durante el build
