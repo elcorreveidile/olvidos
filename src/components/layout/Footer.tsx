@@ -118,7 +118,7 @@ export async function Footer() {
         <div className="mt-12 border-t border-white/10 pt-6 text-xs text-acero-light">
           Diseño: <span className="text-white/80">Mesa 1</span>
           <span className="mx-2">·</span>
-          Desarrollo: <DesarrolloCredit placement="top" />
+          Migrado por <DesarrolloCredit placement="top" />
         </div>
 
         {/* Copyright */}

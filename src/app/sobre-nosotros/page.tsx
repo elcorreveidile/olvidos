@@ -239,10 +239,10 @@ export default function SobreNosotrosPage() {
           </div>
           <div>
             <h3 className="mb-2 font-sans text-sm font-bold uppercase tracking-wide text-acero">
-              Desarrollo
+              Migración
             </h3>
             <p>
-              <DesarrolloCredit />
+              Migrado por <DesarrolloCredit />
             </p>
           </div>
         </div>
