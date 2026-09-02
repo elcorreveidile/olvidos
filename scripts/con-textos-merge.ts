@@ -70,7 +70,7 @@ for (const f of files) {
 // Referencias cruzadas de fuentes
 const sourceIds = new Set(merged.sources.keys());
 for (const k of ["events", "quotes", "statements", "series", "videos"] as const) {
-  for (const row of merged[k].values()) {
+  for (const row of Array.from(merged[k].values())) {
     for (const sid of (row.sourceIds as string[] | undefined) ?? []) {
       if (!sourceIds.has(sid)) {
         console.warn(`! ${k} "${row.id}" cita una fuente inexistente: ${sid}`);
@@ -80,9 +80,66 @@ for (const k of ["events", "quotes", "statements", "series", "videos"] as const)
   }
 }
 
+// Normalización de literales que los bloques escriben con variantes.
+const KIND_MAP: Record<string, string | null> = {
+  guerra: "guerra", territorial: "territorial", migratoria: "migratoria", diplomatica: "diplomatica",
+  monarquia: "monarquia", parlamentaria: "parlamentaria", judicial: "judicial", militar: "militar",
+  geopolitica: "geopolitica", europea: "europea", informativa: "informativa",
+  diplomacia: "diplomatica", migracion: "migratoria", inmigracion: "migratoria", sahara: "territorial",
+  gibraltar: "territorial", ceuta: "territorial", melilla: "territorial", ue: "europea", schengen: "europea",
+  energia: "geopolitica", espionaje: "geopolitica", desinformacion: "informativa", injerencia: "informativa",
+  crisis: null, politica: null, historico: null,
+};
+const ERA_MAP: Record<string, string> = {
+  isabelina: "isabelina", sexenio: "sexenio", restauracion: "restauracion", "dictadura-primo": "dictadura-primo",
+  republica: "republica", franquismo: "franquismo", transicion: "transicion", democracia: "democracia",
+  "primo-de-rivera": "dictadura-primo", "ii-republica": "republica", "guerra-civil": "republica",
+  franquista: "franquismo", "siglo-xxi": "democracia", actual: "democracia",
+};
+const BLOC_MAP: Record<string, string> = {
+  derecha: "derecha", izquierda: "izquierda", gobierno: "gobierno", monarquia: "monarquia", marruecos: "marruecos", otro: "otro",
+  "extrema-derecha": "derecha", ultraderecha: "derecha", pp: "derecha", vox: "derecha", psoe: "gobierno",
+  sumar: "izquierda", podemos: "izquierda", "casa-real": "monarquia", corona: "monarquia", ue: "otro", "union-europea": "otro",
+  eeuu: "otro", israel: "otro", rusia: "otro", argelia: "otro", italia: "otro", ceuta: "otro",
+};
+const CHAMBER_MAP: Record<string, string> = {
+  congreso: "congreso", senado: "senado", "cortes-franquistas": "cortes-franquistas", otro: "otro",
+  "cortes-espanolas": "cortes-franquistas", cortes: "congreso", "congreso-de-los-diputados": "congreso",
+};
+const GOV_MAP: Record<string, string> = {
+  derecha: "derecha", liberal: "liberal", izquierda: "izquierda", dictadura: "dictadura",
+  conservador: "derecha", conservadora: "derecha", "centro-derecha": "derecha", moderado: "derecha",
+  progresista: "liberal", centro: "liberal", socialista: "izquierda", franquismo: "dictadura",
+};
+const slug = (v: unknown) =>
+  String(v ?? "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().replace(/[\s_]+/g, "-");
+function normalizeRow(k: string, row: Row) {
+  const warn = (m: string) => { console.warn(`! ${k} "${row.id}": ${m}`); warnings++; };
+  const mapOne = (field: string, map: Record<string, string>) => {
+    if (row[field] === undefined) return;
+    const v = map[slug(row[field])];
+    if (!v) warn(`${field} desconocido "${row[field]}" (se deja tal cual)`); else row[field] = v;
+  };
+  if (Array.isArray(row.kinds)) {
+    const out: string[] = [];
+    for (const kd of row.kinds as unknown[]) {
+      const key = slug(kd);
+      if (!(key in KIND_MAP)) { warn(`kind desconocido "${kd}" (descartado)`); continue; }
+      const v = KIND_MAP[key];
+      if (v && !out.includes(v)) out.push(v);
+    }
+    row.kinds = out.length ? out : ["diplomatica"];
+  }
+  mapOne("era", ERA_MAP);
+  mapOne("bloc", BLOC_MAP);
+  mapOne("chamber", CHAMBER_MAP);
+  mapOne("government", GOV_MAP);
+}
+for (const k of keys) for (const row of Array.from(merged[k].values())) normalizeRow(k, row);
+
 const byDate = (a: Row, b: Row) => String(a.date ?? "").localeCompare(String(b.date ?? ""));
 const sorted = (k: (typeof keys)[number], sort = false) => {
-  const arr = [...merged[k].values()];
+  const arr = Array.from(merged[k].values());
   return sort ? arr.sort(byDate) : arr;
 };
 

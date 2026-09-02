@@ -17,7 +17,11 @@ export type EventKind =
   | "diplomatica"
   | "monarquia"
   | "parlamentaria"
-  | "judicial";
+  | "judicial"
+  | "militar"
+  | "geopolitica"
+  | "europea"
+  | "informativa";
 
 /** Cámara de origen de una cita parlamentaria. */
 export type Chamber = "congreso" | "senado" | "cortes-franquistas" | "otro";
@@ -64,6 +68,8 @@ export interface Source {
 }
 
 export interface ImageRef {
+  /** Identificador estable (obligatorio en el registro de imágenes). */
+  id?: string;
   src: string;
   alt: string;
   width: number;
@@ -127,6 +133,7 @@ export interface Quote {
   sourceIds?: string[];
   /** true si no se ha podido cotejar con el Diario de Sesiones. */
   unverified?: boolean;
+  note?: string;
 }
 
 export interface Crisis {
@@ -145,6 +152,8 @@ export interface Statement {
   dateLabel: string;
   text: string;
   sourceIds: string[];
+  /** Matiz: traducción, cifra discutida, contexto. */
+  note?: string;
 }
 
 export interface SeriesPoint {
