@@ -169,7 +169,7 @@ function normalizeRow(k: string, row: Row) {
   mapOne("chamber", CHAMBER_MAP);
   mapOne("government", GOV_MAP);
 }
-for (const k of keys) for (const row of Array.from(merged[k].values())) normalizeRow(k, row);
+for (const k of keys) if (k !== "geo") for (const row of Array.from(merged[k].values())) normalizeRow(k, row);
 
 const byDate = (a: Row, b: Row) => String(a.date ?? "").localeCompare(String(b.date ?? ""));
 const sorted = (k: (typeof keys)[number], sort = false) => {
@@ -201,7 +201,7 @@ if (merged.geo.size) {
   writeFileSync(
     join(outDir, "geo.ts"),
     `// Generado por scripts/con-textos-merge.ts. No editar a mano.\n` +
-      `export interface GeoPoint { id: string; label: string; lat: number; lon: number; era?: string; note?: string }\n\n` +
+      `export interface GeoPoint { id: string; label: string; lat: number; lon: number; era?: string; note?: string; bbox?: [number, number, number, number]; kind?: string; sourceIds?: string[] }\n\n` +
       `export const GEO = ${JSON.stringify(rows, null, 2)} satisfies GeoPoint[];\n`
   );
   console.log(`→ geo.ts: ${rows.length}`);
