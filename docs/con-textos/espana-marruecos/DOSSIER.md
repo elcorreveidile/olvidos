@@ -54,7 +54,7 @@ Por eso la tabla del capítulo 10 separa tres cosas: quién gobierna, quién ini
 
 ### 0.4 Cifras
 
-Cuando hay discrepancias se registran todas con su fuente y fecha. Ejemplo: los muertos de la entrada masiva de Ceuta de julio de 2026 fueron 34 y 43 (31 de julio, provisionales), 67 (1 de agosto), 72 (Delegación del Gobierno) y 88 (Ciudad Autónoma) a primeros de agosto, «más de cien» (AUGC) y 141 en la cifra consolidada (78 en territorio español y 63 en Marruecos). El artículo usará la consolidada y explicará la evolución.
+Cuando hay discrepancias se registran todas con su fuente y fecha. Ejemplo: los muertos de la entrada masiva de Ceuta de julio de 2026 fueron 19 (31 de julio, fuentes policiales), 67 (1 de agosto), 72 (Delegación del Gobierno) y 88 (morgue de la Ciudad Autónoma) a primeros de agosto, «aproximadamente cien» (AUGC), 75 (Interior, 4 de agosto), 79 (Instituto de Medicina Legal) y 141 en la cifra de Caminando Fronteras verificada a 4 de agosto (78 en territorio español y 63 en Marruecos); Marruecos reconoce 11. El artículo usará la de 141 y explicará la evolución y las metodologías.
 
 ### 0.5 Lo que este dossier no hace
 
@@ -64,7 +64,75 @@ No atribuye intenciones que no estén documentadas. La pregunta «¿qué habría
 
 ## 1. Actualidad: Ceuta, julio-septiembre de 2026
 
-*(Pendiente de fusión del bloque 01.)*
+Fuentes completas, horas y URL en `bloques/01-actualidad-2026.md`. Investigación cerrada el 2 de septiembre, antes de la comparecencia de Sánchez en el pleno extraordinario del 3 de septiembre (9:00).
+
+### 1.1 Dos correcciones al planteamiento inicial
+
+- La frase de Sánchez «un ataque, una violación de la integridad territorial de España» es del **31 de julio**, en Ceuta (La Moncloa). El 31 de agosto, en la SER, dijo lo contrario sobre Marruecos: «No hay ninguna información de participación alguna».
+- El artículo 102.2 de la Constitución exige la iniciativa de «la cuarta parte de los miembros del Congreso» y la aprobación por mayoría absoluta: con 350 diputados son **88** (El Español, 8 ago), no 75 como publicaron The Objective y otros. Vox tiene 33; PP y Vox suman 170, por debajo de los 176 de la mayoría absoluta.
+
+### 1.2 Cronología
+
+| Fecha | Hecho | Fuente primaria o de referencia |
+|---|---|---|
+| 29 jun / 8 jul / 13 jul | Sentencia del Supremo (STS 814/2026): el «rechazo en frontera» no se aplica a quien llega a nado; procedimiento ordinario con abogado y asilo. Tres fechas según la fuente; Robles la fecha «de 8 de julio» en el Congreso | DSCD-15-CO-609, p. 5; Moncloa.com |
+| 20 jul | Sánchez en Argel con Tebune: «nueva etapa», VIII RAN en octubre, más gas | La Moncloa |
+| 20-29 jul | Unas 1.500 llegadas a nado; «unos ciento cincuenta» nadadores diarios (Robles); menores acogidos de 180 a 800 | DSCD-15-CO-609, p. 6; El Español (Vivas, 30 ago) |
+| 24-30 jul | Campaña en Facebook «asalto Karyaj a Ceuta»: 25 grupos con ~1.032.000 membresías; sin Gobierno ni organización identificados detrás | Golden Owl, 3 ago |
+| 27 jul | Vivas llama al jefe de Gabinete de Sánchez; Robles confirma en el Congreso la reunión Vivas-delegado del Gobierno con alerta de «posible colapso» | DSCD-15-CO-609, p. 6 |
+| 28 jul | Vivas pide a Marlaska el estado de alarma; Jupol alerta públicamente | El Español; Infobae |
+| 29 jul | Interior: «no había fundamento jurídico». El CENIF emite informe: «riesgo alto» de llegadas a nado, «riesgo extremo» en escenario de accesos coordinados «previsto para el 30 de julio» | El Independiente, 31 ago; El Español, 1 sept |
+| 30 jul, 11:30 | «Asalto masivo» por El Tarajal y Benzú (cronología del EMAD citada por Robles). Sindicatos policiales: «colapso total», Marruecos «ya no está reteniendo a nadie». Despliegue del Ejército (más de 3.000 efectivos) | DSCD-15-CO-609, p. 5; El Independiente; El Debate |
+| 31 jul | «Unas 49.000» entradas en 24 horas. Sánchez y Marlaska en Ceuta: «un ataque, una violación de la integridad territorial de España». Benyaich: situación «no querida por el reino de Marruecos». La jueza Tardón (AN) pide informes a Policía y Guardia Civil (DP 64/2026, denuncia de Iustitia Europa). Italia anuncia controles Schengen | La Moncloa; El Debate; El Independiente; El Español |
+| 1 ago | Barrera flotante de 500 m en El Tarajal; Instrucción 9/2026 de Interior. Carta de Sánchez a Von der Leyen: «En menos de 48 horas… control de la frontera». 67 muertos. Retornos: 25.000 a las 14:30, ~48.500 al cierre del día. EEUU eleva a nivel 3 la alerta de viaje | Euronews; The Objective; DSCD-15-CO-609, p. 7; Elcano |
+| 2-5 ago | Muertos: 72 (Delegación), 88 (morgue de Ceuta), ~100 (AUGC), 75 (Interior, 4 ago), 79 (IML), **141 = 78 + 63** (Caminando Fronteras, 5 ago); Marruecos reconoce 11. Interior fija 72.000 entradas (4 ago). Von der Leyen: «no se puede aceptar ningún intento de utilizar la migración ilegal como medio para ejercer presión» | France 24; Canal Sur; CeutaTV; Infobae; Libertad Digital |
+| 6 ago | Comisión Europea (Mercier): canales «particularmente rusos» amplificaron «empezando el 30 de julio, pero antes del 30 de julio, no hemos visto esta actividad» | ElNacional.cat; El Español |
+| 8 ago | Abascal en X: «La traición de Pedro Sánchez… debe llevarse a los tribunales… artículo 102». El PP pide la dimisión de Marlaska | El Español |
+| 10 ago | Ouahbi (Justicia, Marruecos): «Seguimos reivindicando nuestros territorios». Torres habla de 80.000; el Gobierno lo corrige a 72.000 | Infobae; Euronews |
+| 12-13 ago | Robles: «A Ceuta y Melilla no se las toca», «españolísimas». Marlaska: quedan unos 5.000; 1.898 menores; nadie «será trasladado a la Península» | The Objective; Público |
+| 15 ago | Marruecos expulsa de Fnideq a TVE y EFE tras grabar una carga policial | The Objective |
+| 21 ago | Nota de Exteriores: «Ceuta y Melilla son dos ciudades españolas frontera de España y de la UE» | El Español |
+| 24 ago | Mawlid en Rabat: Toufiq evoca «la lucha de los marroquíes para liberar las ciudades ocupadas de la costa atlántica» ante Mohamed VI. Jabaroot filtra 70.380 nombres de la DGST y la DGSN y señala a Hammouchi y El Himma | El Español; The Objective; Infobae |
+| 25 ago | Consejo de Seguridad Nacional y mando único, «veintiséis días después» (Muñoz). Robles en la Comisión de Defensa: el CNI «realizó la labor que competencialmente les era exigible»; «lo sucedido el pasado 30 de julio no puede volver a ocurrir» | DSCD-15-CO-609 |
+| 26 ago | Diputación Permanente: el PP retira la petición de Sánchez (comparecerá el 3 sept); cinco peticiones rechazadas 34-35. Millán (Vox): «Esto es traición». Belarra: «Marruecos ha utilizado a su gente como arma arrojadiza, pero ustedes están intentando castigar a Marruecos utilizando a la gente» | DSCD-15-PL-200, pp. 33-44, 70 |
+| 27 ago | Emboscada en Benzú a cuatro militares (heridos; doce detenidos). Comparecen Bolaños («no existe ninguna evidencia» de Marruecos) y Mónica García («crisis humanitaria, aunque el PP siga insistiendo en llamarlo invasión») | Ceuta al Día; DSCD-15-CO-610, p. 38 |
+| 28 ago | Comparecen Marlaska, Albares y Saiz. Ana Vázquez (PP): «Si el Gobierno no sabía nada, es incompetente. Y si disponía de información, es negligente». ERC, Junts, PNV, Bildu y Sumar cargan contra Marlaska. Jupol informa a Vivas del informe sobre los gendarmes | Press Digital; The Objective; Infobae. Diarios no publicados |
+| 30 ago | Vivas: «El lunes 27 llamé a Moncloa y me dijeron que estuviera tranquilo, el martes pedí el estado de alarma, el miércoles me dijeron que no había fundamento jurídico, el jueves llegó la avalancha» | El Español |
+| 31 ago | Sánchez (SER) exonera a Marruecos, señala bulos «asociadas tanto a Rusia como a Israel y a una internacional ultraderechista» y anuncia la visita del Rey. Sa'ar: «He lied again». Fiscalía: 23 agresiones sexuales, 5 violaciones, 9 víctimas menores. Abascal: «lacayo de Marruecos»; pide al PP los votos para el 102 y suspender el Tratado de 1991. El Independiente publica el informe del CENIF del 29 de julio | The Objective; elDiario.es; Vozpópuli |
+| 1 sept | Zajárova exige «hechos concretos». SEAE: «no tenemos pruebas concluyentes que sugieran que la crisis en sí fuera desencadenada por desinformación procedente de actores estatales extranjeros»; cuentas israelíes «no vinculadas directamente al Gobierno o al Estado israelí». 21:29: El Español publica el informe del CENIF a la jueza | El Independiente; El Español |
+| 2 sept | Carta de Marlaska al director de la Policía pidiendo «la veracidad de lo publicado». La jueza ordena que el informe «solo se podía informar a su señoría». Día de Ceuta: Casa del Rey, «La Corona y todos, con nuestra ciudad» (13:00); Feijóo (14:12): «El Gobierno lo sabía y lo tapó» | The Objective; ElNacional.cat; El Español (directo) |
+
+### 1.3 Las cifras, una a una
+
+**Entradas**: 49.000 (Interior/Guardia Civil, 31 jul) → «aproximadamente 50.000» (carta de Sánchez, 1 ago) → 40.000 (Interior marroquí, 3 ago) → **72.000 oficial** (Interior, 4 ago) → 80.000 (Torres, 10 ago, corregido) → «72.000-80.000» (CENIF). **Retornos**: 25.000 a las 14:30 del 1 de agosto (Robles), ~48.500 al cierre del día (Elcano), «aproximadamente el 90%» (Robles, CENIF). **Muertos**: tabla en el bloque; la cifra que usará el artículo es la de Caminando Fronteras verificada a 4 de agosto (141: 78 en aguas o suelo español y 63 en Marruecos), con la evolución oficial (19 → 67 → 72 → 75 → 79) y el dato marroquí (11) explicados. Las cifras 34 y 43 que circulan sólo constan en Wikipedia. **Permanecen**: 5.000 (Marlaska, 13 ago), 10.000 (Vivas, 30 ago). **Menores**: 1.898 identificados, más de 500 expedientes de asilo, «500 niñas» pendientes de traslado (Sánchez).
+
+### 1.4 Quién pide qué
+
+| Bloque | Qué pide | Dónde |
+|---|---|---|
+| PP | Convocar a la embajadora marroquí, llamar a consultas al embajador en Rabat, dimisión de Marlaska, elecciones. «España está ante un Gobierno fallido, pero no ante un Estado fallido» (Feijóo). «¿Por qué no han llamado al embajador de Marruecos?» (Muñoz, 25 ago). No pide el art. 102 | Ceuta, 2 sept; DSCD-15-CO-609, p. 11 |
+| Vox | Art. 102 por «traición» (8 y 31 ago); suspender el Tratado de Amistad de 1991 y el acuerdo preferencial UE-Marruecos; condena «formal y solemne» de la UE (Buxadé). En el Congreso: «los actos u omisiones que ustedes han realizado… encajan dentro del delito de traición a la seguridad de España» (Asarta); «las muertes… han sido provocadas por el régimen de Marruecos, con la complicidad del Partido Socialista» (Millán) | DSCD-15-CO-609, p. 14; DSCD-15-PL-200, pp. 42-43 |
+| Gobierno | «Cautela» (Bolaños); Marruecos «socio fiable» (Albares, Marlaska); «no hay ninguna información de participación alguna» (Sánchez, 31 ago); Rusia e Israel amplifican bulos; el Rey visitará Ceuta | SER; Infobae; El Español |
+| Sumar / Podemos / IU | Depurar responsabilidades y convocar a la embajadora (Sumar); Marlaska «no puede seguir ni un minuto más» y romper con la «dictadura» marroquí (Podemos); dimisión si conocía el informe (IU). Belarra (26 ago): el PP quiere «castigar a Marruecos utilizando a la gente» | El Español; Infobae; DSCD-15-PL-200, p. 36 |
+| PNV / ERC / Junts / Bildu | Responsabilidad «grave» de Marruecos (Legarda); «monarquía absoluta que utiliza las fronteras y a su gente como arma arrojadiza» (Jordà); «parece ser que Marruecos tuvo mucho que ver» (Matute); competencias de inmigración (Junts) | DSCD-15-PL-200, pp. 37-40 |
+| Casa Real | «Preocupación e indignación» (1 ago, **[NO VERIFICADO en casareal.es]**); audiencia a Vivas (6 ago); «La Corona y todos, con nuestra ciudad» (2 sept) | Infobae; casareal.es; X |
+| Marruecos | «No querida por el reino de Marruecos» (Benyaich, 31 jul); silencio oficial sobre los muertos; 40.000 llegados y 11 muertos (Khalfi); «seguimos reivindicando nuestros territorios» (Ouahbi); «ciudades ocupadas» (Toufiq) | El Independiente; Canal Sur; Infobae; El Español |
+
+### 1.5 El informe del CENIF y la investigación judicial
+
+El CENIF es el Centro Nacional de Inmigración y Fronteras, unidad de inteligencia de la Comisaría General de Extranjería y Fronteras de la Policía Nacional. Emitió una primera alerta el 29 de julio y remitió su informe a la Audiencia Nacional el 31 de agosto, dentro de las Diligencias Previas 64/2026 del Juzgado Central de Instrucción de María Tardón, abiertas el 31 de julio por denuncia de Iustitia Europa para determinar si hay «indicios de delito contra la independencia del Estado». Según El Español (1 sept, 21:29): «la finalidad migratoria del incidente fue solo la cobertura formal» de una operación dirigida; «gendarmes marroquíes dieron indicaciones a los inmigrantes» y «gestionar[on] el flujo»; «individuos de paisano» «daban instrucciones a los policías marroquíes»; «operación de contra-inteligencia ofensiva de manual». Tres oleadas: hombres jóvenes con neoprenos y aletas antes de las 11:00 del 30; familias con niños entre las 11:00 y las 22:00; de nuevo jóvenes desde las 22:00 y el 31. Una segunda convocatoria para el 15 de agosto fue «totalmente controlada» por Marruecos. El firmante no está identificado **[NO VERIFICADO]**. El 2 de septiembre Marlaska escribió al director de la Policía pidiendo «la veracidad de lo publicado» y la jueza ordenó que el informe «solo se podía informar a su señoría» (RD 769/1987, art. 15). La jueza espera un último informe de la Guardia Civil antes de decidir sobre su competencia.
+
+### 1.6 Lo que hay y lo que no hay sobre injerencias
+
+Hay: amplificación por canales rusos a partir del 30 de julio (Comisión Europea, 6 y 28 ago); cuentas israelíes no estatales (Danon, Ben Gvir) de volumen menor (SEAE, 1 sept); una campaña de movilización en Facebook sin patrocinador identificado (Golden Owl). No hay: prueba de que la desinformación causara la entrada (SEAE); informe público que atribuya al Estado israelí una campaña; constancia policial de actividad rusa o israelí previa («no nos consta», Policía y Guardia Civil, 2 sept). Sí hay un informe oficial español que atribuye la dirección de la entrada a agentes marroquíes: el del CENIF. El «informe del grupo 411» sólo aparece en Wikipedia **[NO VERIFICADO]**.
+
+### 1.7 Parlamento
+
+Verificados en PDF: Comisión de Defensa del 25 de agosto (DSCD-15-CO-609), Diputación Permanente del 26 (DSCD-15-PL-200, con vídeo en el Congreso) y Comisión de Sanidad del 27 (DSCD-15-CO-610). No publicados a 2 de septiembre: Justicia (27), Interior, Exteriores y Migraciones (28), Juventud (31). Pleno extraordinario con Sánchez el 3 de septiembre. Todas las citas de estos Diarios están en `quotes.ts` con página y URL; las de las comisiones sin Diario van como no verificadas.
+
+### 1.8 Lectura provisional
+
+La secuencia documentada es: alertas locales y policiales (27-29 jul), informe de inteligencia con «riesgo extremo» (29 jul), entrada masiva dirigida según la Policía (30-31 jul), respuesta del Gobierno centrada en el control de la frontera y en la cooperación con Rabat, y un mes de disputa sobre quién sabía qué. El PP construye el relato de la ocultación («lo sabía y lo tapó») y pide elecciones; Vox construye el de la traición y pide el art. 102, que aritméticamente no puede prosperar sin el PP y sin 176 votos; el Gobierno desplaza el foco a Rusia e Israel y al Rey; los socios de izquierda y los nacionalistas coinciden, con matices, en señalar a Marruecos y a Marlaska. Lo que nadie del arco parlamentario ha pedido, con las fuentes consultadas, es una respuesta militar contra Marruecos: la exigencia máxima documentada es suspender el Tratado de Amistad (Vox) y llamar a consultas a los embajadores (PP).
 
 ## 2. Siglo XIX: la Guerra de África, Margallo y Algeciras
 
