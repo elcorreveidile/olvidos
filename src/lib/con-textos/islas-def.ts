@@ -33,7 +33,9 @@ export type IslaName = (typeof ISLA_NAMES)[number];
 
 export const WARN_BYTES_PER_ISLA = 120_000;
 export const MAX_BYTES_PER_ISLA = 300_000;
-export const MAX_BYTES_PER_PASO = 400_000;
+// El paso «total» (toda la línea temporal y toda la hemeroteca) ronda los
+// 400 KB desde la actualización de septiembre de 2026.
+export const MAX_BYTES_PER_PASO = 450_000;
 
 export interface PasoRef {
   n: number;
