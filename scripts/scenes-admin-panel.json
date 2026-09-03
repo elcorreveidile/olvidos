@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "brandSub": "Panel del Equipo Editor",
+    "url": "olvidos.es/admin",
+    "foot": "La revista que no olvida",
+    "introKick": "Equipo Editor",
+    "introTitle": "El panel de administración",
+    "introSub": "Todo lo que publicas, en un solo sitio.",
+    "outroTitle": "Escribe. Revisa. Publica.",
+    "outroSub": "Bienvenida al Equipo Editor",
+    "introMs": 2100,
+    "outroMs": 2600,
+    "fadeMs": 420
+  },
+  "scenes": [
+    {
+      "img": "dashboard-full.png",
+      "dur": 3500,
+      "kick": "Tu panel",
+      "title": "Todo tu trabajo, de un vistazo",
+      "from": [0, 55, 1330],
+      "to": [230, 150, 1185]
+    },
+    {
+      "img": "dashboard-full.png",
+      "dur": 3200,
+      "kick": "Cada pieza",
+      "title": "Borradores, en revisión y publicados",
+      "from": [255, 300, 900],
+      "to": [270, 360, 650]
+    },
+    {
+      "img": "articulos-full.png",
+      "dur": 3500,
+      "kick": "Artículos",
+      "title": "Filtra por estado y categoría",
+      "from": [0, 0, 1360],
+      "to": [220, 430, 1180]
+    },
+    {
+      "img": "articulos-full.png",
+      "dur": 3200,
+      "kick": "De un vistazo",
+      "title": "Quién escribe y en qué estado",
+      "from": [250, 480, 1180],
+      "to": [265, 560, 980]
+    }
+  ]
+}

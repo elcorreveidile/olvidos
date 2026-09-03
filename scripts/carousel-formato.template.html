@@ -1,0 +1,158 @@
+<meta charset="utf-8" />
+<title>Carrusel · El nuevo formato de Olvidos</title>
+<!--
+  Carrusel 1 (Instagram 4:5, 1080x1350). El nuevo formato de la revista.
+  Copy real del sitio (site.ts, Hero.tsx, sobre-nosotros, hazte-socio).
+    TEMPLATE=scripts/carousel-formato.template.html SLUG=formato \
+    OUTDIR=footage-carrusel node scripts/carousel-capture.mjs
+-->
+<style>
+  /* __FONT_CSS__ */
+  :root{
+    --coral:#ff6261;--coral-soft:#fc9292;--tinta:#141414;--tinta-soft:#3a352f;
+    --teatro:#7a1420;--teatro-light:#9b1c2c;--teatro-dark:#560d16;--acero:#617685;
+    --paper:#f4ece1;--cream:#fdf6f0;--line:#e2d6c6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:#000;}
+  body{font-family:"LibreFranklin",system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+  .deck{display:flex;flex-direction:column;gap:0;}
+  .slide{position:relative;width:1080px;height:1350px;overflow:hidden;}
+  .paper{background:radial-gradient(125% 95% at 50% -12%,#fff 0%,var(--paper) 100%);color:var(--tinta);}
+  .velvet{background:radial-gradient(135% 105% at 50% 22%,var(--teatro-light) 0%,var(--teatro) 46%,var(--teatro-dark) 100%);color:var(--cream);}
+  .velvet .vig{position:absolute;inset:0;box-shadow:inset 0 0 260px rgba(0,0,0,.34);pointer-events:none;}
+  /* chrome */
+  .wm{position:absolute;top:64px;left:84px;font-weight:900;font-size:34px;letter-spacing:-.01em;}
+  .wm b{color:var(--coral);}
+  .paper .wm{color:var(--tinta);} .velvet .wm{color:var(--cream);}
+  .foot{position:absolute;left:84px;right:84px;bottom:60px;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:26px;letter-spacing:.02em;}
+  .paper .foot{color:#9a8f80;} .velvet .foot{color:rgba(253,246,240,.72);}
+  .foot .dom{color:var(--coral);}
+  .count{position:absolute;top:66px;right:84px;font-weight:800;font-size:26px;letter-spacing:.14em;}
+  .paper .count{color:#b7ab9a;} .velvet .count{color:rgba(253,246,240,.66);}
+  /* watermark bracket */
+  .bracket{position:absolute;font-weight:900;line-height:.72;pointer-events:none;}
+  /* content blocks */
+  .pad{position:absolute;left:84px;right:84px;top:214px;bottom:150px;display:flex;flex-direction:column;}
+  .kick{font-weight:800;font-size:27px;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);}
+  .velvet .kick{color:var(--coral-soft);}
+  h1{font-weight:900;letter-spacing:-.025em;line-height:1.02;}
+  .lede{font-family:"CrimsonText",Georgia,serif;line-height:1.34;}
+  .paper .lede{color:var(--tinta-soft);} .velvet .lede{color:rgba(253,246,240,.9);}
+  .rule{height:4px;width:96px;background:var(--coral);border-radius:2px;}
+  /* cover */
+  .cover h1{font-size:118px;}
+  .cover .sub{margin-top:auto;}
+  /* grid of features */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px;}
+  .card{background:rgba(255,255,255,.6);border:1.5px solid var(--line);border-radius:22px;padding:34px 32px;}
+  .card .n{font-weight:900;font-size:30px;color:var(--coral);}
+  .card h3{font-weight:800;font-size:40px;letter-spacing:-.01em;margin-top:10px;color:var(--tinta);}
+  .card p{font-family:"CrimsonText",Georgia,serif;font-size:29px;line-height:1.3;color:var(--tinta-soft);margin-top:8px;}
+  /* numbered list */
+  .li{display:flex;gap:30px;align-items:flex-start;padding:30px 0;border-top:1.5px solid var(--line);}
+  .li:last-child{border-bottom:1.5px solid var(--line);}
+  .li .num{font-weight:900;font-size:52px;line-height:1;color:var(--coral);min-width:74px;}
+  .li h3{font-weight:800;font-size:44px;letter-spacing:-.01em;color:var(--tinta);}
+  .li p{font-family:"CrimsonText",Georgia,serif;font-size:30px;line-height:1.3;color:var(--tinta-soft);margin-top:6px;}
+  /* CTA */
+  .cta .mark{font-weight:900;font-size:210px;line-height:.8;letter-spacing:-.06em;margin-bottom:54px;}
+  .cta .mark b{color:var(--coral);}
+  .pill{display:inline-block;font-weight:800;font-size:34px;color:var(--teatro-dark);background:var(--cream);padding:22px 46px;border-radius:12px;}
+</style>
+
+<div class="deck">
+
+  <!-- 01 · cover -->
+  <section class="slide velvet cover">
+    <div class="bracket" style="top:-60px;right:-40px;font-size:900px;color:rgba(255,98,97,.09);">[</div>
+    <div class="wm">[<b>o</b>lvidos</div>
+    <div class="count">01 · 06</div>
+    <div class="pad">
+      <div class="kick">Revista de acciones culturales · Granada</div>
+      <h1 style="margin-top:30px;">Olvidos,<br>en un formato<br>nuevo.</h1>
+      <div class="sub">
+        <div class="rule" style="margin-bottom:28px;"></div>
+        <p class="lede" style="font-size:41px;">Literatura, pensamiento y memoria cultural granadina. Desde 1981, entre la página impresa y el presente digital.</p>
+      </div>
+    </div>
+    <div class="foot"><span>La nueva web</span><span class="dom">olvidos.es</span></div>
+    <div class="vig"></div>
+  </section>
+
+  <!-- 02 · qué es ahora -->
+  <section class="slide paper">
+    <div class="bracket" style="bottom:-160px;left:-30px;font-size:620px;color:rgba(20,20,20,.035);">[</div>
+    <div class="wm">[<b>o</b>lvidos</div>
+    <div class="count">02 · 06</div>
+    <div class="pad">
+      <div class="kick">Qué es ahora</div>
+      <h1 style="font-size:82px;margin-top:22px;">De archivo impreso a publicación viva.</h1>
+      <div class="rule" style="margin:34px 0;"></div>
+      <p class="lede" style="font-size:40px;">Tras su primera época impresa, Olvidos de Granada continúa hoy como publicación viva de la Asociación Cultural Olvidos de Granada. Ya no es solo memoria: se escribe y se lee en el presente, en <b style="color:var(--coral);font-family:LibreFranklin;">olvidos.es</b>.</p>
+    </div>
+    <div class="foot"><span>El nuevo formato</span><span class="dom">olvidos.es</span></div>
+  </section>
+
+  <!-- 03 · qué encontrarás -->
+  <section class="slide paper">
+    <div class="wm">[<b>o</b>lvidos</div>
+    <div class="count">03 · 06</div>
+    <div class="pad">
+      <div class="kick">Qué encontrarás</div>
+      <h1 style="font-size:76px;margin-top:22px;">Todo en un mismo sitio.</h1>
+      <div class="grid">
+        <div class="card"><div class="n">[artículos</div><h3>La época digital</h3><p>Crítica, memoria y literatura de Granada, en formato web.</p></div>
+        <div class="card"><div class="n">[hemeroteca</div><h3>El archivo</h3><p>La colección completa desde su primera época.</p></div>
+        <div class="card"><div class="n">[agenda</div><h3>Los encuentros</h3><p>Presentaciones, recitales y actividades de la asociación.</p></div>
+        <div class="card"><div class="n">[socios</div><h3>La comunidad</h3><p>Zona de socios, carné digital y vida asociativa.</p></div>
+      </div>
+    </div>
+    <div class="foot"><span>El nuevo formato</span><span class="dom">olvidos.es</span></div>
+  </section>
+
+  <!-- 04 · se lee mejor -->
+  <section class="slide paper">
+    <div class="bracket" style="top:-120px;right:-40px;font-size:560px;color:rgba(20,20,20,.035);">[</div>
+    <div class="wm">[<b>o</b>lvidos</div>
+    <div class="count">04 · 06</div>
+    <div class="pad">
+      <div class="kick">Se lee mejor</div>
+      <h1 style="font-size:82px;margin-top:22px;">Pensado para leerse hoy.</h1>
+      <div class="rule" style="margin:34px 0;"></div>
+      <p class="lede" style="font-size:40px;">Cada texto llega en formato web: se lee cómodo en el móvil, se puede buscar y guarda su firma y su número de la revista. El archivo impreso, poco a poco, artículo por artículo, navegable en línea.</p>
+    </div>
+    <div class="foot"><span>El nuevo formato</span><span class="dom">olvidos.es</span></div>
+  </section>
+
+  <!-- 05 · comunidad -->
+  <section class="slide paper">
+    <div class="wm">[<b>o</b>lvidos</div>
+    <div class="count">05 · 06</div>
+    <div class="pad">
+      <div class="kick">Detrás hay una asociación</div>
+      <h1 style="font-size:76px;margin-top:22px;">Una revista con comunidad.</h1>
+      <div style="margin-top:30px;">
+        <div class="li"><div class="num">01</div><div><h3>Encuentros</h3><p>Presentaciones, recitales y encuentros, con asiento reservado para socios.</p></div></div>
+        <div class="li"><div class="num">02</div><div><h3>Voz y voto</h3><p>Participa en la Asamblea General y en la vida de la asociación.</p></div></div>
+        <div class="li"><div class="num">03</div><div><h3>La vuelta al papel</h3><p>Tu apoyo hace posible que la revista vuelva a imprimirse, cada curso.</p></div></div>
+      </div>
+    </div>
+    <div class="foot"><span>El nuevo formato</span><span class="dom">olvidos.es</span></div>
+  </section>
+
+  <!-- 06 · CTA -->
+  <section class="slide velvet cta">
+    <div class="wm">[<b>o</b>lvidos</div>
+    <div class="count">06 · 06</div>
+    <div class="pad" style="align-items:center;justify-content:center;text-align:center;">
+      <div class="mark">[<b>o</b></div>
+      <h1 style="font-size:66px;">Descúbrela.</h1>
+      <p class="lede" style="font-size:37px;margin-top:16px;max-width:760px;">La nueva Olvidos de Granada ya está en línea. Entra, lee y quédate.</p>
+      <div style="margin-top:44px;"><span class="pill">olvidos.es</span></div>
+    </div>
+    <div class="foot"><span>Comparte</span><span class="dom">olvidos.es</span></div>
+    <div class="vig"></div>
+  </section>
+
+</div>

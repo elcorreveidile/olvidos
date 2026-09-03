@@ -1,0 +1,243 @@
+<meta charset="utf-8" />
+<title>Reel Admin Olvidos — Equipo Editor</title>
+<!--
+  Motor genérico de "tour guiado" del panel de administración (Equipo Editor).
+  Coloca las capturas REALES del admin (escritorio) en una ventana de navegador
+  dentro del lienzo vertical 1080x1920 y las recorre con paneo/zoom (Ken Burns)
+  + rótulos de marca. Las escenas y los textos se inyectan desde el build:
+    window.__ASSETS__  (fichero.png -> {src,w,h})   [reel-admin-build.mjs]
+    window.__SCENES__  (array de escenas)
+    window.__META__    ({kicker,title,sub,url,outroTitle,outroSub,introMs,outroMs,fadeMs})
+  Cada escena: { img, dur, kick, title, from:[x,y,w], to:[x,y,w] }  (px nativos).
+  Uso (ver reel-admin-build.mjs):
+    RAW_DIR=footage-reel/raw-admin-desktop SCENES=scripts/scenes-panel.json \
+    OUT=footage-reel/clip-admin-panel.mp4 PORTADA=footage-reel/portada-admin-panel.png \
+    node scripts/reel-admin-build.mjs
+-->
+<style>
+  /* __FONT_CSS__ */
+  :root{
+    --coral:#ff6261;--coral-soft:#ff8a89;--tinta:#141414;
+    --teatro:#7a1420;--teatro-light:#9b1c2c;--teatro-dark:#3f0910;
+    --paper:#fff;--ink:#0e0f12;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:#000;}
+  #stage{position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden;
+    font-family:"LibreFranklin",system-ui,sans-serif;}
+  /* Fondo velvet editorial */
+  #bg{position:absolute;inset:0;
+    background:
+      radial-gradient(120% 80% at 50% 8%, var(--teatro-light) 0%, var(--teatro) 44%, var(--teatro-dark) 100%);}
+  #bgGrain{position:absolute;inset:0;opacity:.10;mix-blend-mode:overlay;
+    background:radial-gradient(circle at 30% 20%, #fff 0, transparent 40%),
+               radial-gradient(circle at 70% 70%, #fff 0, transparent 42%);}
+
+  /* Encabezado de marca fijo, arriba */
+  #brand{position:absolute;left:0;right:0;top:96px;text-align:center;z-index:20;}
+  #brand .mark{font-weight:900;font-size:52px;letter-spacing:-1px;color:#fff;}
+  #brand .mark b{color:var(--coral);}
+  #brand .sub{margin-top:6px;font-weight:800;font-size:23px;letter-spacing:7px;
+    text-transform:uppercase;color:rgba(255,255,255,.66);}
+
+  /* Ventana de navegador */
+  #win{position:absolute;left:40px;top:300px;width:1000px;
+    border-radius:26px;overflow:hidden;background:#fff;
+    box-shadow:0 40px 110px rgba(0,0,0,.5),0 10px 28px rgba(0,0,0,.35);z-index:10;}
+  #chrome{height:60px;background:#f1f2f5;border-bottom:1px solid #e4e6ea;
+    display:flex;align-items:center;gap:9px;padding:0 22px;}
+  #chrome .dot{width:15px;height:15px;border-radius:50%;}
+  #chrome .d1{background:#ff5f57;}#chrome .d2{background:#febc2e;}#chrome .d3{background:#28c840;}
+  #chrome .url{margin-left:16px;flex:1;height:36px;border-radius:10px;background:#fff;
+    border:1px solid #e4e6ea;display:flex;align-items:center;gap:9px;padding:0 15px;
+    font-size:21px;color:#5a6270;font-weight:600;}
+  #chrome .url svg{width:17px;height:17px;flex:none;color:#28a745;}
+  #screen{position:relative;width:1000px;height:680px;overflow:hidden;background:#fff;}
+  #screen img{position:absolute;left:0;top:0;will-change:left,top,width;
+    -webkit-user-select:none;user-select:none;}
+  #l0{z-index:1;}#l1{z-index:2;}
+
+  /* Rótulo (tercio inferior) */
+  #rotulo{position:absolute;left:70px;right:70px;top:1250px;z-index:30;text-align:center;opacity:0;}
+  #rotulo .kick{font-weight:800;font-size:27px;letter-spacing:5px;text-transform:uppercase;color:var(--coral);}
+  #rotulo .bar{width:64px;height:5px;border-radius:3px;background:var(--coral);margin:16px auto 0;}
+  #rotulo .line{margin-top:20px;font-weight:800;font-size:52px;line-height:1.12;color:#fff;
+    text-shadow:0 2px 20px rgba(0,0,0,.45);}
+
+  /* Contador de pasos */
+  #steps{position:absolute;left:0;right:0;top:1560px;z-index:30;display:flex;gap:12px;
+    justify-content:center;opacity:0;}
+  #steps .s{width:44px;height:6px;border-radius:3px;background:rgba(255,255,255,.28);}
+  #steps .s.on{background:var(--coral);}
+
+  /* Pie fijo */
+  #foot{position:absolute;left:0;right:0;bottom:70px;z-index:20;text-align:center;
+    font-family:"CrimsonText",Georgia,serif;font-style:italic;font-size:32px;color:rgba(255,255,255,.7);}
+
+  /* Intro / Outro (velvet a pantalla completa) */
+  .card{position:absolute;inset:0;z-index:60;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;padding:0 110px;
+    background:radial-gradient(120% 90% at 50% 32%, var(--teatro-light) 0%, var(--teatro) 46%, var(--teatro-dark) 100%);}
+  .card .mk{font-weight:900;font-size:150px;line-height:.82;color:#fff;letter-spacing:-6px;}
+  .card .mk b{color:var(--coral);}
+  #intro{opacity:1;}
+  #intro .kick{margin-top:44px;font-weight:800;font-size:28px;letter-spacing:6px;
+    text-transform:uppercase;color:var(--coral);}
+  #intro .ttl{margin-top:20px;font-weight:900;font-size:78px;line-height:1.05;color:#fff;}
+  #intro .sub{margin-top:26px;font-family:"CrimsonText",Georgia,serif;font-style:italic;
+    font-size:38px;color:rgba(255,255,255,.86);}
+  #outro{opacity:0;}
+  #outro .ttl{margin-top:34px;font-weight:900;font-size:70px;line-height:1.06;color:#fff;}
+  #outro .url{margin-top:26px;font-weight:800;font-size:46px;color:var(--coral);}
+  #outro .sub{margin-top:22px;font-family:"CrimsonText",Georgia,serif;font-style:italic;
+    font-size:36px;color:rgba(255,255,255,.86);}
+  #vignette{position:absolute;inset:0;z-index:50;pointer-events:none;
+    box-shadow:inset 0 0 240px rgba(0,0,0,.34);}
+</style>
+
+<div id="stage">
+  <div id="bg"></div><div id="bgGrain"></div>
+
+  <div id="brand"><div class="mark">[<b>o</b>lvidos</div><div class="sub" id="brandSub">Panel del Equipo Editor</div></div>
+
+  <div id="win">
+    <div id="chrome">
+      <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
+      <span class="url"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-1V6a5 5 0 0 0-5-5zm3 8H9V6a3 3 0 0 1 6 0v3z"/></svg><span id="urlText">olvidos.es/admin</span></span>
+    </div>
+    <div id="screen"><img id="l0" /><img id="l1" /></div>
+  </div>
+
+  <div id="rotulo"><div class="kick"></div><div class="bar"></div><div class="line"></div></div>
+  <div id="steps"></div>
+  <div id="foot">La revista que no olvida</div>
+
+  <div id="intro" class="card">
+    <div class="mk">[<b>o</b></div>
+    <div class="kick" id="introKick">Equipo Editor</div>
+    <div class="ttl" id="introTtl">El panel de administración</div>
+    <div class="sub" id="introSub">Todo lo que publicas, en un solo sitio.</div>
+  </div>
+  <div id="outro" class="card">
+    <div class="mk">[<b>o</b></div>
+    <div class="ttl" id="outroTtl">Escribe. Revisa. Publica.</div>
+    <div class="url" id="outroUrl">olvidos.es/admin</div>
+    <div class="sub" id="outroSub">Bienvenida al Equipo Editor</div>
+  </div>
+  <div id="vignette"></div>
+</div>
+
+<script>
+window.__ASSETS__ = window.__ASSETS__ || null; /* __ASSETS_INJECT__ */
+window.__SCENES__ = window.__SCENES__ || null; /* __SCENES_INJECT__ */
+window.__META__ = window.__META__ || null;     /* __META_INJECT__ */
+(function(){
+  const A=window.__ASSETS__, S=window.__SCENES__, M=window.__META__||{};
+  const el=(id)=>document.getElementById(id);
+  const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+  const lerp=(a,b,t)=>a+(b-a)*t;
+  const easeInOut=(t)=>t<0.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+  const easeOut=(t)=>1-Math.pow(1-t,3);
+  // ventana de contenido (viewport)
+  const WV=1000, HV=680, ASP=HV/WV;
+
+  // Textos fijos
+  if(M.brandSub) el("brandSub").textContent=M.brandSub;
+  if(M.url){ el("urlText").textContent=M.url; el("outroUrl").textContent=M.url; }
+  if(M.introKick) el("introKick").textContent=M.introKick;
+  if(M.introTitle) el("introTtl").textContent=M.introTitle;
+  if(M.introSub) el("introSub").textContent=M.introSub;
+  if(M.outroTitle) el("outroTtl").textContent=M.outroTitle;
+  if(M.outroSub) el("outroSub").textContent=M.outroSub;
+  if(M.foot) el("foot").textContent=M.foot;
+
+  const INTRO=M.introMs??2000, OUTRO=M.outroMs??2600, FADE=M.fadeMs??420;
+  // tiempos de escena
+  let acc=INTRO; const scenes=(S||[]).map((sc)=>{const s={...sc,t0:acc,t1:acc+sc.dur};acc+=sc.dur;return s;});
+  const scenesEnd=acc;
+  window.__DURATION_MS__=scenesEnd+OUTRO;
+
+  // pasos
+  const stepsWrap=el("steps");
+  scenes.forEach(()=>{const d=document.createElement("div");d.className="s";stepsWrap.appendChild(d);});
+  const stepEls=[...stepsWrap.children];
+
+  // precarga imágenes en las dos capas
+  const layers=[el("l0"),el("l1")];
+  function natOf(name){const a=A[name];return {w:a.w,h:a.h,src:a.src};}
+  // clamp de rect dentro de la imagen
+  function fit(rect,nat){
+    let [x,y,w]=rect; w=clamp(w,120,nat.w); let h=w*ASP;
+    if(h>nat.h){h=nat.h; w=h/ASP;}
+    x=clamp(x,0,Math.max(0,nat.w-w)); y=clamp(y,0,Math.max(0,nat.h-h));
+    return {x,y,w,h};
+  }
+  function place(layer,name,rect){
+    const nat=natOf(name);
+    if(layer.getAttribute("data-src")!==name){layer.src=nat.src;layer.setAttribute("data-src",name);}
+    const r=fit(rect,nat); const s=WV/r.w;
+    layer.style.width=(nat.w*s).toFixed(2)+"px";
+    layer.style.left=(-r.x*s).toFixed(2)+"px";
+    layer.style.top=(-r.y*s).toFixed(2)+"px";
+  }
+  const rot=el("rotulo"),rk=rot.querySelector(".kick"),rl=rot.querySelector(".line");
+
+  window.renderAt=function(t){
+    // Intro
+    const introOp = t<INTRO ? clamp(1-(t-(INTRO-500))/500,0,1) : 0;
+    el("intro").style.opacity=introOp.toFixed(3);
+    // Outro
+    const outroOp = t>=scenesEnd ? clamp((t-scenesEnd)/600,0,1) : 0;
+    el("outro").style.opacity=outroOp.toFixed(3);
+    // ventana: aparece al final de la intro, desaparece con el outro
+    const winIn=clamp((t-(INTRO-380))/460,0,1);
+    const winOut=1-clamp((t-scenesEnd)/420,0,1);
+    const win=el("win");
+    win.style.opacity=(easeOut(winIn)*winOut).toFixed(3);
+    win.style.transform=`translateY(${lerp(26,0,easeOut(winIn)).toFixed(1)}px) scale(${lerp(0.985,1,easeOut(winIn)).toFixed(4)})`;
+    win.style.transformOrigin="50% 40%";
+    // brand + foot se atenúan durante intro/outro
+    const chromeVis=clamp(winIn,0,1)*winOut;
+    el("brand").style.opacity=(chromeVis).toFixed(3);
+    el("foot").style.opacity=(0.0+chromeVis*1).toFixed(3);
+
+    // Escena activa
+    let idx=-1;
+    for(let i=0;i<scenes.length;i++){ if(t>=scenes[i].t0 && t<scenes[i].t1){idx=i;break;} }
+    if(idx===-1 && t>=scenesEnd && scenes.length) idx=scenes.length-1;
+    if(idx===-1 && t<INTRO && scenes.length) idx=0;
+
+    if(idx>=0){
+      const sc=scenes[idx];
+      const lt=clamp(t-sc.t0,0,sc.dur);
+      const p=easeInOut(clamp(lt/sc.dur,0,1));
+      const from=sc.from, to=sc.to||sc.from;
+      const rect=[lerp(from[0],to[0],p),lerp(from[1],to[1],p),lerp(from[2],to[2],p)];
+      const cur=idx%2, prev=(idx+1)%2;
+      place(layers[cur],sc.img,rect);
+      // crossfade con la escena anterior
+      let fadeIn=clamp(lt/FADE,0,1);
+      if(idx===0) fadeIn=1; // la primera aparece con la ventana
+      layers[cur].style.opacity=fadeIn.toFixed(3);
+      if(idx>0){
+        const ps=scenes[idx-1];
+        place(layers[prev],ps.img,ps.to||ps.from);
+        layers[prev].style.opacity=(1-fadeIn).toFixed(3);
+      } else {
+        layers[prev].style.opacity="0";
+      }
+      // rótulo
+      const kf=clamp((lt-220)/380,0,1);
+      const ko=clamp(1-(lt-(sc.dur-360))/300,0,1);
+      const ro=Math.min(kf,ko)*chromeVis;
+      rk.textContent=sc.kick||""; rl.textContent=sc.title||"";
+      rot.style.opacity=ro.toFixed(3);
+      el("steps").style.opacity=(ro>0?chromeVis:chromeVis*0.6).toFixed(3);
+      stepEls.forEach((s,i)=>s.className="s"+(i===idx?" on":""));
+    } else {
+      layers[0].style.opacity="0";layers[1].style.opacity="0";rot.style.opacity="0";
+    }
+  };
+  window.__READY__=true;
+})();
+</script>

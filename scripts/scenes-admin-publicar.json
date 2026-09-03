@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "brandSub": "Crear y publicar",
+    "url": "olvidos.es/admin",
+    "foot": "La revista que no olvida",
+    "introKick": "Equipo Editor",
+    "introTitle": "Publica un artículo",
+    "introSub": "De la idea a la web, paso a paso.",
+    "outroTitle": "Escribe. Revisa. Publica.",
+    "outroSub": "El Equipo Editor, al mando.",
+    "introMs": 2100,
+    "outroMs": 2600,
+    "fadeMs": 420
+  },
+  "scenes": [
+    {
+      "img": "articulo-editar-full.png",
+      "dur": 3500,
+      "kick": "Empieza",
+      "title": "Título, extracto y firma",
+      "from": [280, 120, 980],
+      "to": [300, 150, 890]
+    },
+    {
+      "img": "articulo-editar-full.png",
+      "dur": 3400,
+      "kick": "Tu texto",
+      "title": "Escribe y da formato al artículo",
+      "from": [300, 790, 980],
+      "to": [300, 825, 920]
+    },
+    {
+      "img": "articulo-editar-full.png",
+      "dur": 3200,
+      "kick": "Clasifica",
+      "title": "Categorías y etiquetas",
+      "from": [290, 1330, 980],
+      "to": [300, 1360, 900]
+    },
+    {
+      "img": "articulo-editar-full.png",
+      "dur": 3600,
+      "kick": "Publica",
+      "title": "Borrador · Revisión · Publicado",
+      "from": [555, 560, 870],
+      "to": [600, 600, 770]
+    }
+  ]
+}
