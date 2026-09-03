@@ -29,7 +29,7 @@ export type EventKind =
 export type Chamber = "congreso" | "senado" | "cortes-franquistas" | "otro";
 
 /** Bloque político al que se atribuye una declaración. */
-export type Bloc = "derecha" | "izquierda" | "gobierno" | "monarquia" | "marruecos" | "otro";
+export type Bloc = "derecha" | "izquierda" | "gobierno" | "nacionalistas" | "monarquia" | "marruecos" | "otro";
 
 /** Etapa histórica (eje de filtros de la línea temporal y la hemeroteca). */
 export type EraId =

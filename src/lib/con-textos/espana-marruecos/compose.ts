@@ -60,6 +60,8 @@ export interface ComposedPaso {
   cited: string[];
   islas: string[];
   bytes: number;
+  /** Bytes de datos de cada isla (marcador tal cual y tamaño del JSON). */
+  islaBytes: Array<{ raw: string; bytes: number }>;
 }
 
 export interface Composed {
@@ -119,7 +121,7 @@ export function compose(opts: { strict?: boolean } = {}): Composed {
     const file = contentPath(def.file);
     if (!fs.existsSync(file)) {
       error(`falta el fichero ${def.file}`, def.id);
-      pasos.push({ n, id: def.id, title: def.title, html: `<h2>${def.title}</h2>`, cited: [], islas: [], bytes: 0 });
+      pasos.push({ n, id: def.id, title: def.title, html: `<h2>${def.title}</h2>`, cited: [], islas: [], bytes: 0, islaBytes: [] });
       return;
     }
     let raw = fs.readFileSync(file, "utf8").replace(/\r\n/g, "\n").trim();
@@ -143,6 +145,7 @@ export function compose(opts: { strict?: boolean } = {}): Composed {
       cited,
     };
     const islas: string[] = [];
+    const islaBytes: ComposedPaso["islaBytes"] = [];
     let bytes = 0;
     for (const b of splitIslas(html)) {
       if (b.type !== "isla") continue;
@@ -151,6 +154,7 @@ export function compose(opts: { strict?: boolean } = {}): Composed {
         const { data: d } = loadIsla(b.name, b.props, data, ctx);
         const size = JSON.stringify(d).length;
         bytes += size;
+        islaBytes.push({ raw: b.raw, bytes: size });
         if (size > MAX_BYTES_PER_ISLA) error(`${b.raw}: ${size} bytes (máximo ${MAX_BYTES_PER_ISLA})`, def.id);
         else if (size > WARN_BYTES_PER_ISLA) warn(`${b.raw}: ${size} bytes (aviso a partir de ${WARN_BYTES_PER_ISLA})`, def.id);
         if (b.name === "fuentes" && (d as { sources: unknown[] }).sources.length > 80) warn(`${b.raw}: más de 80 fuentes`, def.id);
@@ -160,7 +164,7 @@ export function compose(opts: { strict?: boolean } = {}): Composed {
     }
     if (bytes > MAX_BYTES_PER_PASO) error(`el paso suma ${bytes} bytes de datos de islas (máximo ${MAX_BYTES_PER_PASO})`, def.id);
     if (!/^\s*<h2[\s>]/i.test(html)) warn(`${def.file} no empieza por <h2>`, def.id);
-    pasos.push({ n, id: def.id, title: def.title, html, cited, islas, bytes });
+    pasos.push({ n, id: def.id, title: def.title, html, cited, islas, bytes, islaBytes });
   });
 
   const full = pasos.map((p) => `<!--paso:${p.id}-->\n${p.html}`).join("\n<!--nextpage-->\n");

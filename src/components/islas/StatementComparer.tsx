@@ -1,12 +1,25 @@
 "use client";
 
 import { useId, useRef, useState } from "react";
-import type { ComparadorData, StatementItem } from "@/lib/con-textos/islas-def";
+import type { Bloc } from "@/lib/con-textos/types";
+import type { ComparadorData, ComparadorLayout, SlimSource, StatementItem } from "@/lib/con-textos/islas-def";
 import { BLOC_COLORS, BLOC_LABELS } from "./palette";
 
-function Statement({ s }: { s: StatementItem }) {
+/** Declaraciones visibles por bloque en modo apilado antes de «Ver más». */
+const INITIAL = 4;
+const STEP = 8;
+
+/** Literales completos para que Tailwind genere las clases. */
+const GRID: Record<number, string> = {
+  2: "md:grid-cols-2",
+  3: "md:grid-cols-2 xl:grid-cols-3",
+  4: "md:grid-cols-2 xl:grid-cols-4",
+};
+
+function Statement({ s, sources }: { s: StatementItem; sources: Record<string, SlimSource> }) {
+  const refs = s.sourceIds.map((id) => sources[id]).filter(Boolean);
   return (
-    <li className="border-t border-acero-light/40 pt-3 first:border-t-0 first:pt-0">
+    <li className="border-t border-acero-light/40 pt-3">
       <p className="text-sm font-bold text-tinta">
         {s.speaker}
         <span className="font-normal text-acero"> · {s.role}</span>
@@ -14,9 +27,9 @@ function Statement({ s }: { s: StatementItem }) {
       <p className="text-xs font-bold uppercase tracking-wide text-coral">{s.dateLabel}</p>
       <blockquote className="mt-1.5 font-editorial text-[1.02rem] leading-snug text-tinta/90">«{s.text}»</blockquote>
       {s.note && <p className="mt-1 text-xs italic leading-snug text-acero">{s.note}</p>}
-      {s.sources.length > 0 && (
+      {refs.length > 0 && (
         <p className="mt-1.5 flex flex-wrap gap-x-3 text-xs">
-          {s.sources.map((src) => (
+          {refs.map((src) => (
             <a key={src.id} href={src.url} target="_blank" rel="noopener noreferrer" className="text-coral underline decoration-coral-light hover:text-tinta">
               {src.publisher || src.title}
             </a>
@@ -28,9 +41,64 @@ function Statement({ s }: { s: StatementItem }) {
 }
 
 /**
+ * Bloques de una crisis. En columnas cuando están compensados; apilados
+ * («fuente / caja, fuente / caja») con «Ver más» por bloque cuando uno tiene
+ * muchas más declaraciones que los otros. La disposición viene decidida del
+ * servidor (`data.layout`). Se monta con `key={crisis.id}` para que el estado
+ * de «Ver más» se reinicie al cambiar de pestaña.
+ */
+function CrisisPanel({
+  blocs,
+  groups,
+  layout,
+  sources,
+}: {
+  blocs: Bloc[];
+  groups: Partial<Record<Bloc, StatementItem[]>>;
+  layout: ComparadorLayout;
+  sources: Record<string, SlimSource>;
+}) {
+  const [shown, setShown] = useState<Partial<Record<Bloc, number>>>({});
+  const stacked = layout === "apilada";
+  return (
+    <div className={stacked ? "space-y-8" : `grid gap-6 ${GRID[Math.min(blocs.length, 4)] ?? ""}`}>
+      {blocs.map((b) => {
+        const items = groups[b] ?? [];
+        const n = stacked ? (shown[b] ?? INITIAL) : items.length;
+        const visible = items.slice(0, n);
+        return (
+          <section key={b} className="min-w-0" aria-label={BLOC_LABELS[b] ?? b}>
+            <h4 className="mb-3 border-b-2 pb-1 text-xs font-black uppercase tracking-wide" style={{ borderColor: BLOC_COLORS[b], color: BLOC_COLORS[b] }}>
+              {BLOC_LABELS[b] ?? b}
+              {stacked && <span className="ml-2 font-normal normal-case tracking-normal text-acero">{items.length}</span>}
+            </h4>
+            <ul className={stacked ? "grid gap-x-8 gap-y-3 md:grid-cols-2" : "space-y-3"}>
+              {visible.map((s) => (
+                <Statement key={s.id} s={s} sources={sources} />
+              ))}
+            </ul>
+            {items.length > n && (
+              <p className="mt-3">
+                <button
+                  type="button"
+                  onClick={() => setShown((prev) => ({ ...prev, [b]: n + STEP }))}
+                  className="rounded-sm border border-tinta px-4 py-2 text-sm font-bold text-tinta transition-colors hover:bg-tinta hover:text-white"
+                >
+                  Ver más ({items.length - n} restantes)
+                </button>
+              </p>
+            )}
+          </section>
+        );
+      })}
+    </div>
+  );
+}
+
+/**
  * Isla «comparador»: «quién dijo qué» en cada crisis, con una pestaña por
- * crisis y una columna por bloque (Gobierno, derecha, izquierda, Marruecos,
- * Corona, otros). Pestañas accesibles por teclado.
+ * crisis y un bloque por actor (Gobierno, derecha, izquierda, nacionalistas,
+ * Marruecos, Corona, otros). Pestañas accesibles por teclado.
  */
 export function StatementComparer({ data }: { data: ComparadorData }) {
   const [current, setCurrent] = useState(data.crises[0]?.id ?? "");
@@ -40,6 +108,7 @@ export function StatementComparer({ data }: { data: ComparadorData }) {
   if (!crisis) return null;
   const groups = data.byCrisis[crisis.id] ?? {};
   const blocs = data.blocs.filter((b) => (groups[b]?.length ?? 0) > 0);
+  const layout = data.layout?.[crisis.id] ?? "columnas";
 
   const onKey = (e: React.KeyboardEvent, i: number) => {
     const n = data.crises.length;
@@ -96,20 +165,7 @@ export function StatementComparer({ data }: { data: ComparadorData }) {
         {blocs.length === 0 ? (
           <p className="text-sm text-acero">Sin declaraciones verificadas para esta crisis.</p>
         ) : (
-          <div className={`grid gap-6 ${blocs.length >= 3 ? "md:grid-cols-2 xl:grid-cols-3" : blocs.length === 2 ? "md:grid-cols-2" : ""}`}>
-            {blocs.map((b) => (
-              <div key={b} className="min-w-0">
-                <h4 className="mb-3 border-b-2 pb-1 text-xs font-black uppercase tracking-wide" style={{ borderColor: BLOC_COLORS[b], color: BLOC_COLORS[b] }}>
-                  {BLOC_LABELS[b] ?? b}
-                </h4>
-                <ul className="space-y-3">
-                  {(groups[b] ?? []).map((s) => (
-                    <Statement key={s.id} s={s} />
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          <CrisisPanel key={crisis.id} blocs={blocs} groups={groups} layout={layout} sources={data.sources ?? {}} />
         )}
       </div>
     </section>

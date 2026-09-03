@@ -46,14 +46,17 @@ function QuoteCard({ q }: { q: QuoteItem }) {
       <blockquote className="mt-2 font-editorial text-[1.05rem] leading-snug text-tinta/90">«{q.text}»</blockquote>
       {q.context && <p className="mt-1.5 text-xs italic leading-snug text-acero">{q.context}</p>}
       <p className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs">
-        <a href={q.pdfUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-coral underline decoration-coral-light hover:text-tinta">
-          Diario de Sesiones (PDF)
-        </a>
-        {q.videoUrl && (
-          <a href={q.videoUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-coral underline decoration-coral-light hover:text-tinta">
-            Vídeo de la sesión
+        {q.pdfUrl && (
+          <a href={q.pdfUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-coral underline decoration-coral-light hover:text-tinta">
+            Diario de Sesiones (PDF)
           </a>
         )}
+        {q.videoUrl && (
+          <a href={q.videoUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-coral underline decoration-coral-light hover:text-tinta">
+            {q.pdfUrl ? "Vídeo de la sesión" : "Vídeo de la intervención"}
+          </a>
+        )}
+        {!q.pdfUrl && q.chamber !== "otro" && <span className="text-acero">Diario de Sesiones pendiente</span>}
         <span className="text-acero">{BLOC_LABELS[q.bloc] ?? q.bloc}</span>
       </p>
     </li>
