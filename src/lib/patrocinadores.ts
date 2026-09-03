@@ -22,13 +22,7 @@ export interface Reconocimiento {
 }
 
 /** Patrocinadores institucionales (logos grandes). No son socios. */
-export const PATROCINADORES: Reconocimiento[] = [
-  {
-    nombre: "Clínica Cultural y Lingüística",
-    logo: "/patrocinadores/clinica-cultural.png",
-    url: "https://www.clinicacultural.com",
-  },
-];
+export const PATROCINADORES: Reconocimiento[] = [];
 
 /** Socios institucionales (logos medianos). */
 export const SOCIOS_INSTITUCIONALES: Reconocimiento[] = [];
