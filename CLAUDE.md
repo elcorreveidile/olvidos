@@ -39,9 +39,16 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
 
 - Formato y flujo de trabajo: `docs/con-textos/README.md`.
 - Primer especial: «Ceuta no empezó en julio. España y Marruecos, 1859-2026»
-  (`ceuta-no-empezo-en-julio`), creado en borrador el 2-9-2026. Pendiente:
-  añadir al paso 1 el Diario de Sesiones del pleno extraordinario del
-  3-9-2026 cuando el Congreso lo publique.
+  (`ceuta-no-empezo-en-julio`), creado en borrador el 2-9-2026.
+- **Actualización pendiente (decidida el 3-9-2026), de una sola vez cuando el
+  Congreso publique el Diario de Sesiones del pleno extraordinario del
+  3-9-2026:** (a) estilo del comparador «Quién dijo qué»: apilar los bloques
+  cuando estén descompensados en vez de columnas con huecos; (b) contenido:
+  citas del pleno, el informe del CENIF y su filtración (1-2 sept), los
+  incidentes de la extrema derecha de la noche del 2-3 sept y lo que vaya
+  saliendo. El material recopilado hasta ahora está en
+  `docs/con-textos/espana-marruecos/bloques/07-actualizacion-2026-09-03.md`.
+  Detalle en el plan de sesión y en `docs/con-textos/README.md`.
 
 ## Convenciones
 
