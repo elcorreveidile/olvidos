@@ -1,0 +1,3477 @@
+{
+  "sources": [
+    {
+      "id": "src-wiki-incidentes",
+      "title": "Incidentes fronterizos entre España y Marruecos de 2026",
+      "author": "",
+      "publisher": "Wikipedia (es)",
+      "date": "2026-09-02",
+      "url": "https://es.wikipedia.org/wiki/Incidentes_fronterizos_entre_Espa%C3%B1a_y_Marruecos_de_2026",
+      "kind": "archivo",
+      "accessed": "2026-09-02",
+      "note": "Usada solo como mapa; datos no contrastados marcados NO VERIFICADO"
+    },
+    {
+      "id": "src-moncloa-argel",
+      "title": "España y Argelia acuerdan impulsar una nueva etapa en su relación bilateral con la celebración de la VIII Reunión de Alto Nivel en octubre",
+      "author": "",
+      "publisher": "La Moncloa",
+      "date": "2026-07-20",
+      "url": "https://www.lamoncloa.gob.es/presidente/actividades/paginas/2026/200726-sanchez-visita-argelia-.aspx",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-moncloa-ceuta-31jul",
+      "title": "Pedro Sánchez reitera que se emplearán \"todos los recursos del Estado\" para garantizar la seguridad en Ceuta y condena la \"violación y el ataque a la integridad territorial\" de España",
+      "author": "",
+      "publisher": "La Moncloa",
+      "date": "2026-07-31",
+      "url": "https://www.lamoncloa.gob.es/presidente/actividades/paginas/2026/310726-sanchez-reunion-coordinacion-ceuta.aspx",
+      "kind": "oficial",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-elderecho-sts",
+      "title": "El Tribunal Supremo limita las «devoluciones en caliente» en el mar a los cruces que superen elementos de contención",
+      "author": "",
+      "publisher": "El Derecho",
+      "date": "2026-07-08",
+      "url": "https://elderecho.com/el-tribunal-supremo-limita-las-devoluciones-en-caliente-en-el-mar-a-los-cruces-que-superen-elementos-de-contencion/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Fecha aproximada; no leído íntegro"
+    },
+    {
+      "id": "src-moncloacom-instruccion",
+      "title": "El Tribunal Supremo avala el rechazo en la frontera: Interior dicta la Instrucción 9/2026 para Ceuta y Melilla",
+      "author": "",
+      "publisher": "Moncloa.com",
+      "date": "2026-08-05",
+      "url": "https://www.moncloa.com/2026/08/05/tribunal-supremo-rechazo-frontera-instruccion-2026-3411103",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Fecha STS 814/2026 el 29 de junio según este medio; discrepancia con Wikipedia y Robles (8 jul)"
+    },
+    {
+      "id": "src-elindependiente-sindicatos",
+      "title": "Sindicatos policiales denuncian el \"colapso total\" en Ceuta por la \"guerra híbrida\" y el chantaje de Marruecos",
+      "author": "",
+      "publisher": "El Independiente",
+      "date": "2026-07-30",
+      "url": "https://www.elindependiente.com/espana/2026/07/30/sindicatos-policiales-denuncian-colapso-total-ceuta-guerra-hibrida-chantaje-marruecos/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "14:10"
+    },
+    {
+      "id": "src-elindependiente-benyaich",
+      "title": "El Gobierno intenta salvaguardar la relación con Marruecos tras el caos migratorio en Ceuta",
+      "author": "",
+      "publisher": "El Independiente",
+      "date": "2026-07-31",
+      "url": "https://www.elindependiente.com/espana/2026/07/31/gobierno-salvaguardar-relacion-marruecos-crisis-migratoria-ceuta/amp/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "00:06"
+    },
+    {
+      "id": "src-eldebate-49000",
+      "title": "El volumen de la avalancha: 49.000 personas entraron en Ceuta en menos de 24 horas",
+      "author": "",
+      "publisher": "El Debate",
+      "date": "2026-07-31",
+      "url": "https://www.eldebate.com/espana/20260731/volumen-avalancha-49000-personas-entraron-ceuta-menos-24-horas_445562.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "11:45; 19 fallecidos según fuentes policiales a EFE"
+    },
+    {
+      "id": "src-eldebate-robles-31jul",
+      "title": "Robles afirma que el Ejército mantendrá el refuerzo en Ceuta «el tiempo que sea necesario»",
+      "author": "",
+      "publisher": "El Debate",
+      "date": "2026-07-31",
+      "url": "https://www.eldebate.com/espana/20260731/robles-afirma-ejercito-mantendra-refuerzo-ceuta-tiempo-sea-necesario_445720.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "14:22, Cartagena"
+    },
+    {
+      "id": "src-infobae-sanchez-31jul",
+      "title": "Pedro Sánchez califica la entrada masiva en Ceuta de “violación de la integridad territorial de España” y destaca la “cooperación” con Marruecos",
+      "author": "",
+      "publisher": "Infobae",
+      "date": "2026-07-31",
+      "url": "https://www.infobae.com/espana/2026/07/31/pedro-sanchez-califica-la-entrada-masiva-en-ceuta-de-violacion-de-la-integridad-territorial-de-espana/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-infobae-directo-1ago",
+      "title": "Última hora de la crisis migratoria de Ceuta y el cruce masivo de la frontera, en directo",
+      "author": "",
+      "publisher": "Infobae",
+      "date": "2026-08-01",
+      "url": "https://www.infobae.com/espana/2026/08/01/ultima-hora-de-la-crisis-migratoria-de-ceuta-y-el-cruce-masivo-de-la-frontera-en-directo-nuevos-intentos-de-entrada-a-melilla-mantienen-en-alerta-a-las-fuerzas-de-seguridad/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "67 fallecidos a las 20:42; Vivas 14:49"
+    },
+    {
+      "id": "src-theobjective-carta-vdl",
+      "title": "Lea aquí la carta completa enviada por Sánchez a Von der Leyen sobre la situación en Ceuta",
+      "author": "",
+      "publisher": "The Objective",
+      "date": "2026-08-01",
+      "url": "https://theobjective.com/espana/2026-08-01/lea-aqui-carta-completa-enviada-sanchez-von-der-leyen-ceuta/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "11:26"
+    },
+    {
+      "id": "src-euronews-barrera",
+      "title": "Así queda la frontera marítima en Ceuta tras la instalación de la boya neumática de 500 metros",
+      "author": "",
+      "publisher": "Euronews",
+      "date": "2026-08-01",
+      "url": "https://es.euronews.com/my-europe/2026/08/01/asi-queda-la-frontera-en-ceuta-tras-la-instalacion-de-la-boya-neumatica-de-500-metros",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-ceutaldia-barrera",
+      "title": "El Tarajal estrena una barrera flotante de 500 metros que cambia las reglas del juego",
+      "author": "",
+      "publisher": "Ceuta al Día",
+      "date": "2026-08-01",
+      "url": "https://www.ceutaldia.com/articulo/sucesos/tarajal-estrena-barrera-flotante-500-metros-que-cambia-reglas-juego/20260801120824317593.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-france24-72",
+      "title": "España eleva a 72 los muertos en Ceuta, mientras continúa la búsqueda de desaparecidos",
+      "author": "",
+      "publisher": "France 24",
+      "date": "2026-08-02",
+      "url": "https://www.france24.com/es/europa/20260802-espa%C3%B1a-eleva-a-72-los-muertos-en-ceuta-mientras-contin%C3%BAa-la-b%C3%BAsqueda-de-desaparecidos",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "No leído íntegro (403); cifra tomada del titular y de Canal Sur"
+    },
+    {
+      "id": "src-lanacion-88",
+      "title": "Marruecos impone un apagón informativo y la cifra de muertos en Ceuta asciende a 88",
+      "author": "",
+      "publisher": "La Nación (Argentina)",
+      "date": "2026-08-02",
+      "url": "https://www.lanacion.com.ar/el-mundo/marruecos-impone-un-apagon-informativo-y-la-cifra-de-muertos-en-ceuta-asciende-a-88-nid02082026/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "16:44"
+    },
+    {
+      "id": "src-canalsur-88",
+      "title": "El Gobierno de Ceuta eleva a 88 el número de fallecidos en las inmediaciones del espigón",
+      "author": "",
+      "publisher": "Canal Sur / EFE",
+      "date": "2026-08-03",
+      "url": "https://www.canalsur.es/noticias/espana/gobierno-ceuta-eleva-88-numero_1_1426696.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "10:00; Delegación 72; AUGC ~100; Interior marroquí 40.000 llegados y 11 muertos"
+    },
+    {
+      "id": "src-goldenowl",
+      "title": "The Ceuta Mobilisation Network: Recruitment, Amplification and Operational Security",
+      "author": "",
+      "publisher": "Golden Owl",
+      "date": "2026-08-03",
+      "url": "https://goldenowl.ai/resources/research/The-Ceuta-Mobilisation-Network-Recruitment-Amplification-and-Operational-Security",
+      "kind": "dato",
+      "accessed": "2026-09-02",
+      "note": "Informe OSINT en inglés"
+    },
+    {
+      "id": "src-libertaddigital-vdl",
+      "title": "Von der Leyen ofrece Frontex y Europol en Ceuta entre elogios a España y Marruecos",
+      "author": "",
+      "publisher": "Libertad Digital",
+      "date": "2026-08-03",
+      "url": "https://www.libertaddigital.com/internacional/europa/2026-08-03/von-der-leyen-ofrece-frontex-y-europol-en-ceuta-entre-elogios-a-espana-y-marruecos-7444907/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "14:30; carta de respuesta a Sánchez"
+    },
+    {
+      "id": "src-ceutatv-72000",
+      "title": "Las cifras de Interior: 72.000 entradas y 75 fallecidos durante la crisis migratoria",
+      "author": "",
+      "publisher": "CeutaTV",
+      "date": "2026-08-04",
+      "url": "https://www.ceutatv.com/articulo/politica/cifras-interior-72000-entradas-75-fallecidos-crisis-migratoria/20260804164717250844.amp.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "16:47; no leído íntegro (406)"
+    },
+    {
+      "id": "src-infobae-141",
+      "title": "El número de fallecidos durante la entrada masiva a Ceuta se eleva a 141, según la ONG Caminando Fronteras",
+      "author": "",
+      "publisher": "Infobae",
+      "date": "2026-08-05",
+      "url": "https://www.infobae.com/espana/2026/08/05/el-numero-de-fallecidos-durante-la-entrada-masiva-a-ceuta-se-eleva-a-141-segun-la-ong-caminando-fronteras/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-theobjective-cadaveres",
+      "title": "Marruecos no recoge los cadáveres que se encuentran en sus aguas territoriales",
+      "author": "",
+      "publisher": "The Objective",
+      "date": "2026-08-05",
+      "url": "https://theobjective.com/espana/2026-08-05/llegada-cadaveres-marruecos-ceuta/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "10:51"
+    },
+    {
+      "id": "src-elcano",
+      "title": "Ceuta, 28-31 de julio de 2026: la crisis migratoria express de la Unión Europea",
+      "author": "Rut Bermejo Casado",
+      "publisher": "Real Instituto Elcano",
+      "date": "2026-08-05",
+      "url": "https://www.realinstitutoelcano.org/comentarios/ceuta-28-31-de-julio-de-2026-la-crisis-migratoria-express-de-la-union-europea/",
+      "kind": "academica",
+      "accessed": "2026-09-02",
+      "note": "Original devolvió 403; leído en copia: https://www.almendron.com/tribuna/ceuta-28-31-de-julio-de-2026-la-crisis-migratoria-express-de-la-union-europea/"
+    },
+    {
+      "id": "src-moncloacom-pnv-erc",
+      "title": "PNV y ERC señalan a Marruecos por la crisis migratoria de Ceuta mientras EH Bildu guarda silencio",
+      "author": "",
+      "publisher": "Moncloa.com",
+      "date": "2026-08-05",
+      "url": "https://www.moncloa.com/2026/08/05/crisis-migratoria-ceuta-pnv-erc-ehbildu-3410723",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-elespanol-abascal-8ago",
+      "title": "Abascal pide activar el artículo 102 de la Constitución para que el Supremo procese a Sánchez por \"traición\" al Estado en Ceuta",
+      "author": "",
+      "publisher": "El Español",
+      "date": "2026-08-08",
+      "url": "https://www.elespanol.com/espana/politica/20260808/abascal-pide-activar-articulo-constitucion-supremo-procese-sanchez-traicion-ceuta/1003744347780_0.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Cifra la cuarta parte del Congreso en 88 diputados"
+    },
+    {
+      "id": "src-euronews-torres",
+      "title": "El Gobierno eleva a 80.000 los inmigrantes que llegaron a Ceuta durante la entrada masiva desde Marruecos",
+      "author": "",
+      "publisher": "Euronews",
+      "date": "2026-08-10",
+      "url": "https://es.euronews.com/my-europe/2026/08/10/el-gobierno-eleva-a-80000-los-inmigrantes-que-llegaron-a-ceuta-durante-la-entrada-masiva-d",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "14:20; aclaración posterior: 72.000"
+    },
+    {
+      "id": "src-infobae-ouahbi",
+      "title": "El ministro de Justicia de Marruecos, sobre Ceuta y Melilla: “Cada vez que nos reunimos con España planteamos la cuestión. Seguimos reivindicando nuestros territorios”",
+      "author": "",
+      "publisher": "Infobae",
+      "date": "2026-08-11",
+      "url": "https://www.infobae.com/espana/2026/08/11/el-ministro-de-justicia-de-marruecos-sobre-ceuta-y-melilla-cada-vez-que-nos-reunimos-con-espana-planteamos-la-cuestion-seguimos-reivindicando-nuestros-territorios/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Entrevista en Asharq News del 10 de agosto"
+    },
+    {
+      "id": "src-theobjective-robles-12ago",
+      "title": "Robles lanza un aviso a Marruecos y defiende al Ejército: «A Ceuta y Melilla no se las toca»",
+      "author": "",
+      "publisher": "The Objective",
+      "date": "2026-08-12",
+      "url": "https://theobjective.com/espana/politica/2026-08-12/robles-marruecos-ejercito-ceuta-melilla/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "14:14"
+    },
+    {
+      "id": "src-publico-marlaska-13ago",
+      "title": "Marlaska anuncia un refuerzo policial en la frontera y estima en 5.000 los migrantes que permanecen en Ceuta",
+      "author": "",
+      "publisher": "Público",
+      "date": "2026-08-13",
+      "url": "https://www.publico.es/politica/marlaska-anuncia-refuerzo-policial-frontera-estima-5-000-migrantes-permanecen-ceuta.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "15:21"
+    },
+    {
+      "id": "src-theobjective-periodistas",
+      "title": "Marruecos expulsa a los periodistas de EFE y TVE de Castillejos",
+      "author": "",
+      "publisher": "The Objective",
+      "date": "2026-08-15",
+      "url": "https://theobjective.com/internacional/2026-08-15/marruecos-expulsa-a-los-periodistas-de-efe-y-tve-de-castillejos/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "16:26"
+    },
+    {
+      "id": "src-elespanol-yolanda",
+      "title": "La 'prejubilada' Yolanda Díaz: la vicepresidenta enmudece tras las crisis de Ceuta y de Almaraz a la espera de sentarse en la OIT",
+      "author": "",
+      "publisher": "El Español",
+      "date": "2026-08-16",
+      "url": "https://www.elespanol.com/espana/politica/20260816/prejubilada-yolanda-diaz-vicepresidenta-enmudece-crisis-ceuta-almaraz-espera-sentarse-oit/1003744353802_0.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-moncloacom-calendario",
+      "title": "Comparecencias de los ministros por Ceuta: el calendario que el Gobierno fija en el Congreso",
+      "author": "",
+      "publisher": "Moncloa.com",
+      "date": "2026-08-18",
+      "url": "https://www.moncloa.com/2026/08/18/comparecencias-ministros-ceuta-congreso-calendario-3417287",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-eldebate-senado",
+      "title": "Comisión de Interior del Senado, en directo",
+      "author": "",
+      "publisher": "El Debate",
+      "date": "2026-08-20",
+      "url": "https://www.eldebate.com/espana/20260820/comision-interior-senado-directo_450797.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Solo antesala del directo; sin contenido de la sesión"
+    },
+    {
+      "id": "src-infobae-jabaroot",
+      "title": "Crisis de Ceuta: los hackers 'Jabaroot' cumplen su amenaza y filtran decenas de miles de nombres de la inteligencia marroquí",
+      "author": "",
+      "publisher": "Infobae",
+      "date": "2026-08-24",
+      "url": "https://www.infobae.com/espana/2026/08/24/los-hackers-jabaroot-cumplen-su-amenaza-y-filtran-decenas-de-miles-de-nombres-de-la-inteligencia-marroqui/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-elespanol-toufiq",
+      "title": "Rabat: el ministro de Asuntos Islámicos exhorta a \"liberar las ciudades ocupadas\" como Ceuta ante Mohamed VI y su heredero",
+      "author": "",
+      "publisher": "El Español",
+      "date": "2026-08-25",
+      "url": "https://www.elespanol.com/espana/politica/20260825/mohamed-vi-reaparece-ceremonia-religiosa-reclamo-liberar-territorios-ocupados-ceuta-melilla/1003744362190_0.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-theobjective-toufiq",
+      "title": "Un ministro marroquí defiende la «liberación de las ciudades ocupadas» en referencia a Ceuta",
+      "author": "",
+      "publisher": "The Objective",
+      "date": "2026-08-25",
+      "url": "https://theobjective.com/internacional/2026-08-25/ministro-marroqui-liberacion-ciudades-ocupadas-ceuta/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-elespanol-albares-25ago",
+      "title": "Albares evita convocar a la embajadora de Marruecos pese a los desafíos de Rabat a la soberanía de Ceuta",
+      "author": "",
+      "publisher": "El Español",
+      "date": "2026-08-25",
+      "url": "https://www.elespanol.com/espana/politica/20260825/albares-evita-convocar-embajadora-marruecos-pese-desafios-rabat-soberania-ceuta/1003744362907_0.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "21:04"
+    },
+    {
+      "id": "src-dscd-co-609",
+      "title": "Diario de Sesiones del Congreso, Comisiones, núm. 609 (Defensa, sesión 29, extraordinaria, 25 de agosto de 2026)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2026-08-25",
+      "url": "https://www.congreso.es/public_oficiales/L15/CONG/DS/CO/DSCD-15-CO-609.PDF",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": "PDF descargado y leído íntegro (53 págs.)"
+    },
+    {
+      "id": "src-dscd-pl-200",
+      "title": "Diario de Sesiones del Congreso, Pleno y Diputación Permanente, núm. 200 (Diputación Permanente, sesión 7, 26 de agosto de 2026)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2026-08-26",
+      "url": "https://www.congreso.es/public_oficiales/L15/CONG/DS/PL/DSCD-15-PL-200.PDF",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": "PDF descargado y leído íntegro (70 págs.)"
+    },
+    {
+      "id": "src-congreso-video-dp",
+      "title": "Vídeo Diputación Permanente - 26/08/2026",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2026-08-26",
+      "url": "https://app.congreso.es/AudiovisualCongreso/audiovisualdetalledisponible?codSesion=7&codOrgano=500&fechaSesion=26%2F08%2F2026&mp4=mp4&idLegislaturaElegida=15&i=777614",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-cope-3sept",
+      "title": "Sánchez comparecerá en el Congreso el 3 de septiembre para rendir cuentas por la gestión de la crisis migratoria en Ceuta",
+      "author": "",
+      "publisher": "COPE",
+      "date": "2026-08-26",
+      "url": "https://www.cope.es/actualidad/espana/noticias/sanchez-solicita-comparecer-congreso-9-septiembre-27-dias-inicio-crisis-ceuta-20260826_3425055.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "11:21"
+    },
+    {
+      "id": "src-pressdigital-guerracivil",
+      "title": "El PP denuncia una \"guerra civil\" en el Gobierno por los informes sobre Ceuta y acusa a Sánchez de crear \"un caos mayor\"",
+      "author": "",
+      "publisher": "Press Digital / EP",
+      "date": "2026-08-26",
+      "url": "https://www.pressdigital.es/articulo/politica/2026-08-26/5994199-pp-denuncia-guerra-civil-gobierno-informes-sobre-ceuta-acusa-sanchez-crear-caos-mayor",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Solo resumen de búsqueda"
+    },
+    {
+      "id": "src-theobjective-exteriores-26ago",
+      "title": "Exteriores dice que Albares habla a diario con su homólogo marroquí y reivindica la diplomacia",
+      "author": "",
+      "publisher": "The Objective",
+      "date": "2026-08-26",
+      "url": "https://theobjective.com/espana/politica/2026-08-26/exteriores-albares-diario-homologo-marroqui-diplomacia/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "11:03"
+    },
+    {
+      "id": "src-ceutaldia-benzu",
+      "title": "Emboscada a militares en Benzú: once inmigrantes detenidos tras el lanzamiento de piedras",
+      "author": "",
+      "publisher": "Ceuta al Día",
+      "date": "2026-08-27",
+      "url": "https://www.ceutaldia.com/articulo/sucesos/emboscada-militares-benzu-once-migrantes-detenidos-lanzamiento-piedras/20260827072711319203.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "07:27; no leído íntegro (403)"
+    },
+    {
+      "id": "src-theobjective-sargento",
+      "title": "Un sargento herido y cuatro detenidos tras un nuevo «ataque» a militares en Ceuta",
+      "author": "",
+      "publisher": "The Objective",
+      "date": "2026-08-29",
+      "url": "https://theobjective.com/espana/2026-08-29/militar-herido-agresion-piedras-inmigrantes-ceuta/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Incluye balance de Benzú: 4 heridos, 12 detenidos"
+    },
+    {
+      "id": "src-dscd-co-610",
+      "title": "Diario de Sesiones del Congreso, Comisiones, núm. 610 (Sanidad, sesión 45, extraordinaria, 27 de agosto de 2026)",
+      "author": "",
+      "publisher": "Congreso de los Diputados",
+      "date": "2026-08-27",
+      "url": "https://www.congreso.es/public_oficiales/L15/CONG/DS/CO/DSCD-15-CO-610.PDF",
+      "kind": "parlamentaria",
+      "accessed": "2026-09-02",
+      "note": "PDF descargado y leído íntegro (49 págs.)"
+    },
+    {
+      "id": "src-moncloacom-iustitia",
+      "title": "Quieren usar las declaraciones de la ministra Robles en la investigación sobre Ceuta de la AN",
+      "author": "",
+      "publisher": "Moncloa.com",
+      "date": "2026-08-27",
+      "url": "https://www.moncloa.com/2026/08/27/defensa-investigacion-ceuta-3421279",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "05:20; Diligencias Previas 64/2026"
+    },
+    {
+      "id": "src-pressdigital-marlaska-28ago",
+      "title": "PP y Vox acusan a Marlaska de ignorar alertas previas sobre Ceuta: \"Si lo sabía, fue negligente; si no, incompetente\"",
+      "author": "",
+      "publisher": "Press Digital / EP",
+      "date": "2026-08-28",
+      "url": "https://www.pressdigital.es/articulo/politica/2026-08-28/5996194-pp-vox-acusan-marlaska-ignorar-alertas-previas-sobre-ceuta-sabia-negligente-no-incompetente",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "13:11"
+    },
+    {
+      "id": "src-theobjective-socios-28ago",
+      "title": "ERC, Junts, PNV, Bildu y Sumar cargan contra Marlaska por su gestión de la crisis de Ceuta",
+      "author": "",
+      "publisher": "The Objective",
+      "date": "2026-08-28",
+      "url": "https://theobjective.com/espana/politica/2026-08-28/erc-junts-pnv-bildu-sumar-contra-marlaska-gestion-ceuta/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "15:41"
+    },
+    {
+      "id": "src-elespanol-ue-28ago",
+      "title": "La UE no detectó 'injerencia extranjera' en redes los días previos a la invasión de Ceuta: la 'manipulación' empezó el día 30",
+      "author": "",
+      "publisher": "El Español",
+      "date": "2026-08-28",
+      "url": "https://www.elespanol.com/mundo/europa/20260828/ue-no-detecto-injerencia-extranjera-redes-dias-previos-invasion-ceuta-manipulacion-empezo-dia/1003744364777_0.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-elespanol-vivas-30ago",
+      "title": "Las revelaciones de Vivas ponen a Sánchez contra las cuerdas: el Gobierno, obligado a aclarar por qué desoyó 3 días sus peticiones de ayuda y Estado de Alarma",
+      "author": "",
+      "publisher": "El Español",
+      "date": "2026-08-30",
+      "url": "https://www.elespanol.com/espana/politica/20260830/revelaciones-vivas-ponen-sanchez-cuerdas-gobierno-obligado-aclarar-desoyo-dias-peticiones-ayuda-alarma/1003744367052_0.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-theobjective-sanchez-ser",
+      "title": "Sánchez exonera a Marruecos del asalto a Ceuta y apunta a Rusia e Israel",
+      "author": "",
+      "publisher": "The Objective",
+      "date": "2026-08-31",
+      "url": "https://theobjective.com/espana/politica/2026-08-31/sanchez-marruecos-asalto-ceuta-informacion/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Entrevista en la Cadena SER, lunes 31 de agosto"
+    },
+    {
+      "id": "src-eldiario-saar",
+      "title": "El ministro de Exteriores de Netanyahu acusa a Sánchez de \"mentir con descaro\" sobre el rol de Israel en la crisis de Ceuta",
+      "author": "",
+      "publisher": "elDiario.es",
+      "date": "2026-08-31",
+      "url": "https://www.eldiario.es/internacional/ministro-exteriores-netanyahu-acusa-sanchez-mentir-descaro-rol-israel-crisis-ceuta_1_13477174.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "15:05"
+    },
+    {
+      "id": "src-eldiario-fiscalia",
+      "title": "La Fiscalía eleva a 23 las agresiones sexuales registradas en Ceuta desde el inicio de la crisis migratoria",
+      "author": "",
+      "publisher": "elDiario.es",
+      "date": "2026-08-31",
+      "url": "https://www.eldiario.es/politica/fiscalia-eleva-21-agresiones-sexuales-registradas-ceuta-inicio-crisis-migratoria_1_13476925.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "13:53"
+    },
+    {
+      "id": "src-theobjective-abascal-31ago",
+      "title": "Abascal pide al PP activar el artículo 102 para juzgar a Sánchez por «traición»",
+      "author": "",
+      "publisher": "The Objective",
+      "date": "2026-08-31",
+      "url": "https://theobjective.com/espana/politica/2026-08-31/abascal-pp-articulo-102-sanchez-juzgado-traicion/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "15:38, San Lorenzo de El Escorial; cifra la cuarta parte en 75 diputados"
+    },
+    {
+      "id": "src-vozpopuli-abascal",
+      "title": "Abascal pide apoyo al PP para activar el artículo 102 de la Constitución y juzgar a Sánchez por traición",
+      "author": "",
+      "publisher": "Vozpópuli",
+      "date": "2026-08-31",
+      "url": "https://www.vozpopuli.com/espana/abascal-pide-apoyo-al-pp-para-activar-el-articulo-102-de-la-constitucion-y-juzgar-a-sanchez-por-traicion.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-elindependiente-cenif-29jul",
+      "title": "La Policía Nacional avisó de un \"riesgo alto\" de las llegadas a nado a Ceuta en un informe el 29 de julio",
+      "author": "",
+      "publisher": "El Independiente",
+      "date": "2026-08-31",
+      "url": "https://www.elindependiente.com/espana/2026/08/31/policia-nacional-aviso-riesgo-alto-llegadas-nado-ceuta-informe-29-julio/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-infobae-sumar-31ago",
+      "title": "Sumar acusa a Sánchez de falta de empatía con Ceuta y de ausencia de críticas a Marruecos",
+      "author": "",
+      "publisher": "Infobae / EP",
+      "date": "2026-08-31",
+      "url": "https://www.infobae.com/espana/agencias/2026/08/31/sumar-acusa-a-sanchez-de-falta-de-empatia-con-ceuta-y-de-ausencia-de-criticas-a-marruecos/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-elnacional-pruebas",
+      "title": "¿Qué pruebas hay de la campaña de desinformación sobre Ceuta que Sánchez atribuye a Rusia e Israel?",
+      "author": "",
+      "publisher": "ElNacional.cat",
+      "date": "2026-08-31",
+      "url": "https://www.elnacional.cat/es/internacional/que-pruebas-hay-campana-desinformacion-sobre-ceuta-sanchez-atribuye-rusia-israel_1688587_102.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-elindependiente-rusia",
+      "title": "Rusia exige a España pruebas de su supuesta injerencia en Ceuta",
+      "author": "",
+      "publisher": "El Independiente",
+      "date": "2026-09-01",
+      "url": "https://www.elindependiente.com/internacional/2026/09/01/rusia-urge-espana-pruebas-implicacion-ceuta/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "10:44"
+    },
+    {
+      "id": "src-elespanol-seae-1sept",
+      "title": "La UE desmiente a Sánchez: no hay \"evidencias\" de que Rusia, Israel u otro \"Estado extranjero\" provocaran la crisis de Ceuta",
+      "author": "",
+      "publisher": "El Español",
+      "date": "2026-09-01",
+      "url": "https://www.elespanol.com/mundo/europa/20260901/informe-ue-ceuta-detecto-injerencia-rusia-no-israel-alla-cuentas-puntuales/1003744369476_0.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "18:34"
+    },
+    {
+      "id": "src-elespanol-cenif",
+      "title": "La Policía informa a la juez que la invasión de Ceuta fue guiada por gendarmes marroquíes a las órdenes de agentes de paisano con un fin distinto al migratorio",
+      "author": "María Peral",
+      "publisher": "El Español",
+      "date": "2026-09-01",
+      "url": "https://www.elespanol.com/espana/tribunales/20260901/policia-informa-juez-invasion-ceuta-guiada-gendarmes-marroquies-ordenes-agentes-paisano-fin-distinto-migratorio/1003744369590_0.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "21:29; actualizado 2 sept 11:18"
+    },
+    {
+      "id": "src-elespanol-policia-rusia",
+      "title": "Ni Policía ni Guardia Civil detectaron maniobras en las redes de las inteligencias rusa e israelí previas al asalto de Ceuta",
+      "author": "",
+      "publisher": "El Español",
+      "date": "2026-09-02",
+      "url": "https://www.elespanol.com/espana/20260902/policia-guardia-civil-detectaron-maniobras-redes-inteligencias-rusa-israeli-previas-asalto-ceuta/1003744369365_0.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "06:30"
+    },
+    {
+      "id": "src-infobae-jueza",
+      "title": "La jueza espera un último informe de la Guardia Civil para decidir sobre la entrada masiva en Ceuta tras recibir el escrito policial que señala a Marruecos",
+      "author": "",
+      "publisher": "Infobae",
+      "date": "2026-09-02",
+      "url": "https://www.infobae.com/espana/2026/09/02/la-jueza-espera-un-informe-de-la-guardia-civil-para-decidir-sobre-la-entrada-masiva-en-ceuta-tras-recibir-el-escrito-policial-que-senala-a-marruecos/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-elnacional-diez",
+      "title": "El informe que Marlaska no podía conocer: diez preguntas para entender la crisis en Interior",
+      "author": "",
+      "publisher": "ElNacional.cat",
+      "date": "2026-09-02",
+      "url": "https://www.elnacional.cat/es/politica/el-informe-marlaska-no-podia-conocer-diez-preguntas-entender-crisis-en-interior_1689484_102.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "13:38; cita a El Independiente sobre la orden de la jueza y el informe del 29 jul"
+    },
+    {
+      "id": "src-theobjective-carta-marlaska",
+      "title": "Lea aquí la carta de Marlaska pidiendo cuentas a la Policía Nacional sobre el informe de Ceuta",
+      "author": "",
+      "publisher": "The Objective",
+      "date": "2026-09-02",
+      "url": "https://theobjective.com/espana/politica/2026-09-02/carta-marlaska-policia-nacional-informe-ceuta/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "12:16"
+    },
+    {
+      "id": "src-moncloacom-marlaska-desconoce",
+      "title": "Marlaska asegura desconocer el informe policial que señala a agentes marroquíes en la invasión de Ceuta",
+      "author": "",
+      "publisher": "Moncloa.com",
+      "date": "2026-09-02",
+      "url": "https://www.moncloa.com/2026/09/02/marlaska-asegura-desconocer-el-informe-policial-que-senala-a-agentes-marroquies-en-la-invasion-de-ceuta-3424770/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "07:43"
+    },
+    {
+      "id": "src-elespanol-directo-2sept",
+      "title": "Última hora política, en directo | Vivas exige conocer \"la verdad\" sobre la invasión de Ceuta y advierte a Rabat que \"nuestra integridad territorial es intocable\"",
+      "author": "",
+      "publisher": "El Español",
+      "date": "2026-09-02",
+      "url": "https://www.elespanol.com/espana/politica/20260902/ultima-hora-politica-directo-pp-acusa-sanchez-mentir-publicamente-proteger-marruecos-invasion-ceuta/1003744369722_10.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Directo con horas de cada declaración"
+    },
+    {
+      "id": "src-theobjective-feijoo",
+      "title": "Feijóo advierte que Sánchez no puede proteger la seguridad de España: «Lo sabía y lo tapó»",
+      "author": "",
+      "publisher": "The Objective",
+      "date": "2026-09-02",
+      "url": "https://theobjective.com/espana/politica/2026-09-02/feijoo-ceuta-sanchez/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "14:14"
+    },
+    {
+      "id": "src-elespanol-feijoo",
+      "title": "Feijóo pide que el Gobierno llame a consultas al embajador en Rabat y exige medidas en respuesta de la invasión",
+      "author": "",
+      "publisher": "El Español",
+      "date": "2026-09-02",
+      "url": "https://www.elespanol.com/espana/politica/20260902/feijoo-acusa-sanchez-ocultar-alertas-riesgo-extremo-asalto-ceuta-sabia-tapo/1003744370293_0.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "14:19"
+    },
+    {
+      "id": "src-elfaro-feijoo",
+      "title": "Feijóo, a Sánchez desde Ceuta: \"Nos ha mentido, protege más a Marruecos que a los españoles\"",
+      "author": "",
+      "publisher": "El Faro de Ceuta",
+      "date": "2026-09-02",
+      "url": "https://elfarodeceuta.es/feijoo-sanchez-desde-ceuta-mentido-protege-marruecos-espanoles/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "15:20, Plaza de Correos"
+    },
+    {
+      "id": "src-libertaddigital-munoz",
+      "title": "Ester Muñoz llama a salir en defensa de Ceuta: \"El Gobierno ha decidido defender a quien nos ha invadido\"",
+      "author": "",
+      "publisher": "Libertad Digital",
+      "date": "2026-09-02",
+      "url": "https://www.libertaddigital.com/espana/2026-09-02/ester-munoz-acusa-al-gobierno-de-permitir-conscientemente-la-invasion-de-ceuta-decidieron-no-hacer-nada-7453895/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "11:10, esRadio"
+    },
+    {
+      "id": "src-infobae-bolanos",
+      "title": "Bolaños pide cautela sobre el informe que señala a Marruecos y niega que el Gobierno haya ocultado información",
+      "author": "",
+      "publisher": "Infobae / EP",
+      "date": "2026-09-02",
+      "url": "https://www.infobae.com/espana/agencias/2026/09/02/bolanos-pide-cautela-sobre-el-informe-que-senala-a-marruecos-y-niega-que-el-gobierno-haya-ocultado-informacion/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-theobjective-garcia",
+      "title": "García ve «grave» el informe de Ceuta: «Implicaría la participación de Marruecos»",
+      "author": "",
+      "publisher": "The Objective",
+      "date": "2026-09-02",
+      "url": "https://theobjective.com/espana/politica/2026-09-02/garcia-grave-informe-ceuta-participacion-marruecos/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "09:59, RNE"
+    },
+    {
+      "id": "src-infobae-podemos",
+      "title": "Podemos exige la dimisión de Marlaska tras el informe policial sobre Ceuta y romper relaciones con Marruecos",
+      "author": "",
+      "publisher": "Infobae / EP",
+      "date": "2026-09-02",
+      "url": "https://www.infobae.com/espana/agencias/2026/09/02/podemos-exige-la-dimision-de-marlaska-tras-el-informe-policial-sobre-ceuta-y-romper-relaciones-con-marruecos/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-infobae-jupol",
+      "title": "Jupol pide dimisiones tras señalar la Policía a Marruecos en la crisis de Ceuta: \"Interior tenía conocimiento\"",
+      "author": "",
+      "publisher": "Infobae / EP",
+      "date": "2026-09-02",
+      "url": "https://www.infobae.com/espana/agencias/2026/09/02/jupol-pide-dimisiones-tras-senalar-la-policia-a-marruecos-en-la-crisis-de-ceuta-interior-tenia-conocimiento/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-eldebate-rey",
+      "title": "El Rey envía un mensaje a Ceuta, a la espera de poder visitarla: «La Corona y todos, con nuestra ciudad»",
+      "author": "",
+      "publisher": "El Debate",
+      "date": "2026-09-02",
+      "url": "https://www.eldebate.com/espana/casa-real/20260902/rey-envia-mensaje-ceuta-espera-poder-visitarla-corona-todos-nuestra-ciudad_454544.html",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-infobae-bruselas",
+      "title": "Unas 200 personas se concentran frente al Parlamento Europeo en Bruselas en apoyo a Ceuta",
+      "author": "",
+      "publisher": "Infobae / EP",
+      "date": "2026-09-02",
+      "url": "https://www.infobae.com/america/agencias/2026/09/02/unas-200-personas-se-concentran-frente-al-parlamento-europeo-en-bruselas-en-apoyo-a-ceuta/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "Carta de Vox (Buxadé) a Von der Leyen, Kallas y Brunner"
+    },
+    {
+      "id": "src-maldita",
+      "title": "El cruce de miles de personas a Ceuta desde Marruecos en julio de 2026: preguntas y respuestas",
+      "author": "",
+      "publisher": "Maldita.es",
+      "date": "2026-07-30",
+      "url": "https://maldita.es/desinfo/20260730/entrada-masiva-de-inmigrantes-logran-acceder-a-ceuta-a-traves-del-espigon-del-tarajal/",
+      "kind": "prensa",
+      "accessed": "2026-09-02",
+      "note": "URL localizada; acceso denegado (403): contenido NO VERIFICADO"
+    },
+    {
+      "id": "src-yt-moncloa-sanchez",
+      "title": "Declaración institucional de Pedro Sánchez en Ceuta (YouTube, canal La Moncloa)",
+      "author": "",
+      "publisher": "La Moncloa",
+      "date": "2026-07-31",
+      "url": "https://www.youtube.com/watch?v=JhfFGo0UEgg",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": "Canal verificado por oEmbed: author_name 'La Moncloa'"
+    },
+    {
+      "id": "src-rtvce-sanchez",
+      "title": "Comparecencia íntegra del presidente del Gobierno de España, Pedro Sánchez, en Ceuta",
+      "author": "",
+      "publisher": "RTVCE",
+      "date": "2026-07-31",
+      "url": "https://www.rtvce.es/video/video/comparecencia-integra-presidente-gobierno-espana-pedro-sanchez-ceuta/20260731140856101796.html",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-rtvce-vivas",
+      "title": "Comparecencia íntegra del presidente de Ceuta, Juan Vivas, tras su reunión con Pedro Sánchez",
+      "author": "",
+      "publisher": "RTVCE",
+      "date": "2026-07-31",
+      "url": "https://www.rtvce.es/video/video/comparecencia-integra-presidente-ceuta-juan-vivas-reunion-pedro-sanchez/20260731144902101799.html",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": ""
+    },
+    {
+      "id": "src-yt-ser-marlaska",
+      "title": "Fernando Grande-Marlaska informa en el Congreso sobre los hechos sucedidos en Ceuta (28/08/2026) (YouTube, canal Cadena SER)",
+      "author": "",
+      "publisher": "Cadena SER",
+      "date": "2026-08-28",
+      "url": "https://www.youtube.com/watch?v=LW6rWIf1eXA",
+      "kind": "multimedia",
+      "accessed": "2026-09-02",
+      "note": "Canal no oficial; verificado por oEmbed"
+    }
+  ],
+  "events": [
+    {
+      "id": "ev-sts-rechazo",
+      "date": "2026-07-08",
+      "dateLabel": "8 de julio de 2026",
+      "title": "Sentencia del Supremo sobre el rechazo en frontera",
+      "summary": "STS 814/2026: el rechazo en frontera solo cabe cuando se superan elementos físicos de contención; no a quienes llegan a nado. Fecha de la sentencia discrepante (29 jun según Moncloa.com; 8 jul según Wikipedia y Robles; 13 jul según el SUP).",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "judicial",
+        "migracion"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-elderecho-sts",
+        "src-moncloacom-instruccion",
+        "src-dscd-co-609"
+      ]
+    },
+    {
+      "id": "ev-argel",
+      "date": "2026-07-20",
+      "dateLabel": "20 de julio de 2026",
+      "title": "Sánchez visita Argel",
+      "summary": "Reunión con Tebune: nueva etapa bilateral, VIII Reunión de Alto Nivel en octubre, más gas argelino.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "diplomacia"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-moncloa-argel"
+      ]
+    },
+    {
+      "id": "ev-campana-facebook",
+      "date": "2026-07-24",
+      "dateLabel": "24-30 de julio de 2026",
+      "title": "Campaña de movilización en Facebook",
+      "summary": "Golden Owl documenta la campaña «asalto Karyaj a Ceuta»: 25 espacios, ~1.032.000 membresías; sin Gobierno patrocinador identificado.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "indeterminado",
+      "kinds": [
+        "desinformacion",
+        "migracion"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-goldenowl"
+      ]
+    },
+    {
+      "id": "ev-vivas-alertas",
+      "date": "2026-07-27",
+      "dateLabel": "27-29 de julio de 2026",
+      "title": "Alertas de Vivas a Moncloa e Interior",
+      "summary": "Lunes 27: llamada a Diego Rubio; martes 28: pide el estado de alarma a Marlaska; miércoles 29: Interior responde que «no había fundamento jurídico». Robles confirma la reunión del 27.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "politica-interior"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-elespanol-vivas-30ago",
+        "src-dscd-co-609"
+      ]
+    },
+    {
+      "id": "ev-jupol-28jul",
+      "date": "2026-07-28",
+      "dateLabel": "28 de julio de 2026",
+      "title": "Jupol alerta públicamente",
+      "summary": "El sindicato Jupol advierte de que la situación en Ceuta es insostenible; el SUP dice haber alertado a Interior unas dos semanas antes del 30 de julio.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "policia"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-infobae-jupol",
+        "src-elindependiente-sindicatos"
+      ]
+    },
+    {
+      "id": "ev-cenif-29jul",
+      "date": "2026-07-29",
+      "dateLabel": "29 de julio de 2026",
+      "title": "Informe del CENIF del 29 de julio",
+      "summary": "«Riesgo alto de las llegadas a nado» y «riesgo bajo de asalto a la verja»; trasladado a Marlaska según fuentes del Gobierno. Según el CENIF (1 sept), la alerta preveía entradas «por vía marítima» el 30 de julio con «riesgo extremo».",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "policia",
+        "inteligencia"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-elindependiente-cenif-29jul",
+        "src-elespanol-cenif"
+      ]
+    },
+    {
+      "id": "ev-entrada-30jul",
+      "date": "2026-07-30",
+      "dateLabel": "30 de julio de 2026",
+      "title": "Entrada masiva en Ceuta",
+      "summary": "Asalto masivo desde las 11:30 por El Tarajal y Benzú; 19 muertos a primera hora del 31; SUP y Jupol denuncian «colapso total»; el Gobierno despliega el Ejército (más de 3.000 efectivos de la Comandancia General de Ceuta).",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "marruecos",
+      "kinds": [
+        "migracion",
+        "crisis-fronteriza"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-dscd-co-609",
+        "src-eldebate-49000",
+        "src-elindependiente-sindicatos",
+        "src-eldebate-robles-31jul"
+      ]
+    },
+    {
+      "id": "ev-sanchez-ceuta-31jul",
+      "date": "2026-07-31",
+      "dateLabel": "31 de julio de 2026",
+      "title": "Sánchez en Ceuta: «violación de la integridad territorial»",
+      "summary": "Interior cifra en unas 49.000 las entradas en 24 horas; Sánchez y Marlaska viajan a Ceuta; Sánchez condena «un ataque, una violación de la integridad territorial de España» y anuncia boyas, más efectivos y repatriaciones con cooperación marroquí. Benyaich: situación «no querida». La jueza Tardón pide informes a Policía y Guardia Civil.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "politica-interior",
+        "diplomacia",
+        "judicial"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-moncloa-ceuta-31jul",
+        "src-eldebate-49000",
+        "src-elindependiente-benyaich",
+        "src-elespanol-cenif"
+      ]
+    },
+    {
+      "id": "ev-barrera-1ago",
+      "date": "2026-08-01",
+      "dateLabel": "1 de agosto de 2026",
+      "title": "Barrera flotante, Instrucción 9/2026 y carta a Von der Leyen",
+      "summary": "Instalación de la barrera de 500 m en El Tarajal; Instrucción 9/2026 de la SES; carta de Sánchez a Von der Leyen, Costa y Martin; fuentes oficiales elevan a 67 los muertos; retornos masivos (25.000 a las 14:30; ~48.500 al final del día).",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "seguridad",
+        "diplomacia"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-euronews-barrera",
+        "src-ceutaldia-barrera",
+        "src-moncloacom-instruccion",
+        "src-theobjective-carta-vdl",
+        "src-infobae-directo-1ago",
+        "src-dscd-co-609",
+        "src-elcano"
+      ]
+    },
+    {
+      "id": "ev-muertos-2ago",
+      "date": "2026-08-02",
+      "dateLabel": "2-3 de agosto de 2026",
+      "title": "Balances discrepantes de fallecidos",
+      "summary": "Delegación del Gobierno: 72; Gobierno de Ceuta: 88; AUGC: ~100; Interior marroquí: 11 (10 ahogados + 1 caída) y 40.000 llegados.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "ambos",
+      "kinds": [
+        "migracion"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-france24-72",
+        "src-lanacion-88",
+        "src-canalsur-88"
+      ]
+    },
+    {
+      "id": "ev-vdl-3ago",
+      "date": "2026-08-03",
+      "dateLabel": "3 de agosto de 2026",
+      "title": "Von der Leyen responde y Golden Owl publica",
+      "summary": "Von der Leyen elogia a España y Marruecos, ofrece Frontex y Europol y pide «barreras físicas cuando sea necesario». Golden Owl publica su investigación OSINT.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "otros",
+      "kinds": [
+        "diplomacia",
+        "desinformacion"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-libertaddigital-vdl",
+        "src-goldenowl"
+      ]
+    },
+    {
+      "id": "ev-interior-72000",
+      "date": "2026-08-04",
+      "dateLabel": "4 de agosto de 2026",
+      "title": "Interior fija 72.000 entradas y 75 fallecidos",
+      "summary": "Cifra oficial del Ministerio del Interior.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "migracion"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-ceutatv-72000"
+      ]
+    },
+    {
+      "id": "ev-141",
+      "date": "2026-08-05",
+      "dateLabel": "5 de agosto de 2026",
+      "title": "Caminando Fronteras: 141 muertos",
+      "summary": "78 en aguas españolas y 63 en Marruecos; Marruecos solo ha recogido 11 cuerpos; el IML de Ceuta cuenta 79. Elcano publica su comentario.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "otros",
+      "kinds": [
+        "migracion"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-infobae-141",
+        "src-theobjective-cadaveres",
+        "src-elcano"
+      ]
+    },
+    {
+      "id": "ev-ce-6ago",
+      "date": "2026-08-06",
+      "dateLabel": "6 de agosto de 2026",
+      "title": "Rueda de prensa de la Comisión Europea sobre FIMI",
+      "summary": "Mercier: canales «particularmente rusos» amplificaron la situación desde el 30 de julio; nada antes.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "otros",
+      "kinds": [
+        "desinformacion"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-elespanol-ue-28ago",
+        "src-elnacional-pruebas"
+      ]
+    },
+    {
+      "id": "ev-abascal-8ago",
+      "date": "2026-08-08",
+      "dateLabel": "8 de agosto de 2026",
+      "title": "Vox propone activar el artículo 102",
+      "summary": "Abascal anuncia en X que Vox promoverá el artículo 102 CE por «traición»; pide desclasificar las comunicaciones con Marruecos. El PP pide la dimisión de Marlaska.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "politica-interior"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-elespanol-abascal-8ago"
+      ]
+    },
+    {
+      "id": "ev-ouahbi",
+      "date": "2026-08-10",
+      "dateLabel": "10 de agosto de 2026",
+      "title": "Ouahbi reivindica Ceuta y Melilla en Asharq News",
+      "summary": "El ministro de Justicia marroquí: «Seguimos reivindicando nuestros territorios y queremos resolver el problema mediante el diálogo». Torres habla de 80.000; el Gobierno mantiene 72.000.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "marruecos",
+      "kinds": [
+        "diplomacia",
+        "reivindicacion"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-infobae-ouahbi",
+        "src-euronews-torres"
+      ]
+    },
+    {
+      "id": "ev-robles-12ago",
+      "date": "2026-08-12",
+      "dateLabel": "12 de agosto de 2026",
+      "title": "Robles en Ceuta: «A Ceuta y Melilla no se las toca»",
+      "summary": "Respuesta a Ouahbi tras reunirse con Vivas.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "politica-interior"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-theobjective-robles-12ago"
+      ]
+    },
+    {
+      "id": "ev-marlaska-13ago",
+      "date": "2026-08-13",
+      "dateLabel": "13 de agosto de 2026",
+      "title": "Marlaska en Ceuta: cifras y refuerzo",
+      "summary": "5.000 permanecen; 1.898 menores identificados; 880 policías y 714 guardias civiles; refuerzo de 45+20; más de 500 expedientes de asilo.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "policia",
+        "migracion"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-publico-marlaska-13ago"
+      ]
+    },
+    {
+      "id": "ev-periodistas-15ago",
+      "date": "2026-08-15",
+      "dateLabel": "15 de agosto de 2026",
+      "title": "Marruecos expulsa a TVE y EFE de Castillejos",
+      "summary": "Orden verbal de un funcionario de Interior marroquí tras grabar una carga antidisturbios; RTVE expresa su «más enérgico rechazo».",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "marruecos",
+      "kinds": [
+        "prensa"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-theobjective-periodistas"
+      ]
+    },
+    {
+      "id": "ev-nota-exteriores-21ago",
+      "date": "2026-08-21",
+      "dateLabel": "21 de agosto de 2026",
+      "title": "Nota de Exteriores sobre Ceuta y Melilla",
+      "summary": "«Ceuta y Melilla son dos ciudades españolas frontera de España y de la UE»; sin convocar a la embajadora.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "diplomacia"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-elespanol-albares-25ago",
+        "src-theobjective-exteriores-26ago"
+      ]
+    },
+    {
+      "id": "ev-toufiq-jabaroot",
+      "date": "2026-08-24",
+      "dateLabel": "24 de agosto de 2026",
+      "title": "Toufiq ante Mohamed VI y filtración de Jabaroot",
+      "summary": "El ministro de Asuntos Islámicos evoca la lucha «para liberar las ciudades ocupadas» en el Mawlid; Jabaroot filtra 70.380 nombres de agentes de la DGST/DGSN y señala a Hammouchi y El Himma.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "marruecos",
+      "kinds": [
+        "reivindicacion",
+        "ciber"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-elespanol-toufiq",
+        "src-theobjective-toufiq",
+        "src-infobae-jabaroot"
+      ]
+    },
+    {
+      "id": "ev-csn-robles-25ago",
+      "date": "2026-08-25",
+      "dateLabel": "25 de agosto de 2026",
+      "title": "Consejo de Seguridad Nacional, mando único y comparecencia de Robles",
+      "summary": "Sánchez convoca el CSN a las 9:00 y aplica la Ley de Seguridad Nacional (mando único), «veintiséis días después». Robles comparece a petición propia en la Comisión de Defensa (12:32-16:11).",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "politica-interior",
+        "parlamento"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-dscd-pl-200",
+        "src-dscd-co-609"
+      ]
+    },
+    {
+      "id": "ev-dp-26ago",
+      "date": "2026-08-26",
+      "dateLabel": "26 de agosto de 2026",
+      "title": "Diputación Permanente",
+      "summary": "El PP retira la petición de comparecencia de Sánchez al fijarse el pleno extraordinario del 3 de septiembre; las comparecencias en comisión decaen; las cinco peticiones votadas se rechazan por 34 a 35. Muñoz denuncia una «guerra civil» Robles-Marlaska.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "parlamento"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-dscd-pl-200",
+        "src-cope-3sept",
+        "src-congreso-video-dp",
+        "src-pressdigital-guerracivil"
+      ]
+    },
+    {
+      "id": "ev-benzu-27ago",
+      "date": "2026-08-27",
+      "dateLabel": "27 de agosto de 2026",
+      "title": "Emboscada a militares en Benzú",
+      "summary": "De madrugada, 30-40 personas rodean un vehículo con cuatro militares; cuatro heridos; doce marroquíes detenidos. Comparecen Bolaños y Mónica García.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "indeterminado",
+      "kinds": [
+        "seguridad",
+        "parlamento"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-ceutaldia-benzu",
+        "src-theobjective-sargento",
+        "src-dscd-co-610"
+      ]
+    },
+    {
+      "id": "ev-marlaska-28ago",
+      "date": "2026-08-28",
+      "dateLabel": "28 de agosto de 2026",
+      "title": "Marlaska, Albares y Saiz comparecen en el Congreso",
+      "summary": "Ana Vázquez (PP): «Si el Gobierno no sabía nada, es incompetente. Y si disponía de información, es negligente». ERC, Junts, PNV, Bildu y Sumar critican a Marlaska. Diarios de Sesiones no publicados.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "parlamento"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-pressdigital-marlaska-28ago",
+        "src-theobjective-socios-28ago",
+        "src-moncloacom-calendario"
+      ]
+    },
+    {
+      "id": "ev-vivas-30ago",
+      "date": "2026-08-30",
+      "dateLabel": "30 de agosto de 2026",
+      "title": "Vivas revela sus alertas en El Español",
+      "summary": "Cronología de las llamadas del 27, 28 y 29 de julio; estima que permanecen 10.000 personas.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "politica-interior"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-elespanol-vivas-30ago"
+      ]
+    },
+    {
+      "id": "ev-sanchez-ser-31ago",
+      "date": "2026-08-31",
+      "dateLabel": "31 de agosto de 2026",
+      "title": "Sánchez exonera a Marruecos y señala a Rusia e Israel",
+      "summary": "En la Cadena SER: «No hay ninguna información de participación alguna» de Marruecos; bulos de redes «asociadas tanto a Rusia como a Israel y a una internacional ultraderechista»; el Rey visitará Ceuta. Sa'ar: Sánchez «lied again». Fiscalía: 23 agresiones sexuales. Abascal: «lacayo de Marruecos», artículo 102 y suspensión del Tratado de Amistad.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "politica-interior",
+        "diplomacia",
+        "desinformacion"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-theobjective-sanchez-ser",
+        "src-eldiario-saar",
+        "src-eldiario-fiscalia",
+        "src-theobjective-abascal-31ago",
+        "src-vozpopuli-abascal",
+        "src-elindependiente-cenif-29jul",
+        "src-infobae-sumar-31ago"
+      ]
+    },
+    {
+      "id": "ev-rusia-seae-1sept",
+      "date": "2026-09-01",
+      "dateLabel": "1 de septiembre de 2026",
+      "title": "Rusia exige pruebas; el SEAE matiza; El Español publica el informe del CENIF",
+      "summary": "Zajárova pide «hechos concretos»; el SEAE: «no tenemos pruebas concluyentes» de que la crisis fuera desencadenada por actores estatales extranjeros; a las 21:29 El Español publica el informe del CENIF remitido a la jueza Tardón.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "otros",
+      "kinds": [
+        "desinformacion",
+        "judicial"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-elindependiente-rusia",
+        "src-elespanol-seae-1sept",
+        "src-elespanol-cenif"
+      ]
+    },
+    {
+      "id": "ev-dia-ceuta-2sept",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026",
+      "title": "Día de Ceuta: reacción al informe del CENIF",
+      "summary": "Carta de Marlaska a Pardo; Bolaños pide «cautela»; Feijóo: «El Gobierno lo sabía y lo tapó», pide convocar a la embajadora, llamar a consultas al embajador y elecciones; Buxadé escribe a Bruselas; Podemos, Sumar, IU, Jupol y PP piden la dimisión de Marlaska; la Casa del Rey: «La Corona y todos, con nuestra ciudad»; Vivas: «nuestra integridad territorial es intocable».",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "politica-interior",
+        "judicial"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-elespanol-directo-2sept",
+        "src-theobjective-feijoo",
+        "src-elespanol-feijoo",
+        "src-elfaro-feijoo",
+        "src-theobjective-carta-marlaska",
+        "src-infobae-bolanos",
+        "src-infobae-podemos",
+        "src-infobae-jupol",
+        "src-eldebate-rey",
+        "src-infobae-bruselas",
+        "src-infobae-jueza",
+        "src-elnacional-diez"
+      ]
+    }
+  ],
+  "quotes": [
+    {
+      "id": "q-robles-intocables",
+      "date": "2026-08-25",
+      "dateLabel": "25 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Margarita Robles",
+      "party": "PSOE",
+      "bloc": "gobierno",
+      "role": "ministra de Defensa",
+      "topics": [
+        "ceuta",
+        "soberania"
+      ],
+      "era": "democracia",
+      "text": "Cualquier agresión o intento de agresión a Ceuta o a Melilla, lo es a España entera, porque nuestra soberanía e integridad territorial son intocables.",
+      "context": "Comparecencia a petición propia en la Comisión de Defensa.",
+      "sessionRef": "DSCD-15-CO-609, 25 de agosto de 2026, p. 3",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L15/CONG/DS/CO/DSCD-15-CO-609.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-dscd-co-609"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-robles-cni",
+      "date": "2026-08-25",
+      "dateLabel": "25 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Margarita Robles",
+      "party": "PSOE",
+      "bloc": "gobierno",
+      "role": "ministra de Defensa",
+      "topics": [
+        "ceuta",
+        "cni"
+      ],
+      "era": "democracia",
+      "text": "operativamente, en Ceuta, nuestras Fuerzas Armadas, los servicios de inteligencia y, obviamente, el CNI, realizaron la labor que competencialmente les era y es exigible y que compartieron y analizaron con las fuerzas de seguridad del Estado y con el personal de la Delegación del Gobierno.",
+      "context": "Origen del choque público con Marlaska sobre si hubo alertas previas.",
+      "sessionRef": "DSCD-15-CO-609, 25 de agosto de 2026, p. 4",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L15/CONG/DS/CO/DSCD-15-CO-609.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-dscd-co-609"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-robles-fases",
+      "date": "2026-08-25",
+      "dateLabel": "25 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Margarita Robles",
+      "party": "PSOE",
+      "bloc": "gobierno",
+      "role": "ministra de Defensa",
+      "topics": [
+        "ceuta",
+        "cronologia"
+      ],
+      "era": "democracia",
+      "text": "Según este informe del Estado Mayor de la Defensa, la primera fase podríamos denominarla de migración concentrada e iría desde la sentencia del Tribunal Supremo de 8 de julio de 2026 hasta la mañana del día 30. […] La segunda fase, que podemos denominar de asalto masivo, puede situarse a partir de las 11:30 de la mañana del día 30 de julio. […] La tercera fase es la del retorno masivo a Marruecos, que empieza paulatinamente en el ocaso del 30 de julio.",
+      "context": "Cronología del EMAD.",
+      "sessionRef": "DSCD-15-CO-609, 25 de agosto de 2026, p. 5",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L15/CONG/DS/CO/DSCD-15-CO-609.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-dscd-co-609"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-robles-90",
+      "date": "2026-08-25",
+      "dateLabel": "25 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Margarita Robles",
+      "party": "PSOE",
+      "bloc": "gobierno",
+      "role": "ministra de Defensa",
+      "topics": [
+        "ceuta",
+        "retornos"
+      ],
+      "era": "democracia",
+      "text": "sobre las 14:30 del día 1 de agosto se contabilizaban 25 000 retornos voluntarios, que continuaron durante ese día y a lo largo de los días siguientes hasta casi llegar, como hemos dicho, al 90 % de los que habían entrado.",
+      "context": "",
+      "sessionRef": "DSCD-15-CO-609, 25 de agosto de 2026, p. 7",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L15/CONG/DS/CO/DSCD-15-CO-609.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-dscd-co-609"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-robles-marruecos",
+      "date": "2026-08-25",
+      "dateLabel": "25 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Margarita Robles",
+      "party": "PSOE",
+      "bloc": "gobierno",
+      "role": "ministra de Defensa",
+      "topics": [
+        "ceuta",
+        "marruecos"
+      ],
+      "era": "democracia",
+      "text": "no voy a aceptar que ningún ministro de ningún Gobierno ―en este caso, de Marruecos― pueda poner en duda la españolidad de Ceuta y Melilla.",
+      "context": "Réplica a los portavoces; añade en p. 42: «Yo no me he sentido chantajeada nunca por Marruecos».",
+      "sessionRef": "DSCD-15-CO-609, 25 de agosto de 2026, p. 40",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L15/CONG/DS/CO/DSCD-15-CO-609.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-dscd-co-609"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-munoz-embajador-co609",
+      "date": "2026-08-25",
+      "dateLabel": "25 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Ester Muñoz",
+      "party": "PP",
+      "bloc": "derecha",
+      "role": "portavoz del Grupo Popular",
+      "topics": [
+        "ceuta",
+        "marruecos"
+      ],
+      "era": "democracia",
+      "text": "Siguen sin llamar al embajador de Marruecos, cuando el ministro de Justicia marroquí ha dicho en dos ocasiones tras el ataque que Ceuta y Melilla son marroquíes. ¿Por qué no han llamado al embajador de Marruecos?",
+      "context": "",
+      "sessionRef": "DSCD-15-CO-609, 25 de agosto de 2026, p. 11",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L15/CONG/DS/CO/DSCD-15-CO-609.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-dscd-co-609"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-asarta-traicion",
+      "date": "2026-08-25",
+      "dateLabel": "25 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Alberto Asarta",
+      "party": "Vox",
+      "bloc": "derecha",
+      "role": "diputado",
+      "topics": [
+        "ceuta",
+        "traicion"
+      ],
+      "era": "democracia",
+      "text": "¿está usted en disposición de asegurar que ningún servicio de inteligencia alertó de esta invasión? Nosotros tenemos constancia de que sí lo hicieron, y, por lo tanto, los actos u omisiones que ustedes han realizado, realizan y van a realizar encajan dentro del delito de traición a la seguridad de España.",
+      "context": "",
+      "sessionRef": "DSCD-15-CO-609, 25 de agosto de 2026, p. 14",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L15/CONG/DS/CO/DSCD-15-CO-609.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-dscd-co-609"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-guijarro-invasion",
+      "date": "2026-08-25",
+      "dateLabel": "25 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Txema Guijarro",
+      "party": "Sumar",
+      "bloc": "izquierda",
+      "role": "diputado",
+      "topics": [
+        "ceuta"
+      ],
+      "era": "democracia",
+      "text": "Por lo tanto, lo cierto es que aquí no ha habido ni una invasión ni una crisis de soberanía.",
+      "context": "",
+      "sessionRef": "DSCD-15-CO-609, 25 de agosto de 2026, p. 16",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L15/CONG/DS/CO/DSCD-15-CO-609.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-dscd-co-609"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-hernando-invasion",
+      "date": "2026-08-26",
+      "dateLabel": "26 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Rafael Hernando",
+      "party": "PP",
+      "bloc": "derecha",
+      "role": "diputado",
+      "topics": [
+        "ceuta"
+      ],
+      "era": "democracia",
+      "text": "Quería que nuestras primeras palabras, como grupo parlamentario, fueran para mostrar nuestra solidaridad y apoyo a la ciudad española de Ceuta, que desde el 30 de julio padece una invasión y sus consecuencias por la negligencia e incompetencia de un Gobierno inútil.",
+      "context": "Diputación Permanente, primer punto.",
+      "sessionRef": "DSCD-15-PL-200, 26 de agosto de 2026, p. 15",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L15/CONG/DS/PL/DSCD-15-PL-200.PDF",
+      "videoUrl": "https://app.congreso.es/AudiovisualCongreso/audiovisualdetalledisponible?codSesion=7&codOrgano=500&fechaSesion=26%2F08%2F2026&mp4=mp4&idLegislaturaElegida=15&i=777614",
+      "sourceIds": [
+        "src-dscd-pl-200",
+        "src-congreso-video-dp"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-munoz-ataque",
+      "date": "2026-08-26",
+      "dateLabel": "26 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Ester Muñoz",
+      "party": "PP",
+      "bloc": "derecha",
+      "role": "portavoz del Grupo Popular",
+      "topics": [
+        "ceuta",
+        "soberania"
+      ],
+      "era": "democracia",
+      "text": "Mire, el 30 de julio nuestro país sufrió un ataque a su integridad territorial. No lo digo yo, lo dijo Pedro Sánchez. España sufrió una invasión, con una avalancha de más de 80 000 inmigrantes irregulares: una crisis de soberanía, que derivó en una crisis humanitaria, con más de cien fallecidos; en una crisis de orden público, que se mantiene a día de hoy en Ceuta, y en una crisis sanitaria.",
+      "context": "Defensa de la petición de comparecencia de Sánchez.",
+      "sessionRef": "DSCD-15-PL-200, 26 de agosto de 2026, p. 33",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L15/CONG/DS/PL/DSCD-15-PL-200.PDF",
+      "videoUrl": "https://app.congreso.es/AudiovisualCongreso/audiovisualdetalledisponible?codSesion=7&codOrgano=500&fechaSesion=26%2F08%2F2026&mp4=mp4&idLegislaturaElegida=15&i=777614",
+      "sourceIds": [
+        "src-dscd-pl-200"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-munoz-elecciones",
+      "date": "2026-08-26",
+      "dateLabel": "26 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Ester Muñoz",
+      "party": "PP",
+      "bloc": "derecha",
+      "role": "portavoz del Grupo Popular",
+      "topics": [
+        "ceuta",
+        "elecciones"
+      ],
+      "era": "democracia",
+      "text": "Explicaciones, responsabilidades y dimisiones, y después elecciones. Eso es lo que esperamos. Y, como ya se va a sustanciar la comparecencia porque muchos grupos han presionado al Gobierno para que venga el día 3, anuncio que vamos a retirar esta petición de la Diputación Permanente, si bien mantenemos la del Pleno extraordinario que se va a convocar para el día 3.",
+      "context": "Retirada de la petición de comparecencia del presidente.",
+      "sessionRef": "DSCD-15-PL-200, 26 de agosto de 2026, p. 35",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L15/CONG/DS/PL/DSCD-15-PL-200.PDF",
+      "videoUrl": "https://app.congreso.es/AudiovisualCongreso/audiovisualdetalledisponible?codSesion=7&codOrgano=500&fechaSesion=26%2F08%2F2026&mp4=mp4&idLegislaturaElegida=15&i=777614",
+      "sourceIds": [
+        "src-dscd-pl-200"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-belarra-arma",
+      "date": "2026-08-26",
+      "dateLabel": "26 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Ione Belarra",
+      "party": "Podemos",
+      "bloc": "izquierda",
+      "role": "diputada (Grupo Mixto)",
+      "topics": [
+        "ceuta",
+        "marruecos"
+      ],
+      "era": "democracia",
+      "text": "Porque Marruecos, es verdad, ha utilizado a su gente como arma arrojadiza, pero ustedes están intentando castigar a Marruecos utilizando a la gente.",
+      "context": "",
+      "sessionRef": "DSCD-15-PL-200, 26 de agosto de 2026, p. 36",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L15/CONG/DS/PL/DSCD-15-PL-200.PDF",
+      "videoUrl": "https://app.congreso.es/AudiovisualCongreso/audiovisualdetalledisponible?codSesion=7&codOrgano=500&fechaSesion=26%2F08%2F2026&mp4=mp4&idLegislaturaElegida=15&i=777614",
+      "sourceIds": [
+        "src-dscd-pl-200"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-legarda-22paises",
+      "date": "2026-08-26",
+      "dateLabel": "26 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Mikel Legarda",
+      "party": "PNV",
+      "bloc": "otro",
+      "role": "diputado",
+      "topics": [
+        "ceuta",
+        "marruecos",
+        "ue"
+      ],
+      "era": "democracia",
+      "text": "Tengo que recordar, y lo hacía ayer también, que los reproches de veintidós países de la Unión inicialmente fueron solo contra el Gobierno de España y no se hizo ninguna mención al Gobierno de Marruecos que, desde nuestro punto de vista, tiene una grave responsabilidad.",
+      "context": "",
+      "sessionRef": "DSCD-15-PL-200, 26 de agosto de 2026, p. 37",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L15/CONG/DS/PL/DSCD-15-PL-200.PDF",
+      "videoUrl": "https://app.congreso.es/AudiovisualCongreso/audiovisualdetalledisponible?codSesion=7&codOrgano=500&fechaSesion=26%2F08%2F2026&mp4=mp4&idLegislaturaElegida=15&i=777614",
+      "sourceIds": [
+        "src-dscd-pl-200"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-matute-140",
+      "date": "2026-08-26",
+      "dateLabel": "26 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Oskar Matute",
+      "party": "EH Bildu",
+      "bloc": "otro",
+      "role": "diputado",
+      "topics": [
+        "ceuta",
+        "muertos",
+        "marruecos"
+      ],
+      "era": "democracia",
+      "text": "Conviene recordar […] que han muerto 140 personas —y digo personas, 140—, 85 de ellas en suelo o territorio del Estado español. […] parece ser que Marruecos tuvo mucho que ver con lo que allí sucedió; que 150 000 personas no se organizan a través de redes sociales en un mismo punto de una única frontera si no es porque hay una acción decidida y permisiva, en este caso, del Reino de Marruecos.",
+      "context": "",
+      "sessionRef": "DSCD-15-PL-200, 26 de agosto de 2026, pp. 37-38",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L15/CONG/DS/PL/DSCD-15-PL-200.PDF",
+      "videoUrl": "https://app.congreso.es/AudiovisualCongreso/audiovisualdetalledisponible?codSesion=7&codOrgano=500&fechaSesion=26%2F08%2F2026&mp4=mp4&idLegislaturaElegida=15&i=777614",
+      "sourceIds": [
+        "src-dscd-pl-200"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-jorda-monarquia",
+      "date": "2026-08-26",
+      "dateLabel": "26 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Teresa Jordà",
+      "party": "ERC",
+      "bloc": "otro",
+      "role": "diputada",
+      "topics": [
+        "ceuta",
+        "marruecos"
+      ],
+      "era": "democracia",
+      "text": "El Gobierno español no ha señalado tampoco ninguno de los otros factores que creemos que sí desempeñaron un papel importante y que derivan, sí, de una profunda relación equivocada con Marruecos, una monarquía absoluta que utiliza las fronteras y a su gente como arma arrojadiza.",
+      "context": "Intervención en catalán y castellano; el Diario recoge la interpretación.",
+      "sessionRef": "DSCD-15-PL-200, 26 de agosto de 2026, p. 40",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L15/CONG/DS/PL/DSCD-15-PL-200.PDF",
+      "videoUrl": "https://app.congreso.es/AudiovisualCongreso/audiovisualdetalledisponible?codSesion=7&codOrgano=500&fechaSesion=26%2F08%2F2026&mp4=mp4&idLegislaturaElegida=15&i=777614",
+      "sourceIds": [
+        "src-dscd-pl-200"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-barbero-socios",
+      "date": "2026-08-26",
+      "dateLabel": "26 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Verónica Martínez Barbero",
+      "party": "Sumar",
+      "bloc": "izquierda",
+      "role": "portavoz",
+      "topics": [
+        "ceuta",
+        "pp"
+      ],
+      "era": "democracia",
+      "text": "Nos anuncian hoy, en Junta de Portavoces, una declaración institucional que, según explicó verbalmente su propia portavoz, es para defender la españolidad de Ceuta y Melilla. En realidad, es una declaración llena de barbaridades y bulos […]. Lo traen aquí para que entre todos lo votemos, no vaya a ser que tengan ustedes que decírselo directamente a Trump, a Netanyahu o al rey de Marruecos.",
+      "context": "",
+      "sessionRef": "DSCD-15-PL-200, 26 de agosto de 2026, p. 41",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L15/CONG/DS/PL/DSCD-15-PL-200.PDF",
+      "videoUrl": "https://app.congreso.es/AudiovisualCongreso/audiovisualdetalledisponible?codSesion=7&codOrgano=500&fechaSesion=26%2F08%2F2026&mp4=mp4&idLegislaturaElegida=15&i=777614",
+      "sourceIds": [
+        "src-dscd-pl-200"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-millan-traicion",
+      "date": "2026-08-26",
+      "dateLabel": "26 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Pepa Rodríguez de Millán",
+      "party": "Vox",
+      "bloc": "derecha",
+      "role": "diputada",
+      "topics": [
+        "ceuta",
+        "traicion",
+        "cni"
+      ],
+      "era": "democracia",
+      "text": "Esto lo sabía el Gobierno porque el CNI lo avisó y no han hecho absolutamente nada. Esto es traición. Y por eso es por lo que nosotros vamos a hacer lo imposible para que Sánchez y el ministro del Interior sean juzgados ante la justicia y ante la historia por haber perpetrado la peor traición posible a los españoles más necesitados y en el peor momento posible.",
+      "context": "",
+      "sessionRef": "DSCD-15-PL-200, 26 de agosto de 2026, p. 42",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L15/CONG/DS/PL/DSCD-15-PL-200.PDF",
+      "videoUrl": "https://app.congreso.es/AudiovisualCongreso/audiovisualdetalledisponible?codSesion=7&codOrgano=500&fechaSesion=26%2F08%2F2026&mp4=mp4&idLegislaturaElegida=15&i=777614",
+      "sourceIds": [
+        "src-dscd-pl-200"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-millan-muertes",
+      "date": "2026-08-26",
+      "dateLabel": "26 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Pepa Rodríguez de Millán",
+      "party": "Vox",
+      "bloc": "derecha",
+      "role": "diputada",
+      "topics": [
+        "ceuta",
+        "marruecos"
+      ],
+      "era": "democracia",
+      "text": "Las muertes que han tenido lugar en Ceuta y por las que se ha guardado un minuto de silencio esta mañana han sido provocadas por el régimen de Marruecos, con la complicidad del Partido Socialista.",
+      "context": "",
+      "sessionRef": "DSCD-15-PL-200, 26 de agosto de 2026, p. 43",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L15/CONG/DS/PL/DSCD-15-PL-200.PDF",
+      "videoUrl": "https://app.congreso.es/AudiovisualCongreso/audiovisualdetalledisponible?codSesion=7&codOrgano=500&fechaSesion=26%2F08%2F2026&mp4=mp4&idLegislaturaElegida=15&i=777614",
+      "sourceIds": [
+        "src-dscd-pl-200"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-minguez-embajador",
+      "date": "2026-08-26",
+      "dateLabel": "26 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Ana Mínguez",
+      "party": "PSOE",
+      "bloc": "gobierno",
+      "role": "portavoz adjunta",
+      "topics": [
+        "ceuta",
+        "diplomacia"
+      ],
+      "era": "democracia",
+      "text": "Señora Millán, en todo caso, llamaríamos a consultas al embajador español que está en Rabat, no al que está aquí.",
+      "context": "Replica a Vox; enumera la actividad del Gobierno desde el 31 de julio.",
+      "sessionRef": "DSCD-15-PL-200, 26 de agosto de 2026, p. 44",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L15/CONG/DS/PL/DSCD-15-PL-200.PDF",
+      "videoUrl": "https://app.congreso.es/AudiovisualCongreso/audiovisualdetalledisponible?codSesion=7&codOrgano=500&fechaSesion=26%2F08%2F2026&mp4=mp4&idLegislaturaElegida=15&i=777614",
+      "sourceIds": [
+        "src-dscd-pl-200"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-garcia-humanitaria",
+      "date": "2026-08-27",
+      "dateLabel": "27 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Mónica García",
+      "party": "Más Madrid / Sumar",
+      "bloc": "gobierno",
+      "role": "ministra de Sanidad",
+      "topics": [
+        "ceuta"
+      ],
+      "era": "democracia",
+      "text": "Por eso hay que llamarlo crisis humanitaria, aunque el Partido Popular siga insistiendo en llamarlo invasión.",
+      "context": "Comparecencia a petición propia en la Comisión de Sanidad.",
+      "sessionRef": "DSCD-15-CO-610, 27 de agosto de 2026, p. 38",
+      "pdfUrl": "https://www.congreso.es/public_oficiales/L15/CONG/DS/CO/DSCD-15-CO-610.PDF",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-dscd-co-610"
+      ],
+      "unverified": false
+    },
+    {
+      "id": "q-bolanos-evidencia",
+      "date": "2026-08-27",
+      "dateLabel": "27 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Félix Bolaños",
+      "party": "PSOE",
+      "bloc": "gobierno",
+      "role": "ministro de la Presidencia, Justicia y Relaciones con las Cortes",
+      "topics": [
+        "ceuta",
+        "marruecos"
+      ],
+      "era": "democracia",
+      "text": "no existe ninguna evidencia",
+      "context": "Comparecencia en la Comisión de Justicia; cita indirecta recogida por Europa Press el 2 de septiembre. Diario de Sesiones no publicado.",
+      "sessionRef": "Comisión de Justicia, 27 de agosto de 2026 (DS no publicado)",
+      "pdfUrl": "",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-infobae-bolanos"
+      ],
+      "unverified": true
+    },
+    {
+      "id": "q-vazquez-negligente",
+      "date": "2026-08-28",
+      "dateLabel": "28 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Ana Vázquez",
+      "party": "PP",
+      "bloc": "derecha",
+      "role": "portavoz de Interior",
+      "topics": [
+        "ceuta",
+        "interior"
+      ],
+      "era": "democracia",
+      "text": "Si el Gobierno no sabía nada, es incompetente. Y si disponía de información, es negligente.",
+      "context": "Comparecencia de Marlaska en la Comisión de Interior. Diario de Sesiones no publicado.",
+      "sessionRef": "Comisión de Interior, 28 de agosto de 2026 (DS no publicado)",
+      "pdfUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=LW6rWIf1eXA",
+      "sourceIds": [
+        "src-pressdigital-marlaska-28ago"
+      ],
+      "unverified": true
+    },
+    {
+      "id": "q-gillazaro-hibrida",
+      "date": "2026-08-28",
+      "dateLabel": "28 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Ignacio Gil Lázaro",
+      "party": "Vox",
+      "bloc": "derecha",
+      "role": "diputado",
+      "topics": [
+        "ceuta",
+        "marruecos"
+      ],
+      "era": "democracia",
+      "text": "invasión y acto de guerra híbrida orquestado por Marruecos",
+      "context": "Comisión de Interior. Diario de Sesiones no publicado.",
+      "sessionRef": "Comisión de Interior, 28 de agosto de 2026 (DS no publicado)",
+      "pdfUrl": "",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-pressdigital-marlaska-28ago"
+      ],
+      "unverified": true
+    },
+    {
+      "id": "q-madrenas-mintio",
+      "date": "2026-08-28",
+      "dateLabel": "28 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Marta Madrenas",
+      "party": "Junts",
+      "bloc": "otro",
+      "role": "diputada",
+      "topics": [
+        "ceuta",
+        "interior"
+      ],
+      "era": "democracia",
+      "text": "Reconozca que perdió el tiempo vilmente y que el 1 de agosto mintió a la ciudadanía sobre la realidad que tenía delante.",
+      "context": "Comisión de Interior. Diario de Sesiones no publicado.",
+      "sessionRef": "Comisión de Interior, 28 de agosto de 2026 (DS no publicado)",
+      "pdfUrl": "",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-theobjective-socios-28ago"
+      ],
+      "unverified": true
+    },
+    {
+      "id": "q-alvaro-polvorin",
+      "date": "2026-08-28",
+      "dateLabel": "28 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Francesc-Marc Álvaro",
+      "party": "ERC",
+      "bloc": "otro",
+      "role": "diputado",
+      "topics": [
+        "ceuta",
+        "marruecos"
+      ],
+      "era": "democracia",
+      "text": "si hubiera una gran colaboración fronteriza con Marruecos, esto no pasaría",
+      "context": "Comisión de Interior. Diario de Sesiones no publicado.",
+      "sessionRef": "Comisión de Interior, 28 de agosto de 2026 (DS no publicado)",
+      "pdfUrl": "",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-theobjective-socios-28ago"
+      ],
+      "unverified": true
+    },
+    {
+      "id": "q-inarritu-pudrir",
+      "date": "2026-08-28",
+      "dateLabel": "28 de agosto de 2026",
+      "chamber": "congreso",
+      "legislature": "XV",
+      "speaker": "Jon Iñarritu",
+      "party": "EH Bildu",
+      "bloc": "otro",
+      "role": "diputado",
+      "topics": [
+        "ceuta",
+        "interior"
+      ],
+      "era": "democracia",
+      "text": "algo falló",
+      "context": "Comisión de Interior; acusa al Ejecutivo de «dejar pudrir la situación». Diario de Sesiones no publicado.",
+      "sessionRef": "Comisión de Interior, 28 de agosto de 2026 (DS no publicado)",
+      "pdfUrl": "",
+      "videoUrl": "",
+      "sourceIds": [
+        "src-theobjective-socios-28ago"
+      ],
+      "unverified": true
+    }
+  ],
+  "statements": [
+    {
+      "id": "st-sanchez-violacion",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "Pedro Sánchez",
+      "role": "presidente del Gobierno",
+      "date": "2026-07-31",
+      "dateLabel": "31 de julio de 2026, Ceuta",
+      "text": "Un ataque, una violación de la integridad territorial de España. Ceuta es una ciudad española y lo sucedido merece todo nuestro reproche, toda nuestra condena.",
+      "sourceIds": [
+        "src-moncloa-ceuta-31jul",
+        "src-infobae-sanchez-31jul"
+      ]
+    },
+    {
+      "id": "st-sanchez-m30",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "Pedro Sánchez",
+      "role": "presidente del Gobierno",
+      "date": "2026-07-31",
+      "dateLabel": "31 de julio de 2026, Ceuta",
+      "text": "Defendemos la seguridad y la convivencia en Ceuta, como la defenderíamos en el perímetro de la M-30 en Madrid.",
+      "sourceIds": [
+        "src-moncloa-ceuta-31jul"
+      ]
+    },
+    {
+      "id": "st-sanchez-mafias",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "Pedro Sánchez",
+      "role": "presidente del Gobierno",
+      "date": "2026-07-31",
+      "dateLabel": "31 de julio de 2026, Ceuta",
+      "text": "las mafias que trafican con seres humanos han hecho una lectura interesada de una sentencia del Tribunal Supremo",
+      "sourceIds": [
+        "src-moncloa-ceuta-31jul"
+      ]
+    },
+    {
+      "id": "st-sanchez-carta-48h",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "Pedro Sánchez",
+      "role": "presidente del Gobierno",
+      "date": "2026-08-01",
+      "dateLabel": "1 de agosto de 2026, carta a Von der Leyen",
+      "text": "En menos de 48 horas, mi Gobierno ha logrado restablecer plenamente el control de la frontera. […] Otros han optado por atacar a España y por pedir su exclusión temporal del Espacio Schengen.",
+      "sourceIds": [
+        "src-theobjective-carta-vdl"
+      ]
+    },
+    {
+      "id": "st-sanchez-ser-marruecos",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "Pedro Sánchez",
+      "role": "presidente del Gobierno",
+      "date": "2026-08-31",
+      "dateLabel": "31 de agosto de 2026, Cadena SER",
+      "text": "No hay ninguna información de participación alguna. […] ¿Qué gana Marruecos con este tipo de tácticas?",
+      "sourceIds": [
+        "src-theobjective-sanchez-ser"
+      ]
+    },
+    {
+      "id": "st-sanchez-ser-rusia-israel",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "Pedro Sánchez",
+      "role": "presidente del Gobierno",
+      "date": "2026-08-31",
+      "dateLabel": "31 de agosto de 2026, Cadena SER",
+      "text": "después del 30 y el 31 de julio, hubo una expansión de estas falsedades y esta desinformación por parte de redes sociales asociadas tanto a Rusia como también a Israel y a una internacional ultraderechista que utiliza siempre la migración",
+      "sourceIds": [
+        "src-elnacional-pruebas",
+        "src-theobjective-sanchez-ser"
+      ]
+    },
+    {
+      "id": "st-sanchez-ser-gaza",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "Pedro Sánchez",
+      "role": "presidente del Gobierno",
+      "date": "2026-08-31",
+      "dateLabel": "31 de agosto de 2026, Cadena SER",
+      "text": "Es evidente que si Rusia se mete a desinformar sobre esta cuestión o Israel también desinforma criticando al Gobierno de España, no será porque les preocupa la migración en España o en Europa, sino por las posiciones políticas que estamos manteniendo, yo creo que valientes, respecto al genocidio en Gaza o respecto a la invasión de Putin en Ucrania",
+      "sourceIds": [
+        "src-eldiario-saar"
+      ]
+    },
+    {
+      "id": "st-sanchez-ser-rey",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "Pedro Sánchez",
+      "role": "presidente del Gobierno",
+      "date": "2026-08-31",
+      "dateLabel": "31 de agosto de 2026, Cadena SER",
+      "text": "Hay argumentos y razones para que el jefe del Estado visite por fin, después de 20 años, Ceuta y Melilla.",
+      "sourceIds": [
+        "src-theobjective-sanchez-ser"
+      ]
+    },
+    {
+      "id": "st-sanchez-video-2sept",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "Pedro Sánchez",
+      "role": "presidente del Gobierno",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026, 12:08, vídeo",
+      "text": "la serenidad, la solidaridad y la responsabilidad",
+      "sourceIds": [
+        "src-elespanol-directo-2sept"
+      ]
+    },
+    {
+      "id": "st-marlaska-31jul",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "Fernando Grande-Marlaska",
+      "role": "ministro del Interior",
+      "date": "2026-07-31",
+      "dateLabel": "31 de julio de 2026",
+      "text": "los esfuerzos realizados en los últimos días",
+      "sourceIds": [
+        "src-elindependiente-benyaich"
+      ]
+    },
+    {
+      "id": "st-marlaska-13ago-devueltas",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "Fernando Grande-Marlaska",
+      "role": "ministro del Interior",
+      "date": "2026-08-13",
+      "dateLabel": "13 de agosto de 2026, 15:21, Ceuta",
+      "text": "las personas que se encuentren en situación irregular serán devueltas a la mayor brevedad […] no serán trasladados a la Península ni entrarán por tanto en el espacio Schengen",
+      "sourceIds": [
+        "src-publico-marlaska-13ago"
+      ]
+    },
+    {
+      "id": "st-marlaska-socio-fiable",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "Fernando Grande-Marlaska",
+      "role": "ministro del Interior",
+      "date": "2026-08-11",
+      "dateLabel": "11 de agosto de 2026",
+      "text": "Marruecos no es ninguna amenaza, sino un socio absolutamente fiable",
+      "sourceIds": [
+        "src-infobae-ouahbi"
+      ]
+    },
+    {
+      "id": "st-marlaska-carta-pardo",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "Fernando Grande-Marlaska",
+      "role": "ministro del Interior",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026, carta al director general de la Policía",
+      "text": "a la mayor brevedad sobre la veracidad de lo publicado […] para que el Gobierno pueda adoptar las decisiones oportunas en relación con la crisis migratoria en Ceuta",
+      "sourceIds": [
+        "src-theobjective-carta-marlaska"
+      ]
+    },
+    {
+      "id": "st-robles-31jul",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "Margarita Robles",
+      "role": "ministra de Defensa",
+      "date": "2026-07-31",
+      "dateLabel": "31 de julio de 2026, 14:22, Cartagena",
+      "text": "el tiempo que sea necesario […] no es una guerra",
+      "sourceIds": [
+        "src-eldebate-robles-31jul"
+      ]
+    },
+    {
+      "id": "st-robles-12ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "Margarita Robles",
+      "role": "ministra de Defensa",
+      "date": "2026-08-12",
+      "dateLabel": "12 de agosto de 2026, 14:14, Ceuta",
+      "text": "A Ceuta y Melilla no se las toca. […] Ceuta y Melilla son españolas no, españolísimas. […] Lo que pasó el día 30 no puede volver a ocurrir.",
+      "sourceIds": [
+        "src-theobjective-robles-12ago"
+      ]
+    },
+    {
+      "id": "st-albares-31jul",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "José Manuel Albares",
+      "role": "ministro de Asuntos Exteriores",
+      "date": "2026-07-31",
+      "dateLabel": "31 de julio de 2026",
+      "text": "excelente relación […] en migración y otros ámbitos sigue siendo muy intensa",
+      "sourceIds": [
+        "src-elindependiente-benyaich"
+      ]
+    },
+    {
+      "id": "st-exteriores-nota-21ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "Ministerio de Asuntos Exteriores",
+      "role": "nota oficial",
+      "date": "2026-08-21",
+      "dateLabel": "21 de agosto de 2026",
+      "text": "Ceuta y Melilla son dos ciudades españolas frontera de España y de la UE",
+      "sourceIds": [
+        "src-elespanol-albares-25ago",
+        "src-theobjective-exteriores-26ago"
+      ]
+    },
+    {
+      "id": "st-albares-socio-25ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "José Manuel Albares",
+      "role": "ministro de Asuntos Exteriores",
+      "date": "2026-08-25",
+      "dateLabel": "25 de agosto de 2026, Ceuta",
+      "text": "la voluntad de Marruecos es que hasta la última persona vuelva […] no ha pedido nada a cambio",
+      "sourceIds": [
+        "src-elespanol-albares-25ago"
+      ]
+    },
+    {
+      "id": "st-albares-2sept",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "José Manuel Albares",
+      "role": "ministro de Asuntos Exteriores",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026, 10:23",
+      "text": "la misma solidaridad",
+      "sourceIds": [
+        "src-elespanol-directo-2sept"
+      ]
+    },
+    {
+      "id": "st-bolanos-27ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "Félix Bolaños",
+      "role": "ministro de la Presidencia, Justicia y Relaciones con las Cortes",
+      "date": "2026-08-27",
+      "dateLabel": "27 de agosto de 2026, Congreso",
+      "text": "no existe ninguna evidencia",
+      "sourceIds": [
+        "src-infobae-bolanos"
+      ]
+    },
+    {
+      "id": "st-bolanos-2sept",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "Félix Bolaños",
+      "role": "ministro de la Presidencia, Justicia y Relaciones con las Cortes",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026, 11:51, Palacio de Parcent",
+      "text": "En absoluto. El Gobierno de España está actuando e informando a la ciudadanía con la información que tiene a su alcance. […] Es el momento de la cautela, de no adelantar ningún acontecimiento.",
+      "sourceIds": [
+        "src-infobae-bolanos",
+        "src-elespanol-directo-2sept"
+      ]
+    },
+    {
+      "id": "st-garcia-2sept",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "Mónica García",
+      "role": "ministra de Sanidad",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026, 09:59, RNE",
+      "text": "De ser verdad, caso de ser verdad, con el condicional, yo creo que es grave e implicaría la participación de Marruecos. […] Nosotros siempre hemos dicho que es indudable que hay una responsabilidad, por acción u omisión, de Marruecos.",
+      "sourceIds": [
+        "src-theobjective-garcia"
+      ]
+    },
+    {
+      "id": "st-torres-80000",
+      "crisisId": "ceuta-2026",
+      "bloc": "gobierno",
+      "speaker": "Ángel Víctor Torres",
+      "role": "ministro de Política Territorial",
+      "date": "2026-08-10",
+      "dateLabel": "10 de agosto de 2026",
+      "text": "emergencia tremenda",
+      "sourceIds": [
+        "src-euronews-torres"
+      ]
+    },
+    {
+      "id": "st-feijoo-sabia-tapo",
+      "crisisId": "ceuta-2026",
+      "bloc": "derecha",
+      "speaker": "Alberto Núñez Feijóo",
+      "role": "presidente del PP",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026, 14:14, Ceuta",
+      "text": "El Gobierno lo sabía y lo tapó. Nos ha mentido a la cara ocultando las advertencias existentes.",
+      "sourceIds": [
+        "src-theobjective-feijoo",
+        "src-elespanol-directo-2sept"
+      ]
+    },
+    {
+      "id": "st-feijoo-marruecos",
+      "crisisId": "ceuta-2026",
+      "bloc": "derecha",
+      "speaker": "Alberto Núñez Feijóo",
+      "role": "presidente del PP",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026, 14:19, Ceuta",
+      "text": "La operación salió de Marruecos, fue consentida por Marruecos y todo parece indicar que también fue coordinada por Marruecos",
+      "sourceIds": [
+        "src-elespanol-feijoo",
+        "src-theobjective-feijoo"
+      ]
+    },
+    {
+      "id": "st-feijoo-elecciones",
+      "crisisId": "ceuta-2026",
+      "bloc": "derecha",
+      "speaker": "Alberto Núñez Feijóo",
+      "role": "presidente del PP",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026, 14:19, Ceuta",
+      "text": "es evidente que el Gobierno, empezando por Pedro Sánchez, no está en condiciones de proteger la seguridad de la Nación […] la única salida es convocar elecciones y devolver la voz al pueblo",
+      "sourceIds": [
+        "src-theobjective-feijoo",
+        "src-elespanol-feijoo"
+      ]
+    },
+    {
+      "id": "st-feijoo-embajadores",
+      "crisisId": "ceuta-2026",
+      "bloc": "derecha",
+      "speaker": "Alberto Núñez Feijóo",
+      "role": "presidente del PP",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026, 14:15, Ceuta",
+      "text": "Exige convocar «con carácter inmediato» y «de manera urgente» a la embajadora de Marruecos y llamar a consultas al embajador español en Rabat para evaluar «las medidas más adecuadas» (paráfrasis de El Español y The Objective con entrecomillados literales).",
+      "sourceIds": [
+        "src-elespanol-directo-2sept",
+        "src-elespanol-feijoo",
+        "src-theobjective-feijoo"
+      ]
+    },
+    {
+      "id": "st-feijoo-plaza",
+      "crisisId": "ceuta-2026",
+      "bloc": "derecha",
+      "speaker": "Alberto Núñez Feijóo",
+      "role": "presidente del PP",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026, 15:20, Plaza de Correos, Ceuta",
+      "text": "Sánchez nos ha mentido, protegía más a Marruecos que a los españoles",
+      "sourceIds": [
+        "src-elfaro-feijoo"
+      ]
+    },
+    {
+      "id": "st-munoz-guerracivil",
+      "crisisId": "ceuta-2026",
+      "bloc": "derecha",
+      "speaker": "Ester Muñoz",
+      "role": "portavoz del PP en el Congreso",
+      "date": "2026-08-26",
+      "dateLabel": "26 de agosto de 2026",
+      "text": "guerra civil",
+      "sourceIds": [
+        "src-pressdigital-guerracivil"
+      ]
+    },
+    {
+      "id": "st-munoz-2sept-nada",
+      "crisisId": "ceuta-2026",
+      "bloc": "derecha",
+      "speaker": "Ester Muñoz",
+      "role": "portavoz del PP en el Congreso",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026, 11:10, esRadio",
+      "text": "Lo que hemos conocido desde ayer es que hubo una decisión de no hacer nada […] conscientemente y dolosamente decidieron no hacerlo",
+      "sourceIds": [
+        "src-libertaddigital-munoz"
+      ]
+    },
+    {
+      "id": "st-munoz-2sept-protege",
+      "crisisId": "ceuta-2026",
+      "bloc": "derecha",
+      "speaker": "Ester Muñoz",
+      "role": "portavoz del PP en el Congreso",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026, 11:10, esRadio",
+      "text": "Pedro Sánchez ha decidido que su Gobierno se protege a sí mismo, aunque invadan España […] el día 30 en la frontera y en la valla y en la verja había cinco agentes de la Guardia Civil",
+      "sourceIds": [
+        "src-libertaddigital-munoz"
+      ]
+    },
+    {
+      "id": "st-vazquez-28ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "derecha",
+      "speaker": "Ana Vázquez",
+      "role": "portavoz de Interior del PP",
+      "date": "2026-08-28",
+      "dateLabel": "28 de agosto de 2026, Comisión de Interior",
+      "text": "Si el Gobierno no sabía nada, es incompetente. Y si disponía de información, es negligente.",
+      "sourceIds": [
+        "src-pressdigital-marlaska-28ago"
+      ]
+    },
+    {
+      "id": "st-vivas-1ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "derecha",
+      "speaker": "Juan Jesús Vivas",
+      "role": "presidente de Ceuta (PP)",
+      "date": "2026-08-01",
+      "dateLabel": "1 de agosto de 2026, 14:49",
+      "text": "Ceuta no ha recuperado la normalidad porque hay varios miles de personas que deben ser retornadas",
+      "sourceIds": [
+        "src-infobae-directo-1ago"
+      ]
+    },
+    {
+      "id": "st-vivas-30ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "derecha",
+      "speaker": "Juan Jesús Vivas",
+      "role": "presidente de Ceuta (PP)",
+      "date": "2026-08-30",
+      "dateLabel": "30 de agosto de 2026, entrevista en El Español",
+      "text": "El lunes 27 llamé a Moncloa y me dijeron que estuviera tranquilo, el martes pedí al Gobierno el estado de alarma, el miércoles me dijeron que no había fundamento jurídico, el jueves llegó la avalancha",
+      "sourceIds": [
+        "src-elespanol-vivas-30ago"
+      ]
+    },
+    {
+      "id": "st-vivas-2sept",
+      "crisisId": "ceuta-2026",
+      "bloc": "derecha",
+      "speaker": "Juan Jesús Vivas",
+      "role": "presidente de Ceuta (PP)",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026, 13:27",
+      "text": "quedan muchas preguntas en el aire […] nuestra integridad territorial es intocable",
+      "sourceIds": [
+        "src-elespanol-directo-2sept"
+      ]
+    },
+    {
+      "id": "st-abascal-8ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "derecha",
+      "speaker": "Santiago Abascal",
+      "role": "presidente de Vox",
+      "date": "2026-08-08",
+      "dateLabel": "8 de agosto de 2026, X",
+      "text": "La traición de Pedro Sánchez a los españoles debe llevarse a los tribunales. Por ello proponemos activar el procedimiento previsto en el artículo 102 de la Constitución…",
+      "sourceIds": [
+        "src-elespanol-abascal-8ago"
+      ]
+    },
+    {
+      "id": "st-abascal-lacayo",
+      "crisisId": "ceuta-2026",
+      "bloc": "derecha",
+      "speaker": "Santiago Abascal",
+      "role": "presidente de Vox",
+      "date": "2026-08-31",
+      "dateLabel": "31 de agosto de 2026, 15:38, San Lorenzo de El Escorial",
+      "text": "Hoy Pedro Sánchez se ha convertido en un lacayo de Marruecos",
+      "sourceIds": [
+        "src-vozpopuli-abascal"
+      ]
+    },
+    {
+      "id": "st-abascal-tratado",
+      "crisisId": "ceuta-2026",
+      "bloc": "derecha",
+      "speaker": "Santiago Abascal",
+      "role": "presidente de Vox",
+      "date": "2026-08-31",
+      "dateLabel": "31 de agosto de 2026, 15:38, San Lorenzo de El Escorial",
+      "text": "No puede ser nuestro amigo quien nos invade y quien reclama parte de nuestro territorio histórico",
+      "sourceIds": [
+        "src-theobjective-abascal-31ago",
+        "src-vozpopuli-abascal"
+      ]
+    },
+    {
+      "id": "st-abascal-102-pp",
+      "crisisId": "ceuta-2026",
+      "bloc": "derecha",
+      "speaker": "Santiago Abascal",
+      "role": "presidente de Vox",
+      "date": "2026-08-31",
+      "dateLabel": "31 de agosto de 2026, 15:38, San Lorenzo de El Escorial",
+      "text": "Pide al PP activar el artículo 102 para que Sánchez «pueda ser juzgado por traición», la «suspensión del Tratado de Amistad entre España y Marruecos» y del Acuerdo Preferencial UE-Marruecos, y acciones contra «todas aquellas ONG o cargos públicos, gobernantes o ministros, que consideramos cómplices de esta invasión» (paráfrasis con literales de The Objective).",
+      "sourceIds": [
+        "src-theobjective-abascal-31ago"
+      ]
+    },
+    {
+      "id": "st-buxade-2sept",
+      "crisisId": "ceuta-2026",
+      "bloc": "derecha",
+      "speaker": "Jorge Buxadé",
+      "role": "eurodiputado de Vox",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026, 12:26, Bruselas",
+      "text": "condena formal y solemne del acto de agresión del Reino de Marruecos a la integridad",
+      "sourceIds": [
+        "src-infobae-bruselas",
+        "src-elespanol-directo-2sept"
+      ]
+    },
+    {
+      "id": "st-gillazaro-28ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "derecha",
+      "speaker": "Ignacio Gil Lázaro",
+      "role": "diputado de Vox",
+      "date": "2026-08-28",
+      "dateLabel": "28 de agosto de 2026, Comisión de Interior",
+      "text": "invasión y acto de guerra híbrida orquestado por Marruecos",
+      "sourceIds": [
+        "src-pressdigital-marlaska-28ago"
+      ]
+    },
+    {
+      "id": "st-barbero-31ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "izquierda",
+      "speaker": "Verónica Martínez Barbero",
+      "role": "portavoz de Sumar en el Congreso",
+      "date": "2026-08-31",
+      "dateLabel": "31 de agosto de 2026",
+      "text": "Han faltado críticas a Marruecos por lo sucedido. Ha faltado empatía con la población ceutí.",
+      "sourceIds": [
+        "src-infobae-sumar-31ago"
+      ]
+    },
+    {
+      "id": "st-ibanez-31ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "izquierda",
+      "speaker": "Alberto Ibáñez",
+      "role": "diputado de Compromís (Sumar)",
+      "date": "2026-08-31",
+      "dateLabel": "31 de agosto de 2026",
+      "text": "debe superar su síndrome de Estocolmo con el rey de Marruecos",
+      "sourceIds": [
+        "src-infobae-sumar-31ago"
+      ]
+    },
+    {
+      "id": "st-barbero-2sept",
+      "crisisId": "ceuta-2026",
+      "bloc": "izquierda",
+      "speaker": "Verónica Martínez Barbero",
+      "role": "portavoz de Sumar en el Congreso",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026, 12:00",
+      "text": "depurar responsabilidades",
+      "sourceIds": [
+        "src-elespanol-directo-2sept"
+      ]
+    },
+    {
+      "id": "st-urtasun-2sept",
+      "crisisId": "ceuta-2026",
+      "bloc": "izquierda",
+      "speaker": "Ernest Urtasun",
+      "role": "ministro de Cultura y portavoz de Sumar",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026, 10:47",
+      "text": "algún tipo de responsabilidad",
+      "sourceIds": [
+        "src-elespanol-directo-2sept"
+      ]
+    },
+    {
+      "id": "st-belarra-26ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "izquierda",
+      "speaker": "Ione Belarra",
+      "role": "secretaria general de Podemos",
+      "date": "2026-08-26",
+      "dateLabel": "26 de agosto de 2026, Diputación Permanente",
+      "text": "Marruecos, es verdad, ha utilizado a su gente como arma arrojadiza, pero ustedes están intentando castigar a Marruecos utilizando a la gente.",
+      "sourceIds": [
+        "src-dscd-pl-200"
+      ]
+    },
+    {
+      "id": "st-fernandez-2sept",
+      "crisisId": "ceuta-2026",
+      "bloc": "izquierda",
+      "speaker": "Pablo Fernández",
+      "role": "coportavoz de Podemos",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026, 12:35",
+      "text": "no puede seguir ni un minuto más al frente del Ministerio del Interior […] el Ejecutivo está mintiendo",
+      "sourceIds": [
+        "src-infobae-podemos",
+        "src-elespanol-directo-2sept"
+      ]
+    },
+    {
+      "id": "st-maillo-2sept",
+      "crisisId": "ceuta-2026",
+      "bloc": "izquierda",
+      "speaker": "Antonio Maíllo",
+      "role": "coordinador federal de IU",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026, 11:25",
+      "text": "deslealtad",
+      "sourceIds": [
+        "src-elespanol-directo-2sept"
+      ]
+    },
+    {
+      "id": "st-pnv-5ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "otro",
+      "speaker": "PNV (fuentes del partido)",
+      "role": "",
+      "date": "2026-08-05",
+      "dateLabel": "5 de agosto de 2026",
+      "text": "evidente que esta crisis tiene una dimensión política por el papel de Marruecos",
+      "sourceIds": [
+        "src-moncloacom-pnv-erc"
+      ]
+    },
+    {
+      "id": "st-junqueras-5ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "otro",
+      "speaker": "Oriol Junqueras",
+      "role": "presidente de ERC",
+      "date": "2026-08-05",
+      "dateLabel": "5 de agosto de 2026",
+      "text": "tragedia humanitaria",
+      "sourceIds": [
+        "src-moncloacom-pnv-erc"
+      ]
+    },
+    {
+      "id": "st-inarritu-5ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "otro",
+      "speaker": "Jon Iñárritu",
+      "role": "diputado de EH Bildu",
+      "date": "2026-08-05",
+      "dateLabel": "5 de agosto de 2026, redes sociales",
+      "text": "auspiciada y tolerada por un Estado 'amigo'",
+      "sourceIds": [
+        "src-moncloacom-pnv-erc"
+      ]
+    },
+    {
+      "id": "st-legarda-28ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "otro",
+      "speaker": "Mikel Legarda",
+      "role": "diputado del PNV",
+      "date": "2026-08-28",
+      "dateLabel": "28 de agosto de 2026, Comisión de Interior",
+      "text": "actitud negligente […] francamente inactivo un mes en Ceuta",
+      "sourceIds": [
+        "src-theobjective-socios-28ago"
+      ]
+    },
+    {
+      "id": "st-madrenas-28ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "otro",
+      "speaker": "Marta Madrenas",
+      "role": "diputada de Junts",
+      "date": "2026-08-28",
+      "dateLabel": "28 de agosto de 2026, Comisión de Interior",
+      "text": "Reconozca que perdió el tiempo vilmente y que el 1 de agosto mintió a la ciudadanía sobre la realidad que tenía delante",
+      "sourceIds": [
+        "src-theobjective-socios-28ago"
+      ]
+    },
+    {
+      "id": "st-casareal-2sept",
+      "crisisId": "ceuta-2026",
+      "bloc": "monarquia",
+      "speaker": "Casa de S.M. el Rey",
+      "role": "cuenta oficial en X",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026, 13:00",
+      "text": "Hoy, 2 de septiembre, es el Día de Ceuta. La Corona y todos, con nuestra ciudad. Unidad, convivencia y futuro.",
+      "sourceIds": [
+        "src-eldebate-rey",
+        "src-elespanol-directo-2sept"
+      ]
+    },
+    {
+      "id": "st-benyaich-31jul",
+      "crisisId": "ceuta-2026",
+      "bloc": "marruecos",
+      "speaker": "Karima Benyaich",
+      "role": "embajadora de Marruecos en España",
+      "date": "2026-07-31",
+      "dateLabel": "31 de julio de 2026",
+      "text": "no querida por el reino de Marruecos […] No es algo que nos complazca, queremos siempre una inmigración ordenada y segura",
+      "sourceIds": [
+        "src-elindependiente-benyaich"
+      ]
+    },
+    {
+      "id": "st-khalfi-3ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "marruecos",
+      "speaker": "Rachid Khalfi",
+      "role": "portavoz del Ministerio del Interior de Marruecos",
+      "date": "2026-08-03",
+      "dateLabel": "3 de agosto de 2026",
+      "text": "El número real de los llegados a la ciudad de Ceuta ascendió a 40.000 personas",
+      "sourceIds": [
+        "src-canalsur-88"
+      ]
+    },
+    {
+      "id": "st-ouahbi-10ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "marruecos",
+      "speaker": "Abdellatif Ouahbi",
+      "role": "ministro de Justicia de Marruecos",
+      "date": "2026-08-10",
+      "dateLabel": "10 de agosto de 2026, Asharq News (traducido)",
+      "text": "Este asunto sigue sobre la mesa. Cada vez que nos reunimos con los españoles planteamos la cuestión. […] Seguimos reivindicando nuestros territorios y queremos resolver el problema mediante el diálogo.",
+      "sourceIds": [
+        "src-infobae-ouahbi"
+      ]
+    },
+    {
+      "id": "st-ouahbi-herramienta",
+      "crisisId": "ceuta-2026",
+      "bloc": "marruecos",
+      "speaker": "Abdellatif Ouahbi",
+      "role": "ministro de Justicia de Marruecos",
+      "date": "2026-08-10",
+      "dateLabel": "10 de agosto de 2026, Asharq News (traducido)",
+      "text": "Nosotros nunca hemos utilizado esta cuestión como una herramienta y no tenemos intención de hacerlo.",
+      "sourceIds": [
+        "src-infobae-ouahbi"
+      ]
+    },
+    {
+      "id": "st-toufiq-24ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "marruecos",
+      "speaker": "Ahmed Toufiq",
+      "role": "ministro de Habices y Asuntos Islámicos de Marruecos",
+      "date": "2026-08-24",
+      "dateLabel": "24 de agosto de 2026, Mawlid, Palacio Real de Rabat (traducido)",
+      "text": "invocadas en la lucha de los marroquíes para liberar las ciudades ocupadas de la costa atlántica",
+      "sourceIds": [
+        "src-elespanol-toufiq",
+        "src-theobjective-toufiq"
+      ]
+    },
+    {
+      "id": "st-jabaroot-24ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "otro",
+      "speaker": "Jabaroot",
+      "role": "grupo de hackers",
+      "date": "2026-08-24",
+      "dateLabel": "24 de agosto de 2026, Telegram (traducido)",
+      "text": "Jabaroot cumple la promesa de publicación, para confirmar que las operaciones de traslado de marroquíes hacia Europa, empezando por España, son un plan oficial marroquí",
+      "sourceIds": [
+        "src-infobae-jabaroot"
+      ]
+    },
+    {
+      "id": "st-saar-31ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "otro",
+      "speaker": "Gideon Sa'ar",
+      "role": "ministro de Asuntos Exteriores de Israel",
+      "date": "2026-08-31",
+      "dateLabel": "31 de agosto de 2026, X",
+      "text": "He lied again, shamefully accusing Israel of spreading misinformation regarding events in Ceuta",
+      "sourceIds": [
+        "src-eldiario-saar"
+      ]
+    },
+    {
+      "id": "st-zajarova-1sept",
+      "crisisId": "ceuta-2026",
+      "bloc": "otro",
+      "speaker": "María Zajárova",
+      "role": "portavoz del Ministerio de Exteriores de Rusia",
+      "date": "2026-09-01",
+      "dateLabel": "1 de septiembre de 2026 (traducido)",
+      "text": "Cuando hay acusaciones debe haber hechos concretos que después requieren verificación […] sin hechos, sin materiales respaldados con cifras, fechas y nombres, simplemente no hay nada de qué hablar",
+      "sourceIds": [
+        "src-elindependiente-rusia"
+      ]
+    },
+    {
+      "id": "st-mercier-6ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "otro",
+      "speaker": "Guillaume Mercier",
+      "role": "portavoz de la Comisión Europea",
+      "date": "2026-08-06",
+      "dateLabel": "6 de agosto de 2026 (traducido)",
+      "text": "canales extranjeros de manipulación e interferencia en la información (FIMI), particularmente rusos, que intentaron rápidamente amplificar la situación de Ceuta en diversas plataformas empezando el 30 de julio, pero antes del 30 de julio, no hemos visto esta actividad",
+      "sourceIds": [
+        "src-elnacional-pruebas",
+        "src-elespanol-ue-28ago"
+      ]
+    },
+    {
+      "id": "st-seae-1sept",
+      "crisisId": "ceuta-2026",
+      "bloc": "otro",
+      "speaker": "Portavoz del SEAE",
+      "role": "Servicio Europeo de Acción Exterior",
+      "date": "2026-09-01",
+      "dateLabel": "1 de septiembre de 2026 (traducido)",
+      "text": "no tenemos pruebas concluyentes que sugieran que la crisis en sí fuera desencadenada por desinformación procedente de actores estatales extranjeros",
+      "sourceIds": [
+        "src-elespanol-seae-1sept"
+      ]
+    },
+    {
+      "id": "st-vdl-3ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "otro",
+      "speaker": "Ursula von der Leyen",
+      "role": "presidenta de la Comisión Europea",
+      "date": "2026-08-03",
+      "dateLabel": "3 de agosto de 2026, carta (traducida)",
+      "text": "Tanto las autoridades españolas como las marroquíes han gestionado esta situación de forma eficiente y eficaz. […] no se puede aceptar ningún intento de utilizar la migración ilegal como medio para ejercer presión sobre ningún Estado miembro",
+      "sourceIds": [
+        "src-libertaddigital-vdl"
+      ]
+    },
+    {
+      "id": "st-jupol-30jul",
+      "crisisId": "ceuta-2026",
+      "bloc": "otro",
+      "speaker": "Jupol / SUP",
+      "role": "sindicatos de la Policía Nacional",
+      "date": "2026-07-30",
+      "dateLabel": "30 de julio de 2026, 14:10",
+      "text": "ya no está reteniendo a nadie […] absoluta pasividad […] guerra híbrida",
+      "sourceIds": [
+        "src-elindependiente-sindicatos"
+      ]
+    },
+    {
+      "id": "st-jupol-2sept",
+      "crisisId": "ceuta-2026",
+      "bloc": "otro",
+      "speaker": "Jupol",
+      "role": "sindicato de la Policía Nacional",
+      "date": "2026-09-02",
+      "dateLabel": "2 de septiembre de 2026",
+      "text": "La Dirección General de la Policía y el Ministerio del Interior tenían conocimiento",
+      "sourceIds": [
+        "src-infobae-jupol"
+      ]
+    },
+    {
+      "id": "st-maleno-5ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "otro",
+      "speaker": "Helena Maleno",
+      "role": "Caminando Fronteras",
+      "date": "2026-08-05",
+      "dateLabel": "5 de agosto de 2026",
+      "text": "Los datos son los verificados a 4 de agosto de los hechos que comenzaron el 30 de julio. Al parecer, las cifras han aumentado hoy en Ceuta y seguramente aumentarán en Marruecos.",
+      "sourceIds": [
+        "src-infobae-141"
+      ]
+    },
+    {
+      "id": "st-rtve-15ago",
+      "crisisId": "ceuta-2026",
+      "bloc": "otro",
+      "speaker": "RTVE",
+      "role": "corporación pública",
+      "date": "2026-08-15",
+      "dateLabel": "15 de agosto de 2026",
+      "text": "más enérgico rechazo […] una cobertura periodística rigurosa y de indudable interés público",
+      "sourceIds": [
+        "src-theobjective-periodistas"
+      ]
+    }
+  ],
+  "series": [
+    {
+      "id": "se-entradas",
+      "title": "Entradas irregulares en Ceuta, 30-31 de julio de 2026: cifras sucesivas por organismo",
+      "unit": "personas",
+      "kind": "bar",
+      "groups": [
+        "Interior/GC",
+        "Gobierno de Ceuta",
+        "Carta de Sánchez",
+        "Interior marroquí",
+        "Interior (oficial)",
+        "Elcano",
+        "Torres",
+        "CENIF"
+      ],
+      "points": [
+        {
+          "x": "2026-07-31",
+          "y": 49000,
+          "group": "Interior/GC",
+          "note": "El Debate, 11:45"
+        },
+        {
+          "x": "2026-07-31",
+          "y": 60000,
+          "group": "Gobierno de Ceuta",
+          "note": "Vivas; solo Wikipedia [NO VERIFICADO]"
+        },
+        {
+          "x": "2026-08-01",
+          "y": 50000,
+          "group": "Carta de Sánchez",
+          "note": "«aproximadamente 50.000»"
+        },
+        {
+          "x": "2026-08-03",
+          "y": 40000,
+          "group": "Interior marroquí",
+          "note": "Rachid Khalfi"
+        },
+        {
+          "x": "2026-08-04",
+          "y": 72000,
+          "group": "Interior (oficial)",
+          "note": "cifra oficial mantenida"
+        },
+        {
+          "x": "2026-08-05",
+          "y": 55000,
+          "group": "Elcano",
+          "note": "«entre 50.000 y 60.000» (valor central)"
+        },
+        {
+          "x": "2026-08-10",
+          "y": 80000,
+          "group": "Torres",
+          "note": "aclarado por el Gobierno: sigue en 72.000"
+        },
+        {
+          "x": "2026-09-01",
+          "y": 72000,
+          "group": "CENIF",
+          "note": "«entre 72.000 y unos 80.000»"
+        }
+      ],
+      "sourceIds": [
+        "src-eldebate-49000",
+        "src-wiki-incidentes",
+        "src-theobjective-carta-vdl",
+        "src-canalsur-88",
+        "src-ceutatv-72000",
+        "src-elcano",
+        "src-euronews-torres",
+        "src-elespanol-cenif"
+      ],
+      "note": "Se registran todas las cifras; la oficial es 72.000 (Interior, 4 ago)."
+    },
+    {
+      "id": "se-retornos",
+      "title": "Retornos a Marruecos tras la entrada masiva",
+      "unit": "personas",
+      "kind": "line",
+      "groups": [
+        "Robles/EMAD",
+        "Elcano",
+        "Interior (vía Wikipedia)",
+        "Gobierno"
+      ],
+      "points": [
+        {
+          "x": "2026-08-01",
+          "y": 25000,
+          "group": "Robles/EMAD",
+          "note": "a las 14:30 del 1 ago (DSCD-15-CO-609, p. 7)"
+        },
+        {
+          "x": "2026-08-01",
+          "y": 48500,
+          "group": "Elcano",
+          "note": "al cierre del sábado 1 ago"
+        },
+        {
+          "x": "2026-08-01",
+          "y": 48300,
+          "group": "Interior (vía Wikipedia)",
+          "note": "[NO VERIFICADO]"
+        },
+        {
+          "x": "2026-08-05",
+          "y": 70000,
+          "group": "Gobierno",
+          "note": "Infobae 5 ago; ~90 % según Robles y CENIF"
+        }
+      ],
+      "sourceIds": [
+        "src-dscd-co-609",
+        "src-elcano",
+        "src-wiki-incidentes",
+        "src-infobae-141"
+      ],
+      "note": "Infobae (1 ago) cita «69.500» salidas en 30 h, incompatible con las 50.000 entradas entonces reconocidas; no se incluye."
+    },
+    {
+      "id": "se-muertos",
+      "title": "Fallecidos en la crisis de Ceuta: cifras sucesivas por organismo",
+      "unit": "personas",
+      "kind": "bar",
+      "groups": [
+        "Policía/EFE",
+        "Wikipedia",
+        "Fuentes oficiales",
+        "Delegación del Gobierno",
+        "Gobierno de Ceuta",
+        "AUGC",
+        "Interior marroquí",
+        "Interior",
+        "IML Ceuta",
+        "Caminando Fronteras",
+        "Bildu (Congreso)"
+      ],
+      "points": [
+        {
+          "x": "2026-07-31",
+          "y": 19,
+          "group": "Policía/EFE",
+          "note": "11:45"
+        },
+        {
+          "x": "2026-07-31",
+          "y": 34,
+          "group": "Wikipedia",
+          "note": "balance provisional [NO VERIFICADO]"
+        },
+        {
+          "x": "2026-07-31",
+          "y": 43,
+          "group": "Wikipedia",
+          "note": "balance provisional [NO VERIFICADO]"
+        },
+        {
+          "x": "2026-08-01",
+          "y": 67,
+          "group": "Fuentes oficiales",
+          "note": "20:42"
+        },
+        {
+          "x": "2026-08-02",
+          "y": 72,
+          "group": "Delegación del Gobierno",
+          "note": ""
+        },
+        {
+          "x": "2026-08-02",
+          "y": 88,
+          "group": "Gobierno de Ceuta",
+          "note": "cuerpos en la morgue; incluye intentos previos"
+        },
+        {
+          "x": "2026-08-03",
+          "y": 100,
+          "group": "AUGC",
+          "note": "«aproximadamente cien»"
+        },
+        {
+          "x": "2026-08-03",
+          "y": 11,
+          "group": "Interior marroquí",
+          "note": "10 ahogados + 1 caída"
+        },
+        {
+          "x": "2026-08-04",
+          "y": 75,
+          "group": "Interior",
+          "note": "cifra oficial"
+        },
+        {
+          "x": "2026-08-05",
+          "y": 79,
+          "group": "IML Ceuta",
+          "note": ""
+        },
+        {
+          "x": "2026-08-05",
+          "y": 78,
+          "group": "Caminando Fronteras",
+          "note": "en aguas españolas"
+        },
+        {
+          "x": "2026-08-05",
+          "y": 63,
+          "group": "Caminando Fronteras",
+          "note": "en Marruecos (total 141)"
+        },
+        {
+          "x": "2026-08-26",
+          "y": 140,
+          "group": "Bildu (Congreso)",
+          "note": "Matute: «140 personas, 85 en territorio español»"
+        }
+      ],
+      "sourceIds": [
+        "src-eldebate-49000",
+        "src-wiki-incidentes",
+        "src-infobae-directo-1ago",
+        "src-france24-72",
+        "src-lanacion-88",
+        "src-canalsur-88",
+        "src-ceutatv-72000",
+        "src-infobae-141",
+        "src-theobjective-cadaveres",
+        "src-dscd-pl-200"
+      ],
+      "note": "Las cifras no son acumulativas entre organismos; cada punto es un balance distinto."
+    },
+    {
+      "id": "se-permanecen",
+      "title": "Personas de la entrada masiva que permanecen en Ceuta",
+      "unit": "personas",
+      "kind": "line",
+      "groups": [
+        "Marlaska",
+        "Vivas",
+        "Interior (vía Wikipedia)",
+        "Gobierno de Ceuta (vía Wikipedia)"
+      ],
+      "points": [
+        {
+          "x": "2026-08-13",
+          "y": 5000,
+          "group": "Marlaska",
+          "note": ""
+        },
+        {
+          "x": "2026-08-30",
+          "y": 10000,
+          "group": "Vivas",
+          "note": "entrevista El Español"
+        },
+        {
+          "x": "2026-08-31",
+          "y": 5000,
+          "group": "Interior (vía Wikipedia)",
+          "note": "[NO VERIFICADO]"
+        },
+        {
+          "x": "2026-08-31",
+          "y": 11000,
+          "group": "Gobierno de Ceuta (vía Wikipedia)",
+          "note": "«10.000-12.000» [NO VERIFICADO]"
+        }
+      ],
+      "sourceIds": [
+        "src-publico-marlaska-13ago",
+        "src-elespanol-vivas-30ago",
+        "src-wiki-incidentes"
+      ],
+      "note": ""
+    },
+    {
+      "id": "se-menores",
+      "title": "Menores en Ceuta durante la crisis",
+      "unit": "menores",
+      "kind": "line",
+      "groups": [
+        "Vivas",
+        "Euronews",
+        "Marlaska",
+        "Sánchez",
+        "Fiscalía"
+      ],
+      "points": [
+        {
+          "x": "2026-07-20",
+          "y": 180,
+          "group": "Vivas",
+          "note": "acogidos antes del repunte"
+        },
+        {
+          "x": "2026-07-27",
+          "y": 800,
+          "group": "Vivas",
+          "note": "acogidos al llamar a Moncloa"
+        },
+        {
+          "x": "2026-08-10",
+          "y": 1400,
+          "group": "Euronews",
+          "note": "no acompañados registrados"
+        },
+        {
+          "x": "2026-08-13",
+          "y": 1898,
+          "group": "Marlaska",
+          "note": "identificados"
+        },
+        {
+          "x": "2026-08-31",
+          "y": 500,
+          "group": "Sánchez",
+          "note": "«500 niñas» pendientes de traslado"
+        },
+        {
+          "x": "2026-08-31",
+          "y": 9,
+          "group": "Fiscalía",
+          "note": "víctimas menores de agresiones sexuales"
+        }
+      ],
+      "sourceIds": [
+        "src-elespanol-vivas-30ago",
+        "src-euronews-torres",
+        "src-publico-marlaska-13ago",
+        "src-theobjective-sanchez-ser",
+        "src-eldiario-fiscalia"
+      ],
+      "note": "Wikipedia cita una ocupación del 2.400 % de los recursos de menores el 29 jul [NO VERIFICADO]."
+    }
+  ],
+  "videos": [
+    {
+      "id": "vid-moncloa-sanchez-31jul",
+      "provider": "youtube",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/JhfFGo0UEgg",
+      "pageUrl": "https://www.youtube.com/watch?v=JhfFGo0UEgg",
+      "title": "Declaración institucional de Pedro Sánchez en Ceuta (La Moncloa)",
+      "date": "2026-07-31",
+      "sourceIds": [
+        "src-yt-moncloa-sanchez",
+        "src-moncloa-ceuta-31jul"
+      ]
+    },
+    {
+      "id": "vid-congreso-dp-26ago",
+      "provider": "congreso",
+      "embedUrl": "",
+      "pageUrl": "https://app.congreso.es/AudiovisualCongreso/audiovisualdetalledisponible?codSesion=7&codOrgano=500&fechaSesion=26%2F08%2F2026&mp4=mp4&idLegislaturaElegida=15&i=777614",
+      "title": "Diputación Permanente, sesión núm. 7, 26 de agosto de 2026",
+      "date": "2026-08-26",
+      "sourceIds": [
+        "src-congreso-video-dp",
+        "src-dscd-pl-200"
+      ]
+    },
+    {
+      "id": "vid-rtvce-sanchez-31jul",
+      "provider": "otro",
+      "embedUrl": "",
+      "pageUrl": "https://www.rtvce.es/video/video/comparecencia-integra-presidente-gobierno-espana-pedro-sanchez-ceuta/20260731140856101796.html",
+      "title": "Comparecencia íntegra de Pedro Sánchez en Ceuta (RTVCE)",
+      "date": "2026-07-31",
+      "sourceIds": [
+        "src-rtvce-sanchez"
+      ]
+    },
+    {
+      "id": "vid-rtvce-vivas-31jul",
+      "provider": "otro",
+      "embedUrl": "",
+      "pageUrl": "https://www.rtvce.es/video/video/comparecencia-integra-presidente-ceuta-juan-vivas-reunion-pedro-sanchez/20260731144902101799.html",
+      "title": "Comparecencia íntegra de Juan Jesús Vivas tras su reunión con Sánchez (RTVCE)",
+      "date": "2026-07-31",
+      "sourceIds": [
+        "src-rtvce-vivas"
+      ]
+    },
+    {
+      "id": "vid-ser-marlaska-28ago",
+      "provider": "youtube",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/LW6rWIf1eXA",
+      "pageUrl": "https://www.youtube.com/watch?v=LW6rWIf1eXA",
+      "title": "Marlaska informa en el Congreso sobre Ceuta, 28/08/2026 (Cadena SER; canal no oficial)",
+      "date": "2026-08-28",
+      "sourceIds": [
+        "src-yt-ser-marlaska"
+      ]
+    }
+  ]
+}

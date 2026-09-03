@@ -12,21 +12,11 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const roleLabels: Record<string, string> = {
-  USER: "Usuario",
-  MEMBER: "Socio",
-  EDITOR: "Editor",
-  MEMBER_ADMIN: "Admin de socios",
-  ADMIN: "Administrador",
-};
+import { UserRoleSelect } from "@/components/admin/UserRoleSelect";
+import { ROLE_COLORS, ROLE_LABELS, isRoleName, isStaffRole } from "@/lib/roles";
 
-const roleColors: Record<string, string> = {
-  USER: "bg-gray-100 text-gray-700",
-  MEMBER: "bg-green-100 text-green-700",
-  EDITOR: "bg-blue-100 text-blue-700",
-  MEMBER_ADMIN: "bg-amber-100 text-amber-700",
-  ADMIN: "bg-coral-100 text-coral-700",
-};
+const roleLabels: Record<string, string> = ROLE_LABELS;
+const roleColors: Record<string, string> = ROLE_COLORS;
 
 export default async function AdminUsersPage() {
   const session = await auth();
@@ -62,16 +52,19 @@ export default async function AdminUsersPage() {
 
   const totalUsers = users.length;
   const totalMembers = users.filter((u) => !!u.member).length;
-  const totalAdmins = users.filter(
-    (u) => u.role === "ADMIN" || u.role === "MEMBER_ADMIN"
-  ).length;
+  const totalStaff = users.filter((u) => isStaffRole(u.role)).length;
+  // Solo un ADMIN puede cambiar roles; el admin de socios ve las etiquetas.
+  const canEditRoles = session.user.role === "ADMIN";
 
   return (
     <div className="space-y-6 px-6 py-8">
       <div>
         <h2 className="text-3xl font-bold text-gray-900">Usuarios</h2>
         <p className="text-gray-600 mt-1">
-          Listado de cuentas registradas y su estado de membresia.
+          Listado de cuentas registradas y su estado de membresía.
+          {canEditRoles
+            ? " Cambia el rol desde la columna «Rol»: Equipo Olvidos publica artículos; Admin de socios gestiona socios y pagos; Administrador puede todo."
+            : ""}
         </p>
       </div>
 
@@ -94,10 +87,10 @@ export default async function AdminUsersPage() {
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Administradores</CardTitle>
+            <CardTitle className="text-sm font-medium">Equipo</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{totalAdmins}</div>
+            <div className="text-2xl font-bold">{totalStaff}</div>
           </CardContent>
         </Card>
       </div>
@@ -132,13 +125,17 @@ export default async function AdminUsersPage() {
                       </TableCell>
                       <TableCell>{user.email}</TableCell>
                       <TableCell>
-                        <span
-                          className={`px-2 py-1 rounded-full text-xs font-medium ${
-                            roleColors[user.role] || roleColors.USER
-                          }`}
-                        >
-                          {roleLabels[user.role] || user.role}
-                        </span>
+                        {canEditRoles && isRoleName(user.role) ? (
+                          <UserRoleSelect userId={user.id} role={user.role} isSelf={user.id === session.user.id} />
+                        ) : (
+                          <span
+                            className={`px-2 py-1 rounded-full text-xs font-medium ${
+                              roleColors[user.role] || roleColors.USER
+                            }`}
+                          >
+                            {roleLabels[user.role] || user.role}
+                          </span>
+                        )}
                       </TableCell>
                       <TableCell>
                         {user.member ? (

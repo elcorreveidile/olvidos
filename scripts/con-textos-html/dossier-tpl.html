@@ -1,0 +1,86 @@
+<title>Expediente España-Marruecos</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+:root{
+  --paper:#ffffff; --ink:#141414; --ink-2:#3d3d3d; --steel:#617685; --steel-l:#a1b6c4; --rule:#d9e1e6;
+  --coral:#ff6261; --coral-soft:#fff0ef; --ok:#e7f3ea; --ok-ink:#1f5f37; --nv:#fff3d6; --nv-ink:#7a4b00;
+  --code:#f3f5f7;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#161616; --ink:#f1ede6; --ink-2:#cfc9bf; --steel:#a1b6c4; --steel-l:#617685; --rule:#2e363b;
+  --coral:#ff7b7a; --coral-soft:#3a1f1f; --ok:#1b3324; --ok-ink:#a9dcb8; --nv:#3a2c10; --nv-ink:#ffd58a; --code:#1f2326; } }
+:root[data-theme="dark"]{
+  --paper:#161616; --ink:#f1ede6; --ink-2:#cfc9bf; --steel:#a1b6c4; --steel-l:#617685; --rule:#2e363b;
+  --coral:#ff7b7a; --coral-soft:#3a1f1f; --ok:#1b3324; --ok-ink:#a9dcb8; --nv:#3a2c10; --nv-ink:#ffd58a; --code:#1f2326; }
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Crimson Text",Georgia,"Times New Roman",serif;font-size:18px;line-height:1.5}
+a{color:var(--coral);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--coral) 45%,transparent);text-underline-offset:2px}
+a:focus-visible{outline:2px solid var(--coral);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px 80px}
+header.mast{padding:40px 0 28px;border-bottom:2px solid var(--ink)}
+.kicker{font-family:"Libre Franklin",Arial,sans-serif;font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin:0 0 14px}
+.kicker b{color:var(--ink)}
+h1{font-family:"Libre Franklin",Arial,sans-serif;font-weight:900;font-size:clamp(34px,5vw,58px);line-height:1;letter-spacing:-.02em;margin:0 0 18px;text-wrap:balance}
+h1 .br{color:var(--coral)}
+.stand{font-size:20px;color:var(--ink-2);max-width:62ch;margin:0}
+.meta{font-family:"Libre Franklin",Arial,sans-serif;font-size:13px;color:var(--steel);margin:18px 0 0;display:flex;flex-wrap:wrap;gap:8px 22px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;border:1px solid var(--rule);margin:26px 0 0}
+.stats div{padding:12px 14px;border-right:1px solid var(--rule);font-family:"Libre Franklin",Arial,sans-serif}
+.stats div:last-child{border-right:0}
+.stats b{display:block;font-size:26px;font-weight:900;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.1}
+.stats span{font-size:12px;color:var(--steel);text-transform:uppercase;letter-spacing:.08em}
+.grid{display:grid;grid-template-columns:1fr;gap:40px;padding-top:28px}
+@media (min-width:980px){ .grid{grid-template-columns:250px minmax(0,1fr)} nav.toc{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto} }
+nav.toc{font-family:"Libre Franklin",Arial,sans-serif;font-size:13px}
+nav.toc h3{margin:0 0 10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
+nav.toc h3::before{content:"[";color:var(--coral);margin-right:2px}
+nav.toc ul{list-style:none;margin:0;padding:0}
+nav.toc li{border-top:1px solid var(--rule)}
+nav.toc a{display:flex;gap:10px;padding:7px 0;color:var(--ink);text-decoration:none;line-height:1.3}
+nav.toc a:hover{color:var(--coral)}
+nav.toc .n{color:var(--steel-l);font-variant-numeric:tabular-nums;min-width:1.6em;font-weight:700}
+main{min-width:0}
+main > *{max-width:72ch}
+main h2{font-family:"Libre Franklin",Arial,sans-serif;font-weight:900;font-size:30px;letter-spacing:-.02em;line-height:1.1;margin:56px 0 18px;padding-top:18px;border-top:2px solid var(--ink);text-wrap:balance}
+main h2::before{content:"[";color:var(--coral);margin-right:4px}
+main h2 .n{color:var(--steel-l);margin-right:10px;font-variant-numeric:tabular-nums}
+main h3{font-family:"Libre Franklin",Arial,sans-serif;font-weight:700;font-size:19px;margin:34px 0 10px;line-height:1.25}
+main p{margin:0 0 14px}
+main li{margin:0 0 8px}
+main ul,main ol{padding-left:1.3em}
+main strong{font-weight:600}
+main blockquote{margin:16px 0;padding:6px 0 6px 16px;border-left:3px solid var(--coral);color:var(--ink-2)}
+main code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82em;background:var(--code);padding:1px 5px;border-radius:3px;color:var(--ink)}
+main hr{border:0;border-top:1px solid var(--rule);margin:36px 0}
+.tw{max-width:none;overflow-x:auto;margin:14px 0 22px;border:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;font-family:"Libre Franklin",Arial,sans-serif;font-size:13.5px;line-height:1.4}
+th{text-align:left;background:var(--code);font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);padding:9px 10px;border-bottom:2px solid var(--rule);white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid var(--rule);vertical-align:top;min-width:110px;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:0}
+mark{font-family:"Libre Franklin",Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:2px;white-space:nowrap;vertical-align:middle}
+mark.nv{background:var(--nv);color:var(--nv-ink)}
+mark.ok{background:var(--ok);color:var(--ok-ink)}
+footer{margin-top:60px;padding-top:18px;border-top:2px solid var(--ink);font-family:"Libre Franklin",Arial,sans-serif;font-size:13px;color:var(--steel)}
+</style>
+<div class="wrap">
+<header class="mast">
+  <p class="kicker"><b>[olvidos</b> · Con-textos · material de trabajo</p>
+  <h1><span class="br">[</span>España y Marruecos, 1859-2026</h1>
+  <p class="stand">Expediente documental del primer especial «Con-textos»: guerras, disputas territoriales, crisis migratorias, la Corona y lo que se dijo en las Cortes en cada etapa, a raíz de la entrada masiva en Ceuta de julio de 2026.</p>
+  <p class="meta"><span>Versión 1.0 · 2 de septiembre de 2026</span><span>Cerrado antes del pleno extraordinario del 3 de septiembre</span><span>Cada dato lleva su fuente; lo no cotejado en fuente primaria va marcado</span></p>
+  <div class="stats">
+    <div><b>499</b><span>fuentes</span></div>
+    <div><b>170</b><span>citas parlamentarias</span></div>
+    <div><b>145</b><span>leídas en el Diario</span></div>
+    <div><b>142</b><span>episodios</span></div>
+    <div><b>167</b><span>declaraciones 2026</span></div>
+    <div><b>30</b><span>series de datos</span></div>
+  </div>
+</header>
+<div class="grid">
+<nav class="toc" aria-label="Capítulos"><h3>Capítulos</h3><ul>{{TOC}}</ul></nav>
+<main>{{BODY}}</main>
+</div>
+<footer>Olvidos de Granada · Revista de acciones culturales · Dossier de documentación, no artículo publicado. Bloques de investigación y datos tipados en el repositorio (docs/con-textos/espana-marruecos y src/data/con-textos/espana-marruecos).</footer>
+</div>

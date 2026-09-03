@@ -26,6 +26,7 @@ const NAV_SECTIONS = [
   { label: "Piezas y Procesos", href: "/articulos?categoria=piezas-procesos" },
   { label: "Apostillas", href: "/articulos?categoria=apostillas" },
   { label: "Soneto500", href: "/articulos?categoria=sonetos" },
+  { label: "Con-textos", href: "/articulos?categoria=con-textos" },
 ] as const;
 
 interface HeaderProps {

@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { db } from "@/lib/db";
+import { isStaffRole } from "@/lib/roles";
 import { auth } from "@/lib/auth";
 import Link from "next/link";
 import { ArrowLeft, Save, User as UserIcon } from "lucide-react";
@@ -76,11 +77,15 @@ export default async function CreateMemberPage() {
         });
 
         // Al convertir un usuario en socio se le asigna el rol MEMBER
-        // (coherente con lib/actions/members.ts#createMember).
-        await db.user.update({
-          where: { id: userId },
-          data: { role: "MEMBER" },
-        });
+        // (coherente con lib/actions/members.ts#createMember), salvo que ya
+        // tenga un rol del equipo (editor, admin), que se conserva.
+        const target = await db.user.findUnique({ where: { id: userId }, select: { role: true } });
+        if (target && !isStaffRole(target.role)) {
+          await db.user.update({
+            where: { id: userId },
+            data: { role: "MEMBER" },
+          });
+        }
 
         revalidatePath("/admin/socios");
         revalidatePath("/socios");
