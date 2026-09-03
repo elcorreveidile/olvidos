@@ -1,4 +1,9 @@
 /**
+ * OBSOLETO (septiembre de 2026): la cuenta javier@blablaele.com ya no existe;
+ * las cuentas de Javier son informa@blablaele.com y benitezl@go.ugr.es. Para
+ * cambiar roles usa el panel (/admin/usuarios) o scripts/set-user-role.ts.
+ * Se conserva solo como referencia histórica.
+ *
  * Script para actualizar administradores
  *
  * 1. Cambiar javier@blablaele.com a ADMIN

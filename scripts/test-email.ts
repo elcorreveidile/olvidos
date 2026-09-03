@@ -6,7 +6,7 @@ import { Resend } from "resend";
 
 const key = process.env.RESEND_API_KEY;
 const from = process.env.EMAIL_FROM || "info@olvidosdegranada.es";
-const to = process.argv[2] || "javier@blablaele.com";
+const to = process.argv[2] || "informa@blablaele.com";
 
 async function main() {
   console.log("RESEND_API_KEY presente:", key ? `sí (${key.slice(0, 6)}…)` : "NO");
