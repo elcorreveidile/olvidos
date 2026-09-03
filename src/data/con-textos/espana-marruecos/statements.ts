@@ -2616,6 +2616,126 @@ export const STATEMENTS = [
     "note": "Condena «episodios de insultos, amenazas, intimidaciones y agresiones sufridos por periodistas mientras desarrollan su trabajo en Ceuta»; exige a las autoridades «las medidas necesarias para garantizar la seguridad»."
   },
   {
+    "id": "st-pl194-feijoo-dimita",
+    "crisisId": "ceuta-2026",
+    "bloc": "derecha",
+    "speaker": "Alberto Núñez Feijóo",
+    "role": "presidente del PP, pleno del Congreso",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026, 10:21",
+    "text": "Si esta es la verdad, dimita por incompetente; y si es falso, dimita por cómplice, señor Sánchez",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "note": "Corte 777808, min. 2:12, según la grabación. Pide convocar «de forma oficial» a la embajadora, llamar a consultas al embajador en Rabat, incluir «las conversaciones de Pegasus» en el dossier y acompañar al Rey a Ceuta."
+  },
+  {
+    "id": "st-pl194-feijoo-miedo",
+    "crisisId": "ceuta-2026",
+    "bloc": "derecha",
+    "speaker": "Alberto Núñez Feijóo",
+    "role": "presidente del PP, pleno del Congreso",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026, 10:24",
+    "text": "¿Por qué tiene miedo a Marruecos? ¿Qué sabe Marruecos de usted? […] España no puede tener un presidente bajo chantaje",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "note": "Corte 777808, min. 5:15, según la grabación. Alusión al espionaje con Pegasus."
+  },
+  {
+    "id": "st-pl194-abascal-traicion",
+    "crisisId": "ceuta-2026",
+    "bloc": "derecha",
+    "speaker": "Santiago Abascal",
+    "role": "presidente de Vox, pleno del Congreso",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026, 10:37",
+    "text": "Señorías, traición. No hay otra palabra […] Y el presidente Sánchez es un traidor",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "note": "Corte 777809, min. 0:31, según la grabación. Pide activar el artículo 102 de la Constitución: «los escaños de Vox están a disposición de esta iniciativa»; «para este delito no hay indulto»."
+  },
+  {
+    "id": "st-pl194-abascal-amo",
+    "crisisId": "ceuta-2026",
+    "bloc": "derecha",
+    "speaker": "Santiago Abascal",
+    "role": "presidente de Vox, pleno del Congreso",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026, 10:50",
+    "text": "Es lo único que tiene claro: que Marruecos es su amigo. Pero no es verdad: Marruecos es su amo, señor Sánchez",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "note": "Corte 777809, min. 13:21, según la grabación. Antes: «Le vemos muy valiente contra el rey de España y muy sumiso con el de Marruecos. Ya sabemos a qué Corona rinde usted cuentas»."
+  },
+  {
+    "id": "st-pl194-santiago-ataque",
+    "crisisId": "ceuta-2026",
+    "bloc": "izquierda",
+    "speaker": "Enrique Santiago",
+    "role": "diputado de Sumar (IU), pleno del Congreso",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026, 10:55",
+    "text": "España ha sufrido un ataque de Marruecos utilizando a personas vulnerables […] Marruecos, en coordinación con Estados Unidos e Israel, ha organizado la masiva entrada de 80.000 personas. Defender otra hipótesis no es creíble",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "note": "Corte 777810, min. 1:57, según la grabación. Pide convocar «ya» a la embajadora y el traslado urgente a la Península de quienes quedan en Ceuta."
+  },
+  {
+    "id": "st-pl194-vidal-ninos",
+    "crisisId": "ceuta-2026",
+    "bloc": "izquierda",
+    "speaker": "Aina Vidal",
+    "role": "portavoz adjunta de Sumar, pleno del Congreso",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026, 11:05",
+    "text": "Son niños, señorías, niños, no invasores, no soldados; no venían con bombas, venían a lo sumo con un flotador llorando",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "note": "Corte 777811, min. 2:20, según la grabación. «La política de apaciguamiento de Marruecos ha fracasado» (min. 7:00)."
+  },
+  {
+    "id": "st-pl194-rufian-acuso",
+    "crisisId": "ceuta-2026",
+    "bloc": "nacionalistas",
+    "speaker": "Gabriel Rufián",
+    "role": "portavoz de ERC, pleno del Congreso",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026, 11:15",
+    "text": "Yo acuso a Marruecos de enviar a 80.000 personas a su frontera para cargarse al Gobierno de España, con la colaboración de Washington, de Tel Aviv y, sí, de la derecha",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "note": "Corte 777812, min. 2:09, según la grabación. Al Gobierno, «pusilánimes»; a PP y Vox, «traidores a su patria»; «los gobiernos, sobre todo, se pierden por mentir»."
+  },
+  {
+    "id": "st-pl194-nogueras-inhabilitan",
+    "crisisId": "ceuta-2026",
+    "bloc": "nacionalistas",
+    "speaker": "Míriam Nogueras",
+    "role": "portavoz de Junts, pleno del Congreso",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026, 11:30",
+    "text": "Las dos opciones son muy graves y las dos opciones le inhabilitan para continuar gobernando",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "note": "Corte 777813, min. 1:24; traducción del catalán, cotejada con Europa Press. O conocía los avisos y engaña «para proteger a Marruecos», o no los conocía y engaña cuando dice que controla la seguridad nacional. Pide que el PSOE presente otro candidato."
+  },
+  {
     "id": "st-calle-vivas-3sept",
     "crisisId": "ceuta-2026",
     "bloc": "derecha",
