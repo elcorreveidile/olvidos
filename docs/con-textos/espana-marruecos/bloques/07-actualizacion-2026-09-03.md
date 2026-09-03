@@ -454,6 +454,9 @@ Discrepancias anotadas entre grabación y prensa:
 - Feijóo, min. 16:33 (cierre): la prensa (Ceuta al Día) lo daba como no verificado; la grabación lo confirma: «la nación es más fuerte que sus muros. El Estado es más sólido que su Gobierno. Ambos serán reconstruidos y ambos sobrevivirán a usted».
 - Abascal, corte 777809, min. 13:21: el ASR transcribe «Marruecos es su amor»; la prensa, unánime, «su amo». Adoptado «amo».
 - Rufián, corte 777812, min. 4:42: la prensa transcribe «problemón importante»; en la grabación se oye «problema importante». Adoptado «problema».
+- Belarra, corte 777816, min. 2:40: la prensa transcribió «farsa entre la ministra Robles y el señor Marlaska»; en la grabación se oye «sainete». Adoptado «sainete». Su «váyanse al carajo» final (min. 9:04) fue retirado del Diario por orden de la presidencia («se retirará del Diario de Sesiones esta última expresión»): cuando salga el Diario no aparecerá.
+- Nogueras, corte 777813: intervención íntegra en catalán; el ASR la mezcla con castellano. Solo se cita, traducida y marcada, la frase que Europa Press tradujo igual.
+- Aizpurua, corte 777814: párrafos en euskera al inicio, al medio y al final, inservibles en el ASR; se cita solo lo dicho en castellano.
 - Aina Vidal, corte 777811, min. 8:19, sobre el rey de Marruecos, «al que el rey Felipe VI llama hermano»: solo en la grabación, sin apoyo de prensa; no entra en las islas.
 - Enrique Santiago, corte 777810, min. 1:22, y Vidal, min. 4:02, sobre Figaredo (Vox) y «cazar» migrantes: solo en la grabación; citado en prosa con la marca «según la grabación».
 
