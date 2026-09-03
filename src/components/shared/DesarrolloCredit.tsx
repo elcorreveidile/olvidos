@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-/** Guiño de "Por 2 duros": frases que rotan al azar al pasar el ratón. */
+/** Guiño de "WordNext": frases que rotan al azar al pasar el ratón. */
 const FRASES = [
   "Hecho con más ilusión que presupuesto.",
   "Programado a base de café y cabezonería.",
@@ -14,7 +14,7 @@ const FRASES = [
   "Menos es más, y aquí somos muy de menos.",
   "Funcionaba en mi ordenador, lo juro.",
   "Cero reuniones, todo código.",
-  "Dos duros bien invertidos.",
+  "De WordPress a Next.js, sin perder una coma.",
   "Con mimo artesanal y algún atajo.",
 ];
 
@@ -44,12 +44,12 @@ export function DesarrolloCredit({
       onMouseLeave={() => setHover(false)}
     >
       <a
-        href="https://www.por2duros.com"
+        href="https://wordnext.tech"
         target="_blank"
         rel="noopener noreferrer"
         className="font-bold text-coral underline decoration-coral-light underline-offset-2 transition-colors hover:text-coral-dark"
       >
-        Por 2 duros
+        WordNext
       </a>
       {hover && (
         <span
