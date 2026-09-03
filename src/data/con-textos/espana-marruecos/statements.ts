@@ -2646,6 +2646,66 @@ export const STATEMENTS = [
     "note": "Corte 777807, min. 48:47, transcripción oficial de Moncloa. Anuncia «un dossier con todos los informes, todos»; ninguno «que llegara a manos del Gobierno» anticipó la llegada de 70.000 personas."
   },
   {
+    "id": "st-pl194-vaquero-altura",
+    "crisisId": "ceuta-2026",
+    "bloc": "nacionalistas",
+    "speaker": "Maribel Vaquero",
+    "role": "portavoz del PNV, pleno del Congreso",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026, 12:10",
+    "text": "Ha estado casi cuatro semanas ausente y seguimos sin saber qué y por qué sucedió […] Señor Sánchez, con todo el respeto, usted no ha estado a la altura",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "note": "Corte 777815, min. 3:51, según la grabación. «Es inverosímil que Marruecos quede exculpado de toda responsabilidad»; «no pueden pedir a la gente un acto de fe»."
+  },
+  {
+    "id": "st-pl194-belarra-romper",
+    "crisisId": "ceuta-2026",
+    "bloc": "izquierda",
+    "speaker": "Ione Belarra",
+    "role": "diputada de Podemos, pleno del Congreso",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026, 12:25",
+    "text": "Es el momento de romper relaciones diplomáticas y comerciales con Marruecos, hasta que sea una democracia",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "note": "Corte 777816, min. 2:56, según la grabación. «Marruecos es un régimen totalitario. Marruecos es una dictadura»; «¿por qué protege a Marruecos?»; al Gobierno, «inacción calculada»."
+  },
+  {
+    "id": "st-pl194-lopez-vivir",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Patxi López",
+    "role": "portavoz del Grupo Socialista, pleno del Congreso",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026, 12:54",
+    "text": "La intención de la absoluta mayoría de los que están hoy en Ceuta nunca fue invadir: fue vivir",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "note": "Corte 777821, min. 2:29, según la grabación. A Feijóo: «mucho España pero poco PP»; ninguna comunidad del PP «se ha manifestado dispuesta a prestar esa ayuda»."
+  },
+  {
+    "id": "st-pl194-sanchez-replica",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Pedro Sánchez",
+    "role": "presidente del Gobierno, réplica en el pleno",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026, 13:30",
+    "text": "Miramos de igual a igual a todas las potencias extranjeras, también a Marruecos. Pero tampoco tenemos la más mínima intención de desencadenar un conflicto diplomático de primer orden […] con un país vecino sin tener datos sólidos",
+    "sourceIds": [
+      "src-infobae-sanchez-apaciguamiento",
+      "src-congreso-video-pl194"
+    ],
+    "note": "Corte 777829, min. 18:17, según la grabación. Niega estar «cautivo» de la «Corona alauita»; pide a Abascal que se disculpe por el «cazar uno a uno» de un diputado de Vox."
+  },
+  {
     "id": "st-pl194-aizpurua-recalibrar",
     "crisisId": "ceuta-2026",
     "bloc": "nacionalistas",

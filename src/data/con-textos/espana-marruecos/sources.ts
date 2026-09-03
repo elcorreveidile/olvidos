@@ -6162,5 +6162,27 @@ export const SOURCES = [
     "kind": "prensa",
     "accessed": "2026-09-03",
     "note": "Versión en inglés de la pieza"
+  },
+  {
+    "id": "src-infobae-sanchez-apaciguamiento",
+    "title": "Sánchez niega «política de apaciguamiento» con Marruecos y esgrime que no se puede abrir un conflicto sin pruebas",
+    "author": "",
+    "publisher": "Infobae / Europa Press",
+    "date": "2026-09-03",
+    "url": "https://www.infobae.com/espana/agencias/2026/09/03/sanchez-niega-politica-de-apaciguamiento-con-marruecos-y-esgrime-que-no-se-puede-abrir-un-conflicto-sin-pruebas/",
+    "kind": "prensa",
+    "accessed": "2026-09-03",
+    "note": "Turno de réplica de Sánchez"
+  },
+  {
+    "id": "src-moncloacom-pleno-3sept",
+    "title": "Sánchez comparece en el Congreso: Vox y sus socios exigen romper con Marruecos",
+    "author": "",
+    "publisher": "Moncloa.com",
+    "date": "2026-09-03",
+    "url": "https://www.moncloa.com/2026/09/03/sanchez-congreso-ceuta-cerco-pp-vox-3425223/",
+    "kind": "prensa",
+    "accessed": "2026-09-03",
+    "note": "Incluye la réplica: pide a Abascal que se disculpe por las palabras de Figaredo sobre «cazar» migrantes"
   }
 ] satisfies Source[];
