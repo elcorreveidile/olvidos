@@ -616,7 +616,7 @@ export const ISLAS = {
       if (!img) throw new IslaError("figura", `imagen desconocida «${p.id}»`);
       const out: FigureData = {
         id: p.id,
-        src: commonsThumb(img.src, p.wide ? 1600 : 1200),
+        src: commonsThumb(img.src, p.wide ? 1920 : 1280),
         original: img.src,
         width: img.width,
         height: img.height,
