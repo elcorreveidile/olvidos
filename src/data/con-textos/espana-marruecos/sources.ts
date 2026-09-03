@@ -6184,5 +6184,49 @@ export const SOURCES = [
     "kind": "prensa",
     "accessed": "2026-09-03",
     "note": "Incluye la réplica: pide a Abascal que se disculpe por las palabras de Figaredo sobre «cazar» migrantes"
+  },
+  {
+    "id": "src-infobae-feijoo-mareta",
+    "title": "Feijóo a Sánchez: «Si arrimar el hombro es acompañarle a La Mareta no cuente conmigo»",
+    "author": "",
+    "publisher": "Infobae / Europa Press",
+    "date": "2026-09-03",
+    "url": "https://www.infobae.com/espana/agencias/2026/09/03/feijoo-a-sanchez-si-arrimar-el-hombro-es-acompanarle-a-la-mareta-no-cuente-conmigo/",
+    "kind": "prensa",
+    "accessed": "2026-09-03",
+    "note": "Turno de réplica de Feijóo: qué habría hecho él"
+  },
+  {
+    "id": "src-infobae-abascal-virrey-3sept",
+    "title": "Abascal insiste en tachar a Sánchez de «traidor», de «embajador» de Marruecos y hasta de «virrey» de Al Ándalus",
+    "author": "",
+    "publisher": "Infobae / Europa Press",
+    "date": "2026-09-03",
+    "url": "https://www.infobae.com/espana/agencias/2026/09/03/abascal-insiste-en-tachar-a-sanchez-de-traidor-de-embajador-de-marruecos-y-hasta-de-virrey-de-al-andalus/",
+    "kind": "prensa",
+    "accessed": "2026-09-03",
+    "note": "Incluye la réplica: suspensión del Tratado de Amistad, retirada del embajador y expulsión del Mundial"
+  },
+  {
+    "id": "src-eldiario-cierre-consecuencias",
+    "title": "Sánchez termina su comparecencia: «Debemos asegurarnos de que lo sucedido tenga consecuencias»",
+    "author": "",
+    "publisher": "elDiario.es",
+    "date": "2026-09-03",
+    "url": "https://www.eldiario.es/politica/ultima-hora-comparecencia-pedro-sanchez-ceuta-actualidad-politica-directo_6_13483856_1124728.html",
+    "kind": "prensa",
+    "accessed": "2026-09-03",
+    "note": "Directo; entrada de las 15:16 con el cierre de Sánchez"
+  },
+  {
+    "id": "src-vozpopuli-directo-3sept",
+    "title": "Crisis en Ceuta, en directo: comparecencia de Pedro Sánchez y reacciones de Feijóo y Abascal, última hora",
+    "author": "",
+    "publisher": "Vozpópuli",
+    "date": "2026-09-03",
+    "url": "https://www.vozpopuli.com/espana/comparecencia-de-sanchez-en-el-congreso-en-directo-ultima-hora-de-la-crisis-en-ceuta.html",
+    "kind": "prensa",
+    "accessed": "2026-09-03",
+    "note": "Directo; recoge el cierre de Sánchez («escalar sin reservas un conflicto»)"
   }
 ] satisfies Source[];

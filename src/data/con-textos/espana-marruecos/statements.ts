@@ -2706,6 +2706,52 @@ export const STATEMENTS = [
     "note": "Corte 777829, min. 18:17, según la grabación. Niega estar «cautivo» de la «Corona alauita»; pide a Abascal que se disculpe por el «cazar uno a uno» de un diputado de Vox."
   },
   {
+    "id": "st-pl194-sanchez-cierre",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Pedro Sánchez",
+    "role": "presidente del Gobierno, cierre del pleno",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026, 15:15",
+    "text": "Esa es su propuesta: escalar sin reservas un conflicto. Yo no puedo hacerlo, no debo hacerlo y no lo voy a hacer",
+    "sourceIds": [
+      "src-eldiario-cierre-consecuencias",
+      "src-vozpopuli-directo-3sept",
+      "src-congreso-video-pl194"
+    ],
+    "note": "Corte 777837, min. 2:32, según la grabación. Promete «asegurarnos de que lo sucedido estos días tenga unas consecuencias y también se paguen por ellas»."
+  },
+  {
+    "id": "st-pl194-feijoo-replica",
+    "crisisId": "ceuta-2026",
+    "bloc": "derecha",
+    "speaker": "Alberto Núñez Feijóo",
+    "role": "presidente del PP, réplica en el pleno",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026, 14:20",
+    "text": "No irme de vacaciones; cesar al ministro del Interior por incompetente y por mentiroso […] acompañar al Rey a Ceuta […] citar a la embajadora cuando está en España, no cuando está fuera",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-feijoo-mareta"
+    ],
+    "note": "Corte 777830, min. 4:43, según la grabación: su respuesta a «¿qué haría usted de diferente?». «Si arrimar el hombro es acompañarle a La Mareta, no cuente conmigo»."
+  },
+  {
+    "id": "st-pl194-abascal-replica",
+    "crisisId": "ceuta-2026",
+    "bloc": "derecha",
+    "speaker": "Santiago Abascal",
+    "role": "presidente de Vox, réplica en el pleno",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026, 14:30",
+    "text": "Vamos a ir a la suspensión del Tratado de Amistad España-Marruecos […] la retirada del embajador español en Marruecos y […] la expulsión del Mundial de Marruecos",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-abascal-virrey-3sept"
+    ],
+    "note": "Corte 777831, min. 3:00, según la grabación. También la suspensión del acuerdo preferencial UE-Marruecos; a Sánchez, «la empatía de un asesino en serie»."
+  },
+  {
     "id": "st-pl194-aizpurua-recalibrar",
     "crisisId": "ceuta-2026",
     "bloc": "nacionalistas",

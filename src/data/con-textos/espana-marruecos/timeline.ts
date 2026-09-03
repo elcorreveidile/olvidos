@@ -3060,7 +3060,7 @@ export const TIMELINE = [
     "date": "2026-09-03",
     "dateLabel": "3 de septiembre de 2026",
     "title": "Pleno extraordinario: Sánchez comparece 35 días después",
-    "summary": "Sesión plenaria núm. 194 (art. 203 del Reglamento), con dos comparecencias acumuladas: la pedida por el presidente y la urgente de 131 diputados del PP. Sánchez admite que la Gendarmería «permitió el cruce» durante diez horas del 30 de julio, pero «nadie ha aportado pruebas» de que Marruecos lo diseñara; anuncia una investigación interna sobre el CENIF, la publicación de «todos los informes», presencia permanente de Frontex y la visita del Rey «en las próximas semanas». Feijóo pide la dimisión «por incompetente o por cómplice»; Abascal, el artículo 102; Sumar y ERC acusan a Marruecos con Estados Unidos e Israel; Junts pide otro candidato. Sin votaciones. Robles es la única ministra que no aplaude el anuncio de publicar los informes.",
+    "summary": "Sesión plenaria núm. 194 (art. 203 del Reglamento), con dos comparecencias acumuladas: la pedida por el presidente y la urgente de 131 diputados del PP. Sánchez admite que la Gendarmería «permitió el cruce» durante diez horas del 30 de julio, pero «nadie ha aportado pruebas» de que Marruecos lo diseñara; anuncia una investigación interna sobre el CENIF, la publicación de «todos los informes», presencia permanente de Frontex y la visita del Rey «en las próximas semanas». Feijóo pide la dimisión «por incompetente o por cómplice»; Abascal, el artículo 102; Sumar y ERC acusan a Marruecos con Estados Unidos e Israel; Junts pide otro candidato. Sánchez cierra a las 15:15: «escalar sin reservas un conflicto […] no puedo hacerlo, no debo hacerlo y no lo voy a hacer». Sin votaciones. Robles es la única ministra que no aplaude el anuncio de publicar los informes.",
     "government": "izquierda",
     "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
     "headOfState": "Felipe VI",
@@ -3074,7 +3074,8 @@ export const TIMELINE = [
       "src-congreso-video-pl194",
       "src-congreso-od-pl194",
       "src-moncloa-2026-09-03-transc",
-      "src-infobae-sanchez-contundencia"
+      "src-infobae-sanchez-contundencia",
+      "src-eldiario-cierre-consecuencias"
     ]
   }
 ] satisfies TimelineEvent[];

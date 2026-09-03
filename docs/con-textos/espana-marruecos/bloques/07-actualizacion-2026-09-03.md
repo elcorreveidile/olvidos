@@ -459,6 +459,7 @@ Discrepancias anotadas entre grabación y prensa:
 - Aizpurua, corte 777814: párrafos en euskera al inicio, al medio y al final, inservibles en el ASR; se cita solo lo dicho en castellano.
 - Aina Vidal, corte 777811, min. 8:19, sobre el rey de Marruecos, «al que el rey Felipe VI llama hermano»: solo en la grabación, sin apoyo de prensa; no entra en las islas.
 - Enrique Santiago, corte 777810, min. 1:22, y Vidal, min. 4:02, sobre Figaredo (Vox) y «cazar» migrantes: solo en la grabación; citado en prosa con la marca «según la grabación».
+- Sánchez, corte 777837 (cierre), min. 2:14-2:40: «escalar sin reservas un conflicto. Yo no puedo hacerlo, no debo hacerlo y no lo voy a hacer»; lo recogen igual los directos de Vozpópuli y elDiario.es (15:16). En el ASR el arranque del pasaje es confuso («no las tienen, aparte que tampoco se las ponen, si las tuvieran»): se elide con […]. Los tres compromisos finales (min. 4:04) van en `context`. Del cierre no se cita nada más; las réplicas cortas de Sumar, ERC, Junts y PSOE (cortes 777832-836) y el corte de ordenación (777822) quedan fuera de las islas por espacio.
 
 ### A.8 Cómo hacer la pasada del Diario de Sesiones
 

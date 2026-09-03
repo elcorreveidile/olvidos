@@ -4744,6 +4744,92 @@ export const QUOTES = [
     "unverified": false
   },
   {
+    "id": "q-pl194-sanchez-cierre",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Pedro Sánchez",
+    "party": "PSOE",
+    "bloc": "gobierno",
+    "role": "presidente del Gobierno, turno de cierre",
+    "topics": [
+      "ceuta",
+      "marruecos",
+      "diplomacia",
+      "escalada"
+    ],
+    "era": "democracia",
+    "text": "Hoy, señorías, en esta Cámara hemos escuchado a muchos que no tienen estas limitaciones […] que lo resuelven todo de un plumazo, que no se quieren someter al Estado de derecho, que quieren reventar nuestras relaciones de vecindad. Esa es su propuesta: escalar sin reservas un conflicto. Yo no puedo hacerlo, no debo hacerlo y no lo voy a hacer.",
+    "context": "Cierre del pleno, hacia las 15:15. Antes enumera los límites de una crisis así: la geografía de Ceuta y Melilla, «las obligaciones que impone el Estado de derecho» y las consecuencias para las relaciones con los vecinos. Termina con tres compromisos: sostener el esfuerzo «hasta que la vida de los ceutíes vuelva a la normalidad», medios para que «una crisis así no vuelva a suceder» y «asegurarnos de que lo sucedido estos días tenga unas consecuencias y también se paguen por ellas» (min. 4:04). Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777837 (cierre), min. 2:14; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777837",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-vozpopuli-directo-3sept",
+      "src-eldiario-cierre-consecuencias"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-feijoo-replica-hecho",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Alberto Núñez Feijóo",
+    "party": "PP",
+    "bloc": "derecha",
+    "role": "presidente del PP, turno de réplica",
+    "topics": [
+      "ceuta",
+      "que-habrian-hecho",
+      "corona",
+      "marruecos"
+    ],
+    "era": "democracia",
+    "text": "Me dice usted qué habría hecho yo: no irme de vacaciones; cesar al ministro del Interior por incompetente y por mentiroso; no dejar en ridículo a la Guardia Civil, a la Policía Nacional y al CNI y al Ministerio de Defensa; por supuesto, acompañar al Rey a Ceuta y no reprocharle que no ha ido a Ceuta, porque sigue sus instrucciones; y, por supuesto, citar a la embajadora cuando está en España, no cuando está fuera; y, por supuesto, señorías, no broncearme en ninguna playa.",
+    "context": "Respuesta a la pregunta de Sánchez «¿qué haría usted de diferente?». Antes: «parece ser que el único socio leal que tiene en la invasión a Ceuta es Marruecos» (min. 2:15). Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777830 (réplica), min. 4:43; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777830",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-feijoo-mareta"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-abascal-replica-tratado",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Santiago Abascal",
+    "party": "Vox",
+    "bloc": "derecha",
+    "role": "presidente de Vox, turno de réplica",
+    "topics": [
+      "ceuta",
+      "marruecos",
+      "tratado-1991",
+      "diplomacia",
+      "mundial"
+    ],
+    "era": "democracia",
+    "text": "Yo me atrevo a pedirles apoyo: vamos a ir a la suspensión del Tratado de Amistad España-Marruecos, vamos a pedir la suspensión del acuerdo preferencial de la Unión Europea y de Marruecos, vamos a proponer la retirada del embajador español en Marruecos y vamos a seguir proponiendo la expulsión del Mundial de Marruecos mientras siga haciendo estas políticas, que son guerras híbridas contra nuestra patria. ¿Son ustedes capaces de apoyarlo o no?",
+    "context": "A los socios del Gobierno. Antes: Sánchez «tiene la empatía de un asesino en serie» (min. 4:37); «por su culpa y por la de su amo hay cientos de muertos en Ceuta» (min. 1:27). Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777831 (réplica), min. 3:00; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777831",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-abascal-virrey-3sept"
+    ],
+    "unverified": false
+  },
+  {
     "id": "q-pl194-feijoo-incompetente",
     "date": "2026-09-03",
     "dateLabel": "3 de septiembre de 2026",
