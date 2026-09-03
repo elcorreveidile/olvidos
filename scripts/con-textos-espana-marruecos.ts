@@ -12,6 +12,7 @@
  *                   si no existía; si ya estaba publicado NUNCA se degrada).
  *   --sync-titles   Escribe los títulos de los pasos en src/data/pasos-titles.json.
  *   --strict        Falla si la composición tiene avisos (no solo errores).
+ *   --verbose       Imprime los bytes de datos de cada isla, no solo por paso.
  *
  * Variables opcionales:
  *   CON_TEXTOS_USER_EMAIL  Usuario propietario (Article.authorId); si no, el
@@ -29,6 +30,7 @@ const DRY = args.has("--dry-run");
 const PUBLISH = args.has("--publish");
 const SYNC_TITLES = args.has("--sync-titles");
 const STRICT = args.has("--strict");
+const VERBOSE = args.has("--verbose");
 
 function syncTitles(slug: string, titles: string[]) {
   const file = path.join(process.cwd(), "src", "data", "pasos-titles.json");
@@ -45,6 +47,7 @@ async function main() {
   const c = compose({ strict: true });
   for (const p of c.pasos) {
     console.log(`  ${String(p.n).padStart(2)}. ${p.id.padEnd(26)} ${String(p.islas.length).padStart(2)} islas · ${String(p.cited.length).padStart(2)} citas · ${String(Math.round(p.bytes / 1024)).padStart(4)} KB`);
+    if (VERBOSE) for (const i of p.islaBytes) console.log(`        ${String(Math.round(i.bytes / 1024)).padStart(4)} KB  ${i.raw}`);
   }
   for (const w of c.warnings) console.log(`  ${w.level === "error" ? "✗" : "⚠"} ${w.paso ? `[${w.paso}] ` : ""}${w.message}`);
   if (STRICT && c.warnings.length) throw new Error("Hay avisos y se ha pedido --strict.");

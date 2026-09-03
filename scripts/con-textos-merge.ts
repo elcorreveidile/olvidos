@@ -131,9 +131,11 @@ const ERA_MAP: Record<string, string> = {
   franquista: "franquismo", "siglo-xxi": "democracia", actual: "democracia",
 };
 const BLOC_MAP: Record<string, string> = {
-  derecha: "derecha", izquierda: "izquierda", gobierno: "gobierno", monarquia: "monarquia", marruecos: "marruecos", otro: "otro",
+  derecha: "derecha", izquierda: "izquierda", gobierno: "gobierno", nacionalistas: "nacionalistas", monarquia: "monarquia", marruecos: "marruecos", otro: "otro",
   "extrema-derecha": "derecha", ultraderecha: "derecha", pp: "derecha", vox: "derecha", psoe: "gobierno",
   sumar: "izquierda", podemos: "izquierda", "casa-real": "monarquia", corona: "monarquia", ue: "otro", "union-europea": "otro",
+  erc: "nacionalistas", junts: "nacionalistas", pnv: "nacionalistas", bildu: "nacionalistas", "eh-bildu": "nacionalistas",
+  bng: "nacionalistas", cc: "nacionalistas", "coalicion-canaria": "nacionalistas", upn: "nacionalistas", ciu: "nacionalistas",
   eeuu: "otro", israel: "otro", rusia: "otro", argelia: "otro", italia: "otro", ceuta: "otro",
 };
 const CHAMBER_MAP: Record<string, string> = {

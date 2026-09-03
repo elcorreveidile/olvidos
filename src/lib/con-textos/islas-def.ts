@@ -204,16 +204,51 @@ export interface StatementItem {
   dateLabel: string;
   text: string;
   note?: string;
-  sources: SlimSource[];
+  /** Ids del diccionario `ComparadorData.sources` (máx. 2). */
+  sourceIds: string[];
 }
+
+/** Disposición de los bloques: columnas en paralelo o apilados uno bajo otro. */
+export type ComparadorLayout = "columnas" | "apilada";
 
 export interface ComparadorData {
   crises: Array<{ id: string; label: string; year: number }>;
   blocs: Bloc[];
   byCrisis: Record<string, Partial<Record<Bloc, StatementItem[]>>>;
+  /** Disposición por crisis (decidida en servidor). */
+  layout: Record<string, ComparadorLayout>;
+  /** Fuentes de todas las declaraciones, una sola vez por isla. */
+  sources: Record<string, SlimSource>;
 }
 
-const BLOC_ORDER: Bloc[] = ["gobierno", "derecha", "izquierda", "marruecos", "monarquia", "otro"];
+export const BLOC_ORDER: Bloc[] = ["gobierno", "derecha", "izquierda", "nacionalistas", "marruecos", "monarquia", "otro"];
+
+const STACK_MIN_TOTAL = 16; // a partir de aquí las columnas son un muro
+const STACK_MAX_BLOCS = 4; // con cinco o más bloques la rejilla siempre deja huecos
+const STACK_RATIO = 2; // el bloque mayor dobla al menor…
+const STACK_MIN_MAX = 6; // …y además tiene entidad (3 frente a 1 no justifica apilar)
+
+export interface ComparadorParams {
+  crises: string[];
+  blocs: Bloc[];
+  order: "cronologico" | "reciente";
+  layout: "auto" | ComparadorLayout;
+}
+
+/**
+ * Decide si los bloques de una crisis se muestran en columnas (equilibrados)
+ * o apilados («fuente / caja, fuente / caja»), según sus recuentos.
+ */
+export function comparadorLayout(counts: number[]): ComparadorLayout {
+  const filled = counts.filter((n) => n > 0);
+  if (filled.length <= 1) return "columnas";
+  const total = filled.reduce((a, b) => a + b, 0);
+  const max = Math.max(...filled);
+  const min = Math.min(...filled);
+  if (total >= STACK_MIN_TOTAL || filled.length > STACK_MAX_BLOCS) return "apilada";
+  if (max >= STACK_MIN_MAX && max > STACK_RATIO * min) return "apilada";
+  return "columnas";
+}
 
 /* ------------------------------------------------------------------ */
 /* Gráfico                                                             */
@@ -441,13 +476,20 @@ export const ISLAS = {
 
   comparador: {
     client: true,
-    allowed: ["crisis", "bloques"],
-    parse(props, _ctx): { crises: string[]; blocs: Bloc[] } {
+    allowed: ["crisis", "bloques", "orden", "disposicion"],
+    parse(props, _ctx): ComparadorParams {
       assertKnownProps("comparador", props, this.allowed);
       const crises = listProp(props, "crisis");
       if (!crises.length) throw new IslaError("comparador", "falta el atributo crisis");
-      const blocs = (listProp(props, "bloques") as Bloc[]) ;
-      return { crises, blocs: blocs.length ? blocs : BLOC_ORDER };
+      const blocs = listProp(props, "bloques") as Bloc[];
+      for (const b of blocs) if (!BLOC_ORDER.includes(b)) throw new IslaError("comparador", `bloque desconocido «${b}»`);
+      const order = (props.orden ?? "cronologico").trim();
+      if (order !== "cronologico" && order !== "reciente") throw new IslaError("comparador", `orden desconocido «${order}» (admite: cronologico, reciente)`);
+      const layout = (props.disposicion ?? "auto").trim();
+      if (layout !== "auto" && layout !== "apilada" && layout !== "columnas") {
+        throw new IslaError("comparador", `disposición desconocida «${layout}» (admite: auto, apilada, columnas)`);
+      }
+      return { crises, blocs: blocs.length ? blocs : BLOC_ORDER, order, layout };
     },
     load(p, data, _ctx): ComparadorData {
       const crises = p.crises.map((id) => {
@@ -456,8 +498,11 @@ export const ISLAS = {
         return c;
       });
       const byCrisis: ComparadorData["byCrisis"] = {};
+      const layout: ComparadorData["layout"] = {};
+      const sources: ComparadorData["sources"] = {};
       for (const c of crises) {
-        const rows = data.STATEMENTS.filter((s) => s.crisisId === c.id);
+        const rows = data.STATEMENTS.filter((s) => s.crisisId === c.id).sort((a, b) => a.date.localeCompare(b.date));
+        if (p.order === "reciente") rows.reverse();
         const groups: Partial<Record<Bloc, StatementItem[]>> = {};
         for (const s of rows) {
           if (!p.blocs.includes(s.bloc)) continue;
@@ -467,16 +512,21 @@ export const ISLAS = {
             role: s.role,
             dateLabel: s.dateLabel,
             text: s.text,
-            sources: resolveSources(s.sourceIds, data, 2),
+            sourceIds: [],
           };
+          for (const src of resolveSources(s.sourceIds, data, 2)) {
+            sources[src.id] ??= src;
+            item.sourceIds.push(src.id);
+          }
           if (s.note) item.note = s.note;
           (groups[s.bloc] ??= []).push(item);
         }
         byCrisis[c.id] = groups;
+        layout[c.id] = p.layout === "auto" ? comparadorLayout(p.blocs.map((b) => groups[b]?.length ?? 0)) : p.layout;
       }
-      return { crises: crises.map((c) => ({ id: c.id, label: c.label, year: c.year })), blocs: p.blocs, byCrisis };
+      return { crises: crises.map((c) => ({ id: c.id, label: c.label, year: c.year })), blocs: p.blocs, byCrisis, layout, sources };
     },
-  } satisfies IslaDef<{ crises: string[]; blocs: Bloc[] }, ComparadorData>,
+  } satisfies IslaDef<ComparadorParams, ComparadorData>,
 
   grafico: {
     client: false,

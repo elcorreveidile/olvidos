@@ -32,7 +32,7 @@ Cada fichero de paso empieza por `<h2>` y puede llevar, uno por línea y fuera d
 ```html
 <!--isla:linea-temporal anios="1909-1927" eras="restauracion" tipos="guerra,parlamentaria" gobiernos="derecha" compacta="true"-->
 <!--isla:hemeroteca anios="1921-1923" eras="…" temas="annual,responsabilidades" camaras="congreso" bloques="derecha,izquierda" limite="12" completa="true"-->
-<!--isla:comparador crisis="perejil-2002,ceuta-2021" bloques="gobierno,derecha,izquierda"-->
+<!--isla:comparador crisis="perejil-2002,ceuta-2021" bloques="gobierno,derecha,izquierda" orden="cronologico|reciente" disposicion="auto|apilada|columnas"-->
 <!--isla:grafico serie="se-annual-bajas" tipo="bar|line|grouped" grupos="A|B" titulo="…" alto="320"-->
 <!--isla:mapa puntos="geo-ceuta,geo-tarajal" recuadros="bbox-protectorado-norte" zoom="12" centro="35.9,-5.3" titulo="…" alto="380"-->
 <!--isla:video id="vid-is-annual" titulo="…"-->
@@ -45,6 +45,41 @@ las numera por paso y la isla `fuentes` las lista. Los ids de series, vídeos,
 imágenes, puntos y fuentes son los de `src/data/con-textos/<especial>/`. Un
 atributo desconocido, un id inexistente o una cita sin fuente hacen fallar la
 composición. Nada marcado `unverified` entra en una isla.
+
+Bloques del comparador y de la hemeroteca (`Bloc` en `src/lib/con-textos/types.ts`):
+`gobierno`, `derecha`, `izquierda`, `nacionalistas` (PNV, EH Bildu, ERC, Junts,
+BNG, CC…), `marruecos`, `monarquia` y `otro` (actores no parlamentarios: UE,
+terceros países, sindicatos, prensa…). Los ministros de Sumar van en `gobierno`;
+sus portavoces parlamentarios, en `izquierda`.
+
+El comparador decide en servidor la disposición de los bloques de cada crisis
+(`comparadorLayout` en `islas-def.ts`): columnas si están compensados y
+apilados, con «Ver más» por bloque, cuando uno tiene muchas más declaraciones
+que los otros (16 o más en total, más de cuatro bloques, o el mayor dobla al
+menor con al menos seis). `disposicion` fuerza una u otra; `orden="reciente"`
+pone primero lo último.
+
+### Citas parlamentarias verificadas por vídeo
+
+Mientras el Congreso no publica el Diario de Sesiones de una sesión, una cita
+puede darse por verificada con la grabación oficial del Canal Parlamento:
+`unverified: false`, `pdfUrl: ""`, `videoUrl` con el enlace permanente de la
+intervención (`https://app.congreso.es/v1/…`) y `sessionRef` con el corte y el
+minuto (`… vídeo del Congreso, corte 777808, min. 12:40; Diario de Sesiones
+pendiente`). `scripts/con-textos-check.ts` exige ese formato y las lista con
+`--pendientes`; la hemeroteca enlaza «Vídeo de la intervención» y avisa
+«Diario de Sesiones pendiente». Cuando salga el Diario se añaden `pdfUrl` y la
+página y se coteja el texto.
+
+Regla «literal según grabación»: el texto es lo que se oye, sin muletillas ni
+falsos arranques, con puntuación y cifras al estilo del Diario y sin corchetes;
+solo entra en una isla si además lo recoge otra fuente (Moncloa o prensa); si
+difieren, manda la grabación y se anota; nada en catalán, euskera o gallego salvo
+traducción propia marcada en `note`; lo dudoso va a prosa con «según la
+grabación» o se descarta. Para transcribir: `pip install faster-whisper` y
+`python3 scripts/con-textos-transcribir.py --ficha <ficha del Canal Parlamento>
+--salida docs/con-textos/<especial>/transcripciones/<sesión>` (carpeta ignorada
+por git; las transcripciones automáticas no son fuente).
 
 ## Flujo de trabajo
 
