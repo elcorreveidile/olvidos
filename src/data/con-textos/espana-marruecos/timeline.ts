@@ -2677,6 +2677,29 @@ export const TIMELINE = [
     ]
   },
   {
+    "id": "ev-2026-08-25-periodistas-ceuta",
+    "date": "2026-08-25",
+    "dateLabel": "25-27 de agosto de 2026",
+    "title": "Acoso a reporteros en Ceuta",
+    "summary": "En una manifestación antiinmigración, el reportero Juan José Cuéllar y el cámara Manu Montilla (laSexta) son rodeados, insultados y empujados; el 26, María Moreno (RTVE) es increpada ante la Delegación del Gobierno y Cuéllar acosado «ante la mirada pasiva de varios policías»; el 27, un reportero de laSexta es escupido y amenazado en la playa de Benítez. Rocío de Meer (Vox) escribe que «no todos los terroristas ponen bombas, algunos son periodistas». La FAPE (26-8), la FeSP, la FIP (28-8) y el Consejo de Informativos de TVE condenan el acoso.",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+    "headOfState": "Felipe VI",
+    "initiator": "otros",
+    "kinds": [
+      "informativa",
+      "seguridad"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-fip-28ago",
+      "src-publico-cuellar",
+      "src-elindependiente-lasexta-escupido",
+      "src-fape-26ago",
+      "src-vertele-consejo-informativos"
+    ]
+  },
+  {
     "id": "ev-dp-26ago",
     "date": "2026-08-26",
     "dateLabel": "26 de agosto de 2026",
@@ -2695,6 +2718,28 @@ export const TIMELINE = [
       "src-cope-3sept",
       "src-congreso-video-dp",
       "src-pressdigital-guerracivil"
+    ]
+  },
+  {
+    "id": "ev-2026-08-26-cenif-informe",
+    "date": "2026-08-26",
+    "dateLabel": "26 de agosto de 2026",
+    "title": "El informe del CENIF llega a la jueza bajo reserva",
+    "summary": "El Centro Nacional de Inmigración y Fronteras de la Policía Nacional fecha y remite a la magistrada María Tardón (Audiencia Nacional) el informe de 55 páginas más anexos, firmado por el comisario principal Alfredo García Miravete, que la jueza había pedido a principios de agosto para saber si la entrada del 30 de julio fue «una acción concertada o dirigida». Describe «total permisividad» y «guiado activo» de agentes marroquíes, pero «no ha podido individualizar» a los responsables. La jueza ordena que solo se informe «a su señoría». Dos días después, Marlaska dice en el Congreso que no hubo «ningún informe que atisbara» la entrada.",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+    "headOfState": "Felipe VI",
+    "initiator": "espana",
+    "kinds": [
+      "judicial",
+      "seguridad"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-elfaromelilla-informe",
+      "src-eldiario-pardo-jueza",
+      "src-elfaro-pardo-comunicado",
+      "src-teleceuta-marlaska-28ago"
     ]
   },
   {
@@ -2889,6 +2934,29 @@ export const TIMELINE = [
     ]
   },
   {
+    "id": "ev-2026-09-01-plan-choque",
+    "date": "2026-09-01",
+    "dateLabel": "1 de septiembre de 2026",
+    "title": "Plan de choque de 309 millones; Italia prorroga los controles",
+    "summary": "El Consejo de Ministros aprueba un real decreto-ley con 309 millones de euros para Ceuta, «el 16 % del PIB» de la ciudad, más 50 millones en avales. Torres cifra en 3.519 los retornos voluntarios a Marruecos entre el 10 y el 31 de agosto y en 214 las expulsiones. Italia prorroga hasta el 15 de septiembre los controles a los viajeros procedentes de España y España responde con reciprocidad; Albares habla de «decisión arbitraria». Saiz: «ningún indicio» de que Marruecos participara. Moncloa: la visita del Rey «no será inminente».",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+    "headOfState": "Felipe VI",
+    "initiator": "espana",
+    "kinds": [
+      "politica",
+      "europea"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-moncloa-2026-09-01-plan",
+      "src-infobae-torres-retornos",
+      "src-lapresse-italia",
+      "src-elindependiente-rey-no-inminente",
+      "src-theobjective-saiz-1sept"
+    ]
+  },
+  {
     "id": "ev-dia-ceuta-2sept",
     "date": "2026-09-02",
     "dateLabel": "2 de septiembre de 2026",
@@ -2916,6 +2984,97 @@ export const TIMELINE = [
       "src-infobae-bruselas",
       "src-infobae-jueza",
       "src-elnacional-diez"
+    ]
+  },
+  {
+    "id": "ev-2026-09-02-pardo",
+    "date": "2026-09-02",
+    "dateLabel": "2 de septiembre de 2026",
+    "title": "Interior desautoriza la lectura del informe: «no existe informe policial alguno que atribuya…»",
+    "summary": "De madrugada, Marlaska escribe al director general de la Policía, Francisco Pardo, pidiendo «la veracidad de lo publicado» por El Español y desde cuándo disponía la Policía de esa información. Pardo reúne a los comisarios generales de Extranjería y de Información, que alegan que solo podían informar a la jueza. A las 15:31, comunicado de Interior: no existe informe que atribuya a las fuerzas marroquíes «la planificación o ejecución» de lo ocurrido; la jueza había ordenado no informar a los superiores y ese día autoriza el acceso. Jupol, CEP y JUCIL piden la dimisión de Marlaska.",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+    "headOfState": "Felipe VI",
+    "initiator": "espana",
+    "kinds": [
+      "judicial",
+      "seguridad",
+      "politica"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-elfaro-pardo-comunicado",
+      "src-elespanol-carta-marlaska",
+      "src-eldiario-pardo-jueza",
+      "src-eleconomista-sindicatos"
+    ]
+  },
+  {
+    "id": "ev-2026-09-02-manifestaciones",
+    "date": "2026-09-02",
+    "dateLabel": "2 de septiembre de 2026, noche",
+    "title": "Concentraciones «por Ceuta» en más de 300 municipios; cargas ante el Congreso",
+    "summary": "En Ceuta, la marcha de las Murallas Reales reúne a más de 20.000 personas según la Delegación del Gobierno. En Madrid, Cibeles: 50.000 según la Delegación y 150.000 según el Ayuntamiento, con Feijóo, Ayuso y Abascal, que llama a Sánchez «traidor». Ante el Congreso, la concentración «Ceuta nos une» acoge a medio centenar de miembros del grupo neonazi Núcleo Nacional; hacia las 21:20 un grupo lanza objetos a los agentes y la UIP carga: 4 detenidos, dos de ellos menores, y 4 policías heridos. El delegado del Gobierno condena «los actos violentos». Concentraciones también en Valencia, Barcelona (dos, de signo contrario), Bilbao, Pamplona, Melilla y Bruselas.",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+    "headOfState": "Felipe VI",
+    "initiator": "otros",
+    "kinds": [
+      "politica",
+      "seguridad"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-elcorreogallego-cibeles",
+      "src-infobae-congreso-disuelve",
+      "src-elindependiente-cargas",
+      "src-eldiariomadrid-heridos",
+      "src-infobae-delegado-madrid"
+    ]
+  },
+  {
+    "id": "ev-2026-09-02-periodistas-madrid",
+    "date": "2026-09-02",
+    "dateLabel": "2 de septiembre de 2026, noche",
+    "title": "Agresiones a periodistas en las concentraciones",
+    "summary": "En Ceuta, Jesús Navarro (TVE) es acosado en directo. Ante el Congreso, equipos de laSexta y TVE son agredidos; Mikel Etxarri (Mañaneros 360) es rodeado al grito de «¡fuera!» y Toni Gómez de Olea (Malas Lenguas) recibe «empujones, golpes y escupitajos». En Cibeles, Jesús Poveda (Malas Lenguas) es encarado en directo. Periodistas increpados en Barcelona y Pamplona; cánticos de «prensa española, manipuladora». El presidente de RTVE: «Agredir a los informadores es dinamitar la democracia». El Sindicato de Periodistas de Andalucía, Ceuta y Melilla y, al día siguiente, RSF condenan las agresiones.",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+    "headOfState": "Felipe VI",
+    "initiator": "otros",
+    "kinds": [
+      "informativa",
+      "seguridad"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-vertele-lopez-rtve",
+      "src-lavozdelsur-rtve",
+      "src-elconstitucional-etxarri",
+      "src-elpueblo-spacm",
+      "src-mercurio-rsf"
+    ]
+  },
+  {
+    "id": "ev-2026-09-03-pleno",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "title": "Pleno extraordinario: Sánchez comparece 35 días después",
+    "summary": "Sesión plenaria núm. 194 (art. 203 del Reglamento), con dos comparecencias acumuladas: la pedida por el presidente y la urgente de 131 diputados del PP. Sánchez admite que la Gendarmería «permitió el cruce» durante diez horas del 30 de julio, pero «nadie ha aportado pruebas» de que Marruecos lo diseñara; anuncia una investigación interna sobre el CENIF, la publicación de «todos los informes», presencia permanente de Frontex y la visita del Rey «en las próximas semanas». Feijóo pide la dimisión «por incompetente o por cómplice»; Abascal, el artículo 102; Sumar y ERC acusan a Marruecos con Estados Unidos e Israel; Junts pide otro candidato. Sin votaciones. Robles es la única ministra que no aplaude el anuncio de publicar los informes.",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+    "headOfState": "Felipe VI",
+    "initiator": "espana",
+    "kinds": [
+      "parlamentaria",
+      "politica"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-congreso-od-pl194",
+      "src-moncloa-2026-09-03-transc",
+      "src-infobae-sanchez-contundencia"
     ]
   }
 ] satisfies TimelineEvent[];

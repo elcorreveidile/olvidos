@@ -9,5 +9,5 @@ export const CRISES = [
   { id: "ceuta-2021", label: "Ceuta, mayo de 2021", year: 2021 },
   { id: "sahara-2022", label: "La carta sobre el Sáhara", year: 2022 },
   { id: "melilla-2022", label: "Melilla, 24 de junio de 2022", year: 2022 },
-  { id: "ceuta-2026", label: "Ceuta, julio de 2026", year: 2026 },
+  { id: "ceuta-2026", label: "Ceuta, julio-septiembre de 2026", year: 2026 },
 ] satisfies Crisis[];

@@ -168,7 +168,7 @@ export const STATEMENTS = [
   {
     "id": "st-perejil-pnv",
     "crisisId": "perejil-2002",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "speaker": "Pedro Azpiazu",
     "role": "PNV",
     "date": "2002-07-17",
@@ -493,7 +493,7 @@ export const STATEMENTS = [
   {
     "id": "st-sahara22-pnv",
     "crisisId": "sahara-2022",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "speaker": "Aitor Esteban",
     "role": "PNV",
     "date": "2022-03-30",
@@ -1079,7 +1079,7 @@ export const STATEMENTS = [
   {
     "id": "st-pnv-5ago",
     "crisisId": "ceuta-2026",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "speaker": "PNV (fuentes del partido)",
     "role": "",
     "date": "2026-08-05",
@@ -1092,7 +1092,7 @@ export const STATEMENTS = [
   {
     "id": "st-junqueras-5ago",
     "crisisId": "ceuta-2026",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "speaker": "Oriol Junqueras",
     "role": "presidente de ERC",
     "date": "2026-08-05",
@@ -1105,7 +1105,7 @@ export const STATEMENTS = [
   {
     "id": "st-inarritu-5ago",
     "crisisId": "ceuta-2026",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "speaker": "Jon Iñárritu",
     "role": "diputado de EH Bildu",
     "date": "2026-08-05",
@@ -1416,6 +1416,35 @@ export const STATEMENTS = [
     ]
   },
   {
+    "id": "st-cenif-marlaska-25ago",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Fernando Grande-Marlaska",
+    "role": "ministro del Interior",
+    "date": "2026-08-25",
+    "dateLabel": "25 de agosto de 2026, rueda de prensa del Consejo de Ministros",
+    "text": "no hay ningún informe de esas características, con algo relativamente similar a lo que pasó",
+    "sourceIds": [
+      "src-moncloa-2026-08-25-rueda"
+    ],
+    "note": "Preguntado por los avisos previos al 30 de julio. Ese mismo día, Robles dijo en el Congreso que el CNI avisó el 29."
+  },
+  {
+    "id": "st-cenif-robles-25ago",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Margarita Robles",
+    "role": "ministra de Defensa, Comisión de Defensa",
+    "date": "2026-08-25",
+    "dateLabel": "25 de agosto de 2026",
+    "text": "El día 29 de julio esos funcionarios que trabajan en Ceuta dan cuenta en la Delegación del Gobierno de esa convocatoria para el día siguiente",
+    "sourceIds": [
+      "src-dscd-co-609",
+      "src-eldiario-moncloa-cni-25ago"
+    ],
+    "note": "Se refiere a funcionarios del CNI. Moncloa lo negó esa tarde: «ni hay informes, ni hay avisos orales por parte del CNI a Delegación del Gobierno»; «no se habrá explicado bien»."
+  },
+  {
     "id": "st-munoz-guerracivil",
     "crisisId": "ceuta-2026",
     "bloc": "derecha",
@@ -1442,6 +1471,20 @@ export const STATEMENTS = [
     ]
   },
   {
+    "id": "st-prensa-fape",
+    "crisisId": "ceuta-2026",
+    "bloc": "otro",
+    "speaker": "FAPE",
+    "role": "Federación de Asociaciones de Periodistas de España",
+    "date": "2026-08-26",
+    "dateLabel": "26 de agosto de 2026",
+    "text": "La libertad de prensa y el derecho a la información son pilares irrenunciables de cualquier sociedad democrática",
+    "sourceIds": [
+      "src-fape-26ago"
+    ],
+    "note": "Condena «cualquier forma de intimidación, acoso o agresión, verbal o física»; reporteros de EFE y RTVE fueron «obligados a abandonar su labor informativa sin explicación alguna por parte de las autoridades marroquíes»."
+  },
+  {
     "id": "st-bolanos-27ago",
     "crisisId": "ceuta-2026",
     "bloc": "gobierno",
@@ -1453,6 +1496,21 @@ export const STATEMENTS = [
     "sourceIds": [
       "src-infobae-bolanos"
     ]
+  },
+  {
+    "id": "st-prensa-demeer",
+    "crisisId": "ceuta-2026",
+    "bloc": "derecha",
+    "speaker": "Rocío de Meer",
+    "role": "diputada de Vox, en X",
+    "date": "2026-08-27",
+    "dateLabel": "27 de agosto de 2026",
+    "text": "No todos los terroristas ponen bombas, algunos son periodistas",
+    "sourceIds": [
+      "src-theobjective-vox-rtve",
+      "src-vertele-consejo-informativos"
+    ],
+    "note": "Por el titular de RTVE «altercado con militares» sobre la emboscada de Benzú."
   },
   {
     "id": "st-vazquez-28ago",
@@ -1483,7 +1541,7 @@ export const STATEMENTS = [
   {
     "id": "st-legarda-28ago",
     "crisisId": "ceuta-2026",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "speaker": "Mikel Legarda",
     "role": "diputado del PNV",
     "date": "2026-08-28",
@@ -1496,7 +1554,7 @@ export const STATEMENTS = [
   {
     "id": "st-madrenas-28ago",
     "crisisId": "ceuta-2026",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "speaker": "Marta Madrenas",
     "role": "diputada de Junts",
     "date": "2026-08-28",
@@ -1519,6 +1577,49 @@ export const STATEMENTS = [
       "src-elespanol-frontex"
     ],
     "note": "Solicitud a la Comisión de apoyo de Frontex y Europol."
+  },
+  {
+    "id": "st-cenif-marlaska-28ago",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Fernando Grande-Marlaska",
+    "role": "ministro del Interior, Comisión de Interior",
+    "date": "2026-08-28",
+    "dateLabel": "28 de agosto de 2026",
+    "text": "ningún informe que atisbara",
+    "sourceIds": [
+      "src-teleceuta-marlaska-28ago",
+      "src-theobjective-socios-28ago"
+    ],
+    "note": "Una entrada masiva de esas dimensiones. Dos días antes, el CENIF había remitido su informe a la jueza. Diario de Sesiones de la comisión no publicado."
+  },
+  {
+    "id": "st-prensa-consejo-informativos",
+    "crisisId": "ceuta-2026",
+    "bloc": "otro",
+    "speaker": "Consejo de Informativos de TVE",
+    "role": "comunicado «Y ahora terroristas»",
+    "date": "2026-08-28",
+    "dateLabel": "28 de agosto de 2026",
+    "text": "Los profesionales de RTVE hemos tenido que soportar agresiones e insultos de todo tipo de gente: de extrema derecha, de extrema izquierda, del independentismo radical e incluso de ETA y su entorno terrorista",
+    "sourceIds": [
+      "src-vertele-consejo-informativos"
+    ],
+    "note": "Respuesta al «acoso y señalamiento de miembros de Vox a los profesionales de RTVE»."
+  },
+  {
+    "id": "st-prensa-fip",
+    "crisisId": "ceuta-2026",
+    "bloc": "otro",
+    "speaker": "Federación Internacional de Periodistas",
+    "role": "con la Federación Europea de Periodistas",
+    "date": "2026-08-28",
+    "dateLabel": "28 de agosto de 2026",
+    "text": "Condenamos el acoso a nuestros compañeros y pedimos a las autoridades que garanticen la seguridad de quienes informan desde Ceuta",
+    "sourceIds": [
+      "src-fip-28ago",
+      "src-ifj-28ago"
+    ]
   },
   {
     "id": "st-brunner-29ago",
@@ -1560,6 +1661,20 @@ export const STATEMENTS = [
       "src-cope-cembrero"
     ],
     "note": "También: «Ahora Marruecos está bastante arrepentido por cómo se desarrolló la operación en Ceuta y del daño a la imagen de su país, incapaz de controlar su frontera»."
+  },
+  {
+    "id": "st-calle-baraka",
+    "crisisId": "ceuta-2026",
+    "bloc": "marruecos",
+    "speaker": "Nizar Baraka",
+    "role": "secretario general del Istiqlal, en campaña",
+    "date": "2026-08-30",
+    "dateLabel": "30 de agosto de 2026, Rabat",
+    "text": "Marruecos no cederá ni una pulgada de su territorio",
+    "sourceIds": [
+      "src-lodj-baraka"
+    ],
+    "note": "Traducción del francés («ne cédera aucun pouce»). España es «un socio esencial». Legislativas marroquíes el 23 de septiembre."
   },
   {
     "id": "st-sanchez-ser-marruecos",
@@ -1989,6 +2104,62 @@ export const STATEMENTS = [
     "note": "Intento de desviar la atención del «vergonzoso fracaso de Sánchez en la gestión»."
   },
   {
+    "id": "st-cenif-saiz-1sept",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Elma Saiz",
+    "role": "portavoz del Gobierno",
+    "date": "2026-09-01",
+    "dateLabel": "1 de septiembre de 2026, tras el Consejo de Ministros",
+    "text": "no existe ninguna evidencia, ningún informe, ningún indicio de que Marruecos participara en lo que ocurrió el 30 y 31 de julio",
+    "sourceIds": [
+      "src-theobjective-saiz-1sept"
+    ],
+    "note": "Esa noche El Español publicó el informe del CENIF."
+  },
+  {
+    "id": "st-calle-abascal-1sept",
+    "crisisId": "ceuta-2026",
+    "bloc": "derecha",
+    "speaker": "Santiago Abascal",
+    "role": "presidente de Vox",
+    "date": "2026-09-01",
+    "dateLabel": "1 de septiembre de 2026",
+    "text": "Claro que es contra el Gobierno, el PP debe abandonar la tibieza",
+    "sourceIds": [
+      "src-elindependiente-abascal-cibeles-1sept"
+    ],
+    "note": "Sobre las concentraciones del 2 de septiembre, convocadas por los ayuntamientos «sin banderas de partido». Habló de «un gobierno tiránico, corrupto y traidor»."
+  },
+  {
+    "id": "st-europa-albares-1sept",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "José Manuel Albares",
+    "role": "ministro de Asuntos Exteriores",
+    "date": "2026-09-01",
+    "dateLabel": "1 de septiembre de 2026",
+    "text": "decisión arbitraria, causada por motivos de política electoral interna",
+    "sourceIds": [
+      "src-lapresse-italia"
+    ],
+    "note": "Sobre la prórroga italiana, hasta el 15 de septiembre, de los controles a los viajeros procedentes de España. España respondió con reciprocidad."
+  },
+  {
+    "id": "st-cifras-torres-retornos",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Ángel Víctor Torres",
+    "role": "ministro de Política Territorial, mando único en Ceuta",
+    "date": "2026-09-01",
+    "dateLabel": "1 de septiembre de 2026",
+    "text": "saben que no tienen esperanza",
+    "sourceIds": [
+      "src-infobae-torres-retornos"
+    ],
+    "note": "Sobre los 3.519 retornos voluntarios a Marruecos entre el 10 y el 31 de agosto: «no van a tener asilo». También 214 expulsiones y 1.612 menores filiados."
+  },
+  {
     "id": "st-sanchez-video-2sept",
     "crisisId": "ceuta-2026",
     "bloc": "gobierno",
@@ -2256,5 +2427,234 @@ export const STATEMENTS = [
     "sourceIds": [
       "src-infobae-jupol"
     ]
+  },
+  {
+    "id": "st-cenif-pardo-no-atribuye",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Francisco Pardo Piqueras",
+    "role": "director general de la Policía",
+    "date": "2026-09-02",
+    "dateLabel": "2 de septiembre de 2026, 15:31, comunicado de Interior",
+    "text": "no existe informe policial alguno que atribuya a las Fuerzas de Seguridad marroquíes la planificación o ejecución de lo sucedido los días 30 y 31 de julio en Ceuta",
+    "sourceIds": [
+      "src-elfaro-pardo-comunicado",
+      "src-infobae-pardo-2sept"
+    ],
+    "note": "El informe describe «total permisividad» y «guiado activo» de agentes marroquíes, pero no individualiza a los responsables."
+  },
+  {
+    "id": "st-cenif-pardo-jueza",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Francisco Pardo Piqueras",
+    "role": "director general de la Policía",
+    "date": "2026-09-02",
+    "dateLabel": "2 de septiembre de 2026, comunicado de Interior",
+    "text": "la juez de la Audiencia Nacional que instruye el proceso penal dio órdenes a los investigadores de no facilitar a sus superiores información alguna sobre la elaboración y contenido de dicho informe",
+    "sourceIds": [
+      "src-elfaro-pardo-comunicado",
+      "src-eldiario-pardo-jueza"
+    ],
+    "note": "Ese mismo día la jueza autorizó dar acceso a los superiores. Sobre la alerta del 29 de julio: «una alerta de riesgo frecuente que no incluyó alusión alguna a una posible entrada masiva el día siguiente»."
+  },
+  {
+    "id": "st-cenif-torres-2sept",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Ángel Víctor Torres",
+    "role": "ministro de Política Territorial, mando único en Ceuta",
+    "date": "2026-09-02",
+    "dateLabel": "2 de septiembre de 2026",
+    "text": "lógicamente habría una responsabilidad, y el Gobierno español nunca la ha desdeñado",
+    "sourceIds": [
+      "src-elespanol-directo-2sept"
+    ],
+    "note": "Si se confirmara la participación de agentes marroquíes."
+  },
+  {
+    "id": "st-calle-millan-2sept",
+    "crisisId": "ceuta-2026",
+    "bloc": "derecha",
+    "speaker": "Pepa Rodríguez de Millán",
+    "role": "portavoz de Vox en el Congreso",
+    "date": "2026-09-02",
+    "dateLabel": "2 de septiembre de 2026",
+    "text": "No vamos para cantar villancicos",
+    "sourceIds": [
+      "src-theobjective-millan"
+    ],
+    "note": "Antes de las marchas: «hay que llamar a la movilización constante en contra de este gobierno absolutamente traidor»; al PP, «tibio»."
+  },
+  {
+    "id": "st-calle-feijoo-cibeles",
+    "crisisId": "ceuta-2026",
+    "bloc": "derecha",
+    "speaker": "Alberto Núñez Feijóo",
+    "role": "presidente del PP, en Cibeles",
+    "date": "2026-09-02",
+    "dateLabel": "2 de septiembre de 2026, 20:36",
+    "text": "Se va a saber todo: por qué invadieron Ceuta, quién lo consintió, quién lo promovió",
+    "sourceIds": [
+      "src-theobjective-directo-manifestaciones",
+      "src-elcorreogallego-cibeles"
+    ],
+    "note": "El Gobierno está «más cerca de Marruecos que del conjunto de España»."
+  },
+  {
+    "id": "st-calle-montserrat",
+    "crisisId": "ceuta-2026",
+    "bloc": "derecha",
+    "speaker": "Dolors Montserrat",
+    "role": "vicepresidenta del Partido Popular Europeo, en Bruselas",
+    "date": "2026-09-02",
+    "dateLabel": "2 de septiembre de 2026",
+    "text": "Sánchez se ha convertido en el paria de Europa porque no hay ningún primer ministro en Europa que hubiera aceptado ninguna invasión",
+    "sourceIds": [
+      "src-eldebate-montserrat"
+    ]
+  },
+  {
+    "id": "st-calle-delegado-madrid",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Francisco Martín",
+    "role": "delegado del Gobierno en Madrid",
+    "date": "2026-09-02",
+    "dateLabel": "2 de septiembre de 2026, noche",
+    "text": "Total condena a los actos violentos sucedidos al término de las concentraciones en Madrid",
+    "sourceIds": [
+      "src-infobae-delegado-madrid"
+    ],
+    "note": "«La violencia nunca es el camino»; responsabiliza a «quienes a diario la azuzan». Balance: 4 detenidos y 4 policías heridos ante el Congreso."
+  },
+  {
+    "id": "st-calle-torro",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Rebeca Torró",
+    "role": "secretaria de Organización del PSOE",
+    "date": "2026-09-02",
+    "dateLabel": "2 de septiembre de 2026",
+    "text": "el odio no ayuda a Ceuta; ayudar a Ceuta es poner recursos",
+    "sourceIds": [
+      "src-larepublica-odio"
+    ],
+    "note": "El PSOE: «no eran concentraciones de apoyo a Ceuta, eran concentraciones contra el Gobierno»."
+  },
+  {
+    "id": "st-corona-llamada-vivas",
+    "crisisId": "ceuta-2026",
+    "bloc": "monarquia",
+    "speaker": "Casa de S.M. el Rey",
+    "role": "nota sobre la llamada del Rey a Vivas",
+    "date": "2026-09-02",
+    "dateLabel": "2 de septiembre de 2026, tarde",
+    "text": "el apoyo de toda España a Ceuta en su Día, especialmente por la situación que sufre, apelando a la unidad y a la convivencia",
+    "sourceIds": [
+      "src-infobae-rey-vivas-llamada",
+      "src-rtvce-rey-vivas"
+    ],
+    "note": "Según el Gobierno de Ceuta, el Rey reiteró su compromiso de «visitar Ceuta». Al día siguiente Sánchez anunció la visita «en las próximas semanas»."
+  },
+  {
+    "id": "st-calle-le360",
+    "crisisId": "ceuta-2026",
+    "bloc": "marruecos",
+    "speaker": "Le360",
+    "role": "diario digital próximo al Palacio",
+    "date": "2026-09-02",
+    "dateLabel": "2 de septiembre de 2026",
+    "text": "el falso relato de la policía española que incrimina a Marruecos",
+    "sourceIds": [
+      "src-le360-faux-recit",
+      "src-elcorreogallego-prensa-marroqui"
+    ],
+    "note": "Traducción del francés («le faux récit de la police espagnole incriminant le Maroc»). Ni el Gobierno marroquí ni la agencia MAP reaccionaron al informe entre el 1 y el 3 de septiembre."
+  },
+  {
+    "id": "st-prensa-lopez-rtve",
+    "crisisId": "ceuta-2026",
+    "bloc": "otro",
+    "speaker": "José Pablo López",
+    "role": "presidente de RTVE, en X",
+    "date": "2026-09-02",
+    "dateLabel": "2 de septiembre de 2026, noche",
+    "text": "Agredir a los informadores es dinamitar la democracia",
+    "sourceIds": [
+      "src-vertele-lopez-rtve"
+    ],
+    "note": "«Llevamos más de un mes soportando insultos y agresiones cada vez que salimos a informar»; «no son casos aislados»."
+  },
+  {
+    "id": "st-prensa-miro",
+    "crisisId": "ceuta-2026",
+    "bloc": "otro",
+    "speaker": "Gonzalo Miró",
+    "role": "presentador de Malas Lenguas (TVE), en directo",
+    "date": "2026-09-02",
+    "dateLabel": "2 de septiembre de 2026, Cibeles",
+    "text": "¿Y la policía dónde está? Márchate de ahí, Poveda. Con vándalos es imposible lidiar",
+    "sourceIds": [
+      "src-elnacional-poveda",
+      "src-x-malaslenguas-poveda"
+    ],
+    "note": "Al reportero Jesús Poveda, rodeado y encarado por un manifestante durante la conexión."
+  },
+  {
+    "id": "st-prensa-spacm",
+    "crisisId": "ceuta-2026",
+    "bloc": "otro",
+    "speaker": "Sindicato de Periodistas de Andalucía, Ceuta y Melilla",
+    "role": "comunicado",
+    "date": "2026-09-02",
+    "dateLabel": "2 de septiembre de 2026",
+    "text": "Informar no es provocar. Informar es un derecho",
+    "sourceIds": [
+      "src-elpueblo-spacm"
+    ],
+    "note": "Condena «episodios de insultos, amenazas, intimidaciones y agresiones sufridos por periodistas mientras desarrollan su trabajo en Ceuta»; exige a las autoridades «las medidas necesarias para garantizar la seguridad»."
+  },
+  {
+    "id": "st-calle-vivas-3sept",
+    "crisisId": "ceuta-2026",
+    "bloc": "derecha",
+    "speaker": "Juan Jesús Vivas",
+    "role": "presidente de Ceuta (PP)",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026, tras el pleno",
+    "text": "¿Se puede organizar un ataque a la integridad territorial de España desde Marruecos sin que Marruecos lo sepa?",
+    "sourceIds": [
+      "src-theobjective-vivas-penosas"
+    ],
+    "note": "Calificó de «penosas» las explicaciones de Sánchez, «un claro intento de no molestar a Marruecos»."
+  },
+  {
+    "id": "st-prensa-rsf",
+    "crisisId": "ceuta-2026",
+    "bloc": "otro",
+    "speaker": "Reporteros Sin Fronteras España",
+    "role": "comunicado",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "text": "secunda con total rotundidad",
+    "sourceIds": [
+      "src-mercurio-rsf"
+    ],
+    "note": "El comunicado del Sindicato de Periodistas de Andalucía, Ceuta y Melilla; apela a «responsables institucionales y a los partidos políticos para que actúen con responsabilidad»."
+  },
+  {
+    "id": "st-prensa-sempere",
+    "crisisId": "ceuta-2026",
+    "bloc": "otro",
+    "speaker": "Antonio Sempere",
+    "role": "fotoperiodista (AFP, Getty), en Ceuta",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026 (testimonio recogido por RSF)",
+    "text": "Un manifestante me puso la mano encima, me insultó y sacó una foto para exponerme en redes",
+    "sourceIds": [
+      "src-mercurio-rsf"
+    ],
+    "note": "A compañeros «se les ha escupido, golpeado con banderas por la espalda»."
   }
 ] satisfies Statement[];

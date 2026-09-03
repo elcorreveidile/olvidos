@@ -1663,7 +1663,7 @@
       "legislature": "VII",
       "speaker": "Xavier Trias",
       "party": "CiU",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "role": "portavoz de CiU",
       "topics": [
         "perejil"
@@ -1687,7 +1687,7 @@
       "legislature": "VII",
       "speaker": "Iñaki Anasagasti",
       "party": "PNV",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "role": "portavoz del PNV",
       "topics": [
         "perejil",
@@ -1712,7 +1712,7 @@
       "legislature": "VII",
       "speaker": "José Carlos Mauricio",
       "party": "Coalición Canaria",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "role": "portavoz de CC",
       "topics": [
         "perejil"
@@ -1760,7 +1760,7 @@
       "legislature": "VII",
       "speaker": "Begoña Lasagabaster",
       "party": "Eusko Alkartasuna (Mixto)",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "role": "diputada",
       "topics": [
         "perejil"
@@ -1856,7 +1856,7 @@
       "legislature": "VII",
       "speaker": "Pedro Azpiazu",
       "party": "PNV",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "role": "diputado",
       "topics": [
         "perejil"
@@ -1904,7 +1904,7 @@
       "legislature": "VII",
       "speaker": "Luis Mardones",
       "party": "Coalición Canaria",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "role": "diputado",
       "topics": [
         "perejil"
@@ -2050,7 +2050,7 @@
       "legislature": "X",
       "speaker": "Emilio Olabarría",
       "party": "PNV",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "role": "diputado",
       "topics": [
         "tarajal"
@@ -2122,7 +2122,7 @@
       "legislature": "X",
       "speaker": "Emilio Olabarría",
       "party": "PNV",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "role": "diputado",
       "topics": [
         "tarajal"
@@ -2655,7 +2655,7 @@
       "legislature": "XIV",
       "speaker": "Aitor Esteban",
       "party": "PNV",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "role": "portavoz del PNV",
       "topics": [
         "sahara-2022"
@@ -2896,7 +2896,7 @@
       "legislature": "XIV",
       "speaker": "Mikel Legarda",
       "party": "PNV",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "role": "diputado",
       "topics": [
         "melilla-2022"
@@ -2969,7 +2969,7 @@
       "legislature": "XIV",
       "speaker": "Íñigo Barandiaran",
       "party": "PNV",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "role": "diputado",
       "topics": [
         "melilla-2022"
@@ -3129,7 +3129,7 @@
     {
       "id": "st-perejil-pnv",
       "crisisId": "perejil-2002",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "speaker": "Pedro Azpiazu",
       "role": "PNV",
       "date": "2002-07-17",
@@ -3467,7 +3467,7 @@
     {
       "id": "st-sahara22-pnv",
       "crisisId": "sahara-2022",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "speaker": "Aitor Esteban",
       "role": "PNV",
       "date": "2022-03-30",

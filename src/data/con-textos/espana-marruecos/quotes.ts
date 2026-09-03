@@ -1942,7 +1942,7 @@ export const QUOTES = [
     "legislature": "VII",
     "speaker": "Xavier Trias",
     "party": "CiU",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "portavoz de CiU",
     "topics": [
       "perejil"
@@ -1966,7 +1966,7 @@ export const QUOTES = [
     "legislature": "VII",
     "speaker": "Iñaki Anasagasti",
     "party": "PNV",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "portavoz del PNV",
     "topics": [
       "perejil",
@@ -1991,7 +1991,7 @@ export const QUOTES = [
     "legislature": "VII",
     "speaker": "José Carlos Mauricio",
     "party": "Coalición Canaria",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "portavoz de CC",
     "topics": [
       "perejil"
@@ -2039,7 +2039,7 @@ export const QUOTES = [
     "legislature": "VII",
     "speaker": "Begoña Lasagabaster",
     "party": "Eusko Alkartasuna (Mixto)",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputada",
     "topics": [
       "perejil"
@@ -2135,7 +2135,7 @@ export const QUOTES = [
     "legislature": "VII",
     "speaker": "Pedro Azpiazu",
     "party": "PNV",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputado",
     "topics": [
       "perejil"
@@ -2183,7 +2183,7 @@ export const QUOTES = [
     "legislature": "VII",
     "speaker": "Luis Mardones",
     "party": "Coalición Canaria",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputado",
     "topics": [
       "perejil"
@@ -2481,7 +2481,7 @@ export const QUOTES = [
     "legislature": "X",
     "speaker": "Emilio Olabarría",
     "party": "PNV",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputado",
     "topics": [
       "tarajal"
@@ -2553,7 +2553,7 @@ export const QUOTES = [
     "legislature": "X",
     "speaker": "Emilio Olabarría",
     "party": "PNV",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputado",
     "topics": [
       "tarajal"
@@ -3135,7 +3135,7 @@ export const QUOTES = [
     "legislature": "XIV",
     "speaker": "Aitor Esteban",
     "party": "PNV",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "portavoz del PNV",
     "topics": [
       "sahara-2022"
@@ -3376,7 +3376,7 @@ export const QUOTES = [
     "legislature": "XIV",
     "speaker": "Mikel Legarda",
     "party": "PNV",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputado",
     "topics": [
       "melilla-2022"
@@ -3449,7 +3449,7 @@ export const QUOTES = [
     "legislature": "XIV",
     "speaker": "Íñigo Barandiaran",
     "party": "PNV",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputado",
     "topics": [
       "melilla-2022"
@@ -3895,7 +3895,7 @@ export const QUOTES = [
     "legislature": "XV",
     "speaker": "Mikel Legarda",
     "party": "PNV",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputado",
     "topics": [
       "ceuta",
@@ -3921,7 +3921,7 @@ export const QUOTES = [
     "legislature": "XV",
     "speaker": "Oskar Matute",
     "party": "EH Bildu",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputado",
     "topics": [
       "ceuta",
@@ -3947,7 +3947,7 @@ export const QUOTES = [
     "legislature": "XV",
     "speaker": "Teresa Jordà",
     "party": "ERC",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputada",
     "topics": [
       "ceuta",
@@ -4172,7 +4172,7 @@ export const QUOTES = [
     "legislature": "XV",
     "speaker": "Marta Madrenas",
     "party": "Junts",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputada",
     "topics": [
       "ceuta",
@@ -4197,7 +4197,7 @@ export const QUOTES = [
     "legislature": "XV",
     "speaker": "Francesc-Marc Álvaro",
     "party": "ERC",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputado",
     "topics": [
       "ceuta",
@@ -4222,7 +4222,7 @@ export const QUOTES = [
     "legislature": "XV",
     "speaker": "Jon Iñarritu",
     "party": "EH Bildu",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputado",
     "topics": [
       "ceuta",
