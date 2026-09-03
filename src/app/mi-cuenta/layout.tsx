@@ -4,6 +4,7 @@ import Link from "next/link";
 import { LogOut, Newspaper } from "lucide-react";
 import { Logo } from "@/components/layout/Logo";
 import { MemberSidebarNav } from "@/components/members/MemberSidebarNav";
+import { PanelShell } from "@/components/layout/PanelShell";
 
 export default async function MemberLayout({
   children,
@@ -77,79 +78,52 @@ export default async function MemberLayout({
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Sidebar */}
-      <aside className="fixed inset-y-0 left-0 z-50 hidden w-64 border-r border-acero-light/50 bg-white md:block">
-        <div className="flex h-full flex-col">
-          {/* Logo */}
-          <div className="flex h-16 items-center justify-between border-b border-acero-light/50 px-6">
-            <Link
-              href="/mi-cuenta"
-              className="text-[1.4rem]"
-              aria-label="Olvidos — mi cuenta"
-            >
-              <Logo />
-            </Link>
-            <span className="rounded-sm bg-coral/10 px-2 py-1 text-xs font-bold uppercase tracking-wide text-coral">
-              Socio
-            </span>
-          </div>
-
-          <MemberSidebarNav isAdmin={isAdmin} />
-
-          {/* User info */}
-          <div className="border-t border-acero-light/50 p-4">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-coral font-bold text-white">
-                {(userName?.charAt(0) || userEmail?.charAt(0) || "S").toUpperCase()}
-              </div>
-              <div className="min-w-0">
-                <p className="truncate text-sm font-bold text-tinta">
-                  {userName || "Socio"}
-                </p>
-                <p className="truncate text-xs text-acero">{userEmail}</p>
-              </div>
+    <PanelShell
+      home="/mi-cuenta"
+      badge="Socio"
+      title="Área de socios"
+      logoLabel="Olvidos — mi cuenta"
+      mainClassName="p-6 md:p-8"
+      nav={<MemberSidebarNav isAdmin={isAdmin} />}
+      user={
+        <div className="border-t border-acero-light/50 p-4">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-coral font-bold text-white">
+              {(userName?.charAt(0) || userEmail?.charAt(0) || "S").toUpperCase()}
+            </div>
+            <div className="min-w-0">
+              <p className="truncate text-sm font-bold text-tinta">
+                {userName || "Socio"}
+              </p>
+              <p className="truncate text-xs text-acero">{userEmail}</p>
             </div>
           </div>
         </div>
-      </aside>
-
-      {/* Main content */}
-      <div className="md:pl-64">
-        {/* Top bar */}
-        <header className="sticky top-0 z-40 border-b border-acero-light/50 bg-white">
-          <div className="flex h-16 items-center justify-between px-6 md:px-8">
-            <h1 className="text-lg font-black text-tinta">
-              <span className="text-coral">[</span>Área de socios
-            </h1>
-            <div className="flex items-center gap-5">
-              <Link
-                href="/"
-                className="flex items-center gap-2 text-sm font-bold text-acero transition-colors hover:text-coral"
-              >
-                <Newspaper className="h-4 w-4" />
-                <span className="hidden sm:inline">Volver a la revista</span>
-              </Link>
-              <form action={handleSignOut}>
-                <button
-                  type="submit"
-                  className="flex items-center gap-2 text-sm font-bold text-acero transition-colors hover:text-coral"
-                >
-                  <LogOut className="h-4 w-4" />
-                  Cerrar sesión
-                </button>
-              </form>
-            </div>
-          </div>
-          {/* Navegación horizontal en móvil (la sidebar se oculta) */}
-          <div className="border-t border-acero-light/50 md:hidden">
-            <MemberSidebarNav isAdmin={isAdmin} horizontal />
-          </div>
-        </header>
-
-        {/* Page content */}
-        <main className="p-6 md:p-8">{children}</main>
-      </div>
-    </div>
+      }
+      actions={
+        <>
+          <Link
+            href="/"
+            className="flex items-center gap-2 text-sm font-bold text-acero transition-colors hover:text-coral"
+            aria-label="Volver a la revista"
+          >
+            <Newspaper className="h-4 w-4" />
+            <span className="hidden sm:inline">Volver a la revista</span>
+          </Link>
+          <form action={handleSignOut}>
+            <button
+              type="submit"
+              className="flex items-center gap-2 text-sm font-bold text-acero transition-colors hover:text-coral"
+              aria-label="Cerrar sesión"
+            >
+              <LogOut className="h-4 w-4" />
+              <span className="hidden sm:inline">Cerrar sesión</span>
+            </button>
+          </form>
+        </>
+      }
+    >
+      {children}
+    </PanelShell>
   );
 }
