@@ -208,7 +208,21 @@ export default function EditarArticuloPage() {
           <ArrowLeft className="w-4 h-4" />
           Volver a artículos
         </Link>
-        <h1 className="text-3xl font-bold text-tinta">Editar artículo</h1>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h1 className="text-3xl font-bold text-tinta">Editar artículo</h1>
+          {watch("slug") && (
+            <a
+              href={`/articulos/${watch("slug")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-sm border border-tinta px-4 py-2 text-sm font-bold text-tinta transition-colors hover:bg-tinta hover:text-white"
+              title="Abre el artículo tal como se verá en la web (los borradores solo los ve el equipo)"
+            >
+              <Eye className="w-4 h-4" />
+              {watch("status") === "PUBLISHED" ? "Ver en la web" : "Vista previa"}
+            </a>
+          )}
+        </div>
       </div>
 
       {error && (

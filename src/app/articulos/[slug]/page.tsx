@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { getArticleBySlug, getPublishedArticles } from "@/lib/actions/articles";
@@ -14,15 +15,40 @@ interface ArticlePageProps {
   searchParams?: { paso?: string };
 }
 
+/**
+ * Carga el artículo. Los publicados se sirven a todo el mundo (y siguen
+ * siendo estáticos). Los borradores, en revisión o archivados solo se
+ * muestran, como vista previa, al equipo (ADMIN, EDITOR, MEMBER_ADMIN): para
+ * ellos se consulta la sesión; para el resto no existen.
+ */
+async function loadArticle(slug: string) {
+  const published = await getArticleBySlug(slug, true);
+  if (published.success && published.article) return { article: published.article, preview: false };
+  const any = await getArticleBySlug(slug, false);
+  if (!any.success || !any.article) return null;
+  const session = await auth();
+  const role = session?.user?.role;
+  if (role === "ADMIN" || role === "EDITOR" || role === "MEMBER_ADMIN") {
+    return { article: any.article, preview: true };
+  }
+  return null;
+}
+
+const STATUS_LABEL: Record<string, string> = {
+  DRAFT: "Borrador",
+  REVIEW: "En revisión",
+  ARCHIVED: "Archivado",
+};
+
 export async function generateMetadata({
   params,
   searchParams,
 }: ArticlePageProps): Promise<Metadata> {
-  const result = await getArticleBySlug(params.slug, true);
-  if (!result.success || !result.article) {
+  const loaded = await loadArticle(params.slug);
+  if (!loaded) {
     return { title: "Artículo no encontrado" };
   }
-  const article = result.article;
+  const { article, preview } = loaded;
   const pieza = hasPasos(article);
   const paso = Number(searchParams?.paso);
   const pasoSuffix = !pieza
@@ -38,6 +64,7 @@ export async function generateMetadata({
     // Las vistas por paso y la lectura seguida son la misma pieza: una sola
     // URL canónica sin parámetros.
     alternates: pieza ? { canonical: `${SITE_URL}/articulos/${article.slug}` } : undefined,
+    robots: preview ? { index: false, follow: false } : undefined,
     openGraph: {
       title: article.metaTitle || article.title,
       description: article.metaDescription || article.excerpt || undefined,
@@ -58,10 +85,10 @@ export default async function ArticlePage({
   params,
   searchParams,
 }: ArticlePageProps) {
-  const result = await getArticleBySlug(params.slug, true);
-  if (!result.success || !result.article) notFound();
+  const loaded = await loadArticle(params.slug);
+  if (!loaded) notFound();
 
-  const article = result.article;
+  const { article, preview } = loaded;
 
   // "Pasos": piezas multi-parte (Piezas y Procesos, Con-textos) paginadas por <!--nextpage-->
   const pieza = hasPasos(article);
@@ -176,7 +203,20 @@ export default async function ArticlePage({
     jsonLd,
   };
 
-  return <ArticleView vm={vm} />;
+  return (
+    <>
+      {preview && (
+        <div className="border-b border-coral/30 bg-coral/10 px-4 py-2 text-center text-sm text-tinta">
+          <strong>Vista previa</strong> · {STATUS_LABEL[article.status] ?? article.status}. Solo el equipo ve esta página;
+          no está publicada.{" "}
+          <Link href={`/admin/articulos/${article.id}/editar`} className="font-bold text-coral underline hover:text-tinta">
+            Editar
+          </Link>
+        </div>
+      )}
+      <ArticleView vm={vm} />
+    </>
+  );
 }
 
 export async function generateStaticParams() {
