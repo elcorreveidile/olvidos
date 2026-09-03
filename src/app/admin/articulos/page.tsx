@@ -383,16 +383,14 @@ async function ArticlesList({
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                     <div className="flex items-center justify-end gap-2">
-                      {article.status === "PUBLISHED" && (
-                        <Link
-                          href={`/articulos/${article.slug}`}
-                          target="_blank"
-                          className="text-gray-600 hover:text-gray-900 transition-colors"
-                          title="Ver en el sitio"
-                        >
-                          <Eye className="w-4 h-4" />
-                        </Link>
-                      )}
+                      <Link
+                        href={`/articulos/${article.slug}`}
+                        target="_blank"
+                        className="text-gray-600 hover:text-gray-900 transition-colors"
+                        title={article.status === "PUBLISHED" ? "Ver en el sitio" : "Vista previa (solo el equipo la ve)"}
+                      >
+                        <Eye className="w-4 h-4" />
+                      </Link>
                       <Link
                         href={`/admin/articulos/${article.id}/editar`}
                         className="text-coral hover:text-coral-dark transition-colors"
