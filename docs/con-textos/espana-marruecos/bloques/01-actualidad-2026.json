@@ -1817,7 +1817,7 @@
       "legislature": "XV",
       "speaker": "Mikel Legarda",
       "party": "PNV",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "role": "diputado",
       "topics": [
         "ceuta",
@@ -1843,7 +1843,7 @@
       "legislature": "XV",
       "speaker": "Oskar Matute",
       "party": "EH Bildu",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "role": "diputado",
       "topics": [
         "ceuta",
@@ -1869,7 +1869,7 @@
       "legislature": "XV",
       "speaker": "Teresa Jordà",
       "party": "ERC",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "role": "diputada",
       "topics": [
         "ceuta",
@@ -2094,7 +2094,7 @@
       "legislature": "XV",
       "speaker": "Marta Madrenas",
       "party": "Junts",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "role": "diputada",
       "topics": [
         "ceuta",
@@ -2119,7 +2119,7 @@
       "legislature": "XV",
       "speaker": "Francesc-Marc Álvaro",
       "party": "ERC",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "role": "diputado",
       "topics": [
         "ceuta",
@@ -2144,7 +2144,7 @@
       "legislature": "XV",
       "speaker": "Jon Iñarritu",
       "party": "EH Bildu",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "role": "diputado",
       "topics": [
         "ceuta",
@@ -2802,7 +2802,7 @@
     {
       "id": "st-pnv-5ago",
       "crisisId": "ceuta-2026",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "speaker": "PNV (fuentes del partido)",
       "role": "",
       "date": "2026-08-05",
@@ -2815,7 +2815,7 @@
     {
       "id": "st-junqueras-5ago",
       "crisisId": "ceuta-2026",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "speaker": "Oriol Junqueras",
       "role": "presidente de ERC",
       "date": "2026-08-05",
@@ -2828,7 +2828,7 @@
     {
       "id": "st-inarritu-5ago",
       "crisisId": "ceuta-2026",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "speaker": "Jon Iñárritu",
       "role": "diputado de EH Bildu",
       "date": "2026-08-05",
@@ -2841,7 +2841,7 @@
     {
       "id": "st-legarda-28ago",
       "crisisId": "ceuta-2026",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "speaker": "Mikel Legarda",
       "role": "diputado del PNV",
       "date": "2026-08-28",
@@ -2854,7 +2854,7 @@
     {
       "id": "st-madrenas-28ago",
       "crisisId": "ceuta-2026",
-      "bloc": "otro",
+      "bloc": "nacionalistas",
       "speaker": "Marta Madrenas",
       "role": "diputada de Junts",
       "date": "2026-08-28",

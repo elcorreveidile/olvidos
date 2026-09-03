@@ -33,7 +33,9 @@ export type IslaName = (typeof ISLA_NAMES)[number];
 
 export const WARN_BYTES_PER_ISLA = 120_000;
 export const MAX_BYTES_PER_ISLA = 300_000;
-export const MAX_BYTES_PER_PASO = 400_000;
+// El paso «total» (toda la línea temporal y toda la hemeroteca) ronda los
+// 400 KB desde la actualización de septiembre de 2026.
+export const MAX_BYTES_PER_PASO = 450_000;
 
 export interface PasoRef {
   n: number;
@@ -134,11 +136,14 @@ export interface TimelineItem {
   era: EraId;
   pasoHref?: string;
   pasoTitle?: string;
-  sources: SlimSource[];
+  /** Ids del diccionario `TimelineData.sources` (máx. 2). */
+  sourceIds: string[];
 }
 
 export interface TimelineData {
   events: TimelineItem[];
+  /** Fuentes de todos los hechos, una sola vez por isla. */
+  sources: Record<string, SlimSource>;
   periods: Array<{ id: string; from: number; to: number; government: Government; label: string }>;
   range: [number, number];
   eras: Array<{ id: EraId; label: string; from: number; to: number }>;
@@ -356,6 +361,7 @@ export const ISLAS = {
         Math.min(1859, ...years),
         Math.max(2026, ...years),
       ];
+      const sources: TimelineData["sources"] = {};
       const items: TimelineItem[] = events.map((ev) => {
         const paso = pasoForEvent(ev, data.PASOS);
         const href = paso ? hrefPaso(ctx, paso.id) : undefined;
@@ -369,8 +375,12 @@ export const ISLAS = {
           governmentLabel: ev.governmentLabel,
           kinds: ev.kinds,
           era: ev.era,
-          sources: resolveSources(ev.sourceIds, data, 2),
+          sourceIds: [],
         };
+        for (const src of resolveSources(ev.sourceIds, data, 2)) {
+          sources[src.id] ??= src;
+          item.sourceIds.push(src.id);
+        }
         if (ev.headOfState) item.headOfState = ev.headOfState;
         if (ev.initiator) item.initiator = ev.initiator;
         if (href && paso && paso.id !== ctx.pasoId) {
@@ -388,6 +398,7 @@ export const ISLAS = {
       }));
       return {
         events: items,
+        sources,
         periods,
         range,
         eras: ERAS.filter((e) => e.to >= range[0] && e.from <= range[1]).map((e) => ({ id: e.id, label: e.label, from: e.from, to: e.to })),

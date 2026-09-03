@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { TimelineData, TimelineItem } from "@/lib/con-textos/islas-def";
+import type { SlimSource, TimelineData, TimelineItem } from "@/lib/con-textos/islas-def";
 import { matchesQuery } from "@/lib/con-textos/text";
 import { GOVERNMENT_COLORS, GOVERNMENT_LABELS } from "./palette";
 import { TimelineRuler } from "./TimelineRuler";
@@ -41,7 +41,8 @@ function Chip({ active, onClick, color, children }: { active: boolean; onClick: 
   );
 }
 
-function EventCard({ ev, active }: { ev: TimelineItem; active: boolean }) {
+function EventCard({ ev, active, sources }: { ev: TimelineItem; active: boolean; sources: Record<string, SlimSource> }) {
+  const refs = ev.sourceIds.map((id) => sources[id]).filter(Boolean);
   return (
     <li
       id={`ev-${ev.id}`}
@@ -66,7 +67,7 @@ function EventCard({ ev, active }: { ev: TimelineItem; active: boolean }) {
             {KIND_LABEL[k] ?? k}
           </span>
         ))}
-        {ev.sources.map((s) => (
+        {refs.map((s) => (
           <a key={s.id} href={s.url} target="_blank" rel="noopener noreferrer" className="underline decoration-acero-light hover:text-coral">
             {s.publisher || s.title}
           </a>
@@ -170,7 +171,7 @@ export function Timeline({ data }: { data: TimelineData }) {
       )}
       <ol className="mt-4 space-y-5">
         {shown.map((ev) => (
-          <EventCard key={ev.id} ev={ev} active={ev.id === active} />
+          <EventCard key={ev.id} ev={ev} active={ev.id === active} sources={data.sources ?? {}} />
         ))}
       </ol>
       {visible.length === 0 && <p className="mt-4 text-sm text-acero">Ningún hecho coincide con los filtros.</p>}

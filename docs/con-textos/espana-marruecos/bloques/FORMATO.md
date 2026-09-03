@@ -34,5 +34,5 @@ Cada bloque produce dos ficheros en esta carpeta:
 Reglas:
 - Solo URLs reales, obtenidas de una búsqueda o de una página visitada. Nunca inventar URLs ni números de página.
 - Citas literales entre comillas en el texto original; si se traduce, indicarlo.
-- Para citas parlamentarias: sin cámara + fecha + orador + referencia del Diario + URL, `unverified: true`.
+- Para citas parlamentarias: sin cámara + fecha + orador + referencia del Diario + URL, `unverified: true`. Mientras el Diario no se publica, vale como verificación provisional la grabación oficial del Congreso: `videoUrl` con el enlace permanente de la intervención (`https://app.congreso.es/v1/…`), `sessionRef` con el corte y el minuto («… vídeo del Congreso, corte NNNNNN, min. m:ss; Diario de Sesiones pendiente»), `pdfUrl` vacío y texto cotejado con otra fuente (ver `docs/con-textos/README.md`, «literal según grabación»).
 - Cifras: siempre con organismo, fecha y URL; si hay discrepancias, registrar todas.

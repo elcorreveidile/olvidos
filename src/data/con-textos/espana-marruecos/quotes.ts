@@ -1942,7 +1942,7 @@ export const QUOTES = [
     "legislature": "VII",
     "speaker": "Xavier Trias",
     "party": "CiU",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "portavoz de CiU",
     "topics": [
       "perejil"
@@ -1966,7 +1966,7 @@ export const QUOTES = [
     "legislature": "VII",
     "speaker": "Iñaki Anasagasti",
     "party": "PNV",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "portavoz del PNV",
     "topics": [
       "perejil",
@@ -1991,7 +1991,7 @@ export const QUOTES = [
     "legislature": "VII",
     "speaker": "José Carlos Mauricio",
     "party": "Coalición Canaria",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "portavoz de CC",
     "topics": [
       "perejil"
@@ -2039,7 +2039,7 @@ export const QUOTES = [
     "legislature": "VII",
     "speaker": "Begoña Lasagabaster",
     "party": "Eusko Alkartasuna (Mixto)",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputada",
     "topics": [
       "perejil"
@@ -2135,7 +2135,7 @@ export const QUOTES = [
     "legislature": "VII",
     "speaker": "Pedro Azpiazu",
     "party": "PNV",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputado",
     "topics": [
       "perejil"
@@ -2183,7 +2183,7 @@ export const QUOTES = [
     "legislature": "VII",
     "speaker": "Luis Mardones",
     "party": "Coalición Canaria",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputado",
     "topics": [
       "perejil"
@@ -2481,7 +2481,7 @@ export const QUOTES = [
     "legislature": "X",
     "speaker": "Emilio Olabarría",
     "party": "PNV",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputado",
     "topics": [
       "tarajal"
@@ -2553,7 +2553,7 @@ export const QUOTES = [
     "legislature": "X",
     "speaker": "Emilio Olabarría",
     "party": "PNV",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputado",
     "topics": [
       "tarajal"
@@ -3135,7 +3135,7 @@ export const QUOTES = [
     "legislature": "XIV",
     "speaker": "Aitor Esteban",
     "party": "PNV",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "portavoz del PNV",
     "topics": [
       "sahara-2022"
@@ -3376,7 +3376,7 @@ export const QUOTES = [
     "legislature": "XIV",
     "speaker": "Mikel Legarda",
     "party": "PNV",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputado",
     "topics": [
       "melilla-2022"
@@ -3449,7 +3449,7 @@ export const QUOTES = [
     "legislature": "XIV",
     "speaker": "Íñigo Barandiaran",
     "party": "PNV",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputado",
     "topics": [
       "melilla-2022"
@@ -3895,7 +3895,7 @@ export const QUOTES = [
     "legislature": "XV",
     "speaker": "Mikel Legarda",
     "party": "PNV",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputado",
     "topics": [
       "ceuta",
@@ -3921,7 +3921,7 @@ export const QUOTES = [
     "legislature": "XV",
     "speaker": "Oskar Matute",
     "party": "EH Bildu",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputado",
     "topics": [
       "ceuta",
@@ -3947,7 +3947,7 @@ export const QUOTES = [
     "legislature": "XV",
     "speaker": "Teresa Jordà",
     "party": "ERC",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputada",
     "topics": [
       "ceuta",
@@ -4172,7 +4172,7 @@ export const QUOTES = [
     "legislature": "XV",
     "speaker": "Marta Madrenas",
     "party": "Junts",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputada",
     "topics": [
       "ceuta",
@@ -4197,7 +4197,7 @@ export const QUOTES = [
     "legislature": "XV",
     "speaker": "Francesc-Marc Álvaro",
     "party": "ERC",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputado",
     "topics": [
       "ceuta",
@@ -4222,7 +4222,7 @@ export const QUOTES = [
     "legislature": "XV",
     "speaker": "Jon Iñarritu",
     "party": "EH Bildu",
-    "bloc": "otro",
+    "bloc": "nacionalistas",
     "role": "diputado",
     "topics": [
       "ceuta",
@@ -4262,6 +4262,1433 @@ export const QUOTES = [
     "sourceIds": [
       "src-newtral-art64",
       "src-newtral-narrativas"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-sanchez-leones",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Pedro Sánchez",
+    "party": "PSOE",
+    "bloc": "gobierno",
+    "role": "presidente del Gobierno",
+    "topics": [
+      "ceuta",
+      "soberania",
+      "wad-ras",
+      "historia"
+    ],
+    "era": "democracia",
+    "text": "Todos los españoles reconocen las esculturas de los dos leones que flanquean las puertas de este Congreso […] estos leones fueron fundidos en el año 1865, a partir de unos cañones capturados a las tropas marroquíes en la llamada Guerra de África. Y que se hicieron para conmemorar la firma del Tratado de Wad-Ras, que sirvió para poner fin a este conflicto y para consolidar la soberanía de España sobre Ceuta y Melilla a perpetuidad […] desde hace siglos, estas dos ciudades son españolas. Y desde aquel tratado, lo son por acuerdo diplomático. Y les aseguro que por parte del Gobierno de España va a seguir así hasta el final de los tiempos.",
+    "context": "Apertura de la comparecencia. Texto de la transcripción oficial de Moncloa, cotejado con la grabación.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777807, min. 1:27; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777807",
+    "sourceIds": [
+      "src-moncloa-2026-09-03-transc",
+      "src-congreso-video-pl194"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-sanchez-agentes",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Pedro Sánchez",
+    "party": "PSOE",
+    "bloc": "gobierno",
+    "role": "presidente del Gobierno",
+    "topics": [
+      "ceuta",
+      "frontera",
+      "guardia-civil",
+      "muertos"
+    ],
+    "era": "democracia",
+    "text": "Nuestros agentes tuvieron que tomar una decisión operativa en pocos minutos. Tuvieron que elegir o bien entre garantizar momentáneamente la estanqueidad de la frontera o defender la vida humana. Eligieron defender la vida humana […] Yo, como presidente del Gobierno y como ciudadano español, afirmo que hicieron lo correcto. Creo que hicieron lo más inteligente y lo más valiente. Porque, ante la amenaza, supieron responder con humanidad en lugar de barbarie.",
+    "context": "Sobre la decisión de los agentes en el espigón del Tarajal el 30 de julio. Texto de la transcripción oficial de Moncloa, cotejado con la grabación.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777807, min. 7:05; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777807",
+    "sourceIds": [
+      "src-moncloa-2026-09-03-transc",
+      "src-congreso-video-pl194"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-sanchez-saco",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Pedro Sánchez",
+    "party": "PSOE",
+    "bloc": "gobierno",
+    "role": "presidente del Gobierno",
+    "topics": [
+      "ceuta",
+      "devoluciones",
+      "derechos"
+    ],
+    "era": "democracia",
+    "text": "No se puede coger a un ser humano del brazo y arrojarlo sin más al otro lado de la frontera como si fuese un saco de tierra […] España es una gran democracia. Somos un Estado social y democrático de Derecho plenamente integrado en la Unión Europea y en la Comunidad Internacional. Eso significa que hay una serie de leyes y derechos […] que nos obligan a cumplir y fielmente preservar.",
+    "context": "Sobre las devoluciones y las «declaraciones que hemos escuchado» de responsables políticos. Texto de la transcripción oficial de Moncloa, cotejado con la grabación.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777807, min. 12:55; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777807",
+    "sourceIds": [
+      "src-moncloa-2026-09-03-transc",
+      "src-congreso-video-pl194"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-aizpurua-recalibrar",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Mertxe Aizpurua",
+    "party": "EH Bildu",
+    "bloc": "nacionalistas",
+    "role": "portavoz de EH Bildu",
+    "topics": [
+      "ceuta",
+      "marruecos",
+      "sahara",
+      "cenif"
+    ],
+    "era": "democracia",
+    "text": "Lo que no es aceptable, señor Sánchez, es que, siendo consciente de todo ello y buscando evitar una escalada que pueda originar nuevas crisis, se exculpe a Marruecos y se tilde a su régimen de socio fiable […] Quizá sea hora de recalibrar su posición hacia Marruecos y rectificar su error sobre el Sáhara. Y ahora se conocen informes policiales que apuntan a la implicación y responsabilidad directa de Marruecos en la crisis. Por tanto, la pregunta es inevitable: ¿la Policía ha ocultado información relevante al Gobierno sobre la implicación de Marruecos? ¿O algún juez o jueza? ¿O el CNI? […] De ser así […] la judicatura o la policía estarían directamente maniobrando contra el Gobierno […] Y eso tiene un nombre.",
+    "context": "«Por el contrario, de conocer esta información […] su Gobierno y algunos de sus ministros habrían mentido»; pide depurar responsabilidades. Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777814, min. 15:26; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777814",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-aizpurua-racismo",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Mertxe Aizpurua",
+    "party": "EH Bildu",
+    "bloc": "nacionalistas",
+    "role": "portavoz de EH Bildu",
+    "topics": [
+      "ceuta",
+      "menores",
+      "acogida",
+      "racismo"
+    ],
+    "era": "democracia",
+    "text": "En solo tres semanas tras el inicio de la guerra de Ucrania llegaron al Estado español más de 80.000 ucranianos y ucranianas. No hubo problemas de acogida ni de gestión […] Pero es que hoy ustedes, señorías de la derecha, rechazan acoger a dos mil menores, a dos mil niñas y niños que se encuentran solos […] Eso se llama racismo, señorías, racismo.",
+    "context": "Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777814, min. 11:13; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777814",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-sanchez-alertas",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Pedro Sánchez",
+    "party": "PSOE",
+    "bloc": "gobierno",
+    "role": "presidente del Gobierno",
+    "topics": [
+      "ceuta",
+      "cenif",
+      "cni",
+      "alertas"
+    ],
+    "era": "democracia",
+    "text": "Si en los días previos a la crisis el Gobierno recibió alertas o avisos extraordinarios que anticipaban lo que ocurrió después, la respuesta es clara: no lo hizo. No lo hizo. Hemos examinado, señorías, todos los informes, todos los mensajes, notas verbales de las Fuerzas y Cuerpos de Seguridad del Estado, también de nuestro Centro Nacional de Inteligencia […] Y puedo asegurarles que ninguna iba más allá de la descripción de los datos o del aviso rutinario.",
+    "context": "La cifra de 180.000 «era sencillamente el número de integrantes de un grupo de Facebook»; Frontex «lo que hizo fue un informe rutinario». Texto de la transcripción oficial de Moncloa, cotejado con la grabación.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777807, min. 21:20; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777807",
+    "sourceIds": [
+      "src-moncloa-2026-09-03-transc",
+      "src-congreso-video-pl194"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-sanchez-cenif",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Pedro Sánchez",
+    "party": "PSOE",
+    "bloc": "gobierno",
+    "role": "presidente del Gobierno",
+    "topics": [
+      "ceuta",
+      "cenif",
+      "alertas",
+      "transparencia"
+    ],
+    "era": "democracia",
+    "text": "El CENIF elaboró dos notas: el 28 de julio y el 29 de julio […] La nota del 29 de julio habla de «un riesgo potencial de entradas irregulares en las ciudades autónomas de Ceuta y Melilla» […] declara que «no puede asegurarse que esto vaya a producirse» […] y que se «traslada esta información exclusivamente a los puestos fronterizos» […] He dado orden de publicar un dossier con todos los informes, todos […] Anticipar, en cuestión de horas, la llegada de 70.000 personas en Ceuta, eso, señorías, no lo hizo ningún informe, al menos ninguno que llegara a manos del Gobierno de España.",
+    "context": "«Lo que es absurdo es pensar que el Ejecutivo fue avisado y no hizo nada adrede, como han dicho abiertamente dirigentes del Partido Popular y de Vox. ¿En qué cabeza cabe, señorías?» (min. 31:38). Texto de la transcripción oficial de Moncloa, cotejado con la grabación.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777807, min. 27:48; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777807",
+    "sourceIds": [
+      "src-moncloa-2026-09-03-transc",
+      "src-congreso-video-pl194"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-sanchez-descartado",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Pedro Sánchez",
+    "party": "PSOE",
+    "bloc": "gobierno",
+    "role": "presidente del Gobierno",
+    "topics": [
+      "ceuta",
+      "desinformacion",
+      "rusia",
+      "israel",
+      "marruecos"
+    ],
+    "era": "democracia",
+    "text": "A día de hoy, ninguno, ninguno, señorías, ha podido determinar si realmente hubo detrás de ellos perfiles […] asociados […] a los Estados de Marruecos, de Rusia o Israel. De momento, señorías, esto es descartado por nuestros servicios de inteligencia. Digo de momento porque es la información que disponemos hasta el momento. Lo que sí parece evidente es que hubo mafias y comerciantes que aprovecharon y alimentaron la situación.",
+    "context": "Rebaja su tesis del 31 de agosto en la SER. Poco después: «patrioterismo traidor de estas fuerzas políticas que siempre atacan a España cuando España está en apuros» (min. 37:45). Texto de la transcripción oficial de Moncloa, cotejado con la grabación.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777807, min. 35:35; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777807",
+    "sourceIds": [
+      "src-moncloa-2026-09-03-transc",
+      "src-congreso-video-pl194"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-sanchez-marruecos",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Pedro Sánchez",
+    "party": "PSOE",
+    "bloc": "gobierno",
+    "role": "presidente del Gobierno",
+    "topics": [
+      "ceuta",
+      "marruecos",
+      "gendarmeria",
+      "pruebas"
+    ],
+    "era": "democracia",
+    "text": "A día de hoy nadie ha aportado pruebas al Gobierno que permitan concluir que esta entrada masiva en la ciudad española de Ceuta fuera diseñada o ejecutada por las autoridades marroquíes […] El desempeño de Marruecos durante la crisis tuvo tres momentos distintos. Uno, antes del día 30 de julio, en el que los operativos de Marruecos funcionaron con normalidad y no se reportaron incidentes. Un segundo momento, durante diez horas centrales del día 30 de julio, en el que la Gendarmería marroquí permitió el cruce de la frontera. Y finalmente, un tercer momento durante los días y semanas posteriores en los que la Gendarmería la controló, por cierto, de forma eficaz.",
+    "context": "«Si existieran esas pruebas sólidas actuaríamos en consecuencia con total contundencia» (min. 43:03). La embajadora marroquí fue convocada el 21 de agosto por las declaraciones «inaceptables» de dos ministros (min. 33:11). Texto de la transcripción oficial de Moncloa, cotejado con la grabación.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777807, min. 40:21; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777807",
+    "sourceIds": [
+      "src-moncloa-2026-09-03-transc",
+      "src-congreso-video-pl194"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-sanchez-explicarse",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Pedro Sánchez",
+    "party": "PSOE",
+    "bloc": "gobierno",
+    "role": "presidente del Gobierno",
+    "topics": [
+      "ceuta",
+      "cenif",
+      "policia",
+      "marruecos",
+      "frontex"
+    ],
+    "era": "democracia",
+    "text": "Lo que tenemos también, lógicamente, que entender es por qué el CENIF no remitió una nota informativa del 29 de julio a ningún superior en la cadena de mando de la Policía Nacional y también del Ministerio del Interior. Por qué no se compartió con sus superiores y con el Gobierno de España el contenido de un informe que se había encargado, en este caso por parte de una jueza del Poder Judicial, y con potenciales implicaciones para la seguridad del Estado. Esto también tendrá que explicarse, señorías […] Nosotros, señorías, tenemos que seguir cooperando con Marruecos […] Pero es evidente que, después de lo ocurrido, esa cooperación tiene que ser diferente.",
+    "context": "Anuncia una presencia permanente de Frontex «en el puerto y en el espigón» y una misión de Europol. Texto de la transcripción oficial de Moncloa, cotejado con la grabación.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777807, min. 48:47; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777807",
+    "sourceIds": [
+      "src-moncloa-2026-09-03-transc",
+      "src-congreso-video-pl194"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-sanchez-rey",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Pedro Sánchez",
+    "party": "PSOE",
+    "bloc": "gobierno",
+    "role": "presidente del Gobierno",
+    "topics": [
+      "ceuta",
+      "corona",
+      "monarquia",
+      "refrendo"
+    ],
+    "era": "democracia",
+    "text": "El Gobierno ha compartido la necesidad de que, después de 20 años sin una visita del jefe del Estado a Ceuta y Melilla, el jefe del Estado visite estas dos ciudades españolas en las próximas semanas y transmita el compromiso absoluto del Estado con estas dos ciudades autónomas.",
+    "context": "Dos días antes, Moncloa había dicho que la visita «no será inminente». Texto de la transcripción oficial de Moncloa, cotejado con la grabación.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777807, min. 55:20; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777807",
+    "sourceIds": [
+      "src-moncloa-2026-09-03-transc",
+      "src-congreso-video-pl194",
+      "src-infobae-rey-visita-3sept"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-vaquero-altura",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Maribel Vaquero",
+    "party": "PNV",
+    "bloc": "nacionalistas",
+    "role": "portavoz del PNV",
+    "topics": [
+      "ceuta",
+      "responsabilidad",
+      "marruecos"
+    ],
+    "era": "democracia",
+    "text": "Si no se ponen de acuerdo ustedes mismos en la versión que dan, no pueden pedir a la gente un acto de fe. Lo único que han compartido, con algunas excepciones, es la exculpación de Marruecos en lo sucedido, hasta el día de ayer al menos […] Es inverosímil que Marruecos quede exculpado de toda responsabilidad. Marruecos tuvo o bien que colaborar o al menos mirar para otro lado […] Señor Sánchez, ha estado casi cuatro semanas ausente y seguimos sin saber qué y por qué sucedió, y ustedes además niegan la mayor […] Nos ha venido con un relato autocomplaciente. Señor Sánchez, con todo el respeto, usted no ha estado a la altura.",
+    "context": "Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777815, min. 1:17; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777815",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-belarra-dictadura",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Ione Belarra",
+    "party": "Podemos",
+    "bloc": "izquierda",
+    "role": "diputada de Podemos (Grupo Mixto)",
+    "topics": [
+      "ceuta",
+      "marruecos",
+      "diplomacia",
+      "cenif"
+    ],
+    "era": "democracia",
+    "text": "Ha llegado el momento de que empecemos a hablar en este Congreso con total claridad sobre Marruecos […] que suban a esta tribuna y que repitan conmigo: Marruecos es un régimen totalitario. Marruecos es una dictadura y su pueblo es una víctima del rey Mohamed VI […] La pregunta que hoy está en este Congreso y que usted no acaba de responder es por qué protege a Marruecos, por qué está usted negando lo que es evidente […] ¿Por qué este sainete entre la ministra Robles y el señor Marlaska? […] Creo que es el momento de romper relaciones diplomáticas y comerciales con Marruecos, hasta que sea una democracia.",
+    "context": "La prensa transcribió «farsa»; en la grabación se oye «sainete». Acusa al Gobierno de «inacción calculada» que ha dado «gasolina» a la derecha. Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777816, min. 0:40; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777816",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-belarra-chanclas",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Ione Belarra",
+    "party": "Podemos",
+    "bloc": "izquierda",
+    "role": "diputada de Podemos (Grupo Mixto)",
+    "topics": [
+      "ceuta",
+      "invasion",
+      "racismo",
+      "migracion"
+    ],
+    "era": "democracia",
+    "text": "Una invasión es lo que hace Israel en la franja de Gaza, con soldados sanguinarios, con armas ultramodernas. Por mucho que ustedes lo repitan y lo griten, unas cuantas miles de personas buscando una vida mejor en chanclas no han sido nunca en la historia ni van a ser nunca una invasión […] El problema, señor Feijóo, señor Abascal, es su racismo.",
+    "context": "Cerró con «váyanse al carajo»; la presidencia anunció que la expresión se retiraría del Diario de Sesiones. Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777816, min. 8:02; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777816",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-valido-canarias",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Cristina Valido",
+    "party": "Coalición Canaria",
+    "bloc": "nacionalistas",
+    "role": "diputada de Coalición Canaria (Grupo Mixto)",
+    "topics": [
+      "ceuta",
+      "canarias",
+      "menores",
+      "frontera"
+    ],
+    "era": "democracia",
+    "text": "Canarias está con Ceuta, sin matices […] Señor Sánchez, nosotros queremos equipos de triaje en Canarias como los que se han puesto en Ceuta. Equipos de triaje dependientes del Estado: que no entre un solo menor a un centro de una comunidad autónoma que no tenga garantizada la minoría de edad.",
+    "context": "«Hace ya 32 años de la llegada de la primera patera a Canarias». Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777818, min. 0:23; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777818",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-lopez-vivir",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Patxi López",
+    "party": "PSOE",
+    "bloc": "gobierno",
+    "role": "portavoz del Grupo Socialista",
+    "topics": [
+      "ceuta",
+      "invasion",
+      "muertos",
+      "migracion"
+    ],
+    "era": "democracia",
+    "text": "141 personas han perdido la vida en esta situación. Hoy, 80 más han perdido la vida queriendo llegar a Canarias […] La intención de ninguno de ellos, como la intención de la absoluta mayoría de los que están hoy en Ceuta, nunca fue invadir: fue vivir, fue poder vivir allí donde les habían prometido tener un futuro. Y eso necesita una memoria digna también para esas víctimas.",
+    "context": "Al PP: «cuando Ceuta necesita ayuda de verdad, no soflamas, no pancartas, no megáfonos, […] ni una sola de las comunidades gobernadas por el Partido Popular se ha manifestado dispuesta a prestar esa ayuda» (min. 10:21). Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777821, min. 2:02; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777821",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-sanchez-replica-igual",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Pedro Sánchez",
+    "party": "PSOE",
+    "bloc": "gobierno",
+    "role": "presidente del Gobierno, turno de réplica",
+    "topics": [
+      "ceuta",
+      "marruecos",
+      "diplomacia",
+      "traicion"
+    ],
+    "era": "democracia",
+    "text": "Ustedes llevan años repitiendo que mi Ejecutivo está cautivo de no sé qué intereses y de la Corona alauita, y que nos plegamos mansamente a sus deseos porque poseen información delicada o porque somos unos traidores a la patria […] Este Gobierno creo que puede tener defectos […] pero, desde luego, creo que hemos demostrado en reiteradas ocasiones que miramos de igual a igual a todas las potencias extranjeras, también a Marruecos. Pero tampoco tenemos la más mínima intención de desencadenar un conflicto diplomático de primer orden, en un mundo ya de por sí convulso, con un país vecino sin tener datos sólidos.",
+    "context": "Réplica a Feijóo y Abascal. Pide a Abascal que suba a la tribuna y «se disculpe» por el diputado de Vox que habló de «cazar uno a uno» a los migrantes (min. 38:02). Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777829 (réplica), min. 17:43; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777829",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-apaciguamiento",
+      "src-moncloacom-pleno-3sept"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-sanchez-cierre",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Pedro Sánchez",
+    "party": "PSOE",
+    "bloc": "gobierno",
+    "role": "presidente del Gobierno, turno de cierre",
+    "topics": [
+      "ceuta",
+      "marruecos",
+      "diplomacia",
+      "escalada"
+    ],
+    "era": "democracia",
+    "text": "Hoy, señorías, en esta Cámara hemos escuchado a muchos que no tienen estas limitaciones […] que lo resuelven todo de un plumazo, que no se quieren someter al Estado de derecho, que quieren reventar nuestras relaciones de vecindad. Esa es su propuesta: escalar sin reservas un conflicto. Yo no puedo hacerlo, no debo hacerlo y no lo voy a hacer.",
+    "context": "Cierre del pleno, hacia las 15:15. Antes enumera los límites de una crisis así: la geografía de Ceuta y Melilla, «las obligaciones que impone el Estado de derecho» y las consecuencias para las relaciones con los vecinos. Termina con tres compromisos: sostener el esfuerzo «hasta que la vida de los ceutíes vuelva a la normalidad», medios para que «una crisis así no vuelva a suceder» y «asegurarnos de que lo sucedido estos días tenga unas consecuencias y también se paguen por ellas» (min. 4:04). Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777837 (cierre), min. 2:14; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777837",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-vozpopuli-directo-3sept",
+      "src-eldiario-cierre-consecuencias"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-feijoo-replica-hecho",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Alberto Núñez Feijóo",
+    "party": "PP",
+    "bloc": "derecha",
+    "role": "presidente del PP, turno de réplica",
+    "topics": [
+      "ceuta",
+      "que-habrian-hecho",
+      "corona",
+      "marruecos"
+    ],
+    "era": "democracia",
+    "text": "Me dice usted qué habría hecho yo: no irme de vacaciones; cesar al ministro del Interior por incompetente y por mentiroso; no dejar en ridículo a la Guardia Civil, a la Policía Nacional y al CNI y al Ministerio de Defensa; por supuesto, acompañar al Rey a Ceuta y no reprocharle que no ha ido a Ceuta, porque sigue sus instrucciones; y, por supuesto, citar a la embajadora cuando está en España, no cuando está fuera; y, por supuesto, señorías, no broncearme en ninguna playa.",
+    "context": "Respuesta a la pregunta de Sánchez «¿qué haría usted de diferente?». Antes: «parece ser que el único socio leal que tiene en la invasión a Ceuta es Marruecos» (min. 2:15). Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777830 (réplica), min. 4:43; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777830",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-feijoo-mareta"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-abascal-replica-tratado",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Santiago Abascal",
+    "party": "Vox",
+    "bloc": "derecha",
+    "role": "presidente de Vox, turno de réplica",
+    "topics": [
+      "ceuta",
+      "marruecos",
+      "tratado-1991",
+      "diplomacia",
+      "mundial"
+    ],
+    "era": "democracia",
+    "text": "Yo me atrevo a pedirles apoyo: vamos a ir a la suspensión del Tratado de Amistad España-Marruecos, vamos a pedir la suspensión del acuerdo preferencial de la Unión Europea y de Marruecos, vamos a proponer la retirada del embajador español en Marruecos y vamos a seguir proponiendo la expulsión del Mundial de Marruecos mientras siga haciendo estas políticas, que son guerras híbridas contra nuestra patria. ¿Son ustedes capaces de apoyarlo o no?",
+    "context": "A los socios del Gobierno. Antes: Sánchez «tiene la empatía de un asesino en serie» (min. 4:37); «por su culpa y por la de su amo hay cientos de muertos en Ceuta» (min. 1:27). Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777831 (réplica), min. 3:00; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777831",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-abascal-virrey-3sept"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-feijoo-incompetente",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Alberto Núñez Feijóo",
+    "party": "PP",
+    "bloc": "derecha",
+    "role": "presidente del PP",
+    "topics": [
+      "ceuta",
+      "responsabilidad"
+    ],
+    "era": "democracia",
+    "text": "Si esta es la verdad, dimita por incompetente; y si es falso, dimita por cómplice, señor Sánchez.",
+    "context": "Sobre la tesis de la comparecencia de Sánchez («no nos enteramos de nada y, por tanto, no tenemos responsabilidad ni culpa alguna»). Según la grabación del Canal Parlamento; el Diario puede corregir muletillas y sintaxis.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777808, min. 2:12; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777808",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-feijoo-invasion",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Alberto Núñez Feijóo",
+    "party": "PP",
+    "bloc": "derecha",
+    "role": "presidente del PP",
+    "topics": [
+      "ceuta",
+      "invasion",
+      "soberania"
+    ],
+    "era": "democracia",
+    "text": "Señorías, Ceuta no sufrió una crisis migratoria. Fue una invasión que continúa. Lo dijo usted mismo: diagnosticó un ataque contra la integridad territorial de la nación y, acto seguido, se largó. Se largó a compartir la banda sonora de su verano. Nerón con TikTok, y con una frialdad que asusta.",
+    "context": "Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777808, min. 2:51; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777808",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-feijoo-conclusion",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Alberto Núñez Feijóo",
+    "party": "PP",
+    "bloc": "derecha",
+    "role": "presidente del PP",
+    "topics": [
+      "ceuta",
+      "marruecos",
+      "cenif"
+    ],
+    "era": "democracia",
+    "text": "La operación salió de Marruecos, fue consentida por Marruecos y hay indicios de que Marruecos la coordinó, y el Gobierno lo sabía porque fue advertido de ello. Esa es la conclusión, señoría.",
+    "context": "Sobre los avisos previos y el informe del CENIF. Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777808, min. 4:14; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777808",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-feijoo-miedo",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Alberto Núñez Feijóo",
+    "party": "PP",
+    "bloc": "derecha",
+    "role": "presidente del PP",
+    "topics": [
+      "ceuta",
+      "marruecos",
+      "pegasus"
+    ],
+    "era": "democracia",
+    "text": "¿Qué documento, conversación o indicio había en su teléfono para que se comporte de esta manera? ¿Por qué tiene miedo a Marruecos? ¿Qué sabe Marruecos de usted? Ningún miedo personal puede situarse por encima del interés nacional. España no puede tener un presidente bajo chantaje.",
+    "context": "Alusión al espionaje con Pegasus del teléfono del presidente. Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777808, min. 5:15; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777808",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-feijoo-sabia-tapo",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Alberto Núñez Feijóo",
+    "party": "PP",
+    "bloc": "derecha",
+    "role": "presidente del PP",
+    "topics": [
+      "ceuta",
+      "cenif",
+      "responsabilidad"
+    ],
+    "era": "democracia",
+    "text": "Usted y su Gobierno nos ha mentido a la cara todo el tiempo, y lo ha vuelto a hacer en esta comparecencia en el Congreso. Señor Sánchez, usted lo sabía y lo tapó. Lo sabía y lo tapó durante un mes, y lo sabe y lo tapa otra vez en la mañana de hoy.",
+    "context": "Tras leer la alerta del CENIF del 29 de julio («riesgo extremo de llegadas masivas a Ceuta»). Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777808, min. 7:28; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777808",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-feijoo-mireme",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Alberto Núñez Feijóo",
+    "party": "PP",
+    "bloc": "derecha",
+    "role": "presidente del PP",
+    "topics": [
+      "ceuta",
+      "responsabilidad",
+      "judicial"
+    ],
+    "era": "democracia",
+    "text": "Señor Sánchez, no espere de mí la condescendencia con sus actos que tiene usted con el Reino de Marruecos. Señor Sánchez, míreme: la va a pagar ante la Justicia y ante las urnas.",
+    "context": "Anuncia que el PP se ha personado en la causa de la Audiencia Nacional. Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777808, min. 9:08; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777808",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-feijoo-seguridad",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Alberto Núñez Feijóo",
+    "party": "PP",
+    "bloc": "derecha",
+    "role": "presidente del PP",
+    "topics": [
+      "ceuta",
+      "soberania",
+      "frontera"
+    ],
+    "era": "democracia",
+    "text": "Una frontera española no puede estar cinco años pendiente de la buena voluntad de otro país. Una frontera se controla con una estructura permanente de alerta, con refuerzos de la Policía, de la Guardia Civil y de Inteligencia y con una protección física de la frontera. La seguridad de España no se delega, se ejerce, señoría.",
+    "context": "De su lista de lo que «debió evitarse» tras la crisis de 2021. Más adelante: «España no subcontrata su soberanía a nadie». Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777808, min. 10:45; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777808",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-feijoo-embajadora",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Alberto Núñez Feijóo",
+    "party": "PP",
+    "bloc": "derecha",
+    "role": "presidente del PP",
+    "topics": [
+      "ceuta",
+      "marruecos",
+      "diplomacia",
+      "corona"
+    ],
+    "era": "democracia",
+    "text": "Convocar a la embajadora de Marruecos, no de forma clandestina sino de forma oficial, señoría, y llamar a consultas a nuestro embajador en Rabat. Y, por supuesto, le propondría a Su Majestad el Rey una visita oficial a Ceuta y Melilla, y yo le acompañaría.",
+    "context": "Puntos 9 y 10 de su lista de medidas. Sánchez acababa de revelar que la embajadora fue convocada el 21 de agosto. Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777808, min. 12:56; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777808",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-embajadora-21ago"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-feijoo-pegasus",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Alberto Núñez Feijóo",
+    "party": "PP",
+    "bloc": "derecha",
+    "role": "presidente del PP",
+    "topics": [
+      "ceuta",
+      "pegasus",
+      "marruecos"
+    ],
+    "era": "democracia",
+    "text": "Esclareceremos completamente el caso Pegasus. Nunca más habrá una sombra de dudas sobre la libertad del presidente del Gobierno de España. Por cierto, ahora que va a sacar un dossier sobre lo que ha ocurrido, supongo que en ese dossier estarán las conversaciones de Pegasus.",
+    "context": "Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777808, min. 14:41; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777808",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-feijoo-cierre",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Alberto Núñez Feijóo",
+    "party": "PP",
+    "bloc": "derecha",
+    "role": "presidente del PP",
+    "topics": [
+      "ceuta",
+      "estado"
+    ],
+    "era": "democracia",
+    "text": "Señor Sánchez, la nación es más fuerte que sus muros. El Estado es más sólido que su Gobierno. Ambos serán reconstruidos y ambos sobrevivirán a usted. Se lo garantizo.",
+    "context": "Cierre de su intervención. Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777808, min. 16:33; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777808",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-abascal-traicion",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Santiago Abascal",
+    "party": "Vox",
+    "bloc": "derecha",
+    "role": "presidente de Vox",
+    "topics": [
+      "ceuta",
+      "traicion"
+    ],
+    "era": "democracia",
+    "text": "Señorías, traición. No hay otra palabra. Según la Real Academia de la Lengua Española, la traición es el hecho de faltar a la lealtad y a la fidelidad debidas. Y el presidente Sánchez es un traidor.",
+    "context": "Apertura de su intervención. Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777809, min. 0:31; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777809",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-abascal-policias",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Santiago Abascal",
+    "party": "Vox",
+    "bloc": "derecha",
+    "role": "presidente de Vox",
+    "topics": [
+      "ceuta",
+      "traicion",
+      "policia"
+    ],
+    "era": "democracia",
+    "text": "Traidor a España, traidor a los españoles, traidor a los ceutíes, traidor incluso a su propio partido, a sus propios compromisos y a sus propios electores. Y hoy hemos comprobado que traidor también a los policías, a los que ha querido señalar y convertir en responsables de tomar la decisión de no defender nuestras fronteras.",
+    "context": "Por la frase de Sánchez de que los agentes «eligieron defender la vida humana». Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777809, min. 0:58; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777809",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-abascal-corona",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Santiago Abascal",
+    "party": "Vox",
+    "bloc": "derecha",
+    "role": "presidente de Vox",
+    "topics": [
+      "ceuta",
+      "corona",
+      "monarquia",
+      "marruecos"
+    ],
+    "era": "democracia",
+    "text": "Le vemos muy valiente contra el rey de España y muy sumiso con el de Marruecos. Ya sabemos a qué Corona rinde usted cuentas. Ya sabemos que usted aceptaría, no le importaría ser el virrey de Mohamed VI si no logra sus sueños de grandeza de ser el jefe del Estado.",
+    "context": "Por la entrevista de Sánchez en la SER del 31 de agosto sobre la visita del Rey a Ceuta. Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777809, min. 3:30; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777809",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-abascal-invasion",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Santiago Abascal",
+    "party": "Vox",
+    "bloc": "derecha",
+    "role": "presidente de Vox",
+    "topics": [
+      "ceuta",
+      "invasion",
+      "migracion"
+    ],
+    "era": "democracia",
+    "text": "Lo de Ceuta no ha sido una crisis migratoria, como ha venido a decir Sánchez hoy a esta tribuna. Ni siquiera una invasión migratoria. Fue una invasión y punto, una invasión a secas. La migración es un proyecto de vida con el que muchas personas quieren mejorar; la invasión es un proyecto de conquista.",
+    "context": "Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777809, min. 3:58; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777809",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-abascal-embajador",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Santiago Abascal",
+    "party": "Vox",
+    "bloc": "derecha",
+    "role": "presidente de Vox",
+    "topics": [
+      "ceuta",
+      "marruecos",
+      "diplomacia"
+    ],
+    "era": "democracia",
+    "text": "Con Marruecos hemos sabido hoy que convocó en secreto a la embajadora. La convocatoria de un embajador es un hecho esencialmente público y político, no es un hecho secreto. Además, en España no necesitan embajador: usted es el embajador de Marruecos en España. Y si se reunió, sería para recibir instrucciones, no para otra cosa.",
+    "context": "Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777809, min. 6:34; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777809",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-embajadora-21ago"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-abascal-bulo",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Santiago Abascal",
+    "party": "Vox",
+    "bloc": "derecha",
+    "role": "presidente de Vox",
+    "topics": [
+      "ceuta",
+      "marruecos",
+      "desinformacion"
+    ],
+    "era": "democracia",
+    "text": "Un bulo, señor Sánchez, no mueve a 100.000 personas contra una frontera que, en palabras de los propios policías, es la zona más militarizada del norte de África. En Marruecos no se manifiestan ni cien personas sin permiso del régimen.",
+    "context": "Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777809, min. 8:58; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777809",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-abascal-102",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Santiago Abascal",
+    "party": "Vox",
+    "bloc": "derecha",
+    "role": "presidente de Vox",
+    "topics": [
+      "ceuta",
+      "traicion",
+      "articulo-102"
+    ],
+    "era": "democracia",
+    "text": "Es urgente para nosotros que esta Cámara active el artículo 102 de la Constitución […] Los escaños de Vox están a disposición de esta iniciativa. Y punto 3, escuche bien, señor Sánchez: la prerrogativa real de gracia no será aplicable a ninguno de los supuestos del presente artículo. Es decir, que para este delito no hay indulto.",
+    "context": "Lee los tres apartados del artículo 102. Vox tiene 33 diputados; la iniciativa exige 88 y la aprobación, 176. Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777809, min. 10:35; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777809",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-abascal-violador",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Santiago Abascal",
+    "party": "Vox",
+    "bloc": "derecha",
+    "role": "presidente de Vox",
+    "topics": [
+      "ceuta",
+      "marruecos",
+      "traicion"
+    ],
+    "era": "democracia",
+    "text": "Sánchez nos dijo que estuvo al habla constantemente con las autoridades marroquíes el 30 y el 31 de julio, mientras la frontera estaba siendo violada. Sánchez estaba hablando con el violador. ¿Qué le dijeron? ¿Qué les prometió? ¿Con qué le amenazaron? ¿Qué saben de usted?",
+    "context": "Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777809, min. 11:52; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777809",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-abascal-amo",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Santiago Abascal",
+    "party": "Vox",
+    "bloc": "derecha",
+    "role": "presidente de Vox",
+    "topics": [
+      "ceuta",
+      "marruecos"
+    ],
+    "era": "democracia",
+    "text": "Confiesa un mes después que no sabe lo que pasó. ¿No sabe lo que pasó? Qué curioso, pero sí sabe quién no fue. Es lo único que tiene claro: que Marruecos es su amigo. Pero no es verdad: Marruecos es su amo, señor Sánchez.",
+    "context": "Según la grabación del Canal Parlamento, cotejada con la prensa («amo»).",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777809, min. 13:21; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777809",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-santiago-ataque",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Enrique Santiago",
+    "party": "Sumar (IU)",
+    "bloc": "izquierda",
+    "role": "diputado de Sumar",
+    "topics": [
+      "ceuta",
+      "marruecos",
+      "geopolitica"
+    ],
+    "era": "democracia",
+    "text": "España ha sufrido un ataque de Marruecos utilizando a personas vulnerables. Una llegada masiva en la que se mezclan los flujos migratorios y las erróneas políticas de externalización de fronteras con una operación de desestabilización con claras intenciones políticas y geoestratégicas. Nada que ver con mafias de tráfico de personas […] Marruecos, en coordinación con Estados Unidos e Israel, ha organizado la masiva entrada de 80.000 personas. Defender otra hipótesis no es creíble.",
+    "context": "Pide convocar «ya» a la embajadora y pregunta si el jefe del Estado ha llamado a Mohamed VI. Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777810, min. 1:57; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777810",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-santiago-tarde",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Enrique Santiago",
+    "party": "Sumar (IU)",
+    "bloc": "izquierda",
+    "role": "diputado de Sumar",
+    "topics": [
+      "ceuta",
+      "responsabilidad",
+      "seguridad-nacional"
+    ],
+    "era": "democracia",
+    "text": "Presidente, se ha actuado tarde, sin dimensionar la crisis humanitaria ni sus consecuencias políticas. Un mes se tardó en convocar al Consejo de Seguridad Nacional y al mando único. Antonio Maíllo lo pidió el 8 de agosto.",
+    "context": "Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777810, min. 3:48; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777810",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-santiago-mintiendo",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Enrique Santiago",
+    "party": "Sumar (IU)",
+    "bloc": "izquierda",
+    "role": "diputado de Sumar",
+    "topics": [
+      "ceuta",
+      "menores",
+      "devoluciones"
+    ],
+    "era": "democracia",
+    "text": "La solución que proponen Vox, el Partido Popular y las administraciones que gobiernan ambos, incluido el señor Vivas, es devolver de inmediato a todas estas personas a Marruecos. Eso no va a ocurrir, no es solución. Están mintiendo a Ceuta y a España.",
+    "context": "Antes: «desde la firma del Tratado sobre Menores en 2007, Marruecos no ha aceptado ningún retorno»; 600 expedientes de reagrupación enviados antes del 30 de julio, «ninguno ha sido contestado». Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777810, min. 5:17; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777810",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-santiago-traslado",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Enrique Santiago",
+    "party": "Sumar (IU)",
+    "bloc": "izquierda",
+    "role": "diputado de Sumar",
+    "topics": [
+      "ceuta",
+      "menores",
+      "acogida"
+    ],
+    "era": "democracia",
+    "text": "Presidente, le pedimos una medida valiente y sensata, lo mejor para Ceuta: el traslado urgente a la Península para continuar desde aquí, conforme a la ley y con todas las garantías, los procedimientos de protección internacional, de acogida de menores, de devoluciones o expulsiones, si corresponden.",
+    "context": "Cita el traslado de más de 60.000 personas desde Lampedusa por Meloni en 2023. Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777810, min. 8:19; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777810",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-vidal-ninos",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Aina Vidal",
+    "party": "Sumar",
+    "bloc": "izquierda",
+    "role": "portavoz adjunta de Sumar",
+    "topics": [
+      "ceuta",
+      "menores",
+      "invasion"
+    ],
+    "era": "democracia",
+    "text": "Son niños, señorías, niños, no invasores, no soldados; no venían con bombas, venían a lo sumo con un flotador llorando. Eran niños, no enemigos. Y delante de una niña sola, delante de un niño solo y asustado, sin su familia ni un lugar donde dormir o comer, la única respuesta posible es acoger y proteger. La única.",
+    "context": "Réplica a Abascal, que había abandonado el hemiciclo. Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777811, min. 2:20; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777811",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-vidal-piromanos",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Aina Vidal",
+    "party": "Sumar",
+    "bloc": "izquierda",
+    "role": "portavoz adjunta de Sumar",
+    "topics": [
+      "ceuta",
+      "menores",
+      "extrema-derecha"
+    ],
+    "era": "democracia",
+    "text": "Patriotismo, señor Feijóo, no es hacer una bandera cada vez más grande. Es hacerse cargo de los problemas de su país y no hacerlos más grandes. Por eso no pueden gobernar, porque son una panda de pirómanos, racistas y traficantes de odio.",
+    "context": "Pide al PP que sus comunidades autónomas acojan a los menores: «usted tiene una llave muy poderosa». Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777811, min. 3:36; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777811",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-vidal-apaciguamiento",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Aina Vidal",
+    "party": "Sumar",
+    "bloc": "izquierda",
+    "role": "portavoz adjunta de Sumar",
+    "topics": [
+      "ceuta",
+      "marruecos",
+      "cenif"
+    ],
+    "era": "democracia",
+    "text": "Todos hemos visto las imágenes: agentes marroquíes, uniformados y de paisano, guiando y alentando movimientos. Eso está ahí. Los tribunales y las investigaciones van a determinar hasta qué punto llega la cadena de responsabilidades […] Pero no nos pidan que hagamos como que no hemos visto nada. Marruecos debe dar explicaciones […] La política de apaciguamiento de Marruecos ha fracasado. Y hay que decirlo así: ha fracasado.",
+    "context": "Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777811, min. 6:29; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777811",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-vidal-sahara",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Aina Vidal",
+    "party": "Sumar",
+    "bloc": "izquierda",
+    "role": "portavoz adjunta de Sumar",
+    "topics": [
+      "ceuta",
+      "sahara",
+      "marruecos"
+    ],
+    "era": "democracia",
+    "text": "Se lo advertimos, además, cuando abandonaron al pueblo saharaui. Los derechos de un pueblo no se intercambian por la tranquilidad supuesta diplomática, que ni siquiera ha sido así. Quizá ha llegado el momento de recuperar algo tan radical como sencillo, que es el derecho internacional. Fíjense, también para el pueblo saharaui.",
+    "context": "Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777811, min. 7:08; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777811",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-rufian-acuso",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Gabriel Rufián",
+    "party": "ERC",
+    "bloc": "nacionalistas",
+    "role": "portavoz de ERC",
+    "topics": [
+      "ceuta",
+      "marruecos",
+      "geopolitica",
+      "traicion"
+    ],
+    "era": "democracia",
+    "text": "Yo no critico a Marruecos por no controlar a 80.000 personas en su frontera. Yo acuso a Marruecos de enviar a 80.000 personas a su frontera para cargarse al Gobierno de España, con la colaboración de Washington, de Tel Aviv y, sí, de la derecha y de la derecha española policial y judicial […] Mohamed VI es un asesino. Ustedes son los traidores a su patria, porque si lo sabían policías y jueces, sus policías y sus jueces, ustedes también lo sabían.",
+    "context": "A PP y Vox. Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777812, min. 2:00; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777812",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-rufian-mentir",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Gabriel Rufián",
+    "party": "ERC",
+    "bloc": "nacionalistas",
+    "role": "portavoz de ERC",
+    "topics": [
+      "ceuta",
+      "responsabilidad",
+      "cenif"
+    ],
+    "era": "democracia",
+    "text": "Y ustedes, señorías del Gobierno, son unos pusilánimes. Y estoy siendo generoso […] Aquí ha aplaudido casi todo el mundo de esta bancada, menos una persona, la señora Robles. Tiene usted un problema importante […] Los gobiernos, señorías, señor presidente, no se pierden por error. Los gobiernos, sobre todo, se pierden por mentir.",
+    "context": "Sobre el anuncio de publicar todos los informes, que la ministra de Defensa no aplaudió. La prensa transcribió «problemón»; en la grabación se oye «problema». Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777812, min. 2:55; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777812",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-rufian-orden",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Gabriel Rufián",
+    "party": "ERC",
+    "bloc": "nacionalistas",
+    "role": "portavoz de ERC",
+    "topics": [
+      "ceuta",
+      "migracion",
+      "devoluciones"
+    ],
+    "era": "democracia",
+    "text": "Ni la criminalización de unos ni la negación de otros. Frente al reto de la migración: orden, inclusión, integración y derechos y obligaciones […] Y los que entraron como entraron, que sean atendidos con celeridad y que sean devueltos con dignidad. Porque ¿qué respuesta, qué imagen se le da al mundo si frente a esta agresión callas, tragas y pagas?",
+    "context": "Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777812, min. 12:29; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777812",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-nogueras-miente",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Míriam Nogueras",
+    "party": "Junts",
+    "bloc": "nacionalistas",
+    "role": "portavoz de Junts",
+    "topics": [
+      "ceuta",
+      "responsabilidad",
+      "cenif"
+    ],
+    "era": "democracia",
+    "text": "O usted conocía los avisos y, por tanto, engaña a la gente para proteger a Marruecos; o usted no conocía esos avisos y, por lo tanto, engaña a la gente cuando dice que tiene el control del Gobierno y de la seguridad nacional. Las dos opciones son muy graves y las dos opciones le inhabilitan para continuar gobernando. Los ciudadanos merecen que siempre se les diga la verdad, y usted no lo hace.",
+    "context": "Intervención en catalán; traducción propia cotejada con la de Europa Press («o bien conocía los avisos y miente, o bien no los conocía»). Pide que el PSOE presente otro candidato. Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777813, min. 0:55; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777813",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "unverified": false
+  },
+  {
+    "id": "q-pl194-abascal-virrey",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026",
+    "chamber": "congreso",
+    "legislature": "XV",
+    "speaker": "Santiago Abascal",
+    "party": "Vox",
+    "bloc": "derecha",
+    "role": "presidente de Vox",
+    "topics": [
+      "ceuta",
+      "corona",
+      "marruecos"
+    ],
+    "era": "democracia",
+    "text": "El señor Sánchez debe pensar que es algo así como el virrey de Al-Ándalus y se sube a la tribuna a defender a su rey, a Mohamed VI. Y si puede, y lo hemos visto esta semana, a criticar al nuestro, que lo hará mejor o peor, pero que es el nuestro. Y es un rey constitucional y no es un tirano.",
+    "context": "Según la grabación del Canal Parlamento.",
+    "sessionRef": "Pleno, sesión núm. 194, 3 de septiembre de 2026, vídeo del Congreso, corte 777809, min. 14:32; Diario de Sesiones pendiente",
+    "pdfUrl": "",
+    "videoUrl": "https://app.congreso.es/v1/15777809",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
     ],
     "unverified": false
   }

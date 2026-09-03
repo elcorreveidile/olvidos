@@ -408,7 +408,68 @@ Margarita Robles fue la única ministra que no aplaudió el anuncio de publicar 
 Oficiales: `https://www.congreso.es/es/agenda`; `https://www.congreso.es/es/calendario-de-sesiones-plenarias`; `https://www.congreso.es/backoffice_doc/atp/orden_dia/pleno_194_03092026.pdf`; `https://app.congreso.es/AudiovisualCongreso/audiovisualEmisionSemiDirecto?codOrgano=400&codSesion=194&idLegislaturaElegida=15&fechaSesion=3/09/2026`; `https://www.congreso.es/public_oficiales/L15/CONG/DS/PL/DSCD-15-PL-185.PDF` … `-200.PDF` (existentes) y `-201.PDF` … `-215.PDF` (404); `https://www.lamoncloa.gob.es/presidente/intervenciones/Paginas/2026/20260903-transcripcion-pg-congreso-ceuta.aspx`; `https://www.lamoncloa.gob.es/presidente/intervenciones/Paginas/index.aspx`; senado.es (agenda, senadoendirecto, actividadcomisiones: 403).
 Prensa y agencias (vía): elfarodeceuta.es/comparecencia-pedro-sanchez-congreso-crisis-ceuta/; elfarodemelilla.es/sanchez-asegura-que-felipe-vi-viajara-a-ceuta-y-melilla-en-las-proximas-semanas/; elperiodicodeceuta.es (Feijóo); ceutatv.com (Abascal, 12:00); ceutaldia.com (Feijóo/Pegasus); laregion.es (EP, 10:59); infobae.com (directo; Feijóo 05:17 EST; Sumar 06:03; Junts 06:17; Rufián 06:31; CC 03:46; Rusia/Israel; Senado 11-8); pressdigital.es (Sánchez «contundencia» 11:04; Sumar 11:42); catalunyapress.es (09:25); eldiario.es (directo; Feijóo 10:54; Sumar 11:33); elespanol.com (directo 3-9 y 2-9; Feijóo 10:51; Gendarmería; Robles 12:00); elplural.com (directo; Rufián 12:27; Abascal); theobjective.com (Abascal 12:03; informes 10:47; Rufián/Robles); eldiariodemadrid.es (Abascal); noticiasdenavarra.com (Bildu 12:57; PNV 12:38); es.euronews.com (11:49); libertaddigital.com (directos; frases Feijóo 11:16); okdiario.com (directo); elnacional.cat (directo); eldebate.com (12:22; directo); moncloa.com (2-9 16:05; 3-9); que.es; publico.es (Belarra 1-9); infodefensa.com; es.wikipedia.org/wiki/Incidentes_fronterizos_entre_España_y_Marruecos_de_2026 (refs. RTVE/EFE/EP hasta el 1-9; no cubre aún el pleno).
 
-**Pendiente para el especial:** cuando congreso.es publique el Diario (previsiblemente DSCD-15-PL-201), añadir números de página y contrastar las citas «vía prensa» de esta lista, y completar el turno de réplica y cierre de Sánchez, que no existía al cerrar este informe.
+**Corrección (3-9-2026, 19:40 h).** La sesión terminó después de cerrar este informe. La ficha del Canal Parlamento registra 29 cortes con vídeo, con enlace permanente `https://app.congreso.es/v1/15NNNNNN` (NNNNNN = número de corte) y MP4 descargable en `static.congreso.es/audiovisual/video/leg15/400/15_000400_194/cortes/`:
+
+| Corte | Orador / punto |
+|---|---|
+| 777802 | Minuto de silencio |
+| 777803 | Juramento o promesa de acatamiento de la Constitución (María Elena Bondía Pinós, GP) |
+| 777804 | Bondía Pinós, María Elena (GP) |
+| 777805 | Lectura del punto único del orden del día |
+| 777807 | Sánchez Pérez-Castejón, Pedro (GS), presidente del Gobierno, intervención inicial |
+| 777808 | Núñez Feijóo, Alberto (GP) |
+| 777809 | Abascal Conde, Santiago (GVOX) |
+| 777810 | Santiago Romero, Enrique Fernando (GSUMAR) |
+| 777811 | Vidal Sáez, Aina (GSUMAR) |
+| 777812 | Rufián Romero, Gabriel (GR) |
+| 777813 | Nogueras i Camero, Míriam (GJxCAT) |
+| 777814 | Aizpurua Arzallus, Mertxe (GEH Bildu) |
+| 777815 | Vaquero Montero, Maribel (GV (EAJ-PNV)) |
+| 777816 | Belarra Urteaga, Ione (GMx) |
+| 777817 | Rego Candamil, Néstor (GMx) |
+| 777818 | Valido García, Cristina (GMx) |
+| 777819 | Catalán Higueras, Alberto (GMx) |
+| 777820 | Micó Micó, Àgueda (GMx) |
+| 777821 | López Álvarez, Patxi (GS) |
+| 777829 | Sánchez Pérez-Castejón, Pedro (GS), réplica |
+| 777830 | Núñez Feijóo, Alberto (GP), réplica |
+| 777831 | Abascal Conde, Santiago (GVOX), réplica |
+| 777832 | Santiago Romero, Enrique Fernando (GSUMAR), réplica |
+| 777833 | Vidal Sáez, Aina (GSUMAR), réplica |
+| 777834 | Rufián Romero, Gabriel (GR), réplica |
+| 777835 | Nogueras i Camero, Míriam (GJxCAT), réplica |
+| 777836 | López Álvarez, Patxi (GS), réplica |
+| 777837 | Sánchez Pérez-Castejón, Pedro (GS), cierre |
+| 777822 | Ordenación del debate |
+
+Por tanto, el turno de réplica de Sánchez y su cierre **sí existen** (cortes 777829 y 777837), y hay réplicas de PP, Vox, Sumar, ERC, Junts y PSOE. Los cortes se transcribieron con `scripts/con-textos-transcribir.py` (faster-whisper, modelo `small`) y las citas adoptadas están en A.7.
+
+### A.7 Fragmentos cotejados con la grabación
+
+Política aplicada (decidida por Javier el 3-9-2026): solo entra en las islas una cita del pleno si la transcripción de la grabación y otra fuente (transcripción de Moncloa o prensa) la recogen igual; el texto adoptado es el de la grabación, normalizado como en el Diario (sin muletillas ni falsos arranques, cifras en números); si difieren, manda la grabación y se anota. Las citas van en `07-actualizacion-2026-09-03.json` con ids `q-pl194-<orador>-<tema>`, `videoUrl` con el permalink del corte y `sessionRef` con corte y minuto. Se listan con `npx tsx scripts/con-textos-check.ts espana-marruecos --pendientes`.
+
+Discrepancias anotadas entre grabación y prensa:
+
+- Feijóo, corte 777808, min. 4:14: la grabación dice «La operación salió de Marruecos…»; la prensa, «La invasión salió de Marruecos…». Adoptado «operación».
+- Feijóo, min. 16:33 (cierre): la prensa (Ceuta al Día) lo daba como no verificado; la grabación lo confirma: «la nación es más fuerte que sus muros. El Estado es más sólido que su Gobierno. Ambos serán reconstruidos y ambos sobrevivirán a usted».
+- Abascal, corte 777809, min. 13:21: el ASR transcribe «Marruecos es su amor»; la prensa, unánime, «su amo». Adoptado «amo».
+- Rufián, corte 777812, min. 4:42: la prensa transcribe «problemón importante»; en la grabación se oye «problema importante». Adoptado «problema».
+- Belarra, corte 777816, min. 2:40: la prensa transcribió «farsa entre la ministra Robles y el señor Marlaska»; en la grabación se oye «sainete». Adoptado «sainete». Su «váyanse al carajo» final (min. 9:04) fue retirado del Diario por orden de la presidencia («se retirará del Diario de Sesiones esta última expresión»): cuando salga el Diario no aparecerá.
+- Nogueras, corte 777813: intervención íntegra en catalán; el ASR la mezcla con castellano. Solo se cita, traducida y marcada, la frase que Europa Press tradujo igual.
+- Aizpurua, corte 777814: párrafos en euskera al inicio, al medio y al final, inservibles en el ASR; se cita solo lo dicho en castellano.
+- Aina Vidal, corte 777811, min. 8:19, sobre el rey de Marruecos, «al que el rey Felipe VI llama hermano»: solo en la grabación, sin apoyo de prensa; no entra en las islas.
+- Enrique Santiago, corte 777810, min. 1:22, y Vidal, min. 4:02, sobre Figaredo (Vox) y «cazar» migrantes: solo en la grabación; citado en prosa con la marca «según la grabación».
+- Sánchez, corte 777837 (cierre), min. 2:14-2:40: «escalar sin reservas un conflicto. Yo no puedo hacerlo, no debo hacerlo y no lo voy a hacer»; lo recogen igual los directos de Vozpópuli y elDiario.es (15:16). En el ASR el arranque del pasaje es confuso («no las tienen, aparte que tampoco se las ponen, si las tuvieran»): se elide con […]. Los tres compromisos finales (min. 4:04) van en `context`. Del cierre no se cita nada más; las réplicas cortas de Sumar, ERC, Junts y PSOE (cortes 777832-836) y el corte de ordenación (777822) quedan fuera de las islas por espacio.
+
+### A.8 Cómo hacer la pasada del Diario de Sesiones
+
+1. Comprobar si existe `https://www.congreso.es/public_oficiales/L15/CONG/DS/PL/DSCD-15-PL-201.PDF` (el número es una inferencia: si no, buscar en el índice de publicaciones del Congreso el Diario del Pleno del 3-9-2026).
+2. `npx tsx scripts/con-textos-check.ts espana-marruecos --pendientes` lista las citas verificadas solo por vídeo (`q-pl194-*`).
+3. Para cada una, en `07-actualizacion-2026-09-03.json`: localizar la página, poner `pdfUrl` («…PDF#page=N»), reescribir `sessionRef` como «DSCD-15-PL-201, 3 de septiembre de 2026, p. N (vídeo corte NNNNNN, min. m:ss)», cotejar el texto y adoptar el del Diario si difiere (anotarlo en `context` si la diferencia es sustantiva), y quitar «según la grabación» de `context`.
+4. Añadir la fuente `src-dscd-pl-201` (kind `parlamentaria`) y anteponerla en `sourceIds` de las `q-pl194-*` y de las declaraciones `st-pl194-*`; añadirla también a `ev-2026-09-03-pleno`.
+5. `npx tsx scripts/con-textos-merge.ts espana-marruecos`, `check`, `fuentes`, `npx tsc --noEmit`, `--dry-run --verbose`; el check debe decir «0 solo por vídeo».
+6. Prosa: en `01-actualidad-2026.html` (sección «El pleno: quién dijo qué») y en la «Nota sobre el método» del paso 10, sustituir la explicación de la grabación por la referencia al Diario; en `docs/con-textos/README.md` no hay que tocar nada.
+7. `CLAUDE.md`: quitar la nota de «pendiente la pasada del Diario». PR, fusión y ejecución del script de publicación en local.
 
 ---
 
