@@ -2616,6 +2616,51 @@ export const STATEMENTS = [
     "note": "Condena «episodios de insultos, amenazas, intimidaciones y agresiones sufridos por periodistas mientras desarrollan su trabajo en Ceuta»; exige a las autoridades «las medidas necesarias para garantizar la seguridad»."
   },
   {
+    "id": "st-pl194-sanchez-pruebas",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Pedro Sánchez",
+    "role": "presidente del Gobierno, pleno del Congreso",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026, 09:47",
+    "text": "Durante diez horas centrales del día 30 de julio […] la Gendarmería marroquí permitió el cruce de la frontera […] A día de hoy nadie ha aportado pruebas al Gobierno que permitan concluir que esta entrada masiva […] fuera diseñada o ejecutada por las autoridades marroquíes",
+    "sourceIds": [
+      "src-moncloa-2026-09-03-transc",
+      "src-congreso-video-pl194"
+    ],
+    "note": "Corte 777807, min. 40:21, transcripción oficial de Moncloa. «Si existieran esas pruebas sólidas actuaríamos en consecuencia con total contundencia»; la cooperación con Marruecos «tiene que ser diferente»."
+  },
+  {
+    "id": "st-pl194-sanchez-cenif",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Pedro Sánchez",
+    "role": "presidente del Gobierno, pleno del Congreso",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026, 09:55",
+    "text": "Por qué no se compartió con sus superiores y con el Gobierno de España el contenido de un informe que se había encargado, en este caso por parte de una jueza del Poder Judicial, y con potenciales implicaciones para la seguridad del Estado. Esto también tendrá que explicarse, señorías",
+    "sourceIds": [
+      "src-moncloa-2026-09-03-transc",
+      "src-infobae-sanchez-cenif-3sept"
+    ],
+    "note": "Corte 777807, min. 48:47, transcripción oficial de Moncloa. Anuncia «un dossier con todos los informes, todos»; ninguno «que llegara a manos del Gobierno» anticipó la llegada de 70.000 personas."
+  },
+  {
+    "id": "st-pl194-aizpurua-recalibrar",
+    "crisisId": "ceuta-2026",
+    "bloc": "nacionalistas",
+    "speaker": "Mertxe Aizpurua",
+    "role": "portavoz de EH Bildu, pleno del Congreso",
+    "date": "2026-09-03",
+    "dateLabel": "3 de septiembre de 2026, 12:02",
+    "text": "Quizá sea hora de recalibrar su posición hacia Marruecos y rectificar su error sobre el Sáhara",
+    "sourceIds": [
+      "src-congreso-video-pl194",
+      "src-infobae-sanchez-contundencia"
+    ],
+    "note": "Corte 777814, min. 16:06, según la grabación. Pregunta si la Policía, «algún juez o jueza» o el CNI han ocultado información al Gobierno: «eso tiene un nombre». Denuncia las agresiones a periodistas del 2 de septiembre."
+  },
+  {
     "id": "st-pl194-feijoo-dimita",
     "crisisId": "ceuta-2026",
     "bloc": "derecha",
