@@ -1,8 +1,14 @@
+/**
+ * Comprueba la cuenta de administrador de Javier.
+ * Uso: npx tsx --env-file=.env.local scripts/check-javier-user.ts [email]
+ * (por defecto informa@blablaele.com; javier@blablaele.com ya no existe)
+ */
 import { db } from "../src/lib/db";
 
 async function checkUser() {
+  const email = process.argv[2] || "informa@blablaele.com";
   const user = await db.user.findUnique({
-    where: { email: "javier@blablaele.com" },
+    where: { email },
     select: { id: true, email: true, name: true, role: true }
   });
 
