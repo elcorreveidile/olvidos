@@ -4,6 +4,7 @@ import Link from "next/link";
 import { LogOut, Newspaper } from "lucide-react";
 import { Logo } from "@/components/layout/Logo";
 import { AdminSidebarNav } from "@/components/admin/AdminSidebarNav";
+import { roleLabel } from "@/lib/roles";
 
 export default async function AdminLayout({
   children,
@@ -86,7 +87,7 @@ export default async function AdminLayout({
             </h1>
             <div className="flex items-center gap-4">
               <span className="hidden text-sm text-acero sm:inline">
-                Rol: <span className="font-bold text-tinta">{userRole}</span>
+                Rol: <span className="font-bold text-tinta">{roleLabel(userRole)}</span>
               </span>
               <Link
                 href="/"

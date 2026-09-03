@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { z } from "zod";
+import { isStaffRole, roleForMemberStatus } from "@/lib/roles";
 
 const MemberSchema = z.object({
   userId: z.string().optional(),
@@ -170,11 +171,14 @@ export async function createMember(data: MemberInput) {
       },
     });
 
-    // Update user role
-    await db.user.update({
-      where: { id: validatedData.userId },
-      data: { role: "MEMBER" },
-    });
+    // Update user role (sin pisar los roles del equipo: un editor que se hace
+    // socio sigue siendo editor).
+    if (!isStaffRole(user.role)) {
+      await db.user.update({
+        where: { id: validatedData.userId },
+        data: { role: "MEMBER" },
+      });
+    }
 
     revalidatePath("/admin/socios");
     revalidatePath("/socios");
@@ -244,13 +248,17 @@ export async function updateMember(id: string, data: MemberUpdateInput) {
       },
     });
 
-    // Sync user role with member status
+    // Sync user role with member status. Los roles del equipo (EDITOR,
+    // MEMBER_ADMIN, ADMIN) no se tocan: guardar la ficha de un socio que es
+    // editor no debe degradarlo.
     if (isAdmin && validatedData.status) {
-      const userRole = validatedData.status === "ACTIVE" ? "MEMBER" : "USER";
-      await db.user.update({
-        where: { id: existingMember.userId },
-        data: { role: userRole },
-      });
+      const userRole = roleForMemberStatus(member.user.role, validatedData.status === "ACTIVE");
+      if (userRole && userRole !== member.user.role) {
+        await db.user.update({
+          where: { id: existingMember.userId },
+          data: { role: userRole },
+        });
+      }
     }
 
     revalidatePath("/admin/socios");
@@ -481,11 +489,14 @@ export async function deleteMember(id: string) {
       },
     });
 
-    // Update user role
-    await db.user.update({
-      where: { id: existingMember.userId },
-      data: { role: "USER" },
-    });
+    // Update user role (los roles del equipo se conservan)
+    const cancelledUser = await db.user.findUnique({ where: { id: existingMember.userId }, select: { role: true } });
+    if (cancelledUser && !isStaffRole(cancelledUser.role)) {
+      await db.user.update({
+        where: { id: existingMember.userId },
+        data: { role: "USER" },
+      });
+    }
 
     revalidatePath("/admin/socios");
     revalidatePath("/socios");
