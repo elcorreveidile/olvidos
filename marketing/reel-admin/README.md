@@ -6,7 +6,8 @@ panel de administración de Olvidos. Contenido 100 % REAL: capturas de la propia
 aplicación (el panel `/admin` en local, con datos de ejemplo del Equipo Editor),
 recorridas con paneo/zoom dentro de una ventana de navegador.
 
-Son **dos reels** cortos y complementarios (un solo vídeo sería muy denso):
+Son **tres reels** cortos y complementarios (un solo vídeo sería muy denso).
+Juntos cubren **el funcionamiento de todo lo que está implementado** en el panel:
 
 ## Reel 1 — «El panel del Equipo Editor» (~18 s)
 Visión general: dónde está cada cosa.
@@ -25,6 +26,21 @@ El flujo editorial, paso a paso.
 4. **Clasifica** — categorías y etiquetas.
 5. **Publica** — Borrador → Enviar a revisión → Publicar.
 6. **Cierre** — "Escribe. Revisa. Publica." · olvidos.es/admin.
+
+## Reel 3 — «El panel, al completo» (~22 s)
+El resto de lo implementado: gestión de la asociación.
+1. **Intro** — `[o` · Equipo Editor · "El panel, al completo".
+2. **Revista** — números, portadas y PDFs (hemeroteca).
+3. **Agenda** — actividades y eventos.
+4. **Socios** — la base de socios (niveles y estados) al día.
+5. **Cuentas** — contabilidad: ingresos, gastos, saldo y libro.
+6. **Documentos** — estatutos, actas y libro de socios.
+7. **Ajustes** — identidad, contacto, SEO y operación del sitio.
+8. **Cierre** — "Todo en un solo sitio." · olvidos.es/admin.
+
+Las pantallas de socios, pagos, contabilidad y documentos se capturan con
+**datos de ejemplo ficticios** (nombres tipo «María López», correos
+`@ejemplo.olvidos.es`): nunca datos reales de socios.
 
 Marca leída del repo: coral `#ff6261`, tinta `#141414`, teatro
 `#7a1420/#9b1c2c/#3f0910`, tipos Libre Franklin + Crimson Text (incrustadas como
@@ -66,12 +82,17 @@ node scripts/reel-validate-mp4.mjs footage-reel/clip-admin-panel.mp4
   Ken Burns + rótulos de marca); lee escenas y textos inyectados.
 - `reel-admin-build.mjs` — inyecta fuentes, capturas, escenas y META; renderiza
   y codifica el mp4.
-- `scenes-admin-panel.json`, `scenes-admin-publicar.json` — guion de cada reel
-  (escenas = imagen + encuadre `from`/`to` en píxeles + rótulo + duración).
+- `scenes-admin-panel.json`, `scenes-admin-publicar.json`,
+  `scenes-admin-gestion.json` — guion de cada reel (escenas = imagen +
+  encuadre `from`/`to` en píxeles + rótulo + duración).
+
+Para el reel 3 hace falta iniciar sesión con un usuario **ADMIN** (accede a
+socios/pagos/contabilidad); los reels 1 y 2 usan el rol **EDITOR**.
 
 ## Entregables (binarios, gitignored, se entregan aparte)
 - `clip-admin-panel.mp4` + `portada-admin-panel.png`
 - `clip-admin-publicar.mp4` + `portada-admin-publicar.png`
+- `clip-admin-gestion.mp4` + `portada-admin-gestion.png`
 
 ## Nota
 Los reels usan **la vista de escritorio** del panel a propósito: el Equipo

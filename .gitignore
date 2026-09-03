@@ -55,6 +55,8 @@ marketing/reel-olvidos/*.mp4
 marketing/reel-olvidos/*.png
 marketing/reel-admin/*.mp4
 marketing/reel-admin/*.png
+marketing/reel-contextos/*.mp4
+marketing/reel-contextos/*.png
 
 # Datos personales de socios (DNIs/domicilios) — no subir a repo público
 scripts/import-socios.ts

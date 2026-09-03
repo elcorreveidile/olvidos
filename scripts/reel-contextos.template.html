@@ -1,0 +1,177 @@
+<meta charset="utf-8" />
+<title>Reel Con-textos — Olvidos de Granada</title>
+<!--
+  Reel público que presenta la NUEVA SECCIÓN "Con-textos" de olvidos.es.
+  Manifiesto tipográfico con el copy REAL de la sección (leído de la web):
+  «Especiales de actualidad con contexto histórico: datos contrastados,
+   fuentes primarias y Diarios de Sesiones. Contra el bulo, contexto.»
+  Marca del repo: coral #ff6261, tinta #141414, teatro #7a1420, motivo "[",
+  tipos Libre Franklin + Crimson Text (incrustadas por el build).
+  Build: RAW_DIR=footage-reel/raw-contextos TEMPLATE=scripts/reel-contextos.template.html \
+         OUT=footage-reel/clip-contextos.mp4 PORTADA=footage-reel/portada-contextos.png \
+         PORTADA_T=4.2 QP=24 node scripts/reel-clip-build.mjs
+-->
+<style>
+  /* __FONT_CSS__ */
+  :root{
+    --coral:#ff6261;--coral-d:#e24a49;--tinta:#141414;
+    --teatro:#7a1420;--teatro-light:#9b1c2c;--teatro-dark:#3f0910;
+    --paper:#fff;--paper-warm:#f6f1ea;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:#000;}
+  #stage{position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden;
+    font-family:"LibreFranklin",system-ui,sans-serif;}
+  .bg{position:absolute;inset:0;}
+  #bgPaper{background:radial-gradient(120% 80% at 50% 0%, #fff 0%, var(--paper-warm) 100%);}
+  #bgVelvet{background:radial-gradient(120% 90% at 50% 30%, var(--teatro-light) 0%, var(--teatro) 44%, var(--teatro-dark) 100%);opacity:0;}
+  #grain{position:absolute;inset:0;opacity:.08;mix-blend-mode:overlay;
+    background:radial-gradient(circle at 28% 18%, #fff 0, transparent 40%),
+               radial-gradient(circle at 72% 74%, #fff 0, transparent 42%);}
+
+  .layer{position:absolute;inset:0;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;padding:0 96px;opacity:0;}
+
+  /* 1 · Hook */
+  #hook .kick{font-weight:800;font-size:27px;letter-spacing:8px;text-transform:uppercase;color:var(--coral);}
+  #hook .l1{margin-top:40px;font-weight:900;font-size:92px;line-height:1.02;color:var(--tinta);}
+  #hook .l2{margin-top:6px;font-weight:900;font-size:150px;line-height:.96;color:var(--coral);letter-spacing:-3px;}
+  #hook .l2 .dot{color:var(--tinta);}
+
+  /* 2 · Nombre */
+  #name .mk{font-weight:900;font-size:120px;line-height:.8;color:#fff;letter-spacing:-6px;}
+  #name .mk b{color:var(--coral);}
+  #name .kick{margin-top:40px;font-weight:800;font-size:26px;letter-spacing:9px;text-transform:uppercase;color:rgba(255,255,255,.7);}
+  #name .title{margin-top:16px;font-weight:900;font-size:118px;line-height:1;color:#fff;letter-spacing:-2px;}
+  #name .title .br{color:var(--coral);}
+
+  /* 3 · Manifiesto */
+  #mani .q{font-family:"CrimsonText",Georgia,serif;font-style:italic;font-size:64px;line-height:1.22;color:#fff;}
+  #mani .q b{font-style:normal;font-weight:700;color:var(--coral);}
+
+  /* 4 · Pilares */
+  #pillars{justify-content:center;}
+  #pillars .head{font-weight:800;font-size:26px;letter-spacing:7px;text-transform:uppercase;color:var(--coral);margin-bottom:64px;opacity:0;}
+  #pillars .row{display:flex;align-items:center;gap:34px;width:840px;margin:26px 0;opacity:0;}
+  #pillars .num{flex:none;width:96px;height:96px;border-radius:24px;background:rgba(255,255,255,.08);
+    border:2px solid var(--coral);display:flex;align-items:center;justify-content:center;
+    font-weight:900;font-size:46px;color:var(--coral);}
+  #pillars .txt{font-weight:900;font-size:66px;line-height:1.02;color:#fff;text-align:left;}
+  #pillars .sub{margin-top:70px;font-family:"CrimsonText",Georgia,serif;font-style:italic;
+    font-size:38px;color:rgba(255,255,255,.82);opacity:0;}
+
+  /* 5 · Cierre */
+  #close .mk{font-weight:900;font-size:168px;line-height:.8;color:#fff;letter-spacing:-6px;}
+  #close .mk b{color:var(--coral);}
+  #close .title{margin-top:30px;font-weight:900;font-size:104px;line-height:1;color:#fff;}
+  #close .title .br{color:var(--coral);}
+  #close .url{margin-top:26px;font-weight:800;font-size:46px;color:var(--coral);}
+  #close .tag{margin-top:30px;font-family:"CrimsonText",Georgia,serif;font-style:italic;font-size:40px;color:rgba(255,255,255,.9);}
+
+  #vignette{position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 240px rgba(0,0,0,.26);}
+</style>
+
+<div id="stage">
+  <div class="bg" id="bgPaper"></div>
+  <div class="bg" id="bgVelvet"></div>
+  <div class="bg" id="grain"></div>
+
+  <div class="layer" id="hook">
+    <div class="kick">Olvidos · Nueva sección</div>
+    <div class="l1">Contra el bulo,</div>
+    <div class="l2">contexto<span class="dot">.</span></div>
+  </div>
+
+  <div class="layer" id="name">
+    <div class="mk">[<b>o</b></div>
+    <div class="kick">Nueva categoría</div>
+    <div class="title"><span class="br">[</span> Con-textos</div>
+  </div>
+
+  <div class="layer" id="mani">
+    <div class="q">Especiales de actualidad con <b>contexto histórico</b>.</div>
+  </div>
+
+  <div class="layer" id="pillars">
+    <div class="head" id="pHead">Con-textos es</div>
+    <div class="row" id="p1"><div class="num">1</div><div class="txt">Datos contrastados</div></div>
+    <div class="row" id="p2"><div class="num">2</div><div class="txt">Fuentes primarias</div></div>
+    <div class="row" id="p3"><div class="num">3</div><div class="txt">Diarios de Sesiones</div></div>
+    <div class="sub" id="pSub">Contra el bulo, contexto.</div>
+  </div>
+
+  <div class="layer" id="close">
+    <div class="mk">[<b>o</b></div>
+    <div class="title"><span class="br">[</span> Con-textos</div>
+    <div class="url">olvidos.es</div>
+    <div class="tag">Contra el bulo, contexto.</div>
+  </div>
+
+  <div id="vignette"></div>
+</div>
+
+<script>
+window.__ASSETS__ = window.__ASSETS__ || null; /* __ASSETS_INJECT__ */
+(function(){
+  const el=(id)=>document.getElementById(id);
+  const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+  const lerp=(a,b,t)=>a+(b-a)*t;
+  const easeOut=(t)=>1-Math.pow(1-t,3);
+  const easeInOut=(t)=>t<0.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+  // envolvente de opacidad con fundido de entrada/salida
+  const seg=(t,a,b,fi,fo)=>clamp(Math.min((t-a)/fi,(b-t)/fo),0,1);
+
+  // Escenas [inicio,fin]
+  const T={
+    hook:[0,3200],
+    name:[3200,6400],
+    mani:[6400,9200],
+    pillars:[9200,14400],
+    close:[14400,17400],
+  };
+  window.__DURATION_MS__=17400;
+
+  window.renderAt=function(t){
+    // Fondo: papel en el hook, velvet a partir del nombre
+    const velvet=clamp((t-(T.name[0]-350))/650,0,1);
+    el("bgVelvet").style.opacity=velvet.toFixed(3);
+
+    // 1 · Hook
+    const oHook=seg(t,T.hook[0],T.hook[1],650,500);
+    el("hook").style.opacity=oHook.toFixed(3);
+    const hp=easeOut(clamp(t/900,0,1));
+    el("hook").querySelector(".l2").style.transform=`scale(${lerp(0.9,1,hp).toFixed(3)})`;
+
+    // 2 · Nombre
+    const oName=seg(t,T.name[0],T.name[1],600,520);
+    const nm=el("name"); nm.style.opacity=oName.toFixed(3);
+    const np=easeOut(clamp((t-T.name[0])/800,0,1));
+    nm.querySelector(".title").style.transform=`translateY(${lerp(24,0,np).toFixed(1)}px)`;
+
+    // 3 · Manifiesto
+    const oMani=seg(t,T.mani[0],T.mani[1],650,560);
+    el("mani").style.opacity=oMani.toFixed(3);
+    const mp=easeOut(clamp((t-T.mani[0])/900,0,1));
+    el("mani").querySelector(".q").style.transform=`translateY(${lerp(18,0,mp).toFixed(1)}px)`;
+
+    // 4 · Pilares (aparición escalonada)
+    const oP=seg(t,T.pillars[0],T.pillars[1],450,560);
+    el("pillars").style.opacity=oP.toFixed(3);
+    const appear=(id,delay)=>{
+      const p=easeOut(clamp((t-(T.pillars[0]+delay))/520,0,1));
+      const e=el(id); e.style.opacity=p.toFixed(3);
+      e.style.transform=`translateX(${lerp(-26,0,p).toFixed(1)}px)`;
+    };
+    el("pHead").style.opacity=easeOut(clamp((t-(T.pillars[0]+120))/420,0,1)).toFixed(3);
+    appear("p1",620); appear("p2",1140); appear("p3",1660);
+    el("pSub").style.opacity=easeOut(clamp((t-(T.pillars[0]+2500))/700,0,1)).toFixed(3);
+
+    // 5 · Cierre
+    const oClose=seg(t,T.close[0],T.close[1]+400,650,300);
+    const cl=el("close"); cl.style.opacity=oClose.toFixed(3);
+    const cp=easeOut(clamp((t-T.close[0])/800,0,1));
+    cl.querySelector(".title").style.transform=`translateY(${lerp(20,0,cp).toFixed(1)}px)`;
+  };
+  window.__READY__=true;
+})();
+</script>

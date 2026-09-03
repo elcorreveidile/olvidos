@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "brandSub": "El panel completo",
+    "url": "olvidos.es/admin",
+    "foot": "La revista que no olvida",
+    "introKick": "Equipo Editor",
+    "introTitle": "El panel, al completo",
+    "introSub": "Todo lo que la revista necesita.",
+    "outroTitle": "Todo en un solo sitio.",
+    "outroSub": "El panel de Olvidos.",
+    "introMs": 2000,
+    "outroMs": 2500,
+    "fadeMs": 420
+  },
+  "scenes": [
+    {
+      "img": "revista-full.png",
+      "dur": 2900,
+      "kick": "Revista",
+      "title": "Números, portadas y PDFs",
+      "from": [150, 50, 1230],
+      "to": [210, 130, 1150]
+    },
+    {
+      "img": "actividades-full.png",
+      "dur": 2900,
+      "kick": "Agenda",
+      "title": "Actividades y eventos",
+      "from": [150, 40, 1240],
+      "to": [210, 150, 1150]
+    },
+    {
+      "img": "socios-full.png",
+      "dur": 3100,
+      "kick": "Socios",
+      "title": "La base de socios, al día",
+      "from": [0, 0, 1360],
+      "to": [210, 170, 1180]
+    },
+    {
+      "img": "contabilidad-full.png",
+      "dur": 3300,
+      "kick": "Cuentas",
+      "title": "Ingresos, gastos y saldo",
+      "from": [190, 150, 1190],
+      "to": [210, 880, 1180]
+    },
+    {
+      "img": "documentos-full.png",
+      "dur": 2900,
+      "kick": "Documentos",
+      "title": "Estatutos, actas y libro de socios",
+      "from": [180, 60, 1160],
+      "to": [210, 150, 1080]
+    },
+    {
+      "img": "configuracion-full.png",
+      "dur": 3100,
+      "kick": "Ajustes",
+      "title": "La identidad y los ajustes del sitio",
+      "from": [190, 120, 1190],
+      "to": [210, 560, 1160]
+    }
+  ]
+}

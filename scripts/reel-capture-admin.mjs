@@ -31,7 +31,15 @@ const PAGES = [
     : []),
   { name: "revista", path: "/admin/revista" },
   { name: "categorias", path: "/admin/categorias" },
+  { name: "tags", path: "/admin/tags" },
   { name: "actividades", path: "/admin/actividades" },
+  { name: "socios", path: "/admin/socios" },
+  { name: "documentos", path: "/admin/documentos" },
+  { name: "pagos", path: "/admin/pagos" },
+  { name: "contabilidad", path: "/admin/contabilidad" },
+  { name: "inscripciones", path: "/admin/inscripciones" },
+  { name: "usuarios", path: "/admin/usuarios" },
+  { name: "configuracion", path: "/admin/configuracion" },
 ];
 
 const browser = await chromium.launch({
