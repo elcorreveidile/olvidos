@@ -3077,5 +3077,26 @@ export const TIMELINE = [
       "src-infobae-sanchez-contundencia",
       "src-eldiario-cierre-consecuencias"
     ]
+  },
+  {
+    "id": "ev-2026-09-04-vox-comparecencias",
+    "date": "2026-09-04",
+    "dateLabel": "4 de septiembre de 2026",
+    "title": "Vox pide que Marlaska, Robles y la directora del DSN expliquen el informe del CENIF",
+    "summary": "Al día siguiente del pleno, Vox difunde las peticiones de comparecencia, registradas el miércoles 2, del ministro del Interior, Fernando Grande-Marlaska, de la ministra de Defensa, Margarita Robles, y de la directora del Departamento de Seguridad Nacional, Loreto Gutiérrez, para que expliquen «la posible implicación de gendarmes marroquíes en la entrada masiva de migrantes a Ceuta el 30 de julio» y el informe del CENIF remitido a la Audiencia Nacional. PP y Vox dedican a Ceuta y a Marlaska sus preguntas e interpelaciones del primer pleno de control del curso, la semana siguiente; Vox pregunta al ministro «¿por qué han traicionado a los ceutíes?». Ambas interpelaciones derivan en mociones una semana después.",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+    "headOfState": "Felipe VI",
+    "initiator": "espana",
+    "kinds": [
+      "parlamentaria",
+      "politica"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-theobjective-vox-comparecencias-4sept",
+      "src-infobae-vox-comparecencias-4sept",
+      "src-infobae-pleno-control-4sept"
+    ]
   }
 ] satisfies TimelineEvent[];

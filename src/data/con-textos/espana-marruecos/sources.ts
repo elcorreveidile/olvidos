@@ -6228,5 +6228,38 @@ export const SOURCES = [
     "kind": "prensa",
     "accessed": "2026-09-03",
     "note": "Directo; recoge el cierre de Sánchez («escalar sin reservas un conflicto»)"
+  },
+  {
+    "id": "src-theobjective-vox-comparecencias-4sept",
+    "title": "Vox pide que Robles y Marlaska comparezcan en el Congreso por los informes sobre Ceuta",
+    "author": "",
+    "publisher": "The Objective",
+    "date": "2026-09-04",
+    "url": "https://theobjective.com/espana/politica/2026-09-04/vox-robles-marlaska-congreso-ceuta/",
+    "kind": "prensa",
+    "accessed": "2026-09-04",
+    "note": "Comparecencias de Robles, Marlaska y Loreto Gutiérrez (DSN) por el informe del CENIF"
+  },
+  {
+    "id": "src-infobae-vox-comparecencias-4sept",
+    "title": "Vox pide la comparecencia en el Congreso de Marlaska, Robles y la directora de Seguridad",
+    "author": "",
+    "publisher": "Infobae / EFE",
+    "date": "2026-09-04",
+    "url": "https://www.infobae.com/espana/agencias/2026/09/04/vox-pide-la-comparecencia-en-el-congreso-de-marlaska-robles-y-la-directora-de-seguridad/",
+    "kind": "prensa",
+    "accessed": "2026-09-04",
+    "note": "EFE; las peticiones se registraron el miércoles 2 y se difundieron el viernes 4"
+  },
+  {
+    "id": "src-infobae-pleno-control-4sept",
+    "title": "PP y Vox centran en Ceuta y en Marlaska sus preguntas del próximo Pleno de control del Congreso, el primero del curso",
+    "author": "",
+    "publisher": "Infobae / Europa Press",
+    "date": "2026-09-04",
+    "url": "https://www.infobae.com/espana/agencias/2026/09/04/pp-y-vox-centran-en-ceuta-y-en-marlaska-sus-preguntas-del-proximo-pleno-de-control-del-congreso-el-primero-del-curso/",
+    "kind": "prensa",
+    "accessed": "2026-09-04",
+    "note": "Preguntas e interpelaciones a Marlaska; Vox: «¿por qué han traicionado a los ceutíes?»"
   }
 ] satisfies Source[];

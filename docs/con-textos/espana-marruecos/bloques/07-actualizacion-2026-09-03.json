@@ -66,7 +66,10 @@
     { "id": "src-infobae-feijoo-mareta", "title": "Feijóo a Sánchez: «Si arrimar el hombro es acompañarle a La Mareta no cuente conmigo»", "author": "", "publisher": "Infobae / Europa Press", "date": "2026-09-03", "url": "https://www.infobae.com/espana/agencias/2026/09/03/feijoo-a-sanchez-si-arrimar-el-hombro-es-acompanarle-a-la-mareta-no-cuente-conmigo/", "kind": "prensa", "accessed": "2026-09-03", "note": "Turno de réplica de Feijóo: qué habría hecho él" },
     { "id": "src-infobae-abascal-virrey-3sept", "title": "Abascal insiste en tachar a Sánchez de «traidor», de «embajador» de Marruecos y hasta de «virrey» de Al Ándalus", "author": "", "publisher": "Infobae / Europa Press", "date": "2026-09-03", "url": "https://www.infobae.com/espana/agencias/2026/09/03/abascal-insiste-en-tachar-a-sanchez-de-traidor-de-embajador-de-marruecos-y-hasta-de-virrey-de-al-andalus/", "kind": "prensa", "accessed": "2026-09-03", "note": "Incluye la réplica: suspensión del Tratado de Amistad, retirada del embajador y expulsión del Mundial" },
     { "id": "src-eldiario-cierre-consecuencias", "title": "Sánchez termina su comparecencia: «Debemos asegurarnos de que lo sucedido tenga consecuencias»", "author": "", "publisher": "elDiario.es", "date": "2026-09-03", "url": "https://www.eldiario.es/politica/ultima-hora-comparecencia-pedro-sanchez-ceuta-actualidad-politica-directo_6_13483856_1124728.html", "kind": "prensa", "accessed": "2026-09-03", "note": "Directo; entrada de las 15:16 con el cierre de Sánchez" },
-    { "id": "src-vozpopuli-directo-3sept", "title": "Crisis en Ceuta, en directo: comparecencia de Pedro Sánchez y reacciones de Feijóo y Abascal, última hora", "author": "", "publisher": "Vozpópuli", "date": "2026-09-03", "url": "https://www.vozpopuli.com/espana/comparecencia-de-sanchez-en-el-congreso-en-directo-ultima-hora-de-la-crisis-en-ceuta.html", "kind": "prensa", "accessed": "2026-09-03", "note": "Directo; recoge el cierre de Sánchez («escalar sin reservas un conflicto»)" }
+    { "id": "src-vozpopuli-directo-3sept", "title": "Crisis en Ceuta, en directo: comparecencia de Pedro Sánchez y reacciones de Feijóo y Abascal, última hora", "author": "", "publisher": "Vozpópuli", "date": "2026-09-03", "url": "https://www.vozpopuli.com/espana/comparecencia-de-sanchez-en-el-congreso-en-directo-ultima-hora-de-la-crisis-en-ceuta.html", "kind": "prensa", "accessed": "2026-09-03", "note": "Directo; recoge el cierre de Sánchez («escalar sin reservas un conflicto»)" },
+    { "id": "src-theobjective-vox-comparecencias-4sept", "title": "Vox pide que Robles y Marlaska comparezcan en el Congreso por los informes sobre Ceuta", "author": "", "publisher": "The Objective", "date": "2026-09-04", "url": "https://theobjective.com/espana/politica/2026-09-04/vox-robles-marlaska-congreso-ceuta/", "kind": "prensa", "accessed": "2026-09-04", "note": "Comparecencias de Robles, Marlaska y Loreto Gutiérrez (DSN) por el informe del CENIF" },
+    { "id": "src-infobae-vox-comparecencias-4sept", "title": "Vox pide la comparecencia en el Congreso de Marlaska, Robles y la directora de Seguridad", "author": "", "publisher": "Infobae / EFE", "date": "2026-09-04", "url": "https://www.infobae.com/espana/agencias/2026/09/04/vox-pide-la-comparecencia-en-el-congreso-de-marlaska-robles-y-la-directora-de-seguridad/", "kind": "prensa", "accessed": "2026-09-04", "note": "EFE; las peticiones se registraron el miércoles 2 y se difundieron el viernes 4" },
+    { "id": "src-infobae-pleno-control-4sept", "title": "PP y Vox centran en Ceuta y en Marlaska sus preguntas del próximo Pleno de control del Congreso, el primero del curso", "author": "", "publisher": "Infobae / Europa Press", "date": "2026-09-04", "url": "https://www.infobae.com/espana/agencias/2026/09/04/pp-y-vox-centran-en-ceuta-y-en-marlaska-sus-preguntas-del-proximo-pleno-de-control-del-congreso-el-primero-del-curso/", "kind": "prensa", "accessed": "2026-09-04", "note": "Preguntas e interpelaciones a Marlaska; Vox: «¿por qué han traicionado a los ceutíes?»" }
   ],
   "events": [
     {
@@ -166,6 +169,27 @@
       "kinds": ["parlamentaria", "politica"],
       "era": "democracia",
       "sourceIds": ["src-congreso-video-pl194", "src-congreso-od-pl194", "src-moncloa-2026-09-03-transc", "src-infobae-sanchez-contundencia", "src-eldiario-cierre-consecuencias"]
+    },
+    {
+      "id": "ev-2026-09-04-vox-comparecencias",
+      "date": "2026-09-04",
+      "dateLabel": "4 de septiembre de 2026",
+      "title": "Vox pide que Marlaska, Robles y la directora del DSN expliquen el informe del CENIF",
+      "summary": "Al día siguiente del pleno, Vox difunde las peticiones de comparecencia, registradas el miércoles 2, del ministro del Interior, Fernando Grande-Marlaska, de la ministra de Defensa, Margarita Robles, y de la directora del Departamento de Seguridad Nacional, Loreto Gutiérrez, para que expliquen «la posible implicación de gendarmes marroquíes en la entrada masiva de migrantes a Ceuta el 30 de julio» y el informe del CENIF remitido a la Audiencia Nacional. PP y Vox dedican a Ceuta y a Marlaska sus preguntas e interpelaciones del primer pleno de control del curso, la semana siguiente; Vox pregunta al ministro «¿por qué han traicionado a los ceutíes?». Ambas interpelaciones derivan en mociones una semana después.",
+      "government": "izquierda",
+      "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+      "headOfState": "Felipe VI",
+      "initiator": "espana",
+      "kinds": [
+        "parlamentaria",
+        "politica"
+      ],
+      "era": "democracia",
+      "sourceIds": [
+        "src-theobjective-vox-comparecencias-4sept",
+        "src-infobae-vox-comparecencias-4sept",
+        "src-infobae-pleno-control-4sept"
+      ]
     }
   ],
   "quotes": [

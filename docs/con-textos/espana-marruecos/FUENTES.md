@@ -1,6 +1,6 @@
 # Fuentes del especial «España y Marruecos, 1859-2026»
 
-Generado por `scripts/con-textos-fuentes.ts` a partir de `src/data/con-textos/espana-marruecos/sources.ts` (566 fuentes). Fecha de consulta: la indicada en cada entrada (por defecto, 2 de septiembre de 2026). Las notas señalan muros de pago, accesos denegados o cifras discutidas.
+Generado por `scripts/con-textos-fuentes.ts` a partir de `src/data/con-textos/espana-marruecos/sources.ts` (569 fuentes). Fecha de consulta: la indicada en cada entrada (por defecto, 2 de septiembre de 2026). Las notas señalan muros de pago, accesos denegados o cifras discutidas.
 
 ## Diarios de Sesiones y publicaciones parlamentarias (63)
 
@@ -304,7 +304,7 @@ Generado por `scripts/con-textos-fuentes.ts` a partir de `src/data/con-textos/es
 - **2026-09-02** · Malas Lenguas (RTVE), en X: [Malas Lenguas (TVE): vídeo de la conexión en directo de Jesús Poveda desde Cibeles](https://x.com/MalasLenguas_Tv/status/2095224488723993012) `src-x-malaslenguas-poveda`
 - **2026-09-03** · Congreso de los Diputados: [Vídeo de la sesión plenaria núm. 194, 3 de septiembre de 2026, con índice por oradores (Canal Parlamento)](https://app.congreso.es/AudiovisualCongreso/audiovisualEmisionSemiDirecto?codOrgano=400&codSesion=194&idLegislaturaElegida=15&fechaSesion=3/09/2026) — _Cada intervención tiene enlace permanente propio (app.congreso.es/v1/…); el Diario de Sesiones no estaba publicado al cerrar_ `src-congreso-video-pl194`
 
-## Prensa (282)
+## Prensa (285)
 
 - Infodefensa, Infodefensa: [1 de abril: tal día como hoy en 1958 España y Marruecos firman el acuerdo de Cintra](https://www.infodefensa.com/texto-diario/mostrar/3516835/1-abril-dia-como-hoy-1958-espana-marruecos-firman-acuerdo-cintra) `src-infodefensa-cintra`
 - saharaoccidental.es, saharaoccidental.es: [Dictamen Tribunal Internacional de Justicia de La Haya (traducción no oficial)](https://saharaoccidental.es/announcement/dictamen-tribunal-internacional-justicia-la-haya/) — _Traducción al español de las conclusiones._ `src-saharaocc-cij`
@@ -588,4 +588,7 @@ Generado por `scripts/con-textos-fuentes.ts` a partir de `src/data/con-textos/es
 - **2026-09-03** · Infobae / Europa Press: [Sánchez niega «política de apaciguamiento» con Marruecos y esgrime que no se puede abrir un conflicto sin pruebas](https://www.infobae.com/espana/agencias/2026/09/03/sanchez-niega-politica-de-apaciguamiento-con-marruecos-y-esgrime-que-no-se-puede-abrir-un-conflicto-sin-pruebas/) — _Turno de réplica de Sánchez_ `src-infobae-sanchez-apaciguamiento`
 - **2026-09-03** · elDiario.es: [Sánchez termina su comparecencia: «Debemos asegurarnos de que lo sucedido tenga consecuencias»](https://www.eldiario.es/politica/ultima-hora-comparecencia-pedro-sanchez-ceuta-actualidad-politica-directo_6_13483856_1124728.html) — _Directo; entrada de las 15:16 con el cierre de Sánchez_ `src-eldiario-cierre-consecuencias`
 - **2026-09-03** · The Objective: [Vivas tacha de «penosas» las explicaciones de Sánchez y le acusa de proteger a Marruecos](https://theobjective.com/espana/politica/2026-09-03/vivas-penosas-explicaciones-sanchez-acusa-proteger-marruecos/) `src-theobjective-vivas-penosas`
+- **2026-09-04** · Infobae / Europa Press: [PP y Vox centran en Ceuta y en Marlaska sus preguntas del próximo Pleno de control del Congreso, el primero del curso](https://www.infobae.com/espana/agencias/2026/09/04/pp-y-vox-centran-en-ceuta-y-en-marlaska-sus-preguntas-del-proximo-pleno-de-control-del-congreso-el-primero-del-curso/) — _Preguntas e interpelaciones a Marlaska; Vox: «¿por qué han traicionado a los ceutíes?»_ `src-infobae-pleno-control-4sept`
+- **2026-09-04** · Infobae / EFE: [Vox pide la comparecencia en el Congreso de Marlaska, Robles y la directora de Seguridad](https://www.infobae.com/espana/agencias/2026/09/04/vox-pide-la-comparecencia-en-el-congreso-de-marlaska-robles-y-la-directora-de-seguridad/) — _EFE; las peticiones se registraron el miércoles 2 y se difundieron el viernes 4_ `src-infobae-vox-comparecencias-4sept`
+- **2026-09-04** · The Objective: [Vox pide que Robles y Marlaska comparezcan en el Congreso por los informes sobre Ceuta](https://theobjective.com/espana/politica/2026-09-04/vox-robles-marlaska-congreso-ceuta/) — _Comparecencias de Robles, Marlaska y Loreto Gutiérrez (DSN) por el informe del CENIF_ `src-theobjective-vox-comparecencias-4sept`
 
