@@ -8,7 +8,7 @@
       "kind": "card",
       "lead": "Hemos seguido a <b>Juan Vida</b> hasta Jerez",
       "sub": "para un especial de Olvidos",
-      "dur": 3800
+      "dur": 3600
     },
     {
       "kind": "photo",
@@ -16,7 +16,7 @@
       "kicker": "Sala Pescadería Vieja · Jerez",
       "zoom": [1.03, 1.08],
       "pan": [6, 10],
-      "dur": 3600
+      "dur": 3400
     },
     {
       "kind": "photo",
@@ -31,20 +31,29 @@
       "kind": "card",
       "lead": "«Uno de los nombres propios de la pintura de Granada.»",
       "sub": "Del prólogo del catálogo",
-      "dur": 4600
+      "dur": 4400
     },
-    { "kind": "art", "img": "IMG_7865.jpg", "zoom": [1.0, 1.03], "pan": [5, 0], "dur": 4200 },
-    { "kind": "art", "img": "IMG_7876.jpg", "zoom": [1.0, 1.03], "pan": [6, 0], "dur": 4200 },
-    { "kind": "art", "img": "IMG_7868.jpg", "zoom": [1.0, 1.03], "pan": [-6, 0], "dur": 4200 },
-    { "kind": "art", "img": "IMG_7852.jpg", "zoom": [1.0, 1.03], "pan": [5, 0], "dur": 4200 },
-    { "kind": "art", "img": "IMG_7878.jpg", "zoom": [1.0, 1.03], "pan": [0, -5], "dur": 4400 },
+    { "kind": "art", "img": "IMG_7865.jpg", "zoom": [1.0, 1.03], "pan": [5, 0], "dur": 4000 },
+    { "kind": "art", "img": "IMG_7876.jpg", "zoom": [1.0, 1.03], "pan": [6, 0], "dur": 4000 },
+    { "kind": "art", "img": "IMG_7868.jpg", "zoom": [1.0, 1.03], "pan": [-6, 0], "dur": 4000 },
+    { "kind": "art", "img": "IMG_7852.jpg", "zoom": [1.0, 1.03], "pan": [5, 0], "dur": 4000 },
+    { "kind": "art", "img": "IMG_7878.jpg", "zoom": [1.0, 1.03], "pan": [0, -5], "dur": 4200 },
     {
       "kind": "photo",
       "img": "IMG_7862.jpg",
       "kicker": "La noche de la inauguración",
       "title": "Un brindis entre amigos",
-      "zoom": [1.03, 1.08],
+      "zoom": [1.03, 1.07],
       "pan": [5, 6],
+      "dur": 4200
+    },
+    {
+      "kind": "photo",
+      "img": "IMG_7892.jpg",
+      "kicker": "En la sala",
+      "title": "Juan Vida y su hija",
+      "zoom": [1.02, 1.06],
+      "pan": [0, 6],
       "dur": 4400
     },
     {
