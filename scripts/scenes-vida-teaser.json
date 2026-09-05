@@ -1,14 +1,14 @@
 {
   "meta": {
     "brand": "[<b>o</b>lvidos",
-    "fadeMs": 380
+    "fadeMs": 460
   },
   "scenes": [
     {
       "kind": "card",
       "lead": "Hemos seguido a <b>Juan Vida</b> hasta Jerez",
       "sub": "para un especial de Olvidos",
-      "dur": 2600
+      "dur": 3000
     },
     {
       "kind": "photo",
@@ -16,22 +16,22 @@
       "kicker": "Juan Vida · Jerez",
       "title": "«Personas, animales y cosas»",
       "sub": "Obra 1988 — 2025",
-      "zoom": [1.04, 1.12],
-      "pan": [10, 14],
-      "dur": 2600
+      "zoom": [1.03, 1.09],
+      "pan": [8, 12],
+      "dur": 3000
     },
-    { "kind": "art", "img": "IMG_7868.jpg", "zoom": [1.0, 1.1], "pan": [16, 0], "dur": 1350 },
-    { "kind": "art", "img": "IMG_7876.jpg", "zoom": [1.0, 1.1], "pan": [-16, 0], "dur": 1350 },
-    { "kind": "art", "img": "IMG_7880.jpg", "zoom": [1.0, 1.1], "pan": [16, 0], "dur": 1350 },
-    { "kind": "art", "img": "IMG_7852.jpg", "zoom": [1.0, 1.1], "pan": [-16, 0], "dur": 1350 },
+    { "kind": "art", "img": "IMG_7876.jpg", "zoom": [1.0, 1.06], "pan": [10, 0], "dur": 2500 },
+    { "kind": "art", "img": "IMG_7868.jpg", "zoom": [1.0, 1.06], "pan": [-10, 0], "dur": 2500 },
+    { "kind": "art", "img": "IMG_7852.jpg", "zoom": [1.0, 1.06], "pan": [8, 0], "dur": 2500 },
+    { "kind": "art", "img": "IMG_7878.jpg", "zoom": [1.02, 1.08], "pan": [0, -8], "dur": 2700 },
     {
       "kind": "photo",
       "img": "IMG_7892.jpg",
       "kicker": "La noche de la inauguración",
       "title": "Detrás de cada cuadro, alguien real",
-      "zoom": [1.05, 1.13],
-      "pan": [8, 10],
-      "dur": 2700
+      "zoom": [1.04, 1.10],
+      "pan": [6, 8],
+      "dur": 3200
     },
     {
       "kind": "card",
@@ -39,7 +39,7 @@
       "kicker": "Un especial de",
       "big": "Olvidos",
       "sub": "Muy pronto · olvidos.es",
-      "dur": 2600
+      "dur": 3000
     }
   ]
 }
