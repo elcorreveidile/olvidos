@@ -1,0 +1,37 @@
+{
+  "meta": { "brand": "[<b>o</b>lvidos", "fadeMs": 520 },
+  "scenes": [
+    {
+      "kind": "art", "img": "IMG_7865.jpg",
+      "kicker": "El cuadro más antiguo de la muestra",
+      "obra": { "titulo": "«Drop-out»", "meta": "Técnica mixta sobre lienzo · <b>1988</b>" },
+      "zoom": [1.0, 1.06], "pan": [8, 0], "dur": 12000
+    },
+    {
+      "kind": "art", "img": "IMG_7878.jpg",
+      "obra": { "titulo": "«El nacimiento de la primavera»", "meta": "Técnica mixta sobre lienzo · <b>2008</b>" },
+      "zoom": [1.02, 1.08], "pan": [0, -8], "dur": 7000
+    },
+    {
+      "kind": "art", "img": "IMG_7852.jpg",
+      "obra": { "titulo": "«Ven, esta es tu casa»", "meta": "Técnica mixta sobre lienzo · <b>2010</b>" },
+      "zoom": [1.0, 1.06], "pan": [8, 0], "dur": 7000
+    },
+    {
+      "kind": "art", "img": "IMG_7868.jpg",
+      "obra": { "titulo": "«Pandemonia»", "meta": "Técnica mixta sobre lienzo · <b>2015–2022</b>" },
+      "zoom": [1.0, 1.06], "pan": [-8, 0], "dur": 7000
+    },
+    {
+      "kind": "art", "img": "IMG_7876.jpg",
+      "zoom": [1.0, 1.06], "pan": [10, 0], "dur": 6000
+    },
+    {
+      "kind": "card", "mk": true,
+      "kicker": "Personas, animales y cosas",
+      "big": "1988 — 2025",
+      "sub": "Un especial de Olvidos · olvidos.es",
+      "dur": 5500
+    }
+  ]
+}
