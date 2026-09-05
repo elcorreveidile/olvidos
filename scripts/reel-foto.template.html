@@ -27,7 +27,9 @@
   .bg{position:absolute;inset:-8%;background-size:cover;background-position:center;
     filter:blur(28px) brightness(.42) saturate(1.05);transform:scale(1.1);}
   .fg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
-  .fg img{max-width:100%;max-height:100%;object-fit:contain;
+  /* La obra se muestra dentro de un área segura (< viewport) para que el
+     movimiento Ken-Burns nunca recorte el cuadro: siempre se ve completo. */
+  .fg img{max-width:82%;max-height:80%;object-fit:contain;
     box-shadow:0 40px 120px rgba(0,0,0,.6),0 8px 30px rgba(0,0,0,.5);will-change:transform;}
   .grain{position:absolute;inset:0;opacity:.06;mix-blend-mode:overlay;pointer-events:none;
     background:radial-gradient(circle at 30% 20%,#fff 0,transparent 42%),radial-gradient(circle at 70% 75%,#fff 0,transparent 44%);}
