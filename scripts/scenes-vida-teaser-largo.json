@@ -16,7 +16,7 @@
       "kicker": "Sala Pescadería Vieja · Jerez",
       "zoom": [1.03, 1.09],
       "pan": [6, 10],
-      "dur": 4000
+      "dur": 3800
     },
     {
       "kind": "photo",
@@ -25,22 +25,19 @@
       "sub": "Obra 1988 — 2025",
       "zoom": [1.02, 1.08],
       "pan": [6, 12],
-      "dur": 4200
+      "dur": 4000
     },
-    { "kind": "art", "img": "IMG_7865.jpg", "zoom": [1.0, 1.05], "pan": [8, 0], "dur": 4800 },
-    { "kind": "art", "img": "IMG_7876.jpg", "zoom": [1.0, 1.05], "pan": [10, 0], "dur": 4400 },
-    { "kind": "art", "img": "IMG_7868.jpg", "zoom": [1.0, 1.05], "pan": [-10, 0], "dur": 4400 },
-    { "kind": "art", "img": "IMG_7852.jpg", "zoom": [1.0, 1.05], "pan": [8, 0], "dur": 4400 },
-    { "kind": "art", "img": "IMG_7878.jpg", "zoom": [1.02, 1.07], "pan": [0, -8], "dur": 4800 },
     {
-      "kind": "photo",
-      "img": "IMG_7892.jpg",
-      "kicker": "La noche de la inauguración",
-      "title": "Detrás de cada cuadro, alguien real",
-      "zoom": [1.04, 1.10],
-      "pan": [6, 8],
-      "dur": 4400
+      "kind": "card",
+      "lead": "«Uno de los nombres propios de la pintura de Granada.»",
+      "sub": "Del prólogo del catálogo",
+      "dur": 5000
     },
+    { "kind": "art", "img": "IMG_7865.jpg", "zoom": [1.0, 1.04], "pan": [6, 0], "dur": 4800 },
+    { "kind": "art", "img": "IMG_7876.jpg", "zoom": [1.0, 1.04], "pan": [8, 0], "dur": 4400 },
+    { "kind": "art", "img": "IMG_7868.jpg", "zoom": [1.0, 1.04], "pan": [-8, 0], "dur": 4400 },
+    { "kind": "art", "img": "IMG_7852.jpg", "zoom": [1.0, 1.04], "pan": [6, 0], "dur": 4400 },
+    { "kind": "art", "img": "IMG_7878.jpg", "zoom": [1.02, 1.06], "pan": [0, -6], "dur": 4800 },
     {
       "kind": "card",
       "mk": true,
