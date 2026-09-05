@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "brand": "[<b>o</b>lvidos",
+    "fadeMs": 380
+  },
+  "scenes": [
+    {
+      "kind": "card",
+      "lead": "Hemos seguido a <b>Juan Vida</b> hasta Jerez",
+      "sub": "para un especial de Olvidos",
+      "dur": 2600
+    },
+    {
+      "kind": "photo",
+      "img": "IMG_7844.jpg",
+      "kicker": "Juan Vida · Jerez",
+      "title": "«Personas, animales y cosas»",
+      "sub": "Obra 1988 — 2025",
+      "zoom": [1.04, 1.12],
+      "pan": [10, 14],
+      "dur": 2600
+    },
+    { "kind": "art", "img": "IMG_7868.jpg", "zoom": [1.0, 1.1], "pan": [16, 0], "dur": 1350 },
+    { "kind": "art", "img": "IMG_7876.jpg", "zoom": [1.0, 1.1], "pan": [-16, 0], "dur": 1350 },
+    { "kind": "art", "img": "IMG_7880.jpg", "zoom": [1.0, 1.1], "pan": [16, 0], "dur": 1350 },
+    { "kind": "art", "img": "IMG_7852.jpg", "zoom": [1.0, 1.1], "pan": [-16, 0], "dur": 1350 },
+    {
+      "kind": "photo",
+      "img": "IMG_7892.jpg",
+      "kicker": "Y una historia dentro",
+      "title": "La modelo que pasea entre sus cuadros",
+      "zoom": [1.05, 1.13],
+      "pan": [8, 10],
+      "dur": 2700
+    },
+    {
+      "kind": "card",
+      "mk": true,
+      "kicker": "Un especial de",
+      "big": "Olvidos",
+      "sub": "Muy pronto · olvidos.es",
+      "dur": 2600
+    }
+  ]
+}
