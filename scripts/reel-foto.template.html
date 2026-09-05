@@ -45,6 +45,7 @@
 
   /* Ficha de obra */
   .obra{position:absolute;left:70px;right:70px;bottom:150px;text-align:center;}
+  .obra .ok{font-weight:800;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:var(--coral);margin-bottom:18px;text-shadow:0 2px 14px rgba(0,0,0,.7);}
   .obra .t{font-weight:900;font-size:52px;line-height:1.05;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.6);}
   .obra .m{margin-top:12px;font-weight:600;font-size:30px;color:rgba(255,255,255,.82);letter-spacing:1px;}
   .obra .m b{color:var(--coral);font-weight:800;}
@@ -107,8 +108,8 @@ window.__META__ = window.__META__ || null;     /* __META_INJECT__ */
         <div class="fg"><img src="${a.src}"/></div>
         <div class="scrimTop"></div><div class="scrim"></div>
         <div class="brand"><div class="m">${brandTxt}</div></div>
-        ${sc.obra?`<div class="obra"><div class="t">${esc(sc.obra.titulo)}</div><div class="m">${sc.obra.meta||""}</div></div>`:``}
-        ${(sc.kicker||sc.title||sc.sub)?`<div class="rot">${sc.kicker?`<div class="kick">${esc(sc.kicker)}</div><div class="bar"></div>`:``}${sc.title?`<div class="line">${esc(sc.title)}</div>`:``}${sc.sub?`<div class="sub">${esc(sc.sub)}</div>`:``}</div>`:``}`;
+        ${sc.obra?`<div class="obra">${sc.kicker?`<div class="ok">${esc(sc.kicker)}</div>`:``}<div class="t">${esc(sc.obra.titulo)}</div><div class="m">${sc.obra.meta||""}</div></div>`:``}
+        ${(!sc.obra && (sc.kicker||sc.title||sc.sub))?`<div class="rot">${sc.kicker?`<div class="kick">${esc(sc.kicker)}</div><div class="bar"></div>`:``}${sc.title?`<div class="line">${esc(sc.title)}</div>`:``}${sc.sub?`<div class="sub">${esc(sc.sub)}</div>`:``}</div>`:``}`;
     }
     root.appendChild(el);
   });
