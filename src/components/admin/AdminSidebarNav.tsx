@@ -9,6 +9,7 @@ import {
   CreditCard,
   BookMarked,
   Settings,
+  ClipboardCheck,
 } from "lucide-react";
 import { SidebarNavLinks } from "@/components/layout/SidebarNavLinks";
 
@@ -16,6 +17,7 @@ const NAV = [
   { name: "Dashboard", href: "/admin", icon: LayoutDashboard },
   { name: "Artículos", href: "/admin/articulos", icon: FileText },
   { name: "Revista", href: "/admin/revista", icon: BookOpen },
+  { name: "Redacción", href: "/admin/redaccion", icon: ClipboardCheck },
   { name: "Socios", href: "/admin/socios", icon: Users },
   { name: "Documentos", href: "/admin/documentos", icon: Files },
   { name: "Pagos", href: "/admin/pagos", icon: CreditCard },
