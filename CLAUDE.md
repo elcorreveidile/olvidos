@@ -34,6 +34,20 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
 - Producción se despliega desde `main` en Vercel. Los PR se fusionan con
   *squash*. El PR #5 (agosto de 2026) exigía `prisma db push` por dos
   columnas nuevas (`User.tokenVersion`, `VerificationToken.type`).
+- **Qué proyecto de Vercel sirve la web:** el proyecto `olvidos` del equipo
+  **olvidos-projects**. Dominios: `olvidos.es` redirige (308) a
+  `www.olvidos.es`. El conector de Vercel de Claude solo ve el equipo
+  «Javier's projects», así que los despliegues reales se miran en el panel de
+  vercel.com con el ámbito olvidos-projects.
+- **Duplicado desconectado (septiembre de 2026):** en «Javier's projects»
+  había otro proyecto `olvidos` conectado al mismo repositorio desde el
+  1-8-2026 que construía cada push sin servir ningún dominio (`olvidos.es` y
+  `www.olvidos.es` figuraban en su lista de dominios sin asignar). Se
+  desconectó del repositorio en Settings → Git. Si en un PR el bot de Vercel
+  deja **dos** comentarios, es que ha vuelto a conectarse. Para saber qué
+  build sirve el dominio: comparar el nombre del chunk `app/layout-*.js` en
+  el HTML de `https://www.olvidos.es/login` con el del despliegue de
+  producción; si no coinciden, el dominio no está en ese proyecto.
 
 ## Con-textos (especiales interactivos)
 
