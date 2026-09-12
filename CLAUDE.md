@@ -44,12 +44,11 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   (comparador apilado, bloque «nacionalistas», informe del CENIF, calle del
   2-9, agresiones a periodistas, citas del pleno verificadas por vídeo con
   minuto). Material en `docs/con-textos/espana-marruecos/bloques/07-*`.
-- **Pendiente: la pasada del Diario de Sesiones** cuando el Congreso lo
-  publique (previsiblemente `DSCD-15-PL-201`): añadir página y PDF a las
-  citas `q-pl194-*` y cotejar el texto. Procedimiento en el bloque 07, §A.8;
-  `npx tsx scripts/con-textos-check.ts espana-marruecos --pendientes` las
-  lista. Las citas parlamentarias por vídeo se explican en
-  `docs/con-textos/README.md`.
+- **Pasada del Diario hecha el 10-9-2026**: las 52 citas `q-pl194-*` llevan
+  página del `DSCD-15-PL-201` y su texto oficial (cotejo en el bloque 07,
+  §A.7). El Diario se publicó una semana después del pleno. Para sesiones
+  posteriores (control del 9-9, sesión 195) se repite el método: grabación +
+  prensa mientras no hay Diario, y pasada del Diario después.
 
 ## Convenciones
 

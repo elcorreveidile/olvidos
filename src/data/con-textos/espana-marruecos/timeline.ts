@@ -3071,11 +3071,186 @@ export const TIMELINE = [
     ],
     "era": "democracia",
     "sourceIds": [
+      "src-dscd-pl-201",
       "src-congreso-video-pl194",
       "src-congreso-od-pl194",
       "src-moncloa-2026-09-03-transc",
       "src-infobae-sanchez-contundencia",
       "src-eldiario-cierre-consecuencias"
+    ]
+  },
+  {
+    "id": "ev-2026-09-04-vox-comparecencias",
+    "date": "2026-09-04",
+    "dateLabel": "4 de septiembre de 2026",
+    "title": "Vox pide que Marlaska, Robles y la directora del DSN expliquen el informe del CENIF",
+    "summary": "Al día siguiente del pleno, Vox difunde las peticiones de comparecencia, registradas el miércoles 2, del ministro del Interior, Fernando Grande-Marlaska, de la ministra de Defensa, Margarita Robles, y de la directora del Departamento de Seguridad Nacional, Loreto Gutiérrez, para que expliquen «la posible implicación de gendarmes marroquíes en la entrada masiva de migrantes a Ceuta el 30 de julio» y el informe del CENIF remitido a la Audiencia Nacional. PP y Vox dedican a Ceuta y a Marlaska sus preguntas e interpelaciones del primer pleno de control del curso, la semana siguiente; Vox pregunta al ministro «¿por qué han traicionado a los ceutíes?». Ambas interpelaciones derivan en mociones una semana después.",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+    "headOfState": "Felipe VI",
+    "initiator": "espana",
+    "kinds": [
+      "parlamentaria",
+      "politica"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-theobjective-vox-comparecencias-4sept",
+      "src-infobae-vox-comparecencias-4sept",
+      "src-infobae-pleno-control-4sept"
+    ]
+  },
+  {
+    "id": "ev-2026-09-05-moraleja",
+    "date": "2026-09-05",
+    "dateLabel": "5 de septiembre de 2026",
+    "title": "El «Cara al sol» suena tras el pregón de las fiestas de Moraleja de Enmedio",
+    "summary": "La noche del sábado, tras el pregón y el chupinazo en la plaza de España, ante el Ayuntamiento, suena el himno falangista con la plaza llena; según los presentes, a quienes pidieron apagarlo se les respondió «lo apagáis vosotros», con un concejal delante. El PSOE local denuncia el hecho y pregunta por la responsabilidad del Gobierno municipal, de PP y Vox. No es la primera vez: en 2013 una peña lo puso en el desfile de carrozas y colgó una bandera franquista del balcón del Ayuntamiento durante el pregón; en 2024 volvió a sonar tras el pregón y la alcaldesa, del PP, dijo que había «orden de que no se emita esta canción jamás en vía pública».",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+    "headOfState": "Felipe VI",
+    "initiator": "espana",
+    "kinds": [
+      "politica"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-noticiasmunicipios-moraleja-9sept",
+      "src-soydemadrid-moraleja-2024",
+      "src-publico-moraleja-2013"
+    ]
+  },
+  {
+    "id": "ev-2026-09-07-rey-robles",
+    "date": "2026-09-07",
+    "dateLabel": "7 de septiembre de 2026",
+    "title": "El Rey se reúne en Zarzuela con Robles, el JEMAD y el comandante general de Ceuta",
+    "summary": "Felipe VI, con uniforme de capitán general del Ejército de Tierra, examina la situación de Ceuta «desde la perspectiva de la Defensa» con la ministra Margarita Robles, el jefe del Estado Mayor de la Defensa, Teodoro López Calderón, el comandante general de Ceuta, Luis Fernández Herrero, y los mandos operativos. La reunión no figuraba en ninguna agenda; la Casa del Rey la hizo pública al día siguiente con una fotografía en X. Preguntado en TVE si era un mensaje a Marruecos, Sánchez respondió que era «normalidad» y que «estaba agendado». La visita del Rey a Ceuta, anunciada el 3 en el pleno «en las próximas semanas», sigue sin fecha.",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+    "headOfState": "Felipe VI",
+    "initiator": "espana",
+    "kinds": [
+      "politica"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-telemadrid-rey-robles-8sept",
+      "src-elindependiente-casa-real-imagen-8sept",
+      "src-vozpopuli-directo-9sept"
+    ]
+  },
+  {
+    "id": "ev-2026-09-08-supremo-nietos",
+    "date": "2026-09-08",
+    "dateLabel": "8 de septiembre de 2026",
+    "title": "El Supremo suspende el voto de los nacionalizados por la «ley de nietos» que no acrediten el exilio",
+    "summary": "La Sección Cuarta de la Sala de lo Contencioso-Administrativo estima en parte las medidas cautelares pedidas por Vox e Iustitia Europa y paraliza la inscripción en el censo de residentes ausentes de quienes obtuvieron la nacionalidad por la Ley de Memoria Democrática, salvo que los consulados certifiquen que son hijos o nietos de exiliados; unos 306.000 nacionalizados, hasta sentencia firme. La Fiscalía y la Abogacía del Estado se habían opuesto. Vox celebra haber frenado «la manipulación del censo electoral»; Feijóo critica la «opacidad absoluta» del Gobierno; la portavoz Elma Saiz rechaza el auto, y Sánchez dice en TVE: «no estamos a favor, ni compartimos, la resolución del Tribunal Supremo», y pide resolverlo «antes de las elecciones de 2027». Al día siguiente, en la sesión de control, Feijóo acusa al presidente de «manipular el censo» y Sánchez replica que PP y Vox «cercenan el derecho al voto» de los descendientes de exiliados.",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+    "headOfState": "Felipe VI",
+    "initiator": "espana",
+    "kinds": [
+      "judicial",
+      "politica"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-eldiario-supremo-nietos-8sept",
+      "src-euronews-supremo-nietos-8sept",
+      "src-eltiempo-sanchez-nietos-9sept",
+      "src-congreso-video-pl195"
+    ]
+  },
+  {
+    "id": "ev-2026-09-08-listado-periodistas",
+    "date": "2026-09-08",
+    "dateLabel": "8 de septiembre de 2026",
+    "title": "El Confidencial revela el dosier de Interior con fichas ideológicas de 280 periodistas; Marlaska, abucheado en Ceuta",
+    "summary": "El Confidencial publica un informe de la Oficina de Comunicación del Ministerio del Interior, 54 páginas y 281 fichas de 280 periodistas, directores, columnistas y tertulianos, con fotografía y anotaciones como «afín al PSOE», «tendencia conservadora», «ideología de izquierdas» o «apoya al Gobierno»; el primer encargo es de las navidades de 2023. Marlaska, ese mismo día en Ceuta, lo llama «documento interno para mejorar la eficacia» y niega que clasifique «por ideología»; Newtral comprueba que sí lo hace. La FAPE y la Asociación de la Prensa de Madrid sostienen que ningún organismo público tiene legitimidad para fichar o perfilar ideológicamente a periodistas. En Ceuta, el ministro llega a la Delegación del Gobierno entre gritos de «vendepatrias», «sinvergüenza» y «traidor», responde a tres preguntas y se marcha en un furgón policial.",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+    "headOfState": "Felipe VI",
+    "initiator": "espana",
+    "kinds": [
+      "informativa",
+      "politica"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-elespanol-marlaska-listado-8sept",
+      "src-newtral-listado-factcheck",
+      "src-elfarodeceuta-abucheos-marlaska",
+      "src-eldebate-abucheos-marlaska"
+    ]
+  },
+  {
+    "id": "ev-2026-09-09-control",
+    "date": "2026-09-09",
+    "dateLabel": "9 de septiembre de 2026",
+    "title": "Primera sesión de control del curso: «Si Marruecos canta, usted se va»; «seré un perro, pero no tengo amo»",
+    "summary": "Sesión plenaria núm. 195. Feijóo: Sánchez «no es un presidente libre», «si Marruecos canta, usted se va», «ha desprotegido a su país y su país se lo hará pagar»; pregunta qué haría «si mañana volvieran a entrar 80.000 personas en Ceuta» y pide elecciones: «ponga fecha y nos vemos en las urnas». Abascal: «¿Está usted siendo chantajeado por Marruecos?», «España no puede seguir siendo un protectorado marroquí». Sánchez, a Abascal: «A diferencia de usted, yo seré un perro, pero no tengo amo»; anuncia la publicación esa tarde de los informes. Tellado pide a Marlaska que dimita por el listado de periodistas («¿usted se cree el ministro de la Gobernación de una dictadura bananera?») y le reprocha haber salido de Ceuta «a bordo de un furgón policial»; Marlaska defiende la cooperación con Marruecos y habla de un «sentimiento subjetivo de inseguridad» en Ceuta. PP y Vox interpelan al ministro; las mociones se votan la semana siguiente. Diario de Sesiones pendiente.",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+    "headOfState": "Felipe VI",
+    "initiator": "espana",
+    "kinds": [
+      "parlamentaria",
+      "politica"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-congreso-video-pl195",
+      "src-elespanol-perro-amo-9sept",
+      "src-theobjective-feijoo-canta-9sept",
+      "src-donporque-control-9sept",
+      "src-elespanol-valles-marlaska-9sept"
+    ]
+  },
+  {
+    "id": "ev-2026-09-09-tve-documentos",
+    "date": "2026-09-09",
+    "dateLabel": "9 de septiembre de 2026",
+    "title": "Sánchez en TVE y publicación de los 40 documentos sobre Ceuta",
+    "summary": "A las once, entrevista en Mañaneros 360 (Jesús Cintora y Esther Palomera), la primera en televisión desde la crisis, que el Consejo de Informativos de RTVE había calificado de «hecho sin precedentes y de extrema gravedad» por hacerse fuera de los Servicios Informativos. Sánchez: «este Gobierno no acepta ningún chantaje»; «no se previó una llegada masiva de migrantes»; «he estado al pie del cañón desde el minuto uno»; «soy el presidente del Gobierno que más ha ido a Ceuta»; los que cruzaron «no son invasores»; sobre el listado de Interior, «un documento muy poco afortunado»; sobre la foto del Rey con la cúpula militar, «normalidad». Por la tarde, Moncloa publica 40 documentos del 1 al 31 de julio, anonimizados: notas del CENIF del 28 y 29, una «nota urgente de alerta temprana» del CNI del 29 sobre «posibles intentos de entrada» durante la Fiesta del Trono, grupos en redes con «más de 160.000 miembros», informes de la Guardia Civil que hablan de «pasividad» y «permisividad» marroquíes, y las conversaciones del CNI con la Delegación del Gobierno del 27 al 29. La portavoz Saiz: «ni trampa ni cartón». El PP: «lo sabían y no hicieron nada»; Ester Muñoz: «son responsables directos de la invasión y de los fallecidos».",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+    "headOfState": "Felipe VI",
+    "initiator": "espana",
+    "kinds": [
+      "informativa",
+      "politica"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-vozpopuli-directo-9sept",
+      "src-moncloa-informes-ceuta",
+      "src-elconstitucional-sanchez-tve-chantaje",
+      "src-infobae-sanchez-tve-10frases",
+      "src-elindependiente-consejo-informativos-8sept"
+    ]
+  },
+  {
+    "id": "ev-2026-09-10-expresidentes",
+    "date": "2026-09-10",
+    "dateLabel": "10 de septiembre de 2026",
+    "title": "Aznar y Felipe González opinan sobre Ceuta; el Congreso publica el Diario del pleno del 3",
+    "summary": "Aznar, en un desayuno de Nueva Economía Fórum: «hace días comprobamos en el drama de Ceuta las consecuencias de habernos enajenado la amistad de aliados relevantes», en referencia a Israel, «la línea de defensa más oriental de Occidente». Felipe González, a la entrada de una comida con excargos en Madrid: la gestión es «manifiestamente mejorable» y «no le he visto nunca asumir responsabilidades» a Sánchez, aunque el 31 de julio «definió exactamente lo que había pasado como lo que era». El mismo día el Congreso publica el Diario de Sesiones núm. 201, el del pleno extraordinario del 3.",
+    "government": "izquierda",
+    "governmentLabel": "Gobierno de Pedro Sánchez (PSOE-Sumar)",
+    "headOfState": "Felipe VI",
+    "initiator": "espana",
+    "kinds": [
+      "politica",
+      "parlamentaria"
+    ],
+    "era": "democracia",
+    "sourceIds": [
+      "src-infobae-aznar-aliados-10sept",
+      "src-elconstitucional-aznar-israel-10sept",
+      "src-theobjective-gonzalez-10sept",
+      "src-pressdigital-gonzalez-10sept",
+      "src-dscd-pl-201"
     ]
   }
 ] satisfies TimelineEvent[];

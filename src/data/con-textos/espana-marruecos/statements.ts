@@ -2625,6 +2625,7 @@ export const STATEMENTS = [
     "dateLabel": "3 de septiembre de 2026, 09:47",
     "text": "Durante diez horas centrales del día 30 de julio […] la Gendarmería marroquí permitió el cruce de la frontera […] A día de hoy nadie ha aportado pruebas al Gobierno que permitan concluir que esta entrada masiva […] fuera diseñada o ejecutada por las autoridades marroquíes",
     "sourceIds": [
+      "src-dscd-pl-201",
       "src-moncloa-2026-09-03-transc",
       "src-congreso-video-pl194"
     ],
@@ -2640,6 +2641,7 @@ export const STATEMENTS = [
     "dateLabel": "3 de septiembre de 2026, 09:55",
     "text": "Por qué no se compartió con sus superiores y con el Gobierno de España el contenido de un informe que se había encargado, en este caso por parte de una jueza del Poder Judicial, y con potenciales implicaciones para la seguridad del Estado. Esto también tendrá que explicarse, señorías",
     "sourceIds": [
+      "src-dscd-pl-201",
       "src-moncloa-2026-09-03-transc",
       "src-infobae-sanchez-cenif-3sept"
     ],
@@ -2655,10 +2657,11 @@ export const STATEMENTS = [
     "dateLabel": "3 de septiembre de 2026, 12:10",
     "text": "Ha estado casi cuatro semanas ausente y seguimos sin saber qué y por qué sucedió […] Señor Sánchez, con todo el respeto, usted no ha estado a la altura",
     "sourceIds": [
+      "src-dscd-pl-201",
       "src-congreso-video-pl194",
       "src-infobae-sanchez-contundencia"
     ],
-    "note": "Corte 777815, min. 3:51, según la grabación. «Es inverosímil que Marruecos quede exculpado de toda responsabilidad»; «no pueden pedir a la gente un acto de fe»."
+    "note": "Corte 777815, min. 3:51, según la grabación y el Diario de Sesiones núm. 201. «Es inverosímil que Marruecos quede exculpado de toda responsabilidad»; «no pueden pedir a la gente un acto de fe»."
   },
   {
     "id": "st-pl194-belarra-romper",
@@ -2670,10 +2673,11 @@ export const STATEMENTS = [
     "dateLabel": "3 de septiembre de 2026, 12:25",
     "text": "Es el momento de romper relaciones diplomáticas y comerciales con Marruecos, hasta que sea una democracia",
     "sourceIds": [
+      "src-dscd-pl-201",
       "src-congreso-video-pl194",
       "src-infobae-sanchez-contundencia"
     ],
-    "note": "Corte 777816, min. 2:56, según la grabación. «Marruecos es un régimen totalitario. Marruecos es una dictadura»; «¿por qué protege a Marruecos?»; al Gobierno, «inacción calculada»."
+    "note": "Corte 777816, min. 2:56, según la grabación y el Diario de Sesiones núm. 201. «Marruecos es un régimen totalitario. Marruecos es una dictadura»; «¿por qué protege a Marruecos?»; al Gobierno, «inacción calculada»."
   },
   {
     "id": "st-pl194-lopez-vivir",
@@ -2685,10 +2689,11 @@ export const STATEMENTS = [
     "dateLabel": "3 de septiembre de 2026, 12:54",
     "text": "La intención de la absoluta mayoría de los que están hoy en Ceuta nunca fue invadir: fue vivir",
     "sourceIds": [
+      "src-dscd-pl-201",
       "src-congreso-video-pl194",
       "src-infobae-sanchez-contundencia"
     ],
-    "note": "Corte 777821, min. 2:29, según la grabación. A Feijóo: «mucho España pero poco PP»; ninguna comunidad del PP «se ha manifestado dispuesta a prestar esa ayuda»."
+    "note": "Corte 777821, min. 2:29, según la grabación y el Diario de Sesiones núm. 201. A Feijóo: «mucho España pero poco PP»; ninguna comunidad del PP «se ha manifestado dispuesta a prestar esa ayuda»."
   },
   {
     "id": "st-pl194-sanchez-replica",
@@ -2700,10 +2705,11 @@ export const STATEMENTS = [
     "dateLabel": "3 de septiembre de 2026, 13:30",
     "text": "Miramos de igual a igual a todas las potencias extranjeras, también a Marruecos. Pero tampoco tenemos la más mínima intención de desencadenar un conflicto diplomático de primer orden […] con un país vecino sin tener datos sólidos",
     "sourceIds": [
+      "src-dscd-pl-201",
       "src-infobae-sanchez-apaciguamiento",
       "src-congreso-video-pl194"
     ],
-    "note": "Corte 777829, min. 18:17, según la grabación. Niega estar «cautivo» de la «Corona alauita»; pide a Abascal que se disculpe por el «cazar uno a uno» de un diputado de Vox."
+    "note": "Corte 777829, min. 18:17, según la grabación y el Diario de Sesiones núm. 201. Niega estar «cautivo» de la «Corona alauita»; pide a Abascal que se disculpe por el «cazar uno a uno» de un diputado de Vox."
   },
   {
     "id": "st-pl194-sanchez-cierre",
@@ -2715,11 +2721,12 @@ export const STATEMENTS = [
     "dateLabel": "3 de septiembre de 2026, 15:15",
     "text": "Esa es su propuesta: escalar sin reservas un conflicto. Yo no puedo hacerlo, no debo hacerlo y no lo voy a hacer",
     "sourceIds": [
+      "src-dscd-pl-201",
       "src-eldiario-cierre-consecuencias",
       "src-vozpopuli-directo-3sept",
       "src-congreso-video-pl194"
     ],
-    "note": "Corte 777837, min. 2:32, según la grabación. Promete «asegurarnos de que lo sucedido estos días tenga unas consecuencias y también se paguen por ellas»."
+    "note": "Corte 777837, min. 2:32, según la grabación y el Diario de Sesiones núm. 201. Promete «asegurarnos de que lo sucedido estos días tenga unas consecuencias y también se paguen por ellas»."
   },
   {
     "id": "st-pl194-feijoo-replica",
@@ -2731,10 +2738,11 @@ export const STATEMENTS = [
     "dateLabel": "3 de septiembre de 2026, 14:20",
     "text": "No irme de vacaciones; cesar al ministro del Interior por incompetente y por mentiroso […] acompañar al Rey a Ceuta […] citar a la embajadora cuando está en España, no cuando está fuera",
     "sourceIds": [
+      "src-dscd-pl-201",
       "src-congreso-video-pl194",
       "src-infobae-feijoo-mareta"
     ],
-    "note": "Corte 777830, min. 4:43, según la grabación: su respuesta a «¿qué haría usted de diferente?». «Si arrimar el hombro es acompañarle a La Mareta, no cuente conmigo»."
+    "note": "Corte 777830, min. 4:43, según la grabación y el Diario de Sesiones núm. 201: su respuesta a «¿qué haría usted de diferente?». «Si arrimar el hombro es acompañarle a La Mareta, no cuente conmigo»."
   },
   {
     "id": "st-pl194-abascal-replica",
@@ -2746,10 +2754,11 @@ export const STATEMENTS = [
     "dateLabel": "3 de septiembre de 2026, 14:30",
     "text": "Vamos a ir a la suspensión del Tratado de Amistad España-Marruecos […] la retirada del embajador español en Marruecos y […] la expulsión del Mundial de Marruecos",
     "sourceIds": [
+      "src-dscd-pl-201",
       "src-congreso-video-pl194",
       "src-infobae-abascal-virrey-3sept"
     ],
-    "note": "Corte 777831, min. 3:00, según la grabación. También la suspensión del acuerdo preferencial UE-Marruecos; a Sánchez, «la empatía de un asesino en serie»."
+    "note": "Corte 777831, min. 3:00, según la grabación y el Diario de Sesiones núm. 201. También la suspensión del acuerdo preferencial UE-Marruecos; a Sánchez, «la empatía de un asesino en serie»."
   },
   {
     "id": "st-pl194-aizpurua-recalibrar",
@@ -2761,10 +2770,11 @@ export const STATEMENTS = [
     "dateLabel": "3 de septiembre de 2026, 12:02",
     "text": "Quizá sea hora de recalibrar su posición hacia Marruecos y rectificar su error sobre el Sáhara",
     "sourceIds": [
+      "src-dscd-pl-201",
       "src-congreso-video-pl194",
       "src-infobae-sanchez-contundencia"
     ],
-    "note": "Corte 777814, min. 16:06, según la grabación. Pregunta si la Policía, «algún juez o jueza» o el CNI han ocultado información al Gobierno: «eso tiene un nombre». Denuncia las agresiones a periodistas del 2 de septiembre."
+    "note": "Corte 777814, min. 16:06, según la grabación y el Diario de Sesiones núm. 201. Pregunta si la Policía, «algún juez o jueza» o el CNI han ocultado información al Gobierno: «eso tiene un nombre». Denuncia las agresiones a periodistas del 2 de septiembre."
   },
   {
     "id": "st-pl194-feijoo-dimita",
@@ -2776,10 +2786,11 @@ export const STATEMENTS = [
     "dateLabel": "3 de septiembre de 2026, 10:21",
     "text": "Si esta es la verdad, dimita por incompetente; y si es falso, dimita por cómplice, señor Sánchez",
     "sourceIds": [
+      "src-dscd-pl-201",
       "src-congreso-video-pl194",
       "src-infobae-sanchez-contundencia"
     ],
-    "note": "Corte 777808, min. 2:12, según la grabación. Pide convocar «de forma oficial» a la embajadora, llamar a consultas al embajador en Rabat, incluir «las conversaciones de Pegasus» en el dossier y acompañar al Rey a Ceuta."
+    "note": "Corte 777808, min. 2:12, según la grabación y el Diario de Sesiones núm. 201. Pide convocar «de forma oficial» a la embajadora, llamar a consultas al embajador en Rabat, incluir «las conversaciones de Pegasus» en el dossier y acompañar al Rey a Ceuta."
   },
   {
     "id": "st-pl194-feijoo-miedo",
@@ -2791,10 +2802,11 @@ export const STATEMENTS = [
     "dateLabel": "3 de septiembre de 2026, 10:24",
     "text": "¿Por qué tiene miedo a Marruecos? ¿Qué sabe Marruecos de usted? […] España no puede tener un presidente bajo chantaje",
     "sourceIds": [
+      "src-dscd-pl-201",
       "src-congreso-video-pl194",
       "src-infobae-sanchez-contundencia"
     ],
-    "note": "Corte 777808, min. 5:15, según la grabación. Alusión al espionaje con Pegasus."
+    "note": "Corte 777808, min. 5:15, según la grabación y el Diario de Sesiones núm. 201. Alusión al espionaje con Pegasus."
   },
   {
     "id": "st-pl194-abascal-traicion",
@@ -2806,10 +2818,11 @@ export const STATEMENTS = [
     "dateLabel": "3 de septiembre de 2026, 10:37",
     "text": "Señorías, traición. No hay otra palabra […] Y el presidente Sánchez es un traidor",
     "sourceIds": [
+      "src-dscd-pl-201",
       "src-congreso-video-pl194",
       "src-infobae-sanchez-contundencia"
     ],
-    "note": "Corte 777809, min. 0:31, según la grabación. Pide activar el artículo 102 de la Constitución: «los escaños de Vox están a disposición de esta iniciativa»; «para este delito no hay indulto»."
+    "note": "Corte 777809, min. 0:31, según la grabación y el Diario de Sesiones núm. 201. Pide activar el artículo 102 de la Constitución: «los escaños de Vox están a disposición de esta iniciativa»; «para este delito no hay indulto»."
   },
   {
     "id": "st-pl194-abascal-amo",
@@ -2821,10 +2834,11 @@ export const STATEMENTS = [
     "dateLabel": "3 de septiembre de 2026, 10:50",
     "text": "Es lo único que tiene claro: que Marruecos es su amigo. Pero no es verdad: Marruecos es su amo, señor Sánchez",
     "sourceIds": [
+      "src-dscd-pl-201",
       "src-congreso-video-pl194",
       "src-infobae-sanchez-contundencia"
     ],
-    "note": "Corte 777809, min. 13:21, según la grabación. Antes: «Le vemos muy valiente contra el rey de España y muy sumiso con el de Marruecos. Ya sabemos a qué Corona rinde usted cuentas»."
+    "note": "Corte 777809, min. 13:21, según la grabación y el Diario de Sesiones núm. 201. Antes: «Le vemos muy valiente contra el rey de España y muy sumiso con el de Marruecos. Ya sabemos a qué Corona rinde usted cuentas»."
   },
   {
     "id": "st-pl194-santiago-ataque",
@@ -2836,10 +2850,11 @@ export const STATEMENTS = [
     "dateLabel": "3 de septiembre de 2026, 10:55",
     "text": "España ha sufrido un ataque de Marruecos utilizando a personas vulnerables […] Marruecos, en coordinación con Estados Unidos e Israel, ha organizado la masiva entrada de 80.000 personas. Defender otra hipótesis no es creíble",
     "sourceIds": [
+      "src-dscd-pl-201",
       "src-congreso-video-pl194",
       "src-infobae-sanchez-contundencia"
     ],
-    "note": "Corte 777810, min. 1:57, según la grabación. Pide convocar «ya» a la embajadora y el traslado urgente a la Península de quienes quedan en Ceuta."
+    "note": "Corte 777810, min. 1:57, según la grabación y el Diario de Sesiones núm. 201. Pide convocar «ya» a la embajadora y el traslado urgente a la Península de quienes quedan en Ceuta."
   },
   {
     "id": "st-pl194-vidal-ninos",
@@ -2851,10 +2866,11 @@ export const STATEMENTS = [
     "dateLabel": "3 de septiembre de 2026, 11:05",
     "text": "Son niños, señorías, niños, no invasores, no soldados; no venían con bombas, venían a lo sumo con un flotador llorando",
     "sourceIds": [
+      "src-dscd-pl-201",
       "src-congreso-video-pl194",
       "src-infobae-sanchez-contundencia"
     ],
-    "note": "Corte 777811, min. 2:20, según la grabación. «La política de apaciguamiento de Marruecos ha fracasado» (min. 7:00)."
+    "note": "Corte 777811, min. 2:20, según la grabación y el Diario de Sesiones núm. 201. «La política de apaciguamiento de Marruecos ha fracasado» (min. 7:00)."
   },
   {
     "id": "st-pl194-rufian-acuso",
@@ -2866,10 +2882,11 @@ export const STATEMENTS = [
     "dateLabel": "3 de septiembre de 2026, 11:15",
     "text": "Yo acuso a Marruecos de enviar a 80.000 personas a su frontera para cargarse al Gobierno de España, con la colaboración de Washington, de Tel Aviv y, sí, de la derecha",
     "sourceIds": [
+      "src-dscd-pl-201",
       "src-congreso-video-pl194",
       "src-infobae-sanchez-contundencia"
     ],
-    "note": "Corte 777812, min. 2:09, según la grabación. Al Gobierno, «pusilánimes»; a PP y Vox, «traidores a su patria»; «los gobiernos, sobre todo, se pierden por mentir»."
+    "note": "Corte 777812, min. 2:09, según la grabación y el Diario de Sesiones núm. 201. Al Gobierno, «pusilánimes»; a PP y Vox, «traidores a su patria»; «los gobiernos, sobre todo, se pierden por mentir»."
   },
   {
     "id": "st-pl194-nogueras-inhabilitan",
@@ -2881,6 +2898,7 @@ export const STATEMENTS = [
     "dateLabel": "3 de septiembre de 2026, 11:30",
     "text": "Las dos opciones son muy graves y las dos opciones le inhabilitan para continuar gobernando",
     "sourceIds": [
+      "src-dscd-pl-201",
       "src-congreso-video-pl194",
       "src-infobae-sanchez-contundencia"
     ],
@@ -2927,5 +2945,173 @@ export const STATEMENTS = [
       "src-mercurio-rsf"
     ],
     "note": "A compañeros «se les ha escupido, golpeado con banderas por la espalda»."
+  },
+  {
+    "id": "st-marlaska-listado-interno",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Fernando Grande-Marlaska",
+    "role": "ministro del Interior, en Ceuta",
+    "date": "2026-09-08",
+    "dateLabel": "8 de septiembre de 2026",
+    "text": "Es un documento interno para mejorar la eficacia […] Interior comparte la misma información con todos los medios",
+    "sourceIds": [
+      "src-elespanol-marlaska-listado-8sept",
+      "src-newtral-listado-factcheck"
+    ],
+    "note": "Sobre el dosier de su Oficina de Comunicación con fichas de 280 periodistas revelado por El Confidencial. Niega haberlo encargado y conocerlo antes de su publicación."
+  },
+  {
+    "id": "st-pl195-feijoo-canta",
+    "crisisId": "ceuta-2026",
+    "bloc": "derecha",
+    "speaker": "Alberto Núñez Feijóo",
+    "role": "presidente del PP, sesión de control",
+    "date": "2026-09-09",
+    "dateLabel": "9 de septiembre de 2026, 9:00",
+    "text": "Si Marruecos canta, usted se va […] Ha desprotegido a su país y su país se lo hará pagar",
+    "sourceIds": [
+      "src-theobjective-feijoo-canta-9sept",
+      "src-elespanol-perro-amo-9sept",
+      "src-congreso-video-pl195"
+    ],
+    "note": "Sesión 195, corte 777851. Sánchez «no es un presidente libre»; «si mañana volvieran a entrar 80.000 personas en Ceuta, ¿usted qué haría?»; «ponga fecha y nos vemos en las urnas»."
+  },
+  {
+    "id": "st-pl195-abascal-protectorado",
+    "crisisId": "ceuta-2026",
+    "bloc": "derecha",
+    "speaker": "Santiago Abascal",
+    "role": "presidente de Vox, sesión de control",
+    "date": "2026-09-09",
+    "dateLabel": "9 de septiembre de 2026, 9:10",
+    "text": "¿Está usted siendo chantajeado por Marruecos? […] España no puede seguir siendo un protectorado marroquí ni puede estar en manos de traidores",
+    "sourceIds": [
+      "src-congreso-video-pl195",
+      "src-elespanol-perro-amo-9sept",
+      "src-donporque-control-9sept"
+    ],
+    "note": "Sesión 195, corte 777856, min. 1:07 y 2:28, según la grabación. «Toda España sabe que la presidencia de nuestro país se le ha entregado a Marruecos»."
+  },
+  {
+    "id": "st-pl195-sanchez-perro",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Pedro Sánchez",
+    "role": "presidente del Gobierno, sesión de control",
+    "date": "2026-09-09",
+    "dateLabel": "9 de septiembre de 2026, 9:15",
+    "text": "A diferencia de usted, yo seré un perro, pero no tengo amo",
+    "sourceIds": [
+      "src-elespanol-perro-amo-9sept",
+      "src-donporque-control-9sept",
+      "src-congreso-video-pl195"
+    ],
+    "note": "Respuesta a Abascal; sesión 195, corte 777860, min. 0:02, según la grabación. Anuncia la publicación esa tarde de «los informes previos» sobre Ceuta."
+  },
+  {
+    "id": "st-pl195-marlaska-inseguridad",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Fernando Grande-Marlaska",
+    "role": "ministro del Interior, sesión de control",
+    "date": "2026-09-09",
+    "dateLabel": "9 de septiembre de 2026",
+    "text": "Claro que hay un sentimiento subjetivo de inseguridad en la ciudad […] Nosotros, con esos medios, estamos para revertir ese sentimiento",
+    "sourceIds": [
+      "src-elespanol-valles-marlaska-9sept",
+      "src-congreso-video-pl195"
+    ],
+    "note": "Sesión 195, corte 777904, según la grabación. Antes, a Tellado: «Si se pudo revertir la situación […] es también por esa cooperación» con Marruecos."
+  },
+  {
+    "id": "st-tve-sanchez-chantaje",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Pedro Sánchez",
+    "role": "presidente del Gobierno, entrevista en TVE",
+    "date": "2026-09-09",
+    "dateLabel": "9 de septiembre de 2026, 11:00",
+    "text": "Este Gobierno no acepta ningún chantaje […] No se previó una llegada masiva de migrantes",
+    "sourceIds": [
+      "src-elconstitucional-sanchez-tve-chantaje",
+      "src-vozpopuli-directo-9sept"
+    ],
+    "note": "Mañaneros 360, con Jesús Cintora y Esther Palomera. «No tenemos nada que ocultar: hoy se conocerán todos los papeles»."
+  },
+  {
+    "id": "st-tve-sanchez-invasores",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Pedro Sánchez",
+    "role": "presidente del Gobierno, entrevista en TVE",
+    "date": "2026-09-09",
+    "dateLabel": "9 de septiembre de 2026, 11:30",
+    "text": "No son invasores, sino personas que buscan una vida mejor, oportunidades que no tienen al otro lado de la frontera",
+    "sourceIds": [
+      "src-vozpopuli-directo-9sept",
+      "src-infobae-sanchez-tve-10frases"
+    ],
+    "note": "«He estado al pie del cañón desde el minuto uno»; «soy el presidente del Gobierno que más ha ido a Ceuta»."
+  },
+  {
+    "id": "st-tve-sanchez-listado",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Pedro Sánchez",
+    "role": "presidente del Gobierno, entrevista en TVE",
+    "date": "2026-09-09",
+    "dateLabel": "9 de septiembre de 2026, 11:45",
+    "text": "Me parece un documento muy poco afortunado, no puedo decir más […] desde el Gobierno de España respetamos la autonomía y la independencia de los medios de comunicación",
+    "sourceIds": [
+      "src-theobjective-sanchez-listado-9sept",
+      "src-vozpopuli-directo-9sept"
+    ],
+    "note": "Sobre el dosier de Interior con fichas de periodistas; dice que lo «desconocía»."
+  },
+  {
+    "id": "st-tve-sanchez-supremo",
+    "crisisId": "ceuta-2026",
+    "bloc": "gobierno",
+    "speaker": "Pedro Sánchez",
+    "role": "presidente del Gobierno, entrevista en TVE",
+    "date": "2026-09-09",
+    "dateLabel": "9 de septiembre de 2026, 11:50",
+    "text": "No estamos a favor, ni compartimos, la resolución del Tribunal Supremo. Les hemos pedido que lo intenten resolver cuanto antes, desde luego antes de las elecciones de 2027",
+    "sourceIds": [
+      "src-eltiempo-sanchez-nietos-9sept",
+      "src-eldiario-supremo-nietos-8sept"
+    ],
+    "note": "Sobre el auto que suspende el voto de los nacionalizados por la «ley de nietos» sin exilio acreditado."
+  },
+  {
+    "id": "st-aznar-aliados",
+    "crisisId": "ceuta-2026",
+    "bloc": "derecha",
+    "speaker": "José María Aznar",
+    "role": "expresidente del Gobierno (PP)",
+    "date": "2026-09-10",
+    "dateLabel": "10 de septiembre de 2026",
+    "text": "Hace días comprobamos en el drama de Ceuta las consecuencias de habernos enajenado la amistad de aliados relevantes, de esos aliados con los que conviene contar en las crisis",
+    "sourceIds": [
+      "src-infobae-aznar-aliados-10sept",
+      "src-elconstitucional-aznar-israel-10sept"
+    ],
+    "note": "Desayuno de Nueva Economía Fórum. «Israel es la línea de defensa más oriental de Occidente, y España es Occidente»; «tachar a Israel de Estado genocida es antisemitismo puro y duro»."
+  },
+  {
+    "id": "st-gonzalez-responsabilidades",
+    "crisisId": "ceuta-2026",
+    "bloc": "izquierda",
+    "speaker": "Felipe González",
+    "role": "expresidente del Gobierno (PSOE)",
+    "date": "2026-09-10",
+    "dateLabel": "10 de septiembre de 2026",
+    "text": "No le he visto nunca asumir responsabilidades […] la gestión es manifiestamente mejorable",
+    "sourceIds": [
+      "src-theobjective-gonzalez-10sept",
+      "src-pressdigital-gonzalez-10sept"
+    ],
+    "note": "A la llegada a una comida con excargos en Madrid. Recuerda que Sánchez, el 31 de julio, «definió exactamente lo que había pasado como lo que era»; «plena solidaridad» con Ceuta y con Vivas."
   }
 ] satisfies Statement[];
