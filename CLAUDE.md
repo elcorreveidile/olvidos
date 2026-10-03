@@ -35,19 +35,53 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   *squash*. El PR #5 (agosto de 2026) exigía `prisma db push` por dos
   columnas nuevas (`User.tokenVersion`, `VerificationToken.type`).
 - **Qué proyecto de Vercel sirve la web:** el proyecto `olvidos` del equipo
-  **olvidos-projects**. Dominios: `olvidos.es` redirige (308) a
-  `www.olvidos.es`. El conector de Vercel de Claude solo ve el equipo
-  «Javier's projects», así que los despliegues reales se miran en el panel de
-  vercel.com con el ámbito olvidos-projects.
-- **Duplicado desconectado (septiembre de 2026):** en «Javier's projects»
-  había otro proyecto `olvidos` conectado al mismo repositorio desde el
-  1-8-2026 que construía cada push sin servir ningún dominio (`olvidos.es` y
-  `www.olvidos.es` figuraban en su lista de dominios sin asignar). Se
-  desconectó del repositorio en Settings → Git. Si en un PR el bot de Vercel
-  deja **dos** comentarios, es que ha vuelto a conectarse. Para saber qué
-  build sirve el dominio: comparar el nombre del chunk `app/layout-*.js` en
-  el HTML de `https://www.olvidos.es/login` con el del despliegue de
-  producción; si no coinciden, el dominio no está en ese proyecto.
+  **«Javier's projects»** (`vercel.com/javiers-projects-cc8068ed/olvidos`,
+  id `prj_YLcM6RI5xRLiyjxTFTCs6CLbKpSy`). Dominios: `olvidos.es` redirige (308) a
+  `www.olvidos.es`. **No existe ningún equipo «olvidos-projects»** (nota errónea
+  hasta el 3-10-2026) y tampoco hay un proyecto duplicado: en ese equipo solo hay
+  un proyecto `olvidos`. Si en un PR el bot de Vercel deja **dos** comentarios,
+  es que se ha conectado un segundo proyecto al repositorio.
+- **Conector de Vercel de Claude:** para que Claude vea el proyecto hay que
+  autorizar el conector eligiendo el equipo «Javier's projects» **y el proyecto
+  `olvidos`** (o todos). Si no, el conector ve el equipo pero lista 0 proyectos y
+  da 403 al pedir despliegues (pasó el 3-10-2026). Se arregla en
+  claude.ai/customize/connectors → Vercel → desconectar y volver a conectar. Con
+  acceso: `list_deployments`, `get_runtime_errors`, `list_project_domains`.
+- **Repositorio público:** no se suben textos sin publicar (columnas, borradores)
+  ni datos de personas; los borradores viven en el panel o fuera del repositorio.
+
+## Formularios del panel con Tiptap (no repetir el fallo del 3-10-2026)
+
+- **Nunca** enlazar el texto del editor con `<input type="hidden" {...register("content")} value={content} />`.
+  `react-hook-form` solo recoge valores por sus propios eventos: ignora los
+  cambios de valor que hace React y envía el contenido anterior (vacío en
+  `/admin/articulos/nuevo`; el original en `/editar`, con lo que se perdían las
+  ediciones del cuerpo). Síntomas: «El contenido es obligatorio» con el texto
+  a la vista y botones que «no hacen nada». El patrón correcto:
+  `onChange={(html) => { setContent(html); setValue("content", html, { shouldValidate: true, shouldDirty: true }); }}`
+  y `defaultValues: { content: "" }`, sin campo oculto.
+- Los botones de envío deben pasar un segundo argumento a `handleSubmit`
+  (`onInvalid`) que muestre el aviso arriba y suba la página; si no, el error
+  de validación queda debajo del editor, fuera de la vista.
+- Tiptap devuelve `<p></p>` con el editor vacío: usar `hasVisibleContent`
+  (`src/lib/article-content.ts`) en el esquema de cliente y en
+  `src/lib/actions/articles.ts`. Acepta texto, imágenes/vídeo/tablas y los
+  marcadores `<!--isla:…-->`/`<!--paso:…-->` de Con-textos.
+- Reproducción con las mismas versiones (`react-hook-form` 7.71.1, `zod` 3.25):
+  el patrón roto falla también con la 7.51; el arreglado envía el texto en los
+  casos nuevo, editar y vaciar. Probado en simulación (jsdom), no en el panel real.
+
+## Estado de producción (3-10-2026)
+
+- Último despliegue de producción: `READY`, commit `752c713` (#17), 14-9-2026.
+  El commit #20 (solo documentación) no generó despliegue de producción.
+- Errores de runtime de los 7 días anteriores (ninguno en `/admin/articulos`):
+  «Artículo no encontrado» en `/articulos/[slug]` (220, 42 usuarios: enlaces
+  antiguos o inexistentes); `PrismaClient is not configured to run in Edge Runtime`
+  en el middleware (56; `src/lib/auth.ts` lo captura y conserva la sesión, es
+  ruido de registro); pool de conexiones agotado en la portada (4; límite 5,
+  espera 10 s); «Failed to find Server Action» en `/contacto` (4; pestañas
+  abiertas antes de un despliegue); un fallo PKCE en el login con Google.
 
 ## Con-textos (especiales interactivos)
 

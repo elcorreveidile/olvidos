@@ -6,6 +6,7 @@ import { db } from "@/lib/db";
 import { z } from "zod";
 import { slugifyName } from "@/lib/colaboradores";
 import { findMatchingArticleIds } from "@/lib/queries";
+import { hasVisibleContent, CONTENT_REQUIRED_MESSAGE } from "@/lib/article-content";
 
 /** Separa una firma ("A · B", "A y B", "A, B") en nombres de autor. */
 function parseAuthorNames(byline?: string | null): string[] {
@@ -43,7 +44,10 @@ const ArticleSchema = z.object({
   title: z.string().min(1, "El título es obligatorio").max(200, "El título no puede exceder 200 caracteres"),
   slug: z.string().min(1, "El slug es obligatorio").regex(/^[a-z0-9-]+$/, "El slug solo puede contener letras minúsculas, números y guiones"),
   excerpt: z.string().optional(),
-  content: z.string().min(1, "El contenido es obligatorio"),
+  content: z
+    .string()
+    .min(1, CONTENT_REQUIRED_MESSAGE)
+    .refine(hasVisibleContent, CONTENT_REQUIRED_MESSAGE),
   coverImage: z.string().url().optional().or(z.literal("")),
   coverPosition: z.string().optional(),
   byline: z.string().max(200).optional(),

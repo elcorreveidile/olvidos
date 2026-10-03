@@ -3,23 +3,21 @@
 ## Estado actual (septiembre de 2026)
 
 La web está desplegada en Vercel en el proyecto **`olvidos` del equipo
-`olvidos-projects`**, que despliega producción desde la rama `main` y sirve
-`www.olvidos.es` (`olvidos.es` redirige con 308). Los PR se fusionan con
-*squash* y cada uno genera una vista previa en ese proyecto; el bot de Vercel
-debe dejar **un solo** comentario por PR.
+«Javier's projects»** (`https://vercel.com/javiers-projects-cc8068ed/olvidos`;
+id `prj_YLcM6RI5xRLiyjxTFTCs6CLbKpSy`). Despliega producción desde la rama `main`
+del repositorio `elcorreveidile/olvidos` y sirve `www.olvidos.es`
+(`olvidos.es` redirige con 308). Los PR se fusionan con *squash* y cada uno
+genera una vista previa en ese mismo proyecto; el bot de Vercel debe dejar
+**un solo** comentario por PR.
 
-Hasta septiembre de 2026 existió un segundo proyecto `olvidos` en el equipo
-personal «Javier's projects», conectado al mismo repositorio desde el
-1-8-2026: construía cada push, tenía las variables de entorno completas y
-listaba `olvidos.es` y `www.olvidos.es` sin poder servirlos, porque el dominio
-está en el otro equipo. Provocó un despliegue doble y, el 3-9-2026, la
-confusión de creer publicado un cambio que el dominio no servía. Se
-desconectó del repositorio (Settings → Git → Disconnect) y se retiraron los
-dominios de su lista. Si el bot de Vercel vuelve a comentar dos proyectos en
-un PR, es que se ha reconectado. Para comprobar qué build sirve el dominio:
-comparar el nombre del chunk `app/layout-*.js` en el HTML de
-`https://www.olvidos.es/login` con el del despliegue de producción del
-proyecto.
+**Corrección (3-10-2026).** Las versiones anteriores de esta nota decían que la
+web estaba en un equipo «olvidos-projects» y que el proyecto de «Javier's
+projects» era un duplicado. Es falso: ese equipo no existe. Comprobado con el
+conector de Vercel: en «Javier's projects» hay un único proyecto `olvidos`, con
+`www.olvidos.es`, `olvidos.es` y `olvidos-eosin.vercel.app` verificados y
+despliegues de producción desde `main`. Si algún día aparece un segundo
+proyecto conectado al repositorio, el bot de Vercel dejará **dos** comentarios
+en los PR.
 
 El resto de este documento es la guía original del primer despliegue (con el
 dominio antiguo y ramas de ejemplo) y no describe la configuración vigente;
@@ -317,7 +315,7 @@ Vercel detectará el push y desplegará automáticamente.
 
 Una vez que el despliegue de pruebas funcione:
 
-1. ✅ Configurar dominio personalizado (`www.olvidos.es`, en el proyecto de olvidos-projects)
+1. ✅ Configurar dominio personalizado (`www.olvidos.es`, en el proyecto `olvidos` de «Javier's projects»)
 2. ✅ Configurar producción de Stripe
 3. ✅ Configurar emails transaccionales
 4. ✅ Optimizar imágenes y assets
