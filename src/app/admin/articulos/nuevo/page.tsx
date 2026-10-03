@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useForm, type FieldErrors } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { slugFromTitle } from "@/lib/utils";
 import { hasVisibleContent, CONTENT_REQUIRED_MESSAGE } from "@/lib/article-content";
 import RichTextEditor from "@/components/admin/RichTextEditor";
 import { CoverPositionPicker } from "@/components/admin/CoverPositionPicker";
@@ -74,20 +75,16 @@ export default function NuevoArticuloPage() {
 
   const title = watch("title");
 
-  // Auto-generate slug from title
+  // El slug sigue al título mientras nadie lo toque a mano. Si la persona lo
+  // edita, deja de seguirlo; si lo vacía, vuelve a seguirlo.
+  const slugEditedByHand = useRef(false);
   useEffect(() => {
-    if (title && !watch("slug")) {
-      const slug = title
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/[^a-z0-9\s-]/g, "")
-        .trim()
-        .replace(/\s+/g, "-")
-        .replace(/-+/g, "-");
-      setValue("slug", slug);
-    }
-  }, [title, setValue, watch]);
+    if (slugEditedByHand.current) return;
+    setValue("slug", slugFromTitle(title ?? ""), {
+      shouldValidate: false,
+      shouldDirty: true,
+    });
+  }, [title, setValue]);
 
   useEffect(() => {
     async function loadData() {
@@ -239,7 +236,11 @@ export default function NuevoArticuloPage() {
               </label>
               <input
                 type="text"
-                {...register("slug")}
+                {...register("slug", {
+                  onChange: (e) => {
+                    slugEditedByHand.current = e.target.value !== "";
+                  },
+                })}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent"
                 placeholder="url-del-articulo"
               />
@@ -247,7 +248,7 @@ export default function NuevoArticuloPage() {
                 <p className="mt-1 text-sm text-red-600">{errors.slug.message}</p>
               )}
               <p className="mt-1 text-sm text-gray-500">
-                El slug se genera automáticamente desde el título
+                El slug se genera solo desde el título; puedes cambiarlo a mano (solo minúsculas, números y guiones)
               </p>
             </div>
 
