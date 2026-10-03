@@ -6,6 +6,9 @@ import Placeholder from "@tiptap/extension-placeholder";
 import Link from "@tiptap/extension-link";
 import Image from "@tiptap/extension-image";
 import TextAlign from "@tiptap/extension-text-align";
+import { VideoEmbed } from "@/components/admin/video-embed-extension";
+import { MediaLibraryDialog } from "@/components/admin/MediaLibraryDialog";
+import { videoEmbedUrl } from "@/lib/video-embed";
 import {
   Bold,
   Italic,
@@ -16,6 +19,8 @@ import {
   Link as LinkIcon,
   Image as ImageIcon,
   Upload,
+  Images,
+  Video,
   Loader2,
   AlignLeft,
   AlignCenter,
@@ -58,6 +63,7 @@ export default function RichTextEditor({
       TextAlign.configure({
         types: ["heading", "paragraph"],
       }),
+      VideoEmbed,
     ],
     content: value,
     onUpdate: ({ editor }) => {
@@ -79,6 +85,7 @@ export default function RichTextEditor({
 
   const imageFileRef = useRef<HTMLInputElement>(null);
   const [uploadingImage, setUploadingImage] = useState(false);
+  const [libraryOpen, setLibraryOpen] = useState(false);
 
   if (!editor) {
     return null;
@@ -121,6 +128,19 @@ export default function RichTextEditor({
     if (url) {
       editor.chain().focus().setImage({ src: url }).run();
     }
+  };
+
+  const addVideo = () => {
+    const url = window.prompt(
+      "Pega el enlace del vídeo de YouTube o Vimeo (por ejemplo https://www.youtube.com/watch?v=…):"
+    );
+    if (!url) return;
+    const src = videoEmbedUrl(url);
+    if (!src) {
+      window.alert("Ese enlace no es de YouTube ni de Vimeo. Solo se pueden incrustar vídeos de esos dos sitios.");
+      return;
+    }
+    editor.chain().focus().setVideoEmbed({ src }).run();
   };
 
   const uploadImageFromFile = async (
@@ -245,6 +265,13 @@ export default function RichTextEditor({
         </ToolbarButton>
 
         <ToolbarButton
+          onClick={() => setLibraryOpen(true)}
+          title="Elegir imagen de la biblioteca"
+        >
+          <Images className="w-4 h-4" />
+        </ToolbarButton>
+
+        <ToolbarButton
           onClick={() => imageFileRef.current?.click()}
           title="Subir imagen desde el ordenador"
         >
@@ -261,10 +288,20 @@ export default function RichTextEditor({
           onChange={uploadImageFromFile}
           className="hidden"
         />
+
+        <ToolbarButton onClick={addVideo} title="Insertar vídeo de YouTube o Vimeo (por enlace)">
+          <Video className="w-4 h-4" />
+        </ToolbarButton>
       </div>
 
       {/* Editor */}
       <EditorContent editor={editor} />
+
+      <MediaLibraryDialog
+        open={libraryOpen}
+        onClose={() => setLibraryOpen(false)}
+        onSelect={(url) => editor.chain().focus().setImage({ src: url }).run()}
+      />
     </div>
   );
 }
