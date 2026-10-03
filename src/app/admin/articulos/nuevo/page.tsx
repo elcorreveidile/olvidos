@@ -3,9 +3,10 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { useForm } from "react-hook-form";
+import { useForm, type FieldErrors } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { hasVisibleContent, CONTENT_REQUIRED_MESSAGE } from "@/lib/article-content";
 import RichTextEditor from "@/components/admin/RichTextEditor";
 import { CoverPositionPicker } from "@/components/admin/CoverPositionPicker";
 import { ImageUploadField } from "@/components/admin/ImageUploadField";
@@ -26,7 +27,10 @@ const articleSchema = z.object({
   slug: z.string().min(1, "El slug es obligatorio"),
   excerpt: z.string().optional(),
   byline: z.string().optional(),
-  content: z.string().min(1, "El contenido es obligatorio"),
+  content: z
+    .string()
+    .min(1, CONTENT_REQUIRED_MESSAGE)
+    .refine(hasVisibleContent, CONTENT_REQUIRED_MESSAGE),
   coverImage: z.string().optional(),
   coverPosition: z.string().optional(),
   metaTitle: z.string().optional(),
@@ -60,6 +64,7 @@ export default function NuevoArticuloPage() {
   } = useForm<ArticleFormData>({
     resolver: zodResolver(articleSchema),
     defaultValues: {
+      content: "",
       status: "DRAFT",
       featured: false,
       membersOnly: false,
@@ -108,6 +113,32 @@ export default function NuevoArticuloPage() {
 
     loadData();
   }, []);
+
+  // Si el formulario no es válido, los botones deben decirlo: antes no pasaba
+  // nada visible y el aviso quedaba debajo del editor, lejos de la barra de botones.
+  const onInvalid = (errs: FieldErrors<ArticleFormData>) => {
+    const messages = Array.from(
+      new Set(
+        Object.values(errs)
+          .map((e) => e?.message)
+          .filter((m): m is string => typeof m === "string" && m.length > 0)
+      )
+    );
+    setError(
+      messages.length > 0
+        ? `Falta algo por completar: ${messages.join(" · ")}.`
+        : "Revisa los campos marcados en rojo."
+    );
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // El texto lo edita Tiptap, no un <input>: hay que pasarlo al formulario con
+  // setValue. Un campo oculto con register() + value NO funciona (react-hook-form
+  // ignora los cambios de valor que hace React y envía el contenido anterior).
+  const handleContentChange = (html: string) => {
+    setContent(html);
+    setValue("content", html, { shouldValidate: true, shouldDirty: true });
+  };
 
   const onSubmit = async (data: ArticleFormData, publishStatus: string) => {
     setSubmitting(true);
@@ -286,14 +317,8 @@ export default function NuevoArticuloPage() {
 
           <RichTextEditor
             value={content}
-            onChange={setContent}
+            onChange={handleContentChange}
             placeholder="Escribe el contenido del artículo..."
-          />
-
-          <input
-            type="hidden"
-            {...register("content")}
-            value={content}
           />
           {errors.content && (
             <p className="mt-2 text-sm text-red-600">{errors.content.message}</p>
@@ -436,7 +461,7 @@ export default function NuevoArticuloPage() {
             Cancelar
           </Link>
           <button
-            onClick={handleSubmit((data) => onSubmit(data, "DRAFT"))}
+            onClick={handleSubmit((data) => onSubmit(data, "DRAFT"), onInvalid)}
             disabled={submitting}
             className="inline-flex items-center gap-2 px-6 py-2 border border-tinta text-tinta rounded-lg hover:bg-tinta/5 transition-colors disabled:opacity-50"
           >
@@ -448,7 +473,7 @@ export default function NuevoArticuloPage() {
             Guardar borrador
           </button>
           <button
-            onClick={handleSubmit((data) => onSubmit(data, "REVIEW"))}
+            onClick={handleSubmit((data) => onSubmit(data, "REVIEW"), onInvalid)}
             disabled={submitting}
             className="inline-flex items-center gap-2 px-6 py-2 border border-yellow-600 text-yellow-700 rounded-lg hover:bg-yellow-50 transition-colors disabled:opacity-50"
           >
@@ -460,7 +485,7 @@ export default function NuevoArticuloPage() {
             Enviar a revisión
           </button>
           <button
-            onClick={handleSubmit((data) => onSubmit(data, "PUBLISHED"))}
+            onClick={handleSubmit((data) => onSubmit(data, "PUBLISHED"), onInvalid)}
             disabled={submitting}
             className="inline-flex items-center gap-2 px-6 py-2 bg-coral-600 text-white rounded-lg hover:bg-coral-700 transition-colors disabled:opacity-50"
           >
