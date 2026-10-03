@@ -2,22 +2,26 @@
 
 ## Estado actual (septiembre de 2026)
 
-La web está desplegada en Vercel en el proyecto **`olvidos` del equipo
-«Javier's projects»** (`https://vercel.com/javiers-projects-cc8068ed/olvidos`;
-id `prj_YLcM6RI5xRLiyjxTFTCs6CLbKpSy`). Despliega producción desde la rama `main`
-del repositorio `elcorreveidile/olvidos` y sirve `www.olvidos.es`
-(`olvidos.es` redirige con 308). Los PR se fusionan con *squash* y cada uno
-genera una vista previa en ese mismo proyecto; el bot de Vercel debe dejar
-**un solo** comentario por PR.
+**Estado comprobado el 3-10-2026.** Hay dos proyectos `olvidos` en Vercel:
 
-**Corrección (3-10-2026).** Las versiones anteriores de esta nota decían que la
-web estaba en un equipo «olvidos-projects» y que el proyecto de «Javier's
-projects» era un duplicado. Es falso: ese equipo no existe. Comprobado con el
-conector de Vercel: en «Javier's projects» hay un único proyecto `olvidos`, con
-`www.olvidos.es`, `olvidos.es` y `olvidos-eosin.vercel.app` verificados y
-despliegues de producción desde `main`. Si algún día aparece un segundo
-proyecto conectado al repositorio, el bot de Vercel dejará **dos** comentarios
-en los PR.
+- **«Javier's projects»** (`vercel.com/javiers-projects-cc8068ed/olvidos`): tiene
+  `www.olvidos.es` y `olvidos.es` (308 a `www`) y es el que sirve la web hoy, pero
+  con el despliegue del **3-9-2026** (commit `a0e3226`, PR #6). Sus despliegues
+  posteriores no tienen los dominios asignados, así que no están publicados.
+- **`olvidos-projects`** (`vercel.com/olvidos-projects/olvidos`): es el proyecto
+  conectado a Git que construye las vistas previas de los PR (un solo comentario
+  del bot por PR).
+
+Pendiente de decidir: qué proyecto es el de producción y cómo se asigna el dominio
+a los despliegues nuevos (conectar Git en el primero, mover el dominio al segundo
+o promover a mano). Hasta entonces, fusionar un PR no garantiza que llegue a
+`www.olvidos.es`. Para saber qué build sirve el dominio, buscar `?dpl=dpl_…` en el
+HTML de `https://www.olvidos.es/login`.
+
+*Nota:* una versión anterior de esta sección (y de `CLAUDE.md`) decía que el
+dominio estaba en `olvidos-projects` y que el proyecto de «Javier's projects» era un
+duplicado desconectado; otra corrección del mismo día decía que `olvidos-projects`
+no existía. Ninguna de las dos es cierta: ver arriba.
 
 El resto de este documento es la guía original del primer despliegue (con el
 dominio antiguo y ramas de ejemplo) y no describe la configuración vigente;
@@ -315,7 +319,7 @@ Vercel detectará el push y desplegará automáticamente.
 
 Una vez que el despliegue de pruebas funcione:
 
-1. ✅ Configurar dominio personalizado (`www.olvidos.es`, en el proyecto `olvidos` de «Javier's projects»)
+1. ✅ Configurar dominio personalizado (`www.olvidos.es`; ver arriba qué proyecto lo sirve)
 2. ✅ Configurar producción de Stripe
 3. ✅ Configurar emails transaccionales
 4. ✅ Optimizar imágenes y assets

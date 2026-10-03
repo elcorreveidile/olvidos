@@ -34,13 +34,26 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
 - Producción se despliega desde `main` en Vercel. Los PR se fusionan con
   *squash*. El PR #5 (agosto de 2026) exigía `prisma db push` por dos
   columnas nuevas (`User.tokenVersion`, `VerificationToken.type`).
-- **Qué proyecto de Vercel sirve la web:** el proyecto `olvidos` del equipo
-  **«Javier's projects»** (`vercel.com/javiers-projects-cc8068ed/olvidos`,
-  id `prj_YLcM6RI5xRLiyjxTFTCs6CLbKpSy`). Dominios: `olvidos.es` redirige (308) a
-  `www.olvidos.es`. **No existe ningún equipo «olvidos-projects»** (nota errónea
-  hasta el 3-10-2026) y tampoco hay un proyecto duplicado: en ese equipo solo hay
-  un proyecto `olvidos`. Si en un PR el bot de Vercel deja **dos** comentarios,
-  es que se ha conectado un segundo proyecto al repositorio.
+- **Dónde está la web en Vercel (comprobado el 3-10-2026; hay DOS equipos con un
+  proyecto `olvidos` y la nota anterior de este fichero se equivocaba a medias):**
+  - **«Javier's projects»** (`vercel.com/javiers-projects-cc8068ed/olvidos`,
+    `prj_YLcM6RI5xRLiyjxTFTCs6CLbKpSy`): tiene `www.olvidos.es` y `olvidos.es` en su
+    lista de dominios (verificados; `olvidos.es` redirige con 308) y **es el que
+    sirve hoy la web**, pero con el despliegue `dpl_64yYgm4ch8Tiavnytve7YTEDQgqh`
+    del 3-9-2026 (commit `a0e3226`, PR #6): el HTML de `https://www.olvidos.es/login`
+    lleva `?dpl=dpl_64yY…`. Sus despliegues de producción posteriores (#14–#17, #19 y
+    el redeploy del 14-9) **no tienen los dominios asignados** (solo los alias
+    `*.vercel.app`): no están publicados.
+  - **`olvidos-projects`** (existe: `vercel.com/olvidos-projects/olvidos`,
+    `prj_Sedw5XTMR83BbmQlwpLW1tV5h8gt`): es el proyecto que construye hoy las vistas
+    previas de los PR (comentario del bot de Vercel). El conector de Claude no lo ve
+    (403: hay que autorizar ese ámbito).
+  - **Pendiente de decidir y documentar:** qué proyecto debe ser el de producción y
+    cómo se asigna `www.olvidos.es` a los despliegues nuevos (conectar Git en el
+    primero, mover el dominio al segundo o promover a mano). Mientras no se decida,
+    fusionar un PR **no garantiza** que el cambio llegue a `www.olvidos.es`.
+  - Para saber qué build sirve el dominio: buscar `?dpl=dpl_…` en el HTML de
+    `https://www.olvidos.es/login` y comparar con los despliegues del proyecto.
 - **Conector de Vercel de Claude:** para que Claude vea el proyecto hay que
   autorizar el conector eligiendo el equipo «Javier's projects» **y el proyecto
   `olvidos`** (o todos). Si no, el conector ve el equipo pero lista 0 proyectos y
@@ -73,15 +86,18 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
 
 ## Estado de producción (3-10-2026)
 
-- Último despliegue de producción: `READY`, commit `752c713` (#17), 14-9-2026.
-  El commit #20 (solo documentación) no generó despliegue de producción.
-- Errores de runtime de los 7 días anteriores (ninguno en `/admin/articulos`):
-  «Artículo no encontrado» en `/articulos/[slug]` (220, 42 usuarios: enlaces
-  antiguos o inexistentes); `PrismaClient is not configured to run in Edge Runtime`
-  en el middleware (56; `src/lib/auth.ts` lo captura y conserva la sesión, es
-  ruido de registro); pool de conexiones agotado en la portada (4; límite 5,
-  espera 10 s); «Failed to find Server Action» en `/contacto` (4; pestañas
-  abiertas antes de un despliegue); un fallo PKCE en el login con Google.
+- `www.olvidos.es` sirve el despliegue del **3-9-2026** (commit `a0e3226`, PR #6).
+  Nada de lo fusionado después (#14, #15, #16 menú móvil de los paneles, #17, #19
+  redacción con La Banda, #20) está publicado en el dominio, aunque existan
+  despliegues `READY` de producción en «Javier's projects» sin dominio asignado.
+- Errores de runtime de los 7 días anteriores (proyecto de «Javier's projects», que
+  es el que atiende el tráfico; ninguno en `/admin/articulos`): «Artículo no
+  encontrado» en `/articulos/[slug]` (220, 42 usuarios: enlaces antiguos o
+  inexistentes); `PrismaClient is not configured to run in Edge Runtime` en el
+  middleware (56; `src/lib/auth.ts` lo captura y conserva la sesión, es ruido de
+  registro); pool de conexiones agotado en la portada (4; límite 5, espera 10 s);
+  «Failed to find Server Action» en `/contacto` (4; pestañas abiertas antes de un
+  despliegue); un fallo PKCE en el login con Google.
 
 ## Con-textos (especiales interactivos)
 
