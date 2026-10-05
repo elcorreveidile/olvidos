@@ -57,12 +57,12 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   async rewrites() {
-    // olvidos.es/contexto/... lo sirve la app aparte (basePath "/contexto" allí).
+    // olvidos.es/contexto/sondeo/... lo sirve la app aparte (basePath "/contexto/sondeo" allí).
     if (!contextos29nOrigin) return [];
     return {
       beforeFiles: [
-        { source: "/contexto", destination: `${contextos29nOrigin}/contexto` },
-        { source: "/contexto/:path*", destination: `${contextos29nOrigin}/contexto/:path*` },
+        { source: "/contexto/sondeo", destination: `${contextos29nOrigin}/contexto/sondeo` },
+        { source: "/contexto/sondeo/:path*", destination: `${contextos29nOrigin}/contexto/sondeo/:path*` },
       ],
     };
   },

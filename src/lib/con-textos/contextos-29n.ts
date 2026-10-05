@@ -3,10 +3,10 @@
  * atrás hasta las elecciones generales del 29-nov-2026, entregas diarias
  * verificadas y un sondeo ciudadano. Aquí solo se enlaza.
  *
- * Se sirve bajo `olvidos.es/contexto` (rewrite de `next.config.mjs` al
+ * Se sirve bajo `olvidos.es/contexto/sondeo` (rewrite de `next.config.mjs` al
  * despliegue de la app). Única fuente de la ruta: todo enlace sale de aquí.
  */
-export const CONTEXTOS_29N_URL = "/contexto";
+export const CONTEXTOS_29N_URL = "/contexto/sondeo";
 
 /**
  * Origen del despliegue de la app (`https://<proyecto>.vercel.app`). Sin esta
