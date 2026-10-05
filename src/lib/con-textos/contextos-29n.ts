@@ -3,11 +3,26 @@
  * atrás hasta las elecciones generales del 29-nov-2026, entregas diarias
  * verificadas y un sondeo ciudadano. Aquí solo se enlaza.
  *
- * Única fuente de la URL: todo enlace a la app sale de esta constante.
- * Se puede sobreescribir con `NEXT_PUBLIC_CONTEXTOS_29N_URL`.
+ * Se sirve bajo `olvidos.es/contexto` (rewrite de `next.config.mjs` al
+ * despliegue de la app). Única fuente de la ruta: todo enlace sale de aquí.
  */
-export const CONTEXTOS_29N_URL =
-  process.env.NEXT_PUBLIC_CONTEXTOS_29N_URL || "https://29n.olvidos.es";
+export const CONTEXTOS_29N_URL = "/contexto";
+
+/**
+ * Origen del despliegue de la app (`https://<proyecto>.vercel.app`). Sin esta
+ * variable no hay rewrite y la tarjeta no se muestra: así fusionar este cambio
+ * no publica nada hasta que Javier dé el OK y se ponga la variable.
+ */
+export function contextos29nOrigin(): string | null {
+  const v = process.env.CONTEXTOS_29N_ORIGIN?.trim();
+  if (!v) return null;
+  try {
+    const u = new URL(v);
+    return u.protocol === "https:" || u.hostname === "localhost" ? u.origin : null;
+  } catch {
+    return null;
+  }
+}
 
 export const CONTEXTOS_29N_TITLE = "Con-textos 29N";
 
