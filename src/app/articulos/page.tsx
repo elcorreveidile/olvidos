@@ -8,6 +8,7 @@ import {
 } from "@/lib/queries";
 import { ArticleCard } from "@/components/content/ArticleCard";
 import { CategoryHeading } from "@/components/content/CategoryHeading";
+import { Contextos29nCard } from "@/components/content/Contextos29nCard";
 import { Pagination } from "@/components/shared/Pagination";
 import { SearchInline } from "@/components/shared/SearchInline";
 
@@ -108,6 +109,9 @@ export default async function ArticulosPage({
           )}
         </p>
       </header>
+
+      {/* Entrada destacada de Con-textos 29N: solo en la categoría con-textos */}
+      {categoria === "con-textos" && !searching && <Contextos29nCard />}
 
       {/* Buscador (dentro de la categoría si procede) */}
       <div className="mb-10">

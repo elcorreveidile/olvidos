@@ -114,6 +114,15 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   posteriores (control del 9-9, sesión 195) se repite el método: grabación +
   prensa mientras no hay Diario, y pasada del Diario después.
 
+- **Con-textos 29N**: app aparte (repo `elcorreveidile/sondeo-29n`) con cuenta
+  atrás hasta las elecciones generales del 29-nov-2026, entregas diarias
+  verificadas y sondeo ciudadano. Aquí solo se enlaza: tarjeta destacada
+  (`Contextos29nCard`) arriba del listado `/articulos?categoria=con-textos`.
+  Toda URL sale de `CONTEXTOS_29N_URL` (`src/lib/con-textos/contextos-29n.ts`,
+  por defecto `https://29n.olvidos.es`; se sobreescribe con
+  `NEXT_PUBLIC_CONTEXTOS_29N_URL`). El menú no tiene desplegable para las
+  secciones, así que no se ha tocado.
+
 ## Convenciones
 
 - Idioma del código, comentarios, commits y PR: español.
