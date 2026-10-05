@@ -84,7 +84,16 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   el patrón roto falla también con la 7.51; el arreglado envía el texto en los
   casos nuevo, editar y vaciar. Probado en simulación (jsdom), no en el panel real.
 
-## Estado de producción (3-10-2026)
+## Estado de producción (actualizado el 5-10-2026)
+
+- **Corrección**: `www.olvidos.es` YA sirve el último despliegue de producción de «Javier's projects»
+  (`dpl_FaL7w7sdm3eBL83TZgwjwxE6Muai`, 3-10-2026, commit `cde2f0f`, PR #21), comprobado por `?dpl=` en el HTML
+  y con `list_deployments`. Lo que se describe abajo del 3-10 (dominio atascado en el despliegue del 3-9) ya no es así.
+- La sección **Con-textos existe y está publicada** (`/articulos?categoria=con-textos`, con su descripción), pero muestra
+  «0 artículos»: el especial «Ceuta no empezó en julio» sigue en **borrador** (por eso `/articulos/ceuta-no-empezo-en-julio`
+  da 404 en público). Se publica desde `/admin/articulos`; hasta entonces la categoría aparece vacía.
+
+### Nota anterior (3-10-2026, superada)
 
 - `www.olvidos.es` sirve el despliegue del **3-9-2026** (commit `a0e3226`, PR #6).
   Nada de lo fusionado después (#14, #15, #16 menú móvil de los paneles, #17, #19
@@ -113,6 +122,15 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   §A.7). El Diario se publicó una semana después del pleno. Para sesiones
   posteriores (control del 9-9, sesión 195) se repite el método: grabación +
   prensa mientras no hay Diario, y pasada del Diario después.
+
+- **Con-textos 29N**: app aparte (repo `elcorreveidile/sondeo-29n`) con cuenta
+  atrás hasta las elecciones generales del 29-nov-2026, entregas diarias
+  verificadas y sondeo ciudadano. Aquí solo se enlaza: tarjeta destacada
+  (`Contextos29nCard`) arriba del listado `/articulos?categoria=con-textos`.
+  Toda URL sale de `CONTEXTOS_29N_URL` (`src/lib/con-textos/contextos-29n.ts`,
+  por defecto `https://29n.olvidos.es`; se sobreescribe con
+  `NEXT_PUBLIC_CONTEXTOS_29N_URL`). El menú no tiene desplegable para las
+  secciones, así que no se ha tocado.
 
 ## Convenciones
 

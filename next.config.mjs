@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
+// Origen del despliegue de «Con-textos 29N» (repo sondeo-29n). Sin la variable no hay rewrite.
+const contextos29nOrigin = (() => {
+  try {
+    const u = new URL(process.env.CONTEXTOS_29N_ORIGIN || "");
+    return u.protocol === "https:" || u.hostname === "localhost" ? u.origin : null;
+  } catch {
+    return null;
+  }
+})();
+
 const nextConfig = {
   images: {
     remotePatterns: [
@@ -45,6 +55,16 @@ const nextConfig = {
   typescript: {
     // Ignorar errores de TypeScript durante el build
     ignoreBuildErrors: true,
+  },
+  async rewrites() {
+    // olvidos.es/contexto/sondeo/... lo sirve la app aparte (basePath "/contexto/sondeo" allí).
+    if (!contextos29nOrigin) return [];
+    return {
+      beforeFiles: [
+        { source: "/contexto/sondeo", destination: `${contextos29nOrigin}/contexto/sondeo` },
+        { source: "/contexto/sondeo/:path*", destination: `${contextos29nOrigin}/contexto/sondeo/:path*` },
+      ],
+    };
   },
   async redirects() {
     return [
