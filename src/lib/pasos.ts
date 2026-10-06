@@ -1,5 +1,6 @@
 /**
- * "Pasos" de las piezas multi-parte (categoría Piezas y Procesos).
+ * "Pasos" de las piezas multi-parte (Piezas y Procesos, Con-textos y los
+ * números digitales de Memoria de Olvidos).
  *
  * En la web original de WordPress estas piezas se paginaban con el marcador
  * `<!--nextpage-->` (plugin Multi Page Posts) y mostraban un menú de "pasos".
@@ -11,8 +12,12 @@ import { extractPasoId } from "./islas";
 
 const NEXTPAGE = /<!--\s*nextpage\s*-->/i;
 
-/** Categorías cuyos artículos se paginan por pasos cuando llevan el marcador. */
-export const PASOS_CATEGORIES = ["piezas-procesos", "con-textos"] as const;
+/**
+ * Categorías cuyos artículos se paginan por pasos cuando llevan el marcador.
+ * «Memoria de Olvidos» entra porque los números digitales de la revista
+ * (p. ej. «Olvidos de Granada nº 13») traen un corte por autor.
+ */
+export const PASOS_CATEGORIES = ["piezas-procesos", "con-textos", "memoria-de-olvidos"] as const;
 
 export interface Paso {
   /** Identificador estable del paso (de <!--paso:ID--> o "paso-N"). */
