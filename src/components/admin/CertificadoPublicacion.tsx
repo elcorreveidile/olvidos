@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Logo } from "@/components/layout/Logo";
 import { CERTIFICATE_SIGNER, ORGANIZATION, PUBLICATION_TITLE, SITE_URL } from "@/lib/site";
 
@@ -149,16 +150,28 @@ export function CertificadoPublicacion({
         procedan, expido el presente certificado en Granada, a {DATE_LONG.format(issuedAt)}.
       </p>
 
-      <div className="w-1/2">
-        <div className="h-14 border-b border-tinta" />
-        <p className="mt-1 font-bold">{CERTIFICATE_SIGNER.name}</p>
-        <p className="font-sans text-xs leading-snug text-acero">
-          {CERTIFICATE_SIGNER.roles.map((r) => (
-            <span key={r} className="block">
-              {r}
-            </span>
-          ))}
-        </p>
+      <div className="grid grid-cols-2 items-end gap-6">
+        <div>
+          <div className="h-14 border-b border-tinta" />
+          <p className="mt-1 font-bold">{CERTIFICATE_SIGNER.name}</p>
+          <p className="font-sans text-xs leading-snug text-acero">
+            {CERTIFICATE_SIGNER.roles.map((r) => (
+              <span key={r} className="block">
+                {r}
+              </span>
+            ))}
+          </p>
+        </div>
+        <div className="flex justify-center pb-6">
+          <Image
+            src="/img/sello-asociacion.png"
+            alt="Sello de la Asociación Cultural Olvidos de Granada"
+            width={900}
+            height={563}
+            className="h-auto w-56"
+            unoptimized
+          />
+        </div>
       </div>
 
       <footer className="mt-8 border-t border-acero-light/60 pt-2 font-sans text-[0.62rem] leading-snug text-acero">
