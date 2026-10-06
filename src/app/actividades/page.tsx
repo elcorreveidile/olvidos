@@ -1,8 +1,16 @@
 import { Suspense } from "react";
+import type { Metadata } from "next";
 import { getEvents, getPastEvents, getEventsForCalendar } from "@/lib/actions/events";
 import { EventCard } from "@/components/content/EventCard";
 import { Calendar } from "@/components/shared/Calendar";
 import { CategoryHeading } from "@/components/content/CategoryHeading";
+
+export const metadata: Metadata = {
+  title: "Encuentros y actividades",
+  description:
+    "Presentaciones, recitales, conferencias y encuentros de Olvidos de Granada: próximas actividades y archivo.",
+  alternates: { canonical: "/actividades" },
+};
 
 interface PageProps {
   searchParams: {

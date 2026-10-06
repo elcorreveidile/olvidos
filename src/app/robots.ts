@@ -16,6 +16,7 @@ export default function robots(): MetadataRoute.Robots {
         "/post-login",
         "/recuperar-contrasena",
         "/restablecer-contrasena",
+        "/buscar",
       ],
     },
     sitemap: `${SITE_URL}/sitemap.xml`,

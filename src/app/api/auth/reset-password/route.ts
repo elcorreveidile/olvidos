@@ -7,7 +7,7 @@ import { db } from "@/lib/db";
 const resetPasswordSchema = z.object({
   email: z.string().email("Email no válido"),
   token: z.string().min(1, "Token inválido"),
-  password: z.string().min(6, "La contraseña debe tener al menos 6 caracteres"),
+  password: z.string().min(8, "La contraseña debe tener al menos 8 caracteres"),
 });
 
 export async function POST(req: Request) {

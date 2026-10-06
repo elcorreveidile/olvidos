@@ -5,6 +5,7 @@ import {
   getArticlesByCategory,
   getArticlesByTag,
   searchArticles,
+  getCategoryBySlug,
 } from "@/lib/queries";
 import { ArticleCard } from "@/components/content/ArticleCard";
 import { CategoryHeading } from "@/components/content/CategoryHeading";
@@ -17,14 +18,40 @@ export const dynamic = "force-dynamic";
 
 const PER_PAGE = 24;
 
-export const metadata: Metadata = {
-  title: "Artículos",
-  description:
-    "Artículos, ensayos y creación de Olvidos de Granada: editoriales, palabras, piezas y procesos, Soneto500 y más.",
-};
-
 interface ArticulosPageProps {
   searchParams: { categoria?: string; tag?: string; q?: string; page?: string };
+}
+
+const DESCRIPTION =
+  "Artículos, ensayos y creación de Olvidos de Granada: editoriales, palabras, piezas y procesos, Soneto500 y más.";
+
+/**
+ * Título y canonical según el listado: cada categoría es una página propia
+ * (sin número de página ni búsqueda en el canonical); las búsquedas no se
+ * indexan.
+ */
+export async function generateMetadata({ searchParams }: ArticulosPageProps): Promise<Metadata> {
+  const { categoria, tag, q } = searchParams;
+  if (q?.trim()) {
+    return { title: `Buscar «${q.trim()}»`, robots: { index: false, follow: true } };
+  }
+  if (categoria) {
+    const category = await getCategoryBySlug(categoria);
+    const name = category?.name ?? categoria;
+    return {
+      title: `${name} · Artículos`,
+      description: category?.description ?? DESCRIPTION,
+      alternates: { canonical: `/articulos?categoria=${encodeURIComponent(categoria)}` },
+    };
+  }
+  if (tag) {
+    return {
+      title: `Etiqueta «${tag}» · Artículos`,
+      description: DESCRIPTION,
+      alternates: { canonical: `/articulos?tag=${encodeURIComponent(tag)}` },
+    };
+  }
+  return { title: "Artículos", description: DESCRIPTION, alternates: { canonical: "/articulos" } };
 }
 
 export default async function ArticulosPage({

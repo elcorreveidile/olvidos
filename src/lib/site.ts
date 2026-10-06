@@ -1,6 +1,6 @@
 /** Configuración central del sitio para SEO, sitemap, Open Graph, etc. */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || "https://olvidos.es"
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.olvidos.es"
 ).replace(/\/$/, "");
 
 export const SITE_NAME = "Olvidos de Granada";

@@ -27,6 +27,44 @@ if (!githubId || !githubSecret) {
 const googleId = process.env.AUTH_GOOGLE_ID;
 const googleSecret = process.env.AUTH_GOOGLE_SECRET;
 
+/**
+ * ¿El proveedor OAuth garantiza que `email` está verificado? Google lo dice en
+ * el perfil (`email_verified`); GitHub exige consultar /user/emails con el
+ * token de acceso (el perfil básico no lo indica). Ante cualquier duda o
+ * fallo de red, se considera NO verificado.
+ */
+async function oauthEmailVerified(
+  account: { provider?: string; access_token?: string } | null | undefined,
+  profile: Record<string, unknown> | undefined,
+  email: string
+): Promise<boolean> {
+  if (account?.provider === "google") {
+    return profile?.email_verified === true || profile?.email_verified === "true";
+  }
+  if (account?.provider === "github") {
+    if (!account.access_token) return false;
+    try {
+      const res = await fetch("https://api.github.com/user/emails", {
+        headers: {
+          Authorization: `Bearer ${account.access_token}`,
+          Accept: "application/vnd.github+json",
+          "User-Agent": "olvidos.es",
+        },
+        signal: AbortSignal.timeout(8000),
+      });
+      if (!res.ok) return false;
+      const emails = (await res.json()) as Array<{ email: string; verified: boolean }>;
+      return emails.some(
+        (e) => e.email?.toLowerCase() === email.toLowerCase() && e.verified === true
+      );
+    } catch (error) {
+      console.error("[Auth] GitHub /user/emails failed:", error);
+      return false;
+    }
+  }
+  return false;
+}
+
 // Log environment info for debugging
 console.log("[Auth] Environment check:", {
   hasSecret: !!authSecret,
@@ -141,12 +179,12 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           });
 
           if (!user) {
-            console.error("[Auth] User not found:", parsed.data.email);
+            console.error("[Auth] User not found");
             return null;
           }
 
           if (!user.password) {
-            console.error("[Auth] User has no password:", user.email);
+            console.error("[Auth] User has no password");
             return null;
           }
 
@@ -156,11 +194,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           );
 
           if (!isValid) {
-            console.error("[Auth] Invalid password for:", user.email);
+            console.error("[Auth] Invalid password");
             return null;
           }
-
-          console.log("[Auth] Successful login for:", user.email, "role:", user.role);
 
           return {
             id: user.id,
@@ -177,15 +213,25 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     }),
   ],
   callbacks: {
-    async signIn({ user, account }) {
-      try {
-        // Providers OAuth (GitHub, Google): el usuario se enlaza/crea por email.
-        // Mutamos `user.id`/`user.role` con los valores reales de la BD para que
-        // el callback jwt propague el id (cuid) y el rol correctos.
-        const isOAuth =
-          account?.provider === "github" || account?.provider === "google";
+    async signIn({ user, account, profile }) {
+      // Providers OAuth (GitHub, Google): el usuario se enlaza/crea por email.
+      // Mutamos `user.id`/`user.role` con los valores reales de la BD para que
+      // el callback jwt propague el id (cuid) y el rol correctos.
+      const isOAuth =
+        account?.provider === "github" || account?.provider === "google";
+      if (!isOAuth) return true;
+      if (!user.email) return false;
 
-        if (isOAuth && user.email) {
+      try {
+        // Solo se enlaza (o crea) una cuenta si el proveedor confirma que el
+        // correo está verificado: si no, cualquiera que registre en GitHub el
+        // correo de otra persona, sin verificarlo, entraría como ella.
+        if (!(await oauthEmailVerified(account, profile, user.email))) {
+          console.error("[Auth] OAuth email not verified; provider:", account?.provider);
+          return "/login?error=EmailNoVerificado";
+        }
+
+        {
           const existingUser = await db.user.findUnique({
             where: { email: user.email },
           });
@@ -208,9 +254,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         }
         return true;
       } catch (error) {
+        // Fallo cerrado: sin poder comprobar la cuenta en la BD no se entra.
         console.error("[Auth] Error in signIn callback:", error);
-        // Permitir el inicio de sesión aunque falle la operación en BD.
-        return true;
+        return false;
       }
     },
     async jwt({ token, user, account }) {
@@ -264,7 +310,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       if (session.user) {
         session.user.role = (token.role as string) || "USER";
         session.user.id = (token.id as string) || "";
-        console.log("[Auth] Session callback - user:", { email: session.user.email, role: session.user.role, id: session.user.id });
       } else {
         console.error("[Auth] Session callback - session.user is null!");
       }

@@ -419,9 +419,11 @@ export async function getMembers(filters?: {
     }
 
     if (search) {
+      // El correo solo lo buscan los administradores: si no, cualquier
+      // registrado podría averiguar correos de socios probando cadenas.
       where.OR = [
         { user: { name: { contains: search, mode: "insensitive" } } },
-        { user: { email: { contains: search, mode: "insensitive" } } },
+        ...(isAdmin ? [{ user: { email: { contains: search, mode: "insensitive" } } }] : []),
         { memberNumber: { equals: parseInt(search) || 0 } },
       ];
     }
@@ -434,8 +436,9 @@ export async function getMembers(filters?: {
             select: {
               id: true,
               name: true,
-              email: true,
               image: true,
+              // El correo de los socios, solo para administradores.
+              ...(isAdmin ? { email: true } : {}),
             },
           },
         },

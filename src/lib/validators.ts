@@ -45,7 +45,7 @@ export const eventSchema = z.object({
 export const memberRegistrationSchema = z.object({
   name: z.string().min(2, "El nombre es obligatorio"),
   email: z.string().email("Email no válido"),
-  password: z.string().min(6, "Mínimo 6 caracteres"),
+  password: z.string().min(8, "Mínimo 8 caracteres"),
   phone: z.string().optional(),
   address: z.string().optional(),
   city: z.string().optional(),

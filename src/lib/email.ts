@@ -106,7 +106,7 @@ export async function sendContactEmail(params: {
   const result = await resend.emails.send({
     from: FROM,
     to: CONTACT_TO,
-    replyTo: email,
+    reply_to: email,
     subject: `Contacto web — ${name}`,
     html: renderEmailHtml({
       heading: "Nuevo mensaje desde la web",

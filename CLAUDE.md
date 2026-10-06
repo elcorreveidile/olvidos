@@ -152,6 +152,37 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
 - Primer certificado: Juan José Fernández Morales, «La historia social de las
   mentalidades. Releyendo a Maravall» (26-11-2025), expedido el 6-10-2026.
 
+## Auditoría técnica (octubre de 2026)
+
+- Auditoría externa del 6-10-2026 verificada punto por punto: correcta en lo
+  esencial; tres cosas eran peores de lo dicho (las lecturas sin sesión
+  devolvían el `User` completo con el hash de la contraseña; el canonical del
+  layout raíz mandaba todas las páginas a la portada; 98 de los 124 errores de
+  tsc están en `src/`). Plan completo y reparto en PR en
+  `/root/.claude/plans` de la sesión; resumen aquí.
+- **Hecho en el PR de seguridad (6-10-2026):** lecturas de `actions/*` cerradas
+  (`getArticle`, `getArticles`, `getArticleBySlug` sin `publishedOnly`,
+  `getEvent` → solo equipo; `getDocuments` → con sesión; `getMembers` sin
+  correos para no administradores; `Article.author` siempre `select {id, name}`);
+  OAuth solo con correo verificado (Google `email_verified`, GitHub
+  `/user/emails`) y fallo cerrado; cabeceras de seguridad en `next.config.mjs`
+  (CSP solo en modo informe); un único cliente Prisma (`prisma.ts` reexporta
+  `db`); `SITE_URL` por defecto `https://www.olvidos.es` y canonical por página;
+  `reply_to` en Resend; contraseñas nuevas de 8 caracteres (el login sigue
+  aceptando las antiguas); `/buscar` fuera del índice; `not-found.tsx`.
+- **Javier, en Vercel (proyecto de «Javier's projects»):** `NEXT_PUBLIC_SITE_URL=https://www.olvidos.es`;
+  `DATABASE_URL` con la cadena *pooled* de Neon (host `…-pooler…`) y
+  `?sslmode=require&pgbouncer=true&connection_limit=1`; y en Firewall → Rules
+  dos reglas de *rate limit* por IP: `/api/auth/*`, `/api/users/register`,
+  `/api/members/register` y `/contacto` a 10 peticiones/minuto (acción
+  *challenge*); el resto sin cambios.
+- **Pendiente (PR por tema):** `npm audit fix` sin cambios mayores (`next` 14 no
+  tiene parche: crítica pendiente de migrar a Next 15); índices en
+  `schema.prisma` + `prisma db push`; caché/ISR (quitar `auth()` del layout raíz);
+  Stripe (deduplicar por `event.id`), sanitizar HTML de Tiptap, MIME de subidas;
+  CI mínima y bajar los errores de tsc; split edge/node del middleware; CSP
+  estricta.
+
 ## Convenciones
 
 - Idioma del código, comentarios, commits y PR: español.
