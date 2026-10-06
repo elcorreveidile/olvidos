@@ -132,6 +132,26 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   `NEXT_PUBLIC_CONTEXTOS_29N_URL`). El menú no tiene desplegable para las
   secciones, así que no se ha tocado.
 
+## Certificados de publicación (oposiciones y baremos)
+
+- Los autores piden «un informe del organismo emisor que certifique que la
+  publicación aparece en la correspondiente base de datos bibliográfica, con
+  la base de datos, el título, los autores, el año y la URL» (baremo de acceso
+  a cátedras de Secundaria de la Junta de Andalucía, apartado 3.2.1,
+  publicaciones solo electrónicas). Se expide desde
+  `/admin/articulos/[id]/certificado` (ADMIN y EDITOR; icono de insignia en la
+  lista de artículos; imprimir → guardar PDF; firma Javier como coordinador y
+  vicepresidente, `CERTIFICATE_SIGNER` en `src/lib/site.ts`).
+- **Qué se certifica**: que la revista figura en el **Registro Internacional
+  del ISSN** (ISSN Portal, `https://portal.issn.org/resource/ISSN/2605-4515`,
+  título clave «Olvidos.es», en línea). La revista **no** está en Dialnet ni en
+  Latindex (comprobado el 6-10-2026), así que no se afirma; se avisa al autor
+  de que la valoración depende del tribunal. Los artículos llevan etiquetas
+  `citation_*` (Google Scholar) e `isPartOf` con el ISSN en el JSON-LD desde
+  octubre de 2026.
+- Primer certificado: Juan José Fernández Morales, «La historia social de las
+  mentalidades. Releyendo a Maravall» (26-11-2025), expedido el 6-10-2026.
+
 ## Convenciones
 
 - Idioma del código, comentarios, commits y PR: español.

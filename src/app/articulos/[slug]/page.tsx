@@ -4,7 +4,7 @@ import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { getArticleBySlug, getPublishedArticles } from "@/lib/actions/articles";
-import { SITE_URL, ORGANIZATION } from "@/lib/site";
+import { SITE_URL, ORGANIZATION, PUBLICATION_TITLE } from "@/lib/site";
 import { splitPasos, hasPasos } from "@/lib/pasos";
 import pasosTitles from "@/data/pasos-titles.json";
 import { ArticleView, type ArticleViewModel } from "@/components/content/ArticleView";
@@ -34,6 +34,27 @@ async function loadArticle(slug: string) {
   return null;
 }
 
+/**
+ * Autores del artículo: la tabla `Author` (firmas reales) y, si no hay, el
+ * usuario que lo subió. Lo usan la cabecera, el JSON-LD y las etiquetas
+ * bibliográficas.
+ */
+function articleAuthors(article: any): ArticleViewModel["authors"] {
+  return article.authors && article.authors.length > 0
+    ? article.authors.map((a: any) => ({ name: a.author.name, slug: a.author.slug }))
+    : article.author?.name
+      ? [{ name: article.author.name }]
+      : [];
+}
+
+/** Fecha en el formato que piden las etiquetas `citation_*` (YYYY/MM/DD). */
+function citationDate(d: Date | string) {
+  const date = new Date(d);
+  const mm = String(date.getUTCMonth() + 1).padStart(2, "0");
+  const dd = String(date.getUTCDate()).padStart(2, "0");
+  return `${date.getUTCFullYear()}/${mm}/${dd}`;
+}
+
 const STATUS_LABEL: Record<string, string> = {
   DRAFT: "Borrador",
   REVIEW: "En revisión",
@@ -58,19 +79,40 @@ export async function generateMetadata({
       : paso > 1
         ? ` · Paso ${paso}`
         : "";
+  const authorNames = articleAuthors(article).map((a) => a.name);
+  const url = `${SITE_URL}/articulos/${article.slug}`;
+  // Etiquetas bibliográficas (Highwire Press) que leen Google Scholar y
+  // otros índices: una `citation_author` por autor. Solo en artículos
+  // publicados.
+  const citation: Record<string, string | string[]> | undefined =
+    preview || !article.publishedAt
+      ? undefined
+      : {
+          citation_title: article.title,
+          citation_author: authorNames,
+          citation_publication_date: citationDate(article.publishedAt),
+          citation_journal_title: PUBLICATION_TITLE,
+          citation_issn: ORGANIZATION.issn,
+          citation_publisher: ORGANIZATION.name,
+          citation_language: "es",
+          citation_public_url: url,
+          citation_abstract_html_url: url,
+          ...(article.issue?.number ? { citation_issue: String(article.issue.number) } : {}),
+        };
   return {
     title: (article.metaTitle || article.title) + pasoSuffix,
     description: article.metaDescription || article.excerpt || undefined,
     // Las vistas por paso y la lectura seguida son la misma pieza: una sola
     // URL canónica sin parámetros.
-    alternates: pieza ? { canonical: `${SITE_URL}/articulos/${article.slug}` } : undefined,
+    alternates: pieza ? { canonical: url } : undefined,
     robots: preview ? { index: false, follow: false } : undefined,
+    other: citation,
     openGraph: {
       title: article.metaTitle || article.title,
       description: article.metaDescription || article.excerpt || undefined,
       type: "article",
       publishedTime: article.publishedAt || undefined,
-      authors: article.author?.name ? [article.author.name] : undefined,
+      authors: authorNames.length > 0 ? authorNames : undefined,
       images: article.coverImage
         ? [{ url: article.coverImage, width: 1200, height: 630, alt: article.title }]
         : undefined,
@@ -136,12 +178,7 @@ export default async function ArticlePage({
 
   const category = article.categories?.[0]?.category;
 
-  const authors: ArticleViewModel["authors"] =
-    article.authors && article.authors.length > 0
-      ? article.authors.map((a: any) => ({ name: a.author.name, slug: a.author.slug }))
-      : article.author?.name
-        ? [{ name: article.author.name }]
-        : [];
+  const authors = articleAuthors(article);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -155,6 +192,12 @@ export default async function ArticlePage({
     publisher: {
       "@type": "Organization",
       name: ORGANIZATION.name,
+      url: SITE_URL,
+    },
+    isPartOf: {
+      "@type": "Periodical",
+      name: PUBLICATION_TITLE,
+      issn: ORGANIZATION.issn,
       url: SITE_URL,
     },
     mainEntityOfPage: `${SITE_URL}/articulos/${article.slug}`,

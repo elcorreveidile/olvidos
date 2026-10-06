@@ -15,6 +15,7 @@ import {
   User,
   FolderOpen,
   Layers,
+  FileBadge,
 } from "lucide-react";
 import { ArchiveArticleButton } from "@/components/admin/ArchiveArticleButton";
 
@@ -398,6 +399,15 @@ async function ArticlesList({
                       >
                         <Edit className="w-4 h-4" />
                       </Link>
+                      {article.status === "PUBLISHED" && (
+                        <Link
+                          href={`/admin/articulos/${article.id}/certificado`}
+                          className="text-gray-600 hover:text-gray-900 transition-colors"
+                          title="Certificado de publicación (para oposiciones y baremos)"
+                        >
+                          <FileBadge className="w-4 h-4" />
+                        </Link>
+                      )}
                       <ArchiveArticleButton
                         id={article.id}
                         label={article.title}
