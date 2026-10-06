@@ -56,6 +56,38 @@ const nextConfig = {
     // Ignorar errores de TypeScript durante el build
     ignoreBuildErrors: true,
   },
+  async headers() {
+    // Cabeceras de seguridad para toda la web. La CSP va solo en modo informe
+    // (Report-Only): Next 14 inyecta scripts en línea sin nonce y los artículos
+    // incrustan visores (FlowPaper, YouTube); se endurece cuando se revisen los
+    // avisos. HSTS lo pone Vercel, pero sin includeSubDomains.
+    const csp = [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://online.flowpaper.com",
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "font-src 'self' data: https://fonts.gstatic.com",
+      "img-src 'self' data: blob: https:",
+      "media-src 'self' https:",
+      "frame-src 'self' https://*.flowpaper.com https://online.flowpaper.com https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://js.stripe.com https://checkout.stripe.com https://*.public.blob.vercel-storage.com",
+      "connect-src 'self' https://api.stripe.com https://*.public.blob.vercel-storage.com https://vitals.vercel-insights.com",
+      "frame-ancestors 'self'",
+      "base-uri 'self'",
+      "form-action 'self' https://checkout.stripe.com https://billing.stripe.com",
+    ].join("; ");
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=(self \"https://checkout.stripe.com\")" },
+          { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains" },
+          { key: "Content-Security-Policy-Report-Only", value: csp },
+        ],
+      },
+    ];
+  },
   async rewrites() {
     // olvidos.es/contexto/sondeo/... lo sirve la app aparte (basePath "/contexto/sondeo" allí).
     if (!contextos29nOrigin) return [];

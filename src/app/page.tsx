@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import {
   getPublishedArticles,
   getUpcomingEvents,
@@ -8,6 +9,10 @@ import {
 import { Hero } from "@/components/home/Hero";
 import { MagazineIssue } from "@/components/content/MagazineIssue";
 import { ArticleCard } from "@/components/content/ArticleCard";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 type EventType = {
   id: string;

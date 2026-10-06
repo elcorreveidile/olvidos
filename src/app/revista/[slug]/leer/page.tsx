@@ -1,4 +1,6 @@
 import { db } from "@/lib/db";
+import { auth } from "@/lib/auth";
+import { isStaffRole } from "@/lib/roles";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -24,9 +26,14 @@ export default async function LeerRevistaPage({
 }) {
   const issue = await db.magazineIssue.findUnique({
     where: { slug: params.slug },
-    select: { title: true, number: true, pdfUrl: true, slug: true },
+    select: { title: true, number: true, pdfUrl: true, slug: true, status: true },
   });
   if (!issue || !issue.pdfUrl) notFound();
+  // El PDF de un número en borrador solo lo ve el equipo.
+  if (issue.status !== "PUBLISHED") {
+    const session = await auth();
+    if (!isStaffRole(session?.user?.role)) notFound();
+  }
 
   const downloadUrl = `${issue.pdfUrl}${issue.pdfUrl.includes("?") ? "&" : "?"}download=1`;
 

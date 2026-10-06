@@ -2,11 +2,25 @@
 
 import { revalidatePath } from "next/cache";
 import { auth } from "@/lib/auth";
+import { isStaffRole } from "@/lib/roles";
 import { db } from "@/lib/db";
 import { z } from "zod";
 import { slugifyName } from "@/lib/colaboradores";
 import { findMatchingArticleIds } from "@/lib/queries";
 import { hasVisibleContent, CONTENT_REQUIRED_MESSAGE } from "@/lib/article-content";
+
+/**
+ * Lo que se devuelve del usuario que subió el artículo (`Article.author` es
+ * un `User`): nunca el registro completo, que lleva email y hash de contraseña.
+ */
+const AUTHOR_SELECT = { select: { id: true, name: true } } as const;
+
+/** Sesión del equipo (EDITOR, MEMBER_ADMIN, ADMIN) o null. */
+async function staffSession() {
+  const session = await auth();
+  return isStaffRole(session?.user?.role) ? session : null;
+}
+
 
 /** Separa una firma ("A · B", "A y B", "A, B") en nombres de autor. */
 function parseAuthorNames(byline?: string | null): string[] {
@@ -160,7 +174,7 @@ export async function createArticle(data: ArticleInput) {
       include: {
         categories: true,
         tags: { include: { tag: true } },
-        author: true,
+        author: AUTHOR_SELECT,
       },
     });
 
@@ -277,7 +291,7 @@ export async function updateArticle(id: string, data: ArticleInput) {
       include: {
         categories: true,
         tags: { include: { tag: true } },
-        author: true,
+        author: AUTHOR_SELECT,
       },
     });
 
@@ -339,6 +353,8 @@ export async function deleteArticle(id: string) {
 // Get article by ID
 export async function getArticle(id: string) {
   try {
+    // Solo el equipo: devuelve borradores y archivados.
+    if (!(await staffSession())) throw new Error("No autorizado");
     const article = await db.article.findUnique({
       where: { id },
       include: {
@@ -352,7 +368,7 @@ export async function getArticle(id: string) {
             tag: true,
           },
         },
-        author: true,
+        author: AUTHOR_SELECT,
         authors: { include: { author: true }, orderBy: { order: "asc" } },
         issue: true,
       },
@@ -381,6 +397,8 @@ export async function getArticles(filters?: {
   limit?: number;
 }) {
   try {
+    // Solo el equipo: es el listado del panel, con todos los estados.
+    if (!(await staffSession())) throw new Error("No autorizado");
     const status = filters?.status;
     const search = filters?.search;
     const category = filters?.category;
@@ -415,7 +433,7 @@ export async function getArticles(filters?: {
       db.article.findMany({
         where,
         include: {
-          author: true,
+          author: AUTHOR_SELECT,
           authors: { include: { author: true }, orderBy: { order: "asc" } },
           categories: {
             include: {
@@ -500,7 +518,7 @@ export async function getPublishedArticles(filters?: {
     const articles = await db.article.findMany({
       where,
       include: {
-        author: true,
+        author: AUTHOR_SELECT,
         categories: {
           include: {
             category: true,
@@ -536,12 +554,15 @@ export async function getArticleBySlug(slug: string, publishedOnly = false) {
 
     if (publishedOnly) {
       where.status = "PUBLISHED";
+    } else if (!(await staffSession())) {
+      // Sin filtro de estado solo para el equipo (vista previa de borradores).
+      throw new Error("No autorizado");
     }
 
     const article = await db.article.findFirst({
       where,
       include: {
-        author: true,
+        author: AUTHOR_SELECT,
         authors: {
           orderBy: { order: "asc" },
           include: { author: true },

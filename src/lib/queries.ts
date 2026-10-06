@@ -1,7 +1,6 @@
 import { db } from "@/lib/db";
 import type {
   ArticleSummary,
-  ArticleFull,
   MagazineIssueSummary,
 } from "@/types/content";
 import { ContentStatus, EventStatus, Prisma } from "@prisma/client";
@@ -114,56 +113,6 @@ export async function getUpcomingEvents(limit: number = 5) {
       startDate: true,
       endDate: true,
       eventType: true,
-    },
-  });
-}
-
-/**
- * Obtiene un artículo completo por su slug
- * @param slug - Slug del artículo
- */
-export async function getArticleBySlug(
-  slug: string
-): Promise<ArticleFull | null> {
-  return db.article.findUnique({
-    where: { slug },
-    select: {
-      id: true,
-      title: true,
-      slug: true,
-      excerpt: true,
-      coverImage: true,
-      coverPosition: true,
-      publishedAt: true,
-      content: true,
-      featured: true,
-      membersOnly: true,
-      metaTitle: true,
-      metaDescription: true,
-      author: {
-        select: { name: true },
-      },
-      categories: {
-        select: {
-          category: {
-            select: { name: true, slug: true },
-          },
-        },
-      },
-      tags: {
-        select: {
-          tag: {
-            select: { name: true, slug: true },
-          },
-        },
-      },
-      issue: {
-        select: {
-          number: true,
-          title: true,
-          slug: true,
-        },
-      },
     },
   });
 }
@@ -622,9 +571,10 @@ export async function getAllIssues(): Promise<MagazineIssueSummary[]> {
 /**
  * Obtiene un número de revista por su slug
  */
-export async function getIssueBySlug(slug: string) {
-  return db.magazineIssue.findUnique({
-    where: { slug },
+export async function getIssueBySlug(slug: string, includeUnpublished = false) {
+  // Los números en borrador solo los ve el equipo (vista previa).
+  return db.magazineIssue.findFirst({
+    where: { slug, ...(includeUnpublished ? {} : { status: ContentStatus.PUBLISHED }) },
     include: {
       articles: {
         where: { status: ContentStatus.PUBLISHED },

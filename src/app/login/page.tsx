@@ -205,6 +205,8 @@ function getErrorMessage(error: string | undefined): string | null {
     OAuthCreateAccountError: "Error al crear la cuenta con GitHub",
     EmailCreateAccountError: "Error al crear la cuenta",
     EmailSignin: "Error al iniciar sesión con email",
+    EmailNoVerificado:
+      "Tu cuenta de GitHub o Google no tiene el correo verificado. Verifícalo allí o entra con tu contraseña.",
   };
 
   return errorMessages[error] || errorMessages.Default;

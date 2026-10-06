@@ -1,9 +1,5 @@
-import { PrismaClient } from "@prisma/client";
-
-const globalForPrisma = globalThis as unknown as {
-  prisma: PrismaClient | undefined;
-};
-
-export const prisma = globalForPrisma.prisma ?? new PrismaClient();
-
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+/**
+ * Alias histórico del cliente Prisma. Hay UN solo cliente (`db`): dos
+ * instancias por proceso duplicaban las conexiones a Neon (límite de 5).
+ */
+export { db as prisma } from "./db";

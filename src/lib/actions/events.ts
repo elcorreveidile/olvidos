@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { auth } from "@/lib/auth";
+import { isStaffRole } from "@/lib/roles";
 import { db } from "@/lib/db";
 import { z } from "zod";
 
@@ -280,15 +281,18 @@ export async function deleteEvent(id: string) {
 // Get event by ID
 export async function getEvent(id: string) {
   try {
+    // Solo el equipo: lleva los asistentes con su correo.
+    const session = await auth();
+    if (!isStaffRole(session?.user?.role)) throw new Error("No autorizado");
     const event = await db.event.findUnique({
       where: { id },
       include: {
-        organizer: true,
+        organizer: { select: { id: true, name: true, email: true } },
         attendees: {
           include: {
             member: {
               include: {
-                user: true,
+                user: { select: { id: true, name: true, email: true } },
               },
             },
           },
@@ -319,19 +323,21 @@ export async function getEventBySlug(slug: string, includeAttendees = false) {
     const event = await db.event.findUnique({
       where: { slug },
       include: {
+        // Página pública: del organizador y de los asistentes solo el nombre.
         organizer: {
           select: {
             id: true,
             name: true,
-            email: true,
           },
         },
         ...(includeAttendees && {
           attendees: {
             include: {
               member: {
-                include: {
-                  user: true,
+                select: {
+                  id: true,
+                  memberNumber: true,
+                  user: { select: { name: true } },
                 },
               },
             },

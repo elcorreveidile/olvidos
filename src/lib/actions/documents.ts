@@ -24,8 +24,10 @@ async function requireAdmin() {
   return null;
 }
 
-/** Todos los documentos (para el área de socios y el panel). */
+/** Todos los documentos (para el área de socios y el panel). Solo con sesión. */
 export async function getDocuments() {
+  const session = await auth();
+  if (!session?.user) return [];
   return db.document.findMany({
     orderBy: [{ category: "asc" }, { createdAt: "desc" }],
   });
