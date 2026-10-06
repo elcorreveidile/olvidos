@@ -3,6 +3,7 @@ import { z } from "zod";
 import crypto from "crypto";
 import { db } from "@/lib/db";
 import { sendPasswordResetEmail } from "@/lib/email";
+import { SITE_URL } from "@/lib/site";
 
 const forgotPasswordSchema = z.object({
   email: z.string().email("Email no válido"),
@@ -24,7 +25,10 @@ export async function POST(req: Request) {
       message: "Si existe una cuenta con ese correo, te enviaremos instrucciones para restablecer la contraseña.",
     });
 
-    if (!user || !user.password) {
+    // Si la cuenta existe se envía el enlace aunque no tenga contraseña: así
+    // quien entró por Google o GitHub puede crearse una. (Antes se callaba y
+    // esas cuentas nunca podían fijarla.)
+    if (!user) {
       return successResponse;
     }
 
@@ -45,7 +49,7 @@ export async function POST(req: Request) {
       },
     });
 
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || SITE_URL;
     const resetUrl = `${appUrl}/restablecer-contrasena?token=${rawToken}&email=${encodeURIComponent(email)}`;
 
     await sendPasswordResetEmail(email, user.name || "", resetUrl);

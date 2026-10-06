@@ -224,7 +224,7 @@ export async function sendPasswordResetEmail(
     html: renderEmailHtml({
       heading: "Restablece tu contraseña",
       paragraphs: [
-        `Hola ${escapeHtml(name)}, hemos recibido una solicitud para restablecer tu contraseña.`,
+        `Hola ${escapeHtml(name)}, hemos recibido una solicitud para restablecer tu contraseña (o para crearla, si entrabas con Google o GitHub).`,
         "Este enlace caduca en 1 hora. Si no lo has pedido, puedes ignorar este correo.",
       ],
       button: { label: "Crear nueva contraseña", url },
