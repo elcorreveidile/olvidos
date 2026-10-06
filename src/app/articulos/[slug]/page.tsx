@@ -4,7 +4,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { getArticleBySlug, getPublishedArticles } from "@/lib/actions/articles";
+import { getArticleBySlug } from "@/lib/actions/articles";
+import { getPublishedArticles } from "@/lib/queries";
 import { SITE_URL, ORGANIZATION, PUBLICATION_TITLE } from "@/lib/site";
 import { splitPasos, hasPasos } from "@/lib/pasos";
 import pasosTitles from "@/data/pasos-titles.json";
@@ -174,9 +175,9 @@ export default async function ArticlePage({
     }
   }
 
-  const recentResult = await getPublishedArticles({ limit: 5 });
-  const recentArticles =
-    recentResult.success && recentResult.articles ? recentResult.articles : [];
+  // «Más recientes»: consulta resumida y cacheada (antes traía 5 artículos
+  // completos, con su contenido).
+  const recentArticles = (await getPublishedArticles(1, 6)).articles;
 
   const formattedDate = article.publishedAt ? DATE_LONG.format(new Date(article.publishedAt)) : null;
 
@@ -267,7 +268,7 @@ export default async function ArticlePage({
 }
 
 export async function generateStaticParams() {
-  const result = await getPublishedArticles({ limit: 1000 });
-  if (!result.success || !result.articles) return [];
-  return result.articles.map((article) => ({ slug: article.slug }));
+  // Solo los slugs (consulta resumida): antes cargaba 1000 artículos enteros.
+  const { articles } = await getPublishedArticles(1, 1000);
+  return articles.map((article) => ({ slug: article.slug }));
 }

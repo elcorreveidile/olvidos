@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { revalidatePublic } from "@/lib/cache";
 import { auth } from "@/lib/auth";
 import { isStaffRole } from "@/lib/roles";
 import { db } from "@/lib/db";
@@ -142,6 +143,7 @@ export async function createEvent(data: EventInput) {
     revalidatePath("/admin/actividades");
     revalidatePath("/actividades");
     revalidatePath(`/actividades/${event.slug}`);
+    revalidatePublic("actividades");
 
     return { success: true, event };
   } catch (error) {
@@ -229,6 +231,7 @@ export async function updateEvent(id: string, data: EventInput) {
     revalidatePath("/actividades");
     revalidatePath(`/actividades/${event.slug}`);
     revalidatePath(`/admin/actividades/${id}/editar`);
+    revalidatePublic("actividades");
 
     return { success: true, event };
   } catch (error) {
@@ -267,6 +270,7 @@ export async function deleteEvent(id: string) {
 
     revalidatePath("/admin/actividades");
     revalidatePath("/actividades");
+    revalidatePublic("actividades");
 
     return { success: true };
   } catch (error) {

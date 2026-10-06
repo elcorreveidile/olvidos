@@ -14,6 +14,12 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+/**
+ * HTML cacheado (ISR): se regenera como mucho cada 5 minutos y al momento
+ * cuando el panel publica algo (`revalidatePublic` → `revalidatePath("/")`).
+ */
+export const revalidate = 300;
+
 type EventType = {
   id: string;
   title: string;

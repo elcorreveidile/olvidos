@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Search, Menu, X } from "lucide-react";
 import { MemberAreaLinks } from "./MemberAreaLinks";
 import { Logo } from "./Logo";
+import { useSesionActiva } from "@/components/auth/useSesionActiva";
 
 const NAV_MAIN = [
   { label: "SOBRE OLVIDOS", href: "/sobre-nosotros" },
@@ -29,11 +30,8 @@ const NAV_SECTIONS = [
   { label: "Con-textos", href: "/articulos?categoria=con-textos" },
 ] as const;
 
-interface HeaderProps {
-  isAuthenticated: boolean;
-}
-
-export function Header({ isAuthenticated }: HeaderProps) {
+export function Header() {
+  const isAuthenticated = useSesionActiva();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 

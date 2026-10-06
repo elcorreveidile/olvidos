@@ -14,8 +14,6 @@ import { contextos29nOrigin } from "@/lib/con-textos/contextos-29n";
 import { Pagination } from "@/components/shared/Pagination";
 import { SearchInline } from "@/components/shared/SearchInline";
 
-export const dynamic = "force-dynamic";
-
 const PER_PAGE = 24;
 
 interface ArticulosPageProps {

@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { cachedQuery, revalidatePublic } from "@/lib/cache";
 import { auth } from "@/lib/auth";
 import { isStaffRole } from "@/lib/roles";
 import { db } from "@/lib/db";
@@ -183,6 +184,7 @@ export async function createArticle(data: ArticleInput) {
     revalidatePath("/admin/articulos");
     revalidatePath("/articulos");
     revalidatePath(`/articulos/${article.slug}`);
+    revalidatePublic("articulos", "revista");
 
     return { success: true, article };
   } catch (error) {
@@ -301,6 +303,7 @@ export async function updateArticle(id: string, data: ArticleInput) {
     revalidatePath("/articulos");
     revalidatePath(`/articulos/${article.slug}`);
     revalidatePath(`/admin/articulos/${id}/editar`);
+    revalidatePublic("articulos", "revista");
 
     return { success: true, article };
   } catch (error) {
@@ -339,6 +342,7 @@ export async function deleteArticle(id: string) {
 
     revalidatePath("/admin/articulos");
     revalidatePath("/articulos");
+    revalidatePublic("articulos", "revista");
 
     return { success: true };
   } catch (error) {
@@ -547,39 +551,49 @@ export async function getPublishedArticles(filters?: {
   }
 }
 
+const ARTICLE_DETAIL_INCLUDE = {
+  author: AUTHOR_SELECT,
+  authors: {
+    orderBy: { order: "asc" as const },
+    include: { author: true },
+  },
+  categories: {
+    include: {
+      category: true,
+    },
+  },
+  tags: {
+    include: {
+      tag: true,
+    },
+  },
+  issue: true,
+} as const;
+
+// El artículo publicado se sirve desde la Data Cache (5 min o hasta que el
+// panel lo edite); la vista previa de borradores siempre va a la base de datos.
+const findPublishedArticleBySlug = cachedQuery(
+  "publishedArticleBySlug",
+  async (slug: string) =>
+    db.article.findFirst({
+      where: { slug, status: "PUBLISHED" },
+      include: ARTICLE_DETAIL_INCLUDE,
+    }),
+  ["articulos"]
+);
+
 // Get article by slug for public pages
 export async function getArticleBySlug(slug: string, publishedOnly = false) {
   try {
-    const where: any = { slug };
-
+    let article;
     if (publishedOnly) {
-      where.status = "PUBLISHED";
-    } else if (!(await staffSession())) {
+      article = await findPublishedArticleBySlug(slug);
+    } else if (await staffSession()) {
       // Sin filtro de estado solo para el equipo (vista previa de borradores).
+      article = await db.article.findFirst({ where: { slug }, include: ARTICLE_DETAIL_INCLUDE });
+    } else {
       throw new Error("No autorizado");
     }
-
-    const article = await db.article.findFirst({
-      where,
-      include: {
-        author: AUTHOR_SELECT,
-        authors: {
-          orderBy: { order: "asc" },
-          include: { author: true },
-        },
-        categories: {
-          include: {
-            category: true,
-          },
-        },
-        tags: {
-          include: {
-            tag: true,
-          },
-        },
-        issue: true,
-      },
-    });
 
     if (!article) {
       throw new Error("Artículo no encontrado");

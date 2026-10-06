@@ -4,8 +4,6 @@ import { getAllIssues } from "@/lib/queries";
 import { MagazineIssue } from "@/components/content/MagazineIssue";
 import { CategoryHeading } from "@/components/content/CategoryHeading";
 
-export const dynamic = "force-dynamic";
-
 export const metadata: Metadata = {
   title: "Archivo — la revista impresa",
   description:

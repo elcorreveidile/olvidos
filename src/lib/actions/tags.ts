@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { revalidatePublic } from "@/lib/cache";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { slugify } from "@/lib/utils";
@@ -39,6 +40,7 @@ export async function createTag(data: TagInput) {
 
     revalidatePath("/admin/tags");
     revalidatePath("/");
+    revalidatePublic("etiquetas", "articulos");
 
     return { success: true, tag };
   } catch (error) {
@@ -96,6 +98,7 @@ export async function updateTag(id: string, data: TagInput) {
     revalidatePath("/admin/tags");
     revalidatePath("/admin/tags/[id]/editar");
     revalidatePath("/");
+    revalidatePublic("etiquetas", "articulos");
 
     return { success: true, tag };
   } catch (error) {
@@ -149,6 +152,7 @@ export async function deleteTag(id: string) {
 
     revalidatePath("/admin/tags");
     revalidatePath("/");
+    revalidatePublic("etiquetas", "articulos");
 
     return { success: true };
   } catch (error) {

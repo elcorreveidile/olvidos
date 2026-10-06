@@ -1,5 +1,7 @@
 import { auth } from "@/lib/auth";
 import { NextResponse } from "next/server";
+import type { NextFetchEvent, NextRequest } from "next/server";
+import { SESSION_HINT_COOKIE, SESSION_HINT_MAX_AGE } from "@/lib/session-hint";
 
 // ---------------------------------------------------------------------------
 // Rutas-cebo (honeypot): sondeos típicos de escáneres y ataques a WordPress/PHP.
@@ -66,7 +68,91 @@ function honeypotResponse(): NextResponse {
   });
 }
 
-export default auth((req) => {
+// ---------------------------------------------------------------------------
+// Sesión. Auth.js solo se ejecuta en las rutas que la exigen: en las públicas
+// ni se lee el JWT ni se ponen cookies (antes ponía la de CSRF y la de
+// callback en cada visita anónima, lo que impedía cachear las páginas).
+// ---------------------------------------------------------------------------
+const PROTECTED_PREFIXES = ["/admin", "/mi-cuenta", "/socios"];
+
+function isProtected(pathname: string): boolean {
+  return PROTECTED_PREFIXES.some(
+    (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`)
+  );
+}
+
+/** ¿Lleva la petición la cookie de sesión de Auth.js (entera o troceada)? */
+function hasSessionCookie(req: NextRequest): boolean {
+  return req.cookies
+    .getAll()
+    .some((c) => /authjs\.session-token(?:\.\d+)?$/.test(c.name) && c.value.length > 0);
+}
+
+/**
+ * Mantiene la cookie-pista que lee la cabecera (`src/lib/session-hint.ts`):
+ * se escribe solo cuando su estado no coincide con el de la sesión, así en
+ * régimen normal la respuesta no lleva Set-Cookie y se puede cachear.
+ */
+function syncSessionHint(req: NextRequest, res: NextResponse, active: boolean): NextResponse {
+  const hinted = req.cookies.get(SESSION_HINT_COOKIE)?.value === "1";
+  if (active && !hinted) {
+    res.cookies.set({
+      name: SESSION_HINT_COOKIE,
+      value: "1",
+      path: "/",
+      sameSite: "lax",
+      secure: req.nextUrl.protocol === "https:",
+      maxAge: SESSION_HINT_MAX_AGE,
+    });
+  } else if (!active && hinted) {
+    res.cookies.delete(SESSION_HINT_COOKIE);
+  }
+  return res;
+}
+
+/** Rutas protegidas: aquí sí se valida la sesión y el rol. */
+const protectedMiddleware = auth((req) => {
+  const { pathname } = req.nextUrl;
+  const isLoggedIn = !!req.auth;
+  const userRole = req.auth?.user?.role;
+  const finish = (res: NextResponse) => syncSessionHint(req, res, isLoggedIn);
+
+  // Rutas de admin: solo ADMIN, EDITOR y MEMBER_ADMIN
+  if (pathname.startsWith("/admin")) {
+    if (!isLoggedIn) {
+      return finish(NextResponse.redirect(new URL("/login", req.url)));
+    }
+    if (userRole !== "ADMIN" && userRole !== "EDITOR" && userRole !== "MEMBER_ADMIN") {
+      return finish(NextResponse.redirect(new URL("/", req.url)));
+    }
+  }
+
+  // Área de miembros (mi-cuenta): requiere un rol válido
+  if (pathname.startsWith("/mi-cuenta")) {
+    if (!isLoggedIn) {
+      return finish(NextResponse.redirect(new URL("/login", req.url)));
+    }
+    if (
+      userRole !== "MEMBER" &&
+      userRole !== "ADMIN" &&
+      userRole !== "MEMBER_ADMIN" &&
+      userRole !== "EDITOR"
+    ) {
+      return finish(NextResponse.redirect(new URL("/", req.url)));
+    }
+  }
+
+  // Directorio de socios: requiere login
+  if (pathname.startsWith("/socios")) {
+    if (!isLoggedIn) {
+      return finish(NextResponse.redirect(new URL("/login", req.url)));
+    }
+  }
+
+  return finish(NextResponse.next());
+});
+
+export default function middleware(req: NextRequest, event: NextFetchEvent) {
   const { pathname, searchParams } = req.nextUrl;
 
   // 0) Rutas-cebo: cortamos antes de nada.
@@ -85,43 +171,15 @@ export default auth((req) => {
     return NextResponse.next();
   }
 
-  const isLoggedIn = !!req.auth;
-  const userRole = req.auth?.user?.role;
-
-  // Rutas de admin: solo ADMIN, EDITOR y MEMBER_ADMIN
-  if (pathname.startsWith("/admin")) {
-    if (!isLoggedIn) {
-      return NextResponse.redirect(new URL("/login", req.url));
-    }
-    if (userRole !== "ADMIN" && userRole !== "EDITOR" && userRole !== "MEMBER_ADMIN") {
-      return NextResponse.redirect(new URL("/", req.url));
-    }
+  if (isProtected(pathname)) {
+    // Auth.js tipa el contexto como el de una route handler; es el mismo objeto.
+    return protectedMiddleware(req, event as unknown as Parameters<typeof protectedMiddleware>[1]);
   }
 
-  // Área de miembros (mi-cuenta): requiere un rol válido
-  if (pathname.startsWith("/mi-cuenta")) {
-    if (!isLoggedIn) {
-      return NextResponse.redirect(new URL("/login", req.url));
-    }
-    if (
-      userRole !== "MEMBER" &&
-      userRole !== "ADMIN" &&
-      userRole !== "MEMBER_ADMIN" &&
-      userRole !== "EDITOR"
-    ) {
-      return NextResponse.redirect(new URL("/", req.url));
-    }
-  }
-
-  // Directorio de socios: requiere login
-  if (pathname.startsWith("/socios")) {
-    if (!isLoggedIn) {
-      return NextResponse.redirect(new URL("/login", req.url));
-    }
-  }
-
-  return NextResponse.next();
-});
+  // Páginas públicas: sin Auth.js; solo se sincroniza la cookie-pista a partir
+  // de la presencia de la cookie de sesión (no se valida: es una pista de UI).
+  return syncSessionHint(req, NextResponse.next(), hasSessionCookie(req));
+}
 
 export const config = {
   matcher: [

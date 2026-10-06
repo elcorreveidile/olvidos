@@ -1,15 +1,12 @@
 import Link from "next/link";
-import { auth } from "@/lib/auth";
+import { AreaSociosLink } from "@/components/auth/AreaSociosLink";
 import { Logo } from "./Logo";
 import { DesarrolloCredit } from "@/components/shared/DesarrolloCredit";
 import { ReconocimientoFooter } from "./ReconocimientoFooter";
 import { APP_VERSION, APP_VERSION_DATE, APP_COMMIT } from "@/lib/version";
 
-export async function Footer() {
+export function Footer() {
   const currentYear = new Date().getFullYear();
-  // Extract only what we need to avoid serialization issues
-  const hasUser = !!(await auth())?.user;
-  const memberAreaHref = hasUser ? "/mi-cuenta" : "/login";
 
   return (
     <footer className="bg-azul text-white">
@@ -100,9 +97,7 @@ export async function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href={memberAreaHref} className="text-sm text-acero-light hover:text-coral transition-colors">
-                  Área de socios
-                </Link>
+                <AreaSociosLink className="text-sm text-acero-light hover:text-coral transition-colors" />
               </li>
             </ul>
             <div className="mt-6">

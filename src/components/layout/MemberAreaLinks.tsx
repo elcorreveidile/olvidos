@@ -3,6 +3,12 @@
 import Link from "next/link";
 import { logout } from "@/lib/actions/auth";
 
+/** Cierra la sesión y recarga la portada (ver `logout`). */
+async function cerrarSesion() {
+  await logout();
+  window.location.assign("/");
+}
+
 interface MemberAreaLinksProps {
   variant: "desktop" | "mobile";
   className?: string;
@@ -33,7 +39,7 @@ export function MemberAreaLinks({
               >
                 Mi cuenta
               </Link>
-              <form action={logout}>
+              <form action={cerrarSesion}>
                 <button
                   type="submit"
                   className="block w-full px-4 py-2 text-left text-sm text-tinta transition-colors hover:bg-coral hover:text-white"
@@ -54,8 +60,8 @@ export function MemberAreaLinks({
           Mi cuenta
         </Link>
         {/* Sin onClose: cerraría el menú y desmontaría el form antes de que se
-            dispare la server action. Al cerrar sesión se redirige al inicio. */}
-        <form action={logout}>
+            dispare la acción. Al cerrar sesión se recarga el inicio. */}
+        <form action={cerrarSesion}>
           <button
             type="submit"
             className={`${className ?? ""} w-full text-left`}

@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { revalidatePublic } from "@/lib/cache";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import {
@@ -64,6 +65,7 @@ export async function createMagazineIssue(data: MagazineIssueInput) {
 
     revalidatePath("/admin/revista");
     revalidatePath("/revista");
+    revalidatePublic("revista");
 
     return { success: true, issue };
   } catch (error) {
@@ -121,6 +123,7 @@ export async function updateMagazineIssue(id: string, data: MagazineIssueInput) 
     revalidatePath(`/admin/revista/${id}/editar`);
     revalidatePath("/revista");
     revalidatePath(`/revista/${issue.slug}`);
+    revalidatePublic("revista");
 
     return { success: true, issue };
   } catch (error) {
@@ -163,6 +166,7 @@ export async function deleteMagazineIssue(id: string) {
 
     revalidatePath("/admin/revista");
     revalidatePath("/revista");
+    revalidatePublic("revista");
 
     return { success: true };
   } catch (error) {
