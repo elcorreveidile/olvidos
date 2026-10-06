@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -20,8 +21,11 @@ interface ArticlePageProps {
  * siendo estáticos). Los borradores, en revisión o archivados solo se
  * muestran, como vista previa, al equipo (ADMIN, EDITOR, MEMBER_ADMIN): para
  * ellos se consulta la sesión; para el resto no existen.
+ *
+ * `cache()` deduplica la llamada entre `generateMetadata` y la página: una
+ * sola consulta por petición en vez de dos.
  */
-async function loadArticle(slug: string) {
+const loadArticle = cache(async (slug: string) => {
   const published = await getArticleBySlug(slug, true);
   if (published.success && published.article) return { article: published.article, preview: false };
   const any = await getArticleBySlug(slug, false);
@@ -32,7 +36,7 @@ async function loadArticle(slug: string) {
     return { article: any.article, preview: true };
   }
   return null;
-}
+});
 
 /**
  * Autores del artículo: la tabla `Author` (firmas reales) y, si no hay, el

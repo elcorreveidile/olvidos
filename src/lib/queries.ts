@@ -398,6 +398,19 @@ export async function findMatchingArticleIds(
   query: string,
   opts: { publishedOnly?: boolean; categorySlug?: string } = {}
 ): Promise<string[]> {
+  return (await findMatchingArticlesPage(query, opts)).ids;
+}
+
+/**
+ * Como `findMatchingArticleIds`, pero paginando en SQL (LIMIT/OFFSET) y
+ * devolviendo el total con `count(*) over()`, para no traer todos los ids y
+ * recortarlos en memoria.
+ */
+export async function findMatchingArticlesPage(
+  query: string,
+  opts: { publishedOnly?: boolean; categorySlug?: string } = {},
+  page?: { limit: number; offset: number }
+): Promise<{ ids: string[]; total: number }> {
   const words = query
     .trim()
     .split(/\s+/)
@@ -411,7 +424,7 @@ export async function findMatchingArticleIds(
     )
     .filter((w) => w.length > 0)
     .slice(0, 10);
-  if (words.length === 0) return [];
+  if (words.length === 0) return { ids: [], total: 0 };
 
   // Palabra sin acentos y con los metacaracteres regex escapados (en SQL, tras
   // unaccent). Base para los patrones de límite de palabra y de frase.
@@ -473,15 +486,23 @@ export async function findMatchingArticleIds(
       )`
     : Prisma.empty;
 
-  const idRows = await db.$queryRaw<{ id: string }[]>(Prisma.sql`
-    SELECT a."id"
+  const pageCond = page
+    ? Prisma.sql`LIMIT ${page.limit} OFFSET ${page.offset}`
+    : Prisma.empty;
+
+  const idRows = await db.$queryRaw<{ id: string; total: bigint | number }[]>(Prisma.sql`
+    SELECT a."id", count(*) over() AS total
     FROM "Article" a
     WHERE ${Prisma.join(words.map(wordCond), " AND ")}
       ${statusCond}
       ${catCond}
     ORDER BY ${orderBy}
+    ${pageCond}
   `);
-  return idRows.map((r) => r.id);
+  return {
+    ids: idRows.map((r) => r.id),
+    total: idRows.length ? Number(idRows[0].total) : 0,
+  };
 }
 
 export async function searchArticles(
@@ -499,12 +520,11 @@ export async function searchArticles(
       })
     : null;
 
-  const ids = await findMatchingArticleIds(query, {
-    publishedOnly: true,
-    categorySlug,
-  });
-  const total = ids.length;
-  const pageIds = ids.slice(skip, skip + limit);
+  const { ids: pageIds, total } = await findMatchingArticlesPage(
+    query,
+    { publishedOnly: true, categorySlug },
+    { limit, offset: skip }
+  );
 
   const found = pageIds.length
     ? await db.article.findMany({
@@ -548,10 +568,17 @@ export async function searchArticles(
 /**
  * Obtiene todos los números de la revista
  */
-export async function getAllIssues(): Promise<MagazineIssueSummary[]> {
+export async function getAllIssues(
+  opts: { onlyNumbered?: boolean; take?: number } = {}
+): Promise<MagazineIssueSummary[]> {
   return db.magazineIssue.findMany({
-    where: { publishedAt: { not: null } },
+    where: {
+      publishedAt: { not: null },
+      // Números «de verdad» (1–99); las separatas y preolvidos van de 100 en adelante.
+      ...(opts.onlyNumbered ? { number: { gte: 1, lt: 100 } } : {}),
+    },
     orderBy: { number: "desc" },
+    ...(opts.take ? { take: opts.take } : {}),
     select: {
       id: true,
       number: true,
