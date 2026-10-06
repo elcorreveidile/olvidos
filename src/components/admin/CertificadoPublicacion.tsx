@@ -20,6 +20,14 @@ export interface CertificadoArticulo {
   slug: string;
   /** Número de la revista impresa al que pertenece, si procede. */
   issue?: { number: number; title: string } | null;
+  /**
+   * Si se certifica un solo paso de una pieza colectiva (p. ej. un número
+   * digital de Memoria de Olvidos): título del artículo contenedor y número
+   * del paso. `title` pasa a ser el título del paso.
+   */
+  parent?: { title: string; paso: number } | null;
+  /** Nombre con el que la persona firma en la web, si difiere del completo. */
+  signedAs?: string | null;
 }
 
 const DATE_LONG = new Intl.DateTimeFormat("es-ES", { day: "numeric", month: "long", year: "numeric" });
@@ -37,9 +45,11 @@ export function CertificadoPublicacion({
   article: CertificadoArticulo;
   issuedAt?: Date;
 }) {
-  const url = `${SITE_URL}/articulos/${article.slug}`;
+  const url = `${SITE_URL}/articulos/${article.slug}${article.parent ? `?paso=${article.parent.paso}` : ""}`;
   const autores = listaNombres(article.authors);
   const plural = article.authors.length > 1;
+  const signedAs =
+    article.signedAs && article.signedAs.trim() && article.signedAs.trim() !== autores ? article.signedAs.trim() : null;
   const year = article.publishedAt.getFullYear();
 
   return (
@@ -99,9 +109,16 @@ export function CertificadoPublicacion({
         <li className="flex gap-3 text-justify">
           <span className="w-7 shrink-0 font-bold text-coral">II.</span>
           <span>
-            En dicha publicación apareció{article.section ? <>, en la sección <em>{article.section}</em>,</> : null} el
-            artículo titulado <strong>«{article.title}»</strong>, {plural ? "cuyos autores son" : "cuyo autor es"}{" "}
-            <strong>{autores}</strong>.
+            En dicha publicación apareció{article.section ? <>, en la sección <em>{article.section}</em>,</> : null}
+            {article.parent ? (
+              <>
+                {" "}
+                y dentro de la pieza colectiva <em>{article.parent.title}</em> (paso {article.parent.paso}),
+              </>
+            ) : null}{" "}
+            el artículo titulado <strong>«{article.title}»</strong>, cuya autoría corresponde a{" "}
+            <strong>{autores}</strong>
+            {signedAs ? <>, que firma como {signedAs}</> : null}.
             {article.issue ? (
               <>
                 {" "}
@@ -116,7 +133,7 @@ export function CertificadoPublicacion({
         <li className="flex gap-3 text-justify">
           <span className="w-7 shrink-0 font-bold text-coral">III.</span>
           <span>
-            {plural ? "Los autores del artículo no son editores" : "El autor del artículo no es editor"} de la
+            {plural ? "Quienes firman el artículo no son editores" : "Quien firma el artículo no es editor"} de la
             publicación ni {plural ? "forman" : "forma"} parte del equipo de redacción de la revista.
           </span>
         </li>
@@ -130,8 +147,11 @@ export function CertificadoPublicacion({
               `Registro Internacional del ISSN (ISSN Portal) · registro ISSN ${ORGANIZATION.issn} · ${ORGANIZATION.issnRegisterUrl}`,
             ],
             ["Publicación", `${PUBLICATION_TITLE} (www.olvidos.es) · ISSN ${ORGANIZATION.issn} · edita ${ORGANIZATION.name}`],
-            ["Título del artículo", article.title],
-            [plural ? "Autores" : "Autor", article.authors.join("; ")],
+            [
+              "Título del artículo",
+              article.parent ? `${article.title} (en ${article.parent.title}, paso ${article.parent.paso})` : article.title,
+            ],
+            ["Autoría", article.authors.join("; ") + (signedAs ? ` (${signedAs})` : "")],
             ["Año de publicación", `${year} (${DATE_LONG.format(article.publishedAt)})`],
             ["URL", url],
           ].map(([k, v]) => (
@@ -146,8 +166,8 @@ export function CertificadoPublicacion({
       </table>
 
       <p className="mb-6 text-justify">
-        Y para que conste, a petición {plural ? "de los interesados" : "del interesado"} y a los efectos que
-        procedan, expido el presente certificado en Granada, a {DATE_LONG.format(issuedAt)}.
+        Y para que conste, a petición de la parte interesada y a los efectos que procedan, expido el presente
+        certificado en Granada, a {DATE_LONG.format(issuedAt)}.
       </p>
 
       <div className="grid grid-cols-2 items-end gap-6">
