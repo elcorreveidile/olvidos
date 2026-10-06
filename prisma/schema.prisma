@@ -116,6 +116,14 @@ model Payment {
 // Libro de contabilidad de la asociación. Los ingresos de cuotas por Stripe se
 // anotan automáticamente (source STRIPE, vía el webhook); gastos y otros
 // ingresos se introducen a mano desde el panel admin (source MANUAL).
+/// Eventos de Stripe ya procesados: el webhook los deduplica por `event.id`
+/// (Stripe reintenta y puede entregar el mismo evento varias veces).
+model StripeEvent {
+  id         String   @id
+  type       String
+  receivedAt DateTime @default(now())
+}
+
 model LedgerEntry {
   id          String       @id @default(cuid())
   date        DateTime

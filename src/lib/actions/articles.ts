@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { errorMessage } from "@/lib/action-errors";
 import { cachedQuery, revalidatePublic } from "@/lib/cache";
 import { auth } from "@/lib/auth";
 import { isStaffRole } from "@/lib/roles";
@@ -9,6 +10,7 @@ import { z } from "zod";
 import { slugifyName } from "@/lib/colaboradores";
 import { findMatchingArticleIds } from "@/lib/queries";
 import { hasVisibleContent, CONTENT_REQUIRED_MESSAGE } from "@/lib/article-content";
+import { sanitizeArticleHtml } from "@/lib/sanitize-html";
 
 /**
  * Lo que se devuelve del usuario que subió el artículo (`Article.author` es
@@ -133,7 +135,7 @@ export async function createArticle(data: ArticleInput) {
         title: validatedData.title,
         slug: validatedData.slug,
         excerpt: validatedData.excerpt,
-        content: validatedData.content,
+        content: sanitizeArticleHtml(validatedData.content),
         coverImage: validatedData.coverImage || null,
         coverPosition: validatedData.coverPosition || "center",
         byline: validatedData.byline?.trim() || null,
@@ -194,7 +196,7 @@ export async function createArticle(data: ArticleInput) {
     }
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al crear el artículo",
+      error: errorMessage(error, "Error al crear el artículo"),
     };
   }
 }
@@ -256,7 +258,7 @@ export async function updateArticle(id: string, data: ArticleInput) {
         title: validatedData.title,
         slug: validatedData.slug,
         excerpt: validatedData.excerpt,
-        content: validatedData.content,
+        content: sanitizeArticleHtml(validatedData.content),
         coverImage: validatedData.coverImage || null,
         coverPosition: validatedData.coverPosition || "center",
         byline: validatedData.byline?.trim() || null,
@@ -313,7 +315,7 @@ export async function updateArticle(id: string, data: ArticleInput) {
     }
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al actualizar el artículo",
+      error: errorMessage(error, "Error al actualizar el artículo"),
     };
   }
 }
@@ -349,7 +351,7 @@ export async function deleteArticle(id: string) {
     console.error("Error deleting article:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al eliminar el artículo",
+      error: errorMessage(error, "Error al eliminar el artículo"),
     };
   }
 }
@@ -387,7 +389,7 @@ export async function getArticle(id: string) {
     console.error("Error fetching article:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener el artículo",
+      error: errorMessage(error, "Error al obtener el artículo"),
     };
   }
 }
@@ -474,7 +476,7 @@ export async function getArticles(filters?: {
     console.error("Error fetching articles:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener los artículos",
+      error: errorMessage(error, "Error al obtener los artículos"),
     };
   }
 }
@@ -545,7 +547,7 @@ export async function getPublishedArticles(filters?: {
     console.error("Error fetching published articles:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener los artículos publicados",
+      error: errorMessage(error, "Error al obtener los artículos publicados"),
       articles: [],
     };
   }
@@ -604,7 +606,7 @@ export async function getArticleBySlug(slug: string, publishedOnly = false) {
     console.error("Error fetching article by slug:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener el artículo",
+      error: errorMessage(error, "Error al obtener el artículo"),
     };
   }
 }
@@ -623,7 +625,7 @@ export async function getCategories() {
     console.error("Error fetching categories:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener las categorías",
+      error: errorMessage(error, "Error al obtener las categorías"),
     };
   }
 }
@@ -642,7 +644,7 @@ export async function getMagazineIssues() {
     console.error("Error fetching magazine issues:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener los números de revista",
+      error: errorMessage(error, "Error al obtener los números de revista"),
     };
   }
 }

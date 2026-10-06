@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { errorMessage } from "@/lib/action-errors";
 import { z } from "zod";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
@@ -46,6 +47,6 @@ export async function updateUserRole(userId: string, role: string) {
     revalidatePath("/admin");
     return { success: true, message: `${target.email} ahora es ${ROLE_LABELS[newRole]}.` };
   } catch (error) {
-    return { success: false, error: error instanceof Error ? error.message : "Error al cambiar el rol" };
+    return { success: false, error: errorMessage(error, "Error al cambiar el rol") };
   }
 }

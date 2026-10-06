@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { put } from "@vercel/blob";
+import { IMAGE_TYPES, IMAGE_REJECTED_MESSAGE, isAllowedFile } from "@/lib/uploads";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -37,11 +38,8 @@ export async function POST(req: Request) {
   if (!(file instanceof File)) {
     return NextResponse.json({ error: "Falta el archivo" }, { status: 400 });
   }
-  if (!file.type.startsWith("image/")) {
-    return NextResponse.json(
-      { error: "El archivo debe ser una imagen." },
-      { status: 400 }
-    );
+  if (!isAllowedFile(file, IMAGE_TYPES)) {
+    return NextResponse.json({ error: IMAGE_REJECTED_MESSAGE }, { status: 400 });
   }
   if (file.size > MAX_BYTES) {
     return NextResponse.json(

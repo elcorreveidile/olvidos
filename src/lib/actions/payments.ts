@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { errorMessage } from "@/lib/action-errors";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { stripe } from "@/lib/stripe";
@@ -97,7 +98,7 @@ export async function createPayment(data: PaymentInput) {
     }
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al crear el pago",
+      error: errorMessage(error, "Error al crear el pago"),
     };
   }
 }
@@ -142,7 +143,7 @@ export async function getMemberPayments(memberId: string) {
     return {
       success: false,
       error:
-        error instanceof Error ? error.message : "Error al obtener los pagos",
+        errorMessage(error, "Error al obtener los pagos"),
     };
   }
 }
@@ -213,7 +214,7 @@ export async function getPayments(filters?: {
     return {
       success: false,
       error:
-        error instanceof Error ? error.message : "Error al obtener los pagos",
+        errorMessage(error, "Error al obtener los pagos"),
     };
   }
 }
@@ -257,7 +258,7 @@ export async function getPayment(id: string) {
     return {
       success: false,
       error:
-        error instanceof Error ? error.message : "Error al obtener el pago",
+        errorMessage(error, "Error al obtener el pago"),
     };
   }
 }
@@ -303,7 +304,7 @@ export async function refundPayment(id: string) {
     return {
       success: false,
       error:
-        error instanceof Error ? error.message : "Error al reembolsar el pago",
+        errorMessage(error, "Error al reembolsar el pago"),
     };
   }
 }

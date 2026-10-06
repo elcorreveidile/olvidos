@@ -180,8 +180,19 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   en la misma rama):** dependencias con parches compatibles; login con
   contraseña y reset para cuentas OAuth; índices en `schema.prisma` (exige
   `prisma db push`); búsqueda paginada en SQL; caché (ver sección siguiente).
-- **Pendiente (PR por tema):** Stripe (deduplicar por `event.id`), sanitizar
-  HTML de Tiptap, MIME de subidas; CI mínima y bajar los errores de tsc; split
+- **PR 5 (en la rama, sin fusionar):** webhook de Stripe deduplicado por
+  `event.id` (tabla `StripeEvent`, **exige `prisma db push`**; pago y apunte en
+  una transacción; bienvenida solo al pasar a ACTIVE); HTML de artículos y
+  actividades **sanitizado al guardar** (`src/lib/sanitize-html.ts`, lista
+  blanca con iframes de visores y marcadores `<!--nextpage-->`/`isla`/`paso`
+  protegidos; `scripts/sanitize-dry-run.ts` compara en seco contra la BD:
+  **Javier debe ejecutarlo contra producción antes de fusionar** y, si algo
+  cambia, ampliar la lista); subidas con lista blanca de MIME + extensión
+  (`src/lib/uploads.ts`, sin SVG); mensajes de error de Prisma no se devuelven
+  al navegador (`errorMessage` en `src/lib/action-errors.ts`); `loading.tsx` en
+  los listados; `scripts/` ordenado en `legacy/` (escriben en BD) y
+  `marketing/` (reels), con `scripts/README.md`.
+- **Pendiente (PR por tema):** CI mínima y bajar los errores de tsc; split
   edge/node del middleware; CSP estricta; migrar a Next 15 (`next` 14 sin parche).
 
 ## Caché y tiempos de respuesta (PR 4, octubre de 2026)

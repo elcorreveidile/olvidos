@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { useFormState, useFormStatus } from "react-dom";
 import { uploadDocumentAction } from "@/lib/actions/documents";
+import { DOCUMENT_ACCEPT } from "@/lib/uploads";
 import {
   DOCUMENT_CATEGORY_LABELS,
   DOCUMENT_CATEGORY_ORDER,
@@ -74,7 +75,7 @@ export function DocumentUploadForm() {
           name="file"
           type="file"
           required
-          accept="application/pdf,.pdf,.doc,.docx"
+          accept={DOCUMENT_ACCEPT}
           className="block w-full text-sm text-gray-700 file:mr-4 file:rounded-sm file:border-0 file:bg-coral/10 file:px-4 file:py-2 file:font-bold file:text-coral hover:file:bg-coral/20"
         />
       </div>

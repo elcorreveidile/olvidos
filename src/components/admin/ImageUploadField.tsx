@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { Loader2, Upload } from "lucide-react";
+import { IMAGE_ACCEPT } from "@/lib/uploads";
 
 /**
  * Campo de imagen que admite pegar una URL o SUBIR un archivo (a Vercel Blob
@@ -69,7 +70,7 @@ export function ImageUploadField({
         <input
           ref={inputRef}
           type="file"
-          accept="image/*"
+          accept={IMAGE_ACCEPT}
           onChange={handleFile}
           className="hidden"
         />
