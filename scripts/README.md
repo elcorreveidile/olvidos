@@ -21,10 +21,16 @@ Scripts de la migración desde WordPress y de las correcciones del archivo
 (`migrate-wordpress`, `rehost-*`, `recover*`, `n9-*`, `import-bylines`,
 `seed-archive`, `set-issue-years`, `promote-covers`, `clean-placeholders`,
 `update-admins`, `upload-estatutos`, `backfill-ledger`, `scrape-pasos-titles`,
-`check-*`, `extract-years`, `poc-*`). Ya cumplieron su función: no ejecutarlos
+`check-*`, `extract-years`, `poc-*`, `fix-srcset-legacy`). Ya cumplieron su función: no ejecutarlos
 contra producción sin leerlos antes y, si tienen `--dry`, probar primero con él.
 Al escribir directamente en la BD no pasan por la caché del panel: lo que
 cambien tarda hasta 5 minutos en verse en la web.
+
+`fix-srcset-legacy.ts` (7-10-2026) quita los `srcset`/`sizes` de las imágenes
+que aún apuntan a `olvidosdegranada.es` (la migración re-alojó los `src` pero no
+los `srcset`, y el navegador prefería el `srcset`: cartel «This image was
+hotlinked»). Sin `--aplicar` solo informa; también lista los `src`, enlaces y
+PDF que sigan en el dominio antiguo.
 
 ## `marketing/` — reels y carruseles
 
