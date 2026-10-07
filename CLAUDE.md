@@ -208,6 +208,11 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   hay que desactivarlo en Settings → Pages (Javier).
 - Tras un despliegue, las pestañas abiertas del panel se quedan en la versión
   anterior: recargar antes de probar nada.
+- **Imágenes «This image was hotlinked»** (visto el 7-10-2026 en el nº 13): la
+  migración re-alojó los `src` en Blob pero dejó `srcset` apuntando a
+  `olvidosdegranada.es` (con `uploads//`), y el navegador prefiere el `srcset`.
+  Los originales ya no existen allí (404). Limpieza:
+  `scripts/legacy/fix-srcset-legacy.ts` (primero sin `--aplicar`).
 
 ## Caché y tiempos de respuesta (PR 4, octubre de 2026)
 
