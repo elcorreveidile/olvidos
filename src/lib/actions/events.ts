@@ -1,6 +1,9 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { errorMessage } from "@/lib/action-errors";
+import { revalidatePublic } from "@/lib/cache";
+import { sanitizeArticleHtml } from "@/lib/sanitize-html";
 import { auth } from "@/lib/auth";
 import { isStaffRole } from "@/lib/roles";
 import { db } from "@/lib/db";
@@ -119,7 +122,7 @@ export async function createEvent(data: EventInput) {
       data: {
         title: validatedData.title,
         slug: validatedData.slug,
-        description: validatedData.description,
+        description: sanitizeArticleHtml(validatedData.description),
         shortDesc: validatedData.shortDesc,
         coverImage: validatedData.coverImage || null,
         location: validatedData.location,
@@ -142,6 +145,7 @@ export async function createEvent(data: EventInput) {
     revalidatePath("/admin/actividades");
     revalidatePath("/actividades");
     revalidatePath(`/actividades/${event.slug}`);
+    revalidatePublic("actividades");
 
     return { success: true, event };
   } catch (error) {
@@ -151,7 +155,7 @@ export async function createEvent(data: EventInput) {
     }
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al crear el evento",
+      error: errorMessage(error, "Error al crear el evento"),
     };
   }
 }
@@ -206,7 +210,7 @@ export async function updateEvent(id: string, data: EventInput) {
       data: {
         title: validatedData.title,
         slug: validatedData.slug,
-        description: validatedData.description,
+        description: sanitizeArticleHtml(validatedData.description),
         shortDesc: validatedData.shortDesc,
         coverImage: validatedData.coverImage || null,
         location: validatedData.location,
@@ -229,6 +233,7 @@ export async function updateEvent(id: string, data: EventInput) {
     revalidatePath("/actividades");
     revalidatePath(`/actividades/${event.slug}`);
     revalidatePath(`/admin/actividades/${id}/editar`);
+    revalidatePublic("actividades");
 
     return { success: true, event };
   } catch (error) {
@@ -238,7 +243,7 @@ export async function updateEvent(id: string, data: EventInput) {
     }
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al actualizar el evento",
+      error: errorMessage(error, "Error al actualizar el evento"),
     };
   }
 }
@@ -267,13 +272,14 @@ export async function deleteEvent(id: string) {
 
     revalidatePath("/admin/actividades");
     revalidatePath("/actividades");
+    revalidatePublic("actividades");
 
     return { success: true };
   } catch (error) {
     console.error("Error deleting event:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al eliminar el evento",
+      error: errorMessage(error, "Error al eliminar el evento"),
     };
   }
 }
@@ -312,7 +318,7 @@ export async function getEvent(id: string) {
     console.error("Error fetching event:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener el evento",
+      error: errorMessage(error, "Error al obtener el evento"),
     };
   }
 }
@@ -368,7 +374,7 @@ export async function getEventBySlug(slug: string, includeAttendees = false) {
     console.error("Error fetching event:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener el evento",
+      error: errorMessage(error, "Error al obtener el evento"),
     };
   }
 }
@@ -474,7 +480,7 @@ export async function getEvents(filters?: {
     console.error("Error fetching events:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener los eventos",
+      error: errorMessage(error, "Error al obtener los eventos"),
     };
   }
 }
@@ -521,7 +527,7 @@ export async function getUpcomingEvents(limit = 6) {
     console.error("Error fetching upcoming events:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener los próximos eventos",
+      error: errorMessage(error, "Error al obtener los próximos eventos"),
     };
   }
 }
@@ -583,7 +589,7 @@ export async function getPastEvents(page = 1, limit = 12) {
     console.error("Error fetching past events:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener los eventos pasados",
+      error: errorMessage(error, "Error al obtener los eventos pasados"),
     };
   }
 }
@@ -696,7 +702,7 @@ export async function registerForEvent(eventId: string) {
     console.error("Error registering for event:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al inscribirse en el evento",
+      error: errorMessage(error, "Error al inscribirse en el evento"),
     };
   }
 }
@@ -759,7 +765,7 @@ export async function unregisterFromEvent(eventId: string) {
     console.error("Error unregistering from event:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al cancelar la inscripción",
+      error: errorMessage(error, "Error al cancelar la inscripción"),
     };
   }
 }
@@ -793,7 +799,7 @@ export async function getEventAttendees(eventId: string) {
     console.error("Error fetching event attendees:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener los asistentes",
+      error: errorMessage(error, "Error al obtener los asistentes"),
     };
   }
 }
@@ -829,7 +835,7 @@ export async function confirmAttendee(eventId: string, memberId: string) {
     console.error("Error confirming attendee:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al confirmar la asistencia",
+      error: errorMessage(error, "Error al confirmar la asistencia"),
     };
   }
 }
@@ -865,7 +871,7 @@ export async function cancelAttendeeRegistration(eventId: string, memberId: stri
     console.error("Error canceling registration:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al cancelar la inscripción",
+      error: errorMessage(error, "Error al cancelar la inscripción"),
     };
   }
 }
@@ -901,7 +907,7 @@ export async function markAttendeeAttended(eventId: string, memberId: string) {
     console.error("Error marking attendance:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al registrar la asistencia",
+      error: errorMessage(error, "Error al registrar la asistencia"),
     };
   }
 }
@@ -983,7 +989,7 @@ export async function getAllRegistrations(filters?: {
     console.error("Error fetching registrations:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener las inscripciones",
+      error: errorMessage(error, "Error al obtener las inscripciones"),
     };
   }
 }
@@ -1021,7 +1027,7 @@ export async function getEventsForCalendar(year: number, month: number) {
     console.error("Error fetching events for calendar:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener los eventos para el calendario",
+      error: errorMessage(error, "Error al obtener los eventos para el calendario"),
     };
   }
 }
@@ -1095,7 +1101,7 @@ export async function getEventStatistics() {
     console.error("Error fetching event statistics:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener las estadísticas",
+      error: errorMessage(error, "Error al obtener las estadísticas"),
     };
   }
 }

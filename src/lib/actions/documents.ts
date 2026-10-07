@@ -4,6 +4,7 @@ import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { put, del } from "@vercel/blob";
 import { revalidatePath } from "next/cache";
+import { DOCUMENT_TYPES, DOCUMENT_REJECTED_MESSAGE, isAllowedFile } from "@/lib/uploads";
 import type { DocumentCategory } from "@prisma/client";
 
 const CATEGORIES: DocumentCategory[] = [
@@ -48,6 +49,9 @@ export async function createDocument(formData: FormData): Promise<ActionResult> 
   }
   if (!(file instanceof File) || file.size === 0) {
     return { success: false, error: "Adjunta un archivo." };
+  }
+  if (!isAllowedFile(file, DOCUMENT_TYPES)) {
+    return { success: false, error: DOCUMENT_REJECTED_MESSAGE };
   }
   if (!process.env.BLOB_READ_WRITE_TOKEN) {
     return {

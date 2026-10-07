@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2, Upload } from "lucide-react";
+import { IMAGE_ACCEPT } from "@/lib/uploads";
 
 /** Subida de la foto del carné del socio (a Blob vía /api/member/photo). */
 export function CardPhotoUpload({ current }: { current: string | null }) {
@@ -60,7 +61,7 @@ export function CardPhotoUpload({ current }: { current: string | null }) {
         <input
           ref={inputRef}
           type="file"
-          accept="image/*"
+          accept={IMAGE_ACCEPT}
           onChange={handleFile}
           className="hidden"
         />

@@ -8,22 +8,22 @@ datasource db {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  email         String    @unique
+  id            String     @id @default(cuid())
+  email         String     @unique
   name          String?
   password      String?
   image         String?
-  role          Role      @default(USER)
+  role          Role       @default(USER)
   emailVerified DateTime?
   // Se incrementa al restablecer la contraseña para invalidar los JWT emitidos
   // antes (la sesión es JWT, no hay filas Session que borrar). El callback jwt
   // compara este valor con el del token y cierra la sesión si no coincide.
-  tokenVersion  Int       @default(0)
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+  tokenVersion  Int        @default(0)
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
   accounts      Account[]
-  articles      Article[] @relation("author")
-  events        Event[]   @relation("organizer")
+  articles      Article[]  @relation("author")
+  events        Event[]    @relation("organizer")
   member        Member?
   sessions      Session[]
   documents     Document[] @relation("uploader")
@@ -81,7 +81,7 @@ model Member {
   phone            String?
   address          String?
   city             String?
-  dni              String?         // Solo uso interno (envíos, registro legal); nunca público
+  dni              String? // Solo uso interno (envíos, registro legal); nunca público
   founder          Boolean         @default(false) // Socio fundador de la asociación
   isPublic         Boolean         @default(false)
   cardImageUrl     String?
@@ -109,11 +109,21 @@ model Payment {
   createdAt       DateTime      @default(now())
   member          Member        @relation(fields: [memberId], references: [id])
   ledgerEntry     LedgerEntry?
+
+  @@index([memberId])
 }
 
 // Libro de contabilidad de la asociación. Los ingresos de cuotas por Stripe se
 // anotan automáticamente (source STRIPE, vía el webhook); gastos y otros
 // ingresos se introducen a mano desde el panel admin (source MANUAL).
+/// Eventos de Stripe ya procesados: el webhook los deduplica por `event.id`
+/// (Stripe reintenta y puede entregar el mismo evento varias veces).
+model StripeEvent {
+  id         String   @id
+  type       String
+  receivedAt DateTime @default(now())
+}
+
 model LedgerEntry {
   id          String       @id @default(cuid())
   date        DateTime
@@ -152,9 +162,9 @@ model Article {
   excerpt         String?
   content         String
   coverImage      String?
-  coverCredit     String?                // Autor/crédito de la foto de portada (pie de foto)
+  coverCredit     String? // Autor/crédito de la foto de portada (pie de foto)
   coverPosition   String                 @default("center")
-  section         String?                // Sección de la revista impresa (p.ej. «Mitológicas»); agrupa el sumario del número
+  section         String? // Sección de la revista impresa (p.ej. «Mitológicas»); agrupa el sumario del número
   status          ContentStatus          @default(DRAFT)
   featured        Boolean                @default(false)
   membersOnly     Boolean                @default(false)
@@ -174,6 +184,13 @@ model Article {
   categories      CategoriesOnArticles[]
   media           Media[]
   tags            TagsOnArticles[]
+
+  // Listados públicos (publicados por fecha), portada (destacados) y
+  // relaciones que antes se recorrían sin índice.
+  @@index([status, publishedAt])
+  @@index([featured])
+  @@index([authorId])
+  @@index([issueId])
 }
 
 model MagazineIssue {
@@ -213,6 +230,7 @@ model AuthorsOnArticles {
   author    Author  @relation(fields: [authorId], references: [id], onDelete: Cascade)
 
   @@id([articleId, authorId])
+  @@index([authorId])
 }
 
 model Category {
@@ -240,6 +258,7 @@ model CategoriesOnArticles {
   category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
 
   @@id([articleId, categoryId])
+  @@index([categoryId])
 }
 
 model TagsOnArticles {
@@ -249,6 +268,7 @@ model TagsOnArticles {
   tag       Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
 
   @@id([articleId, tagId])
+  @@index([tagId])
 }
 
 model Event {
@@ -274,6 +294,8 @@ model Event {
   organizer   User            @relation("organizer", fields: [organizerId], references: [id])
   attendees   EventAttendee[]
   media       Media[]
+
+  @@index([status, startDate])
 }
 
 model EventAttendee {
@@ -288,6 +310,7 @@ model EventAttendee {
   member    Member?        @relation(fields: [memberId], references: [id])
 
   @@unique([eventId, memberId])
+  @@index([memberId])
 }
 
 model Media {

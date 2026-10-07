@@ -1,6 +1,8 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { errorMessage } from "@/lib/action-errors";
+import { revalidatePublic } from "@/lib/cache";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { slugify } from "@/lib/utils";
@@ -42,14 +44,12 @@ export async function createCategory(data: CategoryInput) {
 
     revalidatePath("/admin/categorias");
     revalidatePath("/");
+    revalidatePublic("categorias", "articulos");
 
     return { success: true, category };
   } catch (error) {
     console.error("Error creating category:", error);
-    if (error instanceof Error) {
-      return { error: error.message };
-    }
-    return { error: "Error al crear la categoría" };
+    return { error: errorMessage(error, "Error al crear la categoría") };
   }
 }
 
@@ -106,14 +106,12 @@ export async function updateCategory(id: string, data: CategoryInput) {
     revalidatePath("/admin/categorias");
     revalidatePath("/admin/categorias/[id]/editar");
     revalidatePath("/");
+    revalidatePublic("categorias", "articulos");
 
     return { success: true, category };
   } catch (error) {
     console.error("Error updating category:", error);
-    if (error instanceof Error) {
-      return { error: error.message };
-    }
-    return { error: "Error al actualizar la categoría" };
+    return { error: errorMessage(error, "Error al actualizar la categoría") };
   }
 }
 
@@ -163,14 +161,12 @@ export async function deleteCategory(id: string) {
 
     revalidatePath("/admin/categorias");
     revalidatePath("/");
+    revalidatePublic("categorias", "articulos");
 
     return { success: true };
   } catch (error) {
     console.error("Error deleting category:", error);
-    if (error instanceof Error) {
-      return { error: error.message };
-    }
-    return { error: "Error al eliminar la categoría" };
+    return { error: errorMessage(error, "Error al eliminar la categoría") };
   }
 }
 

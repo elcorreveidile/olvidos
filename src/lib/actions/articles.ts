@@ -1,6 +1,8 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { errorMessage } from "@/lib/action-errors";
+import { cachedQuery, revalidatePublic } from "@/lib/cache";
 import { auth } from "@/lib/auth";
 import { isStaffRole } from "@/lib/roles";
 import { db } from "@/lib/db";
@@ -8,6 +10,7 @@ import { z } from "zod";
 import { slugifyName } from "@/lib/colaboradores";
 import { findMatchingArticleIds } from "@/lib/queries";
 import { hasVisibleContent, CONTENT_REQUIRED_MESSAGE } from "@/lib/article-content";
+import { sanitizeArticleHtml } from "@/lib/sanitize-html";
 
 /**
  * Lo que se devuelve del usuario que subió el artículo (`Article.author` es
@@ -132,7 +135,7 @@ export async function createArticle(data: ArticleInput) {
         title: validatedData.title,
         slug: validatedData.slug,
         excerpt: validatedData.excerpt,
-        content: validatedData.content,
+        content: sanitizeArticleHtml(validatedData.content),
         coverImage: validatedData.coverImage || null,
         coverPosition: validatedData.coverPosition || "center",
         byline: validatedData.byline?.trim() || null,
@@ -183,6 +186,7 @@ export async function createArticle(data: ArticleInput) {
     revalidatePath("/admin/articulos");
     revalidatePath("/articulos");
     revalidatePath(`/articulos/${article.slug}`);
+    revalidatePublic("articulos", "revista");
 
     return { success: true, article };
   } catch (error) {
@@ -192,7 +196,7 @@ export async function createArticle(data: ArticleInput) {
     }
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al crear el artículo",
+      error: errorMessage(error, "Error al crear el artículo"),
     };
   }
 }
@@ -254,7 +258,7 @@ export async function updateArticle(id: string, data: ArticleInput) {
         title: validatedData.title,
         slug: validatedData.slug,
         excerpt: validatedData.excerpt,
-        content: validatedData.content,
+        content: sanitizeArticleHtml(validatedData.content),
         coverImage: validatedData.coverImage || null,
         coverPosition: validatedData.coverPosition || "center",
         byline: validatedData.byline?.trim() || null,
@@ -301,6 +305,7 @@ export async function updateArticle(id: string, data: ArticleInput) {
     revalidatePath("/articulos");
     revalidatePath(`/articulos/${article.slug}`);
     revalidatePath(`/admin/articulos/${id}/editar`);
+    revalidatePublic("articulos", "revista");
 
     return { success: true, article };
   } catch (error) {
@@ -310,7 +315,7 @@ export async function updateArticle(id: string, data: ArticleInput) {
     }
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al actualizar el artículo",
+      error: errorMessage(error, "Error al actualizar el artículo"),
     };
   }
 }
@@ -339,13 +344,14 @@ export async function deleteArticle(id: string) {
 
     revalidatePath("/admin/articulos");
     revalidatePath("/articulos");
+    revalidatePublic("articulos", "revista");
 
     return { success: true };
   } catch (error) {
     console.error("Error deleting article:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al eliminar el artículo",
+      error: errorMessage(error, "Error al eliminar el artículo"),
     };
   }
 }
@@ -383,7 +389,7 @@ export async function getArticle(id: string) {
     console.error("Error fetching article:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener el artículo",
+      error: errorMessage(error, "Error al obtener el artículo"),
     };
   }
 }
@@ -470,7 +476,7 @@ export async function getArticles(filters?: {
     console.error("Error fetching articles:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener los artículos",
+      error: errorMessage(error, "Error al obtener los artículos"),
     };
   }
 }
@@ -541,45 +547,55 @@ export async function getPublishedArticles(filters?: {
     console.error("Error fetching published articles:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener los artículos publicados",
+      error: errorMessage(error, "Error al obtener los artículos publicados"),
       articles: [],
     };
   }
 }
 
+const ARTICLE_DETAIL_INCLUDE = {
+  author: AUTHOR_SELECT,
+  authors: {
+    orderBy: { order: "asc" as const },
+    include: { author: true },
+  },
+  categories: {
+    include: {
+      category: true,
+    },
+  },
+  tags: {
+    include: {
+      tag: true,
+    },
+  },
+  issue: true,
+} as const;
+
+// El artículo publicado se sirve desde la Data Cache (5 min o hasta que el
+// panel lo edite); la vista previa de borradores siempre va a la base de datos.
+const findPublishedArticleBySlug = cachedQuery(
+  "publishedArticleBySlug",
+  async (slug: string) =>
+    db.article.findFirst({
+      where: { slug, status: "PUBLISHED" },
+      include: ARTICLE_DETAIL_INCLUDE,
+    }),
+  ["articulos"]
+);
+
 // Get article by slug for public pages
 export async function getArticleBySlug(slug: string, publishedOnly = false) {
   try {
-    const where: any = { slug };
-
+    let article;
     if (publishedOnly) {
-      where.status = "PUBLISHED";
-    } else if (!(await staffSession())) {
+      article = await findPublishedArticleBySlug(slug);
+    } else if (await staffSession()) {
       // Sin filtro de estado solo para el equipo (vista previa de borradores).
+      article = await db.article.findFirst({ where: { slug }, include: ARTICLE_DETAIL_INCLUDE });
+    } else {
       throw new Error("No autorizado");
     }
-
-    const article = await db.article.findFirst({
-      where,
-      include: {
-        author: AUTHOR_SELECT,
-        authors: {
-          orderBy: { order: "asc" },
-          include: { author: true },
-        },
-        categories: {
-          include: {
-            category: true,
-          },
-        },
-        tags: {
-          include: {
-            tag: true,
-          },
-        },
-        issue: true,
-      },
-    });
 
     if (!article) {
       throw new Error("Artículo no encontrado");
@@ -590,7 +606,7 @@ export async function getArticleBySlug(slug: string, publishedOnly = false) {
     console.error("Error fetching article by slug:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener el artículo",
+      error: errorMessage(error, "Error al obtener el artículo"),
     };
   }
 }
@@ -609,7 +625,7 @@ export async function getCategories() {
     console.error("Error fetching categories:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener las categorías",
+      error: errorMessage(error, "Error al obtener las categorías"),
     };
   }
 }
@@ -628,7 +644,7 @@ export async function getMagazineIssues() {
     console.error("Error fetching magazine issues:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener los números de revista",
+      error: errorMessage(error, "Error al obtener los números de revista"),
     };
   }
 }

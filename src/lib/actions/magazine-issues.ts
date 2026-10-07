@@ -1,6 +1,8 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { errorMessage } from "@/lib/action-errors";
+import { revalidatePublic } from "@/lib/cache";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import {
@@ -64,14 +66,12 @@ export async function createMagazineIssue(data: MagazineIssueInput) {
 
     revalidatePath("/admin/revista");
     revalidatePath("/revista");
+    revalidatePublic("revista");
 
     return { success: true, issue };
   } catch (error) {
     console.error("Error creating magazine issue:", error);
-    if (error instanceof Error) {
-      return { error: error.message };
-    }
-    return { error: "Error al crear el número" };
+    return { error: errorMessage(error, "Error al crear el número") };
   }
 }
 
@@ -121,14 +121,12 @@ export async function updateMagazineIssue(id: string, data: MagazineIssueInput) 
     revalidatePath(`/admin/revista/${id}/editar`);
     revalidatePath("/revista");
     revalidatePath(`/revista/${issue.slug}`);
+    revalidatePublic("revista");
 
     return { success: true, issue };
   } catch (error) {
     console.error("Error updating magazine issue:", error);
-    if (error instanceof Error) {
-      return { error: error.message };
-    }
-    return { error: "Error al actualizar el número" };
+    return { error: errorMessage(error, "Error al actualizar el número") };
   }
 }
 
@@ -163,14 +161,12 @@ export async function deleteMagazineIssue(id: string) {
 
     revalidatePath("/admin/revista");
     revalidatePath("/revista");
+    revalidatePublic("revista");
 
     return { success: true };
   } catch (error) {
     console.error("Error deleting magazine issue:", error);
-    if (error instanceof Error) {
-      return { error: error.message };
-    }
-    return { error: "Error al eliminar el número" };
+    return { error: errorMessage(error, "Error al eliminar el número") };
   }
 }
 

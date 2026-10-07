@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { errorMessage } from "@/lib/action-errors";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { z } from "zod";
@@ -152,7 +153,7 @@ export async function updateSiteConfig(data: SiteConfigInput) {
 
     return {
       success: false as const,
-      error: error instanceof Error ? error.message : "Error al guardar configuracion",
+      error: errorMessage(error, "Error al guardar configuracion"),
     };
   }
 }

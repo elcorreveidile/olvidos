@@ -1,4 +1,5 @@
 import { db } from "@/lib/db";
+import { cachedQuery } from "@/lib/cache";
 import type {
   ArticleSummary,
   MagazineIssueSummary,
@@ -10,7 +11,7 @@ import { ContentStatus, EventStatus, Prisma } from "@prisma/client";
  * @param page - Número de página (empezando desde 1)
  * @param limit - Cantidad de artículos por página
  */
-export async function getPublishedArticles(
+async function getPublishedArticlesUncached(
   page: number = 1,
   limit: number = 12
 ): Promise<{ articles: ArticleSummary[]; total: number; totalPages: number }> {
@@ -56,11 +57,12 @@ export async function getPublishedArticles(
     totalPages: Math.ceil(total / limit),
   };
 }
+export const getPublishedArticles = cachedQuery("getPublishedArticles", getPublishedArticlesUncached, ["articulos"]);
 
 /**
  * Obtiene artículos destacados (limitado a 3)
  */
-export async function getFeaturedArticles(): Promise<ArticleSummary[]> {
+async function getFeaturedArticlesUncached(): Promise<ArticleSummary[]> {
   return db.article.findMany({
     where: {
       status: ContentStatus.PUBLISHED,
@@ -89,11 +91,12 @@ export async function getFeaturedArticles(): Promise<ArticleSummary[]> {
     },
   });
 }
+export const getFeaturedArticles = cachedQuery("getFeaturedArticles", getFeaturedArticlesUncached, ["articulos"]);
 
 /**
  * Obtiene próximos eventos publicados
  */
-export async function getUpcomingEvents(limit: number = 5) {
+async function getUpcomingEventsUncached(limit: number = 5) {
   const now = new Date();
 
   return db.event.findMany({
@@ -116,12 +119,13 @@ export async function getUpcomingEvents(limit: number = 5) {
     },
   });
 }
+export const getUpcomingEvents = cachedQuery("getUpcomingEvents", getUpcomingEventsUncached, ["actividades"]);
 
 /**
  * Obtiene una categoría por su slug con sus artículos
  * @param slug - Slug de la categoría
  */
-export async function getCategoryBySlug(slug: string) {
+async function getCategoryBySlugUncached(slug: string) {
   return db.category.findUnique({
     where: { slug },
     include: {
@@ -140,6 +144,7 @@ export async function getCategoryBySlug(slug: string) {
     },
   });
 }
+export const getCategoryBySlug = cachedQuery("getCategoryBySlug", getCategoryBySlugUncached, ["categorias"]);
 
 /**
  * Obtiene artículos de una categoría específica
@@ -147,7 +152,7 @@ export async function getCategoryBySlug(slug: string) {
  * @param page - Número de página
  * @param limit - Cantidad de artículos por página
  */
-export async function getArticlesByCategory(
+async function getArticlesByCategoryUncached(
   categorySlug: string,
   page: number = 1,
   limit: number = 12
@@ -219,12 +224,13 @@ export async function getArticlesByCategory(
     category,
   };
 }
+export const getArticlesByCategory = cachedQuery("getArticlesByCategory", getArticlesByCategoryUncached, ["articulos", "categorias"]);
 
 /**
  * Obtiene un tag por su slug
  * @param slug - Slug del tag
  */
-export async function getTagBySlug(slug: string) {
+async function getTagBySlugUncached(slug: string) {
   return db.tag.findUnique({
     where: { slug },
     select: {
@@ -233,6 +239,7 @@ export async function getTagBySlug(slug: string) {
     },
   });
 }
+export const getTagBySlug = cachedQuery("getTagBySlug", getTagBySlugUncached, ["etiquetas"]);
 
 /**
  * Obtiene artículos de un tag específico
@@ -240,7 +247,7 @@ export async function getTagBySlug(slug: string) {
  * @param page - Número de página
  * @param limit - Cantidad de artículos por página
  */
-export async function getArticlesByTag(
+async function getArticlesByTagUncached(
   tagSlug: string,
   page: number = 1,
   limit: number = 12
@@ -311,11 +318,12 @@ export async function getArticlesByTag(
     tag,
   };
 }
+export const getArticlesByTag = cachedQuery("getArticlesByTag", getArticlesByTagUncached, ["articulos", "etiquetas"]);
 
 /**
  * Obtiene todas las categorías
  */
-export async function getAllCategories() {
+async function getAllCategoriesUncached() {
   return db.category.findMany({
     orderBy: { name: "asc" },
     select: {
@@ -327,11 +335,12 @@ export async function getAllCategories() {
     },
   });
 }
+export const getAllCategories = cachedQuery("getAllCategories", getAllCategoriesUncached, ["categorias"]);
 
 /**
  * Obtiene categorías con conteo de artículos publicados
  */
-export async function getCategoriesWithCount() {
+async function getCategoriesWithCountUncached() {
   return db.category.findMany({
     orderBy: { name: "asc" },
     select: {
@@ -351,11 +360,12 @@ export async function getCategoriesWithCount() {
     },
   });
 }
+export const getCategoriesWithCount = cachedQuery("getCategoriesWithCount", getCategoriesWithCountUncached, ["categorias", "articulos"]);
 
 /**
  * Obtiene todos los tags
  */
-export async function getAllTags() {
+async function getAllTagsUncached() {
   return db.tag.findMany({
     orderBy: { name: "asc" },
     select: {
@@ -365,6 +375,7 @@ export async function getAllTags() {
     },
   });
 }
+export const getAllTags = cachedQuery("getAllTags", getAllTagsUncached, ["etiquetas"]);
 
 /**
  * Busca artículos por título o contenido
@@ -398,6 +409,19 @@ export async function findMatchingArticleIds(
   query: string,
   opts: { publishedOnly?: boolean; categorySlug?: string } = {}
 ): Promise<string[]> {
+  return (await findMatchingArticlesPage(query, opts)).ids;
+}
+
+/**
+ * Como `findMatchingArticleIds`, pero paginando en SQL (LIMIT/OFFSET) y
+ * devolviendo el total con `count(*) over()`, para no traer todos los ids y
+ * recortarlos en memoria.
+ */
+export async function findMatchingArticlesPage(
+  query: string,
+  opts: { publishedOnly?: boolean; categorySlug?: string } = {},
+  page?: { limit: number; offset: number }
+): Promise<{ ids: string[]; total: number }> {
   const words = query
     .trim()
     .split(/\s+/)
@@ -411,7 +435,7 @@ export async function findMatchingArticleIds(
     )
     .filter((w) => w.length > 0)
     .slice(0, 10);
-  if (words.length === 0) return [];
+  if (words.length === 0) return { ids: [], total: 0 };
 
   // Palabra sin acentos y con los metacaracteres regex escapados (en SQL, tras
   // unaccent). Base para los patrones de límite de palabra y de frase.
@@ -473,15 +497,23 @@ export async function findMatchingArticleIds(
       )`
     : Prisma.empty;
 
-  const idRows = await db.$queryRaw<{ id: string }[]>(Prisma.sql`
-    SELECT a."id"
+  const pageCond = page
+    ? Prisma.sql`LIMIT ${page.limit} OFFSET ${page.offset}`
+    : Prisma.empty;
+
+  const idRows = await db.$queryRaw<{ id: string; total: bigint | number }[]>(Prisma.sql`
+    SELECT a."id", count(*) over() AS total
     FROM "Article" a
     WHERE ${Prisma.join(words.map(wordCond), " AND ")}
       ${statusCond}
       ${catCond}
     ORDER BY ${orderBy}
+    ${pageCond}
   `);
-  return idRows.map((r) => r.id);
+  return {
+    ids: idRows.map((r) => r.id),
+    total: idRows.length ? Number(idRows[0].total) : 0,
+  };
 }
 
 export async function searchArticles(
@@ -499,12 +531,11 @@ export async function searchArticles(
       })
     : null;
 
-  const ids = await findMatchingArticleIds(query, {
-    publishedOnly: true,
-    categorySlug,
-  });
-  const total = ids.length;
-  const pageIds = ids.slice(skip, skip + limit);
+  const { ids: pageIds, total } = await findMatchingArticlesPage(
+    query,
+    { publishedOnly: true, categorySlug },
+    { limit, offset: skip }
+  );
 
   const found = pageIds.length
     ? await db.article.findMany({
@@ -548,10 +579,17 @@ export async function searchArticles(
 /**
  * Obtiene todos los números de la revista
  */
-export async function getAllIssues(): Promise<MagazineIssueSummary[]> {
+async function getAllIssuesUncached(
+  opts: { onlyNumbered?: boolean; take?: number } = {}
+): Promise<MagazineIssueSummary[]> {
   return db.magazineIssue.findMany({
-    where: { publishedAt: { not: null } },
+    where: {
+      publishedAt: { not: null },
+      // Números «de verdad» (1–99); las separatas y preolvidos van de 100 en adelante.
+      ...(opts.onlyNumbered ? { number: { gte: 1, lt: 100 } } : {}),
+    },
     orderBy: { number: "desc" },
+    ...(opts.take ? { take: opts.take } : {}),
     select: {
       id: true,
       number: true,
@@ -567,11 +605,12 @@ export async function getAllIssues(): Promise<MagazineIssueSummary[]> {
     },
   });
 }
+export const getAllIssues = cachedQuery("getAllIssues", getAllIssuesUncached, ["revista"]);
 
 /**
  * Obtiene un número de revista por su slug
  */
-export async function getIssueBySlug(slug: string, includeUnpublished = false) {
+async function getIssueBySlugUncached(slug: string, includeUnpublished = false) {
   // Los números en borrador solo los ve el equipo (vista previa).
   return db.magazineIssue.findFirst({
     where: { slug, ...(includeUnpublished ? {} : { status: ContentStatus.PUBLISHED }) },
@@ -602,11 +641,16 @@ export async function getIssueBySlug(slug: string, includeUnpublished = false) {
     },
   });
 }
+const getPublishedIssueBySlug = cachedQuery("getIssueBySlug", getIssueBySlugUncached, ["revista", "articulos"]);
+/** La vista pública (solo publicados) va cacheada; la vista previa del equipo, no. */
+export async function getIssueBySlug(slug: string, includeUnpublished = false) {
+  return includeUnpublished ? getIssueBySlugUncached(slug, true) : getPublishedIssueBySlug(slug, false);
+}
 
 /**
  * Obtiene los artículos firmados por un autor (por slug del Author) con paginación.
  */
-export async function getArticlesByAuthor(
+async function getArticlesByAuthorUncached(
   authorSlug: string,
   page: number = 1,
   limit: number = 24
@@ -648,3 +692,4 @@ export async function getArticlesByAuthor(
 
   return { articles, total, totalPages: Math.ceil(total / limit), author };
 }
+export const getArticlesByAuthor = cachedQuery("getArticlesByAuthor", getArticlesByAuthorUncached, ["articulos"]);

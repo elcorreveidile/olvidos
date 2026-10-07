@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { errorMessage } from "@/lib/action-errors";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { z } from "zod";
@@ -100,7 +101,7 @@ export async function adminUpdateSocio(memberId: string, data: unknown) {
     }
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al actualizar el socio",
+      error: errorMessage(error, "Error al actualizar el socio"),
     };
   }
 }
@@ -191,7 +192,7 @@ export async function createMember(data: MemberInput) {
     }
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al crear el socio",
+      error: errorMessage(error, "Error al crear el socio"),
     };
   }
 }
@@ -274,7 +275,7 @@ export async function updateMember(id: string, data: MemberUpdateInput) {
     }
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al actualizar el socio",
+      error: errorMessage(error, "Error al actualizar el socio"),
     };
   }
 }
@@ -326,7 +327,7 @@ export async function getMember(id: string) {
     console.error("Error fetching member:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener el socio",
+      error: errorMessage(error, "Error al obtener el socio"),
     };
   }
 }
@@ -356,7 +357,7 @@ export async function getCurrentMember() {
     console.error("Error fetching current member:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener el socio",
+      error: errorMessage(error, "Error al obtener el socio"),
     };
   }
 }
@@ -465,7 +466,7 @@ export async function getMembers(filters?: {
     console.error("Error fetching members:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener los socios",
+      error: errorMessage(error, "Error al obtener los socios"),
     };
   }
 }
@@ -509,7 +510,7 @@ export async function deleteMember(id: string) {
     console.error("Error deleting member:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al eliminar el socio",
+      error: errorMessage(error, "Error al eliminar el socio"),
     };
   }
 }
@@ -592,7 +593,7 @@ export async function getPublicMembers(filters?: {
     console.error("Error fetching public members:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Error al obtener los socios",
+      error: errorMessage(error, "Error al obtener los socios"),
     };
   }
 }

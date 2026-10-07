@@ -6,8 +6,6 @@ import { getArticlesByAuthor } from "@/lib/queries";
 import { ArticleCard } from "@/components/content/ArticleCard";
 import { Pagination } from "@/components/shared/Pagination";
 
-export const dynamic = "force-dynamic";
-
 const PER_PAGE = 24;
 
 interface AutorPageProps {

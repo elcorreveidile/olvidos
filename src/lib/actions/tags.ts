@@ -1,6 +1,8 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { errorMessage } from "@/lib/action-errors";
+import { revalidatePublic } from "@/lib/cache";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { slugify } from "@/lib/utils";
@@ -39,14 +41,12 @@ export async function createTag(data: TagInput) {
 
     revalidatePath("/admin/tags");
     revalidatePath("/");
+    revalidatePublic("etiquetas", "articulos");
 
     return { success: true, tag };
   } catch (error) {
     console.error("Error creating tag:", error);
-    if (error instanceof Error) {
-      return { error: error.message };
-    }
-    return { error: "Error al crear el tag" };
+    return { error: errorMessage(error, "Error al crear el tag") };
   }
 }
 
@@ -96,14 +96,12 @@ export async function updateTag(id: string, data: TagInput) {
     revalidatePath("/admin/tags");
     revalidatePath("/admin/tags/[id]/editar");
     revalidatePath("/");
+    revalidatePublic("etiquetas", "articulos");
 
     return { success: true, tag };
   } catch (error) {
     console.error("Error updating tag:", error);
-    if (error instanceof Error) {
-      return { error: error.message };
-    }
-    return { error: "Error al actualizar el tag" };
+    return { error: errorMessage(error, "Error al actualizar el tag") };
   }
 }
 
@@ -149,14 +147,12 @@ export async function deleteTag(id: string) {
 
     revalidatePath("/admin/tags");
     revalidatePath("/");
+    revalidatePublic("etiquetas", "articulos");
 
     return { success: true };
   } catch (error) {
     console.error("Error deleting tag:", error);
-    if (error instanceof Error) {
-      return { error: error.message };
-    }
-    return { error: "Error al eliminar el tag" };
+    return { error: errorMessage(error, "Error al eliminar el tag") };
   }
 }
 

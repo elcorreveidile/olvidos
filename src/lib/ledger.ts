@@ -1,5 +1,8 @@
 import { db } from "@/lib/db";
-import type { Payment } from "@prisma/client";
+import type { Payment, Prisma } from "@prisma/client";
+
+/** Cliente normal o el de una transacción (`db.$transaction(async (tx) => …)`). */
+type DbClient = Prisma.TransactionClient | typeof db;
 
 /**
  * Libro de contabilidad de la asociación.
@@ -44,16 +47,17 @@ function categoryForPayment(type: Payment["type"]): string {
 
 /**
  * Anota un pago de Stripe (ya guardado como Payment) en el libro como INGRESO.
- * Idempotente: si ya hay un apunte para ese paymentId, no hace nada.
+ * Idempotente: si ya hay un apunte para ese paymentId, no hace nada. Acepta el
+ * cliente de una transacción para que pago y apunte se guarden juntos.
  */
-export async function recordPaymentInLedger(payment: Payment): Promise<void> {
-  const existing = await db.ledgerEntry.findUnique({
+export async function recordPaymentInLedger(payment: Payment, client: DbClient = db): Promise<void> {
+  const existing = await client.ledgerEntry.findUnique({
     where: { paymentId: payment.id },
     select: { id: true },
   });
   if (existing) return;
 
-  await db.ledgerEntry.create({
+  await client.ledgerEntry.create({
     data: {
       date: payment.paidAt ?? payment.createdAt,
       kind: "INGRESO",

@@ -22,6 +22,7 @@ import {
   AlignRight,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { IMAGE_ACCEPT } from "@/lib/uploads";
 
 interface RichTextEditorProps {
   value?: string;
@@ -257,7 +258,7 @@ export default function RichTextEditor({
         <input
           ref={imageFileRef}
           type="file"
-          accept="image/*"
+          accept={IMAGE_ACCEPT}
           onChange={uploadImageFromFile}
           className="hidden"
         />

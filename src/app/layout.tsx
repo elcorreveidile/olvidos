@@ -4,7 +4,6 @@ import { Footer } from "@/components/layout/Footer";
 import { CurtainIntro } from "@/components/home/CurtainIntro";
 import { ChromeGate } from "@/components/layout/ChromeGate";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
-import { auth } from "@/lib/auth";
 import {
   SITE_URL,
   SITE_NAME,
@@ -76,14 +75,16 @@ const orgJsonLd = {
   },
 };
 
-export default async function RootLayout({
+/**
+ * El layout no lee la sesión: hacerlo (`auth()` usa las cookies) volvía
+ * dinámica toda la web y anulaba la caché. La cabecera y el pie deciden en el
+ * navegador si hay sesión (`useSesionActiva`).
+ */
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await auth();
-  const isAuthenticated = !!session?.user;
-
   return (
     <html lang="es">
       <body className="antialiased min-h-screen flex flex-col">
@@ -93,7 +94,7 @@ export default async function RootLayout({
         />
         <ChromeGate
           curtain={<CurtainIntro />}
-          header={<Header isAuthenticated={isAuthenticated} />}
+          header={<Header />}
           footer={<Footer />}
         >
           {children}

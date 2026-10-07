@@ -176,12 +176,76 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   dos reglas de *rate limit* por IP: `/api/auth/*`, `/api/users/register`,
   `/api/members/register` y `/contacto` a 10 peticiones/minuto (acción
   *challenge*); el resto sin cambios.
-- **Pendiente (PR por tema):** `npm audit fix` sin cambios mayores (`next` 14 no
-  tiene parche: crítica pendiente de migrar a Next 15); índices en
-  `schema.prisma` + `prisma db push`; caché/ISR (quitar `auth()` del layout raíz);
-  Stripe (deduplicar por `event.id`), sanitizar HTML de Tiptap, MIME de subidas;
-  CI mínima y bajar los errores de tsc; split edge/node del middleware; CSP
-  estricta.
+- **Hecho en la rama, sin fusionar (PR 2 #28 fusionado; #29 abierto; PR 3 y PR 4
+  en la misma rama):** dependencias con parches compatibles; login con
+  contraseña y reset para cuentas OAuth; índices en `schema.prisma` (exige
+  `prisma db push`); búsqueda paginada en SQL; caché (ver sección siguiente).
+- **PR 5 (en la rama, sin fusionar):** webhook de Stripe deduplicado por
+  `event.id` (tabla `StripeEvent`, **exige `prisma db push`**; pago y apunte en
+  una transacción; bienvenida solo al pasar a ACTIVE); HTML de artículos y
+  actividades **sanitizado al guardar** (`src/lib/sanitize-html.ts`, lista
+  blanca con iframes de visores y marcadores `<!--nextpage-->`/`isla`/`paso`
+  protegidos; `scripts/sanitize-dry-run.ts` compara en seco contra la BD).
+  **Dry-run en producción hecho el 7-10-2026** (385 textos): la primera lista
+  perdía los iframes de **FlowPaper** (`flowpaper.com`, los números impresos) y
+  **RTVE** (`secure-embed.rtve.es`), los atributos `role`/`tabindex`/`aria-*` y la
+  presentación de tablas de WordPress; ya se admiten. Lo que sí se quita y está
+  bien: los `<script>` de galerías Modula y del plugin de notas al pie (React no
+  los ejecuta de todos modos), `onclick`/`onkeypress`, `crop`/`lightbox`/`seamless`
+  y un `href` `file://`. Si el dry-run marca «texto distinto», comprobar primero
+  que no sea una entidad (`&#8211;` → `–`) o un atributo vacío (`style=""` se
+  emite como `style`): el script ya los normaliza. Subidas con lista blanca de MIME + extensión
+  (`src/lib/uploads.ts`, sin SVG); mensajes de error de Prisma no se devuelven
+  al navegador (`errorMessage` en `src/lib/action-errors.ts`); `loading.tsx` en
+  los listados; `scripts/` ordenado en `legacy/` (escriben en BD) y
+  `marketing/` (reels), con `scripts/README.md`.
+- **Pendiente (PR por tema):** CI mínima y bajar los errores de tsc; split
+  edge/node del middleware; CSP estricta; migrar a Next 15 (`next` 14 sin parche).
+
+## Caché y tiempos de respuesta (PR 4, octubre de 2026)
+
+- **Antes (medido el 6-10-2026 en `www.olvidos.es`, anónimo):** portada 3,3–4,2 s,
+  `/articulos` 2,1 s, `/articulos?categoria=…` 3,2 s, un artículo 5,2 s,
+  `/revista` 0,7 s, `/sobre-nosotros` 0,3 s; todo `no-store` y `x-vercel-cache:
+  MISS`, y cada visita anónima recibía las cookies CSRF y callback de Auth.js.
+  Causa: `auth()` en el layout raíz y en el pie (volvía dinámica toda la web),
+  el middleware de Auth.js en todas las rutas, y cero caché de datos.
+- **Qué hace ahora:**
+  - El layout raíz y el pie **no leen la sesión**. La cabecera decide en el
+    navegador con la **cookie-pista** `olvidos_sesion` (`src/lib/session-hint.ts`,
+    hook `useSesionActiva`), que el middleware escribe/borra solo cuando cambia
+    el estado (así las respuestas normales no llevan `Set-Cookie`). No da acceso
+    a nada: es solo para pintar «Mi cuenta»/«Hazte socio». Cerrar sesión recarga
+    la portada (`window.location`) para que se actualice.
+  - El middleware ejecuta Auth.js **solo en `/admin`, `/mi-cuenta` y `/socios`**;
+    en el resto no toca el JWT ni pone cookies.
+  - **Data Cache** (`src/lib/cache.ts`, `cachedQuery`): todas las lecturas de
+    `src/lib/queries.ts` y el artículo publicado por slug (`actions/articles.ts`)
+    se guardan 5 min con etiquetas `articulos`, `revista`, `actividades`,
+    `categorias`, `etiquetas`. Las acciones del panel (crear/editar/borrar
+    artículos, números, actividades, categorías y etiquetas) llaman a
+    `revalidatePublic(...)`, que invalida la etiqueta y la portada. Las fechas
+    vuelven a `Date` con `reviveDates` (la caché serializa a JSON). La búsqueda
+    (`searchArticles`) no se cachea.
+  - **Portada** con `revalidate = 300` (HTML cacheado; `x-vercel-cache: HIT`).
+  - Listados (`/articulos`, `/categoria`, `/etiqueta`, `/autor`, `/revista`) y el
+    artículo (`?paso=`) siguen siendo **dinámicos por `searchParams`**, pero sin
+    consultas a la base de datos en caliente (probado en local: 0 SQL en visitas
+    repetidas). Se les quitó el `force-dynamic` redundante (la Data Cache funciona
+    con y sin él: `/revista/[slug]` lo conserva y tampoco consulta la BD).
+- **Lecciones (no repetir):** en Next 14 un segmento dinámico sin
+  `generateStaticParams` no se cachea aunque tenga `revalidate`; y en una ruta
+  ISR, llamar a `auth()`/`headers()` «solo a veces» (vista previa de borradores)
+  no degrada a dinámico: da **500 `DYNAMIC_SERVER_USAGE`**. Por eso
+  `/revista/[slug]` sigue `force-dynamic` (con datos cacheados). Si algún día se
+  quiere ISR ahí, la vista previa debe ir por `draftMode()` o por otra ruta.
+- **Scripts que escriben en la BD sin pasar por el panel:** lo publicado tarda
+  hasta 5 min en verse (o se fuerza con un redeploy).
+- **Probar en local con BD:** hay PostgreSQL 16 en el contenedor
+  (`/usr/lib/postgresql/16/bin`); `initdb` + `pg_ctl` como usuario `postgres`,
+  `CREATE EXTENSION unaccent`, `.env.local` con `DATABASE_URL` local y
+  `AUTH_SECRET`, `prisma db push`, `npm run db:seed`, `npm run build`, `next start`.
+  Con `log_statement=all` se cuentan las consultas por visita.
 
 ## Convenciones
 

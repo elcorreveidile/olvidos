@@ -5,8 +5,6 @@ import { CategoryHeading } from "@/components/content/CategoryHeading";
 import { Pagination } from "@/components/shared/Pagination";
 import { SearchInline } from "@/components/shared/SearchInline";
 
-export const dynamic = "force-dynamic";
-
 const PER_PAGE = 24;
 
 interface CategoryPageProps {

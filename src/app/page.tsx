@@ -14,6 +14,12 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+/**
+ * HTML cacheado (ISR): se regenera como mucho cada 5 minutos y al momento
+ * cuando el panel publica algo (`revalidatePublic` → `revalidatePath("/")`).
+ */
+export const revalidate = 300;
+
 type EventType = {
   id: string;
   title: string;
@@ -53,17 +59,15 @@ export default async function HomePage() {
   const [articlesData, eventsData, issues] = await Promise.all([
     getPublishedArticles(1, 3),
     getUpcomingEvents(2),
-    getAllIssues(),
+    getAllIssues({ onlyNumbered: true, take: 6 }),
   ]);
 
   const articles = articlesData.articles;
   const events = eventsData as EventType[];
 
-  // Destacamos en portada los números de la época en color (9–17), los más vistosos.
-  const destacados = [...issues]
-    .filter((i) => i.number >= 1 && i.number < 100)
-    .sort((a, b) => b.number - a.number)
-    .slice(0, 6);
+  // Destacamos en portada los seis últimos números de la revista (ya vienen
+  // ordenados de mayor a menor y sin separatas).
+  const destacados = issues;
 
   return (
     <div className="max-w-content mx-auto px-4 py-12">
