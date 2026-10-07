@@ -267,8 +267,7 @@ export default async function ArticlePage({
   );
 }
 
-export async function generateStaticParams() {
-  // Solo los slugs (consulta resumida): antes cargaba 1000 artículos enteros.
-  const { articles } = await getPublishedArticles(1, 1000);
-  return articles.map((article) => ({ slug: article.slug }));
-}
+// Sin `generateStaticParams`: esta página es dinámica (lee `?paso=`), así que
+// pregenerar los ~380 artículos en el build no guardaba nada y costaba 7 minutos
+// (445 páginas, una consulta cada una). Los artículos se sirven bajo demanda con
+// los datos de la Data Cache.
