@@ -27,7 +27,10 @@ export const ALLOWED_IFRAME_HOSTS = [
   "youtube.com",
   "www.youtube-nocookie.com",
   "player.vimeo.com",
+  "flowpaper.com",
+  "www.flowpaper.com",
   "online.flowpaper.com",
+  "secure-embed.rtve.es",
   "www.google.com",
   "maps.google.com",
   "open.spotify.com",
@@ -40,7 +43,12 @@ export const ALLOWED_IFRAME_HOSTS = [
   "29n.olvidos.es",
 ];
 
-const GLOBAL_ATTRS = ["class", "id", "style", "title", "lang", "dir", "data-*"];
+// `role`, `tabindex` y `aria-*` vienen de las galerías y notas importadas de
+// WordPress; `width`/`height`/`align` de la maquetación de los números antiguos.
+const GLOBAL_ATTRS = [
+  "class", "id", "style", "title", "lang", "dir", "data-*",
+  "role", "tabindex", "aria-*", "width", "height", "align",
+];
 
 export const SANITIZE_OPTIONS: sanitizeHtml.IOptions = {
   allowedTags: [
@@ -60,19 +68,22 @@ export const SANITIZE_OPTIONS: sanitizeHtml.IOptions = {
   ],
   allowedAttributes: {
     "*": GLOBAL_ATTRS,
-    a: ["href", "name", "target", "rel", "download", "hreflang"],
-    img: ["src", "srcset", "sizes", "alt", "width", "height", "loading", "decoding"],
+    a: ["href", "name", "target", "rel", "download", "hreflang", "type"],
+    img: ["src", "srcset", "sizes", "alt", "width", "height", "loading", "decoding", "border"],
     source: ["src", "srcset", "sizes", "type", "media"],
-    iframe: ["src", "width", "height", "allow", "allowfullscreen", "frameborder", "loading", "referrerpolicy", "scrolling"],
+    iframe: ["src", "name", "width", "height", "allow", "allowfullscreen", "frameborder", "border", "loading", "referrerpolicy", "scrolling"],
     video: ["src", "poster", "controls", "loop", "muted", "playsinline", "preload", "width", "height"],
     audio: ["src", "controls", "loop", "muted", "preload"],
     time: ["datetime"],
-    td: ["colspan", "rowspan", "headers"],
-    th: ["colspan", "rowspan", "headers", "scope", "abbr"],
+    table: ["border", "cellpadding", "cellspacing", "bgcolor", "summary"],
+    tr: ["valign", "bgcolor"],
+    td: ["colspan", "rowspan", "headers", "valign", "bgcolor", "nowrap"],
+    th: ["colspan", "rowspan", "headers", "scope", "abbr", "valign", "bgcolor", "nowrap"],
     col: ["span"],
     colgroup: ["span"],
     ol: ["start", "reversed", "type"],
-    li: ["value"],
+    ul: ["type"],
+    li: ["value", "type"],
     details: ["open"],
     blockquote: ["cite"],
     q: ["cite"],
@@ -87,6 +98,8 @@ export const SANITIZE_OPTIONS: sanitizeHtml.IOptions = {
   allowProtocolRelative: true,
   allowedIframeHostnames: ALLOWED_IFRAME_HOSTS,
   allowIframeRelativeUrls: false,
+  // Un iframe de un host no permitido se queda sin `src`; lo quitamos entero.
+  exclusiveFilter: (frame) => frame.tag === "iframe" && !frame.attribs.src,
   // Un enlace con target=_blank sin rel permite «tabnabbing»; lo añadimos.
   transformTags: {
     a: (tagName, attribs) => {
@@ -118,8 +131,19 @@ function restoreMarkers(html: string): string {
   );
 }
 
+/**
+ * Vacía el contenido de respaldo de los iframes («Your browser does not seem to
+ * support iframes. <a>Click here</a>», típico de FlowPaper): los navegadores lo
+ * ignoran y el sanitizador lo convertiría en texto escapado visible.
+ */
+function stripIframeFallback(html: string): string {
+  return html.replace(/(<iframe\b[^>]*>)[\s\S]*?(<\/iframe\s*>)/gi, "$1$2");
+}
+
 /** HTML de un artículo (o de la descripción de una actividad) listo para guardar. */
 export function sanitizeArticleHtml(html: string | null | undefined): string {
   if (!html) return "";
-  return restoreMarkers(sanitizeHtml(protectMarkers(html), SANITIZE_OPTIONS));
+  return restoreMarkers(
+    sanitizeHtml(protectMarkers(stripIframeFallback(html)), SANITIZE_OPTIONS)
+  );
 }

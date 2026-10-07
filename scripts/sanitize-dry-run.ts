@@ -13,6 +13,7 @@
  * lo publicado; si algo desaparece, hay que decidir si ampliar la lista blanca.
  */
 import { PrismaClient } from "@prisma/client";
+import { decodeHTML } from "entities";
 import { sanitizeArticleHtml } from "../src/lib/sanitize-html";
 
 const prisma = new PrismaClient();
@@ -23,7 +24,7 @@ const onlySlug = slugIdx >= 0 ? args[slugIdx + 1] : null;
 
 function tagCounts(html: string): Map<string, number> {
   const counts = new Map<string, number>();
-  for (const m of html.matchAll(/<([a-zA-Z][a-zA-Z0-9-]*)\b/g)) {
+  for (const m of Array.from(html.matchAll(/<([a-zA-Z][a-zA-Z0-9-]*)\b/g))) {
     const t = m[1].toLowerCase();
     counts.set(t, (counts.get(t) ?? 0) + 1);
   }
@@ -32,7 +33,7 @@ function tagCounts(html: string): Map<string, number> {
 
 function iframeHosts(html: string): string[] {
   const hosts: string[] = [];
-  for (const m of html.matchAll(/<iframe\b[^>]*\bsrc\s*=\s*["']([^"']+)["']/gi)) {
+  for (const m of Array.from(html.matchAll(/<iframe\b[^>]*\bsrc\s*=\s*["']([^"']+)["']/gi))) {
     try {
       hosts.push(new URL(m[1], "https://www.olvidos.es").hostname);
     } catch {
@@ -44,8 +45,9 @@ function iframeHosts(html: string): string[] {
 
 function attrNames(html: string): Map<string, number> {
   const counts = new Map<string, number>();
-  for (const m of html.matchAll(/<[a-zA-Z][^>]*>/g)) {
-    for (const a of m[0].matchAll(/\s([a-zA-Z_:][-a-zA-Z0-9_:.]*)\s*=/g)) {
+  for (const m of Array.from(html.matchAll(/<[a-zA-Z][^>]*>/g))) {
+    // Con o sin valor: sanitize-html emite `data-x=""` como `data-x`.
+    for (const a of Array.from(m[0].matchAll(/\s([a-zA-Z_:][-a-zA-Z0-9_:.]*)(?=[\s=/>])/g))) {
       const n = a[1].toLowerCase();
       counts.set(n, (counts.get(n) ?? 0) + 1);
     }
@@ -54,15 +56,13 @@ function attrNames(html: string): Map<string, number> {
 }
 
 function visibleText(html: string): string {
-  return html
-    .replace(/<!--[\s\S]*?-->/g, "")
-    .replace(/<[^>]*>/g, " ")
-    .replace(/&nbsp;|&#160;/gi, " ")
-    .replace(/&amp;/g, "&")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;|&apos;/g, "'")
+  return decodeHTML(
+    html
+      .replace(/<!--[\s\S]*?-->/g, "")
+      // Lo que va dentro de <script>/<style>/<iframe> no se ve.
+      .replace(/<(script|style|iframe)\b[^>]*>[\s\S]*?<\/\1>/gi, " ")
+      .replace(/<[^>]*>/g, " ")
+  )
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -73,7 +73,7 @@ function markers(html: string): number {
 
 function diffCounts(a: Map<string, number>, b: Map<string, number>): string[] {
   const out: string[] = [];
-  for (const [k, v] of a) {
+  for (const [k, v] of Array.from(a.entries())) {
     const after = b.get(k) ?? 0;
     if (after < v) out.push(`${k} ${v}→${after}`);
   }

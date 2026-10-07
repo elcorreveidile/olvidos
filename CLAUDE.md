@@ -185,9 +185,16 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   una transacción; bienvenida solo al pasar a ACTIVE); HTML de artículos y
   actividades **sanitizado al guardar** (`src/lib/sanitize-html.ts`, lista
   blanca con iframes de visores y marcadores `<!--nextpage-->`/`isla`/`paso`
-  protegidos; `scripts/sanitize-dry-run.ts` compara en seco contra la BD:
-  **Javier debe ejecutarlo contra producción antes de fusionar** y, si algo
-  cambia, ampliar la lista); subidas con lista blanca de MIME + extensión
+  protegidos; `scripts/sanitize-dry-run.ts` compara en seco contra la BD).
+  **Dry-run en producción hecho el 7-10-2026** (385 textos): la primera lista
+  perdía los iframes de **FlowPaper** (`flowpaper.com`, los números impresos) y
+  **RTVE** (`secure-embed.rtve.es`), los atributos `role`/`tabindex`/`aria-*` y la
+  presentación de tablas de WordPress; ya se admiten. Lo que sí se quita y está
+  bien: los `<script>` de galerías Modula y del plugin de notas al pie (React no
+  los ejecuta de todos modos), `onclick`/`onkeypress`, `crop`/`lightbox`/`seamless`
+  y un `href` `file://`. Si el dry-run marca «texto distinto», comprobar primero
+  que no sea una entidad (`&#8211;` → `–`) o un atributo vacío (`style=""` se
+  emite como `style`): el script ya los normaliza. Subidas con lista blanca de MIME + extensión
   (`src/lib/uploads.ts`, sin SVG); mensajes de error de Prisma no se devuelven
   al navegador (`errorMessage` en `src/lib/action-errors.ts`); `loading.tsx` en
   los listados; `scripts/` ordenado en `legacy/` (escriben en BD) y
