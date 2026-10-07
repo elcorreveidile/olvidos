@@ -67,7 +67,8 @@ const ArticleSchema = z.object({
     .refine(hasVisibleContent, CONTENT_REQUIRED_MESSAGE),
   coverImage: z.string().url().optional().or(z.literal("")),
   coverPosition: z.string().optional(),
-  byline: z.string().max(200).optional(),
+  // Firma libre; los números colectivos llevan veinte o más autores (el nº 13 supera los 200).
+  byline: z.string().max(2000, "La firma no puede exceder 2000 caracteres").optional(),
   metaTitle: z.string().max(60, "El título SEO no puede exceder 60 caracteres").optional(),
   metaDescription: z.string().max(160, "La descripción SEO no puede exceder 160 caracteres").optional(),
   status: z.enum(["DRAFT", "REVIEW", "PUBLISHED", "ARCHIVED"]),

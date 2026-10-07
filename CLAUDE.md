@@ -176,12 +176,13 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   dos reglas de *rate limit* por IP: `/api/auth/*`, `/api/users/register`,
   `/api/members/register` y `/contacto` a 10 peticiones/minuto (acción
   *challenge*); el resto sin cambios.
-- **Hecho en la rama, sin fusionar (PR 2 #28 fusionado; #29 abierto; PR 3 y PR 4
-  en la misma rama):** dependencias con parches compatibles; login con
-  contraseña y reset para cuentas OAuth; índices en `schema.prisma` (exige
-  `prisma db push`); búsqueda paginada en SQL; caché (ver sección siguiente).
-- **PR 5 (en la rama, sin fusionar):** webhook de Stripe deduplicado por
-  `event.id` (tabla `StripeEvent`, **exige `prisma db push`**; pago y apunte en
+- **Fusionado el 7-10-2026 (PR #28 y #29; `prisma db push` hecho por Javier ese
+  día):** dependencias con parches compatibles; login con contraseña y reset para
+  cuentas OAuth; índices en `schema.prisma`; búsqueda paginada en SQL; caché (ver
+  sección siguiente). Medido tras desplegar: portada 0,26 s con
+  `x-vercel-cache: HIT`, `/articulos` 0,27 s, un artículo 0,24 s (antes 3–5 s).
+- **También en el #29:** webhook de Stripe deduplicado por
+  `event.id` (tabla `StripeEvent`; pago y apunte en
   una transacción; bienvenida solo al pasar a ACTIVE); HTML de artículos y
   actividades **sanitizado al guardar** (`src/lib/sanitize-html.ts`, lista
   blanca con iframes de visores y marcadores `<!--nextpage-->`/`isla`/`paso`
@@ -200,7 +201,13 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   los listados; `scripts/` ordenado en `legacy/` (escriben en BD) y
   `marketing/` (reels), con `scripts/README.md`.
 - **Pendiente (PR por tema):** CI mínima y bajar los errores de tsc; split
-  edge/node del middleware; CSP estricta; migrar a Next 15 (`next` 14 sin parche).
+  edge/node del middleware; CSP estricta; migrar a Next 15 (`next` 14 sin parche);
+  registro mínimo (sin correos ni tokens) en `forgot-password`/`reset-password`.
+- **GitHub Pages** está activado en el repo y falla en cada push a `main` (Jekyll
+  no digiere `docs/con-textos/espana-marruecos/FUENTES.md`). La web no lo usa:
+  hay que desactivarlo en Settings → Pages (Javier).
+- Tras un despliegue, las pestañas abiertas del panel se quedan en la versión
+  anterior: recargar antes de probar nada.
 
 ## Caché y tiempos de respuesta (PR 4, octubre de 2026)
 
