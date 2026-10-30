@@ -143,15 +143,15 @@ window.__ASSETS__ = window.__ASSETS__ || null; /* __ASSETS_INJECT__ */
   const seg=(t,a,b,fi,fo)=>clamp(Math.min((t-a)/fi,(b-t)/fo),0,1);
 
   const T={
-    hook:[0,4200],
-    orden:[4200,10200],
-    regla:[10200,15000],
-    central:[15000,20000],
-    preg:[20000,26600],
-    ruido:[26600,30600],
-    close:[30600,34200],
+    hook:[0,3600],
+    orden:[3600,9000],
+    regla:[9000,13200],
+    central:[13200,17600],
+    preg:[17600,23400],
+    ruido:[23400,27000],
+    close:[27000,30000],
   };
-  window.__DURATION_MS__=34200;
+  window.__DURATION_MS__=30000;
 
   function layer(id,range,fi,fo){
     const o=seg(t_,range[0],range[1],fi,fo);
@@ -176,13 +176,13 @@ window.__ASSETS__ = window.__ASSETS__ || null; /* __ASSETS_INJECT__ */
 
     layer("hook",T.hook,500,450);
     layer("orden",T.orden,500,450);
-    line("o1",T.orden[0]+250,700); line("o2",T.orden[0]+1100,600); line("o3",T.orden[0]+2700,700);
+    line("o1",T.orden[0]+250,700); line("o2",T.orden[0]+1100,600); line("o3",T.orden[0]+2500,700);
     layer("regla",T.regla,500,450);
     line("r1",T.regla[0]+250,700); line("r2",T.regla[0]+1900,700);
     layer("central",T.central,500,450);
-    line("c1",T.central[0]+200,700); line("c2",T.central[0]+1500,700); line("c3",T.central[0]+3000,700);
+    line("c1",T.central[0]+200,700); line("c2",T.central[0]+1300,700); line("c3",T.central[0]+2600,700);
     layer("preg",T.preg,450,450);
-    line("pk",T.preg[0]+150,450); line("p1",T.preg[0]+700,550); line("p2",T.preg[0]+2300,550); line("p3",T.preg[0]+3900,550);
+    line("pk",T.preg[0]+150,450); line("p1",T.preg[0]+600,550); line("p2",T.preg[0]+1900,550); line("p3",T.preg[0]+3200,550);
     layer("ruido",T.ruido,550,450);
     layer("close",T.close,600,300);
   };
