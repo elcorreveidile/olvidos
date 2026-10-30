@@ -63,11 +63,19 @@ const RETRY_DELAY_MS = 1500;
  * ambos casos un segundo intento suele bastar; cualquier otro error se
  * propaga tal cual.
  */
+/**
+ * Fallos pasajeros que merecen un reintento: Neon despertando o inalcanzable
+ * unos segundos (PrismaClientInitializationError, P1001), conexión cerrada
+ * por el servidor (P1017) y pool agotado (P2024). Vistos en producción el
+ * 30-10-2026 en revalidaciones de la Data Cache.
+ */
+const TRANSIENT_CODES = new Set(["P1001", "P1017", "P2024"]);
+
 function isTransientDbError(error: unknown): boolean {
   if (!error || typeof error !== "object") return false;
   const name = (error as { name?: string }).name;
   const code = (error as { code?: string }).code;
-  return name === "PrismaClientInitializationError" || code === "P2024";
+  return name === "PrismaClientInitializationError" || (typeof code === "string" && TRANSIENT_CODES.has(code));
 }
 
 async function withRetry<T>(run: () => Promise<T>): Promise<T> {
