@@ -40,3 +40,10 @@ Plantillas HTML (`reel-*.template.html`, `carousel-*.template.html`), escenas
 (`scenes-*.json`) y los `.mjs` que las capturan y montan con Playwright/ffmpeg
 para redes sociales. No tocan la base de datos. `ROOT` está escrito a mano en
 cada `.mjs`: ajústalo a la ruta del clon antes de usarlos.
+
+`reel-ffmpeg-build.mjs` (30-10-2026) es la variante de `reel-clip-build.mjs` que
+codifica con el ffmpeg nativo de `@ffmpeg-installer/ffmpeg` (libx264) en vez del
+codificador WASM, que a 1080×1920 tardaba unos 10 s por fotograma (ffmpeg: 0,5 s).
+Misma interfaz (`RAW_DIR`, `TEMPLATE`, `OUT`, `PORTADA`, `PORTADA_T`; `CRF` en vez
+de `QP`). Primer uso: `reel-espuma-urda.template.html`, el reel del editorial
+«Desconecte y vuelva a conectar».
