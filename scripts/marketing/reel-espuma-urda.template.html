@@ -1,0 +1,191 @@
+<meta charset="utf-8" />
+<title>Reel «Desconecte y vuelva a conectar» — La espuma de los días</title>
+<!--
+  Reel 9:16 (1080x1920) del editorial «Desconecte y vuelva a conectar»
+  (sección «La espuma de los días», 30-10-2026). Ilustración de portada arriba
+  (asset tren.png, Ken Burns lento) y el texto del artículo abajo, por escenas.
+  Marca: coral #ff6261, tinta #141414, motivo «[», Libre Franklin + Crimson Text.
+  Build:
+    RAW_DIR=<carpeta con tren.png> TEMPLATE=scripts/marketing/reel-espuma-urda.template.html \
+    OUT=footage-reel/reel-espuma-urda.mp4 PORTADA=footage-reel/portada-espuma-urda.png \
+    PORTADA_T=1.6 QP=22 node scripts/marketing/reel-clip-build.mjs
+-->
+<style>
+  /* __FONT_CSS__ */
+  :root{--coral:#ff6261;--tinta:#141414;--tinta2:#1d2230;--paper:#f6f1ea;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:var(--tinta);}
+  #stage{position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden;
+    background:linear-gradient(180deg,#0f1420 0%,var(--tinta) 60%,#0b0b0b 100%);
+    font-family:"LibreFranklin",system-ui,sans-serif;color:#fff;}
+  #band{position:absolute;left:0;top:0;width:1080px;height:960px;overflow:hidden;}
+  #band img{position:absolute;left:50%;top:50%;width:1080px;height:960px;object-fit:cover;object-position:18% 50%;
+    transform:translate(-50%,-50%) scale(1);transform-origin:50% 50%;}
+  #bandFade{position:absolute;left:0;top:0;width:1080px;height:960px;
+    background:linear-gradient(180deg,rgba(20,20,20,0) 55%,rgba(20,20,20,.55) 80%,var(--tinta) 100%);}
+  #bandDark{position:absolute;left:0;top:0;width:1080px;height:960px;background:var(--tinta);opacity:0;}
+  #brand{position:absolute;left:84px;top:64px;font-weight:900;font-size:44px;letter-spacing:-2px;color:#fff;
+    text-shadow:0 2px 18px rgba(0,0,0,.6);}
+  #brand b{color:var(--coral);}
+  #brand small{display:block;margin-top:6px;font-weight:800;font-size:20px;letter-spacing:6px;text-transform:uppercase;color:rgba(255,255,255,.85);}
+
+  .layer{position:absolute;left:84px;right:84px;top:980px;bottom:120px;display:flex;flex-direction:column;
+    justify-content:center;opacity:0;}
+  .kick{font-weight:800;font-size:24px;letter-spacing:7px;text-transform:uppercase;color:var(--coral);margin-bottom:34px;}
+  .h{font-weight:900;line-height:1.02;letter-spacing:-2px;color:#fff;}
+  .h .br{color:var(--coral);}
+  .q{font-family:"CrimsonText",Georgia,serif;font-style:italic;line-height:1.2;color:#fff;}
+  .q b{font-style:normal;font-weight:700;color:var(--coral);}
+  .p{font-weight:700;font-size:50px;line-height:1.18;color:rgba(255,255,255,.95);}
+  .p b{color:var(--coral);}
+  .line{opacity:0;}
+
+  /* 1 · Portada */
+  #hook .h{font-size:98px;}
+  #hook .sub{margin-top:36px;font-family:"CrimsonText",Georgia,serif;font-style:italic;font-size:42px;line-height:1.25;color:rgba(255,255,255,.85);}
+
+  /* 2 · La orden */
+  #orden .time{font-weight:900;font-size:34px;letter-spacing:4px;color:var(--coral);margin-bottom:30px;}
+  #orden .q{font-size:66px;}
+  #orden .who{margin-top:26px;font-weight:600;font-size:30px;color:rgba(255,255,255,.7);}
+  #orden .p{margin-top:70px;font-size:56px;}
+
+  /* 3 · El reglamento */
+  #regla .q{font-size:60px;}
+  #regla .p{margin-top:56px;}
+
+  /* 4 · La central */
+  #central .h{font-size:84px;}
+  #central .p{margin-top:52px;}
+  #central .p2{margin-top:36px;font-size:44px;color:rgba(255,255,255,.75);}
+
+  /* 5 · Tres preguntas */
+  #preg .row{display:flex;align-items:flex-start;gap:30px;margin:0 0 42px 0;opacity:0;}
+  #preg .num{flex:none;width:76px;height:76px;border-radius:20px;border:3px solid var(--coral);display:flex;align-items:center;justify-content:center;
+    font-weight:900;font-size:38px;color:var(--coral);}
+  #preg .txt{font-weight:700;font-size:42px;line-height:1.16;color:#fff;padding-top:8px;}
+
+  /* 6 · El ruido */
+  #ruido .q{font-size:64px;}
+
+  /* 7 · Cierre */
+  #close{align-items:center;text-align:center;}
+  #close .mk{font-weight:900;font-size:150px;line-height:.8;letter-spacing:-6px;color:#fff;}
+  #close .mk b{color:var(--coral);}
+  #close .sec{margin-top:40px;font-weight:900;font-size:66px;line-height:1;color:#fff;}
+  #close .sec .br{color:var(--coral);}
+  #close .url{margin-top:30px;font-weight:800;font-size:46px;color:var(--coral);}
+  #close .tag{margin-top:26px;font-family:"CrimsonText",Georgia,serif;font-style:italic;font-size:36px;color:rgba(255,255,255,.85);}
+
+  #vignette{position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 220px rgba(0,0,0,.35);}
+</style>
+
+<div id="stage">
+  <div id="band"><img data-k="tren.png" /><div id="bandFade"></div><div id="bandDark"></div></div>
+  <div id="brand">[<b>o</b>lvidos<small>La espuma de los días</small></div>
+
+  <div class="layer" id="hook">
+    <div class="kick">Editorial · 30 de octubre de 2026</div>
+    <div class="h"><span class="br">[</span> «Desconecte y vuelva a conectar»</div>
+    <div class="sub">Lo que el reglamento ferroviario, los contratos de Adif y un anuncio oficial de 2022 cuentan sobre Urda.</div>
+  </div>
+
+  <div class="layer" id="orden">
+    <div class="time">8:36 · MIÉRCOLES 28 DE OCTUBRE</div>
+    <div class="q line" id="o1">«Desconecte y vuelva a conectar el LZB. <b>Reanude marcha</b>.»</div>
+    <div class="who line" id="o2">Centro de control de Atocha al maquinista del AVE 2080</div>
+    <div class="p line" id="o3">Diecisiete minutos después, el AVE alcanzaba por detrás al Iryo detenido en Urda. <b>Sesenta y nueve muertos.</b></div>
+  </div>
+
+  <div class="layer" id="regla">
+    <div class="kick">Lo que dice el reglamento</div>
+    <div class="q line" id="r1">Con el LZB en servicio, «las señales fijas <b>carecen de validez</b>».</div>
+    <div class="p line" id="r2">Reconectar no es un gesto inocuo: el tren deja de obedecer a los semáforos y vuelve a obedecer a la central.</div>
+  </div>
+
+  <div class="layer" id="central">
+    <div class="h line" id="c1">Y la central de Urda <span class="br">acababa de caerse.</span></div>
+    <div class="p line" id="c2">El AVE volvió a circular a velocidad de línea con el Iryo parado delante.</div>
+    <div class="p p2 line" id="c3">Impacto estimado: entre 160 y 200 km/h. A esa velocidad no se circula «a la vista».</div>
+  </div>
+
+  <div class="layer" id="preg">
+    <div class="kick" id="pk">Tres preguntas a Adif</div>
+    <div class="row" id="p1"><div class="num">1</div><div class="txt">¿Por qué el procedimiento permite devolver un tren a la velocidad máxima con la central recién caída?</div></div>
+    <div class="row" id="p2"><div class="num">2</div><div class="txt">¿Hay señales de bloqueo entre Mora y Urda? Si no, ¿por qué, con cien trenes al día?</div></div>
+    <div class="row" id="p3"><div class="num">3</div><div class="txt">¿Cuándo intervino por última vez el mantenedor en la central de Urda?</div></div>
+  </div>
+
+  <div class="layer" id="ruido">
+    <div class="kick">El ruido</div>
+    <div class="q">Un sabotaje exculpa. <b>Un reglamento, un contrato y una advertencia ignorada, no.</b></div>
+  </div>
+
+  <div class="layer" id="close">
+    <div class="mk">[<b>o</b></div>
+    <div class="sec"><span class="br">[</span> La espuma de los días</div>
+    <div class="url">olvidos.es</div>
+    <div class="tag">Léelo completo, con sus fuentes, en Editoriales.</div>
+  </div>
+
+  <div id="vignette"></div>
+</div>
+
+<script>
+window.__ASSETS__ = window.__ASSETS__ || null; /* __ASSETS_INJECT__ */
+(function(){
+  const A=window.__ASSETS__;
+  document.querySelectorAll("img[data-k]").forEach((im)=>{ im.src=A[im.dataset.k].src; });
+  const el=(id)=>document.getElementById(id);
+  const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+  const lerp=(a,b,t)=>a+(b-a)*t;
+  const easeOut=(t)=>1-Math.pow(1-t,3);
+  const seg=(t,a,b,fi,fo)=>clamp(Math.min((t-a)/fi,(b-t)/fo),0,1);
+
+  const T={
+    hook:[0,5000],
+    orden:[5000,14000],
+    regla:[14000,22000],
+    central:[22000,30500],
+    preg:[30500,42500],
+    ruido:[42500,47500],
+    close:[47500,51500],
+  };
+  window.__DURATION_MS__=51500;
+
+  function layer(id,range,fi,fo){
+    const o=seg(t_,range[0],range[1],fi,fo);
+    const e=el(id); e.style.opacity=o.toFixed(3);
+    const p=easeOut(clamp((t_-range[0])/700,0,1));
+    e.style.transform=`translateY(${lerp(22,0,p).toFixed(1)}px)`;
+    return o;
+  }
+  function line(id,start,dur){
+    const p=easeOut(clamp((t_-start)/(dur||600),0,1));
+    const e=el(id); e.style.opacity=p.toFixed(3);
+    e.style.transform=`translateY(${lerp(16,0,p).toFixed(1)}px)`;
+  }
+  let t_=0;
+  window.renderAt=function(t){
+    t_=t;
+    // Ilustración: zoom lento durante todo el reel; se oscurece en el cierre
+    const z=lerp(1.0,1.14,clamp(t/T.close[1],0,1));
+    el("band").querySelector("img").style.transform=`translate(-50%,-50%) scale(${z.toFixed(4)})`;
+    el("bandDark").style.opacity=(0.72*easeOut(clamp((t-T.close[0]+300)/900,0,1))).toFixed(3);
+    el("brand").style.opacity=(1-0.6*easeOut(clamp((t-T.close[0]+300)/900,0,1))).toFixed(3);
+
+    layer("hook",T.hook,500,450);
+    layer("orden",T.orden,500,450);
+    line("o1",T.orden[0]+250,700); line("o2",T.orden[0]+1000,600); line("o3",T.orden[0]+3200,700);
+    layer("regla",T.regla,500,450);
+    line("r1",T.regla[0]+250,700); line("r2",T.regla[0]+2800,700);
+    layer("central",T.central,500,450);
+    line("c1",T.central[0]+200,700); line("c2",T.central[0]+1800,700); line("c3",T.central[0]+3800,700);
+    layer("preg",T.preg,450,450);
+    line("pk",T.preg[0]+150,450); line("p1",T.preg[0]+500,550); line("p2",T.preg[0]+3000,550); line("p3",T.preg[0]+5500,550);
+    layer("ruido",T.ruido,550,450);
+    layer("close",T.close,600,300);
+  };
+  window.__READY__=true;
+})();
+</script>
