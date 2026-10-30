@@ -66,6 +66,10 @@ export default async function ArticulosPage({
   let title = "artículos";
   let intro: string | null = null;
   let categoryName: string | null = null;
+  // Categoría padre (p. ej. Editoriales) y secciones hijas (p. ej. «La espuma
+  // de los días»), para enlazarlas desde la cabecera: el menú no las lista.
+  let parentCategory: { name: string; slug: string } | null = null;
+  let childCategories: { name: string; slug: string }[] = [];
   const searching = q.length > 0;
   const spForPagination: Record<string, string> = {};
 
@@ -89,6 +93,9 @@ export default async function ArticulosPage({
     categoryName = r.category?.name ?? categoria;
     intro = r.category?.description ?? null;
     spForPagination.categoria = categoria;
+    const tree = await getCategoryBySlug(categoria);
+    parentCategory = tree?.parent ?? null;
+    childCategories = tree?.children ?? [];
   } else if (tag) {
     const r = await getArticlesByTag(tag, page, PER_PAGE);
     articles = r.articles;
@@ -117,6 +124,38 @@ export default async function ArticulosPage({
         {intro && (
           <p className="mx-auto mt-6 max-w-2xl font-editorial text-lg leading-snug text-tinta/75">
             {intro}
+          </p>
+        )}
+        {(parentCategory || childCategories.length > 0) && (
+          <p className="mx-auto mt-5 max-w-2xl text-sm text-tinta/70">
+            {parentCategory && (
+              <>
+                Dentro de{" "}
+                <Link
+                  href={`/articulos?categoria=${parentCategory.slug}`}
+                  className="font-bold text-coral hover:text-tinta"
+                >
+                  {parentCategory.name}
+                </Link>
+              </>
+            )}
+            {parentCategory && childCategories.length > 0 && " · "}
+            {childCategories.length > 0 && (
+              <>
+                {childCategories.length === 1 ? "Sección: " : "Secciones: "}
+                {childCategories.map((c, i) => (
+                  <span key={c.slug}>
+                    <Link
+                      href={`/articulos?categoria=${c.slug}`}
+                      className="font-bold text-coral hover:text-tinta"
+                    >
+                      {c.name}
+                    </Link>
+                    {i < childCategories.length - 1 && ", "}
+                  </span>
+                ))}
+              </>
+            )}
           </p>
         )}
         <p className="mt-6 font-editorial text-lg text-tinta/70">

@@ -132,6 +132,22 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   `NEXT_PUBLIC_CONTEXTOS_29N_URL`). El menú no tiene desplegable para las
   secciones, así que no se ha tocado.
 
+## «La espuma de los días» (sección de Editoriales, desde el 30-10-2026)
+
+- Subcategoría de Editoriales (slug de producción `editorial`): `la-espuma-de-los-dias`,
+  con descripción propia. Editoriales breves de actualidad; la sección existía en la
+  revista impresa y se irá completando con los escaneos de los PDF antiguos.
+- Cada artículo de la sección lleva **las dos categorías** (`editorial` y
+  `la-espuma-de-los-dias`): `getArticlesByCategory` no agrega las hijas. La cabecera de
+  `/articulos?categoria=…` enlaza la categoría padre y las secciones hijas
+  (`getCategoryBySlug` devuelve `parent`/`children`); no hay entrada en el menú.
+- Los textos entran con `scripts/importar-articulo.ts` (ficha JSON + HTML fuera del
+  repositorio; ver `scripts/README.md`) o por el panel. Firma de los editoriales sin
+  autor personal: `byline` «Olvidos» (crea el autor `/autor/olvidos`).
+- Primer artículo: «Desconecte y vuelva a conectar» (`desconecte-y-vuelva-a-conectar`,
+  30-10-2026), importado en borrador; la «Nota de verificación» del documento original
+  no se publica.
+
 ## Certificados de publicación (oposiciones y baremos)
 
 - Los autores piden «un informe del organismo emisor que certifique que la

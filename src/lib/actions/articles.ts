@@ -7,7 +7,7 @@ import { auth } from "@/lib/auth";
 import { isStaffRole } from "@/lib/roles";
 import { db } from "@/lib/db";
 import { z } from "zod";
-import { slugifyName } from "@/lib/colaboradores";
+import { syncArticleAuthors } from "@/lib/article-authors";
 import { findMatchingArticleIds } from "@/lib/queries";
 import { hasVisibleContent, CONTENT_REQUIRED_MESSAGE } from "@/lib/article-content";
 import { sanitizeArticleHtml } from "@/lib/sanitize-html";
@@ -22,39 +22,6 @@ const AUTHOR_SELECT = { select: { id: true, name: true } } as const;
 async function staffSession() {
   const session = await auth();
   return isStaffRole(session?.user?.role) ? session : null;
-}
-
-
-/** Separa una firma ("A · B", "A y B", "A, B") en nombres de autor. */
-function parseAuthorNames(byline?: string | null): string[] {
-  if (!byline) return [];
-  return byline
-    .split(/·|,| y | & |;/i)
-    .map((s) => s.trim())
-    .filter((s) => s.length > 1);
-}
-
-/**
- * Sincroniza los autores enlazados (tabla Author) de un artículo a partir de la
- * firma escrita en el editor. Así el autor real se muestra y enlaza en la web
- * (que usa `authors`), en vez del usuario de WordPress que publicó.
- */
-async function syncArticleAuthors(articleId: string, byline?: string | null) {
-  const names = parseAuthorNames(byline);
-  await db.authorsOnArticles.deleteMany({ where: { articleId } });
-  let order = 0;
-  for (const name of names) {
-    const slug = slugifyName(name);
-    if (!slug) continue;
-    const author = await db.author.upsert({
-      where: { slug },
-      create: { name, slug },
-      update: {},
-    });
-    await db.authorsOnArticles.create({
-      data: { articleId, authorId: author.id, order: order++ },
-    });
-  }
 }
 
 const ArticleSchema = z.object({
