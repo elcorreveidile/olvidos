@@ -172,7 +172,10 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   aceptando las antiguas); `/buscar` fuera del índice; `not-found.tsx`.
 - **Javier, en Vercel (proyecto de «Javier's projects»):** `NEXT_PUBLIC_SITE_URL=https://www.olvidos.es`;
   `DATABASE_URL` con la cadena *pooled* de Neon (host `…-pooler…`) y
-  `?sslmode=require&pgbouncer=true&connection_limit=1`; y en Firewall → Rules
+  `?sslmode=require&pgbouncer=true&connection_limit=5&pool_timeout=20` (hasta el
+  30-10-2026 llevaba `connection_limit=1`: con la Data Cache, las revalidaciones en
+  segundo plano competían por la única conexión y daban «Timed out fetching a new
+  connection from the connection pool», P2024); y en Firewall → Rules
   dos reglas de *rate limit* por IP: `/api/auth/*`, `/api/users/register`,
   `/api/members/register` y `/contacto` a 10 peticiones/minuto (acción
   *challenge*); el resto sin cambios.
@@ -253,6 +256,12 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   quiere ISR ahí, la vista previa debe ir por `draftMode()` o por otra ruta.
 - **Scripts que escriben en la BD sin pasar por el panel:** lo publicado tarda
   hasta 5 min en verse (o se fuerza con un redeploy).
+- **Fallos pasajeros de la BD (30-10-2026):** Neon suspende el cómputo tras un rato
+  sin uso y la primera consulta puede dar «Can't reach database server»; si no hay
+  entrada en caché para esa clave, la página cae en `error.tsx` (así se vio
+  «error» en `/articulos?categoria=editorial`). `cachedQuery` reintenta una vez a
+  los 1,5 s ante `PrismaClientInitializationError` o `P2024`. Lo que lo quita de
+  raíz es subir o desactivar el *autosuspend* en la consola de Neon (Compute).
 - **Probar en local con BD:** hay PostgreSQL 16 en el contenedor
   (`/usr/lib/postgresql/16/bin`); `initdb` + `pg_ctl` como usuario `postgres`,
   `CREATE EXTENSION unaccent`, `.env.local` con `DATABASE_URL` local y

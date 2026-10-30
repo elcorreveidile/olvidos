@@ -52,17 +52,48 @@ export function reviveDates<T>(value: T): T {
 
 type AsyncFn = (...args: any[]) => Promise<any>;
 
+/** Espera entre el primer intento y el reintento. */
+const RETRY_DELAY_MS = 1500;
+
+/**
+ * ¿Es un fallo pasajero de la base de datos? Neon suspende el cómputo tras un
+ * rato sin uso y la primera consulta puede llegar antes de que despierte
+ * («Can't reach database server», PrismaClientInitializationError), o el pool
+ * de conexiones de la función puede estar ocupado un instante (P2024). En
+ * ambos casos un segundo intento suele bastar; cualquier otro error se
+ * propaga tal cual.
+ */
+function isTransientDbError(error: unknown): boolean {
+  if (!error || typeof error !== "object") return false;
+  const name = (error as { name?: string }).name;
+  const code = (error as { code?: string }).code;
+  return name === "PrismaClientInitializationError" || code === "P2024";
+}
+
+async function withRetry<T>(run: () => Promise<T>): Promise<T> {
+  try {
+    return await run();
+  } catch (error) {
+    if (!isTransientDbError(error)) throw error;
+    console.warn("[cache] fallo pasajero de la base de datos; reintento en 1,5 s");
+    await new Promise((resolve) => setTimeout(resolve, RETRY_DELAY_MS));
+    return run();
+  }
+}
+
 /**
  * Envuelve una consulta de lectura en `unstable_cache`. La clave incluye el
  * nombre y los argumentos; las etiquetas permiten invalidarla desde las
- * acciones del panel.
+ * acciones del panel. La consulta se reintenta una vez si la base de datos
+ * falla de forma pasajera (ver `isTransientDbError`).
  */
 export function cachedQuery<F extends AsyncFn>(
   name: string,
   fn: F,
   tags: CacheTag[]
 ): F {
-  const cached = unstable_cache(fn, ["olvidos", name], {
+  const resilient = ((...args: Parameters<F>) => withRetry(() => fn(...args))) as F;
+  const cached = unstable_cache(resilient, ["olvidos", name], {
     tags: tags.map((t) => CACHE_TAGS[t]),
     revalidate: CACHE_REVALIDATE,
   });
