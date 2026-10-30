@@ -196,7 +196,9 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   `?sslmode=require&pgbouncer=true&connection_limit=5&pool_timeout=20` (hasta el
   30-10-2026 llevaba `connection_limit=1`: con la Data Cache, las revalidaciones en
   segundo plano competían por la única conexión y daban «Timed out fetching a new
-  connection from the connection pool», P2024); y en Firewall → Rules
+  connection from the connection pool», P2024). **Desde el 30-10-2026 `src/lib/db.ts`
+  fuerza esos mínimos aunque la variable diga otra cosa** (`datasourceUrlConPool`),
+  porque la variable no se había cambiado y seguían los P2024; y en Firewall → Rules
   dos reglas de *rate limit* por IP: `/api/auth/*`, `/api/users/register`,
   `/api/members/register` y `/contacto` a 10 peticiones/minuto (acción
   *challenge*); el resto sin cambios.
