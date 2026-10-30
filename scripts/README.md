@@ -1,7 +1,7 @@
 # scripts/
 
 Herramientas de línea de comandos. Se ejecutan desde el clon local con
-`npx tsx --env-file=.env.local scripts/<nombre>.ts` (las `.ts`) o
+`node --env-file=.env.local node_modules/.bin/tsx scripts/<nombre>.ts` (las `.ts`; `npx tsx --env-file` también vale) o
 `node scripts/marketing/<nombre>.mjs` (las `.mjs`). **Ninguna se ejecuta en
 Vercel** salvo `gen-version.mjs` y `gen-changelog.mjs` (en `prebuild`).
 
@@ -13,6 +13,7 @@ Vercel** salvo `gen-version.mjs` y `gen-changelog.mjs` (en `prebuild`).
 | `set-user-role.ts` | Cambia el rol de una cuenta (`ADMIN`, `EDITOR`, `MEMBER_ADMIN`, `MEMBER`, `USER`). Ver `docs/ROLES.md`. |
 | `sanitize-dry-run.ts` | Comprueba en seco qué cambiaría el sanitizador de HTML (`src/lib/sanitize-html.ts`) en los artículos y actividades guardados. No escribe. |
 | `con-textos-merge.ts`, `con-textos-check.ts`, `con-textos-fuentes.ts`, `con-textos-espana-marruecos.ts`, `con-textos-transcribir.py`, `con-textos-html/` | Flujo de los especiales Con-textos (`docs/con-textos/README.md`). `con-textos-espana-marruecos.ts` escribe el artículo del especial en la BD. |
+| `importar-articulo.ts` | Crea o actualiza un artículo desde una ficha JSON y un HTML que viven **fuera del repo** (los borradores no se suben): `node --env-file=.env.local node_modules/.bin/tsx scripts/importar-articulo.ts ficha.json [--aplicar]`. Sanitiza el HTML, crea las categorías que falten (con su padre), sincroniza etiquetas y firma, y no degrada un artículo publicado. Formato de la ficha en la cabecera del script. Sirve para «La espuma de los días» y los escaneos de los PDF antiguos. |
 | `test-email.ts`, `test-contact-send.ts` | Pruebas de envío con Resend. |
 
 ## `legacy/` — migración y arreglos puntuales (ESCRIBEN en la base de datos)

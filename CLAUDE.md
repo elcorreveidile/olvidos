@@ -132,6 +132,22 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   `NEXT_PUBLIC_CONTEXTOS_29N_URL`). El menú no tiene desplegable para las
   secciones, así que no se ha tocado.
 
+## «La espuma de los días» (sección de Editoriales, desde el 30-10-2026)
+
+- Subcategoría de Editoriales (slug de producción `editorial`): `la-espuma-de-los-dias`,
+  con descripción propia. Editoriales breves de actualidad; la sección existía en la
+  revista impresa y se irá completando con los escaneos de los PDF antiguos.
+- Cada artículo de la sección lleva **las dos categorías** (`editorial` y
+  `la-espuma-de-los-dias`): `getArticlesByCategory` no agrega las hijas. La cabecera de
+  `/articulos?categoria=…` enlaza la categoría padre y las secciones hijas
+  (`getCategoryBySlug` devuelve `parent`/`children`); no hay entrada en el menú.
+- Los textos entran con `scripts/importar-articulo.ts` (ficha JSON + HTML fuera del
+  repositorio; ver `scripts/README.md`) o por el panel. Firma de los editoriales sin
+  autor personal: `byline` «Olvidos» (crea el autor `/autor/olvidos`).
+- Primer artículo: «Desconecte y vuelva a conectar» (`desconecte-y-vuelva-a-conectar`,
+  30-10-2026), importado en borrador; la «Nota de verificación» del documento original
+  no se publica.
+
 ## Certificados de publicación (oposiciones y baremos)
 
 - Los autores piden «un informe del organismo emisor que certifique que la
@@ -172,7 +188,10 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   aceptando las antiguas); `/buscar` fuera del índice; `not-found.tsx`.
 - **Javier, en Vercel (proyecto de «Javier's projects»):** `NEXT_PUBLIC_SITE_URL=https://www.olvidos.es`;
   `DATABASE_URL` con la cadena *pooled* de Neon (host `…-pooler…`) y
-  `?sslmode=require&pgbouncer=true&connection_limit=1`; y en Firewall → Rules
+  `?sslmode=require&pgbouncer=true&connection_limit=5&pool_timeout=20` (hasta el
+  30-10-2026 llevaba `connection_limit=1`: con la Data Cache, las revalidaciones en
+  segundo plano competían por la única conexión y daban «Timed out fetching a new
+  connection from the connection pool», P2024); y en Firewall → Rules
   dos reglas de *rate limit* por IP: `/api/auth/*`, `/api/users/register`,
   `/api/members/register` y `/contacto` a 10 peticiones/minuto (acción
   *challenge*); el resto sin cambios.
@@ -253,6 +272,12 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   quiere ISR ahí, la vista previa debe ir por `draftMode()` o por otra ruta.
 - **Scripts que escriben en la BD sin pasar por el panel:** lo publicado tarda
   hasta 5 min en verse (o se fuerza con un redeploy).
+- **Fallos pasajeros de la BD (30-10-2026):** Neon suspende el cómputo tras un rato
+  sin uso y la primera consulta puede dar «Can't reach database server»; si no hay
+  entrada en caché para esa clave, la página cae en `error.tsx` (así se vio
+  «error» en `/articulos?categoria=editorial`). `cachedQuery` reintenta una vez a
+  los 1,5 s ante `PrismaClientInitializationError` o `P2024`. Lo que lo quita de
+  raíz es subir o desactivar el *autosuspend* en la consola de Neon (Compute).
 - **Probar en local con BD:** hay PostgreSQL 16 en el contenedor
   (`/usr/lib/postgresql/16/bin`); `initdb` + `pg_ctl` como usuario `postgres`,
   `CREATE EXTENSION unaccent`, `.env.local` con `DATABASE_URL` local y
