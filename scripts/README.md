@@ -14,6 +14,7 @@ Vercel** salvo `gen-version.mjs` y `gen-changelog.mjs` (en `prebuild`).
 | `sanitize-dry-run.ts` | Comprueba en seco qué cambiaría el sanitizador de HTML (`src/lib/sanitize-html.ts`) en los artículos y actividades guardados. No escribe. |
 | `con-textos-merge.ts`, `con-textos-check.ts`, `con-textos-fuentes.ts`, `con-textos-espana-marruecos.ts`, `con-textos-transcribir.py`, `con-textos-html/` | Flujo de los especiales Con-textos (`docs/con-textos/README.md`). `con-textos-espana-marruecos.ts` escribe el artículo del especial en la BD. |
 | `importar-articulo.ts` | Crea o actualiza un artículo desde una ficha JSON y un HTML que viven **fuera del repo** (los borradores no se suben): `node --env-file=.env.local node_modules/.bin/tsx scripts/importar-articulo.ts ficha.json [--aplicar]`. Sanitiza el HTML, crea las categorías que falten (con su padre), sincroniza etiquetas y firma, y no degrada un artículo publicado. Formato de la ficha en la cabecera del script. Sirve para «La espuma de los días» y los escaneos de los PDF antiguos. |
+| `asignar-portadas.ts` | Sube imágenes de portada a Vercel Blob (redimensionadas a 1600 px, JPEG) y las asigna a artículos por slug desde una lista JSON que vive fuera del repo: `node --env-file=.env.local node_modules/.bin/tsx scripts/asignar-portadas.ts lista.json [--aplicar]`. Necesita `BLOB_READ_WRITE_TOKEN`. Formato de la lista en la cabecera del script. |
 | `test-email.ts`, `test-contact-send.ts` | Pruebas de envío con Resend. |
 
 ## `legacy/` — migración y arreglos puntuales (ESCRIBEN en la base de datos)

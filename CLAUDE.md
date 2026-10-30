@@ -147,6 +147,11 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
 - Primer artículo: «Desconecte y vuelva a conectar» (`desconecte-y-vuelva-a-conectar`,
   30-10-2026), importado en borrador; la «Nota de verificación» del documento original
   no se publica.
+- **Portadas de los editoriales (30-10-2026):** todos los editoriales deben llevar
+  imagen de portada. Las que faltaban (cinco antiguos y el de Urda) son ilustraciones
+  generadas con Canva en un estilo común (tinta azul, coral, crema; sin texto), crédito
+  «Ilustración: Olvidos (Canva)». Se asignan con `scripts/asignar-portadas.ts` (lista
+  JSON + imágenes fuera del repo; sube a Blob en `articulos/portadas/<slug>.jpg`).
 
 ## Certificados de publicación (oposiciones y baremos)
 
