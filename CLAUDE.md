@@ -283,8 +283,13 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   sin uso y la primera consulta puede dar «Can't reach database server»; si no hay
   entrada en caché para esa clave, la página cae en `error.tsx` (así se vio
   «error» en `/articulos?categoria=editorial`). `cachedQuery` reintenta una vez a
-  los 1,5 s ante `PrismaClientInitializationError` o `P2024`. Lo que lo quita de
-  raíz es subir o desactivar el *autosuspend* en la consola de Neon (Compute).
+  los 1,5 s ante `PrismaClientInitializationError`, `P1001` (inalcanzable), `P1017`
+  (conexión cerrada) o `P2024` (pool). Lo que lo quita de raíz es subir o desactivar
+  el *autosuspend* en la consola de Neon (Compute).
+- **Región de las funciones:** hasta el 30-10-2026 los despliegues llevaban
+  `regions: ["iad1"]` (Washington; en los registros aparecían ejecuciones en `cdg1` y
+  `sin1`) con Neon en `eu-central-1` (Fráncfort): cada consulta cruzaba el Atlántico.
+  `vercel.json` fija `regions: ["fra1"]`, junto a la base de datos.
 - **Probar en local con BD:** hay PostgreSQL 16 en el contenedor
   (`/usr/lib/postgresql/16/bin`); `initdb` + `pg_ctl` como usuario `postgres`,
   `CREATE EXTENSION unaccent`, `.env.local` con `DATABASE_URL` local y
