@@ -151,7 +151,7 @@ Memoria de Granada. ENCUENTROS del menú es la agenda (`/actividades`); la categ
 | Con-textos (`con-textos`) | Especiales de actualidad con contexto histórico e islas interactivas (ver sección propia). |
 | Memoria de Olvidos (`memoria-de-olvidos`) | La revista de 1984 reeditada en digital, cada número comentado por un colaborador de hoy. |
 | Memoria de Granada (`memoria-de-granada`) | Memoria cultural de la ciudad: transición, poesía de los 70-80, Egea, Pablo del Águila, lugares. Muchos artículos la comparten con Piezas y Procesos. |
-| Encuentros (`encuentros`) | Los encuentros que organizó la revista impresa (p. ej. los encuentros literarios de 1986 sobre los años cincuenta): programas, ponencias, crónicas y testimonios. Nada que ver con la agenda de `/actividades`. 2 artículos en borrador (5-11-2026). |
+| Encuentros (`encuentros`) | Los encuentros que organiza Olvidos, ayer y hoy: los de la época impresa (p. ej. los encuentros literarios de 1986 sobre los años cincuenta) y los futuros (Javier piensa en unos sobre la generación de los ochenta: García Montero, Egea…): programas, ponencias, crónicas, testimonios. La agenda de actos sueltos sigue en `/actividades`. 2 artículos en borrador (5-11-2026). |
 | Noticias (`noticias`) | Avisos de la asociación; solo tiene la necrológica de Maresca (también en Editoriales). Pendiente de decidir. |
 | Actividades Online, Pasos | Vacías, restos de la migración; candidatas a borrar. `politica` se borró el 5-11-2026. |
 
