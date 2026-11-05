@@ -176,6 +176,29 @@ Memoria de Granada. ENCUENTROS del menú es la agenda (`/actividades`); la categ
   «Ilustración: Olvidos (Canva)». Se asignan con `scripts/asignar-portadas.ts` (lista
   JSON + imágenes fuera del repo; sube a Blob en `articulos/portadas/<slug>.jpg`).
 
+## Proceso del CLM (en planificación desde el 5-11-2026)
+
+- Javier planifica un **proceso** (sección Piezas y Procesos) de varios autores sobre la
+  historia del Centro de Lenguas Modernas de la Universidad de Granada: de su fundación a
+  hoy, situación actual y proyección futura, con colaboraciones de antiguos directores y
+  trabajadores, personal del centro y de la UGR y otros actores. Javier trabaja en el CLM
+  y lo declarará en el proceso.
+- **La planificación no se hace en Code**: va en un Proyecto de Claude aparte (nombre
+  «Proceso CLM»), con un guion de preguntas en diez secciones (tema y tesis, qué hay que
+  documentar, autores y voces, forma en la web, calendario, acuerdos y derechos,
+  encuesta, tecnología, difusión, presupuesto y riesgos). El guion, el planteamiento, los
+  testimonios y los documentos viven fuera del repositorio. A Code se vuelve solo cuando
+  haya algo que construir (encuesta, visualizaciones, página propia del proceso o islas de
+  Con-textos).
+- Reglas para cuando llegue a Code: ni borradores, ni testimonios, ni datos de personas,
+  ni documentos internos en el repositorio (es público); los datos de una encuesta, si la
+  hay, fuera del repo y con consentimiento y plazo de conservación definidos; cada
+  entrega lleva Piezas y Procesos (y Memoria de Granada si es histórica); un especial de
+  Con-textos al cierre es posible, con sus islas; el acto final, si lo hay, va a
+  Encuentros.
+- Nada del proceso se anuncia en la web hasta que Javier lo decida: no crear categorías,
+  etiquetas ni artículos relacionados sin que lo pida.
+
 ## Certificados de publicación (oposiciones y baremos)
 
 - Los autores piden «un informe del organismo emisor que certifique que la
