@@ -153,7 +153,7 @@ Memoria de Granada. ENCUENTROS del menú es la agenda (`/actividades`); la categ
 | Memoria de Granada (`memoria-de-granada`) | Memoria cultural de la ciudad: transición, poesía de los 70-80, Egea, Pablo del Águila, lugares. Muchos artículos la comparten con Piezas y Procesos. |
 | Encuentros (`encuentros`) | Los encuentros que organiza Olvidos, ayer y hoy: los de la época impresa (p. ej. los encuentros literarios de 1986 sobre los años cincuenta) y los futuros (Javier piensa en unos sobre la generación de los ochenta: García Montero, Egea…): programas, ponencias, crónicas, testimonios. La agenda de actos sueltos sigue en `/actividades`. 2 artículos en borrador (5-11-2026). |
 | Noticias (`noticias`) | Avisos de la asociación; solo tiene la necrológica de Maresca (también en Editoriales). Pendiente de decidir. |
-| Actividades Online, Pasos | Vacías, restos de la migración; candidatas a borrar. `politica` se borró el 5-11-2026. |
+| (borradas el 5-11-2026) | `politica`, `pasos` y `actividades-online`: restos de la migración, sin artículos. Las actividades (en línea o presenciales) van a la agenda de `/actividades`, con sus tipos de acto; sus crónicas, a Encuentros. |
 
 ## «La espuma de los días» (sección de Editoriales, desde el 30-10-2026)
 
