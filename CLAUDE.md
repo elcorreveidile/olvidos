@@ -132,6 +132,29 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   `NEXT_PUBLIC_CONTEXTOS_29N_URL`). El menú no tiene desplegable para las
   secciones, así que no se ha tocado.
 
+## Secciones de la web (revisado el 5-11-2026)
+
+Todas son categorías de artículo (`/articulos?categoria=<slug>`); la descripción de
+cada una se edita en `/admin/categorias` y sale en la cabecera del listado. En el
+menú: Editoriales, Palabras, Piezas y Procesos, Apostillas, Soneto500, Con-textos y,
+bajo MEMORIA, el archivo de la revista impresa (`/revista`), Memoria de Olvidos y
+Memoria de Granada. ENCUENTROS del menú es la agenda (`/actividades`), no una categoría.
+
+| Categoría (slug) | Qué se publica |
+| --- | --- |
+| Editoriales (`editorial`) | La voz de la revista: opinión del equipo (Maresca, Repiso, Salazar, «Olvidos»), presentaciones de número. |
+| La espuma de los días (`la-espuma-de-los-dias`, hija de Editoriales) | Editoriales breves de actualidad leída desde Granada; heredada del papel. Cada artículo lleva también `editorial`. |
+| Palabras (`palabras`) | Literatura y pensamiento: ensayo, narrativa, poesía, entrevistas, crítica. La más nutrida. |
+| Piezas y Procesos (`piezas-procesos`) | Arte y creación. *Piezas*: textos cerrados de una entrega (ensayo, conferencia, reseña de exposición, inédito). *Procesos*: estudios por entregas o a varias manos (dosier Egea, seriales). |
+| Apostillas (`apostillas`) | Republicación comentada de artículos de la revista impresa por sus 40 años. |
+| Soneto500 (`sonetos`) | Un soneto por entrada, de autores contemporáneos. |
+| Con-textos (`con-textos`) | Especiales de actualidad con contexto histórico e islas interactivas (ver sección propia). |
+| Memoria de Olvidos (`memoria-de-olvidos`) | La revista de 1984 reeditada en digital, cada número comentado por un colaborador de hoy. |
+| Memoria de Granada (`memoria-de-granada`) | Memoria cultural de la ciudad: transición, poesía de los 70-80, Egea, Pablo del Águila, lugares. Muchos artículos la comparten con Piezas y Procesos. |
+| Encuentros (`encuentros`) | Pensada para crónicas de actos ya celebrados; 2 artículos en borrador (5-11-2026), pendiente de decidir si se mantiene o pasan a la agenda. |
+| Noticias (`noticias`) | Avisos de la asociación; solo tiene la necrológica de Maresca (también en Editoriales). Pendiente de decidir. |
+| Actividades Online, Pasos | Vacías, restos de la migración; candidatas a borrar. `politica` se borró el 5-11-2026. |
+
 ## «La espuma de los días» (sección de Editoriales, desde el 30-10-2026)
 
 - Subcategoría de Editoriales (slug de producción `editorial`): `la-espuma-de-los-dias`,
@@ -287,9 +310,11 @@ equipo (`roleForMemberStatus` en `src/lib/roles.ts`).
   (conexión cerrada) o `P2024` (pool). Lo que lo quita de raíz es subir o desactivar
   el *autosuspend* en la consola de Neon (Compute).
 - **Región de las funciones:** hasta el 30-10-2026 los despliegues llevaban
-  `regions: ["iad1"]` (Washington; en los registros aparecían ejecuciones en `cdg1` y
-  `sin1`) con Neon en `eu-central-1` (Fráncfort): cada consulta cruzaba el Atlántico.
-  `vercel.json` fija `regions: ["fra1"]`, junto a la base de datos.
+  `regions: ["iad1"]` (Washington) con Neon en `eu-central-1` (Fráncfort): cada
+  consulta cruzaba el Atlántico. `vercel.json` fija `regions: ["fra1"]`, junto a la
+  base de datos (comprobado en el despliegue del #35). Ojo: el campo `region=` de los
+  registros de Vercel (`cdg1`, `sin1`, `arn1`, `iad1`…) es el punto de entrada de la
+  petición, no donde corre la función; la región de la función la da `get_deployment`.
 - **Probar en local con BD:** hay PostgreSQL 16 en el contenedor
   (`/usr/lib/postgresql/16/bin`); `initdb` + `pg_ctl` como usuario `postgres`,
   `CREATE EXTENSION unaccent`, `.env.local` con `DATABASE_URL` local y
