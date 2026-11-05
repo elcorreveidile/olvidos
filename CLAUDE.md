@@ -138,7 +138,7 @@ Todas son categorías de artículo (`/articulos?categoria=<slug>`); la descripci
 cada una se edita en `/admin/categorias` y sale en la cabecera del listado. En el
 menú: Editoriales, Palabras, Piezas y Procesos, Apostillas, Soneto500, Con-textos y,
 bajo MEMORIA, el archivo de la revista impresa (`/revista`), Memoria de Olvidos y
-Memoria de Granada. ENCUENTROS del menú es la agenda (`/actividades`), no una categoría.
+Memoria de Granada. ENCUENTROS del menú es la agenda (`/actividades`); la categoría `encuentros` es otra cosa (ver tabla).
 
 | Categoría (slug) | Qué se publica |
 | --- | --- |
@@ -151,7 +151,7 @@ Memoria de Granada. ENCUENTROS del menú es la agenda (`/actividades`), no una c
 | Con-textos (`con-textos`) | Especiales de actualidad con contexto histórico e islas interactivas (ver sección propia). |
 | Memoria de Olvidos (`memoria-de-olvidos`) | La revista de 1984 reeditada en digital, cada número comentado por un colaborador de hoy. |
 | Memoria de Granada (`memoria-de-granada`) | Memoria cultural de la ciudad: transición, poesía de los 70-80, Egea, Pablo del Águila, lugares. Muchos artículos la comparten con Piezas y Procesos. |
-| Encuentros (`encuentros`) | Pensada para crónicas de actos ya celebrados; 2 artículos en borrador (5-11-2026), pendiente de decidir si se mantiene o pasan a la agenda. |
+| Encuentros (`encuentros`) | Los encuentros que organizó la revista impresa (p. ej. los encuentros literarios de 1986 sobre los años cincuenta): programas, ponencias, crónicas y testimonios. Nada que ver con la agenda de `/actividades`. 2 artículos en borrador (5-11-2026). |
 | Noticias (`noticias`) | Avisos de la asociación; solo tiene la necrológica de Maresca (también en Editoriales). Pendiente de decidir. |
 | Actividades Online, Pasos | Vacías, restos de la migración; candidatas a borrar. `politica` se borró el 5-11-2026. |
 
