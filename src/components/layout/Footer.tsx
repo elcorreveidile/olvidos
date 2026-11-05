@@ -80,6 +80,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/articulos?categoria=noticias" className="text-sm text-acero-light hover:text-coral transition-colors">
+                  Noticias
+                </Link>
+              </li>
+              <li>
                 <Link href="/contacto" className="text-sm text-acero-light hover:text-coral transition-colors">
                   Contacto
                 </Link>
